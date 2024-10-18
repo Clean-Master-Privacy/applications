@@ -1,6 +1,6 @@
-#Security Policy
+# Security Policy
 
-#Reporting a vulnerability
+# Reporting a vulnerability
 
 Please do not report security vulnerabilities through public GitHub issues.
 
