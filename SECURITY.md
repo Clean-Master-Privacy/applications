@@ -1,21 +1,8 @@
-# Security Policy
+Security Policy
+Reporting a vulnerability
 
-## Supported Versions
+Please do not report security vulnerabilities through public GitHub issues.
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+If you believe you have found a security vulnerability, please report it via email to security@protonmail.com. If possible, please encrypt your message; e.g. by using ProtonMail, or by fetching our PGP key, which can be done automatically using WKD, or manually from protonmail.com.
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :white_check_mark: |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :white_check_mark: |
-
-## Reporting a Vulnerability
-
-Use this section to tell people how to report a vulnerability.
-
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+You should receive a response within 2 working days.
