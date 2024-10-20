@@ -77,8 +77,8 @@ This code of conduct and its related procedures also applies to unacceptable beh
 
 ## 10. Contact info
 
- _gamestime102@protonmail.com_
-_gamestime102tv@protonmail.com_
+{ _gamestime102@protonmail.com_}
+{_gamestime102tv@protonmail.com_}
 
 ## 11. License and attribution
 
