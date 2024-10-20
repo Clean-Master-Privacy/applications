@@ -65,7 +65,7 @@ Additionally, community organizers are available to help community members engag
 
 ## 8. Addressing Grievances
 
-If you feel you have been falsely or unfairly accused of violating this Code of Conduct, you should notify Clean-Master-Privacy with a concise description of your grievance. Your grievance will be handled in accordance with our existing governing policies. 
+If you feel you have been falsely or unfairly accused of violating this Code of Conduct, you should notify Clean Master Privacy with a concise description of your grievance. Your grievance will be handled in accordance with our existing governing policies. 
 
 
 
@@ -78,6 +78,7 @@ This code of conduct and its related procedures also applies to unacceptable beh
 ## 10. Contact info
 
 gamestime102@protonmail.com
+gamestime102tv@protonmail.com
 
 ## 11. License and attribution
 
