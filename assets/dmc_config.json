@@ -1,1 +1,6 @@
-1
+{
+  "update_type": 1002,
+  "report_url":"https://ms.cmcm.com/app",
+  "receiver_off":["bluetooth","headset_plug"],
+  "receiver_on": ["*"]
+}
