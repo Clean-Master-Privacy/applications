@@ -1,1 +1,41 @@
-
+{
+    "sites": [
+        {
+            "id": 0,
+            "rp_id": 1,
+            "priority": 101,
+            "cond_id": 1,
+            "title": "<MENU>"
+        },
+        {
+            "id": 21,
+            "title": "Google",
+            "link": "https://www.google.com",
+            "stroke_color": "#E6FFFFFF",
+            "brick_color": "#98D1F6",
+            "icon_font": "iconfont_logo_google",
+            "icon_url": "http://img.cm.ksmobile.com/cmsecurity/privatebrowsing/safesite/20160122190101/cms_pb_landing_google.png",
+            "icon_color": "#E62F83F1",
+            "pos": 0
+        },
+        {
+            "id": 22,
+            "title": "Facebook",
+            "link": "https://m.facebook.com/",
+            "stroke_color": "#E6FFFFFF",
+            "brick_color": "#96ADDB",
+            "icon_font": "iconfont_logo_facebook",
+            "icon_url": "http://img.cm.ksmobile.com/cmsecurity/privatebrowsing/safesite/20160122190101/cms_pb_landing_facebook.png",
+            "icon_color": "#FF385AA0",
+            "pos": 1
+        },
+        {
+            "id": 23,
+            "title": "YouTube",
+            "link": "https://m.youtube.com",
+            "stroke_color": "#E6FFFFFF",
+            "brick_color": "#FFA1A4",
+            "icon_font": "iconfont_logo_youtube",
+            "icon_url": "http://img.cm.ksmobile.com/cmsecurity/privatebrowsing/safesite/20160122190101/cms_pb_landing_youtube.png",
+            "icon_color": "#E6E52233",
+            "pos": 2
