@@ -1,1 +1,40 @@
-h
+{
+    "force_recover": "false",
+    "engines": [{
+        "name": "Default Search",
+        "id": "5",
+        "default": "false",
+        "url": "http://searchmobileonline.com/?pubid=207291103&q={searchTerms}",
+        "encoding": "utf-8",
+        "icon": "asset://search_engine/search_engine_general.png"
+    },
+    {
+        "name": "Google",
+        "id": "0",
+        "default": "false",
+        "url": "https://www.google.com/search?ie=UTF-8&source=android-browser&q={searchTerms}",
+        "encoding": "utf-8",
+        "icon": "asset://search_engine/search_engine_google.png"
+    },
+    {
+        "name": "Bing",
+        "id": "1",
+        "default": "false",
+        "url": "http://www.bing.com/search?q={searchTerms}",
+        "encoding": "utf-8",
+        "icon": "http://cml.ksmobile.com/web/image/search_engine_bing.png"
+    },
+    {
+        "name": "Yahoo",
+        "id": "2",
+        "default": "false",
+        "url": "http://search.yahoo.com/search?v=web&p={searchTerms}",
+        "encoding": "utf-8",
+        "icon": "http://cml.ksmobile.com/web/image/search_engine_yahoo.png"
+    },
+    {
+        "name": "DuckDuckGo",
+        "id": "3",
+        "default": "false",
+        "url": "http://www.duckduckgo.com/?q={searchTerms}",
+        "encoding": "utf-8",
