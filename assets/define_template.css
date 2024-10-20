@@ -1,1 +1,84 @@
-1
+
+.define div, .define dl, .define dd, .define h1, .define h2, .define h3, .define h4, .define h5, .define h6, .define a, .define b, .define u, .define em, .define input, .define textarea, .define button, .define select, .define form, .define section, .define label, .define span, .define td, .define li, .define header, .define nav, .define footer, .define body, .define ul, .define i {
+    -webkit-tap-highlight-color: rgba(255,0,0,0);
+}
+
+.define {
+background-color: #333333;
+}
+
+.define a {
+    color: #AAAAAA;
+}
+
+.define .imgTitle, .define img {
+	background-color: transparent;
+	outline-color:#555555;
+}
+
+.define .title {
+	color : #ADADAD;
+}
+
+.define .source, .define  .time  {
+	color : #6B6B6B;
+}
+
+.define .time {
+	color : #6B6B6B;
+}
+
+.define .article_div {
+	color: #ADADAD;
+}
+
+.define .article_div p{
+	color: #ADADAD;
+}
+
+.define .article_div .loading_img, .define .imgTitle .loading_img{
+	background-color: transparent;
+}
+
+.define .article_div .div_img p{
+	color: #ADADAD;
+}
+
+.define .read_source {
+	color: #37bc84:
+}
+
+.define a {
+	color: #AAAAAA;
+}
+
+.define .share_title {
+	color : #AAAAAA;
+}
+
+.define .div_related .related_title .title{
+	color : #ADADAD;
+}
+
+
+.define .div_related li {
+	border-color:#5B5B5B;
+}
+
+.define .div_related li:last-child  {
+	border-color:#5B5B5B;
+}
+
+.define .img_part img {
+	background-color: transparent;
+}
+
+.define .news_title {
+	color : #ADADAD;
+}
+
+.define .news_source{
+	color : #6B6B6B;
+}
+
+/* end of related news*/
