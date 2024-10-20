@@ -1,5 +1,5 @@
 # Clean Master Privacy
-About Clean Master PRIVACY
+About Clean Master Privacy
 
 RAM, File, Virus Cleaner, Phone Booster for Android
 
