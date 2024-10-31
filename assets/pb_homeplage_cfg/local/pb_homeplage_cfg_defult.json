@@ -39,3 +39,87 @@
             "icon_url": "http://img.cm.ksmobile.com/cmsecurity/privatebrowsing/safesite/20160122190101/cms_pb_landing_youtube.png",
             "icon_color": "#E6E52233",
             "pos": 2
+        },
+        {
+            "id": 20,
+            "rp_id": 21,
+            "priority": 120,
+            "cond_id": 3,
+            "cond_params": 7,
+            "title": "Lucky",
+            "link": "http://lucky.dummy",
+            "stroke_color": "#E6FFFFFF",
+            "brick_color": "#FFC975",
+            "icon_font": "iconfont_gift",
+            "icon_url": "http://img.cm.ksmobile.com/cmsecurity/privatebrowsing/safesite/20160122190101/cms_pb_landing_lucky.png",
+            "icon_color": "#FFFFC94D",
+            "pos": -1
+        },
+        {
+            "id": 24,
+            "title": "News",
+            "link": "https://news.google.com/",
+            "stroke_color": "#E6FFFFFF",
+            "brick_color": "#74E2CA",
+            "icon_font": "iconfont_news",
+            "icon_url": "http://img.cm.ksmobile.com/cmsecurity/privatebrowsing/safesite/20160122190101/cms_pb_landing_news.png",
+            "icon_color": "#E62AD0C2",
+            "pos": 3
+        },
+        {
+            "id": 25,
+            "title": "Yahoo",
+            "link": "https://www.yahoo.com",
+            "stroke_color": "#E6FFFFFF",
+            "brick_color": "#B1A1F3",
+            "icon_font": "iconfont_logo_yahoo",
+            "icon_url": "http://img.cm.ksmobile.com/cmsecurity/privatebrowsing/safesite/20160122190101/cms_pb_landing_yahoo.png",
+            "icon_color": "#FF6C3D98",
+            "pos": 4
+        },
+        {
+            "id": 26,
+            "title": "Amazon",
+            "link": "https://www.amazon.com/",
+            "stroke_color": "#E6FFFFFF",
+            "brick_color": "#EFBD6F",
+            "icon_font": "iconfont_logo_amazon",
+            "icon_url": "http://img.cm.ksmobile.com/cmsecurity/privatebrowsing/safesite/20160122190101/cms_pb_landing_amazon.png",
+            "icon_color": "#E6E88D15",
+            "pos": 5
+        },
+        {
+            "id": 27,
+            "title": "eBay",
+            "link": "https://m.ebay.com/",
+            "stroke_color": "#E6FFFFFF",
+            "brick_color": "#B2DB58",
+            "icon_font": "iconfont_ebay",
+            "icon_url": "http://img.cm.ksmobile.com/cmsecurity/privatebrowsing/safesite/20160122190101/cms_pb_landing_ebay.png",
+            "icon_color": "#FFB2DB58",
+            "pos": 6
+        },
+        {
+            "id": 28,
+            "title": "Twitter",
+            "link": "https://mobile.twitter.com/",
+            "stroke_color": "#E6FFFFFF",
+            "brick_color": "#80CEF6",
+            "icon_font": "iconfont_twitter",
+            "icon_url": "http://img.cm.ksmobile.com/cmsecurity/privatebrowsing/safesite/20160122190101/cms_pb_landing_twitter.png",
+            "icon_color": "#FF41ACE3",
+            "pos": 7
+        },
+        {
+            "id": 29,
+            "title": "Weather",
+            "link": "https://weather.yahoo.com/",
+            "stroke_color": "#E6FFFFFF",
+            "brick_color": "#74E2CA",
+            "icon_font": "iconfont_weather",
+            "icon_url": "http://img.cm.ksmobile.com/cmsecurity/privatebrowsing/safesite/20160122190101/cms_pb_landing_weather.png",
+            "icon_color": "#E62AD0C2",
+            "pos": 8
+        }
+    ]
+}
