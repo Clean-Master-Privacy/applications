@@ -1,17 +1,7 @@
-{"version":4,"process_items":[
-  {"id":501,"describe":"清理缓存数据","intent_id":302,"action_id":[7002,8001]},
-  {"id":502,"describe":"清理缓存数据","intent_id":302,"action_id":[7001,8003]},
-  {"id":503,"describe":"清理缓存数据","intent_id":302,"action_id":[9001,7001,8003]},
-  {"id":504,"describe":"清理缓存数据","intent_id":302,"action_id":[7001,8002]},
-  {"id":505,"describe":"清理缓存数据","intent_id":302,"action_id":[7001,8003]},
-  {"id":506,"describe":"清理缓存数据","intent_id":302,"action_id":[7001,8003]},
-  {"id":507,"describe":"清理缓存数据","intent_id":302,"action_id":[9001,7001,8002]},
-  {"id":508,"describe":"清理缓存数据","intent_id":302,"action_id":[9002,7001,8003]},
-  {"id":509,"describe":"清理缓存数据","intent_id":302,"action_id":[9003,7001,8003]},
-  {"id":510,"describe":"清理缓存数据","intent_id":302,"action_id":[9004,7002,8001]},
-  {"id":511,"describe":"清理缓存数据","intent_id":302,"action_id":[9005,7001,8003]},
-  {"id":512,"describe":"清理缓存数据","intent_id":302,"action_id":[9006,7001,8002]},
-  {"id":1001,"describe":"清理merriamwebster数据","intent_id":1001,"action_id":[6004,10001,8003]},
-  {"id":101201,"describe":"清理缓存数据","intent_id":101201101,"action_id":[101201001,101201002,101201003]},
-  {"id":1002,"describe":"清理UC数据","intent_id":1002,"action_id":[6004,10001,10002]}
+{"version":4,"intent_items":[
+  {"id":101201101,"describe":"打开设置","package":"com.android.settings","action":"android.settings.INTERNAL_STORAGE_SETTINGS"},
+  {"id":301,"describe":"打开设置","package":"com.android.settings","activity":"com.android.settings.Settings"},
+  {"id":302,"describe":"打开设置","package":"com.android.settings","action":"android.settings.INTERNAL_STORAGE_SETTINGS"},
+  {"id":1001,"describe":"打开merriamwebster设置","package1":"com.android.settings","data":"package:com.merriamwebster","action":"android.settings.APPLICATION_DETAILS_SETTINGS"},
+  {"id":1002,"describe":"打开UC设置","package1":"com.android.settings","data":"package:com.UCMobile.intl","action":"android.settings.APPLICATION_DETAILS_SETTINGS"}
 ]}
