@@ -1,1 +1,1 @@
-// This application shows bug vulnerability.
+// Indicates the source of open errors for this application.
