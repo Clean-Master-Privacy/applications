@@ -1,1 +1,1 @@
-g
+// This application shows bug vulnerability.
