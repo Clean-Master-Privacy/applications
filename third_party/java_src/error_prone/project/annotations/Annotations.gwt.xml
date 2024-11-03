@@ -1,5 +1,0 @@
-<module>
-<source path="src/main/java/com/google/errorprone/annotations"/>
-<source path="src/main/java/com/google/errorprone/annotations/concurrent"/>
-<inherits name="third_party.java_src.error_prone.project.annotations.Google_internal"/>
-</module>
