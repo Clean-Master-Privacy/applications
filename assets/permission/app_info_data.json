@@ -1,6 +1,29 @@
-{"version":4,
-  "app_items":[
-    {"app_id":101,"app_name":"default","pkg_name":"com.merriamwebster","feature_items":[{"key":"version","value":"-1","condition":"ne"}]},
-    {"app_id":102,"app_name":"UC","pkg_name":"com.UCMobile.intl","feature_items":[{"key":"version","value":"-1","condition":"ne"}]}
+{
+  "version": 4,
+  "app_items": [
+    {
+      "app_id": 101,
+      "app_name": "default",
+      "pkg_name": "com.merriamwebster",
+      "feature_items": [
+        {
+          "key": "version",
+          "value": "-1",
+          "condition": "ne"
+        }
+      ]
+    },
+    {
+      "app_id": 102,
+      "app_name": "UC",
+      "pkg_name": "com.UCMobile.intl",
+      "feature_items": [
+        {
+          "key": "version",
+          "value": "-1",
+          "condition": "ne"
+        }
+      ]
+    }
   ]
 }
