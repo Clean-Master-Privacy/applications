@@ -1,0 +1,1064 @@
+SQLite format 3
+tableversionversion5CREATE TABLE version (major INTEGER PRIMARY KEY DEFAULT 0, minor INTEGER DEFAULT 0, build INTEGER DEFAULT 0, subcnt INTEGER DEFAULT 0)
+1indexidx_advfolder_describeinfoadvfolder_describeinfo%CREATE UNIQUE INDEX idx_advfolder_describeinfo ON advfolder_describeinfo(id, lang)P
+Ytablesqlite_sequencesqlite_sequence
+CREATE TABLE sqlite_sequence(name,seq)
+itableadvfolder_describeinfoadvfolder_describeinfo
+CREATE TABLE advfolder_describeinfo (_id INTEGER PRIMARY KEY AUTOINCREMENT, id INTEGER, lang TEXT, value TEXT)
+ Mobappbox*
+ admob*
+ Adcenix
+ Sogou'
+ Dianru
+ Dianjin*
+ MobWIN
+ FT Games$
+ Doodle Mobile
+ Vungle
+ Burstly*
+ Skynet
+ MobWIN
+ Yijifen
+ JuZiAD
+advfolder_describeinfo
+ Mobappbox*
+ admob*
+ Adcenix
+ Sogou'
+ Dianru
+ Dianjin*
+ MobWIN
+ FT Games$
+ Doodle Mobile
+ Vungle
+ Burstly*
+ Skynet
+ MobWIN
+ Yijifen
+ JuZiAD
+ adSage
+ Wiyun!
+ Sina Weibo!
+ ICloudZone
+ Youmi
+ Beintoo
+esAnuncios de Doodle Mobile
+esAnuncios de Vungle
+esAnuncios de Burstly
+esAnuncios desconocidos
+esAnuncios de Skynet
+1	esAnuncios de MobWIN
+esAnuncios de Yijifen
+esAnuncios de JuZiAD
+esAnuncios de adSage
+esAnuncios de Wiyun
+esAnuncios de Sina Weibo
+esAnuncios de ICloudZone
+esAnuncios de Youmi
+3esAnuncios de Beintoo
+ umeng
+ AdHub
+ WinAds
+ Guohe
+ AdLayout
+ chitu
+ iapppay 
+ umeng*
+ Mobappbox
+10esAnuncios de Google
+1/esAnuncios de MomMrk
+5.esAnuncios de WQMobile
+1-esanuncios de doumob
+-,esAnuncios de ADUU
+3+esIconos recomendados
+-)esAnuncios de Qumi
+7(esAnuncios desconocidos
+/'esAnuncios de umeng
+-&esAnuncios de Adwo
+/%esAnuncios de AdHub
+1$esAnuncios de WinAds
+/#esAnuncios de Guohe
+5"esAnuncios de AdLayout
+/!esAnuncios de chitu
+3 esAnuncios de iapppay
+esAnuncios de umeng
+esAnuncios desconocidos
+esAnuncios de MobWIN
+esAnuncios de Mobappbox
+esAnuncios de Mobappbox
+esAnuncios desconocidos
+esAnuncios de admob
+esAnuncios desconocidos
+esAnuncios desconocidos
+esAnuncios de Adcenix
+esAnuncios de Sogou
+esIconos recomendados
+esAnuncios de Dianru
+esAnuncios de Dianjin
+esAnuncios desconocidos
+esAnuncios de MobWIN
+esAnuncios de FT Games
++$frAnnonces WinAds
+)#frAnnonces Guohe
+/"frAnnonces AdLayout
+)!frAnnonces Chitu
+- frAnnonces Iapppay
+frAnnonces Umeng
+frAnnonces inconnues
+frAnnonces MobWIN
+frAnnonces Mobappbox
+frAnnonces Mobappbox
+frAnnonces inconnues
+frAnnonces Admob
+frAnnonces inconnues
+frAnnonces inconnues
+frAnnonces Adcenix
+frAnnonces Sogou
+frAnnonces Umeng
+frAnnonces Dianru
+frAnnonces Dianjin
+frAnnonces inconnues
+frAnnonces MobWIN
+frAnnonces FT Games
+frAnnonces Doodle Mobile
+frAnnonces Vungle
+frAnnonces Burstly
+frAnnonces inconnues
+frAnnonces Skynet
++	frAnnonces MobWIN
+frAnnonces Yijifen
+frAnnonces JuZi
+frAnnonces AdSage
+frAnnonces Wiyun
+frAnnonces Sina Weibo
+frAnnonces ICloudZone
+frAnnonces Youmi
+-frAnnonces Beintoo
+97frAnnonces Doodle Mobile
+1?frAnnonces inconnues
++CfrAnnonces Tapjoy
+-DfrAnnonces Inappad
++EfrAnnonces Advert
+3HfrAnnonces Chartboost
+1JfrAnnonces Mobappbox
+%NfrAnnonces VGP
+#OfrAnnonces CP
+1LfrAnnonces inconnues
+1IfrAnnonces inconnues
+1BfrAnnonces inconnues
+1PfrAnnonces inconnues
+'QfrAnnonces Game
+)RfrAnnonces Jzmob
+)SfrAnnonces Jzmob
+'TfrAnnonces YuMe
+#XfrAnnonces MI
++ZfrAnnonces AdView
+-[frAnnonces adfeiwo
+)]frAnnonces Youmi
+)<frAnnonces Umeng
+)=frAnnonces Panda
+'>frAnnonces MOGO
+/0frPublicit
+ Google
++/frAnnonces MoMark
+/.frAnnonces WQMobile
++-frAnnonces Doumob
+',frAnnonces ADUU
+7+frIc
+nes recommand
+')frAnnonces Qumi
+1(frAnnonces inconnues
+)'frAnnonces Umeng
+'&frAnnonces Adwo
+)%frAnnonces AdHub
+hrNepoznati dodaci
+hrNepoznati dodaci
+hrAdcenix's dodaci
+hrSogou's dodaci
+hrIkone Preporuka
+hrDianru's dodaci
+hrDianjin's dodaci
+hrNepoznati dodaci
+hrMobWIN's dodaci
+hrFT Games's dodaci
+hrDoodle Mobile's dodaci
+hrVungle's dodaci
+hrBurstly's dodaci
+hrNepoznati dodaci
+hrSkynet's dodaci
++	hrMobWIN's dodaci
+hrYijifen's dodaci
+hrJuZiAD's dodaci
+hradSage's dodaci
+hrWiyun's dodaci
+hrSina Weibo's dodaci
+hrICloudZone's dodaci
+hrYoumi's dodaci
+-hrBeintoo's dodaci"
+A@frFichiers temporaires Baidu
+7MfrIc
+nes recommand
+7FfrIc
+nes recommand
++KfrAnnonces Prefer 
+=1frAnnonces Millennialmedia
+%2frAnnonces ADC
++3frAnnonces Tapjoy
+-4frAnnonces Burstly
+)5frAnnonces NiaQi
+)6frAnnonces Panda
+itPubblicit
+ di Skynet
+7	itPubblicit
+ di MobWIN
+itPubblicit
+ di Yijifen
+itPubblicit
+ di juZiAD
+itPubblicit
+ di adSage
+itPubblicit
+ di Wiyun!
+itPubblicit
+ di Sina Weibo!
+itPubblicit
+ di ICloudZone
+itPubblicit
+ di Youmi
+9itPubblicit
+ di Beintoo
+-0hrGoogleovi oglasi
+//hrMomMrk-ovi oglasi
+3.hrWQMobile-ovi oglasi
+/-hrdoumob-ovi oglasi
+',hrADUU's dodaci
+++hrIkone Preporuka
+')hrQumi's dodaci
+-(hrNepoznati dodaci
+)'hrUmeng's dodaci
+'&hrAdwo's dodaci
+)%hrAdHub's dodaci
++$hrWinAds's dodaci
+)#hrGuohe's dodaci
+/"hrAdLayout's dodaci
+)!hrChitu's dodaci
+- hrIapppay's dodaci
+hrUmeng's dodaci
+hrNepoznati dodaci
+hrMobWIN's dodaci
+hrMobappbox's dodaci
+hrMobappbox's dodaci
+hrNepoznati dodaci
+hrAdmob's dodaci
+5'itPubblicit
+ di umeng
+3&itPubblicit
+ di Adwo
+5%itPubblicit
+ di AdHub
+7$itPubblicit
+ di WinAds
+5#itPubblicit
+ di Guohe
+;"itPubblicit
+ di AdLayout
+5!itPubblicit
+ di chitu
+9 itPubblicit
+ di iapppay
+itPubblicit
+ di umeng
+itPubblicit
+ sconosciuta
+itPubblicit
+ di MobWIN 
+itPubblicit
+ di Mobappbox 
+itPubblicit
+ di Mobappbox
+itPubblicit
+ sconosciuta
+itPubblicit
+ di admob
+itPubblicit
+ sconosciuta
+itPubblicit
+ sconosciuta
+itPubblicit
+ di Adcenix
+itPubblicit
+ di Sogou!
+itImmagini app raccomandate
+itPubblicit
+ di Dianru
+itPubblicit
+ di Dianjin
+itPubblicit
+ sconosciuta
+itPubblicit
+ di MobWIN 
+itPubblicit
+ di FT Gamers$
+itPubblicit
+ di Doodle Mobile
+itPubblicit
+ di Vungle
+itPubblicit
+ di Burstly
+itPubblicit
+ sconosciuta
+jaMobWIN 
+jaMobappbox 
+jaMobappbox 
+jaAdcenix 
+jaDianru 
+jaDianjin 
+jaMobWIN 
+jaFT Games's
+jaDoodle Mobile
+jaVungle 
+jaBurstly's 
+jaSkynet
+-	jaMobWIN 
+jaYijifen 
+jaJuZiAD 
+jaadSage 
+jaSina Weibo
+jaICloudZone 
+jaYoumi
+/jaBeintoo 
+3,itPubblicit
+ di ADUU!
+?+itImmagini app raccomandate
+3)itPubblicit
+ di Qumi
+;(itPubblicit
+ sconosciuta
+koDianjin 
+koMobWIN 
+koDoodle 
+koVungle 
+koBurstly 
+koSkynet 
+'	koMobWIN 
+koYijifen 
+koJuZiAD 
+koadSage 
+koSina Weibo 
+koICloudZone 
+)koBeintoo 
+%0jaGoogle's ads
+%/jaMomMrk's ads
+).jaWQMobile's ads
+%-jadoumob's ads
+!,jaADUU's ads
+))jaQumi 
++'jaumeng 
+)&jaAdwo 
++%jaAdHub 
+-$jaWinAds 
++#jaGuohe 
+1"jaAdLayout 
++!jachitu 
+/ jaiapppay 
+ncios do Beintoo
+#>koMOGO 
+'0koGoogle 
+'/koMomMrk 
++.koWQMobile 
+'-kodoumob 
+#,koADUU 
+#)koQumi 
+%'koumeng 
+#&koAdwo 
+%%koAdHub 
+'$koWinAds 
+%#koGuohe 
++"koAdLayout 
+%!kochitu 
+) koiapppay 
+koMobWIN 
+koMobappbox 
+koMobappbox 
+koAdcenix 
+koSougou 
+koDianru 
+ncios do umeng
+ncios desconhecidos
+ncios do MobWIN
+ncios do Mobappbox
+ncios do Mobappbox
+ncios desconhecidos
+ncios do admob
+ncios desconhecidos
+ncios desconhecidos
+ncios de Adcenix
+ncios do Sogou!
+cones de recomenda
+ncios do Dianru
+ncios do Dianjin
+ncios desconhecidos
+ncios do MobWIN
+ncios do FT Games"
+ncios do Doodle Mobile
+ncios do Vungle
+ncios do Burstly
+ncios desconhecidos
+ncios da Skynet
+3	ptAn
+ncios do MobWIN
+ncios do Yijifen
+ncios do JuZiAD
+ncios do adSage
+ncios do Wiyun
+ncios do Sina Weibo
+ncios do ICloudZone
+ncios do Youmi
+ Vungle
+ Burstly-
+ Skynet
+ MobWIN!
+ Yijifen
+ JuZiAD
+ adSage
+ Wiyun!
+ Sina Weibo!
+ ICloudZone
+ Youmi
+ Beintoo
+ptRegisto De Acidente
+=ptRegistos de problemas
+BptRegistos de problemas
+ptJogo de cache
+ncios do ADUU!
+cones de recomenda
+ncios do Qumi
+ncios desconhecidos
+1'ptAn
+ncios do umeng
+ncios do adwo
+1%ptAn
+ncios do AdHub
+3$ptAn
+ncios do WinAds
+1#ptAn
+ncios do Guohe
+7"ptAn
+ncios do AdLayout
+1!ptAn
+ncios do chitu
+5 ptAn
+ncios do iapppay
+ umeng
+ AdHub
+ WinAds
+ Guohe
+ AdLayout
+ chitu
+ iapppay
+ umeng-
+ Mobappbox 
+ Mobappbox-
+ admob-
+ Adcenix
+ Sogou/
+ Dianru
+ Dianjin-
+ MobWIN
+ FT Games$
+ Doodle Mobile
+ Dianru
+ Dianjin
+ MobWIN
+ FT Games$
+ Doodle Mobile
+ Vungle
+ Burstly
+ Skynet
+ MobWIN
+ Yijifen
+ JuZiAD
+ adSage
+ Wiyun!
+ Sina Weibo!
+ ICloudZone
+ Youmi
+ Beintoo
+ Google
+ MomMrk
+ WQMobile
+ doumob
+ ADUU/
+ Qumi-
+zh_CNICloudZone
+'zh_CNBeintoo
+ ADUU-
+ umeng
+ AdHub
+ WinAds
+ Guohe
+ AdLayout
+ chitu
+ iapppay
+ umeng
+ Mobappbox 
+ Mobappbox
+ admob
+ Adcenix
+ Sogou-
+#%zh_CNAdHub
+)"zh_CNAdLayout
+% zh_CN
+zh_CNMobappbox
+zh_CNMobappbox
+zh_CNAdcenix
+zh_CNFT Games
+zh_CNVungle
+zh_CNBurstly
+zh_CNSkynet
+%	zh_CN
+Nzh_CNVPG
+1Mzh_CN
+1Lzh_CN
+%Kzh_CNPrefer
++Jzh_CNMobappbox
+1Izh_CN
+-Hzh_CNChartboost
+1Fzh_CN
+%Ezh_CNAdvert
+'Dzh_CNInappad
+%Czh_CNTapjoy
+1Bzh_CN
+1Azh_CN
+1@zh_CN
+1>zh_CN
+17zh_CN
+%6zh_CN
++5zh_CN
+'4zh_CNBurstly
+%3zh_CNTapjoy
+2zh_CNADC
++1zh_CN
+%0zh_CN
+'/zh_CNMomMark
+1.zh_CN
+%-zh_CN
+1,zh_CN
+1+zh_CN
+1(zh_CN
+%xzh_CN
+1wzh_CN
+%vzh_CN
+'uzh_CNDrwCach
+1tzh_CN
+%szh_CN
+1rzh_CN
+1qzh_CN
+%pzh_CN
++nzh_CNApplifier
+!mzh_CNWap3
+%kzh_CNBDWALL
++jzh_CN
+'izh_CNMingyou
++hzh_CN
++bzh_CNMobappbox
+'azh_CNappfunz
+1^zh_CN
+%Zzh_CNAdView
+%Yzh_CN
+1Xzh_CN
+1Wzh_CN
+5Vzh_CNGO
+!Tzh_CNYuMe
+%Szh_CN
+%Rzh_CN
+%Qzh_CN
+1Pzh_CN
+Ozh_CNCP
+frontia
+zh_CNMSC
+zh_CNscoreloop
+zh_CN360
+zh_CNCmgame
+1~zh_CN
+1{zh_CN
+%zzh_CN
+1yzh_CN
+%czh_CNapsapi
+zh_CNMMreader
+zh_CNUAD
+zh_CN360
+zh_CNUgame
+zh_CNGDT
+zh_CN21cn
+zh_CNMobario
+zh_CNDashi
+zh_CNBIOS
+zh_CNFM
+zh_CNFunc
+zh_CN91
+zh_CNapt
+zh_CNMIAPI
+zh_CNUgame
+zh_CNAir
+zh_CN4399
+zh_CNMobcent
+zh_CNClemu
+zh_CNFT
+zh_CNPop
+zh_CNPredictor
+zh_CNPop
+zh_CNShareSDK
+zh_CN4439
+	zh_CN
+zh_CN4399
+zh_CNDoding
+zh_CNSocialSdk
+zh_CNPunchBox
+:zh_CN
+9zh_CN
+8zh_CN
+7zh_CNMagicboxa
+6zh_CN
+5zh_CN
+4zh_CNLTC
+3zh_CNHyprmx
+2zh_CNSynergism
+1zh_CN
+/zh_CNKamcord
+.zh_CN
+-zh_CNGames 
+,zh_CN
++zh_CN
+*zh_CNGames z
+'zh_CN
+&zh_CNTitanGame
+%zh_CN
+$zh_CN
+"zh_CN
+!zh_CN
+zh_CNSID
+zh_CNTpservice
+zh_CN1stad
+]zh_CN
+\zh_CN
+[zh_CNVungle
+Zzh_CNUnity
+Yzh_CNOeager
+Xzh_CNJS
+Wzh_CNFeiwo
+Uzh_CNEswall
+Tzh_CNDM
+Szh_CN
+Rzh_CNPapaya
+Qzh_CN
+Pzh_CNADC
+Nzh_CNShow
+Mzh_CNDOWApp
+Lzh_CN
+Kzh_CN
+Jzh_CNMiji
+Izh_CN
+Hzh_CNzkmm
+Gzh_CNSpot
+Fzh_CNMiji
+Ezh_CNJolopay
+Dzh_CN
+Czh_CN
+Bzh_CNBaidu Ebpay
+Azh_CNUUCUN
+@zh_CNMsg
+?zh_CN
+>zh_CNNext
+=zh_CN
+<zh_CNJumpTap
+;zh_CNLeadbolt
+zh_CNmario
+~zh_CN
+}zh_CN
+|zh_CN
+{zh_CN
+zzh_CNeamon
+yzh_CN
+vzh_CN
+uzh_CN
+tzh_CNiad
+szh_CNKbanner
+qzh_CN
+pzh_CN
+ozh_CN
+mzh_CN
+lzh_CN
+kzh_CN
+jzh_CN
+izh_CN
+hzh_CNUnion
+gzh_CNPop
+fzh_CN
+ezh_CNS360maxt
+dzh_CNAggs
+czh_CNintumit
+bzh_CN
+azh_CN
+_zh_CN
+^zh_CN
+zh_CNAndroidQuery
+zh_CN91
+zh_CNEDG
+zh_CNMBSTGO
+zh_CNMbi
+zh_CNGhome
+zh_CNWandoujia
+zh_CNmx
+zh_CNMogo
+zh_CNZZ SDK
+zh_CNSymapp
+zh_CNZhaoHao
+zh_CN19meng
+zh_CNfreesky
+zh_CNMF
+zh_CNDIR
+zh_CNXW
+zh_CN360
+zh_CNDrw
+zh_CNFP
+zh_CNDoujin
+zh_CNAmis
+zh_CNDwam
+zh_CNDlbox
+zh_CNFS
+zh_CNYcpu
+zh_CNVgpn
+zh_CNFS
+zh_CNSoocatch
+zh_CNLJK
+zh_CNGbox
+zh_CNCXC
+zh_CNYCCP
+zh_CNU360
+zh_CNQhex
+zh_CN360
+zh_CNMIUI 
+zh_CN360
+zh_CN360
+zh_CNQQ
+zh_CNQQ
+zh_CNNGDS
+zh_CNFzs
+zh_CNMario
+zh_CNSDG
+zh_CNBiz
+zh_CNMob
+zh_CNJMP
+zh_CNSP
+zh_CNSingleSpirit
+zh_CNCxfcp
+zh_CNGO
+zh_CNKTplay 
+zh_CNadPOPcorn 
+zh_CNiMocha
+zh_CNWostoresecurity
+zh_CNE7studio
+zh_CNTianxiang
+zh_CNLJK
+zh_CNSlider
+zh_CNMPP
+<zh_CN
+:zh_CNLove phone
+9zh_CN
+7zh_CN
+6zh_CN
+5zh_CN
+4zh_CN
+3zh_CN
+2zh_CN
+1zh_CN
+0zh_CN
+/zh_CN
+.zh_CN
+-zh_CN
++zh_CNForgame
+*zh_CNPK
+)zh_CN
+&zh_CNJolo
+%zh_CN
+$zh_CN
+#zh_CN
+"zh_CNLive SDK
+ zh_CN
+uzh_CN
+tzh_CN
+szh_CN
+ozh_CNMobojoy 
+nzh_CN
+kzh_CN
+izh_CN
+gzh_CN
+fzh_CN
+ezh_CN
+bzh_CNAZ
+azh_CN
+`zh_CN
+_zh_CNMiyun
+Zzh_CNwifimasterkey
+Yzh_CNQiyi
+Xzh_CNTB
+Wzh_CNPPTV
+Vzh_CNMeshow
+Uzh_CNMeshow
+Tzh_CN
+Szh_CN
+Ozh_CN
+Nzh_CN
+Kzh_CN
+Jzh_CN
+Gzh_CNJoy
+Fzh_CN
+Ezh_CN
+Dzh_CN
+Bzh_CN
+Azh_CNChartboost
+>zh_CN
+=zh_CN
+zh_CNKamcord
+zh_CNCMC
+~zh_CNMo
+}zh_CN
+|zh_CN4399
+{zh_CN360
+yzh_CN
+xzh_CN
+wzh_CN
+vzh_CN
+%zh_CN
+Mzh_CN
+jzh_CN
+4zh_CN
+	zh_CN
+ zh_CN
+!zh_CN
+"zh_CN
+#zh_CN
+$zh_CN
+%zh_CN
+&zh_CN
+'zh_CN
+(zh_CN
+)zh_CN
++zh_CN
+,zh_CN
+-zh_CN
+.zh_CN
+/zh_CN
+0zh_CN
+1zh_CN
+2zh_CN
+3zh_CN
+5zh_CN
+6zh_CN
+7zh_CN
+<zh_CN
+=zh_CN
+>zh_CN
+?zh_CN
+@zh_CN
+Azh_CN
+Bzh_CN
+Czh_CN
+Dzh_CN
+Ezh_CN
+Fzh_CN
+Hzh_CN
+Izh_CN
+Jzh_CN
+Kzh_CN
+Lzh_CN
+Mzh_CN
+Nzh_CN
+Ozh_CN
+Pzh_CN
+Qzh_CN
+Rzh_CN
+Szh_CN
+Tzh_CN
+Vzh_CN
+Wzh_CN
+Xzh_CN
+Yzh_CN
+Zzh_CN
+[zh_CN
+\zh_CN
+]zh_CN
+^zh_CN
+`zh_CN
+azh_CN
+bzh_CN
+czh_CN
+hzh_CN
+izh_CN
+kzh_CN
+mzh_CN
+nzh_CN
+pzh_CN
+qzh_CN
+rzh_CN
+szh_CN
+tzh_CN
+uzh_CN
+vzh_CN
+wzh_CN
+xzh_CN
+yzh_CN
+zzh_CN
+{zh_CN
+|zh_CN
+}zh_CN
+~zh_CN
+	zh_CN
+!zh_CN
+"zh_CN
+$zh_CN
+%zh_CN
+&zh_CN
+'zh_CN
+*zh_CN
++zh_CN
+,zh_CN
+-zh_CN
+.zh_CN
+/zh_CN
+1zh_CN
+2zh_CN
+3zh_CN
+4zh_CN
+5zh_CN
+6zh_CN
+7zh_CN
+8zh_CN
+9zh_CN
+:zh_CN
+;zh_CN
+<zh_CN
+=zh_CN
+>zh_CN
+?zh_CN
+@zh_CN
+Azh_CN
+Bzh_CN
+Czh_CN
+Dzh_CN
+Ezh_CN
+Fzh_CN
+Gzh_CN
+Hzh_CN
+Izh_CN
+Jzh_CN
+Kzh_CN
+Lzh_CN
+Nzh_CN
+Pzh_CN
+Qzh_CN
+Rzh_CN
+Szh_CN
+Tzh_CN
+Uzh_CN
+Wzh_CN
+Xzh_CN
+Yzh_CN
+Zzh_CN
+[zh_CN
+\zh_CN
+]zh_CN
+^zh_CN
+_zh_CN
+azh_CN
+bzh_CN
+czh_CN
+dzh_CN
+ezh_CN
+fzh_CN
+gzh_CN
+hzh_CN
+izh_CN
+jzh_CN
+kzh_CN
+lzh_CN
+mzh_CN
+ozh_CN
+pzh_CN
+qzh_CN
+szh_CN
+tzh_CN
+uzh_CN
+vzh_CN
+yzh_CN
+zzh_CN
+{zh_CN
+|zh_CN
+}zh_CN
+~zh_CN
+ zh_CN
+"zh_CN
+#zh_CN
+$zh_CN
+&zh_CN
+&zh_CN
+)zh_CN
+*zh_CN
++zh_CN
+-zh_CN
+.zh_CN
+/zh_CN
+0zh_CN
+1zh_CN
+2zh_CN
+3zh_CN
+4zh_CN
+5zh_CN
+6zh_CN
+7zh_CN
+9zh_CN
+:zh_CN
+<zh_CN
+=zh_CN
+>zh_CN
+Azh_CN
+Bzh_CN
+Dzh_CN
+Ezh_CN
+Fzh_CN
+Gzh_CN
+Jzh_CN
+Kzh_CN
+Nzh_CN
+Ozh_CN
+Szh_CN
+Tzh_CN
+Uzh_CN
+Vzh_CN
+Wzh_CN
+Xzh_CN
+Yzh_CN
+Zzh_CN
+_zh_CN
+`zh_CN
+azh_CN
+bzh_CN
+ezh_CN
+fzh_CN
+gzh_CN
+izh_CN
+kzh_CN
+nzh_CN
+ozh_CN
+szh_CN
+tzh_CN
+uzh_CN
+vzh_CN
+wzh_CN
+xzh_CN
+yzh_CN
+{zh_CN
+|zh_CN
+}zh_CN
+~zh_CN
