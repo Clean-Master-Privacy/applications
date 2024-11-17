@@ -1,0 +1,746 @@
+SQLite format 3
+indexidx_privacy_new_tipsprivacy_new_tips
+CREATE UNIQUE INDEX idx_privacy_new_tips ON privacy_new_tips(id, lang)
+]tableprivacy_new_tipsprivacy_new_tips
+CREATE TABLE privacy_new_tips (_id INTEGER PRIMARY KEY AUTOINCREMENT, id INTEGER, lang TEXT, value TEXT)
+)indexidx_exploit_updatedetailexploit_updatedetail
+CREATE UNIQUE INDEX idx_exploit_updatedetail ON exploit_updatedetail(id, lang)
+etableexploit_updatedetailexploit_updatedetail
+CREATE TABLE exploit_updatedetail (_id INTEGER PRIMARY KEY AUTOINCREMENT, id INTEGER, lang TEXT, value TEXT)g
+	indexidx_exploit_nameexploit_name
+CREATE UNIQUE INDEX idx_exploit_name ON exploit_name(id, lang)P
+Ytablesqlite_sequencesqlite_sequence
+CREATE TABLE sqlite_sequence(name,seq)
+Utableexploit_nameexploit_name
+CREATE TABLE exploit_name (_id INTEGER PRIMARY KEY AUTOINCREMENT, id INTEGER, lang TEXT, v
++	zh_TW
+%	zh_CN
+frRefus de service
+frRefus de service
+frRefus de se
+systemapps_desc_mine
+exploit_desc
+systemapps_desc	
+privacy_tips
+privacy_new_tips
+exploit_updatedetail	
+exploit_name
++	zh_TW
+%	zh_CN
+frRefus de service
+frRefus de service
+frRefus de service
+&zh_TW
+&zh_CN
+$zh_TW
+$zh_CN
+	zh_TW
+	zh_CN
+; TrustGo
+TrustGo
+intent
+; Lookout
+8.17-8a39d3f
+Lookout
+intent
+; avast
+2.0.4400
+intent
+; Opera
+intent
+Android
+g&zh_CN
+; Adobe
+CVE-2014-0514
+Adobe Reader
+; TrustGo
+TrustGo
+intent
+; Lookout
+8.17-8a39d3f
+Lookout
+intent
+; avast
+2.0.4400
+intent
+; Opera
+intent
+Android
+g&zh_CN
+; Adobe
+CVE-2014-0514
+Adobe Reader
+; Adobe
+CVE-2014-0502
+Adobe AIR
+; SuperSu
+	zh_CN
+; Firefox
+Firefox
+Firefox
+28.0.1
+	&zh_CN
+$zh_CN
+	zh_CN
+zh_CNQQ
+A	zh_CN
+,cookies&
+,cookies&
+,cookies%
+zh_CNQQ
+A	zh_CN
+,cookies&
+,cookies&
+,cookies%
+a zh_CN
+ zh_CN
+	zh_CN
+indexidx_privacy_new_tipsprivacy_new_tips
+CREATE UNIQUE INDEX idx_privacy_new_tips ON p
+Utableexploit_nameexploit_name
+CREATE TABLE exploit_name (_id INTEGER PRIMARY KEY AUTOINCREMENT, id INTEGER, lan
+Utableexploit_nameexploit_name
+CREATE TABLE exploit_name (_id INTEGER PRIMARY KEY AUTOINCREMENT, id INTEGER, lang TEXT, value TEXT)P
+Ytablesqlite_sequencesqlite_sequence
+CREATE TABLE sqlite_sequence(name,seq)g
+	indexidx_exploit_nameexploit_name
+CREATE UNIQUE INDEX idx_exploit_name ON exploit_name(id, lang)
+etableexploit_updatedetailexploit_updatedetail
+CREATE TABLE exploit_updatedetail (_id INTEGER PRIMARY KEY AUTOINCREMENT, id INTEGER, lang TEXT, value TEXT)
+)indexidx_exploit_updatedetailexploit_updatedetail
+CREATE UNIQUE INDEX idx_exploit_updatedetail ON exploit_updatedetail(id, lang)
+]tableprivacy_new_tipsprivacy_new_tips
+CREATE TABLE privacy_new_tips (_id INTEGER PRIMARY KEY AUTOINCREMENT, id INTEGER, lang TEXT, value TEXT)
+etablesystemapps_desc_minesystemapps_desc_mine
+ CREATE TABLE systemapps_desc_mine (_id INTEGER PRIMARY KEY AUTOINCREMENT, id INTEGER, lang TEw
+indexidx_privacy_new_tipsprivacy_new_tips
+CREATE UNIQUE INDEX idx_privacy_new_tips ON privacy_new_tips(id, lang)
+Utableprivacy_tipsprivacy_tips
+CREATE TABLE privacy_tips (_id INTEGER PRIMARY KEY AUTOINCREMENT, id INTEGER, lang TEXT, value TEXT)g	
+	indexidx_privacy_tipsprivacy_tips"CREATE UNIQUE INDEX idx_privacy_tips ON privacy_tips(id, lang)
+[tablesystemapps_descsystemapps_desc'CREATE TABLE systemapps_desc (_id INTEGER PRIMARY KEY AUTOINCREMENT, id INTEGER, lang TEXT, value TEXT)t
+indexidx_systemapps_descsystemapps_desc
+CREATE UNIQUE INDEX idx_systemapps_desc ON systemapps_desc(id, lang)
+Utableexploit_descexploit_desc
+CREATE TABLE exploit_desc (_id INTEGER PRIMARY KEY AUTOINCREMENT, id INTEGER, lang TEXT, value TEXT)
+esContrase
+a, historial, cookies,
+esCuenta, contrase
+a, correos locales 
+?esCuenta, contrase
+a, pagoD
+esCuenta, historial de b
+squeda, ajustes
+esCuenta, ajustes&4
+esCuenta, contrase
+a, historial$3
+esCuenta, contrase
+a, ajustes92
+esCuenta, contrase
+a, contactos, registros de chat%1
+esCuenta, contrase
+a, mensajes%0
+esCuenta, contrase
+a, mensajes%/
+esCuenta, contrase
+a, mensajes
+esCuenta, contrase
+esCuenta, contrase
+a, mensajes%,
+esCuenta, contrase
+a, mensajes%+
+esCuenta, contrase
+a, mensajes%*
+esCuenta, contrase
+a, mensajes$)
+esCuenta, contrase
+a, ajustes%(
+esCuenta, contrase
+a, mensajes%'
+esCuenta, contrase
+a, mensajes!&
+esCuenta, contrase
+a, pago!%
+esCuenta, contrase
+a, pago!$
+?	esCuenta, contrase
+a, pago3#
+esCuenta, contrase
+a, historial de b
+esContrase
+a, marcadores, historial*!
+esContrase
+a, marcadores, historial' 
+esContrase
+a, historial, cookies'
+esContrase
+a, historial, cookies
+frCompte, mot de passe, messages&K
+frCompte, mot de passe, messages&J
+frCompte, mot de passe, messages
+frCompte, mot de passe&H
+frCompte, mot de passe, messages&G
+frCompte, mot de passe, messages&F
+frCompte, mot de passe, messages&E
+frCompte, mot de passe, messages)D
+frCompte, mot de passe, param
+tres&C
+frCompte, mot de passe, messages&B
+frCompte, mot de passe, messages&A
+frCompte, mot de passe, paiement&@
+frCompte, mot de passe, paiement&?
+I	frCompte, mot de passe, paiement7>
+frCompte, mot de passe, historique des recherches)=
+frMot de passe, favoris, historique)<
+frMot de passe, favoris, historique);
+frMot de passe, historique, cookies):
+frMot de passe, historique, cookies)9
+frMot de passe, historique, cookies,8
+frCompte, mot de passe, courrier local%7
+IfrCompte, mot de passe, paiement
+un, lozinka, poruke
+un, lozinka
+un, lozinka, poruke
+un, lozinka, poruke
+un, lozinka, poruke
+un, lozinka, poruke!_
+un, lozinka, postavke
+un, lozinka, poruke
+un, lozinka, poruke"\
+un, lozinka, pla
+un, lozinka, pla
+anje"Z
+A	hrRa
+un, lozinka, pla
+anje0Y
+un, lozinka, povijest pretra
+ivanja!X
+hrLozinka, oznake, povijest!W
+hrLozinka, oznake, povijest%V
+hrLozinka, povijest, kola
+hrLozinka, povijest, kola
+hrLozinka, povijest, kola
+un, lozinka, lokalna po
+un, lozinka, pla
+anje6Q
+frCompte, historique des recherches, param
+frCompte, param
+tres(O
+frCompte, mot de passe, historique)N
+frCompte, mot de passe, param
+tresAM
+frCompte, mot de passe, contacts, journal des conversations
+itAccount, password, messaggi#|
+itAccount, password, messaggi#{
+itAccount, password, messaggi'z
+itAccount, password, impostazioni#y
+itAccount, password, messaggi#x
+itAccount, password, messaggi$w
+itAccount, password, pagamento$v
+itAccount, password, pagamento$u
+E	itAccount, password, pagamento0t
+itAccount, password, cronologia di ricerca(s
+itPassword, segnalibri, cronologia(r
+itPassword, segnalibri, cronologia$q
+itPassword, cronologia, cookie$p
+itPassword, cronologia, cookie$o
+itPassword, cronologia, cookie(n
+itAccount, password, e-mail locali#m
+EitAccount, password, pagamento1l
+un, povijest pretra
+ivanja, postavke
+un, postavke!j
+un, lozinka, povijest!i
+un, lozinka, postavke5h
+un, lozinka, kontakti, zapisi 
+avrljanja
+un, lozinka, poruke
+un, lozinka, poruke
+itAccount, cronologia di ricerca, impostazioni
+itAccount, impostazioni%
+itAccount, password, cronologia'
+itAccount, password, impostazioni)
+itAccount, password, contatti, chat#
+itAccount, password, messaggi#
+itAccount, password, messaggi#
+itAccount, password, messaggi
+itAccount, password#~
+itAccount, password, messaggi
+ptConta, senha, mensagens
+ptConta, senha
+ptConta, senha, mensagens
+ptConta, senha, mensagens
+ptConta, senha, mensagens
+ptConta, senha, mensagens%
+ptConta, senha, configura
+ptConta, senha, mensagens
+ptConta, senha, mensagens
+ptConta, senha, pagamento
+ptConta, senha, pagamento
+;	ptConta, senha, pagamento,
+ptConta, senha, hist
+rico de pesquisa%
+ptSenha, marcadores, hist
+ptSenha, marcadores, hist
+ptSenha, hist
+rico, cookies"
+ptSenha, hist
+rico, cookies"
+ptSenha, hist
+rico, cookies#
+ptConta, senha, correio local
+;ptConta, senha, pagamento$
+, cookies-
+, cookies-
+, cookiesQ
+ptConta, hist
+rico de pesquisa, configura
+ptConta, configura
+ptConta, senha, hist
+ptConta, senha, configura
+ptConta, senha, contatos, relat
+rios de conversa
+ptConta, senha, mensagens
+ptConta, senha, mensagens
+A	zh_CN
+,cookies&
+,cookies&
+,cookies%
+Azh_CN
+zh_CNQQ
+	zh_CN
+.  <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+ DioDict
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+ DioDict
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+ S. </font>
+ar<font color=#d64438 >
+</font>.<br>
+ Google Play. 
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+.  <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+oWar<font color=#d64438 >
+</font>.<br>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+ S. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+Whar<font color=#d64438 >
+</font>.<br>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+!war<font color=#d64438 >
+</font>.<br>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+|ar<font color=#d64438 >
+</font>.<br>
+ google.
+<font color=#3782c3 >
+. </font>
+ozar<font color=#d64438 >
+</font>.<br>
+eyar<font color=#d64438 >
+</font>.<br>
+. <font color=#3782c3 >
+. </font>
+ar<font color=#d64438 >
+</font>.<br>
+	~ar<font color=#d64438 >
+</font>.<br>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+.  <font color=#3782c3 >
+. </font>
+ar<font color=#d64438 >
+</font>.<br>
+ar<font color=#d64438 >
+</font>.<br>
+ .<font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+<font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+ar<font color=#d64438 >
+</font>.<br>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+ar<font color=#d64438 >
+</font>.<br>
+ar<font color=#d64438 >
+</font>.<br>
+ar<font color=#d64438 >
+</font>.<br>
+. <font color=#3782c3 >
+. </font>
+ar<font color=#d64438 >
+</font>.<br>
+. <font color=#3782c3 >
+. </font>
+ar<font color=#d64438 >
+</font>.<br>
+ar<font color=#d64438 >
+</font>.<br>
+. <font color=#3782c3 >
+. </font>
+ar<font color=#d64438 >
+</font>.<br>
+ar<font color=#d64438 >
+</font>.<br>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+ar<font color=#d64438 >
+</font>.<br>
+ar<font color=#d64438 >
+</font>.<br>
+. <font color=#3782c3 >
+. </font>
+. <font color=#3782c3 >
+. </font>
+ar<font color=#d64438 >
+</font>.<br>
+. <font color=#3782c3 >
+. </font>
+.  <font color=#3782c3 >
+. </font>
+ar<font color=#d64438 >
+</font>.<br>
+ar<font color=#d64438 >
+</font>.<br>
+esEs una aplicaci
+n de productos de oficina para dispositivos m
+viles.<font color=#3782c3 >La puede desinstalar si no la va a utilizar.</font>
+esEsta aplicaci
+n le ayuda a organizar sus fotos en base a eventos espec
+ficos. Vino preinstalada en su Samsung.<font color=#3782c3 >La puede desinstalar si no la va a utilizar.</font>
+/esEsta aplicaci
+n le ayuda a tomar notas. Vino preinstalada en su Samsung.<font color=#3782c3 >La puede desinstalar si no la va a utilizar.</font>
+. <font color=#3782c3 >
+. </font>
+ar<font color=#d64438 >
+</font>.<br>
+esEs una aplicaci
+n de la nube de sincronizaci
+n para los marcadores del navegador. Vino preinstalada en su Samsung. <font color=#3782c3 >La puede desinstalar si no la va a utilizar, pero est
+n puede afectar otras aplicaciones.</font>
+esEs una aplicaci
+n de la nube de sincronizaci
+n para las pesta
+as del navegador. Vino preinstalada en su Samsung.<font color=#3782c3 >La puede desinstalar si no la va a utilizar, pero est
+n puede afectar otras aplicaciones.</font>
+esEsta aplicaci
+n hace un seguimiento de su dieta, entrenamientos y niveles diarios de peso.Vino preinstalada en su Samsung.<font color=#3782c3 >La puede desinstalar si no la va a utilizar.</font>
+esEs una aplicaci
+n que le permite comprar y chequear libros en Blurb. Vino preinstalada en su dispositivo.<font color=#3782c3 >La puede desinstalar si no la va a utilizar.</font>
+esEs una aplicaci
+n para editar im
+genes.<font color=#3782c3 >La puede desinstalar si no la va a utilizar.</font>
+esEs una aplicaci
+n para la traducci
+n. Vino preinstalada en su Samsung.<font color=#3782c3 >La puede desinstalar si no lo va a utilizar.</font>
+esEs un widget que muestra informaciones y noticias. Vino preinstalado en su dispositivo.<font color=#3782c3 >Lo puede desinstalar si no lo va a utilizar.</font>
+esEsta aplicaci
+n le ayuda a conectarse a su impresora. Vino preinstalada en su dispositivo.<font color=#3782c3 >La puede desinstalar si no la va a utilizar.</font>
+M	esEs una aplicaci
+n de fondo de pantalla de bloqueo. Vino preinstalada en su dispositivo.<font color=#3782c3 >La puede desinstalar si no la va a utilizar.</font>t
+esEs una aplicaci
+n con gif animado.<font color=#3782c3 >La puede desinstalar si no la va a utilizar.</font>
+esEsta aplicaci
+n es un servicio del diccionario DioDict, un diccionario premium. Vino preinstalada en su dispositivo.<font color=#3782c3 >La puede desinstalar si no la va a utilizar.</font>
+esEs una aplicaci
+n de la nube de sincronizaci
+n para los marcadores del navegador. Vino preinstalada en su Samsung. <font color=#3782c3 >La puede desinstalar si no la va a utilizar, pero est
+n puede afectar otras aplicaciones.</font>
+esEsta aplicaci
+n le ayuda a agregar efectos especiales a sus fotos, y las convierte en archivos gif. Vino preinstalada en su dispositivo.<font color=#3782c3 >La puede desinstalar si no la va a utilizar.</font>
+esEsta aplicaci
+n le ayuda a conectarse a su impresora. Vino preinstalada en su Samsung.<font color=#3782c3 >La puede desinstalar si no la va a utilizar.</font>
+esEs una aplicaci
+n de noticias. Vino preinstalada en su dispositivo.<font color=#3782c3 >La puede desinstalar si no la va a utilizar. </font>
+esEs una aplicaci
+n de la nube de sincronizaci
+n para S Note. Vino preinstalada en su Samsung. <font color=#3782c3 >La puede desinstalar si ya tiene desinstalada la aplicaci
+n S Note. </font>
+esEs una aplicaci
+n de la nube de sincronizaci
+n para los contactos. Vino preinstalada en su Samsung. <font color=#3782c3 >La puede desinstalar si no la va a utilizar, pero est
+n puede afectar otras aplicaciones. </font>
+esEs una aplicaci
+n de mapas 3D. Vino preinstalada en su dispositivo.<font color=#3782c3 >La puede desinstalar si no la va a utilizar.</font>
+esEsta aplicaci
+n es un navegador para m
+viles. Vino preinstalada en su dispositivo.<font color=#3782c3 >La puede desinstalar si no la va a utilizar.</font>
+esEs un diccionario premium. Vino preinstalado en su dispositivo.<font color=#3782c3 >Lo puede desinstalar si no lo va a utilizar.</font>
+esEs una aplicaci
+n de la nube de sincronizaci
+n para el editor de fotos. Vino preinstalada en su dispositivo.<font color=#3782c3 >La puede desinstalar si no la va a utilizar.</font>
+esEs un editor de fotos. Vino preinstalado en su dispositivo.<font color=#3782c3 >Lo puede desinstalar si no lo va a utilizar.</font>
+esEs un fondo de pantalla animado. Vino preinstalado en su dispositivo.<font color=#3782c3 >Lo puede desinstalar si no lo va a utilizar.</font>
+esEs un widget para el diccionario DioDict, un diccionario premium. Vino preinstalado en su dispositivo.<font color=#3782c3 >Lo puede desinstalar si no lo va a utilizar.</font>
+esEs un paquete de referencia que le permite llevar su clase personal a donde quiera que vaya. Vino preinstalado en su Samsung. <font color=#3782c3 >Lo puede desinstalar si no lo va a utilizar.</font>
+Q!esEs una aplicaci
+n de la nube de sincronizaci
+n para el calendario. Vino preinstalada en su Samsung.<font color=#3782c3 >La puede desinstalar si no la va a utilizar, pero est
+n puede afectar otras aplicaciones.</font>
+1 esEs una aplicaci
+n de control remoto. Vino preinstalada en su dispositivo.<font color=#3782c3 >La puede desinstalar si no la va a utilizar.</font>
+esEs una aplicaci
+n de la nube de sincronizaci
+n para los archivos. Vino preinstalada en su dispositivo.<font color=#3782c3 >La puede desinstalar si no la va a utilizar.</font>
+esEsta aplicaci
+n le ayuda a compartir archivos a trav
+s de Wifi.<font color=#3782c3 >La puede desinstalar si no la va a utilizar.</font>
+es<font color=#d64438 >No se recomienda desinstalarla&lt</font>.<br/>Esta es una aplicaci
+n de servicio para Google Play.Vino preinstalada en su dispositivo.
+1&esEs una aplicaci
+n de redes sociales. Vino preinstalada en su dispositivo.<font color=#3782c3 >La puede desinstalar si no la va a utilizar.</font>
+%esEs una aplicaci
+n de mapas. Vino preinstalada en su dispositivo.<font color=#3782c3 >La puede desinstalar si no la va a utilizar.</font>
+	$esEs el widget de b
+squeda r
+pida de Google. Vino preinstalado en su dispositivo.<font color=#3782c3 >Lo puede desinstalar si 
