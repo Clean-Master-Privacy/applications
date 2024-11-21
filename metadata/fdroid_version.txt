@@ -1,2 +1,2 @@
-versionName=5.1.8.1238
-versionCode=
+versionName=5.1.8
+versionCode=50181218
