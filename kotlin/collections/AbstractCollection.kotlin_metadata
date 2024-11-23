@@ -1,0 +1,23 @@
+// IntelliJ API Decompiler stub source generated from a class file
+// Implementation of methods is not available
+
+package kotlin.collections
+
+@kotlin.SinceKotlin public abstract class AbstractCollection<out E> protected constructor() : kotlin.collections.Collection<E> {
+    public abstract val size: kotlin.Int
+
+    public open operator fun contains(element: E): kotlin.Boolean { /* compiled code */ }
+
+    public open fun containsAll(elements: kotlin.collections.Collection<E>): kotlin.Boolean { /* compiled code */ }
+
+    public open fun isEmpty(): kotlin.Boolean { /* compiled code */ }
+
+    public abstract operator fun iterator(): kotlin.collections.Iterator<E>
+
+    protected open fun toArray(): kotlin.Array<kotlin.Any?> { /* compiled code */ }
+
+    protected open fun <T> toArray(array: kotlin.Array<T>): kotlin.Array<T> { /* compiled code */ }
+
+    public open fun toString(): kotlin.String { /* compiled code */ }
+}
+
