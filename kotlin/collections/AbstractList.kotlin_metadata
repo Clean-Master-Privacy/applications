@@ -1,0 +1,70 @@
+// IntelliJ API Decompiler stub source generated from a class file
+// Implementation of methods is not available
+
+package kotlin.collections
+
+@kotlin.SinceKotlin public abstract class AbstractList<out E> protected constructor() : kotlin.collections.AbstractCollection<E>, kotlin.collections.List<E> {
+    internal companion object {
+        internal final fun checkElementIndex(index: kotlin.Int, size: kotlin.Int): kotlin.Unit { /* compiled code */ }
+
+        internal final fun checkPositionIndex(index: kotlin.Int, size: kotlin.Int): kotlin.Unit { /* compiled code */ }
+
+        internal final fun checkRangeIndexes(fromIndex: kotlin.Int, toIndex: kotlin.Int, size: kotlin.Int): kotlin.Unit { /* compiled code */ }
+
+        internal final fun orderedEquals(c: kotlin.collections.Collection<*>, other: kotlin.collections.Collection<*>): kotlin.Boolean { /* compiled code */ }
+
+        internal final fun orderedHashCode(c: kotlin.collections.Collection<*>): kotlin.Int { /* compiled code */ }
+    }
+
+    public abstract val size: kotlin.Int
+
+    public open operator fun equals(other: kotlin.Any?): kotlin.Boolean { /* compiled code */ }
+
+    public abstract operator fun get(index: kotlin.Int): E
+
+    public open fun hashCode(): kotlin.Int { /* compiled code */ }
+
+    public open fun indexOf(element: E): kotlin.Int { /* compiled code */ }
+
+    public open operator fun iterator(): kotlin.collections.Iterator<E> { /* compiled code */ }
+
+    public open fun lastIndexOf(element: E): kotlin.Int { /* compiled code */ }
+
+    public open fun listIterator(): kotlin.collections.ListIterator<E> { /* compiled code */ }
+
+    public open fun listIterator(index: kotlin.Int): kotlin.collections.ListIterator<E> { /* compiled code */ }
+
+    public open fun subList(fromIndex: kotlin.Int, toIndex: kotlin.Int): kotlin.collections.List<E> { /* compiled code */ }
+
+    private open inner class IteratorImpl public constructor() : kotlin.collections.Iterator<E> {
+        protected final var index: kotlin.Int /* compiled code */
+
+        public open operator fun hasNext(): kotlin.Boolean { /* compiled code */ }
+
+        public open operator fun next(): E { /* compiled code */ }
+    }
+
+    private open inner class ListIteratorImpl public constructor(index: kotlin.Int) : kotlin.collections.AbstractList<E>.IteratorImpl, kotlin.collections.ListIterator<E> {
+        public open fun hasPrevious(): kotlin.Boolean { /* compiled code */ }
+
+        public open fun nextIndex(): kotlin.Int { /* compiled code */ }
+
+        public open fun previous(): E { /* compiled code */ }
+
+        public open fun previousIndex(): kotlin.Int { /* compiled code */ }
+    }
+
+    private final class SubList<out E> public constructor(list: kotlin.collections.AbstractList<E>, fromIndex: kotlin.Int, toIndex: kotlin.Int) : kotlin.collections.AbstractList<E>, kotlin.collections.RandomAccess {
+        private final var _size: kotlin.Int /* compiled code */
+
+        private final val fromIndex: kotlin.Int /* compiled code */
+
+        private final val list: kotlin.collections.AbstractList<E> /* compiled code */
+
+        public open val size: kotlin.Int /* compiled code */
+            public open get
+
+        public open operator fun get(index: kotlin.Int): E { /* compiled code */ }
+    }
+}
+
