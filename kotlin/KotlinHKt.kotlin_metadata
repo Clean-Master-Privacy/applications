@@ -1,0 +1,39 @@
+// IntelliJ API Decompiler stub source generated from a class file
+// Implementation of methods is not available
+
+package kotlin
+
+public expect inline fun <T> Comparator(crossinline comparison: (T, T) -> kotlin.Int): kotlin.Comparator<T> { /* compiled code */ }
+
+public expect fun <T> lazy(initializer: () -> T): kotlin.Lazy<T> { /* compiled code */ }
+
+public expect fun <T> lazy(lock: kotlin.Any?, initializer: () -> T): kotlin.Lazy<T> { /* compiled code */ }
+
+public expect fun <T> lazy(mode: kotlin.LazyThreadSafetyMode, initializer: () -> T): kotlin.Lazy<T> { /* compiled code */ }
+
+public expect inline fun <R> synchronized(lock: kotlin.Any, block: () -> R): R { /* compiled code */ }
+
+@kotlin.SinceKotlin public expect fun kotlin.Double.Companion.fromBits(bits: kotlin.Long): kotlin.Double { /* compiled code */ }
+
+@kotlin.SinceKotlin public expect fun kotlin.Float.Companion.fromBits(bits: kotlin.Int): kotlin.Float { /* compiled code */ }
+
+public expect fun kotlin.Double.isFinite(): kotlin.Boolean { /* compiled code */ }
+
+public expect fun kotlin.Float.isFinite(): kotlin.Boolean { /* compiled code */ }
+
+public expect fun kotlin.Double.isInfinite(): kotlin.Boolean { /* compiled code */ }
+
+public expect fun kotlin.Float.isInfinite(): kotlin.Boolean { /* compiled code */ }
+
+public expect fun kotlin.Double.isNaN(): kotlin.Boolean { /* compiled code */ }
+
+public expect fun kotlin.Float.isNaN(): kotlin.Boolean { /* compiled code */ }
+
+@kotlin.SinceKotlin public expect fun kotlin.Double.toBits(): kotlin.Long { /* compiled code */ }
+
+@kotlin.SinceKotlin public expect fun kotlin.Float.toBits(): kotlin.Int { /* compiled code */ }
+
+@kotlin.SinceKotlin public expect fun kotlin.Double.toRawBits(): kotlin.Long { /* compiled code */ }
+
+@kotlin.SinceKotlin public expect fun kotlin.Float.toRawBits(): kotlin.Int { /* compiled code */ }
+
