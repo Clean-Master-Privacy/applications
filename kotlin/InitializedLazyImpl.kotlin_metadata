@@ -1,0 +1,13 @@
+// IntelliJ API Decompiler stub source generated from a class file
+// Implementation of methods is not available
+
+package kotlin
+
+internal final class InitializedLazyImpl<out T> public constructor(value: T) : kotlin.Lazy<T>, kotlin.io.Serializable {
+    public open val value: T /* compiled code */
+
+    public open fun isInitialized(): kotlin.Boolean { /* compiled code */ }
+
+    public open fun toString(): kotlin.String { /* compiled code */ }
+}
+
