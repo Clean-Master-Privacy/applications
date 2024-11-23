@@ -1,0 +1,8 @@
+// IntelliJ API Decompiler stub source generated from a class file
+// Implementation of methods is not available
+
+package kotlin
+
+@kotlin.SinceKotlin @kotlin.internal.InlineOnly public val kotlin.reflect.KProperty0<*>.isInitialized: kotlin.Boolean /* compiled code */
+    public final get
+
