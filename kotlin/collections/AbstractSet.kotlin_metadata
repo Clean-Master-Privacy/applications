@@ -1,0 +1,17 @@
+// IntelliJ API Decompiler stub source generated from a class file
+// Implementation of methods is not available
+
+package kotlin.collections
+
+@kotlin.SinceKotlin public abstract class AbstractSet<out E> protected constructor() : kotlin.collections.AbstractCollection<E>, kotlin.collections.Set<E> {
+    internal companion object {
+        internal final fun setEquals(c: kotlin.collections.Set<*>, other: kotlin.collections.Set<*>): kotlin.Boolean { /* compiled code */ }
+
+        internal final fun unorderedHashCode(c: kotlin.collections.Collection<*>): kotlin.Int { /* compiled code */ }
+    }
+
+    public open operator fun equals(other: kotlin.Any?): kotlin.Boolean { /* compiled code */ }
+
+    public open fun hashCode(): kotlin.Int { /* compiled code */ }
+}
+
