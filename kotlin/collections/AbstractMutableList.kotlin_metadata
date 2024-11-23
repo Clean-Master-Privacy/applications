@@ -1,0 +1,41 @@
+// IntelliJ API Decompiler stub source generated from a class file
+// Implementation of methods is not available
+
+package kotlin.collections
+
+public abstract expect class AbstractMutableList<E> : kotlin.collections.MutableList<E> {
+    protected constructor() { /* compiled code */ }
+
+    public open expect fun add(element: E): kotlin.Boolean { /* compiled code */ }
+
+    public open expect fun addAll(index: kotlin.Int, elements: kotlin.collections.Collection<E>): kotlin.Boolean { /* compiled code */ }
+
+    public open expect fun addAll(elements: kotlin.collections.Collection<E>): kotlin.Boolean { /* compiled code */ }
+
+    public open expect fun clear(): kotlin.Unit { /* compiled code */ }
+
+    public open expect operator fun contains(element: E): kotlin.Boolean { /* compiled code */ }
+
+    public open expect fun containsAll(elements: kotlin.collections.Collection<E>): kotlin.Boolean { /* compiled code */ }
+
+    public open expect fun indexOf(element: E): kotlin.Int { /* compiled code */ }
+
+    public open expect fun isEmpty(): kotlin.Boolean { /* compiled code */ }
+
+    public open expect operator fun iterator(): kotlin.collections.MutableIterator<E> { /* compiled code */ }
+
+    public open expect fun lastIndexOf(element: E): kotlin.Int { /* compiled code */ }
+
+    public open expect fun listIterator(): kotlin.collections.MutableListIterator<E> { /* compiled code */ }
+
+    public open expect fun listIterator(index: kotlin.Int): kotlin.collections.MutableListIterator<E> { /* compiled code */ }
+
+    public open expect fun remove(element: E): kotlin.Boolean { /* compiled code */ }
+
+    public open expect fun removeAll(elements: kotlin.collections.Collection<E>): kotlin.Boolean { /* compiled code */ }
+
+    public open expect fun retainAll(elements: kotlin.collections.Collection<E>): kotlin.Boolean { /* compiled code */ }
+
+    public open expect fun subList(fromIndex: kotlin.Int, toIndex: kotlin.Int): kotlin.collections.MutableList<E> { /* compiled code */ }
+}
+
