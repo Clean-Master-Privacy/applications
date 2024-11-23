@@ -1,0 +1,15 @@
+// IntelliJ API Decompiler stub source generated from a class file
+// Implementation of methods is not available
+
+package kotlin
+
+@kotlin.annotation.Target @kotlin.annotation.Retention @kotlin.SinceKotlin public final annotation class Experimental public constructor(level: kotlin.Experimental.Level = COMPILED_CODE) : kotlin.Annotation {
+    public final val level: kotlin.Experimental.Level /* compiled code */
+
+    public final enum class Level private constructor() : kotlin.Enum<kotlin.Experimental.Level> {
+        WARNING,
+
+        ERROR;
+    }
+}
+
