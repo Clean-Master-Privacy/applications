@@ -1,0 +1,22 @@
+// IntelliJ API Decompiler stub source generated from a class file
+// Implementation of methods is not available
+
+package kotlin.collections
+
+public abstract class AbstractIterator<T> public constructor() : kotlin.collections.Iterator<T> {
+    private final var nextValue: T? /* compiled code */
+
+    private final var state: kotlin.collections.State /* compiled code */
+
+    protected abstract fun computeNext(): kotlin.Unit
+
+    protected final fun done(): kotlin.Unit { /* compiled code */ }
+
+    public open operator fun hasNext(): kotlin.Boolean { /* compiled code */ }
+
+    public open operator fun next(): T { /* compiled code */ }
+
+    protected final fun setNext(value: T): kotlin.Unit { /* compiled code */ }
+
+    private final fun tryToComputeNext(): kotlin.Boolean { /* compiled code */ }
+}
