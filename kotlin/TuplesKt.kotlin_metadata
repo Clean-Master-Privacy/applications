@@ -1,0 +1,11 @@
+// IntelliJ API Decompiler stub source generated from a class file
+// Implementation of methods is not available
+
+package kotlin
+
+public infix fun <A, B> A.to(that: B): kotlin.Pair<A, B> { /* compiled code */ }
+
+public fun <T> kotlin.Pair<T, T>.toList(): kotlin.collections.List<T> { /* compiled code */ }
+
+public fun <T> kotlin.Triple<T, T, T>.toList(): kotlin.collections.List<T> { /* compiled code */ }
+
