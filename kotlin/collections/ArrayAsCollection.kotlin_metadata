@@ -1,0 +1,24 @@
+// IntelliJ API Decompiler stub source generated from a class file
+// Implementation of methods is not available
+
+package kotlin.collections
+
+private final class ArrayAsCollection<T> public constructor(values: kotlin.Array<out T>, isVarargs: kotlin.Boolean) : kotlin.collections.Collection<T> {
+    public final val isVarargs: kotlin.Boolean /* compiled code */
+
+    public open val size: kotlin.Int /* compiled code */
+        public open get
+
+    public final val values: kotlin.Array<out T> /* compiled code */
+
+    public open operator fun contains(element: T): kotlin.Boolean { /* compiled code */ }
+
+    public open fun containsAll(elements: kotlin.collections.Collection<T>): kotlin.Boolean { /* compiled code */ }
+
+    public open fun isEmpty(): kotlin.Boolean { /* compiled code */ }
+
+    public open operator fun iterator(): kotlin.collections.Iterator<T> { /* compiled code */ }
+
+    public final fun toArray(): kotlin.Array<out kotlin.Any?> { /* compiled code */ }
+}
+
