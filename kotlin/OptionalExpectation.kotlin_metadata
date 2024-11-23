@@ -1,0 +1,8 @@
+// IntelliJ API Decompiler stub source generated from a class file
+// Implementation of methods is not available
+
+package kotlin
+
+@kotlin.annotation.Target @kotlin.annotation.Retention @kotlin.ExperimentalMultiplatform public final annotation class OptionalExpectation public constructor() : kotlin.Annotation {
+}
+
