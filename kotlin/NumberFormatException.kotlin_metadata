@@ -1,0 +1,11 @@
+// IntelliJ API Decompiler stub source generated from a class file
+// Implementation of methods is not available
+
+package kotlin
+
+public open expect class NumberFormatException : kotlin.IllegalArgumentException {
+    public constructor() { /* compiled code */ }
+
+    public constructor(message: kotlin.String?) { /* compiled code */ }
+}
+
