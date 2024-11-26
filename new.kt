@@ -1,3 +1,3 @@
 fun main(){
-    print("new.app.kt")
-    val age = readLine()!!.toInt()
+    print("by gamestime102® Clean Master Privacy™")
+}
