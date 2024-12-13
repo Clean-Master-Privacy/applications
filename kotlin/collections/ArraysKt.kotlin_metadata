@@ -1,9 +1,0 @@
-// IntelliJ API Decompiler stub source generated from a class file
-// Implementation of methods is not available
-
-package kotlin.collections
-
-public fun <T> kotlin.Array<out kotlin.Array<out T>>.flatten(): kotlin.collections.List<T> { /* compiled code */ }
-
-public fun <T, R> kotlin.Array<out kotlin.Pair<T, R>>.unzip(): kotlin.Pair<kotlin.collections.List<T>, kotlin.collections.List<R>> { /* compiled code */ }
-

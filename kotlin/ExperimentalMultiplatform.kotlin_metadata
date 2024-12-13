@@ -1,8 +1,0 @@
-// IntelliJ API Decompiler stub source generated from a class file
-// Implementation of methods is not available
-
-package kotlin
-
-@kotlin.Experimental @kotlin.annotation.Target @kotlin.annotation.Retention public final annotation class ExperimentalMultiplatform public constructor() : kotlin.Annotation {
-}
-

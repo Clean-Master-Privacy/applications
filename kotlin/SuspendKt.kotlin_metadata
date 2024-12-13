@@ -1,7 +1,0 @@
-// IntelliJ API Decompiler stub source generated from a class file
-// Implementation of methods is not available
-
-package kotlin
-
-@kotlin.internal.InlineOnly @kotlin.SinceKotlin public inline fun <R> suspend(noinline block: suspend () -> R): suspend () -> R { /* compiled code */ }
-

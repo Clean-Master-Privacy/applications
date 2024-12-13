@@ -1,9 +1,0 @@
-// IntelliJ API Decompiler stub source generated from a class file
-// Implementation of methods is not available
-
-package kotlin
-
-@kotlin.annotation.Target @kotlin.annotation.Retention internal final annotation class WasExperimental public constructor(vararg markerClass: kotlin.reflect.KClass<out kotlin.Annotation>) : kotlin.Annotation {
-    public final val markerClass: kotlin.Array<out kotlin.reflect.KClass<out kotlin.Annotation>> /* compiled code */
-}
-
