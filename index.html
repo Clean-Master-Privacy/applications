@@ -1,245 +1,111 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Antivirüs Yazılımı</title>
+    <title>Antivirus Login</title>
     <style>
-        /* Genel Stil Ayarları */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
+            margin: 0;
+            padding: 0;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            background-color: #f4f4f4;
         }
 
-        /* Header Bölümü */
-        header {
-            background-color: #333;
-            color: #fff;
-            width: 100%;
+        .login-container {
+            background: #fff;
             padding: 20px;
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        /* Hero Bölümü */
-        .hero {
-            background: #007BFF;
-            color: white;
-            text-align: center;
-            padding: 100px 20px;
-            width: 100%;
-            max-width: 800px;
             border-radius: 8px;
-            margin-bottom: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
         }
 
-        .hero h1 {
-            font-size: 48px;
+        .login-container h1 {
             margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+            text-align: center;
         }
 
-        .hero p {
-            font-size: 18px;
-            margin-bottom: 40px;
+        .form-group {
+            margin-bottom: 15px;
         }
 
-        .cta-button {
-            background-color: #28a745;
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
             color: white;
-            padding: 15px 30px;
-            font-size: 20px;
-            text-decoration: none;
-            border-radius: 5px;
+            font-size: 16px;
             cursor: pointer;
         }
 
-        .cta-button:hover {
-            background-color: #218838;
+        .login-btn:hover {
+            background-color: #0056b3;
         }
 
-        /* Tarama Durumu Bölümü */
-        .scan-status {
-            font-size: 18px;
-            margin-top: 20px;
-            color: #28a745;
-            font-weight: bold;
-        }
-
-        /* Gereksiz Dosya Temizleme Bölümü */
-        .clean-status {
-            font-size: 18px;
-            margin-top: 20px;
-            color: #dc3545;
-            font-weight: bold;
-        }
-
-        /* Özellikler Bölümü */
-        .features {
-            padding: 50px 20px;
-            text-align: center;
-            background-color: #fff;
-            width: 100%;
-            max-width: 800px;
-            margin-bottom: 40px;
-            border-radius: 8px;
-        }
-
-        .features h2 {
-            font-size: 36px;
-            margin-bottom: 40px;
-        }
-
-        .feature {
-            display: inline-block;
-            width: 22%;
-            margin: 0 2%;
-            padding: 20px;
-            background-color: #f8f9fa;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .feature h3 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .feature p {
-            font-size: 16px;
-            color: #666;
-        }
-
-        /* Footer Bölümü */
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            width: 100%;
-            position: absolute;
-            bottom: 0;
-        }
-
-        footer ul {
-            list-style-type: none;
-            margin-bottom: 10px;
-        }
-
-        footer ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-
-        footer ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        footer p {
-            margin-top: 20px;
+        .error {
+            color: red;
             font-size: 14px;
+            margin-top: 10px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <!-- Header Bölümü -->
-    <header>
-        Antivirüs Yazılımı
-    </header>
-
-    <!-- Hero Bölümü -->
-    <section class="hero">
-        <h1>Bilgisayarınızı Korumaya Alın!</h1>
-        <p>Sisteminizi zararlı yazılımlara karşı korumak ve gereksiz dosyaları temizlemek için şimdi antivirüs yazılımını kullanın.</p>
-        <button class="cta-button" onclick="startScan()">Tarama Başlat</button>
-        <p class="scan-status" id="scanStatus">Tarama başlatılmadı...</p>
-        <button class="cta-button" onclick="cleanFiles()">Gereksiz Dosyaları Temizle</button>
-        <p class="clean-status" id="cleanStatus">Gereksiz dosya temizlenmedi...</p>
-    </section>
-
-    <!-- Özellikler Bölümü -->
-    <section class="features">
-        <h2>Antivirüs Yazılımının Özellikleri</h2>
-        <div class="feature">
-            <h3>Gerçek Zamanlı Koruma</h3>
-            <p>Anında tehdit tespiti ve engelleme.</p>
-        </div>
-        <div class="feature">
-            <h3>Hızlı Tarama</h3>
-            <p>Sisteminizi hızlı bir şekilde tarayın.</p>
-        </div>
-        <div class="feature">
-            <h3>Gelişmiş Güvenlik</h3>
-            <p>Tüm virüs ve zararlı yazılımlara karşı yüksek koruma.</p>
-        </div>
-        <div class="feature">
-            <h3>Veri Koruma</h3>
-            <p>Özel bilgilerinizin güvenliğini sağlama.</p>
-        </div>
-    </section>
-
-    <!-- Footer Bölümü -->
-    <footer>
-        <ul>
-            <li><a href="#">Hakkında</a></li>
-            <li><a href="#">Sıkça Sorulan Sorular</a></li>
-            <li><a href="#">Gizlilik Politikası</a></li>
-        </ul>
-        <p>&copy; 2024 Antivirüs Yazılımı. Tüm hakları saklıdır.</p>
-    </footer>
+    <div class="login-container">
+        <h1>Antivirus Login</h1>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="login-btn">Login</button>
+            <div id="error" class="error"></div>
+        </form>
+    </div>
 
     <script>
-        // Tarama başlatma fonksiyonu
-        function startScan() {
-            const scanStatus = document.getElementById('scanStatus');
-            scanStatus.textContent = 'Tarama başlatıldı... Lütfen bekleyin.';
-            
-            // Tarama simülasyonu (basit zamanlayıcı)
-            setTimeout(() => {
-                const isClean = Math.random() > 0.2; // %80 ihtimalle temiz
-                if (isClean) {
-                    scanStatus.textContent = 'Bilgisayarınız temiz.';
-                    scanStatus.style.color = 'green';
-                } else {
-                    scanStatus.textContent = 'Bilgisayarınızda zararlı yazılım tespit edildi!';
-                    scanStatus.style.color = 'red';
-                }
-            }, 3000); // 3 saniye sonra sonuç göster
-        }
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
 
-        // Gereksiz dosya temizleme fonksiyonu
-        function cleanFiles() {
-            const cleanStatus = document.getElementById('cleanStatus');
-            cleanStatus.textContent = 'Gereksiz dosya temizleniyor...';
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
 
-            // Simülasyon: %70 ihtimalle gereksiz dosya bulunur
-            setTimeout(() => {
-                const hasJunkFiles = Math.random() > 0.3; // %70 ihtimalle gereksiz dosya bulunur
-                if (hasJunkFiles) {
-                    cleanStatus.textContent = 'Gereksiz dosyalar başarıyla temizlendi!';
-                    cleanStatus.style.color = 'green';
-                } else {
-                    cleanStatus.textContent = 'Gereksiz dosya bulunamadı.';
-                    cleanStatus.style.color = 'blue';
-                }
-            }, 2000); // 2 saniye sonra sonuç göster
-        }
+            // Mock authentication (you can replace this with an actual API call)
+            if (username === 'admin' && password === 'password123') {
+                alert('Login successful!');
+                window.location.href = '/dashboard'; // Redirect to dashboard
+            } else {
+                document.getElementById('error').textContent = 'Invalid username or password';
+            }
+        });
     </script>
 </body>
 </html>
