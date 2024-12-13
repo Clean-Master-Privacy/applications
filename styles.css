@@ -10,21 +10,27 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f4f4f4;
+    background: linear-gradient(135deg, #6e7f9e, #85b3d1);
+    background-size: cover;
+    color: white;
+    overflow: hidden;
 }
 
 .login-container {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.9);  /* Yarı şeffaf beyaz arka plan */
     padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+    transform: translateY(-30px);
+    animation: slideUp 0.5s ease-out forwards;
 }
 
 h1 {
-    text-align: center;
     margin-bottom: 20px;
     color: #333;
+    font-size: 24px;
 }
 
 .input-group {
@@ -33,30 +39,32 @@ h1 {
 
 input {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: #28a745;
+    background-color: #e1f7e1;
+    outline: none;
 }
 
 button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     background-color: #28a745;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
 }
 
 button:hover {
-    background-color: #218838;
-}
-
-#loginMessage {
-    text-align: center;
-    margin-top: 20px;
-    color: red;
-}
