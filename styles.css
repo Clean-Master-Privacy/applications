@@ -1,70 +1,47 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+// Cache Clean Functionality
+document.getElementById("cleanCacheBtn").addEventListener("click", function() {
+    document.getElementById("cleanCacheStatus").textContent = "Cleaning cache and cookies...";
+    let progressBar = document.getElementById("cleanCacheBar");
+    let width = 0;
+    let interval = setInterval(function() {
+        if (width >= 100) {
+            clearInterval(interval);
+            document.getElementById("cleanCacheStatus").textContent = "Cache and cookies cleaned successfully!";
+        } else {
+            width++;
+            progressBar.style.width = width + "%";
+        }
+    }, 50); // Adjust the speed of progress bar
+});
 
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(135deg, #6e7f9e, #85b3d1);
-    background-size: cover;
-    color: white;
-    overflow: hidden;
-}
+// Optimize Performance Functionality
+document.getElementById("optimizePerformanceBtn").addEventListener("click", function() {
+    document.getElementById("performanceStatus").textContent = "Optimizing system performance...";
+    let progressBar = document.getElementById("performanceBar");
+    let width = 0;
+    let interval = setInterval(function() {
+        if (width >= 100) {
+            clearInterval(interval);
+            document.getElementById("performanceStatus").textContent = "Performance optimized!";
+        } else {
+            width++;
+            progressBar.style.width = width + "%";
+        }
+    }, 50); // Adjust the speed of progress bar
+});
 
-.login-container {
-    background-color: rgba(255, 255, 255, 0.9);  /* Yarı şeffaf beyaz arka plan */
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    width: 350px;
-    text-align: center;
-    transform: translateY(-30px);
-    animation: slideUp 0.5s ease-out forwards;
-}
-
-h1 {
-    margin-bottom: 20px;
-    color: #333;
-    font-size: 24px;
-}
-
-.input-group {
-    margin-bottom: 20px;
-}
-
-input {
-    width: 100%;
-    padding: 12px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    background-color: #f9f9f9;
-    transition: all 0.3s ease;
-}
-
-input:focus {
-    border-color: #28a745;
-    background-color: #e1f7e1;
-    outline: none;
-}
-
-button {
-    width: 100%;
-    padding: 12px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
-    margin-top: 10px;
-}
-
-button:hover {
+// Save Data Functionality
+document.getElementById("saveDataBtn").addEventListener("click", function() {
+    document.getElementById("dataStatus").textContent = "Optimizing data usage...";
+    let progressBar = document.getElementById("dataBar");
+    let width = 0;
+    let interval = setInterval(function() {
+        if (width >= 100) {
+            clearInterval(interval);
+            document.getElementById("dataStatus").textContent = "Data usage optimized!";
+        } else {
+            width++;
+            progressBar.style.width = width + "%";
+        }
+    }, 50); // Adjust the speed of progress bar
+});
