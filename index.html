@@ -3,33 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antivirus Login</title>
+    <title>Antivirus Application</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
             height: 100vh;
-            background-color: #f4f4f4;
+            background: linear-gradient(135deg, #007bff, #6610f2);
+            color: white;
         }
 
-        .login-container {
+        .container {
             background: #fff;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 90%;
             max-width: 400px;
+            color: #333;
         }
 
-        .login-container h1 {
-            margin-bottom: 20px;
-            font-size: 24px;
-            color: #333;
+        .container h1 {
             text-align: center;
+            font-size: 28px;
+            margin-bottom: 20px;
         }
 
         .form-group {
@@ -47,23 +49,24 @@
             width: 100%;
             padding: 10px;
             border: 1px solid #ddd;
-            border-radius: 4px;
+            border-radius: 5px;
             font-size: 14px;
         }
 
-        .login-btn {
+        .btn {
             width: 100%;
             padding: 10px;
-            background-color: #007bff;
+            background: linear-gradient(135deg, #007bff, #6610f2);
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
             color: white;
             font-size: 16px;
             cursor: pointer;
+            text-align: center;
         }
 
-        .login-btn:hover {
-            background-color: #0056b3;
+        .btn:hover {
+            opacity: 0.9;
         }
 
         .error {
@@ -72,11 +75,36 @@
             margin-top: 10px;
             text-align: center;
         }
+
+        .results {
+            margin-top: 20px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .status {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #555;
+            text-align: center;
+        }
+
+        .ai-analysis {
+            margin-top: 20px;
+            color: #28a745;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .warning {
+            color: #dc3545;
+        }
+
     </style>
 </head>
 <body>
-    <div class="login-container">
-        <h1>Antivirus Login</h1>
+    <div id="login" class="container">
+        <h1>Login</h1>
         <form id="loginForm">
             <div class="form-group">
                 <label for="username">Username</label>
@@ -86,25 +114,70 @@
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" placeholder="Enter your password" required>
             </div>
-            <button type="submit" class="login-btn">Login</button>
-            <div id="error" class="error"></div>
+            <button type="submit" class="btn">Login</button>
+            <div id="loginError" class="error"></div>
         </form>
+    </div>
+
+    <div id="scan" class="container" style="display: none;">
+        <h1>Antivirus & AI Maintenance</h1>
+        <form id="scanForm">
+            <div class="form-group">
+                <label for="fileInput">Select a file to scan:</label>
+                <input type="file" id="fileInput" name="file" required>
+            </div>
+            <button type="submit" class="btn">Start AI Scan</button>
+        </form>
+        <div id="results" class="results"></div>
+        <div id="aiAnalysis" class="ai-analysis"></div>
+        <div class="status" id="cleanupStatus"></div>
     </div>
 
     <script>
         document.getElementById('loginForm').addEventListener('submit', function(event) {
             event.preventDefault();
-
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
 
-            // Mock authentication (you can replace this with an actual API call)
             if (username === 'admin' && password === 'password123') {
-                alert('Login successful!');
-                window.location.href = '/dashboard'; // Redirect to dashboard
+                document.getElementById('login').style.display = 'none';
+                document.getElementById('scan').style.display = 'block';
             } else {
-                document.getElementById('error').textContent = 'Invalid username or password';
+                document.getElementById('loginError').textContent = 'Invalid username or password';
             }
+        });
+
+        document.getElementById('scanForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const fileInput = document.getElementById('fileInput');
+            const resultsDiv = document.getElementById('results');
+            const cleanupStatus = document.getElementById('cleanupStatus');
+            const aiAnalysis = document.getElementById('aiAnalysis');
+
+            if (!fileInput.files.length) {
+                resultsDiv.innerHTML = '<p class="error">Please select a file to scan.</p>';
+                return;
+            }
+
+            const file = fileInput.files[0];
+            resultsDiv.innerHTML = `<p>Scanning file: <strong>${file.name}</strong></p>`;
+
+            // Simulate AI-based file analysis
+            setTimeout(() => {
+                const riskScore = Math.random();
+                if (riskScore > 0.7) {
+                    aiAnalysis.innerHTML = `<p class="warning">AI Analysis: <strong>${file.name}</strong> is potentially dangerous. Risk Score: ${(riskScore * 100).toFixed(1)}%</p>`;
+                } else {
+                    aiAnalysis.innerHTML = `<p>AI Analysis: <strong>${file.name}</strong> is safe. Risk Score: ${(riskScore * 100).toFixed(1)}%</p>`;
+                }
+            }, 2000);
+
+            // Simulate junk file cleanup
+            cleanupStatus.innerHTML = '<p>Performing system cleanup...</p>';
+            setTimeout(() => {
+                cleanupStatus.innerHTML = '<p>Cleanup complete. Unnecessary files removed.</p>';
+            }, 3000);
         });
     </script>
 </body>
