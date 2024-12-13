@@ -1,22 +1,47 @@
-function loginUser(event) {
-    event.preventDefault(); // Formun sayfa yenilemesini engelle
+// Cache Clean Functionality
+document.getElementById("cleanCacheBtn").addEventListener("click", function() {
+    document.getElementById("cleanCacheStatus").textContent = "Cleaning cache and cookies...";
+    let progressBar = document.getElementById("cleanCacheBar");
+    let width = 0;
+    let interval = setInterval(function() {
+        if (width >= 100) {
+            clearInterval(interval);
+            document.getElementById("cleanCacheStatus").textContent = "Cache and cookies cleaned successfully!";
+        } else {
+            width++;
+            progressBar.style.width = width + "%";
+        }
+    }, 50); // Adjust the speed of progress bar
+});
 
-    // Kullanıcı adı ve şifreyi al
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
+// Optimize Performance Functionality
+document.getElementById("optimizePerformanceBtn").addEventListener("click", function() {
+    document.getElementById("performanceStatus").textContent = "Optimizing system performance...";
+    let progressBar = document.getElementById("performanceBar");
+    let width = 0;
+    let interval = setInterval(function() {
+        if (width >= 100) {
+            clearInterval(interval);
+            document.getElementById("performanceStatus").textContent = "Performance optimized!";
+        } else {
+            width++;
+            progressBar.style.width = width + "%";
+        }
+    }, 50); // Adjust the speed of progress bar
+});
 
-    // Basit doğrulama (gerçek dünyada backend doğrulaması gereklidir)
-    if (username === "admin" && password === "password123") {
-        // Başarılı giriş mesajı
-        document.getElementById('loginMessage').textContent = "Login successful!";
-        document.getElementById('loginMessage').style.color = "green";
-        // Giriş başarılıysa, formu sıfırla veya yönlendirme yap
-        setTimeout(() => {
-            window.location.href = "/dashboard"; // Yönlendirme yapılabilir
-        }, 2000);
-    } else {
-        // Başarısız giriş mesajı
-        document.getElementById('loginMessage').textContent = "Invalid username or password!";
-        document.getElementById('loginMessage').style.color = "red";
-    }
-}
+// Save Data Functionality
+document.getElementById("saveDataBtn").addEventListener("click", function() {
+    document.getElementById("dataStatus").textContent = "Optimizing data usage...";
+    let progressBar = document.getElementById("dataBar");
+    let width = 0;
+    let interval = setInterval(function() {
+        if (width >= 100) {
+            clearInterval(interval);
+            document.getElementById("dataStatus").textContent = "Data usage optimized!";
+        } else {
+            width++;
+            progressBar.style.width = width + "%";
+        }
+    }, 50); // Adjust the speed of progress bar
+});
