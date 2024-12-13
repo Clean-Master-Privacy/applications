@@ -3,70 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antivirus Application</title>
+    <title>Antivirus & Clean Master Web App</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
             background: linear-gradient(135deg, #007bff, #6610f2);
             color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
         .container {
             background: #fff;
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 15px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             width: 90%;
-            max-width: 400px;
+            max-width: 450px;
             color: #333;
         }
 
         .container h1 {
             text-align: center;
-            font-size: 28px;
+            font-size: 32px;
             margin-bottom: 20px;
         }
 
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
+        .button {
             display: block;
-            margin-bottom: 5px;
-            font-size: 14px;
-            color: #555;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 14px;
-        }
-
-        .btn {
-            width: 100%;
-            padding: 10px;
-            background: linear-gradient(135deg, #007bff, #6610f2);
-            border: none;
-            border-radius: 5px;
+            background: linear-gradient(135deg, #ff6f61, #ffb84d);
             color: white;
-            font-size: 16px;
+            padding: 15px;
+            font-size: 18px;
+            text-align: center;
+            border-radius: 8px;
             cursor: pointer;
+            margin: 10px 0;
+            width: 100%;
+        }
+
+        .button:hover {
+            opacity: 0.9;
+        }
+
+        .status {
+            font-size: 16px;
+            color: #555;
+            margin-top: 20px;
+        }
+
+        .status p {
             text-align: center;
         }
 
-        .btn:hover {
+        .results {
+            font-size: 16px;
+            color: #333;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .feature {
+            margin: 20px 0;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: #333;
+        }
+
+        .feature h2 {
+            font-size: 22px;
+            text-align: center;
+        }
+
+        .feature button {
+            display: block;
+            background: #007bff;
+            color: white;
+            padding: 12px;
+            font-size: 16px;
+            text-align: center;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px auto;
+            width: 80%;
+        }
+
+        .feature button:hover {
             opacity: 0.9;
+        }
+
+        .clean-icon {
+            font-size: 40px;
+            color: #007bff;
+            text-align: center;
+            margin-bottom: 10px;
         }
 
         .error {
@@ -76,50 +112,16 @@
             text-align: center;
         }
 
-        .results {
-            margin-top: 20px;
-            font-size: 14px;
-            text-align: center;
-        }
-
-        .status {
-            margin-top: 15px;
-            font-size: 14px;
-            color: #555;
-            text-align: center;
-        }
-
-        .ai-analysis {
-            margin-top: 20px;
-            color: #28a745;
-            font-size: 14px;
-            text-align: center;
-        }
-
-        .warning {
-            color: #dc3545;
-        }
-
-        .carbon {
-            margin-top: 20px;
-            padding: 10px;
-            background: #e9ecef;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            color: #333;
-            text-align: center;
-        }
-
         .user-count {
             margin-top: 10px;
             font-size: 14px;
             text-align: center;
             color: #007bff;
         }
-
     </style>
 </head>
 <body>
+
     <div id="login" class="container">
         <h1>Login</h1>
         <form id="loginForm">
@@ -131,11 +133,10 @@
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" placeholder="Enter your password" required>
             </div>
-            <button type="submit" class="btn">Login</button>
+            <button type="submit" class="button">Login</button>
             <div id="loginError" class="error"></div>
         </form>
-        <button class="btn" onclick="showRegister()">Register</button>
-        <button class="btn" onclick="protonMailLogin()">Login with ProtonMail</button>
+        <button class="button" onclick="showRegister()">Register</button>
         <div id="userCount" class="user-count">Active Users: <span id="activeUsers">0</span></div>
     </div>
 
@@ -154,33 +155,44 @@
                 <label for="regEmail">Email</label>
                 <input type="email" id="regEmail" name="email" placeholder="Enter your email" required>
             </div>
-            <button type="submit" class="btn">Register</button>
+            <button type="submit" class="button">Register</button>
             <div id="registerError" class="error"></div>
         </form>
-        <button class="btn" onclick="showLogin()">Back to Login</button>
+        <button class="button" onclick="showLogin()">Back to Login</button>
     </div>
 
     <div id="scan" class="container" style="display: none;">
-        <h1>Antivirus & AI Maintenance</h1>
-        <form id="scanForm">
-            <div class="form-group">
-                <label for="fileInput">Select a file to scan:</label>
-                <input type="file" id="fileInput" name="file" required>
-            </div>
-            <button type="submit" class="btn">Start AI Scan</button>
-        </form>
+        <h1>Antivirus & Clean Master</h1>
+
+        <div class="feature">
+            <div class="clean-icon">🧹</div>
+            <h2>Junk File Cleaner</h2>
+            <button class="button" onclick="cleanJunk()">Clean Junk Files</button>
+            <div id="junkStatus" class="status"></div>
+        </div>
+
+        <div class="feature">
+            <div class="clean-icon">🔋</div>
+            <h2>Battery Saver</h2>
+            <button class="button" onclick="saveBattery()">Save Battery</button>
+            <div id="batteryStatus" class="status"></div>
+        </div>
+
+        <div class="feature">
+            <div class="clean-icon">❄️</div>
+            <h2>CPU Cooler</h2>
+            <button class="button" onclick="coolCPU()">Cool Down CPU</button>
+            <div id="cpuStatus" class="status"></div>
+        </div>
+
+        <div class="feature">
+            <div class="clean-icon">🔐</div>
+            <h2>Privacy Cleaner</h2>
+            <button class="button" onclick="cleanPrivacy()">Clean Privacy</button>
+            <div id="privacyStatus" class="status"></div>
+        </div>
+
         <div id="results" class="results"></div>
-        <div id="aiAnalysis" class="ai-analysis"></div>
-        <div class="status" id="cleanupStatus"></div>
-        <div id="carbonData" class="carbon"></div>
-
-        <!-- Clean Master Features -->
-        <h1>System Optimization</h1>
-        <button class="btn" onclick="clearCache()">Clear Cache</button>
-        <button class="btn" onclick="removeJunkFiles()">Remove Junk Files</button>
-        <button class="btn" onclick="optimizeSystem()">Optimize System</button>
-
-        <div id="optimizationResults" class="results"></div>
     </div>
 
     <script>
@@ -229,85 +241,38 @@
             }
         });
 
-        function protonMailLogin() {
-            const email = prompt("Enter your ProtonMail email:");
-
-            // Simulating the ProtonMail login
-            if (email && email.includes("@protonmail.com")) {
-                alert("Logged in with ProtonMail!");
-                document.getElementById('login').style.display = 'none';
-                document.getElementById('scan').style.display = 'block';
-                updateActiveUsers(1);
-            } else {
-                alert("Please enter a valid ProtonMail email address.");
-            }
-        }
-
-        document.getElementById('scanForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const fileInput = document.getElementById('fileInput');
-            const resultsDiv = document.getElementById('results');
-            const cleanupStatus = document.getElementById('cleanupStatus');
-            const aiAnalysis = document.getElementById('aiAnalysis');
-            const carbonData = document.getElementById('carbonData');
-
-            if (!fileInput.files.length) {
-                resultsDiv.innerHTML = '<p class="error">Please select a file to scan.</p>';
-                return;
-            }
-
-            const file = fileInput.files[0];
-            resultsDiv.innerHTML = `<p>Scanning file: <strong>${file.name}</strong></p>`;
-
-            // Simulate AI-based file analysis
+        function cleanJunk() {
+            const junkStatus = document.getElementById('junkStatus');
+            junkStatus.textContent = 'Scanning for junk files...';
             setTimeout(() => {
-                const riskScore = Math.random();
-                if (riskScore > 0.7) {
-                    aiAnalysis.innerHTML = `<p class="warning">AI Analysis: <strong>${file.name}</strong> is potentially dangerous. Risk Score: ${(riskScore * 100).toFixed(1)}%</p>`;
-                } else {
-                    aiAnalysis.innerHTML = `<p>AI Analysis: <strong>${file.name}</strong> is safe. Risk Score: ${(riskScore * 100).toFixed(1)}%</p>`;
-                }
-            }, 2000);
-
-            // Simulate junk file cleanup
-            cleanupStatus.innerHTML = '<p>Performing system cleanup...</p>';
-            setTimeout(() => {
-                cleanupStatus.innerHTML = '<p>Cleanup complete. Unnecessary files removed.</p>';
-            }, 3000);
-
-            // Simulate Carbon Footprint calculation
-            carbonData.innerHTML = '<p>Calculating carbon footprint...</p>';
-            setTimeout(() => {
-                const carbonSaved = (Math.random() * 10).toFixed(2);
-                carbonData.innerHTML = `<p>Carbon footprint reduced by: <strong>${carbonSaved} grams</strong> during this operation.</p>`;
-            }, 1500);
-        });
-
-        // Clean Master-like Functions
-        function clearCache() {
-            const optimizationResults = document.getElementById('optimizationResults');
-            optimizationResults.innerHTML = '<p>Clearing cache...</p>';
-            setTimeout(() => {
-                optimizationResults.innerHTML = '<p>Cache cleared successfully!</p>';
+                junkStatus.textContent = 'Junk files cleaned! Performance Boosted.';
             }, 2000);
         }
 
-        function removeJunkFiles() {
-            const optimizationResults = document.getElementById('optimizationResults');
-            optimizationResults.innerHTML = '<p>Removing junk files...</p>';
+        function saveBattery() {
+            const batteryStatus = document.getElementById('batteryStatus');
+            batteryStatus.textContent = 'Saving battery...';
             setTimeout(() => {
-                optimizationResults.innerHTML = '<p>Junk files removed successfully!</p>';
-            }, 2500);
+                batteryStatus.textContent = 'Battery optimized. Power Saving Mode Activated.';
+            }, 2000);
         }
 
-        function optimizeSystem() {
-            const optimizationResults = document.getElementById('optimizationResults');
-            optimizationResults.innerHTML = '<p>Optimizing system...</p>';
+        function coolCPU() {
+            const cpuStatus = document.getElementById('cpuStatus');
+            cpuStatus.textContent = 'Cooling down CPU...';
             setTimeout(() => {
-                optimizationResults.innerHTML = '<p>System optimization completed!</p>';
-            }, 3000);
+                cpuStatus.textContent = 'CPU cooled. All background processes paused.';
+            }, 2000);
+        }
+
+        function cleanPrivacy() {
+            const privacyStatus = document.getElementById('privacyStatus');
+            privacyStatus.textContent = 'Cleaning privacy data...';
+            setTimeout(() => {
+                privacyStatus.textContent = 'Privacy data cleaned. Your personal info is safe.';
+            }, 2000);
         }
     </script>
+
 </body>
 </html>
