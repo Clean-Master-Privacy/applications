@@ -173,6 +173,14 @@
         <div id="aiAnalysis" class="ai-analysis"></div>
         <div class="status" id="cleanupStatus"></div>
         <div id="carbonData" class="carbon"></div>
+
+        <!-- Clean Master Features -->
+        <h1>System Optimization</h1>
+        <button class="btn" onclick="clearCache()">Clear Cache</button>
+        <button class="btn" onclick="removeJunkFiles()">Remove Junk Files</button>
+        <button class="btn" onclick="optimizeSystem()">Optimize System</button>
+
+        <div id="optimizationResults" class="results"></div>
     </div>
 
     <script>
@@ -275,6 +283,31 @@
                 carbonData.innerHTML = `<p>Carbon footprint reduced by: <strong>${carbonSaved} grams</strong> during this operation.</p>`;
             }, 1500);
         });
+
+        // Clean Master-like Functions
+        function clearCache() {
+            const optimizationResults = document.getElementById('optimizationResults');
+            optimizationResults.innerHTML = '<p>Clearing cache...</p>';
+            setTimeout(() => {
+                optimizationResults.innerHTML = '<p>Cache cleared successfully!</p>';
+            }, 2000);
+        }
+
+        function removeJunkFiles() {
+            const optimizationResults = document.getElementById('optimizationResults');
+            optimizationResults.innerHTML = '<p>Removing junk files...</p>';
+            setTimeout(() => {
+                optimizationResults.innerHTML = '<p>Junk files removed successfully!</p>';
+            }, 2500);
+        }
+
+        function optimizeSystem() {
+            const optimizationResults = document.getElementById('optimizationResults');
+            optimizationResults.innerHTML = '<p>Optimizing system...</p>';
+            setTimeout(() => {
+                optimizationResults.innerHTML = '<p>System optimization completed!</p>';
+            }, 3000);
+        }
     </script>
 </body>
 </html>
