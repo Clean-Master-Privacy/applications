@@ -23,7 +23,7 @@
             border-radius: 15px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             width: 90%;
-            max-width: 450px;
+            max-width: 500px;
             color: #333;
         }
 
@@ -118,10 +118,39 @@
             text-align: center;
             color: #007bff;
         }
+
+        .graph {
+            margin-top: 20px;
+            text-align: center;
+            color: #007bff;
+        }
+
+        .graph div {
+            width: 80%;
+            height: 200px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            margin: 20px auto;
+            position: relative;
+        }
+
+        .graph .progress-bar {
+            background: linear-gradient(135deg, #007bff, #6610f2);
+            height: 100%;
+            width: 0%;
+            border-radius: 10px;
+            animation: progress 3s ease-out forwards;
+        }
+
+        @keyframes progress {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
     </style>
 </head>
 <body>
 
+    <!-- Login Section -->
     <div id="login" class="container">
         <h1>Login</h1>
         <form id="loginForm">
@@ -140,6 +169,7 @@
         <div id="userCount" class="user-count">Active Users: <span id="activeUsers">0</span></div>
     </div>
 
+    <!-- Register Section -->
     <div id="register" class="container" style="display: none;">
         <h1>Register</h1>
         <form id="registerForm">
@@ -161,6 +191,7 @@
         <button class="button" onclick="showLogin()">Back to Login</button>
     </div>
 
+    <!-- Scan & Features Section -->
     <div id="scan" class="container" style="display: none;">
         <h1>Antivirus & Clean Master</h1>
 
@@ -193,6 +224,14 @@
         </div>
 
         <div id="results" class="results"></div>
+
+        <div class="graph">
+            <h2>System Health</h2>
+            <div class="graph">
+                <div class="progress-bar"></div>
+            </div>
+            <p>Scan Progress</p>
+        </div>
     </div>
 
     <script>
