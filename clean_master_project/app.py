@@ -3,10 +3,11 @@ import os
 import time
 import shutil
 from clamd import ClamdUnixSocket
+import subprocess
 
 app = Flask(__name__)
 
-# Yükleme için hedef dizin (uploads)
+# Yükleme dizini (uploads) ve cache dizini
 UPLOAD_FOLDER = 'uploads'
 CACHE_DIR = 'cache_files'
 if not os.path.exists(UPLOAD_FOLDER):
@@ -47,6 +48,11 @@ def upload_file():
         if result[file_path][0] == 'FOUND':
             return jsonify({'status': 'error', 'message': 'Virus found in the file!'})
 
+        # C ve C++ ile virüs veritabanı işleme
+        c_result = subprocess.run(["./c_code/clean_database", file_path], capture_output=True, text=True)
+        if "virus_found" in c_result.stdout:
+            return jsonify({'status': 'error', 'message': 'Virus detected in the file! (C/C++)'})
+
         return jsonify({
             'status': 'success', 
             'message': 'File uploaded and no virus detected!', 
@@ -83,17 +89,6 @@ def save_data():
     # Simulate saving data
     time.sleep(2)  # Simulate a delay for data saving
     return jsonify({"status": "success", "message": "Data usage optimized!"}), 200
-
-@app.route('/get_system_status', methods=['GET'])
-def get_system_status():
-    # Simulate system status in JSON
-    system_status = {
-        "cache_size": "1.2 GB",
-        "files_in_cache": 45,
-        "performance": "optimized",
-        "data_usage": "optimized"
-    }
-    return jsonify(system_status)
 
 if __name__ == '__main__':
     app.run(debug=True)
