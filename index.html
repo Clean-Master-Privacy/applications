@@ -135,6 +135,7 @@
             <div id="loginError" class="error"></div>
         </form>
         <button class="btn" onclick="showRegister()">Register</button>
+        <button class="btn" onclick="protonMailLogin()">Login with ProtonMail</button>
         <div id="userCount" class="user-count">Active Users: <span id="activeUsers">0</span></div>
     </div>
 
@@ -219,6 +220,20 @@
                 document.getElementById('registerError').textContent = 'Please fill out all fields';
             }
         });
+
+        function protonMailLogin() {
+            const email = prompt("Enter your ProtonMail email:");
+
+            // Simulating the ProtonMail login
+            if (email && email.includes("@protonmail.com")) {
+                alert("Logged in with ProtonMail!");
+                document.getElementById('login').style.display = 'none';
+                document.getElementById('scan').style.display = 'block';
+                updateActiveUsers(1);
+            } else {
+                alert("Please enter a valid ProtonMail email address.");
+            }
+        }
 
         document.getElementById('scanForm').addEventListener('submit', function(event) {
             event.preventDefault();
