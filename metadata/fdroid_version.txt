@@ -1,2 +1,0 @@
-versionName=5.1.8
-versionCode=50181218
