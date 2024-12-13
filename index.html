@@ -146,6 +146,44 @@
             0% { width: 0%; }
             100% { width: 100%; }
         }
+
+        /* ProtonMail login form styles */
+        .protonmail-login {
+            background: #f6f6f6;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .protonmail-login h2 {
+            text-align: center;
+            color: #007bff;
+            font-size: 24px;
+        }
+
+        .protonmail-login input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .protonmail-login .login-button {
+            background: #ff6f61;
+            color: white;
+            font-size: 18px;
+            padding: 15px;
+            border-radius: 8px;
+            border: none;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .protonmail-login .login-button:hover {
+            opacity: 0.9;
+        }
     </style>
 </head>
 <body>
@@ -167,6 +205,16 @@
         </form>
         <button class="button" onclick="showRegister()">Register</button>
         <div id="userCount" class="user-count">Active Users: <span id="activeUsers">0</span></div>
+
+        <!-- ProtonMail Login Section -->
+        <div class="protonmail-login">
+            <h2>Login with ProtonMail</h2>
+            <form id="protonmailForm">
+                <input type="email" id="protonEmail" placeholder="Enter ProtonMail Email" required>
+                <input type="password" id="protonPassword" placeholder="Enter ProtonMail Password" required>
+                <button type="submit" class="login-button">Login with ProtonMail</button>
+            </form>
+        </div>
     </div>
 
     <!-- Register Section -->
@@ -277,6 +325,21 @@
                 showLogin();
             } else {
                 document.getElementById('registerError').textContent = 'Please fill out all fields';
+            }
+        });
+
+        document.getElementById('protonmailForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = document.getElementById('protonEmail').value;
+            const password = document.getElementById('protonPassword').value;
+
+            if (email && password) {
+                alert('Logged in with ProtonMail');
+                document.getElementById('login').style.display = 'none';
+                document.getElementById('scan').style.display = 'block';
+                updateActiveUsers(1);
+            } else {
+                alert('Invalid ProtonMail credentials');
             }
         });
 
