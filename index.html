@@ -79,6 +79,14 @@
             font-weight: bold;
         }
 
+        /* Gereksiz Dosya Temizleme Bölümü */
+        .clean-status {
+            font-size: 18px;
+            margin-top: 20px;
+            color: #dc3545;
+            font-weight: bold;
+        }
+
         /* Özellikler Bölümü */
         .features {
             padding: 50px 20px;
@@ -158,9 +166,11 @@
     <!-- Hero Bölümü -->
     <section class="hero">
         <h1>Bilgisayarınızı Korumaya Alın!</h1>
-        <p>Sisteminizi zararlı yazılımlara karşı korumak için şimdi antivirüs yazılımını kullanın.</p>
+        <p>Sisteminizi zararlı yazılımlara karşı korumak ve gereksiz dosyaları temizlemek için şimdi antivirüs yazılımını kullanın.</p>
         <button class="cta-button" onclick="startScan()">Tarama Başlat</button>
         <p class="scan-status" id="scanStatus">Tarama başlatılmadı...</p>
+        <button class="cta-button" onclick="cleanFiles()">Gereksiz Dosyaları Temizle</button>
+        <p class="clean-status" id="cleanStatus">Gereksiz dosya temizlenmedi...</p>
     </section>
 
     <!-- Özellikler Bölümü -->
@@ -211,6 +221,24 @@
                     scanStatus.style.color = 'red';
                 }
             }, 3000); // 3 saniye sonra sonuç göster
+        }
+
+        // Gereksiz dosya temizleme fonksiyonu
+        function cleanFiles() {
+            const cleanStatus = document.getElementById('cleanStatus');
+            cleanStatus.textContent = 'Gereksiz dosya temizleniyor...';
+
+            // Simülasyon: %70 ihtimalle gereksiz dosya bulunur
+            setTimeout(() => {
+                const hasJunkFiles = Math.random() > 0.3; // %70 ihtimalle gereksiz dosya bulunur
+                if (hasJunkFiles) {
+                    cleanStatus.textContent = 'Gereksiz dosyalar başarıyla temizlendi!';
+                    cleanStatus.style.color = 'green';
+                } else {
+                    cleanStatus.textContent = 'Gereksiz dosya bulunamadı.';
+                    cleanStatus.style.color = 'blue';
+                }
+            }, 2000); // 2 saniye sonra sonuç göster
         }
     </script>
 </body>
