@@ -120,6 +120,7 @@
     </style>
 </head>
 <body>
+    <!-- Login Section -->
     <div id="login" class="container">
         <h1>Login</h1>
         <form id="loginForm">
@@ -135,9 +136,11 @@
             <div id="loginError" class="error"></div>
         </form>
         <button class="btn" onclick="showRegister()">Register</button>
+        <button class="btn" onclick="showProtonMailLogin()">Login with ProtonMail</button>
         <div id="userCount" class="user-count">Active Users: <span id="activeUsers">0</span></div>
     </div>
 
+    <!-- Register Section -->
     <div id="register" class="container" style="display: none;">
         <h1>Register</h1>
         <form id="registerForm">
@@ -159,6 +162,7 @@
         <button class="btn" onclick="showLogin()">Back to Login</button>
     </div>
 
+    <!-- Scan Section -->
     <div id="scan" class="container" style="display: none;">
         <h1>Antivirus & AI Maintenance</h1>
         <form id="scanForm">
