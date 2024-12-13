@@ -17,35 +17,22 @@
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
         /* Header Bölümü */
         header {
             background-color: #333;
             color: #fff;
+            width: 100%;
             padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header .logo {
+            text-align: center;
             font-size: 24px;
             font-weight: bold;
-        }
-
-        header nav ul {
-            list-style-type: none;
-        }
-
-        header nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-
-        header nav ul li a {
-            color: #fff;
-            text-decoration: none;
         }
 
         /* Hero Bölümü */
@@ -54,6 +41,10 @@
             color: white;
             text-align: center;
             padding: 100px 20px;
+            width: 100%;
+            max-width: 800px;
+            border-radius: 8px;
+            margin-bottom: 40px;
         }
 
         .hero h1 {
@@ -66,17 +57,26 @@
             margin-bottom: 40px;
         }
 
-        .hero .cta-button {
+        .cta-button {
             background-color: #28a745;
             color: white;
             padding: 15px 30px;
             font-size: 20px;
             text-decoration: none;
             border-radius: 5px;
+            cursor: pointer;
         }
 
-        .hero .cta-button:hover {
+        .cta-button:hover {
             background-color: #218838;
+        }
+
+        /* Tarama Durumu Bölümü */
+        .scan-status {
+            font-size: 18px;
+            margin-top: 20px;
+            color: #28a745;
+            font-weight: bold;
         }
 
         /* Özellikler Bölümü */
@@ -84,6 +84,10 @@
             padding: 50px 20px;
             text-align: center;
             background-color: #fff;
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 40px;
+            border-radius: 8px;
         }
 
         .features h2 {
@@ -100,6 +104,7 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
+            margin-bottom: 20px;
         }
 
         .feature h3 {
@@ -112,29 +117,15 @@
             color: #666;
         }
 
-        /* Kullanıcı Yorumları Bölümü */
-        .testimonials {
-            padding: 40px 20px;
-            background-color: #e9ecef;
-            text-align: center;
-        }
-
-        .testimonials h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-
-        .testimonials p {
-            font-size: 18px;
-            margin-bottom: 15px;
-        }
-
         /* Footer Bölümü */
         footer {
             background-color: #333;
             color: white;
             padding: 20px;
             text-align: center;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
         }
 
         footer ul {
@@ -161,22 +152,15 @@
 <body>
     <!-- Header Bölümü -->
     <header>
-        <div class="logo">Antivirüs</div>
-        <nav>
-            <ul>
-                <li><a href="#">Ana Sayfa</a></li>
-                <li><a href="#">Özellikler</a></li>
-                <li><a href="#">İndir</a></li>
-                <li><a href="#">İletişim</a></li>
-            </ul>
-        </nav>
+        Antivirüs Yazılımı
     </header>
 
     <!-- Hero Bölümü -->
     <section class="hero">
         <h1>Bilgisayarınızı Korumaya Alın!</h1>
-        <p>Sisteminizi zararlı yazılımlara karşı korumak için şimdi antivirüs yazılımını indirin.</p>
-        <a href="#" class="cta-button">Şimdi İndir</a>
+        <p>Sisteminizi zararlı yazılımlara karşı korumak için şimdi antivirüs yazılımını kullanın.</p>
+        <button class="cta-button" onclick="startScan()">Tarama Başlat</button>
+        <p class="scan-status" id="scanStatus">Tarama başlatılmadı...</p>
     </section>
 
     <!-- Özellikler Bölümü -->
@@ -200,13 +184,6 @@
         </div>
     </section>
 
-    <!-- Kullanıcı Yorumları Bölümü -->
-    <section class="testimonials">
-        <h2>Kullanıcılarımız Ne Diyor?</h2>
-        <p>"Bu yazılım sayesinde bilgisayarımın güvenliği hiç olmadığı kadar arttı!" - Ahmet K.</p>
-        <p>"Gerçek zamanlı koruma sayesinde rahatım!" - Ayşe G.</p>
-    </section>
-
     <!-- Footer Bölümü -->
     <footer>
         <ul>
@@ -216,5 +193,25 @@
         </ul>
         <p>&copy; 2024 Antivirüs Yazılımı. Tüm hakları saklıdır.</p>
     </footer>
+
+    <script>
+        // Tarama başlatma fonksiyonu
+        function startScan() {
+            const scanStatus = document.getElementById('scanStatus');
+            scanStatus.textContent = 'Tarama başlatıldı... Lütfen bekleyin.';
+            
+            // Tarama simülasyonu (basit zamanlayıcı)
+            setTimeout(() => {
+                const isClean = Math.random() > 0.2; // %80 ihtimalle temiz
+                if (isClean) {
+                    scanStatus.textContent = 'Bilgisayarınız temiz.';
+                    scanStatus.style.color = 'green';
+                } else {
+                    scanStatus.textContent = 'Bilgisayarınızda zararlı yazılım tespit edildi!';
+                    scanStatus.style.color = 'red';
+                }
+            }, 3000); // 3 saniye sonra sonuç göster
+        }
+    </script>
 </body>
 </html>
