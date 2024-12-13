@@ -194,16 +194,32 @@
 
         document.getElementById('loginForm').addEventListener('submit', function(event) {
             event.preventDefault();
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
 
+            // Boş alan kontrolü
+            if (!username || !password) {
+                document.getElementById('loginError').textContent = 'Kullanıcı adı ve şifre boş olamaz.';
+                return;
+            }
+
+            // Yükleniyor durumu
+            const loginButton = document.querySelector('button[type="submit"]');
+            loginButton.disabled = true;
+            loginButton.textContent = 'Yükleniyor...';
+
+            // Sabit giriş bilgilerinin kontrolü
             if (username === 'admin' && password === 'password123') {
                 document.getElementById('login').style.display = 'none';
                 document.getElementById('scan').style.display = 'block';
                 updateActiveUsers(1);
             } else {
-                document.getElementById('loginError').textContent = 'Invalid username or password';
+                document.getElementById('loginError').textContent = 'Geçersiz kullanıcı adı veya şifre';
             }
+
+            // Butonu yeniden etkinleştir
+            loginButton.disabled = false;
+            loginButton.textContent = 'Login';
         });
 
         document.getElementById('registerForm').addEventListener('submit', function(event) {
@@ -242,24 +258,3 @@
                 const riskScore = Math.random();
                 if (riskScore > 0.7) {
                     aiAnalysis.innerHTML = `<p class="warning">AI Analysis: <strong>${file.name}</strong> is potentially dangerous. Risk Score: ${(riskScore * 100).toFixed(1)}%</p>`;
-                } else {
-                    aiAnalysis.innerHTML = `<p>AI Analysis: <strong>${file.name}</strong> is safe. Risk Score: ${(riskScore * 100).toFixed(1)}%</p>`;
-                }
-            }, 2000);
-
-            // Simulate junk file cleanup
-            cleanupStatus.innerHTML = '<p>Performing system cleanup...</p>';
-            setTimeout(() => {
-                cleanupStatus.innerHTML = '<p>Cleanup complete. Unnecessary files removed.</p>';
-            }, 3000);
-
-            // Simulate Carbon Footprint calculation
-            carbonData.innerHTML = '<p>Calculating carbon footprint...</p>';
-            setTimeout(() => {
-                const carbonSaved = (Math.random() * 10).toFixed(2);
-                carbonData.innerHTML = `<p>Carbon footprint reduced by: <strong>${carbonSaved} grams</strong> during this operation.</p>`;
-            }, 1500);
-        });
-    </script>
-</body>
-</html>
