@@ -1,24 +1,3 @@
-from flask import Flask, render_template_string, jsonify
-import os
-
-app = Flask(__name__)
-
-# Temporary directory for cache files (for simulation)
-CACHE_DIR = "cache_files"  # Simulate cache directory
-
-# Create the cache directory if it doesn't exist
-if not os.path.exists(CACHE_DIR):
-    os.makedirs(CACHE_DIR)
-
-# Simulate files in cache directory
-for i in range(1, 6):
-    with open(f"{CACHE_DIR}/file{i}.tmp", "w") as f:
-        f.write(f"Temporary data for file {i}")
-
-@app.route('/')
-def home():
-    # The HTML code is embedded directly within the Python file
-    return render_template_string('''
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -97,66 +76,30 @@ def home():
     </div>
 
     <script>
-        // Clean cache & cookies functionality
+        // Simulate the clean cache & cookies functionality
         document.getElementById("cleanFilesBtn").addEventListener("click", function() {
             document.getElementById("status").textContent = "Cleaning cache and cookies...";
-            fetch("/clean_cache", { method: "POST" })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.status === "success") {
-                        document.getElementById("status").textContent = data.message;
-                    }
-                })
-                .catch(error => {
-                    document.getElementById("errorAlert").textContent = "Error cleaning cache.";
-                });
+            setTimeout(function() {
+                document.getElementById("status").textContent = "Cache and cookies cleaned successfully!";
+            }, 2000); // Simulate a 2-second delay
         });
 
-        // Optimize performance simulation
+        // Simulate the optimize performance functionality
         document.getElementById("optimizePerformanceBtn").addEventListener("click", function() {
             document.getElementById("status").textContent = "Optimizing performance...";
-            fetch("/optimize_performance", { method: "POST" })
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById("status").textContent = data.message;
-                });
+            setTimeout(function() {
+                document.getElementById("status").textContent = "Device optimized!";
+            }, 2000); // Simulate a 2-second delay
         });
 
-        // Data saving simulation
+        // Simulate the save data functionality
         document.getElementById("saveDataBtn").addEventListener("click", function() {
             document.getElementById("status").textContent = "Optimizing data usage...";
-            fetch("/save_data", { method: "POST" })
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById("status").textContent = data.message;
-                });
+            setTimeout(function() {
+                document.getElementById("status").textContent = "Data usage optimized!";
+            }, 2000); // Simulate a 2-second delay
         });
     </script>
 
 </body>
 </html>
-    ''')
-
-@app.route('/clean_cache', methods=['POST'])
-def clean_cache():
-    files_deleted = []
-    for filename in os.listdir(CACHE_DIR):
-        file_path = os.path.join(CACHE_DIR, filename)
-        try:
-            os.remove(file_path)
-            files_deleted.append(filename)
-        except Exception as e:
-            return jsonify({"status": "error", "message": str(e)}), 500
-
-    return jsonify({"status": "success", "message": f"Deleted files: {files_deleted}"}), 200
-
-@app.route('/optimize_performance', methods=['POST'])
-def optimize_performance():
-    return jsonify({"status": "success", "message": "Device optimized!"}), 200
-
-@app.route('/save_data', methods=['POST'])
-def save_data():
-    return jsonify({"status": "success", "message": "Data usage optimized!"}), 200
-
-if __name__ == "__main__":
-    app.run(debug=True)
