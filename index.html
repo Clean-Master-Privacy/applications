@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antivirus Application</title>
+    <title>Antivirus & AI Maintenance Application</title>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -28,7 +29,7 @@
             color: #333;
         }
 
-        .container h1 {
+        h1 {
             text-align: center;
             font-size: 28px;
             margin-bottom: 20px;
@@ -117,10 +118,21 @@
             color: #007bff;
         }
 
+        .g-signin2 {
+            margin-top: 20px;
+        }
+
+        #loginError, #registerError {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-    <!-- Login Section -->
+
+    <!-- Login Form -->
     <div id="login" class="container">
         <h1>Login</h1>
         <form id="loginForm">
@@ -136,11 +148,15 @@
             <div id="loginError" class="error"></div>
         </form>
         <button class="btn" onclick="showRegister()">Register</button>
-        <button class="btn" onclick="showProtonMailLogin()">Login with ProtonMail</button>
+
+        <h2>Login with ProtonMail (Simulated with Google OAuth)</h2>
+        <!-- ProtonMail login simulation -->
+        <div id="protonMailLoginButton" class="g-signin2" data-onsuccess="onSignIn"></div>
+
         <div id="userCount" class="user-count">Active Users: <span id="activeUsers">0</span></div>
     </div>
 
-    <!-- Register Section -->
+    <!-- Register Form -->
     <div id="register" class="container" style="display: none;">
         <h1>Register</h1>
         <form id="registerForm">
@@ -162,7 +178,7 @@
         <button class="btn" onclick="showLogin()">Back to Login</button>
     </div>
 
-    <!-- Scan Section -->
+    <!-- Scan Form -->
     <div id="scan" class="container" style="display: none;">
         <h1>Antivirus & AI Maintenance</h1>
         <form id="scanForm">
@@ -178,27 +194,10 @@
         <div id="carbonData" class="carbon"></div>
     </div>
 
-    <!-- ProtonMail Login Section -->
-    <div id="protonmailLogin" class="container" style="display: none;">
-        <h1>ProtonMail Login</h1>
-        <form id="protonmailLoginForm">
-            <div class="form-group">
-                <label for="protonUsername">Email</label>
-                <input type="email" id="protonUsername" name="username" placeholder="Enter your ProtonMail email" required>
-            </div>
-            <div class="form-group">
-                <label for="protonPassword">Password</label>
-                <input type="password" id="protonPassword" name="password" placeholder="Enter your ProtonMail password" required>
-            </div>
-            <button type="submit" class="btn">Login to ProtonMail</button>
-            <div id="protonmailLoginError" class="error"></div>
-        </form>
-        <button class="btn" onclick="showLogin()">Back to Login</button>
-    </div>
-
     <script>
         let activeUsers = 0;
 
+        // Update active user count
         function updateActiveUsers(delta) {
             activeUsers += delta;
             document.getElementById('activeUsers').textContent = activeUsers;
@@ -212,12 +211,6 @@
         function showLogin() {
             document.getElementById('register').style.display = 'none';
             document.getElementById('login').style.display = 'block';
-            document.getElementById('protonmailLogin').style.display = 'none';
-        }
-
-        function showProtonMailLogin() {
-            document.getElementById('login').style.display = 'none';
-            document.getElementById('protonmailLogin').style.display = 'block';
         }
 
         document.getElementById('loginForm').addEventListener('submit', function(event) {
@@ -225,26 +218,13 @@
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
 
+            // Simulate a valid login check
             if (username === 'admin' && password === 'password123') {
                 document.getElementById('login').style.display = 'none';
                 document.getElementById('scan').style.display = 'block';
                 updateActiveUsers(1);
             } else {
                 document.getElementById('loginError').textContent = 'Invalid username or password';
-            }
-        });
-
-        document.getElementById('protonmailLoginForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const protonUsername = document.getElementById('protonUsername').value;
-            const protonPassword = document.getElementById('protonPassword').value;
-
-            // Simulating ProtonMail login, replace this with actual integration
-            if (protonUsername === 'user@protonmail.com' && protonPassword === 'proton123') {
-                alert('Successfully logged into ProtonMail!');
-                showLogin();
-            } else {
-                document.getElementById('protonmailLoginError').textContent = 'Invalid ProtonMail credentials';
             }
         });
 
@@ -302,6 +282,27 @@
                 carbonData.innerHTML = `<p>Carbon footprint reduced by: <strong>${carbonSaved} grams</strong> during this operation.</p>`;
             }, 1500);
         });
+
+        // ProtonMail simulated login function using Google OAuth
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            var id_token = googleUser.getAuthResponse().id_token;
+
+            // Display the user profile info
+            document.getElementById('status').innerHTML = `
+                <h3>Welcome, ${profile.getName()}!</h3>
+                <p>Email: ${profile.getEmail()}</p>
+                <p>Google ID: ${profile.getId()}</p>
+                <button onclick="signOut()">Sign out</button>
+            `;
+        }
+
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+                document.getElementById('status').innerHTML = `<h3>You have signed out.</h3>`;
+            });
+        }
     </script>
 </body>
 </html>
