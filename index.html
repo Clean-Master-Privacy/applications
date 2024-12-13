@@ -100,6 +100,23 @@
             color: #dc3545;
         }
 
+        .carbon {
+            margin-top: 20px;
+            padding: 10px;
+            background: #e9ecef;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            color: #333;
+            text-align: center;
+        }
+
+        .user-count {
+            margin-top: 10px;
+            font-size: 14px;
+            text-align: center;
+            color: #007bff;
+        }
+
     </style>
 </head>
 <body>
@@ -117,6 +134,29 @@
             <button type="submit" class="btn">Login</button>
             <div id="loginError" class="error"></div>
         </form>
+        <button class="btn" onclick="showRegister()">Register</button>
+        <div id="userCount" class="user-count">Active Users: <span id="activeUsers">0</span></div>
+    </div>
+
+    <div id="register" class="container" style="display: none;">
+        <h1>Register</h1>
+        <form id="registerForm">
+            <div class="form-group">
+                <label for="regUsername">Username</label>
+                <input type="text" id="regUsername" name="username" placeholder="Choose a username" required>
+            </div>
+            <div class="form-group">
+                <label for="regPassword">Password</label>
+                <input type="password" id="regPassword" name="password" placeholder="Choose a password" required>
+            </div>
+            <div class="form-group">
+                <label for="regEmail">Email</label>
+                <input type="email" id="regEmail" name="email" placeholder="Enter your email" required>
+            </div>
+            <button type="submit" class="btn">Register</button>
+            <div id="registerError" class="error"></div>
+        </form>
+        <button class="btn" onclick="showLogin()">Back to Login</button>
     </div>
 
     <div id="scan" class="container" style="display: none;">
@@ -131,9 +171,27 @@
         <div id="results" class="results"></div>
         <div id="aiAnalysis" class="ai-analysis"></div>
         <div class="status" id="cleanupStatus"></div>
+        <div id="carbonData" class="carbon"></div>
     </div>
 
     <script>
+        let activeUsers = 0;
+
+        function updateActiveUsers(delta) {
+            activeUsers += delta;
+            document.getElementById('activeUsers').textContent = activeUsers;
+        }
+
+        function showRegister() {
+            document.getElementById('login').style.display = 'none';
+            document.getElementById('register').style.display = 'block';
+        }
+
+        function showLogin() {
+            document.getElementById('register').style.display = 'none';
+            document.getElementById('login').style.display = 'block';
+        }
+
         document.getElementById('loginForm').addEventListener('submit', function(event) {
             event.preventDefault();
             const username = document.getElementById('username').value;
@@ -142,8 +200,23 @@
             if (username === 'admin' && password === 'password123') {
                 document.getElementById('login').style.display = 'none';
                 document.getElementById('scan').style.display = 'block';
+                updateActiveUsers(1);
             } else {
                 document.getElementById('loginError').textContent = 'Invalid username or password';
+            }
+        });
+
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('regUsername').value;
+            const password = document.getElementById('regPassword').value;
+            const email = document.getElementById('regEmail').value;
+
+            if (username && password && email) {
+                alert('Registration successful!');
+                showLogin();
+            } else {
+                document.getElementById('registerError').textContent = 'Please fill out all fields';
             }
         });
 
@@ -154,6 +227,7 @@
             const resultsDiv = document.getElementById('results');
             const cleanupStatus = document.getElementById('cleanupStatus');
             const aiAnalysis = document.getElementById('aiAnalysis');
+            const carbonData = document.getElementById('carbonData');
 
             if (!fileInput.files.length) {
                 resultsDiv.innerHTML = '<p class="error">Please select a file to scan.</p>';
@@ -178,6 +252,13 @@
             setTimeout(() => {
                 cleanupStatus.innerHTML = '<p>Cleanup complete. Unnecessary files removed.</p>';
             }, 3000);
+
+            // Simulate Carbon Footprint calculation
+            carbonData.innerHTML = '<p>Calculating carbon footprint...</p>';
+            setTimeout(() => {
+                const carbonSaved = (Math.random() * 10).toFixed(2);
+                carbonData.innerHTML = `<p>Carbon footprint reduced by: <strong>${carbonSaved} grams</strong> during this operation.</p>`;
+            }, 1500);
         });
     </script>
 </body>
