@@ -3,112 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antivirus & Clean Master Web App</title>
+    <title>Antivirus Application</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
             background: linear-gradient(135deg, #007bff, #6610f2);
             color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
         }
 
         .container {
             background: #fff;
             padding: 20px;
-            border-radius: 15px;
+            border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             width: 90%;
-            max-width: 500px;
+            max-width: 400px;
             color: #333;
         }
 
         .container h1 {
             text-align: center;
-            font-size: 32px;
+            font-size: 28px;
             margin-bottom: 20px;
         }
 
-        .button {
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
             display: block;
-            background: linear-gradient(135deg, #ff6f61, #ffb84d);
-            color: white;
-            padding: 15px;
-            font-size: 18px;
-            text-align: center;
-            border-radius: 8px;
-            cursor: pointer;
-            margin: 10px 0;
-            width: 100%;
-        }
-
-        .button:hover {
-            opacity: 0.9;
-        }
-
-        .status {
-            font-size: 16px;
+            margin-bottom: 5px;
+            font-size: 14px;
             color: #555;
-            margin-top: 20px;
         }
 
-        .status p {
-            text-align: center;
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
         }
 
-        .results {
-            font-size: 16px;
-            color: #333;
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .feature {
-            margin: 20px 0;
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            color: #333;
-        }
-
-        .feature h2 {
-            font-size: 22px;
-            text-align: center;
-        }
-
-        .feature button {
-            display: block;
-            background: #007bff;
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background: linear-gradient(135deg, #007bff, #6610f2);
+            border: none;
+            border-radius: 5px;
             color: white;
-            padding: 12px;
             font-size: 16px;
-            text-align: center;
-            border-radius: 8px;
             cursor: pointer;
-            margin: 10px auto;
-            width: 80%;
-        }
-
-        .feature button:hover {
-            opacity: 0.9;
-        }
-
-        .clean-icon {
-            font-size: 40px;
-            color: #007bff;
             text-align: center;
-            margin-bottom: 10px;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
         }
 
         .error {
             color: red;
             font-size: 14px;
             margin-top: 10px;
+            text-align: center;
+        }
+
+        .results {
+            margin-top: 20px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .status {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #555;
+            text-align: center;
+        }
+
+        .ai-analysis {
+            margin-top: 20px;
+            color: #28a745;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .warning {
+            color: #dc3545;
+        }
+
+        .carbon {
+            margin-top: 20px;
+            padding: 10px;
+            background: #e9ecef;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            color: #333;
             text-align: center;
         }
 
@@ -119,76 +117,9 @@
             color: #007bff;
         }
 
-        .graph {
-            margin-top: 20px;
-            text-align: center;
-            color: #007bff;
-        }
-
-        .graph div {
-            width: 80%;
-            height: 200px;
-            background-color: #e0e0e0;
-            border-radius: 10px;
-            margin: 20px auto;
-            position: relative;
-        }
-
-        .graph .progress-bar {
-            background: linear-gradient(135deg, #007bff, #6610f2);
-            height: 100%;
-            width: 0%;
-            border-radius: 10px;
-            animation: progress 3s ease-out forwards;
-        }
-
-        @keyframes progress {
-            0% { width: 0%; }
-            100% { width: 100%; }
-        }
-
-        /* ProtonMail login form styles */
-        .protonmail-login {
-            background: #f6f6f6;
-            padding: 20px;
-            border-radius: 15px;
-            margin-top: 20px;
-        }
-
-        .protonmail-login h2 {
-            text-align: center;
-            color: #007bff;
-            font-size: 24px;
-        }
-
-        .protonmail-login input {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            font-size: 16px;
-        }
-
-        .protonmail-login .login-button {
-            background: #ff6f61;
-            color: white;
-            font-size: 18px;
-            padding: 15px;
-            border-radius: 8px;
-            border: none;
-            width: 100%;
-            cursor: pointer;
-        }
-
-        .protonmail-login .login-button:hover {
-            opacity: 0.9;
-        }
     </style>
 </head>
 <body>
-
-    <!-- Login Section -->
     <div id="login" class="container">
         <h1>Login</h1>
         <form id="loginForm">
@@ -200,24 +131,13 @@
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" placeholder="Enter your password" required>
             </div>
-            <button type="submit" class="button">Login</button>
+            <button type="submit" class="btn">Login</button>
             <div id="loginError" class="error"></div>
         </form>
-        <button class="button" onclick="showRegister()">Register</button>
+        <button class="btn" onclick="showRegister()">Register</button>
         <div id="userCount" class="user-count">Active Users: <span id="activeUsers">0</span></div>
-
-        <!-- ProtonMail Login Section -->
-        <div class="protonmail-login">
-            <h2>Login with ProtonMail</h2>
-            <form id="protonmailForm">
-                <input type="email" id="protonEmail" placeholder="Enter ProtonMail Email" required>
-                <input type="password" id="protonPassword" placeholder="Enter ProtonMail Password" required>
-                <button type="submit" class="login-button">Login with ProtonMail</button>
-            </form>
-        </div>
     </div>
 
-    <!-- Register Section -->
     <div id="register" class="container" style="display: none;">
         <h1>Register</h1>
         <form id="registerForm">
@@ -233,53 +153,43 @@
                 <label for="regEmail">Email</label>
                 <input type="email" id="regEmail" name="email" placeholder="Enter your email" required>
             </div>
-            <button type="submit" class="button">Register</button>
+            <button type="submit" class="btn">Register</button>
             <div id="registerError" class="error"></div>
         </form>
-        <button class="button" onclick="showLogin()">Back to Login</button>
+        <button class="btn" onclick="showLogin()">Back to Login</button>
     </div>
 
-    <!-- Scan & Features Section -->
     <div id="scan" class="container" style="display: none;">
-        <h1>Antivirus & Clean Master</h1>
-
-        <div class="feature">
-            <div class="clean-icon">🧹</div>
-            <h2>Junk File Cleaner</h2>
-            <button class="button" onclick="cleanJunk()">Clean Junk Files</button>
-            <div id="junkStatus" class="status"></div>
-        </div>
-
-        <div class="feature">
-            <div class="clean-icon">🔋</div>
-            <h2>Battery Saver</h2>
-            <button class="button" onclick="saveBattery()">Save Battery</button>
-            <div id="batteryStatus" class="status"></div>
-        </div>
-
-        <div class="feature">
-            <div class="clean-icon">❄️</div>
-            <h2>CPU Cooler</h2>
-            <button class="button" onclick="coolCPU()">Cool Down CPU</button>
-            <div id="cpuStatus" class="status"></div>
-        </div>
-
-        <div class="feature">
-            <div class="clean-icon">🔐</div>
-            <h2>Privacy Cleaner</h2>
-            <button class="button" onclick="cleanPrivacy()">Clean Privacy</button>
-            <div id="privacyStatus" class="status"></div>
-        </div>
-
-        <div id="results" class="results"></div>
-
-        <div class="graph">
-            <h2>System Health</h2>
-            <div class="graph">
-                <div class="progress-bar"></div>
+        <h1>Antivirus & AI Maintenance</h1>
+        <form id="scanForm">
+            <div class="form-group">
+                <label for="fileInput">Select a file to scan:</label>
+                <input type="file" id="fileInput" name="file" required>
             </div>
-            <p>Scan Progress</p>
-        </div>
+            <button type="submit" class="btn">Start AI Scan</button>
+        </form>
+        <div id="results" class="results"></div>
+        <div id="aiAnalysis" class="ai-analysis"></div>
+        <div class="status" id="cleanupStatus"></div>
+        <div id="carbonData" class="carbon"></div>
+    </div>
+
+    <!-- ProtonMail Login Section -->
+    <div id="protonmailLogin" class="container" style="display: none;">
+        <h1>ProtonMail Login</h1>
+        <form id="protonmailLoginForm">
+            <div class="form-group">
+                <label for="protonUsername">Email</label>
+                <input type="email" id="protonUsername" name="username" placeholder="Enter your ProtonMail email" required>
+            </div>
+            <div class="form-group">
+                <label for="protonPassword">Password</label>
+                <input type="password" id="protonPassword" name="password" placeholder="Enter your ProtonMail password" required>
+            </div>
+            <button type="submit" class="btn">Login to ProtonMail</button>
+            <div id="protonmailLoginError" class="error"></div>
+        </form>
+        <button class="btn" onclick="showLogin()">Back to Login</button>
     </div>
 
     <script>
@@ -298,6 +208,12 @@
         function showLogin() {
             document.getElementById('register').style.display = 'none';
             document.getElementById('login').style.display = 'block';
+            document.getElementById('protonmailLogin').style.display = 'none';
+        }
+
+        function showProtonMailLogin() {
+            document.getElementById('login').style.display = 'none';
+            document.getElementById('protonmailLogin').style.display = 'block';
         }
 
         document.getElementById('loginForm').addEventListener('submit', function(event) {
@@ -311,6 +227,20 @@
                 updateActiveUsers(1);
             } else {
                 document.getElementById('loginError').textContent = 'Invalid username or password';
+            }
+        });
+
+        document.getElementById('protonmailLoginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const protonUsername = document.getElementById('protonUsername').value;
+            const protonPassword = document.getElementById('protonPassword').value;
+
+            // Simulating ProtonMail login, replace this with actual integration
+            if (protonUsername === 'user@protonmail.com' && protonPassword === 'proton123') {
+                alert('Successfully logged into ProtonMail!');
+                showLogin();
+            } else {
+                document.getElementById('protonmailLoginError').textContent = 'Invalid ProtonMail credentials';
             }
         });
 
@@ -328,53 +258,46 @@
             }
         });
 
-        document.getElementById('protonmailForm').addEventListener('submit', function(event) {
+        document.getElementById('scanForm').addEventListener('submit', function(event) {
             event.preventDefault();
-            const email = document.getElementById('protonEmail').value;
-            const password = document.getElementById('protonPassword').value;
 
-            if (email && password) {
-                alert('Logged in with ProtonMail');
-                document.getElementById('login').style.display = 'none';
-                document.getElementById('scan').style.display = 'block';
-                updateActiveUsers(1);
-            } else {
-                alert('Invalid ProtonMail credentials');
+            const fileInput = document.getElementById('fileInput');
+            const resultsDiv = document.getElementById('results');
+            const cleanupStatus = document.getElementById('cleanupStatus');
+            const aiAnalysis = document.getElementById('aiAnalysis');
+            const carbonData = document.getElementById('carbonData');
+
+            if (!fileInput.files.length) {
+                resultsDiv.innerHTML = '<p class="error">Please select a file to scan.</p>';
+                return;
             }
+
+            const file = fileInput.files[0];
+            resultsDiv.innerHTML = `<p>Scanning file: <strong>${file.name}</strong></p>`;
+
+            // Simulate AI-based file analysis
+            setTimeout(() => {
+                const riskScore = Math.random();
+                if (riskScore > 0.7) {
+                    aiAnalysis.innerHTML = `<p class="warning">AI Analysis: <strong>${file.name}</strong> is potentially dangerous. Risk Score: ${(riskScore * 100).toFixed(1)}%</p>`;
+                } else {
+                    aiAnalysis.innerHTML = `<p>AI Analysis: <strong>${file.name}</strong> is safe. Risk Score: ${(riskScore * 100).toFixed(1)}%</p>`;
+                }
+            }, 2000);
+
+            // Simulate junk file cleanup
+            cleanupStatus.innerHTML = '<p>Performing system cleanup...</p>';
+            setTimeout(() => {
+                cleanupStatus.innerHTML = '<p>Cleanup complete. Unnecessary files removed.</p>';
+            }, 3000);
+
+            // Simulate Carbon Footprint calculation
+            carbonData.innerHTML = '<p>Calculating carbon footprint...</p>';
+            setTimeout(() => {
+                const carbonSaved = (Math.random() * 10).toFixed(2);
+                carbonData.innerHTML = `<p>Carbon footprint reduced by: <strong>${carbonSaved} grams</strong> during this operation.</p>`;
+            }, 1500);
         });
-
-        function cleanJunk() {
-            const junkStatus = document.getElementById('junkStatus');
-            junkStatus.textContent = 'Scanning for junk files...';
-            setTimeout(() => {
-                junkStatus.textContent = 'Junk files cleaned! Performance Boosted.';
-            }, 2000);
-        }
-
-        function saveBattery() {
-            const batteryStatus = document.getElementById('batteryStatus');
-            batteryStatus.textContent = 'Saving battery...';
-            setTimeout(() => {
-                batteryStatus.textContent = 'Battery optimized. Power Saving Mode Activated.';
-            }, 2000);
-        }
-
-        function coolCPU() {
-            const cpuStatus = document.getElementById('cpuStatus');
-            cpuStatus.textContent = 'Cooling down CPU...';
-            setTimeout(() => {
-                cpuStatus.textContent = 'CPU cooled. All background processes paused.';
-            }, 2000);
-        }
-
-        function cleanPrivacy() {
-            const privacyStatus = document.getElementById('privacyStatus');
-            privacyStatus.textContent = 'Cleaning privacy data...';
-            setTimeout(() => {
-                privacyStatus.textContent = 'Privacy data cleaned. Your personal info is safe.';
-            }, 2000);
-        }
     </script>
-
 </body>
 </html>
