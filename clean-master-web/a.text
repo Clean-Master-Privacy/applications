@@ -1,0 +1,8 @@
+3. Çalıştırma
+
+Yine, bu dosyaları (index.html ve script.js) uygun şekilde oluşturduktan sonra bir web sunucusu açmalısınız. Python ile basit bir sunucu kurarak uygulamayı çalıştırabilirsiniz.
+
+      
+
+# Python 3 ile
+python -m http.server 8000
