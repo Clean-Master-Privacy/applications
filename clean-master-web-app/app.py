@@ -1,41 +1,29 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, request, jsonify, render_template
 import os
 
 app = Flask(__name__)
 
-CACHE_DIR = "cache_files"
-
-# Cache dosyalarını simüle et
-if not os.path.exists(CACHE_DIR):
-    os.makedirs(CACHE_DIR)
-
-for i in range(1, 6):
-    with open(f"{CACHE_DIR}/file{i}.tmp", "w") as f:
-        f.write(f"Temporary data for file {i}")
+# Virus database (dummy)
+virus_db = {
+    "example_virus": "This is a known virus!",
+}
 
 @app.route('/')
-def home():
+def index():
     return render_template('index.html')
 
-@app.route('/clean_cache', methods=['POST'])
-def clean_cache():
-    files_deleted = []
-    for filename in os.listdir(CACHE_DIR):
-        file_path = os.path.join(CACHE_DIR, filename)
-        try:
-            os.remove(file_path)
-            files_deleted.append(filename)
-        except Exception as e:
-            return jsonify({"status": "error", "message": str(e)}), 500
-    return jsonify({"status": "success", "message": f"Deleted files: {files_deleted}"}), 200
+@app.route('/scan_file', methods=['POST'])
+def scan_file():
+    # Simulate scanning a file
+    uploaded_file = request.files['file']
+    file_content = uploaded_file.read().decode('utf-8')  # Read file content as text
+    
+    # Simple virus scan simulation
+    for virus_name, virus_description in virus_db.items():
+        if virus_name in file_content:
+            return jsonify({"result": f"Virus found: {virus_name} - {virus_description}"})
+    
+    return jsonify({"result": "No viruses detected."})
 
-@app.route('/optimize_performance', methods=['POST'])
-def optimize_performance():
-    return jsonify({"status": "success", "message": "Device optimized!"}), 200
-
-@app.route('/save_data', methods=['POST'])
-def save_data():
-    return jsonify({"status": "success", "message": "Data usage optimized!"}), 200
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run(debug=True)
