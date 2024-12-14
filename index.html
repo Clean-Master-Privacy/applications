@@ -6,18 +6,18 @@
     <title>Clean Master Home Screen</title>
     <style>
         body {
-            background-color: #001F3F; /* Dark blue background */
+            background-color: #001F3F; /* Koyu mavi arka plan */
             font-family: Arial, sans-serif;
             display: flex;
             flex-direction: column;
-            align-items: center; /* Center items horizontally */
-            justify-content: flex-start; /* Align items to the top */
+            align-items: center; /* Öğeleri yatay olarak ortalar */
+            justify-content: flex-start; /* Öğeleri üstte hizalar */
             height: 100vh;
             margin: 0;
-            text-align: center; /* Centered text */
-            color: white; /* White text color */
-            padding-top: 40px; /* Space from the top */
-            position: relative; /* Positioning context */
+            text-align: center; /* Metni ortala */
+            color: white; /* Beyaz metin rengi */
+            padding-top: 40px; /* Üstten kenar boşluğu */
+            position: relative; /* Konumlandırma bağlamı */
         }
 
         h1 {
@@ -29,43 +29,43 @@
             font-size: 20px;
         }
 
-        /* Progress Bar Style */
+        /* İlerleme çubuğu stili */
         .progress-container {
-            width: 250px; /* Width of the progress bar */
-            height: 15px; /* Height of the progress bar */
-            background-color: white; /* White background for the progress bar */
+            width: 250px; /* İlerleme çubuğunun genişliği */
+            height: 15px; /* İlerleme çubuğunun yüksekliği */
+            background-color: white; /* İlerleme çubuğu için beyaz arka plan */
             border-radius: 10px;
-            position: absolute; /* Absolute positioning */
+            position: absolute; /* Mutlak konumlandırma */
         }
 
-        /* Left progress bar */
+        /* Sol ilerleme çubuğu */
         .storage-progress-wrapper {
-            left: 20px; /* Left corner */
-            top: 20px; /* Space from the top */
+            left: 20px; /* Sol köşe */
+            top: 20px; /* Üstten alan */
         }
 
-        /* Right progress bar */
+        /* Sağ ilerleme çubuğu */
         .ram-progress-wrapper {
-            right: 20px; /* Right corner */
-            top: 20px; /* Space from the top */
+            right: 20px; /* Sağ köşe */
+            top: 20px; /* Üstten alan */
         }
 
         .progress-bar {
             height: 100%;
             border-radius: 10px;
-            transition: width 0.3s; /* Animation transition */
+            transition: width 0.3s; /* Animasyon geçişi */
         }
 
-        /* Storage progress bar */
+        /* Depolama ilerleme çubuğu */
         .storage-progress {
-            background-color: #4caf50; /* Green */
-            width: 70%; /* Initial width */
+            background-color: #4caf50; /* Yeşil renk */
+            width: 70%; /* Başlangıç genişliği */
         }
         
-        /* RAM progress bar */
+        /* RAM ilerleme çubuğu */
         .ram-progress {
-            background-color: #f44336; /* Red */
-            width: 40%; /* Initial width */
+            background-color: #f44336; /* Kırmızı renk */
+            width: 40%; /* Başlangıç genişliği */
         }
 
         .clean-button {
@@ -73,10 +73,10 @@
             color: #2196F3;
             border: none;
             border-radius: 5px;
-            padding: 10px 20px; /* Button padding */
+            padding: 10px 20px; /* Buton içeriği için dolgu */
             font-size: 16px;
             cursor: pointer;
-            margin: 10px 0; /* Margin around button */
+            margin: 10px 0; /* Buton etrafında kenar boşluğu */
         }
 
         .clean-button:hover {
@@ -87,27 +87,27 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            margin-top: 20px; /* Space above buttons */
+            margin-top: 20px; /* Butonların üstünde alan */
         }
 
         .feature-button {
             background-color: #f9f9f9;
             border: 1px solid #ccc;
             border-radius: 5px;
-            padding: 10px; /* Button padding */
-            margin: 5px; /* Margin around buttons */
+            padding: 10px; /* Buton içeriği için dolgu */
+            margin: 5px; /* Butonlar arasında kenar boşluğu */
             cursor: pointer;
             flex: 1;
-            max-width: 120px; /* Button width limit */
+            max-width: 120px; /* Buton genişlik sınırı */
             text-align: center;
             color: #2196F3;
         }
 
         footer {
-            margin-top: auto; /* Align to the bottom */
+            margin-top: auto; /* Altakip hizala */
             margin: 20px 0;
             font-size: 14px;
-            color: white; /* White text color */
+            color: white; /* Beyaz metin rengi */
         }
     </style>
 </head>
@@ -140,25 +140,17 @@
     </footer>
 
     <script>
-        // JavaScript code
+        // JavaScript kodu
         document.getElementById('cleanButton').addEventListener('click', function() {
             alert('Cleaning device...');
         });
 
-        document.getElementById('boostButton').addEventListener('click', function() {
-            alert('Booster activated!');
-        });
+        const buttons = ['boostButton', 'cleanupButton', 'appManagementButton', 'settingsButton'];
 
-        document.getElementById('cleanupButton').addEventListener('click', function() {
-            alert('Cleaning files...');
-        });
-
-        document.getElementById('appManagementButton').addEventListener('click', function() {
-            alert('Opening app management...');
-        });
-
-        document.getElementById('settingsButton').addEventListener('click', function() {
-            alert('Opening settings...');
+        buttons.forEach(buttonId => {
+            document.getElementById(buttonId).addEventListener('click', function() {
+                alert(`You clicked: ${this.textContent}`);
+            });
         });
     </script>
 
