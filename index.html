@@ -57,7 +57,7 @@
             width: 40%; /* Başlangıç genişliği */
         }
 
-        .clean-button, .scan-button {
+        .clean-button, .scan-button, .security-button {
             background-color: #f9f9f9;
             color: #2196F3;
             border: none;
@@ -68,7 +68,7 @@
             margin: 10px 0; /* Buton etrafında kenar boşluğu */
         }
 
-        .clean-button:hover, .scan-button:hover {
+        .clean-button:hover, .scan-button:hover, .security-button:hover {
             background-color: #e0e0e0;
         }
 
@@ -90,13 +90,6 @@
             max-width: 120px; /* Buton genişlik sınırı */
             text-align: center;
             color: #2196F3;
-        }
-
-        footer {
-            margin-top: auto; /* Altakip hizala */
-            margin: 20px 0;
-            font-size: 14px;
-            color: white; /* Beyaz metin rengi */
         }
 
         /* Grafik alanı */
@@ -124,6 +117,7 @@
 
     <button class="clean-button" id="cleanButton">Clean</button>
     <button class="scan-button" id="scanButton">Antivirus Scan</button>
+    <button class="security-button" id="securityButton">Eş Zamanlı Güvenlik</button>
 
     <div class="feature-buttons">
         <div class="feature-button" id="boostButton">🚀 Booster</div>
@@ -136,25 +130,35 @@
         <canvas id="usageChart"></canvas>
     </div>
 
-    <footer>
-        Check settings for more features.
-    </footer>
-
     <script>
         // JavaScript kodu
         document.getElementById('cleanButton').addEventListener('click', function() {
-            alert('Cleaning device...');
+            // Burada bazı temizleme işlemleri yapılabilir (örneğin, geçici dosyaları silme)
+            alert('Cihaz temizleniyor...');
+            // Temizleme işlemi başarılı olduğunda
+            // progress-bar genişletilebilir gibi bir şeyler ekleyebilirsiniz.
         });
 
         document.getElementById('scanButton').addEventListener('click', function() {
-            alert('Scanning for viruses...');
+            // Bu noktada bir virüs tarama işlemi simüle edilebilir.
+            alert('Virüsler için tarama yapılıyor...');
+            // Tarama işlemi bittikten sonra:
+            setTimeout(function() {
+                alert('Tarama tamamlandı. Virüs yok!');
+            }, 3000); // 3 saniye sonra tamamlandı mesajı
+        });
+
+        document.getElementById('securityButton').addEventListener('click', function() {
+            // Eş zamanlı güvenlik aktif edilir
+            alert('Eş zamanlı güvenlik aktif.');
+            // İsterseniz burada arka planda sürekli bir kontrol dedektörü çalıştırabilirsiniz.
         });
 
         const buttons = ['boostButton', 'cleanupButton', 'appManagementButton', 'settingsButton'];
 
         buttons.forEach(buttonId => {
             document.getElementById(buttonId).addEventListener('click', function() {
-                alert(`You clicked: ${this.textContent}`);
+                alert(`Bu özellik henüz geliştirilmedi: ${this.textContent}`);
             });
         });
 
