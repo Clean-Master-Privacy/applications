@@ -1,0 +1,19 @@
+{
+  "name": "terminal-app",
+  "version": "1.0.0",
+  "description": "A web-based terminal with file path listing functionality",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js"
+  },
+  "dependencies": {
+    "ws": "^8.0.0",
+    "xterm": "^4.8.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "author": "Your Name",
+  "license": "ISC"
+}
