@@ -1,0 +1,52 @@
+{
+    "force_recover": "false",
+    "engines": [{
+        "name": "百度",
+        "id": "6",
+        "default": "false",
+        "url": "http://m.baidu.com/s?from=1011081f&word={searchTerms}",
+        "encoding": "utf-8",
+        "icon": "http://cml.ksmobile.com/web/image/search_engine_baidu.png"
+    },
+    {
+        "name": "搜狗",
+        "id": "7",
+        "default": "false",
+        "url": "http://wap.sogou.com/web/searchList.jsp?keyword={searchTerms}",
+        "encoding": "utf-8",
+        "icon": "http://cml.ksmobile.com/web/image/search_engine_sogou.png"
+    },
+    {
+        "name": "默认搜索",
+        "id": "5",
+        "default": "false",
+        "url": "http://searchmobileonline.com/?pubid=207291103&q={searchTerms}",
+        "encoding": "utf-8",
+        "icon": "asset://search_engine/search_engine_general.png"
+    },
+    {
+        "name": "谷歌",
+        "id": "0",
+        "default": "false",
+        "url": "https://www.google.com/search?ie=UTF-8&source=android-browser&q={searchTerms}",
+        "encoding": "utf-8",
+        "icon": "asset://search_engine/search_engine_google.png"
+    },
+    {
+        "name": "必应",
+        "id": "1",
+        "default": "false",
+        "url": "http://www.bing.com/search?q={searchTerms}",
+        "encoding": "utf-8",
+        "icon": "http://cml.ksmobile.com/web/image/search_engine_bing.png"
+    },
+    {
+        "name": "Yandex",
+        "id": "4",
+        "default": "false",
+        "url": "http://www.yandex.ru/yandsearch?text={searchTerms}",
+        "encoding": "utf-8",
+        "icon": "asset://search_engine/search_engine_yandex.png"
+    }]
+}
+
