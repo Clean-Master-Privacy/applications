@@ -1,7 +1,6 @@
 # Clean Master Privacy
+----------------------
 About Clean Master Privacy
-
-license right 2024 gamestime102 from the creator clean master privacy
 
 RAM, File, Virus Cleaner, Phone Booster for Android
 
@@ -35,5 +34,7 @@ Other features
 
 License
 -------
+license right 2024 gamestime102 from the creator clean master privacy
+
 The code and data files in this distribution are licensed under the terms of the GPLv3 as published by the Free Software Foundation. See https://www.gnu.org/licenses/ for a copy of this license.
 
