@@ -50,46 +50,27 @@
             background-color: #4caf50; /* Yeşil renk */
             width: 70%; /* Başlangıç genişliği */
         }
-        
+
         /* RAM ilerleme çubuğu */
         .ram-progress {
             background-color: #f44336; /* Kırmızı renk */
             width: 40%; /* Başlangıç genişliği */
         }
 
-        .clean-button, .scan-button, .security-button {
+        .button {
             background-color: #f9f9f9;
             color: #2196F3;
             border: none;
             border-radius: 5px;
-            padding: 10px 20px; /* Buton içeriği için dolgu */
-            font-size: 16px;
+            padding: 15px 30px; /* Buton içeriği için dolgu */
+            font-size: 18px; /* Font boyutu */
             cursor: pointer;
             margin: 10px 0; /* Buton etrafında kenar boşluğu */
+            transition: background-color 0.3s; /* Geçiş efekti */
         }
 
-        .clean-button:hover, .scan-button:hover, .security-button:hover {
+        .button:hover {
             background-color: #e0e0e0;
-        }
-
-        .feature-buttons {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 20px; /* Butonların üstünde alan */
-        }
-
-        .feature-button {
-            background-color: #f9f9f9;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 10px; /* Buton içeriği için dolgu */
-            margin: 5px; /* Butonlar arasında kenar boşluğu */
-            cursor: pointer;
-            flex: 1;
-            max-width: 120px; /* Buton genişlik sınırı */
-            text-align: center;
-            color: #2196F3;
         }
 
         /* Grafik alanı */
@@ -115,16 +96,9 @@
         <p>RAM: 40% Used</p>
     </div>
 
-    <button class="clean-button" id="cleanButton">Clean</button>
-    <button class="scan-button" id="scanButton">Antivirus Scan</button>
-    <button class="security-button" id="securityButton">Eş Zamanlı Güvenlik</button>
-
-    <div class="feature-buttons">
-        <div class="feature-button" id="boostButton">🚀 Booster</div>
-        <div class="feature-button" id="cleanupButton">🗑️ File Cleanup</div>
-        <div class="feature-button" id="appManagementButton">📦 App Management</div>
-        <div class="feature-button" id="settingsButton">🛠️ Settings</div>
-    </div>
+    <button class="button" id="cleanButton">Clean</button>
+    <button class="button" id="scanButton">Antivirus Scan</button>
+    <button class="button" id="securityButton">Eş Zamanlı Güvenlik</button>
     
     <div class="chart-container">
         <canvas id="usageChart"></canvas>
@@ -133,41 +107,26 @@
     <script>
         // JavaScript kodu
         document.getElementById('cleanButton').addEventListener('click', function() {
-            // Burada bazı temizleme işlemleri yapılabilir (örneğin, geçici dosyaları silme)
             alert('Cihaz temizleniyor...');
-            // Temizleme işlemi başarılı olduğunda
-            // progress-bar genişletilebilir gibi bir şeyler ekleyebilirsiniz.
         });
 
         document.getElementById('scanButton').addEventListener('click', function() {
-            // Bu noktada bir virüs tarama işlemi simüle edilebilir.
             alert('Virüsler için tarama yapılıyor...');
-            // Tarama işlemi bittikten sonra:
             setTimeout(function() {
                 alert('Tarama tamamlandı. Virüs yok!');
             }, 3000); // 3 saniye sonra tamamlandı mesajı
         });
 
         document.getElementById('securityButton').addEventListener('click', function() {
-            // Eş zamanlı güvenlik aktif edilir
             alert('Eş zamanlı güvenlik aktif.');
-            // İsterseniz burada arka planda sürekli bir kontrol dedektörü çalıştırabilirsiniz.
-        });
-
-        const buttons = ['boostButton', 'cleanupButton', 'appManagementButton', 'settingsButton'];
-
-        buttons.forEach(buttonId => {
-            document.getElementById(buttonId).addEventListener('click', function() {
-                alert(`Bu özellik henüz geliştirilmedi: ${this.textContent}`);
-            });
         });
 
         // Chart.js ile çubuk grafik oluşturma
         const ctx = document.getElementById('usageChart').getContext('2d');
         const usageChart = new Chart(ctx, {
-            type: 'bar',  // Çubuk grafik türü
+            type: 'bar',
             data: {
-                labels: ['Storage Used', 'Storage Available'],
+                labels: ['Depolama Kullanım Oranı', 'Depolama Boş'],
                 datasets: [{
                     label: 'Depolama Kullanım Oranı',
                     data: [70, 30],
