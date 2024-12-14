@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Scanner</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    
+    <button id="start-scan">Start Scan</button>
+    
+    <div id="progress">
+        <div id="progress-bar"></div>
+    </div>
+    
+    <div id="timer">Time: 0 seconds</div>
+
+    <div id="results">
+        <h2>Found Unwanted Files:</h2>
+        <ul id="file-list"></ul>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#start-scan').click(function() {
+                $('#file-list').empty();
+                $('#progress-bar').css({ width: '0%' });
+                $('#timer').text('Time: 0 seconds');
+
+                const fakeFiles = Array.from({length: 100}, (_, i) => `file_${i + 1}.txt`);
+                let totalSize = 0;
+
+                let startTime = Date.now();
+                let timerInterval = setInterval(function() {
+                    let elapsedTime = Math.floor((Date.now() - startTime) / 1000);
+                    $('#timer').text('Time: ' + elapsedTime + ' seconds');
+                }, 1000);
+
+                fakeFiles.forEach((file, index) => {
+                    setTimeout(() => {
+                        const size = Math.floor(Math.random() * 1000) + 1;  // 1-1000 bytes
+                        totalSize += size;
+                        $('#file-list').append(`<li>${file} - ${size} bytes</li>`);
+                        
+                        const progressPercentage = ((index + 1) / fakeFiles.length) * 100;
+                        $('#progress-bar').css({ width: `${progressPercentage}%` });
+
+                        // Clear interval after the last file
+                        if (index === fakeFiles.length - 1) {
+                            clearInterval(timerInterval);
+                        }
+                    }, index * 100); // Simulate scanning time
+                });
+            });
+        });
+    </script>
+</body>
+</html>
