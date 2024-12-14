@@ -23,6 +23,8 @@ button:hover {
     background-color: #45a049;
 }
 
-#location, #orientation {
+#result {
     margin-top: 20px;
+    text-align: left;
+    display: inline-block;
 }
