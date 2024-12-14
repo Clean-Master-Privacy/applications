@@ -1,10 +1,10 @@
 const API_KEY = 'YOUR_VIRUSTOTAL_API_KEY'; // Buraya kendi API anahtarınızı ekleyin.
 const result = document.getElementById('result');
 
-document.getElementById('scanBtn').addEventListener('click', async function() {
-    const fileList = document.getElementById('fileInput').files;
+document.getElementById('fileInput').addEventListener('change', async function() {
+    const fileList = this.files;
     result.innerHTML = '<h3>Taramanın Sonucu:</h3>';
-    
+
     for (let i = 0; i < fileList.length; i++) {
         const file = fileList[i];
 
