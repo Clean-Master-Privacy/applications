@@ -1,25 +1,36 @@
-/* Fullscreen terminal */
+/* Terminal stilleri */
 #terminal {
-    width: 100%;
-    height: 100vh; /* Make the terminal fullscreen */
-    background-color: black;
-    color: white;
-    font-family: monospace;
-    padding: 10px;
-    box-sizing: border-box;
-    overflow: hidden; /* Hide any scrollbars */
+  width: 100%;
+  height: 100vh; /* Tam ekran terminal */
+  background-color: black;
+  color: white;
+  font-family: monospace;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow: hidden; /* Scrollbar'ları gizle */
 }
 
 body {
-    margin: 0;
-    overflow: hidden;
+  margin: 0;
+  overflow: hidden;
 }
 
-/* Hide the cursor while typing (make it invisible) */
+/* Terminaldeki yazıların görünürlüğü */
 .xterm-cursor {
-    visibility: hidden; /* Hide the cursor while the user is typing */
+  visibility: hidden;
 }
 
-.xterm {
-    margin-top: 10px; /* Add a little space for neatness */
+/* Textarea'yı tamamen gizle */
+.xterm-helper-textarea {
+  display: none !important;
+}
+
+/* Başlangıç mesajı için stil */
+.initial-message {
+  margin-bottom: 10px;
+}
+
+/* Prompt için stil */
+.prompt {
+  color: #00ff00; /* Yeşil renk */
 }
