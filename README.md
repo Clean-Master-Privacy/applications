@@ -30,3 +30,7 @@ Other features
 ☆ Wi-Fi SECURITY - Detect fake Wi-Fis and unauthorized connections.
 
 ☆ GAME ACCELERATOR- Manage your games and increase game loading speed.
+
+License
+
+The code and data files in this distribution are licensed under the terms of the GPLv3 as published by the Free Software Foundation. See https://www.gnu.org/licenses/ for a copy of this license.
