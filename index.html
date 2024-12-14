@@ -10,11 +10,11 @@
             font-family: Arial, sans-serif;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: center; /* Centered items vertically */
             justify-content: flex-start; /* Align items to the top */
             height: 100vh;
             margin: 0;
-            text-align: center;
+            text-align: center; /* Centered text */
             color: white; /* Text color white */
             padding-top: 20px; /* Space from the top */
         }
@@ -35,8 +35,6 @@
             background-color: white; /* Background color of the progress bar */
             border-radius: 10px;
             margin: 5px; /* Slight margin */
-            position: relative; /* For inner positioning */
-            margin-bottom: 10px; /* Space between progress bars */
         }
 
         .progress-bar {
@@ -98,6 +96,14 @@
             font-size: 14px;
             color: white; /* Text color white */
         }
+
+        /* Align progress bars on left and right */
+        .progress-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: space-between; /* Space between left and right */
+            align-items: center; /* Center vertically */
+        }
     </style>
 </head>
 <body>
@@ -105,7 +111,7 @@
     <h1>Clean Master</h1>
     <h2>Clean Your Device</h2>
 
-    <div style="display: flex; flex-direction: column; align-items: center;">
+    <div class="progress-wrapper">
         <div class="progress-container">
             <div class="progress-bar storage-progress"></div>
         </div>
