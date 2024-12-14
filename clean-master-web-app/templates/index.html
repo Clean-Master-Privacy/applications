@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean Master Web</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Clean Master Web</h1>
+        <button class="btn" id="cleanFilesBtn">Cache & Cookies Temizle</button>
+        <button class="btn" id="optimizePerformanceBtn">Performans Optimizasyonu</button>
+        <button class="btn" id="saveDataBtn">Veri Tasarrufu Sağla</button>
+        <div class="status" id="status"></div>
+    </div>
+
+    <script>
+        document.getElementById("cleanFilesBtn").addEventListener("click", function() {
+            document.getElementById("status").textContent = "Cache ve cookies temizleniyor...";
+            fetch("/clean_cache", { method: "POST" })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("status").textContent = data.message;
+                })
+                .catch(error => {
+                    document.getElementById("status").textContent = "Hata oluştu!";
+                });
+        });
+
+        document.getElementById("optimizePerformanceBtn").addEventListener("click", function() {
+            document.getElementById("status").textContent = "Performans optimizasyonu yapılıyor...";
+            fetch("/optimize_performance", { method: "POST" })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("status").textContent = data.message;
+                });
+        });
+
+        document.getElementById("saveDataBtn").addEventListener("click", function() {
+            document.getElementById("status").textContent = "Veri tasarrufu sağlanıyor...";
+            fetch("/save_data", { method: "POST" })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("status").textContent = data.message;
+                });
+        });
+    </script>
+
+</body>
+</html>
