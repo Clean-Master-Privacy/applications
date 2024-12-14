@@ -8,6 +8,9 @@ document.getElementById('fileInput').addEventListener('change', async function()
     for (let i = 0; i < fileList.length; i++) {
         const file = fileList[i];
 
+        // Dosya bilgilerini göster
+        showFileInfo(file);
+        
         // Dosyayı oku
         const fileContent = await readFile(file);
         
@@ -27,6 +30,18 @@ document.getElementById('fileInput').addEventListener('change', async function()
         }
     }
 });
+
+// Dosya bilgilerini göster
+function showFileInfo(file) {
+    const info = `
+        <div class="file-info">
+            <strong>Dosya Adı:</strong> ${file.name}<br>
+            <strong>Dosya Boyutu:</strong> ${file.size} bytes<br>
+            <strong>Dosya Türü:</strong> ${file.type || 'Bilinmiyor'}<br>
+        </div>
+    `;
+    result.innerHTML += info;
+}
 
 // Dosyayı okuyarak base64 formatına dönüştür
 function readFile(file) {
