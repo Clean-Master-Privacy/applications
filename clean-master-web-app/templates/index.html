@@ -1,53 +1,39 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clean Master Web</title>
-    <link rel="manifest" href="/manifest.json">
-    <link rel="stylesheet" href="/static/css/styles.css">
+    <title>Clean Master Web - Virus Scanner</title>
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
-
     <div class="container">
-        <h1>Clean Master Web</h1>
-        <button class="btn" id="cleanFilesBtn">Cache & Cookies Temizle</button>
-        <button class="btn" id="optimizePerformanceBtn">Performans Optimizasyonu</button>
-        <button class="btn" id="saveDataBtn">Veri Tasarrufu Sağla</button>
-        <div class="status" id="status"></div>
+        <h1>Clean Master Web - Virus Scanner</h1>
+        <form action="/scan_file" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <button type="submit" class="btn">Scan File</button>
+        </form>
+        <div id="result">
+            <h3>Scan Result:</h3>
+            <pre id="scanResult"></pre>
+        </div>
     </div>
 
     <script>
-        document.getElementById("cleanFilesBtn").addEventListener("click", function() {
-            document.getElementById("status").textContent = "Cache ve cookies temizleniyor...";
-            fetch("/clean_cache", { method: "POST" })
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById("status").textContent = data.message;
-                })
-                .catch(error => {
-                    document.getElementById("status").textContent = "Hata oluştu!";
-                });
-        });
+        const form = document.querySelector('form');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
 
-        document.getElementById("optimizePerformanceBtn").addEventListener("click", function() {
-            document.getElementById("status").textContent = "Performans optimizasyonu yapılıyor...";
-            fetch("/optimize_performance", { method: "POST" })
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById("status").textContent = data.message;
-                });
-        });
+            const response = await fetch('/scan_file', {
+                method: 'POST',
+                body: formData,
+            });
 
-        document.getElementById("saveDataBtn").addEventListener("click", function() {
-            document.getElementById("status").textContent = "Veri tasarrufu sağlanıyor...";
-            fetch("/save_data", { method: "POST" })
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById("status").textContent = data.message;
-                });
+            const data = await response.json();
+            const resultDiv = document.getElementById('scanResult');
+            resultDiv.textContent = data.result || data.message;
         });
     </script>
-
 </body>
 </html>
