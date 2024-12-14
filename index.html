@@ -35,19 +35,8 @@
             height: 15px; /* İlerleme çubuğunun yüksekliği */
             background-color: white; /* İlerleme çubuğu için beyaz arka plan */
             border-radius: 10px;
-            position: absolute; /* Mutlak konumlandırma */
-        }
-
-        /* Sol ilerleme çubuğu */
-        .storage-progress-wrapper {
-            left: 20px; /* Sol köşe */
-            top: 20px; /* Üstten alan */
-        }
-
-        /* Sağ ilerleme çubuğu */
-        .ram-progress-wrapper {
-            right: 20px; /* Sağ köşe */
-            top: 20px; /* Üstten alan */
+            position: relative; /* Konumlandırma bağlamı */
+            margin: 20px 0; /* Üst ve alt boşluk */
         }
 
         .progress-bar {
@@ -68,7 +57,7 @@
             width: 40%; /* Başlangıç genişliği */
         }
 
-        .clean-button {
+        .clean-button, .scan-button {
             background-color: #f9f9f9;
             color: #2196F3;
             border: none;
@@ -79,7 +68,7 @@
             margin: 10px 0; /* Buton etrafında kenar boşluğu */
         }
 
-        .clean-button:hover {
+        .clean-button:hover, .scan-button:hover {
             background-color: #e0e0e0;
         }
 
@@ -109,30 +98,42 @@
             font-size: 14px;
             color: white; /* Beyaz metin rengi */
         }
+        
+        /* Grafik alanı */
+        .chart-container {
+            width: 300px;
+            height: 300px;
+            margin: 20px 0; /* Üst ve alt boşluk */
+        }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
     <h1>Clean Master</h1>
     <h2>Clean Your Device</h2>
 
-    <div class="progress-container storage-progress-wrapper">
+    <div class="progress-container">
         <div class="progress-bar storage-progress"></div>
+        <p>Storage: 70% Used</p>
     </div>
-    <div class="progress-container ram-progress-wrapper">
+    <div class="progress-container">
         <div class="progress-bar ram-progress"></div>
+        <p>RAM: 40% Used</p>
     </div>
-    
-    <p>Storage: 70% Used</p>
-    <p>RAM: 40% Used</p>
 
     <button class="clean-button" id="cleanButton">Clean</button>
+    <button class="scan-button" id="scanButton">Antivirus Scan</button>
 
     <div class="feature-buttons">
         <div class="feature-button" id="boostButton">🚀 Booster</div>
         <div class="feature-button" id="cleanupButton">🗑️ File Cleanup</div>
         <div class="feature-button" id="appManagementButton">📦 App Management</div>
         <div class="feature-button" id="settingsButton">🛠️ Settings</div>
+    </div>
+    
+    <div class="chart-container">
+        <canvas id="usageChart"></canvas>
     </div>
 
     <footer>
@@ -145,12 +146,43 @@
             alert('Cleaning device...');
         });
 
+        document.getElementById('scanButton').addEventListener('click', function() {
+            alert('Scanning for viruses...');
+        });
+
         const buttons = ['boostButton', 'cleanupButton', 'appManagementButton', 'settingsButton'];
 
         buttons.forEach(buttonId => {
             document.getElementById(buttonId).addEventListener('click', function() {
                 alert(`You clicked: ${this.textContent}`);
             });
+        });
+
+        // Chart.js ile grafik oluşturma
+        const ctx = document.getElementById('usageChart').getContext('2d');
+        const usageChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Storage Used', 'Storage Available'],
+                datasets: [{
+                    data: [70, 30],
+                    backgroundColor: ['#4caf50', '#2196F3'],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Storage Usage'
+                    }
+                }
+            }
         });
     </script>
 
