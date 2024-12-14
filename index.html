@@ -98,7 +98,7 @@
             font-size: 14px;
             color: white; /* Beyaz metin rengi */
         }
-        
+
         /* Grafik alanı */
         .chart-container {
             width: 300px;
@@ -158,16 +158,24 @@
             });
         });
 
-        // Chart.js ile grafik oluşturma
+        // Chart.js ile çubuk grafik oluşturma
         const ctx = document.getElementById('usageChart').getContext('2d');
         const usageChart = new Chart(ctx, {
-            type: 'doughnut',
+            type: 'bar',  // Çubuk grafik türü
             data: {
                 labels: ['Storage Used', 'Storage Available'],
                 datasets: [{
+                    label: 'Depolama Kullanım Oranı',
                     data: [70, 30],
-                    backgroundColor: ['#4caf50', '#2196F3'],
-                    hoverOffset: 4
+                    backgroundColor: [
+                        '#4caf50', // Kullanılan Depolama için Yeşil
+                        '#2196F3'  // Boş Depolama için Mavi
+                    ],
+                    borderColor: [
+                        '#388E3C', // Kullanılan Depolama için Koyu Yeşil Sınır
+                        '#1976D2'  // Boş Depolama için Koyu Mavi Sınır
+                    ],
+                    borderWidth: 1
                 }]
             },
             options: {
@@ -179,7 +187,13 @@
                     },
                     title: {
                         display: true,
-                        text: 'Storage Usage'
+                        text: 'Depolama Kullanımı'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100 // Y ekseninin maksimum değeri
                     }
                 }
             }
