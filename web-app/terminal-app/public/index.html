@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Terminal</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@4.8.0/css/xterm.css" />
+    <style>
+        #terminal {
+            width: 100%;
+            height: 90vh;
+        }
+        #clearBtn {
+            margin-top: 10px;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="terminal"></div>
+    <button id="clearBtn">Clear Terminal</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/xterm@4.8.0/lib/xterm.js"></script>
+    <script>
+        const socket = new WebSocket('ws://localhost:8080');
+        const terminal = new Terminal();
+        terminal.open(document.getElementById('terminal'));
+
+        socket.onmessage = function(event) {
+            terminal.write(event.data); // Sunucudan gelen mesajları terminalde göster
+        };
+
+        terminal.onData(function(data) {
+            socket.send(data); // Kullanıcıdan gelen komutları backend'e gönder
+        });
+
+        // Clear terminal on button click
+        document.getElementById('clearBtn').addEventListener('click', function() {
+            terminal.clear();  // Terminali temizle
+            socket.send('clear');  // Backend'e clear komutunu gönder
+        });
+    </script>
+</body>
+</html>
