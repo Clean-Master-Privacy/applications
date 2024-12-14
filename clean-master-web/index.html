@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html lang="tr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basit Antivirüs Uygulaması</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Virustotal Entegrasyonu</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #result {
+            margin-top: 20px;
+        }
+    </style>
 </head>
-
 <body>
-    <h1>Basit Antivirüs Uygulaması</h1>
-    
+
+    <h1>Dosya Tarayıcı</h1>
     <input type="file" id="fileInput" multiple>
-    <button id="scanBtn">Taramayı Başlat</button>
+    <button id="scanBtn">Tarayıcı Başlat</button>
     
     <div id="result"></div>
 
     <script src="script.js"></script>
 </body>
-
 </html>
