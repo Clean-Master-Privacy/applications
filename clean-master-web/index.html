@@ -4,22 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cihaz ile Etkileşim Uygulaması</title>
+    <title>Basit Antivirüs Uygulaması</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <h1>Cihaz ile Etkileşim Uygulaması</h1>
+    <h1>Basit Antivirüs Uygulaması</h1>
     
-    <button id="getLocation">Konum Bilgisi Al</button>
-    <div id="location"></div>
-
-    <button id="startCamera">Kamerayı Başlat</button>
-    <video id="video" width="300" height="200" autoplay></video>
-    <button id="snap">Fotoğraf Çek</button>
-    <canvas id="canvas" width="300" height="200"></canvas>
-
-    <div id="orientation"></div>
+    <input type="file" id="fileInput" multiple>
+    <button id="scanBtn">Taramayı Başlat</button>
+    
+    <div id="result"></div>
 
     <script src="script.js"></script>
 </body>
