@@ -4,77 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Terminal</title>
+    
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Set the terminal to fullscreen */
-        #terminal {
-            width: 100%;
-            height: 100vh; /* Fullscreen terminal */
-            background-color: black;
-            color: white;
-            font-family: monospace;
-            padding: 10px;
-            box-sizing: border-box;
-            overflow: hidden; /* Hide scrollbars */
-        }
-
-        body {
-            margin: 0;
-            overflow: hidden;
-        }
-
-        /* Hide the cursor when typing */
-        .xterm-cursor {
-            visibility: hidden; /* Hides the cursor while typing */
-        }
-
-        /* Optional: You can add some spacing or margin for readability */
-        .xterm {
-            margin-top: 10px;
-        }
-
-    </style>
 </head>
 <body>
-    <!-- Terminal element -->
     <div id="terminal"></div>
 
-    <!-- Load the xterm.js library -->
     <script src="https://cdn.jsdelivr.net/npm/xterm@4.9.0/lib/xterm.js"></script>
     <script>
-        const socket = new WebSocket('wss://clean-master-privacy.github.io/terminal-app'); // Replace with your Heroku app URL
+        const socket = new WebSocket('wss://clean-master-privacy.github.io/terminal-app');
 
         const terminal = new Terminal();
         terminal.open(document.getElementById('terminal'));
 
-        // Fixed message that will be shown at the start
-        const initialMessage = "gamestime102 [version 1.0.0] (c) gamestime102 all rights reserved.\n";
-        terminal.write(initialMessage); // Show fixed startup message
+        const initialMessage = `
+gamestime102 [version 1.0.0]
+(c) gamestime102 all rights reserved.
+`;
 
-        // When the terminal is ready for input
+        const prompt = '102.cmp $ ';
+
+        terminal.write(initialMessage);
+        terminal.write("\n" + prompt);
+
         terminal.onData(function(data) {
-            const prompt = '102.cmp ';
+            if (data === '\r') {
 
-            if (data === '\r') {  // Enter key pressed
-                // Send the user input to the WebSocket server
                 socket.send(data);
-                terminal.write('\r\n');  // New line after input
+                terminal.write('\r\n');
+                terminal.write("\n" + prompt);
             } else {
-                // Allow user input after the prompt (but show it)
                 terminal.write(data);
             }
         });
 
-        // When the server sends a message, display it in the terminal
         socket.onmessage = function(event) {
-            terminal.write(event.data); // Display server output in the terminal
-            terminal.write("\n102.cmp "); // Display the prompt again after server output
+            terminal.write(event.data);
+            terminal.write("\n" + prompt);
         };
 
-        // On connection, start with the prompt
         socket.onopen = function() {
-            terminal.write("\n102.cmp "); // Start with the prompt
+            terminal.write("\n" + prompt);
         };
+
+        document.querySelector('.xterm-helper-textarea').style.display = 'none';
     </script>
 </body>
 </html>
+
