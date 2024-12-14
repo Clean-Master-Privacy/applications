@@ -6,39 +6,42 @@
     <title>Web Terminal</title>
     <link rel="stylesheet" href="style.css">
     <style>
-
+        /* Set the terminal to fullscreen */
         #terminal {
             width: 100%;
-            height: 100vh;
+            height: 100vh; /* Set height to 100% of the viewport height */
             background-color: black;
             color: white;
         }
         
         body {
             margin: 0;
-            overflow: hidden;
+            overflow: hidden; /* Hide page scrollbars */
         }
     </style>
 </head>
 <body>
-    <!-- Only the terminal element, no clear button anymore -->
+    <!-- Terminal element -->
     <div id="terminal"></div>
 
     <!-- Load the xterm.js library -->
     <script src="https://cdn.jsdelivr.net/npm/xterm@4.9.0/lib/xterm.js"></script>
     <script>
-        
-        const socket = new WebSocket('wss://clean-master-privacy.github.io/terminal-app');
+        // Connect to the WebSocket server hosted on Heroku
+        const socket = new WebSocket('wss://clean-master-privacy.github.io/terminal-app'); // Replace with your Heroku app URL
 
         const terminal = new Terminal();
         terminal.open(document.getElementById('terminal'));
 
+        // When the server sends a message, display it in the terminal
         socket.onmessage = function(event) {
-            terminal.write(event.data);
+            terminal.write(event.data); // Show server output in the terminal
         };
 
+        // When the user types something, send it to the WebSocket server
         terminal.onData(function(data) {
-            socket.send(data);
+            terminal.write(data); // Echo user input in the terminal (cmd-like behavior)
+            socket.send(data); // Send the user input to the WebSocket server
         });
     </script>
 </body>
