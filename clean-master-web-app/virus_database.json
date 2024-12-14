@@ -1,0 +1,16 @@
+{
+  "viruses": [
+    {
+      "name": "Trojan.Generic",
+      "signature": "Trojan1234"
+    },
+    {
+      "name": "Worm.123",
+      "signature": "Worm5678"
+    },
+    {
+      "name": "Adware.Adjuster",
+      "signature": "Adware9123"
+    }
+  ]
+}
