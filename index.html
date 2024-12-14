@@ -1,19 +1,12 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clean Master Başlangıç Ekranı</title>
+    <title>Clean Master Home Screen</title>
     <style>
-        /* SCSS Benzeri Yapı */
-        $background-color: #f0f4f7;
-        $button-color: #2196F3;
-        $progress-color: #4caf50;
-        $progress-bg-color: #e0e0e0;
-        $button-hover-color: darken($button-color, 10%);
-        
         body {
-            background-color: #f0f4f7;
+            background-color: #2196F3; /* Blue background */
             font-family: Arial, sans-serif;
             display: flex;
             flex-direction: column;
@@ -22,6 +15,7 @@
             height: 100vh;
             margin: 0;
             text-align: center;
+            color: white; /* Text color white */
         }
 
         h1 {
@@ -33,82 +27,124 @@
             font-size: 20px;
         }
 
+        /* Progress Bar Style */
         .progress-container {
-            width: 80%;
-            background-color: $progress-bg-color;
+            width: 300px; /* Width of the progress bar */
+            background-color: #e0e0e0;
             border-radius: 20px;
-            margin: 20px 0;
+            margin: 10px;
+            position: relative; /* For inner positioning */
+        }
 
-            .progress-bar {
-                height: 20px;
-                width: 70%; /* Yüzde %70 dolu */
-                background-color: $progress-color;
-                border-radius: 20px;
-            }
+        .progress-bar {
+            height: 20px;
+            border-radius: 20px;
+            transition: width 0.3s; /* Animation transition */
+        }
+
+        /* Storage progress bar */
+        .storage-progress {
+            background-color: #4caf50; /* Green */
+        }
+        
+        /* RAM progress bar */
+        .ram-progress {
+            background-color: #f44336; /* Red */
         }
 
         .clean-button {
-            background-color: $button-color;
-            color: white;
+            background-color: #f9f9f9;
+            color: #2196F3;
             border: none;
             border-radius: 5px;
             padding: 15px 30px;
             font-size: 18px;
             cursor: pointer;
             margin: 20px 0;
+        }
 
-            &:hover {
-                background-color: darken($button-color, 10%);
-            }
+        .clean-button:hover {
+            background-color: #e0e0e0;
         }
 
         .feature-buttons {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
+        }
 
-            .feature-button {
-                background-color: #f9f9f9;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-                padding: 15px;
-                margin: 10px;
-                cursor: pointer;
-                flex: 1;
-                max-width: 150px;
-                text-align: center;
-            }
+        .feature-button {
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px;
+            cursor: pointer;
+            flex: 1;
+            max-width: 150px;
+            text-align: center;
+            color: #2196F3;
         }
 
         footer {
             margin-top: 32px;
             font-size: 14px;
-            color: #666;
+            color: white; /* Text color white */
         }
     </style>
 </head>
 <body>
 
     <h1>Clean Master</h1>
-    <h2>Cihazınızı Temizleyin</h2>
+    <h2>Clean Your Device</h2>
 
-    <div class="progress-container">
-        <div class="progress-bar"></div>
+    <div style="display: flex; justify-content: space-between; width: 80%;">
+        <div class="progress-container">
+            <div class="progress-bar storage-progress" style="width: 70%;"></div>
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar ram-progress" style="width: 40%;"></div>
+        </div>
     </div>
-    <p>Yüzde %70 Dolu</p>
+    
+    <p>Storage: 70% Used</p>
+    <p>RAM: 40% Used</p>
 
-    <button class="clean-button">Temizle</button>
+    <button class="clean-button" id="cleanButton">Clean</button>
 
     <div class="feature-buttons">
-        <div class="feature-button">🚀 Hızlandırıcı</div>
-        <div class="feature-button">🗑️ Dosya Temizleme</div>
-        <div class="feature-button">📦 Uygulama Yönetimi</div>
-        <div class="feature-button">🛠️ Ayarlar</div>
+        <div class="feature-button" id="boostButton">🚀 Booster</div>
+        <div class="feature-button" id="cleanupButton">🗑️ File Cleanup</div>
+        <div class="feature-button" id="appManagementButton">📦 App Management</div>
+        <div class="feature-button" id="settingsButton">🛠️ Settings</div>
     </div>
 
     <footer>
-        Daha fazla özellik için ayarları kontrol edin.
+        Check settings for more features.
     </footer>
+
+    <script>
+        // JavaScript code
+        document.getElementById('cleanButton').addEventListener('click', function() {
+            alert('Cleaning device...');
+        });
+
+        document.getElementById('boostButton').addEventListener('click', function() {
+            alert('Booster activated!');
+        });
+
+        document.getElementById('cleanupButton').addEventListener('click', function() {
+            alert('Cleaning files...');
+        });
+
+        document.getElementById('appManagementButton').addEventListener('click', function() {
+            alert('Opening app management...');
+        });
+
+        document.getElementById('settingsButton').addEventListener('click', function() {
+            alert('Opening settings...');
+        });
+    </script>
 
 </body>
 </html>
