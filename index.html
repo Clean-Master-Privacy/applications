@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clean Master Home Screen</title>
+    <title>System Usage Monitor</title>
     <style>
         body {
             background-color: #001F3F; /* Koyu mavi arka plan */
@@ -19,23 +19,15 @@
             padding-top: 40px; /* Üstten kenar boşluğu */
         }
 
-        h1 {
-            font-size: 24px;
+        h1, h2 {
             margin: 16px 0;
         }
 
-        h2 {
-            font-size: 20px;
-            margin-bottom: 20px; /* Alt boşluk */
-        }
-
-        /* İlerleme çubuğu stili */
         .progress-container {
             width: 250px; /* İlerleme çubuğunun genişliği */
             height: 15px; /* İlerleme çubuğunun yüksekliği */
             background-color: white; /* İlerleme çubuğu için beyaz arka plan */
             border-radius: 10px;
-            position: relative; /* Konumlandırma bağlamı */
             margin: 10px 0; /* Üst ve alt boşluk */
         }
 
@@ -45,71 +37,65 @@
             transition: width 0.3s; /* Animasyon geçişi */
         }
 
-        /* Depolama ilerleme çubuğu */
         .storage-progress {
             background-color: #4caf50; /* Yeşil renk */
-            width: 70%; /* Başlangıç genişliği */
         }
 
-        /* RAM ilerleme çubuğu */
         .ram-progress {
             background-color: #f44336; /* Kırmızı renk */
-            width: 40%; /* Başlangıç genişliği */
         }
 
-        .button {
-            background-color: #f9f9f9;
-            color: #2196F3;
-            border: none;
-            border-radius: 5px;
-            padding: 15px 30px; /* Buton içeriği için dolgu */
-            font-size: 18px; /* Font boyutu */
-            cursor: pointer;
-            margin: 10px 0; /* Buton etrafında kenar boşluğu */
-            transition: background-color 0.3s; /* Geçiş efekti */
+        .status {
+            margin: 10px 0; /* Üst ve alt boşluk */
         }
-
-        .button:hover {
-            background-color: #e0e0e0;
-        }
-
     </style>
 </head>
 <body>
 
-    <h1>Clean Master</h1>
-    <h2>Clean Your Device</h2>
+    <h1>System Usage Monitor</h1>
+    <h2>Real-Time Monitoring</h2>
 
     <div class="progress-container">
-        <div class="progress-bar storage-progress"></div>
-        <p>Storage: 70% Used</p>
+        <div class="progress-bar storage-progress" id="storageBar"></div>
+        <p class="status" id="storageStatus">Storage: 0% Used</p>
     </div>
     <div class="progress-container">
-        <div class="progress-bar ram-progress"></div>
-        <p>RAM: 40% Used</p>
+        <div class="progress-bar ram-progress" id="ramBar"></div>
+        <p class="status" id="ramStatus">RAM: 0% Used</p>
     </div>
-
-    <!-- Daha büyük ve etkili butonlar -->
-    <button class="button" id="cleanButton">Clean</button>
-    <button class="button" id="scanButton">Antivirus Scan</button>
-    <button class="button" id="securityButton">Eş Zamanlı Güvenlik</button>
 
     <script>
-        // JavaScript kodu
-        document.getElementById('cleanButton').addEventListener('click', function() {
-            alert('Cihaz temizleniyor...');
-        });
+        // Bu simülasyon kodu için kullanılacak değişkenler
+        let simulatedStorageUsage = 0;
+        let simulatedRamUsage = 0;
 
-        document.getElementById('scanButton').addEventListener('click', function() {
-            alert('Virüsler için tarama yapılıyor...');
-            setTimeout(function() {
-                alert('Tarama tamamlandı. Virüs yok!');
-            }, 3000); // 3 saniye sonra tamamlandı mesajı
-        });
+        function fetchSystemUsage() {
+            // Her çağrıda rastgele kullanım değerleri üret
+            simulatedStorageUsage = Math.floor(Math.random() * 101); // 0 - 100 arası
+            simulatedRamUsage = Math.floor(Math.random() * 101); // 0 - 100 arası
 
-        document.getElementById('securityButton').addEventListener('click', function() {
-            alert('Eş zamanlı güvenlik aktif.');
-        });
+            return {
+                storage_usage: simulatedStorageUsage,
+                ram_usage: simulatedRamUsage
+            };
+        }
+
+        function updateSystemUsage() {
+            const data = fetchSystemUsage();
+
+            // İlerleme çubuklarını ve metinleri güncelle
+            document.getElementById('storageBar').style.width = data.storage_usage + '%';
+            document.getElementById('storageStatus').innerText = 'Storage: ' + data.storage_usage + '% Used';
+            
+            document.getElementById('ramBar').style.width = data.ram_usage + '%';
+            document.getElementById('ramStatus').innerText = 'RAM: ' + data.ram_usage + '% Used';
+        }
+
+        // Sayfa yüklendiğinde güncellemeleri başlat
+        window.onload = () => {
+            updateSystemUsage(); // Sayfa yüklendiğinde bir kez güncelle
+            setInterval(updateSystemUsage, 5000); // Her 5 saniyede bir güncelle
+        };
     </script>
 
 </body>
