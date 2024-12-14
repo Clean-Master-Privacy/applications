@@ -1,0 +1,19 @@
+# Node.js bağımlılıkları (node_modules klasörü)
+node_modules/
+
+# .env dosyaları (gizli bilgiler içerebilir)
+.env
+
+# Log dosyaları
+*.log
+
+# Yedek dosyalar
+*~
+
+# Operasyon sistemine ait geçici dosyalar
+.DS_Store
+Thumbs.db
+
+# IDE/Editor konfigürasyon dosyaları
+.vscode/
+.idea/
