@@ -23,27 +23,6 @@ button:hover {
     background-color: #45a049;
 }
 
-#fileList {
-    margin-top: 20px;
-    text-align: left;
-    display: inline-block;
-}
-
-#preview {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-#preview img {
-    width: 100px;
-    height: 100px;
-    margin: 5px;
-    border: 1px solid #ccc;
-}
-
-.summary {
-    font-weight: bold;
+#location, #orientation {
     margin-top: 20px;
 }
