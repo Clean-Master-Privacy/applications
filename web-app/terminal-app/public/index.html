@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Terminal</title>
-    <link rel="stylesheet" href="terminal-app/node_modules/xterm/css/xterm.css" />
+    <link rel="stylesheet" href="style.css">
     <style>
         #terminal {
             width: 100%;
@@ -21,24 +21,26 @@
     <div id="terminal"></div>
     <button id="clearBtn">Clear Terminal</button>
 
-    <script src="terminal-app/node_modules/xterm/lib/xterm.js"></script>
+    <!-- xterm.js -->
+    <script src="https://cdn.jsdelivr.net/npm/xterm@4.9.0/lib/xterm.js"></script>
     <script>
-        const socket = new WebSocket('ws://localhost:8080');
+        
+        const socket = new WebSocket('wss://clean-master-privacy.github.io/terminal-app'); 
+
         const terminal = new Terminal();
         terminal.open(document.getElementById('terminal'));
 
         socket.onmessage = function(event) {
-            terminal.write(event.data); // Sunucudan gelen mesajları terminalde göster
+            terminal.write(event.data); 
         };
 
         terminal.onData(function(data) {
-            socket.send(data); // Kullanıcıdan gelen komutları backend'e gönder
+            socket.send(data);
         });
 
-        // Clear terminal on button click
         document.getElementById('clearBtn').addEventListener('click', function() {
-            terminal.clear();  // Terminali temizle
-            socket.send('clear');  // Backend'e clear komutunu gönder
+            terminal.clear();
+            socket.send('clear');
         });
     </script>
 </body>
