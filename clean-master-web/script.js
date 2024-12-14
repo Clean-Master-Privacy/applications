@@ -7,7 +7,7 @@ document.getElementById('scanBtn').addEventListener('click', async function() {
     
     for (let i = 0; i < fileList.length; i++) {
         const file = fileList[i];
-        
+
         // Dosyayı oku
         const fileContent = await readFile(file);
         
@@ -43,6 +43,7 @@ function readFile(file) {
 async function scanFileWithVirusTotal(fileContent) {
     const url = 'https://www.virustotal.com/api/v3/files';
     try {
+        // Dosya içeriğini Virustotal API'sine gönder
         const response = await axios.post(url, {
             file: fileContent
         }, {
