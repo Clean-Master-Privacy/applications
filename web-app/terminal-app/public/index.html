@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Terminal</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@4.8.0/css/xterm.css" />
+    <link rel="stylesheet" href="terminal-app/node_modules/xterm/css/xterm.css" />
     <style>
         #terminal {
             width: 100%;
@@ -21,7 +21,7 @@
     <div id="terminal"></div>
     <button id="clearBtn">Clear Terminal</button>
 
-    <script src="https://cdn.jsdelivr.net/npm/xterm@4.8.0/lib/xterm.js"></script>
+    <script src="terminal-app/node_modules/xterm/lib/xterm.js"></script>
     <script>
         const socket = new WebSocket('ws://localhost:8080');
         const terminal = new Terminal();
