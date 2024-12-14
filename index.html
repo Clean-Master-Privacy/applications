@@ -6,17 +6,18 @@
     <title>Clean Master Home Screen</title>
     <style>
         body {
-            background-color: #1E88E5; /* Dark blue background */
+            background-color: #001F3F; /* Dark blue background */
             font-family: Arial, sans-serif;
             display: flex;
             flex-direction: column;
-            align-items: center; /* Centered items vertically */
+            align-items: center; /* Center items horizontally */
             justify-content: flex-start; /* Align items to the top */
             height: 100vh;
             margin: 0;
             text-align: center; /* Centered text */
-            color: white; /* Text color white */
-            padding-top: 20px; /* Space from the top */
+            color: white; /* White text color */
+            padding-top: 40px; /* Space from the top */
+            position: relative; /* Positioning context */
         }
 
         h1 {
@@ -32,9 +33,21 @@
         .progress-container {
             width: 250px; /* Width of the progress bar */
             height: 15px; /* Height of the progress bar */
-            background-color: white; /* Background color of the progress bar */
+            background-color: white; /* White background for the progress bar */
             border-radius: 10px;
-            margin: 5px; /* Slight margin */
+            position: absolute; /* Absolute positioning */
+        }
+
+        /* Left progress bar */
+        .storage-progress-wrapper {
+            left: 20px; /* Left corner */
+            top: 20px; /* Space from the top */
+        }
+
+        /* Right progress bar */
+        .ram-progress-wrapper {
+            right: 20px; /* Right corner */
+            top: 20px; /* Space from the top */
         }
 
         .progress-bar {
@@ -60,10 +73,10 @@
             color: #2196F3;
             border: none;
             border-radius: 5px;
-            padding: 10px 20px; /* Smaller button padding */
+            padding: 10px 20px; /* Button padding */
             font-size: 16px;
             cursor: pointer;
-            margin: 10px 0; /* More compact margin */
+            margin: 10px 0; /* Margin around button */
         }
 
         .clean-button:hover {
@@ -74,35 +87,27 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            margin-top: 20px; /* Space above the buttons */
+            margin-top: 20px; /* Space above buttons */
         }
 
         .feature-button {
             background-color: #f9f9f9;
             border: 1px solid #ccc;
             border-radius: 5px;
-            padding: 10px; /* Smaller button padding */
-            margin: 5px; /* Smaller margins */
+            padding: 10px; /* Button padding */
+            margin: 5px; /* Margin around buttons */
             cursor: pointer;
             flex: 1;
-            max-width: 120px; /* Limiting the width */
+            max-width: 120px; /* Button width limit */
             text-align: center;
             color: #2196F3;
         }
 
         footer {
-            margin-top: auto; /* Align footer at the bottom */
+            margin-top: auto; /* Align to the bottom */
             margin: 20px 0;
             font-size: 14px;
-            color: white; /* Text color white */
-        }
-
-        /* Align progress bars on left and right */
-        .progress-wrapper {
-            width: 100%;
-            display: flex;
-            justify-content: space-between; /* Space between left and right */
-            align-items: center; /* Center vertically */
+            color: white; /* White text color */
         }
     </style>
 </head>
@@ -111,13 +116,11 @@
     <h1>Clean Master</h1>
     <h2>Clean Your Device</h2>
 
-    <div class="progress-wrapper">
-        <div class="progress-container">
-            <div class="progress-bar storage-progress"></div>
-        </div>
-        <div class="progress-container">
-            <div class="progress-bar ram-progress"></div>
-        </div>
+    <div class="progress-container storage-progress-wrapper">
+        <div class="progress-bar storage-progress"></div>
+    </div>
+    <div class="progress-container ram-progress-wrapper">
+        <div class="progress-bar ram-progress"></div>
     </div>
     
     <p>Storage: 70% Used</p>
