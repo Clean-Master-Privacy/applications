@@ -1,54 +1,57 @@
-// File List and Size Display
-let totalSize = 0;
-
-document.getElementById('fileInput').addEventListener('change', function (event) {
-    const fileList = event.target.files;
-    const output = document.getElementById('fileList');
-    const preview = document.getElementById('preview');
-    const summary = document.getElementById('summary');
-
-    output.innerHTML = '<h3>Dosyalar:</h3><ul>';
-    preview.innerHTML = ''; // Clear previous previews
-    totalSize = 0; // Reset total size each time
-
-    for (let i = 0; i < fileList.length; i++) {
-        const file = fileList[i];
-        totalSize += file.size; // Calculate total size
-        output.innerHTML += `<li>${file.name} (${(file.size / 1024).toFixed(2)} KB)</li>`;
-
-        // Show image preview for images
-        if (file.type.startsWith('image/')) {
-            const img = document.createElement('img');
-            img.src = URL.createObjectURL(file);
-            preview.appendChild(img);
-        }
+// Konum Bilgisi Alma
+document.getElementById('getLocation').addEventListener('click', function () {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+        document.getElementById('location').innerHTML = "Tarayıcınız konum bilgisine erişmiyor.";
     }
-
-    output.innerHTML += `</ul><strong>Toplam Boyut: ${(totalSize / 1024).toFixed(2)} KB</strong>`; // Display total size
-    summary.innerHTML = ''; // Clear previous summary
 });
 
-// Clear Files
-document.getElementById('cleanBtn').addEventListener('click', function () {
-    const fileInput = document.getElementById('fileInput');
-    const output = document.getElementById('fileList');
-    const preview = document.getElementById('preview');
-    const summary = document.getElementById('summary');
-
-    fileInput.value = '';
-    output.innerHTML = '';
-    preview.innerHTML = ''; // Clear preview
-
-    // Simulate cleaning action
-    summary.innerHTML = `Temizleme işlemi başarılı! Toplam silinen boyut: ${(totalSize / 1024).toFixed(2)} KB.`;
-    alert("Temizleme işlemi başarılı! Temizlenen boyut: " + (totalSize / 1024).toFixed(2) + " KB");
-    
-    // Optional: Clear browser history (only if permissions are granted, not demonstrated here)
-    // This cannot be done via JavaScript in web context for security reasons.
-});
-
-// Function to handle privacy cleaning (limited and requires user permission)
-function clearBrowserHistory() {
-    // Browser history clearance can usually not be done due to security policies.
-    alert("Tarayıcı geçmişi temizleme işlemi şu an desteklenmiyor.");
+function showPosition(position) {
+    document.getElementById('location').innerHTML = "Enlem: " + position.coords.latitude +
+        "<br>Boylam: " + position.coords.longitude;
 }
+
+function showError(error) {
+    switch (error.code) {
+        case error.PERMISSION_DENIED:
+            document.getElementById('location').innerHTML = "Kullanıcı konumun paylaşılmasını reddetti."
+            break;
+        case error.POSITION_UNAVAILABLE:
+            document.getElementById('location').innerHTML = "Konum bilgisi mevcut değil."
+            break;
+        case error.TIMEOUT:
+            document.getElementById('location').innerHTML = "İstek zaman aşımına uğradı."
+            break;
+        case error.UNKNOWN_ERROR:
+            document.getElementById('location').innerHTML = "Bilinmeyen bir hata oluştu."
+            break;
+    }
+}
+
+// Kamera Erişimi
+document.getElementById('startCamera').addEventListener('click', function () {
+    const video = document.getElementById('video');
+    navigator.mediaDevices.getUserMedia({ video: true })
+        .then(function (stream) {
+            video.srcObject = stream;
+        })
+        .catch(function (error) {
+            console.log("Kamera açılırken bir hata oluştu: " + error);
+        });
+});
+
+// Fotoğraf Çekme
+document.getElementById('snap').addEventListener('click', function () {
+    const canvas = document.getElementById('canvas');
+    const video = document.getElementById('video');
+    const context = canvas.getContext('2d');
+    
+    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+});
+
+// Cihaz Yönelimi
+window.addEventListener('deviceorientation', function (event) {
+    const orientation = document.getElementById('orientation');
+    orientation.innerHTML = `Alpha: ${event.alpha}, Beta: ${event.beta}, Gamma: ${event.gamma}`;
+});
