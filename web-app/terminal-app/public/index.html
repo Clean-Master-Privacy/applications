@@ -9,16 +9,30 @@
         /* Set the terminal to fullscreen */
         #terminal {
             width: 100%;
-            height: 100vh; /* Set height to 100% of the viewport height */
+            height: 100vh; /* Fullscreen terminal */
             background-color: black;
             color: white;
             font-family: monospace;
+            padding: 10px;
+            box-sizing: border-box;
+            overflow: hidden; /* Hide scrollbars */
         }
-        
+
         body {
             margin: 0;
-            overflow: hidden; /* Hide page scrollbars */
+            overflow: hidden;
         }
+
+        /* Hide the cursor when typing */
+        .xterm-cursor {
+            visibility: hidden; /* Hides the cursor while typing */
+        }
+
+        /* Optional: You can add some spacing or margin for readability */
+        .xterm {
+            margin-top: 10px;
+        }
+
     </style>
 </head>
 <body>
@@ -33,37 +47,34 @@
         const terminal = new Terminal();
         terminal.open(document.getElementById('terminal'));
 
-        // Function to write the initial message in the terminal (fixed)
+        // Fixed message that will be shown at the start
         const initialMessage = "gamestime102 [version 1.0.0] (c) gamestime102 all rights reserved.\n";
-        terminal.write(initialMessage); // Write the fixed message
+        terminal.write(initialMessage); // Show fixed startup message
 
-        // This will handle the input from the user and display the prompt
+        // When the terminal is ready for input
         terminal.onData(function(data) {
-            // Only show user input after the '102.cmp' prompt
             const prompt = '102.cmp ';
 
             if (data === '\r') {  // Enter key pressed
                 // Send the user input to the WebSocket server
                 socket.send(data);
-                terminal.write('\r\n');  // Move to the next line
+                terminal.write('\r\n');  // New line after input
             } else {
-                // Allow user input after the prompt
+                // Allow user input after the prompt (but show it)
                 terminal.write(data);
             }
         });
 
         // When the server sends a message, display it in the terminal
         socket.onmessage = function(event) {
-            terminal.write(event.data); // Show server output in the terminal
-            terminal.write("\n102.cmp "); // Show the prompt again after the server output
+            terminal.write(event.data); // Display server output in the terminal
+            terminal.write("\n102.cmp "); // Display the prompt again after server output
         };
 
         // On connection, start with the prompt
         socket.onopen = function() {
             terminal.write("\n102.cmp "); // Start with the prompt
         };
-
     </script>
 </body>
 </html>
-
