@@ -5,8 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clean Master Başlangıç Ekranı</title>
     <style>
+        /* SCSS Benzeri Yapı */
+        $background-color: #f0f4f7;
+        $button-color: #2196F3;
+        $progress-color: #4caf50;
+        $progress-bg-color: #e0e0e0;
+        $button-hover-color: darken($button-color, 10%);
+        
         body {
-            background-color: #f0f4f7; /* Açık mavi arka plan */
+            background-color: #f0f4f7;
             font-family: Arial, sans-serif;
             display: flex;
             flex-direction: column;
@@ -16,24 +23,32 @@
             margin: 0;
             text-align: center;
         }
+
         h1 {
             font-size: 24px;
             margin: 16px 0;
         }
+
+        h2 {
+            font-size: 20px;
+        }
+
         .progress-container {
             width: 80%;
-            background-color: #e0e0e0;
+            background-color: $progress-bg-color;
             border-radius: 20px;
             margin: 20px 0;
+
+            .progress-bar {
+                height: 20px;
+                width: 70%; /* Yüzde %70 dolu */
+                background-color: $progress-color;
+                border-radius: 20px;
+            }
         }
-        .progress-bar {
-            height: 20px;
-            width: 70%; /* Yüzde %70 dolu */
-            background-color: #4caf50; /* Yeşil dolgu */
-            border-radius: 20px;
-        }
+
         .clean-button {
-            background-color: #2196F3; /* Buton rengi */
+            background-color: $button-color;
             color: white;
             border: none;
             border-radius: 5px;
@@ -41,22 +56,30 @@
             font-size: 18px;
             cursor: pointer;
             margin: 20px 0;
+
+            &:hover {
+                background-color: darken($button-color, 10%);
+            }
         }
+
         .feature-buttons {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
+
+            .feature-button {
+                background-color: #f9f9f9;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                padding: 15px;
+                margin: 10px;
+                cursor: pointer;
+                flex: 1;
+                max-width: 150px;
+                text-align: center;
+            }
         }
-        .feature-button {
-            background-color: #f9f9f9;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 15px;
-            margin: 10px;
-            cursor: pointer;
-            flex: 1;
-            max-width: 150px;
-        }
+
         footer {
             margin-top: 32px;
             font-size: 14px;
