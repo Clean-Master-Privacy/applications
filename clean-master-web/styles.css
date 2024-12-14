@@ -42,3 +42,8 @@ button:hover {
     margin: 5px;
     border: 1px solid #ccc;
 }
+
+.summary {
+    font-weight: bold;
+    margin-top: 20px;
+}
