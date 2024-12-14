@@ -6,16 +6,17 @@
     <title>Clean Master Home Screen</title>
     <style>
         body {
-            background-color: #2196F3; /* Blue background */
+            background-color: #1E88E5; /* Dark blue background */
             font-family: Arial, sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start; /* Align items to the top */
             height: 100vh;
             margin: 0;
             text-align: center;
             color: white; /* Text color white */
+            padding-top: 20px; /* Space from the top */
         }
 
         h1 {
@@ -29,27 +30,31 @@
 
         /* Progress Bar Style */
         .progress-container {
-            width: 300px; /* Width of the progress bar */
-            background-color: #e0e0e0;
-            border-radius: 20px;
-            margin: 10px;
+            width: 250px; /* Width of the progress bar */
+            height: 15px; /* Height of the progress bar */
+            background-color: white; /* Background color of the progress bar */
+            border-radius: 10px;
+            margin: 5px; /* Slight margin */
             position: relative; /* For inner positioning */
+            margin-bottom: 10px; /* Space between progress bars */
         }
 
         .progress-bar {
-            height: 20px;
-            border-radius: 20px;
+            height: 100%;
+            border-radius: 10px;
             transition: width 0.3s; /* Animation transition */
         }
 
         /* Storage progress bar */
         .storage-progress {
             background-color: #4caf50; /* Green */
+            width: 70%; /* Initial width */
         }
         
         /* RAM progress bar */
         .ram-progress {
             background-color: #f44336; /* Red */
+            width: 40%; /* Initial width */
         }
 
         .clean-button {
@@ -57,10 +62,10 @@
             color: #2196F3;
             border: none;
             border-radius: 5px;
-            padding: 15px 30px;
-            font-size: 18px;
+            padding: 10px 20px; /* Smaller button padding */
+            font-size: 16px;
             cursor: pointer;
-            margin: 20px 0;
+            margin: 10px 0; /* More compact margin */
         }
 
         .clean-button:hover {
@@ -71,23 +76,25 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
+            margin-top: 20px; /* Space above the buttons */
         }
 
         .feature-button {
             background-color: #f9f9f9;
             border: 1px solid #ccc;
             border-radius: 5px;
-            padding: 15px;
-            margin: 10px;
+            padding: 10px; /* Smaller button padding */
+            margin: 5px; /* Smaller margins */
             cursor: pointer;
             flex: 1;
-            max-width: 150px;
+            max-width: 120px; /* Limiting the width */
             text-align: center;
             color: #2196F3;
         }
 
         footer {
-            margin-top: 32px;
+            margin-top: auto; /* Align footer at the bottom */
+            margin: 20px 0;
             font-size: 14px;
             color: white; /* Text color white */
         }
@@ -98,12 +105,12 @@
     <h1>Clean Master</h1>
     <h2>Clean Your Device</h2>
 
-    <div style="display: flex; justify-content: space-between; width: 80%;">
+    <div style="display: flex; flex-direction: column; align-items: center;">
         <div class="progress-container">
-            <div class="progress-bar storage-progress" style="width: 70%;"></div>
+            <div class="progress-bar storage-progress"></div>
         </div>
         <div class="progress-container">
-            <div class="progress-bar ram-progress" style="width: 40%;"></div>
+            <div class="progress-bar ram-progress"></div>
         </div>
     </div>
     
