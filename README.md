@@ -39,7 +39,7 @@ We’ve recently rebuilt the app and are focused on our current roadmap of featu
 
 License
 -------
-license right 2024-2025 and later gamestime102 from the creator clean master privacy
+licensed 2024-2025 and beyond gamestime102 creator clean master privacy.
 
 The code and data files in this distribution are licensed under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. See https://www.gnu.org/licenses/ for a copy of this license.
 
