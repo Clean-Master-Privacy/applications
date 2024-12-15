@@ -1,4 +1,6 @@
 # Clean Master Privacy
+<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" height="75">
+
 About Clean Master Privacy
 ----------------------
 
