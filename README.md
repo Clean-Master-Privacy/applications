@@ -1,5 +1,6 @@
 # Clean Master Privacy
-<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" height="75">
+<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" height="75">  https://img.shields.io/github/release/USER/REPO.svg?logo=github
+
 
 About Clean Master Privacy
 ----------------------
