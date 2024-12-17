@@ -5,11 +5,11 @@ updates:
     schedule:
       interval: weekly
       time: "03:00"
-      timezone: "Turkey/Istanbul"
+      timezone: "  "
 
   - package-ecosystem: gradle
     directory: /
     schedule:
       interval: weekly
       time: "03:00"
-      timezone: "Turkey/Istanbul"
+      timezone: "  "
