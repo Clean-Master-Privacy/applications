@@ -1,0 +1,135 @@
+version: 2
+updates:
+  # JavaScript ve Node.js için (npm ve yarn)
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "chore"
+    versioning-strategy: "increase"
+
+  - package-ecosystem: "yarn"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "chore"
+    versioning-strategy: "increase"
+
+  # Python için (pip)
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "chore"
+    versioning-strategy: "increase"
+
+  # Java için (maven)
+  - package-ecosystem: "maven"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "chore"
+    versioning-strategy: "increase"
+
+  # Ruby için (bundler)
+  - package-ecosystem: "bundler"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "chore"
+    versioning-strategy: "increase"
+
+  # PHP için (composer)
+  - package-ecosystem: "composer"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "chore"
+    versioning-strategy: "increase"
+
+  # C# için (nuget)
+  - package-ecosystem: "nuget"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "chore"
+    versioning-strategy: "increase"
+
+  # Kotlin/Java için (gradle)
+  - package-ecosystem: "gradle"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "chore"
+    versioning-strategy: "increase"
+
+  # Go için (Go Modules)
+  - package-ecosystem: "go_modules"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "chore"
+    versioning-strategy: "increase"
+
+  # Terraform için (Terraform)
+  - package-ecosystem: "terraform"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "chore"
+    versioning-strategy: "increase"
+
+  # Rust için (cargo)
+  - package-ecosystem: "cargo"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "chore"
+    versioning-strategy: "increase"
+
+  # .NET için (dotnet)
+  - package-ecosystem: "dotnet"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "chore"
+    versioning-strategy: "increase"
+
+  # Elixir için (mix)
+  - package-ecosystem: "mix"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "chore"
+    versioning-strategy: "increase"
+
+  # Swift için (Swift Package Manager)
+  - package-ecosystem: "swift"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "chore"
+    versioning-strategy: "increase"
+
+  # Haskell için (cabal)
+  - package-ecosystem: "cabal"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "chore"
+    versioning-strategy: "increase"
