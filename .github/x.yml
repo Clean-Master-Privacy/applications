@@ -1,0 +1,3 @@
+git add .github/dependabot.yml
+git commit -m "Add daily Dependabot configuration for all ecosystems"
+git push
