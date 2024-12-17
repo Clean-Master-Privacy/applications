@@ -2,7 +2,7 @@ version: 2
 updates:
   # JavaScript ve Node.js için (npm ve yarn)
   - package-ecosystem: "npm"
-    directory: "/"
+    directory: "/" 
     schedule:
       interval: "daily"
     commit-message:
@@ -10,7 +10,7 @@ updates:
     versioning-strategy: "increase"
 
   - package-ecosystem: "yarn"
-    directory: "/"
+    directory: "/" 
     schedule:
       interval: "daily"
     commit-message:
@@ -19,7 +19,7 @@ updates:
 
   # Python için (pip)
   - package-ecosystem: "pip"
-    directory: "/"
+    directory: "/" 
     schedule:
       interval: "daily"
     commit-message:
@@ -28,7 +28,7 @@ updates:
 
   # Java için (maven)
   - package-ecosystem: "maven"
-    directory: "/"
+    directory: "/" 
     schedule:
       interval: "daily"
     commit-message:
@@ -37,7 +37,7 @@ updates:
 
   # Ruby için (bundler)
   - package-ecosystem: "bundler"
-    directory: "/"
+    directory: "/" 
     schedule:
       interval: "daily"
     commit-message:
@@ -46,7 +46,7 @@ updates:
 
   # PHP için (composer)
   - package-ecosystem: "composer"
-    directory: "/"
+    directory: "/" 
     schedule:
       interval: "daily"
     commit-message:
@@ -55,7 +55,7 @@ updates:
 
   # C# için (nuget)
   - package-ecosystem: "nuget"
-    directory: "/"
+    directory: "/" 
     schedule:
       interval: "daily"
     commit-message:
@@ -64,7 +64,7 @@ updates:
 
   # Kotlin/Java için (gradle)
   - package-ecosystem: "gradle"
-    directory: "/"
+    directory: "/" 
     schedule:
       interval: "daily"
     commit-message:
@@ -73,7 +73,7 @@ updates:
 
   # Go için (Go Modules)
   - package-ecosystem: "go_modules"
-    directory: "/"
+    directory: "/" 
     schedule:
       interval: "daily"
     commit-message:
@@ -82,7 +82,7 @@ updates:
 
   # Terraform için (Terraform)
   - package-ecosystem: "terraform"
-    directory: "/"
+    directory: "/" 
     schedule:
       interval: "daily"
     commit-message:
@@ -91,7 +91,7 @@ updates:
 
   # Rust için (cargo)
   - package-ecosystem: "cargo"
-    directory: "/"
+    directory: "/" 
     schedule:
       interval: "daily"
     commit-message:
@@ -100,7 +100,7 @@ updates:
 
   # .NET için (dotnet)
   - package-ecosystem: "dotnet"
-    directory: "/"
+    directory: "/" 
     schedule:
       interval: "daily"
     commit-message:
@@ -109,7 +109,7 @@ updates:
 
   # Elixir için (mix)
   - package-ecosystem: "mix"
-    directory: "/"
+    directory: "/" 
     schedule:
       interval: "daily"
     commit-message:
@@ -118,7 +118,7 @@ updates:
 
   # Swift için (Swift Package Manager)
   - package-ecosystem: "swift"
-    directory: "/"
+    directory: "/" 
     schedule:
       interval: "daily"
     commit-message:
@@ -127,7 +127,7 @@ updates:
 
   # Haskell için (cabal)
   - package-ecosystem: "cabal"
-    directory: "/"
+    directory: "/" 
     schedule:
       interval: "daily"
     commit-message:
