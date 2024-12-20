@@ -3,7 +3,7 @@
 About Clean Master Privacy
 ----------------------
 
-RAM, File, Virus Cleaner, Phone Booster for Android
+RAM, File, Virus Cleaner, Phone Booster for gamestime102
 
 With over 1 billion users worldwide, Clean Master Privacy can be your app tool to clean viruses, free up storage space and speed up Android phone. We offer powerful Antivirus, Junk File Cleaner and Phone Booster, among other features that protect your privacy and mobile security.
 
