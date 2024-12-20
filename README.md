@@ -3,21 +3,21 @@
 About Clean Master Privacy
 ----------------------
 
-RAM, File, Virus Cleaner, Phone Booster for privacy
+RAM, Junk Files, Virus Cleaner, Phone Booster, App Optimizer and Privacy Manager
 
-With over 1 billion users worldwide, Clean Master Privacy can be your app tool to clean viruses, free up storage space and speed up Android phone. We offer powerful Antivirus, Junk File Cleaner and Phone Booster, among other features that protect your privacy and mobile security.
+With over 1 billion users worldwide, Clean Master Privacy can be your go-to app to clean viruses, free up storage space and speed up your device. We offer powerful Antivirus, Junk Files Cleaner and Phone Booster to protect your privacy and mobile security.
 
 Key Features of Clean Master Privacy:
 
-🌪️ JUNK FILE CLEANER
+🌪️ JUNK FILES CLEANER
 
-Clean Master Privacy helps free up your storage space by removing unnecessary, residual and cache files that slow down your phone.
+Clean Master Privacy helps you free up storage space by removing junk files, residual files and cache files that slow down your phone.
 
 With our professional cleaner, you can free up much more space by clearing cache data from social media apps without worrying about deleting the wrong files.
 
 🛡️ FREE ANTIVIRUS
 
-Clean Master Privacy's free antivirus engine, ranked #1 by AV-TEST, protects your phone from viruses, trojans, and scans, blocks and removes viruses in all apps (pre-installed or not) to protect your privacy!
+Rated #1 by AV-TEST, Clean Master Privacy's free antivirus engine protects your phone from viruses, trojans, and scans, blocks, and removes viruses from all apps (pre-installed or not) to protect your privacy!
 
 🚀 PHONE SPEED UP
 
@@ -27,13 +27,15 @@ Other features
 
 ☆ BATTERY SAVER - Helps save battery power and extend battery life.
 
-☆ APP LOCK - Keeps your privacy safe with an App Lock PIN or pattern.
+☆ APP LOCK - Keeps your privacy safe with App Lock PIN or pattern.
 
-☆ Wi-Fi SECURITY - Detect fake Wi-Fis and unauthorized connections.
+☆ Wi-Fi SECURITY - Detects fake Wi-Fi and unauthorized connections.
 
-☆ GAME ACCELERATOR- Manage your games and increase game loading speed.
+☆ GAME ACCELERATOR - Manage your games and speed up game loading.
 
-☆ VPN- being tested
+☆ PRIVACY MANAGER - Instantly protect private files on your device. (Coming soon)
+
+☆ VIP - In testing. (Coming soon)
 
 Contributing
 ------------
