@@ -1,0 +1,1174 @@
+    <?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="61436783" android:versionName="6.14.3" android:installLocation="auto" package="com.cleanmaster.mguard" platformBuildVersionCode="26" platformBuildVersionName="8.0.0">
+    <uses-sdk android:minSdkVersion="23" android:targetSdkVersion="26"/>
+    <supports-screens android:anyDensity="true" android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" android:resizeable="true"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
+    <uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS"/>
+    <uses-permission android:name="com.android.browser.permission.WRITE_HISTORY_BOOKMARKS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher3.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher3.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.BATTERY_STATS"/>
+    <uses-permission android:name="android.permission.BROADCAST_STICKY"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="android.permission.SET_WALLPAPER"/>
+    <uses-permission android:name="android.permission.READ_CALENDAR"/>
+    <uses-permission android:name="android.permission.WRITE_CALENDAR"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.WRITE_SMS"/>
+    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION"/>
+    <uses-permission android:name="com.sec.android.provider.badge.permission.READ"/>
+    <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE"/>
+    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.htc.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.samsung.android.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.samsung.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.lge.launcher3.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.lge.launcher3.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.lge.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.lge.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.bbk.launcher2.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.bbk.launcher2.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.asus.launcher3.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.asus.launcher3.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.asus.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.asus.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.motorola.launcher3.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.motorola.launcher3.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.tct.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.tct.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.gionee.amisystem.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.gionee.amisystem.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.zte.mifavor.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.zte.mifavor.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.anddoes.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.anddoes.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission android:name="com.cleanmaster.mguard.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.cleanmaster.mguard.permission.C2D_MESSAGE"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.LOCATION" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.GPS" android:required="false"/>
+    <uses-permission-sdk-23 android:name="android.permission.USE_FINGERPRINT"/>
+    <uses-permission android:name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY"/>
+    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"/>
+    <uses-feature android:glEsVersion="20000" android:required="true"/>
+    <application android:label="@string/k1" android:icon="@drawable/main_icon" android:name="com.keniu.security.MainEntry" android:allowClearUserData="false" android:debuggable="false" android:allowBackup="false" android:largeHeap="@bool/i" android:uiOptions="splitActionBarWhenNarrow" android:networkSecurityConfig="@xml/f">
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:theme="@style/ci" android:name="com.keniu.security.main.MainActivity" android:launchMode="singleTop" android:screenOrientation="portrait" android:configChanges="keyboardHidden" android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustPan" android:uiOptions="splitActionBarWhenNarrow">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.cleanmaster.security.ui.PrivacyCleanActivity" android:launchMode="singleTask" android:configChanges="keyboardHidden"/>
+        <activity android:theme="@style/ar" android:name="com.cleanmaster.ui.app.market.activity.PromotionWebViewDialog" android:screenOrientation="portrait"/>
+        <activity android:name="com.cleanmaster.security.scan.result.SecurityMainActivity" android:launchMode="singleTop" android:configChanges="keyboardHidden|orientation|screenSize">
+            <intent-filter android:label="@string/k1">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/gx" android:name="com.keniu.security.newmain.privacy.SecurityPrivacyDialog" android:launchMode="singleTop" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <service android:label="@string/cy2" android:name="com.cmcm.vpn.LocalVPNService" android:permission="android.permission.BIND_VPN_SERVICE" android:process=":service">
+            <intent-filter>
+                <action android:name="android.net.VpnService"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.cleanmaster.statistics.jobscheduler.ReportActiveService" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="false" android:process=":service"/>
+        <activity android:theme="@style/n7" android:name="com.cleanmaster.security.newsecpage.ui.VPNRequestActivity" android:excludeFromRecents="true" android:launchMode="singleTop" android:screenOrientation="portrait" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.security.newsecpage.ui.VPNDetailActivity" android:excludeFromRecents="true" android:launchMode="singleInstance" android:screenOrientation="portrait" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.security.newsecpage.ui.SGNewDetailActivity" android:excludeFromRecents="true" android:launchMode="singleInstance" android:screenOrientation="portrait" android:configChanges="keyboardHidden"/>
+        <activity android:theme="@style/gy" android:name="com.cleanmaster.security.newsecpage.ui.VPNExperienceActivity" android:taskAffinity=".vpn_experience_page" android:excludeFromRecents="true" android:launchMode="singleInstance" android:screenOrientation="portrait" android:configChanges="keyboardHidden"/>
+        <service android:name="com.cleanmaster.security.notification.VPNNotificationService" android:process=":service"/>
+        <receiver android:name="com.cmcm.vpn.VPNConfigReceiver" android:process=":service">
+            <intent-filter>
+                <action android:name="com.cmcm.vpn.configuration"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.cleanmaster.security.notification.InstallNotificationReceiver" android:process=":service"/>
+        <receiver android:name="com.cleanmaster.statistics.StatisticsReceive" android:process=":service"/>
+        <activity android:name="com.cleanmaster.security.newsecpage.ui.SecurityNewSettingActivity" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.security.scan.ui.sdcard.SecuritySdScanActivity" android:launchMode="singleTask" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.security.appinfo.SecurityAppInfoActivity" android:launchMode="singleTask" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.security.scan.ui.SafeAppsListActivity" android:launchMode="singleTask" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.privacy.ui.BrowserItemDetailActivity" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.photomanager.ui.PhotoGridActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|screenSize"/>
+        <activity android:name="com.cleanmaster.photomanager.ui.PhotoGridPathActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|screenSize"/>
+        <activity android:name="com.cleanmaster.photomanager.ui.PhotoDetailActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.junk.ui.activity.JunkManagerActivity" android:launchMode="singleTop" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize" android:windowSoftInputMode="adjustPan">
+            <intent-filter android:label="@string/k1">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cmcm.orion.picks.impl.BrandScreenDetailVideoActivity" android:taskAffinity=".orion_video" android:multiprocess="true" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cmcm.orion.picks.impl.BrandScreenDetailImageActivity" android:taskAffinity=".orion_video" android:multiprocess="true" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cmcm.orion.picks.impl.BrandScreenCardVideoActivity" android:taskAffinity=".orion_video" android:multiprocess="true" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name="com.cleanmaster.junk.ui.activity.JunkSimilarPicActivity" android:launchMode="singleTop" android:configChanges="keyboardHidden|screenSize" android:windowSoftInputMode="adjustPan">
+            <intent-filter android:label="@string/k1">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.cleanmaster.junk.ui.activity.JunkSimilarPicActivityA" android:screenOrientation="portrait" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.photo.photomanager.ui.SimilarPictureActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.photo.photomanager.ui.PhotoDetailActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.photoclean.JunkSimilarIgnorePicActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.photo.photomanager.ui.PhotoIgnoreActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden"/>
+        <meta-data android:name="com.google.android.gms.vision.DEPENDENCIES" android:value="face"/>
+        <activity android:name="com.cleanmaster.junk.ui.activity.PhotoManageMainActivity" android:launchMode="singleTop" android:configChanges="keyboardHidden|screenSize" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.cleanmaster.base.util.system.GuideOpenSystemPermission" android:screenOrientation="portrait" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.junk.ui.activity.JunkPicRecycleActivity" android:launchMode="singleTop" android:screenOrientation="portrait" android:configChanges="keyboardHidden|screenSize" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.cleanmaster.junk.ui.activity.JunkRecycleActivity" android:launchMode="singleTop" android:screenOrientation="portrait" android:configChanges="keyboardHidden|screenSize" android:windowSoftInputMode="adjustPan"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cleanmaster.photocompress.ui.PhotoCompressActivity" android:configChanges="keyboardHidden" android:windowSoftInputMode="adjustPan"/>
+        <activity android:theme="@style/he" android:name="com.keniu.security.newmain.LiveMeWebActivity" android:process=":video" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="keyboardHidden" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/he" android:name="com.cleanmaster.ui.app.market.activity.MarketAppWebActivity" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="keyboardHidden" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cleanmaster.weather.sdk.news.NewsWebActivity" android:taskAffinity="" android:finishOnTaskLaunch="true" android:excludeFromRecents="true" android:launchMode="singleTop" android:screenOrientation="portrait" android:configChanges="keyboardHidden" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="com.cleanmaster.ui.app.activity.ImgDetailActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.ui.app.activity.AppDownloadManagerActivity" android:launchMode="singleTop" android:configChanges="keyboardHidden" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.cleanmaster.ui.app.activity.NewAppUninstallActivity" android:configChanges="keyboardHidden" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:name="com.cleanmaster.ui.app.activity.NewAppUninstallSimpleActivity" android:configChanges="keyboardHidden" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:theme="@style/mb" android:name="com.cleanmaster.security.scan.MonitorUninstallActivity" android:excludeFromRecents="true" android:launchMode="singleInstance" android:configChanges="keyboardHidden" android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustResize"/>
+        <activity android:theme="@style/mb" android:name="com.conflit.check.ConfCheckerActivity" android:excludeFromRecents="true" android:launchMode="singleTop" android:configChanges="keyboardHidden" android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustResize"/>
+        <activity android:theme="@style/mb" android:name="com.keniu.security.main.FirstAccessNetDialogActivity" android:excludeFromRecents="true" android:launchMode="singleTop" android:configChanges="keyboardHidden" android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustResize"/>
+        <activity android:theme="@style/gv" android:name="com.cleanmaster.security.scan.MonitorInstallActivity" android:launchMode="singleInstance" android:configChanges="keyboardHidden" android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustResize"/>
+        <activity android:theme="@style/mb" android:name="com.cleanmaster.security.scan.MonitorInstallRemainActivity" android:excludeFromRecents="true" android:launchMode="singleInstance" android:configChanges="keyboardHidden" android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustResize"/>
+        <activity android:theme="@style/mr" android:name="com.cleanmaster.boost.main.ProcessManagerActivity" android:launchMode="singleTop" android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:uiOptions="splitActionBarWhenNarrow">
+            <intent-filter android:label="@string/k1">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/mr" android:name="com.cleanmaster.boost.main.ProcessManagerAbove26Activity" android:launchMode="singleTop" android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:uiOptions="splitActionBarWhenNarrow">
+            <intent-filter android:label="@string/k1">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/mr" android:name="com.cleanmaster.ui.game.ui.GameManagerActivity" android:launchMode="singleTask" android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:uiOptions="splitActionBarWhenNarrow"/>
+        <activity android:theme="@style/mr" android:name="com.cleanmaster.ui.game.ui.GameAddActivity" android:configChanges="keyboardHidden|navigation|screenSize" android:uiOptions="splitActionBarWhenNarrow"/>
+        <activity android:theme="@style/mr" android:name="com.cleanmaster.boost.process.ui.ProcessAddMoreActivity" android:launchMode="singleTask" android:configChanges="keyboardHidden|navigation" android:uiOptions="splitActionBarWhenNarrow"/>
+        <activity android:theme="@style/ar" android:label="@string/oz" android:icon="@drawable/ai8" android:name="com.cleanmaster.processcleaner.ProcessCleanerActivity" android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:launchMode="singleInstance" android:configChanges="keyboardHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.cleanmaster.settings.ui.SettingsActivity" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.settings.ui.MessageSettingsActivity" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.settings.ui.NotificationSettingsActivity" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.settings.ui.NotificationStyleSettingsActivity" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.settings.ui.SetLanguageActivity" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.settings.ui.SwipeThemeGuideActivity" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.settings.ui.FloatSwipeSettingsActivity" android:configChanges="keyboardHidden">
+            <intent-filter>
+                <action android:name="swipe_setting"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/mb" android:name="com.cleanmaster.settings.ui.LocationAllowActivity" android:excludeFromRecents="true" android:launchMode="singleTop" android:configChanges="keyboardHidden" android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustResize"/>
+        <activity android:name="com.cleanmaster.settings.ui.TrustAppListActivity" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.settings.ui.JunkWhiteListActivity" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.nt.sdk.tyroo.view.CustomActivity"/>
+        <activity android:theme="@style/mb" android:name="com.cleanmaster.settings.ui.UnRootAlertDialogActivity" android:launchMode="singleInstance" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.settings.ui.LocalWebActivity" android:configChanges="keyboardHidden">
+            <intent-filter>
+                <action android:name="com.cleanmaster.action.LAUNCH_LOCALWEB"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.cleanmaster.settings.ui.CnAboutActivity" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.settings.ui.AboutActivity" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.settings.ui.WeatherSettingActivity" android:launchMode="singleTop" android:configChanges="keyboardHidden" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:name="com.cleanmaster.weather.sdk.CitiesActivity" android:launchMode="singleTop" android:configChanges="keyboardHidden" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:theme="@style/Theme.Dialog" android:name="com.cleanmaster.base.crash.CrashFeedbackActivity" android:process=":crash.feedback" android:excludeFromRecents="true" android:launchMode="singleInstance" android:configChanges="keyboardHidden"/>
+        <activity android:theme="@style/Theme.Dialog" android:name="com.cleanmaster.applink.RecommendCMXActivity" android:process=":crash.feedback" android:excludeFromRecents="true" android:launchMode="singleInstance" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.feedback.FeedBackActivity" android:exported="false" android:configChanges="keyboardHidden" android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustResize">
+            <intent-filter>
+                <action android:name="com.cleanmaster.action.LAUNCH_FEEDBACK"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.cleanmaster.base.activity.DimensionalActivity" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.boost.process.ui.ProcessManagerSettingsActivity" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.ui.settings.WidgetGuideActivity" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.internalapp.ad.ui.BatteryDoctorActivity" android:launchMode="singleTop" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.ui.app.activity.UninstallMultiAppActivity" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.ui.app.market.activity.MarketCollectionActivity" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.internalapp.ad.ui.AppManagerSmsHoleActivity" android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.internalapp.ad.ui.RecommendCMLockerActivity" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.internalapp.ad.ui.NewRecommendCMLockerActivity" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.boost.process.ui.ProcessWhiteListActivity" android:configChanges="keyboardHidden" android:uiOptions="splitActionBarWhenNarrow"/>
+        <activity android:theme="@style/ar" android:name="com.cooperate.UISwitchActivity" android:exported="true"/>
+        <activity android:theme="@style/m0" android:name="com.cleanmaster.ui.app.DialogActivity" android:launchMode="singleTask" android:configChanges="keyboardHidden"/>
+        <activity android:theme="@style/Theme.NoTitleBar.Fullscreen" android:name="com.unity3d.ads.adunit.AdUnitActivity" android:taskAffinity=".gamebox" android:excludeFromRecents="true" android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale" android:hardwareAccelerated="true"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar.Fullscreen" android:name="com.unity3d.ads.adunit.AdUnitTransparentActivity" android:taskAffinity=".gamebox" android:excludeFromRecents="true" android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale" android:hardwareAccelerated="true"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar.Fullscreen" android:name="com.unity3d.ads.adunit.AdUnitTransparentSoftwareActivity" android:taskAffinity=".gamebox" android:excludeFromRecents="true" android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale" android:hardwareAccelerated="false"/>
+        <activity android:theme="@style/Theme.NoTitleBar.Fullscreen" android:name="com.unity3d.ads.adunit.AdUnitSoftwareActivity" android:taskAffinity=".gamebox" android:excludeFromRecents="true" android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale" android:hardwareAccelerated="false"/>
+        <activity android:theme="@style/ar" android:name="com.cleanmaster.ui.game.GameBoxActivity" android:exported="true" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:hardwareAccelerated="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.cleanmaster.action.LAUNCH_GAMEBOX"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.cleanmaster.ui.game.gamebox.permission.GamePermissionActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name="com.cleanmaster.ui.game.gamebox.ui.activity.GameBoostAnimActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/hm" android:name="com.cleanmaster.ui.game.gamebox.ui.activity.GameSortEditActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/hn" android:name="com.cleanmaster.ui.game.ui.GameboxForNotificationActivity" android:excludeFromRecents="true" android:launchMode="singleInstance" android:noHistory="true"/>
+        <activity android:theme="@style/hl" android:name="com.cleanmaster.ui.game.ui.GameProblemActivity" android:excludeFromRecents="true" android:launchMode="singleInstance" android:hardwareAccelerated="false"/>
+        <activity android:theme="@style/gx" android:name="com.cleanmaster.ui.game.ui.GameBoxGuideDialogActivity" android:excludeFromRecents="true" android:launchMode="singleInstance" android:noHistory="true"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.ui.game.gamebox.ui.activity.GameBoxFuncIntroActivity" android:exported="false" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/mr" android:name="com.cleanmaster.boost.cpu.ui.CpuNormalActivity" android:launchMode="singleTask" android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:uiOptions="splitActionBarWhenNarrow"/>
+        <activity android:theme="@style/ht" android:name="com.cleanmaster.security.scan.monitor.InstallMonitorDialog" android:excludeFromRecents="true"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.login.UserRegisterOptionsActivity" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/mr" android:name="com.cleanmaster.login.NicknameModifyActivity" android:launchMode="singleTask" android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:uiOptions="splitActionBarWhenNarrow"/>
+        <activity android:name="com.cleanmaster.login.LoginInputCodeActivity" android:configChanges="keyboardHidden"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.login.UserRegisterActivity" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.login.UserLoginActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustResize"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.login.UserLoginActivityNew" android:screenOrientation="portrait" android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustResize"/>
+        <activity android:theme="@style/Theme.Dialog" android:name="com.cleanmaster.login.UserLoginDialogActivity" android:launchMode="singleTop" android:screenOrientation="portrait" android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustResize"/>
+        <activity android:theme="@style/Theme.Dialog" android:name="com.cleanmaster.login.UserVerifyActivity" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustResize"/>
+        <activity android:theme="@style/Theme.Dialog" android:name="com.cleanmaster.login.EmailSendStateActivity" android:launchMode="singleTop" android:screenOrientation="portrait" android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustResize"/>
+        <activity android:theme="@style/Theme.Dialog" android:name="com.cleanmaster.login.UserHistoryLoginActivity" android:multiprocess="true" android:screenOrientation="portrait" android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustResize"/>
+        <service android:name="com.cleanmaster.login.LoginService" android:exported="false"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.login.UserForgetKeyActivity" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/gw" android:name="com.cleanmaster.notification.NotificationDialogActivity" android:exported="false" android:launchMode="singleInstance" android:configChanges="keyboard|keyboardHidden|navigation" android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustResize" android:noHistory="true"/>
+        <activity android:theme="@style/iu" android:name="com.cleanmaster.notification.NotificationFunctionReplaceActivity" android:exported="false" android:launchMode="singleInstance" android:screenOrientation="portrait" android:configChanges="keyboard|keyboardHidden|navigation" android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustResize" android:noHistory="true"/>
+        <activity android:name="com.gau.go.launcherex.gowidget.cleanmaster.GoWidgetActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="com.gau.go.launcherex.gowidget"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <service android:name="com.ijinshan.screensavershared.base.launcher.ScreenSaverStartService" android:exported="false" android:process=":worker"/>
+        <activity android:name="com.cleanmaster.screensave.ui.ScreenSaverSettingActivity" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.screensave.ui.ScreenLockerSettingActivity" android:launchMode="singleTask" android:configChanges="keyboardHidden" android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustPan"/>
+        <activity android:name="com.cleanmaster.screensave.ui.ScreenLockerSettingSelectTypeActivity" android:configChanges="keyboardHidden"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.screensave.ui.ScreenLockerGuideActivity" android:configChanges="keyboardHidden"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.screensave.ui.OverChargingReminderActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.screensave.ui.ScreenSaverNotificationSettingActivity" android:configChanges="keyboardHidden"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.screensave.ui.ScreenSaverGuildActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.junk.ui.activity.JunkSDCardVideoActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|screenSize"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cleanmaster.screensave.ui.NotificationGuideBlankActivity"/>
+        <receiver android:name="com.cleanmaster.screensave.ScreenSaverNotificationReceiver" android:enabled="true" android:exported="false">
+            <intent-filter>
+                <action android:name="screen_saver_state_changed"/>
+                <action android:name="screen_saver_show_notification"/>
+                <action android:name="screen_saver_cloud_notification"/>
+                <action android:name="screen_saver_ui_guide"/>
+                <action android:name="weather_sdk_launch_from_notification"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.cleanmaster.applock.receiver.AppLockNotificationReceiver" android:enabled="true" android:exported="false">
+            <intent-filter>
+                <action android:name="applock_show_notification"/>
+                <action android:name="applock_alarm_notification"/>
+                <action android:name="applock_overlay_alarm_notification"/>
+                <action android:name="applock_overlay_notification_clicked"/>
+            </intent-filter>
+        </receiver>
+        <activity android:theme="@style/m0" android:name="com.cleanmaster.applock.bridge.OverlayPermissionAlertDialogActivity" android:taskAffinity=".applock" android:excludeFromRecents="true" android:launchMode="singleTask" android:configChanges="keyboardHidden"/>
+        <activity android:theme="@style/qs" android:name="com.ijinshan.screensavernew4.ScreenSaver4Activity" android:process=":worker" android:launchMode="singleInstance" android:screenOrientation="portrait" android:configChanges="orientation|screenSize" android:windowSoftInputMode="adjustUnspecified|stateUnchanged|stateHidden|stateAlwaysHidden|adjustResize"/>
+        <service android:name="com.ijinshan.screensavernew4.SSLangService" android:process=":worker"/>
+        <receiver android:name="com.ijinshan.screensavernew.RiskScanReceiver" android:process=":worker" android:launchMode="singleInstance"/>
+        <activity android:theme="@style/qr" android:name="com.ijinshan.screensavernew.RiskScanningActivity" android:process=":worker" android:excludeFromRecents="true" android:launchMode="singleInstance" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/an" android:name="com.ijinshan.screensavernew.DismissKeyguardActivity" android:process=":worker" android:taskAffinity=".dismiss_keyguard" android:excludeFromRecents="true" android:screenOrientation="portrait"/>
+        <receiver android:name="com.ijinshan.screensavershared.ScreenSaverNullReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="com.ijinshan.screensaveshared.StartUIProcess"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.lock.service.chargingdetector.ChargingDetectorService" android:enabled="true" android:exported="false" android:process=":service"/>
+        <receiver android:name="com.ijinshan.screensavershared.mutual.CharingSaverStateReceiver" android:exported="true" android:process=":service">
+            <intent-filter>
+                <action android:name="com.charingsaver.state.action"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.ijinshan.cleaner.receiver.AlarmReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="com.cleanmaster.service.ALARM_SHOW_FREQUENCE_ACTION"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.cleanmaster.notification.MonitorBroadcastReceiver" android:exported="false" android:process=":service"/>
+        <receiver android:name="com.ijinshan.cleaner.receiver.MainProcessReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="com.ijinshan.cleaner.receiver.MainProcessReceiver.Action1"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.ijinshan.cleaner.receiver.UninstallBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.cleanmaster.receiver.ACTION_REMOVED_SYSTEM_APP"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.cleanmaster.security.scan.InstallMonitorReceiver" android:process=":service">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.cleanmaster.security.scan.InstallMonitorReceiver"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.ijinshan.cleaner.receiver.ScreenUnlockReceiver" android:process=":service">
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.ijinshan.cleaner.receiver.ConnectivityChangeBroadcastReceiver" android:process=":service">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.net.wifi.STATE_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.cm.root.RootKeeperCrashReceiver" android:exported="false" android:process=":service">
+            <intent-filter>
+                <action android:name="com.ijinshan.rootkeeper.action.RootCrash"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.appsflyer.MultipleInstallBroadcastReceiver" android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.google.analytics.tracking.android.CampaignTrackingReceiver" android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.ijinshan.cleaner.receiver.StorageStatusReceiver" android:enabled="true" android:exported="true">
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.MEDIA_MOUNTED"/>
+                <action android:name="android.intent.action.MEDIA_EJECT"/>
+                <data android:scheme="file"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.ijinshan.cleaner.receiver.MainProcessReceiverForPush" android:exported="false">
+            <intent-filter>
+                <action android:name="com.ijinshan.cleaner.receiver.MainProcessReceiverForPush.ACTION"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.cleanmaster.service.PermanentService" android:process=":service"/>
+        <service android:name="com.cleanmaster.service.a" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="true" android:process=":service"/>
+        <service android:name="com.cleanmaster.optimize.OptOnDeviceIdle" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="true" android:process=":service"/>
+        <service android:name="com.cleanmaster.optimize.WorkerMurder" android:process=":worker"/>
+        <service android:name="com.cleanmaster.service.FloatService" android:process=":worker"/>
+        <service android:name="com.cleanmaster.applocklib.core.service.AppLockService" android:enabled="true" android:exported="false" android:process=":worker"/>
+        <receiver android:name="com.cleanmaster.login.LoginNetWorkReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.cleanmaster.base.crash.CrashReportService" android:process=":crash.feedback">
+            <intent-filter>
+                <action android:name="com.cleanmaster.crash.report"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.cleanmaster.dmc.DmcDataReportService" android:process=":service">
+            <intent-filter>
+                <action android:name="com.cleanmaster.dmc.report"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.cleanmaster.service.BgScanService" android:process=":bg.scan"/>
+        <service android:name="com.cleanmaster.service.LocalService" android:exported="false">
+            <intent-filter>
+                <action android:name="com.cleanmaster.service.ACTION_CMBOX_SETUP"/>
+                <action android:name="com.cleanmaster.service.ACTION_MOVE"/>
+                <action android:name="com.cleanmaster.service.ACTION_CMBOX_CLEANUP"/>
+                <action android:name="com.cleanmaster.service.ACTION_RESTORE"/>
+                <action android:name="com.cleanmaster.service.ACTION_GET_APPLICATION_INFO"/>
+                <action android:name="com.cleanmaster.service.ACTION_GET_SYSTEM_MOVABLE_APPS"/>
+                <action android:name="com.cleanmaster.service.ACTION_ACT"/>
+                <action android:name="com.cleanmaster.service.ACTION_PRELOAD_BUSINESS_AD_SCREEN_SAVER"/>
+                <action android:name="com.cleanmaster.service.ACTION_PRELOAD_AD_RESULT_PAGE"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.cleanmaster.appwidget.WidgetService" android:exported="false" android:process=":service">
+            <intent-filter>
+                <action android:name="com.cleanmaster.appwidget.ACTION_FASTCLEAN"/>
+                <action android:name="com.cleanmaster.appwidget.ACTION_REPORT_ACTIVE"/>
+                <action android:name="com.cleanmaster.appwidget.ACTION_REMOVE_GO_WIDGET"/>
+                <action android:name="com.cleanmaster.appwidget.ACTION_RESET_FAST_CLEAN"/>
+                <action android:name="com.cleanmaster.appwidget.ACTION_ADD_GO_WIDGET"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.cleanmaster.cloudconfig.CloudCfgIntentService" android:exported="false" android:process=":service"/>
+        <service android:name="com.cleanmaster.security.scan.sdcard.SdcardScanService" android:exported="false" android:process=":sdscanservice">
+            <intent-filter>
+                <action android:name="com.cleanmaseter.security.sdcard.ACTION_NEW_SECURITY_SCAN"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.cleanmaster.api.CMAPIService" android:exported="true" android:process=":service">
+            <intent-filter>
+                <action android:name="com.cleanmaster.api.ACCESS"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.cleanmaster.ui.app.task.TopAppsInterface" android:process=":service">
+            <intent-filter>
+                <action android:name="com.cleanmaster.api.GET_TOP_APPS"/>
+            </intent-filter>
+        </service>
+        <receiver android:name="com.cleanmaster.common_performance.inspector.ChangeSimOperatorReceiver" android:exported="true">
+            <intent-filter>
+                <action android:name="com.cleanmaster.api.SET_OPERATOR"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.ijinshan.cleaner.receiver.ToucherAppBroadcastReceiver" android:exported="true">
+            <intent-filter>
+                <action android:name="action_toucher_click_advanced_clean"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.cleanmaster.boost.lowbatterymode.NotifyAchiveReceiver"/>
+        <receiver android:label="@string/dpy" android:name="com.cleanmaster.appwidget.MainAppWidgetWhiteProvider" android:process=":service">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/e"/>
+        </receiver>
+        <receiver android:label="@string/dpx" android:name="com.cleanmaster.appwidget.MainAppWidgetBlackProvider" android:process=":service">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/d"/>
+        </receiver>
+        <receiver android:name="com.cleanmaster.appwidget.WidgetBroadcastReceiver" android:exported="false" android:process=":service">
+            <intent-filter>
+                <action android:name="com.cleanmaster.appwidget.APPWIDGET_DEFAULT_UPDATE"/>
+                <action android:name="com.cleanmaster.appwidget.APPWIDGET_FRESH_UPDATE"/>
+                <action android:name="com.cleanmaster.appwidget.APPWIDGET_CLEAN_PROCESS_UPDATE"/>
+                <action android:name="com.cleanmaster.appwidget.APPWIDGET_START_CLEAN_PROCESS_UPDATE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.cleanmaster.push.PushNotificationReceiver" android:exported="false" android:process=":service">
+            <intent-filter>
+                <action android:name="com.cleanmaster.push.ACTION_PUSH_URL_JUMP"/>
+                <action android:name="com.cleanmaster.push.ACTION_PUSH_WEBVIEW_JUMP"/>
+                <action android:name="com.cleanmaster.push.ACTION_PUSH_NEWS_DETAIL_JUMP"/>
+                <action android:name="com.cleanmaster.push.ACTION_PUSH_CANCEL"/>
+            </intent-filter>
+        </receiver>
+        <activity android:theme="@style/Theme.Light.NoTitleBar" android:name="com.cleanmaster.filemanager.ui.FileManagerTabActivity" android:launchMode="singleTop" android:configChanges="keyboardHidden|screenSize" android:uiOptions="splitActionBarWhenNarrow"/>
+        <provider android:name="com.cleanmaster.synipc.SyncIPCPrvidor" android:exported="false" android:process=":service" android:authorities="com.cleanmaster.mguard.SyncIPCPrvidor"/>
+        <provider android:name="com.cleanmaster.provider.DatebaseProvider" android:exported="false" android:process=":service" android:authorities="com.cleanmaster.mguard.provider.database"/>
+        <provider android:name="com.cleanmaster.provider.ConfigProvider" android:exported="false" android:process=":service" android:authorities="com.cleanmaster.mguard.provider.config"/>
+        <provider android:name="com.cleanmaster.provider.HighFreqConfigProvider" android:exported="false" android:process=":service" android:authorities="com.cleanmaster.mguard.provider.highfreqconfig"/>
+        <provider android:name="com.cleanmaster.ui.app.provider.download.DownloadProvider" android:exported="false" android:authorities="com.cleanmaster.mguard.cmdownloads"/>
+        <provider android:name="com.cleanmaster.provider.SubConfigProvider" android:exported="false" android:process=":service" android:authorities="com.cleanmaster.mguard.provider.sub.config"/>
+        <provider android:name="com.cleanmaster.notification.JunkNotifyProvider" android:exported="false" android:process=":service" android:authorities="com.cleanmaster.mguard.provider.notify.new.style"/>
+        <service android:name="com.cleanmaster.ui.app.provider.download.DownloadService" android:exported="false"/>
+        <receiver android:name="com.cleanmaster.ui.app.provider.download.DownloadReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.cm_DOWNLOAD_LIST"/>
+                <action android:name="android.intent.action.cm_DOWNLOAD_OPEN"/>
+                <action android:name="android.intent.action.cm_DOWNLOAD_HIDE"/>
+                <action android:name="android.intent.action.cm_DOWNLOAD_RETRY"/>
+                <action android:name="android.intent.action.cm_DOWNLOAD_WAKEUP"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.keniu.security.update.push.gcm.sdk.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND" android:exported="true" android:process=":service">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.cleanmaster.mguard"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.keniu.security.update.push.gcm.GCMIntentService" android:process=":service"/>
+        <meta-data android:name="android.support.UI_OPTIONS" android:value="splitActionBarWhenNarrow"/>
+        <meta-data android:name="android.app.default_searchable" android:value=".SearchActivity"/>
+        <meta-data android:name="com.cleanmaster.sdk.cmloginsdk.ApplicationId" android:value="@string/dwq"/>
+        <meta-data android:name="com.cleanmaster.sdk.cmloginsdk.ApplicationSalt" android:value="@string/dwr"/>
+        <activity android:name="com.cleanmaster.settings.ui.HonorHallActivity" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.ledlight.FlashLightActivity" android:configChanges="keyboardHidden"/>
+        <activity android:theme="@style/Theme.Black.NoTitleBar" android:name="com.cleanmaster.ui.app.market.activity.VideoWebViewActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true"/>
+        <activity android:name="com.keniu.security.commonfunction.FBShareWebViewActivity" android:configChanges="keyboardHidden"/>
+        <activity android:theme="@style/he" android:name="com.cleanmaster.ui.floatwindow.fifa.panel.FloatNewsWebViewActivity" android:excludeFromRecents="true" android:launchMode="singleInstance" android:configChanges="keyboardHidden"/>
+        <activity android:theme="@style/he" android:name="com.cleanmaster.ui.space.SpaceManagerActivity" android:launchMode="singleTop" android:configChanges="keyboardHidden"/>
+        <activity android:theme="@style/he" android:name="com.cleanmaster.junk.ui.activity.FileManagerActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/he" android:name="com.cleanmaster.junk.ui.activity.FileManagerWidgetGuideActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden"/>
+        <activity android:theme="@style/he" android:name="com.cleanmaster.junk.ui.activity.FileManagerAppFileActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden"/>
+        <activity android:theme="@style/he" android:name="com.cleanmaster.ui.fmspace.FMSpaceManagerActivity" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.ui.fmspace.item.FMSpaceDocsActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|screenSize"/>
+        <activity android:name="com.cleanmaster.ui.space.AppCacheActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|screenSize"/>
+        <activity android:theme="@style/gx" android:name="com.cleanmaster.ui.app.activity.AppCategoryShortcutActivity" android:exported="true" android:excludeFromRecents="true" android:launchMode="singleInstance" android:configChanges="keyboardHidden|navigation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/he" android:name="com.cleanmaster.ui.game.ui.GameWebActivity" android:process=":gamebox.web" android:launchMode="singleInstance" android:configChanges="keyboardHidden|orientation|screenSize" android:windowSoftInputMode="adjustResize"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cleanmaster.ui.game.ui.GameWebActivityTransparent" android:process=":gamebox.web" android:launchMode="singleInstance" android:configChanges="keyboardHidden|orientation|screenSize" android:windowSoftInputMode="adjustResize"/>
+        <activity android:theme="@style/he" android:name="com.cleanmaster.ui.game.ui.GameBoostWebActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="com.cleanmaster.boost.autostarts.uistatic.AutostartManagerActivity" android:configChanges="keyboardHidden" android:uiOptions="splitActionBarWhenNarrow"/>
+        <activity android:name="com.cleanmaster.boost.abnormal.abnormalnotify.AbnormalNotifyActivity" android:launchMode="singleTask" android:configChanges="keyboardHidden|orientation|screenSize" android:uiOptions="splitActionBarWhenNarrow"/>
+        <activity android:name="com.cleanmaster.phototrims.newui.PhotoTrimCloudToQuickPicActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:label="@string/k1" android:name="com.facebook.FacebookActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/dx3"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationName" android:value="Clean Master"/>
+        <activity android:name="com.mopub.mobileads.MoPubActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name="com.mopub.mobileads.MraidActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name="com.mopub.common.MoPubBrowser" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name="com.mopub.mobileads.MraidVideoPlayerActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cleanmaster.junk.ui.activity.JunkSimilarPicJumpActivity" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cleanmaster.photoclean.PhotoCleanResultActivity" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/gx" android:name="com.cleanmaster.junk.ui.activity.JunkSimilarDialogActivity" android:excludeFromRecents="true" android:launchMode="singleInstance" android:screenOrientation="portrait"/>
+        <receiver android:name="com.cleanmaster.security.scan.InstallNotificationDeleteReceiver" android:enabled="true" android:process=":service"/>
+        <activity android:theme="@style/ar" android:label="@string/oz" android:icon="@drawable/aqu" android:name="com.cleanmaster.boost.onetap.OneTapCleanerActivity" android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:launchMode="singleInstance" android:configChanges="keyboardHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/ar" android:name="com.cmcm.mixad.MixBoxAdActivity" android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:launchMode="singleTop" android:configChanges="keyboardHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.cleanmaster.junk.ui.activity.JunkDownloadManagerActivity" android:launchMode="singleTop" android:screenOrientation="portrait" android:configChanges="keyboardHidden|screenSize" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.cleanmaster.internalapp.ad.ContactBackupRecommendActivity" android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.internalapp.ad.WifiProtectionActivity" android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:configChanges="keyboardHidden"/>
+        <receiver android:name="com.cleanmaster.push.JunkNotificationReceiver" android:process=":service"/>
+        <receiver android:name="com.cleanmaster.watcher.UsedMemoryNotificationReceiver" android:exported="false" android:process=":service"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cleanmaster.applocklib.ui.activity.AppLockSafeQuestionActivity" android:taskAffinity=".applocklib.oauth" android:launchMode="singleTop" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/ly" android:name="com.cleanmaster.applocklib.ui.activity.AppLockPasswordActivity" android:launchMode="singleTop" android:screenOrientation="portrait" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:theme="@style/mt" android:name="com.cleanmaster.applocklib.ui.main.AppLockMainActivity" android:exported="true" android:excludeFromRecents="true" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cleanmaster.applocklib.ui.activity.AppLockRecommendedAppActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:theme="@style/di" android:name="com.cleanmaster.applocklib.ui.main.AppLockActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cleanmaster.applocklib.ui.activity.AppLockSettingActivity" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cleanmaster.applocklib.ui.activity.AppLockInterstitialActivity" android:exported="false" android:process=":worker" android:taskAffinity=".ap.in" android:excludeFromRecents="true" android:screenOrientation="portrait" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
+        <activity android:theme="@style/ly" android:name="com.cleanmaster.applocklib.ui.activity.AppLockOAuthActivity" android:launchMode="singleTop" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cleanmaster.applock.msgprivacy.MessagePrivacyGuideActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cleanmaster.applock.msgprivacy.MessagePrivacySettingActivity" android:launchMode="singleTop" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cleanmaster.applock.msgprivacy.MPPermissionRequestActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>\10MessagePrivacyNotifyJumpActivity\10
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cleanmaster.applock.msgprivacy.MessagePrivacyNotifyJumpActivity" android:launchMode="singleTop" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cleanmaster.applock.msgprivacy.MessagePrivacyAggregateActivity" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="orientation|screenSize" android:windowSoftInputMode="adjustResize"/>
+        <service android:name="com.cleanmaster.applock.msgprivacy.MessagePrivacyNotifyService" android:process=":service"/>
+        <receiver android:name="com.cleanmaster.applock.headsup.HiddenNotificationReceiver" android:process=":service"/>
+        <receiver android:name="com.cleanmaster.applock.msgprivacy.MSPrivacyLostNotifyReceiver" android:process=":service"/>
+        <activity android:theme="@style/ly" android:name="com.cleanmaster.intruder.ui.ShowPhotoTimeLineActivity" android:taskAffinity=".applocklib.intruder" android:launchMode="singleTop" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cleanmaster.intruder.ui.IntruderSelfiePhotoGridInstanceActivity" android:exported="false" android:launchMode="singleInstance" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cleanmaster.intruder.ui.IntruderSelfiePhotoGridActivity" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cleanmaster.intruder.ui.IntruderSelfiePhotoPagerActivity" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/ly" android:name="com.cleanmaster.intruder.ui.IntruderSelfieExperienceActivity" android:taskAffinity=".applocklib.intruder" android:launchMode="singleTop" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:theme="@style/mc" android:name="com.cleanmaster.applocklib.ui.activity.RuntimePermissionGuideActivity" android:launchMode="singleInstance" android:screenOrientation="portrait"/>
+        <service android:name="com.cleanmaster.intruder.core.CameraManService" android:enabled="true" android:exported="false" android:process=":worker"/>
+        <service android:name="com.cleanmaster.screensave.newscreensaver.ScreenSaverService" android:enabled="true" android:exported="false" android:process=":worker"/>
+        <activity android:theme="@style/dh" android:name="com.cleanmaster.applocklib.ui.lockscreen.activity.AppLockScreenActivity" android:process=":worker" android:excludeFromRecents="true" android:launchMode="singleInstance" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.applock.ks.cm.antivirus.lauch.AppLockScreenActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cleanmaster.applocklib.ui.activity.AppLockMIUIFloatingWIndowEnableGuideActivity" android:excludeFromRecents="true" android:launchMode="singleInstance" android:screenOrientation="portrait" android:noHistory="true"/>
+        <receiver android:name="com.cleanmaster.applocklib.core.service.AppLockEcmoReceiver" android:process=":service"/>
+        <provider android:name="com.cleanmaster.applocklib.base.AppLockActiveProvider" android:exported="true" android:process=":service" android:authorities="com.cleanmaster.applocklib.cm.intl.applock.active">
+            <intent-filter>
+                <action android:name="com.cleanmaster.applocklib.intent.provider.APPLOCK_ACTIVE"/>
+            </intent-filter>
+        </provider>
+        <provider android:name="com.lock.sideslip.CmSideProvider" android:exported="true" android:process=":service" android:authorities="com.lock.sideslip.CmSideProvider">
+            <intent-filter>
+                <action android:name="com.cmcm.cmnow.internal.action.SIDE_CONFLICT"/>
+            </intent-filter>
+        </provider>
+        <receiver android:label="com.cleanmaster.applocklib.cm.intl.applock.active" android:name="com.cleanmaster.applocklib.base.AppLockActiveReceiver" android:exported="true" android:process=":service">
+            <intent-filter>
+                <action android:name="com.cleanmaster.applocklib.intent.receiver.APPLOCK_ACTIVE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.cleanmaster.service.PhotoCompressService" android:exported="false" android:process=":sdscanservice"/>
+        <activity android:theme="@style/Theme.NoTitleBar.Fullscreen" android:name="com.cleanmaster.security.scan.BoostPageActivity" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.security.appinfo.SecurityFeedback" android:configChanges="keyboardHidden" android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustResize"/>
+        <activity android:theme="@style/ci" android:name="com.cleanmaster.applink.DeepLinkActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="cleanmasterlink"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.cleanmaster.internalapp.ad.ui.FlowDataMonitorActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden"/>
+        <activity android:theme="@style/iy" android:name="com.cleanmaster.ui.resultpage.item.NewsContentActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden"/>
+        <receiver android:name="com.cleanmaster.screensave.ScreenADReceiver" android:process=":worker">
+            <intent-filter android:priority="1000">
+                <action android:name="com.cleanmaster.action.screenon"/>
+                <action android:name="com.cleanmaster.action.preloadscreenad"/>
+                <action android:name="com.cleanmaster.screensave.action.screensave.state"/>
+                <action android:name="com.cleanmaster.screensave.action.powerconnected"/>
+                <action android:name="com.cleanmaster.screensave.action.powerdisconnected"/>
+                <action android:name="com.cleanmaster.screensave.action.connectivitychange"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.cleanmaster.screensave.ScreenSaverPushReceiver" android:process=":worker">
+            <intent-filter>
+                <action android:name="com.cleanmaster.mguard.screensaver.ScreenSaverPushReceiver"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.cleanmaster.screensave.LockNewsNotificationDeleteReceiver" android:process=":worker"/>
+        <receiver android:name="com.cleanmaster.screensave.ScreenADServiceReceiver" android:process=":service">
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.cleanmaster.screensave.locker.ScreenLockerReceiver" android:process=":worker">
+            <intent-filter android:priority="1000">
+                <action android:name="com.cleanmaster.screensave.action.preloadslad"/>
+                <action android:name="com.cleanmaster.screensave.action.screenlocker.state"/>
+                <action android:name="com.cleanmaster.screensave.action.powerconnected"/>
+                <action android:name="com.cleanmaster.screensave.action.powerdisconnected"/>
+                <action android:name="com.cleanmaster.screensave.action.connectivitychange"/>
+                <action android:name="android.intent.action.ACTION_SHUTDOWN"/>
+            </intent-filter>
+        </receiver>
+        <activity android:label="@string/dh5" android:name="com.cleanmaster.ui.space.WeiXinSpecialActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|screenSize"/>
+        <activity android:name="com.cleanmaster.ui.space.WeixinMediaActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|screenSize"/>
+        <activity android:name="com.cleanmaster.ui.space.RecomFileMgrActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden"/>
+        <service android:name="com.cleanmaster.boost.acc.service.AccService" android:exported="false" android:process=":service"/>
+        <service android:name="com.cleanmaster.boost.acc.ui.SavePowerService" android:exported="false"/>
+        <service android:name="com.cleanmaster.junk.engine.JunkAccService" android:exported="false" android:process=":service"/>
+        <service android:name="com.cleanmaster.junk.accessibility.AccessibilityRemoteService" android:exported="false" android:process=":service"/>
+        <service android:name="com.cmcm.swiper.SwiperService" android:process=":worker">
+            <intent-filter>
+                <action android:name="com.cleanmaster.appwidget.ACTION_FASTCLEAN"/>
+                <action android:name="com.cleanmaster.appwidget.ACTION_REPORT_ACTIVE"/>
+                <action android:name="com.cleanmaster.appwidget.ACTION_REMOVE_GO_WIDGET"/>
+                <action android:name="com.cleanmaster.appwidget.ACTION_RESET_FAST_CLEAN"/>
+                <action android:name="com.cleanmaster.appwidget.ACTION_ADD_GO_WIDGET"/>
+            </intent-filter>
+        </service>
+        <activity android:theme="@style/as" android:name="com.cmcm.swiper.EmptyActivity" android:process=":worker" android:excludeFromRecents="true" android:launchMode="singleInstance" android:configChanges="orientation|screenSize" android:hardwareAccelerated="true"/>
+        <service android:label="@string/sr" android:name="com.cleanmaster.boost.acc.service.AccessibilityKillService" android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" android:process=":service">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService"/>
+            </intent-filter>
+            <meta-data android:name="android.accessibilityservice" android:resource="@xml/b"/>
+        </service>
+        <activity android:theme="@style/ar" android:label="@string/ss" android:icon="@drawable/apf" android:name="com.cleanmaster.boost.acc.ui.AppStandbyShortcut" android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:launchMode="singleInstance" android:screenOrientation="portrait" android:configChanges="keyboardHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/ar" android:name="com.cleanmaster.boost.acc.ui.OnetapStandbyActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.boost.acc.ui.AppStandbyMainActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize">
+            <intent-filter android:label="@string/k1">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.cleanmaster.boost.acc.ui.AppStandbyMainWidgetActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.boost.acc.scene.PowerLandingPageActivity" android:launchMode="singleTop" android:screenOrientation="portrait" android:configChanges="keyboardHidden"/>
+        <activity android:theme="@style/ar" android:name="com.cleanmaster.boost.acc.scene.PowerSceneDialogActivity" android:launchMode="singleInstance" android:configChanges="keyboardHidden"/>
+        <activity android:theme="@style/ix" android:name="com.cleanmaster.boost.abnormal.scene.plug.OemSceneActivity" android:excludeFromRecents="true" android:launchMode="singleInstance" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation" android:noHistory="true"/>
+        <activity android:name="com.cleanmaster.login.bindphone.activity.PersonalInformationActivity" android:launchMode="singleTask" android:configChanges="keyboardHidden"/>
+        <activity android:theme="@style/iy" android:icon="@drawable/c5z" android:name="com.cleanmaster.weather.sdk.WeatherSDKActivity" android:process=":worker" android:finishOnTaskLaunch="true" android:excludeFromRecents="true" android:launchMode="singleTop" android:screenOrientation="portrait" android:windowSoftInputMode="adjustUnspecified|stateUnchanged|stateHidden|stateAlwaysHidden|adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.cleanmaster.ui.space.scan.NormalSpecialActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|screenSize"/>
+        <activity android:name="com.cleanmaster.junk.ui.activity.JunkSysDataCacheActivity" android:launchMode="singleTop" android:screenOrientation="portrait" android:configChanges="keyboardHidden|screenSize"/>
+        <receiver android:name="com.cleanmaster.screensave.ScreenSaveUtils$MyBoostReceiver">
+            <intent-filter>
+                <action android:name="com.cmcm.screensaver.update_data_battery"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.cleanmaster.screensave.ScreenSaveUtils$ButtonBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.cleanmaster.screensave.intent.action.ButtonClick"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.cleanmaster.screensave.ScreenSaveUtils$DeleteBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.cleanmaster.screensave.intent.action.DeleteNotify"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.cleanmaster.screensave.notification.NotificationListener" android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" android:process=":service">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.cleanmaster.ncmanager.core.NotificationManagerService" android:exported="false" android:process=":service"/>
+        <service android:name="com.cleanmaster.ncmanager.core.NotificationTranstionService" android:exported="false" android:process=":worker"/>
+        <service android:name="com.cleanmaster.screensave.workernotification.WorkerNotificationService" android:exported="false" android:process=":worker"/>
+        <service android:name="com.cleanmaster.screensave.workernotification.WorkerNotificationCtrlService" android:exported="false" android:process=":service"/>
+        <service android:name="com.cleanmaster.screensave.workernotification.ScreenSaverNCService" android:exported="false"/>
+        <service android:name="com.cleanmaster.screensave.workernotification.ScreenSaverNCTransService" android:exported="false" android:process=":service"/>
+        <activity android:theme="@style/ar" android:name="com.cleanmaster.ncmanager.ui.notifycleaner.NCBlackListActivity" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/ij" android:name="com.cleanmaster.ncmanager.ui.notifysettings.NCDisturbSettingsActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.ncmanager.ui.webview.NCWebActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <service android:name="com.cleanmaster.screensave.notification.LowNotificationSwitchService" android:process=":worker"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cleanmaster.swipe.SwipeSearchActivity" android:finishOnTaskLaunch="true" android:excludeFromRecents="true" android:launchMode="singleInstance" android:screenOrientation="portrait" android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustPan"/>
+        <activity android:theme="@style/ma" android:name="com.ksmobile.business.sdk.search.webview.SSLDialog" android:finishOnTaskLaunch="true" android:excludeFromRecents="true" android:screenOrientation="userPortrait" android:configChanges="keyboardHidden|orientation|screenSize" android:windowSoftInputMode="adjustPan"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.ksmobile.business.sdk.search.views.search_options.ChoiceSearchEngineActivity" android:finishOnTaskLaunch="true" android:launchMode="singleInstance" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.ksmobile.business.sdk.search.webview.SearchWebViewActivity" android:taskAffinity="" android:finishOnTaskLaunch="true" android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize" android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustResize"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.security.scan.SecurityGuideActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.ui.guide.AppUsageGuideActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.cleanmaster.ui.msgdistrub.NotificationGuideActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.cleanmaster.ui.msgdistrub.NCPermissionGuideActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.cleanmaster.boost.acc.ui.PowerSavingAlertSwitchActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.screensave.ui.ScreenSaverToolsActivity" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.locker.LockerToolsActivity" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.locker.LockerToolsActivityNew" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.locker.ChargeMasterStatusActivity" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/jq" android:name="com.cleanmaster.swipe.SwipeGuideActivity" android:launchMode="singleTask" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/Theme.NoTitleBar.Fullscreen" android:name="com.intowow.sdk.WebViewActivity" android:taskAffinity=".ad" android:configChanges="orientation|screenSize"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar.Fullscreen" android:name="com.intowow.sdk.InterstitialAdActivity" android:taskAffinity=".ad" android:excludeFromRecents="true" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="orientation|screenSize"/>
+        <receiver android:name="com.intowow.sdk.ScheduleReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="com.intowow.sdk.prefetch"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="CRYSTAL_ID" android:value="169b7928a122421f851bbb6b166d5230"/>
+        <activity android:theme="@style/jq" android:name="com.cleanmaster.swipe.SwipeEnableForActivity" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/ar" android:name="com.cleanmaster.base.permission.ui.RuntimePermissionActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden"/>
+        <activity android:theme="@style/m9" android:name="com.cleanmaster.base.permission.ui.CommPermissionMaskActivity" android:excludeFromRecents="true" android:launchMode="singleInstance" android:screenOrientation="portrait" android:configChanges="keyboardHidden"/>
+        <activity android:name="com.cleanmaster.base.permission.ui.TransparentMaskActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.cleanmaster.ui.app.activity.MyAppManagerActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.cleanmaster.ui.app.activity.MyApkManagerActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.cleanmaster.ui.app.activity.AppUsageMainActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.cleanmaster.ui.app.activity.InitAppActivity" android:screenOrientation="portrait"/>
+        <provider android:name="com.cleanmaster.weather.data.WeatherDataFileContentProvider" android:exported="false" android:process=":service" android:authorities="com.cleanmaster.mguard.weather.data.file.provider"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.google.android.gms.ads.AdActivity" android:exported="false" android:taskAffinity=".ad" android:multiprocess="true" android:excludeFromRecents="true" android:screenOrientation="portrait" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cleanmaster.base.activity.AdMobAdMainActivity" android:taskAffinity=".ad" android:multiprocess="true" android:excludeFromRecents="true" android:screenOrientation="portrait" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
+        <activity android:name="com.facebook.ads.AudienceNetworkActivity" android:taskAffinity=".fb_audience" android:excludeFromRecents="true" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name="com.cleanmaster.base.activity.AppLockFbBrowserActivity" android:taskAffinity=".fb_audience" android:excludeFromRecents="true"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cleanmaster.base.activity.InterstitialFbActivity" android:taskAffinity=".ad" android:multiprocess="true" android:excludeFromRecents="true" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/ar" android:name="com.keniu.security.main.business.AppExitAdActivity" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cmcm.lotterysdk.ui.LotteryActivity" android:process=":worker" android:launchMode="singleInstance" android:screenOrientation="portrait"/>
+        <activity android:name="com.cleanmaster.notificationclean.NotificationCleanGuideActivity"/>
+        <activity android:theme="@style/uz" android:name="com.mintegral.msdk.shell.MTGActivity" android:launchMode="singleInstance" android:screenOrientation="portrait" android:configChanges="keyboard|orientation">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.mintegral.msdk.activity.MTGCommonActivity" android:screenOrientation="portrait" android:configChanges="keyboard|orientation"/>
+        <receiver android:name="com.alphab.receiver.AlphabReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="applovin.sdk.key" android:value="V7QsF_JQEee-q28Ov5aZWx0TfEBQQNfxU5nk459JkoIXrRxkWVH1RIa5XmWy7AubGfKLlTeSGy_5NwpuQ5wsNU"/>
+        <activity android:name="com.applovin.adview.AppLovinInterstitialActivity" android:taskAffinity=".ad" android:multiprocess="true" android:excludeFromRecents="true" android:configChanges="orientation|screenSize"/>
+        <activity android:name="com.applovin.adview.AppLovinConfirmationActivity" android:configChanges="orientation|screenSize"/>
+        <activity android:name="com.cleanmaster.ui.game.business.AmazonActivity" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.mnt.MntActivity" android:taskAffinity=".batmobi" android:multiprocess="true" android:excludeFromRecents="true"/>
+        <receiver android:name="com.mnt.MntBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <activity android:theme="@style/Theme.NoTitleBar.Fullscreen" android:name="com.vungle.warren.ui.VungleActivity" android:taskAffinity=".vungle" android:multiprocess="true" android:excludeFromRecents="true" android:launchMode="standard" android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize"/>
+        <activity android:theme="@style/Theme.NoTitleBar.Fullscreen" android:name="com.vungle.warren.ui.VungleWebViewActivity" android:taskAffinity=".vungle" android:multiprocess="true" android:excludeFromRecents="true" android:launchMode="standard" android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.vungle.warren.ui.VungleFlexViewActivity" android:taskAffinity=".vungle" android:multiprocess="true" android:excludeFromRecents="true" android:launchMode="standard" android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:hardwareAccelerated="true"/>
+        <activity android:theme="@style/ar" android:name="com.cleanmaster.junk.ui.activity.JunkAppStorageActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.privacypicture.PrivacyPictureGuideActivity" android:screenOrientation="portrait"/>
+        <service android:name="com.ijinshan.screensavernew3.ListenerUnlockService" android:enabled="true" android:exported="false" android:process=":service"/>
+        <service android:name="com.cleanmaster.nrdatalearn.NrDBOperatorService" android:exported="false" android:process=":service"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.securitywifi.base.SWGBaseActivity" android:exported="false" android:excludeFromRecents="true" android:screenOrientation="portrait" android:configChanges="keyboardHidden"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.securitywifi.ui.activity.SWGFuncIntroActivity" android:exported="false" android:excludeFromRecents="true" android:screenOrientation="portrait" android:configChanges="keyboardHidden"/>
+        <activity android:theme="@style/gy" android:name="com.cleanmaster.securitywifi.ui.activity.SWGProtectConfirmActivity" android:taskAffinity=".swg_protect_confirm" android:excludeFromRecents="true" android:launchMode="singleInstance" android:screenOrientation="portrait" android:configChanges="keyboardHidden"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.securitywifi.ui.activity.SWGProtectDetailActivity" android:exported="false" android:excludeFromRecents="true" android:launchMode="singleInstance" android:screenOrientation="portrait" android:configChanges="keyboardHidden"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.securitywifi.ui.activity.SWGSettingActivity" android:exported="false" android:taskAffinity=".swg_setting" android:excludeFromRecents="true" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="keyboardHidden"/>
+        <activity android:theme="@style/gy" android:name="com.cleanmaster.securitywifi.ui.activity.WiFiScanConfirmActivity" android:taskAffinity=".wifi_scan_confirm" android:excludeFromRecents="true" android:launchMode="singleInstance" android:screenOrientation="portrait" android:configChanges="keyboardHidden"/>
+        <activity android:theme="@style/lx" android:name="com.cleanmaster.boost.abnormal.scene.clipboard.ClipboardSceneLandingPage" android:launchMode="singleTop" android:screenOrientation="portrait" android:configChanges="keyboardHidden"/>
+        <service android:name="com.cleanmaster.boost.abnormal.scene.clipboard.ClipboardSceneService" android:process=":service"/>
+        <activity android:theme="@style/mb" android:name="com.cleanmaster.applock.exit.ApplockExitAppPopActivity" android:excludeFromRecents="true" android:launchMode="singleInstance" android:configChanges="keyboardHidden" android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustResize"/>
+        <activity android:theme="@style/m8" android:name="com.cleanmaster.junk.uninstall.UninstallJunkPopDialog" android:excludeFromRecents="true" android:launchMode="singleInstance" android:configChanges="keyboardHidden" android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustResize"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.keniu.security.main.safewallet.SWToolsPromoteActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|screenSize"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.news.ui.NewsDetailActivity" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cleanmaster.boost.abnormal.scene.telephone.PhoneManagerActivity" android:excludeFromRecents="true" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:label="@string/e1o" android:name="com.cleanmaster.boost.abnormal.scene.clean.ScreenOffActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.boost.abnormal.scene.plug.new_style.NewOemSceneActivity" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.settings.oemui.OemSettingDetailActivity" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/lx" android:name="com.keniu.security.newmain.AppBrowserActivity" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.util.abtest.ui.ABTestActivity" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <service android:name="com.cleanmaster.securitywifi.service.SWGManagerService" android:process=":service"/>
+        <service android:name="com.cleanmaster.configmanager.ConfigManagerService" android:exported="false" android:process=":service"/>
+        <provider android:name="com.facebook.FacebookContentProvider" android:exported="true" android:authorities="com.facebook.app.FacebookContentProvider500847713340465"/>
+        <meta-data android:name="app_license" android:value="f512204357a96bb5b2610d6a89749545"/>
+        <provider android:name="com.duapps.ad.stats.DuAdCacheProvider" android:exported="false" android:process=":service" android:authorities="com.cleanmaster.mguard.DuAdCacheProvider"/>
+        <receiver android:name="com.keniu.security.newmain.homepage.NotificationNewStyleReceiver" android:process=":service">
+            <intent-filter>
+                <action android:name="notification_cancelled"/>
+                <action android:name="notification_clicked"/>
+            </intent-filter>
+        </receiver>
+        <provider android:name="android.support.v4.content.FileProvider" android:exported="false" android:authorities="com.cleanmaster.mguard.fileprovider" android:grantUriPermissions="true">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/c"/>
+        </provider>
+        <provider android:name="com.cleanmaster.notification.NotificationFileProvider" android:exported="true" android:authorities="com.cleanmaster.provider.notification"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.vip.VipActivity" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/lr" android:name="com.cleanmaster.statistics.appstatistics.AppStatisticsActivity" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/lr" android:name="com.cleanmaster.statistics.appstatistics.AppStatisticsSettingActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.privacypicture.base.activity.PPBaseActivity" android:exported="false" android:excludeFromRecents="false" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.privacypicture.ui.activity.login.PPStartupActivity" android:exported="true" android:excludeFromRecents="false" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.privacypicture.ui.activity.login.PPEmailAssociateActivity" android:exported="false" android:excludeFromRecents="false" android:screenOrientation="portrait" android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustResize"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.privacypicture.ui.activity.login.PPSecurityPinActivity" android:exported="false" android:excludeFromRecents="false" android:screenOrientation="portrait" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.privacypicture.ui.activity.login.PPIntroduceActivity" android:exported="false" android:excludeFromRecents="false" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustResize"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.privacypicture.ui.activity.login.PPForgetPasswordActivity" android:exported="false" android:excludeFromRecents="false" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.privacypicture.ui.activity.AlbumSelectActivity" android:exported="false" android:excludeFromRecents="false" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.privacypicture.ui.activity.PictureSelectActivity" android:exported="false" android:excludeFromRecents="false" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.privacypicture.ui.activity.PrivacyPhotoDetailActivity" android:exported="false" android:excludeFromRecents="true" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.privacypicture.ui.activity.PrivacyPictureMainActivity" android:exported="false" android:excludeFromRecents="true" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.privacypicture.ui.activity.PrivacyFolderMainActivity" android:exported="false" android:excludeFromRecents="true" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/Theme.Translucent" android:name="com.cleanmaster.privacypicture.ui.activity.StoragePermReqActivity" android:exported="false" android:excludeFromRecents="false" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.privacypicture.ui.activity.guide.PrivacyGuideSelectActivity" android:exported="false" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.privacypicture.ui.activity.guide.PrivacyGuideDetailActivity" android:exported="false" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/Theme.NoTitleBar.Fullscreen" android:name="com.cleanmaster.privacypicture.core.player.VideoPlayerActivity" android:exported="false" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/ar" android:name="com.cleanmaster.privacypicture.ui.activity.PrivacyDecodeAnimActivity" android:exported="false" android:configChanges="keyboardHidden|orientation|screenSize" android:keepScreenOn="true" android:noHistory="true"/>
+        <activity android:theme="@style/Theme.NoTitleBar.Fullscreen" android:name="com.cleanmaster.privacypicture.ui.activity.guide.VideoPlayerGuideActivity" android:exported="false" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.privacypicture.ui.activity.PPAlbumEditActivity" android:exported="false" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.privacypicture.ui.activity.PPCoverSelectActivity" android:exported="false" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.privacypicture.ui.activity.PPIncentiveActivity" android:exported="false" android:excludeFromRecents="false" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/Theme.Black.NoTitleBar.Fullscreen" android:name="com.cleanmaster.privacypicture.ui.activity.PPInternalPromotionActivity" android:exported="false" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/m1" android:name="com.screenlocker.ui.cover.DismissActivity" android:process=":worker" android:taskAffinity="com.lockscreen.ui.cover.DismissActivity" android:excludeFromRecents="true"/>
+        <service android:name="com.screenlocker.service.LockScreenService" android:process=":worker"/>
+        <receiver android:name="com.screenlocker.receiver.LockScreenActiveReceiver" android:process=":worker">
+            <intent-filter android:priority="1000">
+                <action android:name="com.cleanmaster.action.screenon"/>
+                <action android:name="com.cleanmaster.action.screenoff"/>
+            </intent-filter>
+        </receiver>
+        <activity android:theme="@style/hg" android:name="com.screenlocker.ui.act.KPaswordTypeActivity" android:excludeFromRecents="true" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation"/>
+        <activity android:name="com.screenlocker.ui.act.KSysPwdActivity" android:process=":worker" android:excludeFromRecents="true" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation"/>
+        <activity android:name="com.screenlocker.ui.act.TempUnlockBlackBackgroundActivity" android:process=":worker" android:taskAffinity="com.screenlocker.ui.act.TempUnlockBlackBackgroundActivity" android:excludeFromRecents="true" android:launchMode="singleTask"/>
+        <activity android:theme="@style/qs" android:name="com.screenlocker.ui.act.FingerPrintAuthBgActivity" android:process=":worker" android:launchMode="singleInstance" android:screenOrientation="portrait" android:configChanges="orientation|screenSize" android:windowSoftInputMode="adjustUnspecified|stateUnchanged|stateHidden|stateAlwaysHidden|adjustResize"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.screenlocker.ui.act.IntruderGirdPhotoActivity" android:process=":worker" android:excludeFromRecents="true" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.screenlocker.ui.act.IntruderActivity" android:process=":worker" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.screenlocker.ui.act.IntruderPhotoActivity" android:process=":worker" android:configChanges="keyboardHidden|orientation"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.screenlocker.ui.act.FingerprintGuideActivity" android:launchMode="singleInstance" android:configChanges="keyboardHidden|orientation"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.screenlocker.ui.act.LockerPermissionActivity" android:launchMode="singleTop" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation"/>
+        <activity android:theme="@style/an" android:name="com.screenlocker.ui.act.DismissKeyguardActivity" android:process=":worker" android:taskAffinity=".dismiss_keyguard" android:excludeFromRecents="true" android:screenOrientation="portrait"/>
+        <receiver android:name="com.lock.cover.WallpaperChangeReceiver" android:exported="false" android:process=":service">
+            <intent-filter>
+                <action android:name="android.intent.action.WALLPAPER_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.lock.common.LowBatteryReceiver" android:exported="true" android:process=":worker">
+            <intent-filter>
+                <action android:name="com.cleanMaster.lowBatteryChanged"/>
+            </intent-filter>
+        </receiver>
+        <activity android:theme="@style/Theme.Dialog" android:name="com.lock.common.DialogActivity" android:process=":worker" android:excludeFromRecents="true" android:launchMode="singleTask" android:configChanges="keyboardHidden|orientation"/>
+        <activity android:theme="@style/Theme.Dialog" android:name="com.ijinshan.screensavernew.ui.PromoteDialogActivity" android:process=":worker" android:excludeFromRecents="true" android:launchMode="singleTask" android:configChanges="keyboardHidden|orientation"/>
+        <activity android:theme="@style/qu" android:name="com.ijinshan.screensavernew.ui.NewDialogActivity" android:process=":worker" android:excludeFromRecents="true" android:launchMode="singleTask" android:configChanges="keyboardHidden|orientation"/>
+        <activity android:theme="@style/qu" android:name="com.ijinshan.screensavernew.ui.UFOAnimActivity" android:process=":worker" android:excludeFromRecents="true" android:launchMode="singleTask" android:configChanges="keyboardHidden|orientation"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar.Fullscreen" android:name="com.ijinshan.screensavernew.ScreenSaverTransitActivity" android:process=":worker" android:excludeFromRecents="true" android:launchMode="singleTask" android:configChanges="keyboardHidden|orientation"/>
+        <activity android:theme="@style/qs" android:name="com.ijinshan.launcher.LauncherMainActivity" android:process=":worker" android:launchMode="singleTop" android:screenOrientation="portrait" android:configChanges="orientation|screenSize" android:windowSoftInputMode="adjustUnspecified|stateUnchanged|stateHidden|stateAlwaysHidden|adjustResize"/>
+        <service android:name="com.lock.sideslip.SlideSlipService" android:process=":worker"/>
+        <service android:name="com.ijinshan.screensavernew4.weather.ScreenSaverWeatherService" android:process=":worker"/>
+        <receiver android:label="com.lock.sideslip.CmSideProvider" android:name="com.lock.sideslip.CmSideProviderReceiver" android:exported="true" android:process=":worker">
+            <intent-filter>
+                <action android:name="com.cmcm.cmnow.internal.action.SIDE_CONFLICT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.ijinshan.screensavershared.avoid.OverChargingSoundReceiver" android:enabled="false" android:exported="true">
+            <intent-filter>
+                <action android:name="com.overcharging.sound.state.action"/>
+            </intent-filter>
+        </receiver>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cleanmaster.ui.swipe.SwipeFloatGuideTipActivity" android:launchMode="singleInstance"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cleanmaster.ui.capture.ScreenCaptureImageActivity" android:excludeFromRecents="true" android:launchMode="singleInstance"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cleanmaster.ui.capture.CaptureCommonActivity" android:excludeFromRecents="true"/>
+        <activity android:theme="@style/i4" android:name="com.cleanmaster.ncmanager.ui.enlarge.NCEnlargeActivity" android:launchMode="singleTop" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.ncmanager.ui.video.NCVideoWebViewActivity" android:launchMode="singleTop" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name="ks.cm.antivirus.privatebrowsing.utils.NoAffinityForwardActivity" android:taskAffinity="" android:launchMode="singleTop"/>
+        <activity android:theme="@style/j1" android:label="@string/bw8" android:icon="@drawable/a9_" android:name="ks.cm.antivirus.privatebrowsing.PrivateBrowsingActivity" android:enabled="true" android:exported="true" android:taskAffinity=".pb" android:launchMode="singleTask" android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:hardwareAccelerated="true">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity-alias android:name="ks.cm.antivirus.privatebrowsing.PrivateBrowsingActivityFake" android:enabled="true" android:targetActivity="ks.cm.antivirus.privatebrowsing.PrivateBrowsingActivity">
+            <intent-filter>
+                <action android:name="ks.cm.antivirus.privatebrowsing.PrivateBrowsingActivityFake"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity-alias>
+        <activity-alias android:name="ks.cm.antivirus.privatebrowsing.PrivateBrowsingActivityFake.facebook" android:enabled="true" android:targetActivity="ks.cm.antivirus.privatebrowsing.PrivateBrowsingActivity">
+            <intent-filter>
+                <action android:name="ks.cm.antivirus.privatebrowsing.PrivateBrowsingActivityFake.facebook"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity-alias>
+        <activity-alias android:name="ks.cm.antivirus.privatebrowsing.PrivateBrowsingActivityFake.amazon" android:enabled="true" android:targetActivity="ks.cm.antivirus.privatebrowsing.PrivateBrowsingActivity">
+            <intent-filter>
+                <action android:name="ks.cm.antivirus.privatebrowsing.PrivateBrowsingActivityFake.amazon"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity-alias>
+        <activity-alias android:name="ks.cm.antivirus.privatebrowsing.PrivateBrowsingActivityFake.bookmark" android:enabled="true" android:targetActivity="ks.cm.antivirus.privatebrowsing.PrivateBrowsingActivity">
+            <intent-filter>
+                <action android:name="ks.cm.antivirus.privatebrowsing.PrivateBrowsingActivityFake.bookmark"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity-alias>
+        <activity-alias android:name="ks.cm.antivirus.privatebrowsing.PrivateBrowsingActivityFake.AvoidCMS" android:enabled="true" android:targetActivity="ks.cm.antivirus.privatebrowsing.PrivateBrowsingActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+                <data android:mimeType="application/x-webarchive-xml"/>
+                <data android:mimeType="text/html"/>
+                <data android:mimeType="text/plain"/>
+                <data android:mimeType="application/xhtml+xml"/>
+                <data android:mimeType="application/vnd.wap.xhtml+xml"/>
+            </intent-filter>
+        </activity-alias>
+        <activity android:theme="@style/gi" android:label="@string/dwv" android:icon="@drawable/b13" android:name="ks.cm.antivirus.privatebrowsing.PrivateBrowsingCMWireActivity" android:enabled="true" android:exported="true" android:taskAffinity=".cmwire" android:launchMode="singleTask" android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:hardwareAccelerated="true">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity-alias android:name="ks.cm.antivirus.privatebrowsing.PrivateBrowsingCMWireActivityFake" android:enabled="true" android:targetActivity="ks.cm.antivirus.privatebrowsing.PrivateBrowsingCMWireActivity">
+            <intent-filter>
+                <action android:name="ks.cm.antivirus.privatebrowsing.PrivateBrowsingCMWireActivityFake"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity-alias>
+        <activity android:name="ks.cm.antivirus.privatebrowsing.PrivateBrowsingSettingActivity" android:taskAffinity=".pb" android:excludeFromRecents="true" android:screenOrientation="portrait"/>
+        <activity android:name="ks.cm.antivirus.privatebrowsing.ui.PrivateBrowsingTextSizeSettingActivity" android:taskAffinity=".pb" android:excludeFromRecents="true" android:screenOrientation="portrait"/>
+        <activity android:name="ks.cm.antivirus.privatebrowsing.search.PrivateBrowsingSearchSettingActivity" android:taskAffinity=".pb" android:excludeFromRecents="true" android:launchMode="singleTop" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/mb" android:name="ks.cm.antivirus.privatebrowsing.utils.PBActionRouteActivity" android:taskAffinity=".pb" android:excludeFromRecents="true" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="ks.cm.antivirus.pb.launch"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/lz" android:name="ks.cm.antivirus.privatebrowsing.browserutils.DefaultBrowserGuideActivity" android:exported="false" android:taskAffinity="" android:excludeFromRecents="true" android:screenOrientation="portrait"/>
+        <activity android:name="ks.cm.antivirus.privatebrowsing.browserutils.FakeBrowsingActivity" android:enabled="false" android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/mb" android:name="ks.cm.antivirus.privatebrowsing.browserutils.BrowserUtilsActivity" android:enabled="true" android:exported="true">
+            <intent-filter>
+                <data android:scheme="cmspb"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="ks.cm.antivirus.privatebrowsing.LaunchFileChooserActivity" android:taskAffinity="" android:screenOrientation="portrait"/>
+        <receiver android:name="ks.cm.antivirus.privatebrowsing.receiver.PrivateBrowsingDownloadReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.DOWNLOAD_COMPLETE"/>
+                <action android:name="android.intent.action.DOWNLOAD_NOTIFICATION_CLICKED"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="ks.cm.antivirus.privatebrowsing.download.DownloadReceiverService" android:exported="false"/>
+        <provider android:name="ks.cm.antivirus.privatebrowsing.provider.PBDownloadProvider" android:exported="false" android:authorities="com.cleanmaster.mguard.antivirus.privatebrowsing.download.pbsdk"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:label="@string/b3q" android:icon="@drawable/bfj" android:name="ks.cm.antivirus.applock.protect.bookmark.SecretBoxBookmarksShareActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="ks.cm.antivirus.applock.protect.bookmark.SecretBoxBookmarksActivity" android:exported="false" android:excludeFromRecents="true" android:launchMode="singleInstance" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="ks.cm.antivirus.applock.protect.bookmark.AddBookmarksActivity" android:excludeFromRecents="true" android:launchMode="singleInstance" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <provider android:name="ks.cm.antivirus.applock.protect.bookmark.BookmarkProvider" android:exported="false" android:process=":DefendService" android:authorities="com.cleanmaster.mguard.security.pbsdk.applock.protect.bookmark"/>
+        <receiver android:name="com.cleanmaster.applock.receiver.AppLockReportReceiver" android:exported="false" android:process=":DefendService">
+            <intent-filter>
+                <action android:name="com.applock.ks.cm.antivirus.applock.action.report"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.cleanmaster.applock.receiver.PhoneStateReceiver" android:enabled="true" android:exported="true"/>
+        <activity android:theme="@style/ut" android:name="com.cleanmaster.fingerprint.activity.StartSpassFingerprintSettingsActivity" android:exported="false" android:taskAffinity=".applock.fingerprint" android:excludeFromRecents="true" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/mt" android:name="com.cleanmaster.fingerprint.activity.AppLockEmptyScreenActivity" android:process=":worker" android:excludeFromRecents="true" android:launchMode="singleInstance" android:configChanges="orientation"/>
+        <provider android:name="com.cleanmaster.theme.database.ThemeInfoContentProvider" android:exported="false" android:process=":service" android:authorities="com.cleanmaster.mguard.theme.database.ThemeInfoContentProvider"/>
+        <activity android:theme="@style/rz" android:name="com.cleanmaster.applocklib.ui.OverlayDiaologActivity" android:process=":worker" android:launchMode="singleInstance" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <uses-permission android:name="android.permission.INTERNET"/>
+        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+        <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+        <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+        <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+        <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+        <receiver android:name="com.ksmobile.business.sdk.utils.BroadcastReceiverService">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <activity android:theme="@style/m9" android:name="com.ijinshan.notificationlib.notificationhelper.ui.SocialMaskGuideActivity" android:excludeFromRecents="true" android:launchMode="singleInstance" android:configChanges="keyboardHidden"/>
+        <activity android:theme="@style/m9" android:name="com.ijinshan.notificationlib.notificationhelper.ui.NotifyGuideTransitActivity" android:process=":worker" android:launchMode="singleInstance" android:configChanges="keyboardHidden"/>
+        <activity android:theme="@style/lx" android:name="com.cleanmaster.earn.ui.activity.EarnMainActivity" android:exported="true" android:excludeFromRecents="true" android:launchMode="singleTask" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/i3" android:label="@string/akt" android:icon="@drawable/av4" android:name="com.cleanmaster.earn.ui.activity.LotteryActivity" android:excludeFromRecents="true" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="orientation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/lx" android:name="com.cleanmaster.earn.ui.activity.WithDrawProtocolActivity" android:launchMode="singleTask" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/lx" android:name="com.cleanmaster.earn.ui.activity.WithDrawActivity" android:launchMode="singleTask" android:screenOrientation="portrait" android:windowSoftInputMode="adjustUnspecified|stateUnchanged|stateHidden|stateAlwaysHidden|adjustPan"/>
+        <activity android:theme="@style/lx" android:name="com.cleanmaster.earn.ui.activity.WithDrawRecordActivity" android:launchMode="singleTask" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/ex" android:name="com.cleanmaster.earn.ui.activity.GiftBagReceiveActivity" android:launchMode="singleTop" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/i3" android:name="com.cleanmaster.earn.ui.activity.H5GameActivity" android:excludeFromRecents="true" android:launchMode="singleInstance" android:screenOrientation="portrait" android:hardwareAccelerated="true"/>
+        <activity android:theme="@style/ex" android:name="com.cleanmaster.earn.ui.activity.EarnSettingActivity" android:launchMode="singleTask" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/lx" android:name="com.cleanmaster.earn.ui.activity.EarnHelpActivity" android:launchMode="singleTask" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/lr" android:name="com.cleanmaster.brightness.SettingActivity" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <service android:name="com.cleanmaster.brightness.screenlight.ScreemLampService" android:process=":service"/>
+        <receiver android:name="com.cleanmaster.brightness.screenlight.AlarmScreenLightReceiver" android:process=":service"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.securitymap.ui.splash.SplashSecurityMapActivity" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/i5" android:name="com.cleanmaster.securitymap.ui.SecurityMapActivity" android:launchMode="singleTask" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/i5" android:name="com.cleanmaster.securitymap.ui.maptab.SettingActivity" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/ix" android:name="com.cleanmaster.securitymap.ui.splash.CreateCircleActivity" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize" android:windowSoftInputMode="adjustResize"/>
+        <activity android:theme="@style/ix" android:name="com.cleanmaster.securitymap.ui.splash.JoinCircleActivity" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize" android:windowSoftInputMode="adjustUnspecified|stateVisible|adjustResize"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.securitymap.ui.splash.SafeMapWelcomeActivity" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.cleanmaster.securitymap.ui.splash.SafeMapUserInfoActivity" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize" android:windowSoftInputMode="adjustUnspecified|stateVisible|adjustResize"/>
+        <activity android:theme="@style/i5" android:name="com.cleanmaster.securitymap.ui.fence.CreateFenceActivity" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/i5" android:name="com.cleanmaster.securitymap.ui.fence.EditFenceActivity" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <service android:name="com.cleanmaster.securitymap.core.SecurityMapManagerService" android:exported="false" android:process=":service"/>
+        <service android:name="com.cleanmaster.securitymap.core.ReportJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="false" android:process=":service"/>
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="@string/dx6"/>
+        <provider android:name="com.cleanmaster.util.serviceconfig.NewConfigProvider" android:exported="false" android:process=":service" android:authorities="com.cleanmaster.mguard.provider.config.new"/>
+        <service android:name="com.cleanmaster.util.service.TransformService" android:exported="false" android:process=":service"/>
+        <meta-data android:name="android.support.VERSION" android:value="26.0.2"/>
+        <receiver android:name="com.google.android.gms.measurement.AppMeasurementReceiver" android:enabled="true" android:exported="false"/>
+        <receiver android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES" android:enabled="true" android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.google.android.gms.measurement.AppMeasurementService" android:enabled="true" android:exported="false"/>
+        <service android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:enabled="true" android:exported="false"/>
+        <receiver android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND" android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.cleanmaster.mguard"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver" android:exported="false"/>
+        <service android:name="com.google.firebase.iid.FirebaseInstanceIdService" android:exported="true">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <provider android:name="com.google.firebase.provider.FirebaseInitProvider" android:exported="false" android:authorities="com.cleanmaster.mguard.firebaseinitprovider" android:initOrder="100"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:exported="false"/>
+        <activity android:theme="@style/Theme.Black.NoTitleBar.Fullscreen" android:name="com.cmcm.orion.picks.PicksLoadingActivity" android:taskAffinity="com.cmcm.orion.adsdk.nativead" android:launchMode="singleTask"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cmcm.orion.utils.internal.PicksTransparentActivity"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cmcm.orion.picks.webview.PicksBrowser" android:launchMode="standard"/>
+        <activity android:name="com.cmcm.orion.picks.impl.PicksInterstitialActivity" android:launchMode="singleTask" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <service android:name="com.cmcm.orion.picks.init.DownloadService" android:exported="true" android:process=":PickService"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cmcm.orion.picks.impl.FullScreenVideoActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cmcm.orion.picks.impl.BrandFeedDetailVideoActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cmcm.orion.picks.impl.BrandFeedDetailImageActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cmcm.orion.picks.impl.BrandFeedItemVideoActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cmcm.orion.picks.impl.BrandPGVideoActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cmcm.orion.picks.impl.IncentiveVideoPlayActivity" android:launchMode="singleTask" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.cmcm.orion.picks.impl.VideoAdDetailActivity" android:launchMode="singleTask"/>
+        <activity android:theme="@style/Theme.Translucent" android:name="com.cmcm.orion.picks.api.NotiActivity" android:taskAffinity="com.cmcm.qrcmd.nullact" android:excludeFromRecents="true" android:launchMode="singleInstance" android:configChanges="keyboardHidden|navigation"/>
+        <receiver android:name="com.cmcm.orion.utils.internal.AppInstallReceiver" android:enabled="true" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <provider android:name="com.cmcm.orion.picks.internal.loader.MultiProcessPreferences" android:exported="false" android:authorities="com.cleanmaster.mguard.orion.PREFERENCE_AUTHORITY"/>
+        <activity android:theme="@style/Theme.Black.NoTitleBar.Fullscreen" android:name="com.picksbrowser.PicksBrowser" android:launchMode="singleTask"/>
+        <service android:name="com.picksinit.DownloadService" android:exported="true" android:process=":service"/>
+        <activity android:name="com.my.target.ads.MyTargetActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
+        <receiver android:name="com.duapps.ad.base.PackageAddReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.adywind.ad.appwall.ui.AppwallActivity" android:configChanges="keyboard|orientation"/>
+        <service android:name="com.power.AdyService" android:persistent="true"/>
+        <receiver android:name="com.power.AdyReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:exported="false" android:excludeFromRecents="true"/>
+        <service android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" android:exported="true"/>
+    </application>
+</manifest>
+    
