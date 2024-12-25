@@ -47,7 +47,7 @@ We will donate some of the proceeds to charities and companies.
 
 License
 -------
-licensed 2025-2026 and later gamestime102 creator clean master privacy.
+Licensed to gamestime102 clean master privacy for 2025-2026 and beyond.
 
 The code and data files in this distribution are licensed under the GNU General Public License, version 3 or any later version, as published by the Free Software Foundation. For a copy of this license, see https://www.gnu.org/licenses/.
 
