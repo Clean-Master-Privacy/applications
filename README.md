@@ -25,6 +25,7 @@ Cons
 Requires Android 5.0 or later
 Some features not available on all devices
 Other features
+
 Contribute
 ----------
 We have recently rebuilt the app and focused on our current feature and fix roadmap. Therefore, we are not currently accepting new issues or PRs: feel free to fork the repository for your own experiments. Thank you for your understanding and support.
