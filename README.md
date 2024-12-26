@@ -2,41 +2,29 @@
 
 About Clean Master Privacy
 --------------------------
+Clean Master Privacy is a powerful toolkit that protects your Android devices from viruses, theft, and other threats.
 
-RAM, Junk Files, Virus Cleaner, Phone Booster, App Optimization and Privacy Manager.
+Clean Master Privacy is one of the best antivirus solutions available for Android devices. This threat engine is highly regarded in the industry and has been used and developed for over 15 years. In addition to identifying malicious apps, it can scan memory and SD cards. When it finds a threat, it can root, sandbox, and eliminate it.
 
-With over 1 billion users worldwide, Clean Master Privacy can be your go-to app to clean viruses, free up storage and speed up your device. We offer powerful Antivirus, Junk File Cleaner, Phone Booster and Privacy Manager to protect your privacy and security.
+You can set the app to run on a schedule, so it protects your device without thinking. Scans are also available on-demand, and the program automatically updates threat definitions. In addition to protecting you from viruses and other malware, it protects you while you browse the web, hides chats and other private conversations, and has a find my phone feature.
 
-Key Features of Clean Master Privacy:
+In fact, Clean Master Privacy is packed with smart features. For example, if someone tries to access your device and enters the wrong password or gesture, it takes a selfie of them. You can even set it to notify you immediately via email or another device if such an intrusion occurs or your device moves when it shouldn’t.
 
-🌪️ JUNK FILES CLEANER
-
-Clean Master Privacy helps you free up storage space by removing junk files, residual files and cache files that slow down your device.
-
-With our professional cleaner, you can free up much more space by clearing cache data from social media apps without worrying about deleting the wrong files.
-
-🛡️ FREE ANTIVIRUS
-
-Rated #1 by AV-TEST, Clean Master Privacy's free antivirus engine protects your phone from viruses, trojans, and scans, blocks, and removes viruses from all apps (pre-installed or not) to protect your privacy!
-
-🚀 PHONE SPEED UP
-
-One-Click Speed ​​Up helps speed up your phone by freeing up RAM. After speeding up your phone, you can run a speed test to see how fast it is.
+There’s not much negative to say about Clean Master Privacy. It requires Android 5.0 or later, and it’s a shame that such a good app doesn’t work on devices that only support older versions. It’s also a shame that certain features are limited to certain devices. For example, fingerprint lock only works on Samsung Galaxy series devices.
 
 Other features
 
-☆ BATTERY SAVER - Helps save battery power and extend battery life.
+Pros
 
-☆ APP LOCK - Keeps your privacy safe with App Lock PIN or pattern.
+Multi-layered virus protection
+Scheduled and on-demand
+Find my phone feature
 
-☆ Wi-Fi SECURITY - Detects fake Wi-Fi and unauthorized connections.
+Cons
 
-☆ GAME ACCELERATOR - Manage your games and speed up game loading.
-
-☆ PRIVACY MANAGER - Instantly protect private files on your device. (Coming soon)
-
-☆ VIP - In testing. (Coming soon)
-
+Requires Android 5.0 or later
+Some features not available on all devices
+Other features
 Contribute
 ----------
 We have recently rebuilt the app and focused on our current feature and fix roadmap. Therefore, we are not currently accepting new issues or PRs: feel free to fork the repository for your own experiments. Thank you for your understanding and support.
