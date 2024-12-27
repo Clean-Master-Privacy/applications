@@ -1,0 +1,15 @@
+    <?xml version="1.0" encoding="utf-8"?>
+<inset xmlns:ifTextView="http://schemas.android.com/apk/res/com.cleanmaster.security" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:wing="http://schemas.android.com/apk/res-auto" android:insetLeft="@dimen/xw" android:insetRight="@dimen/xw" android:insetTop="@dimen/xx" android:insetBottom="@dimen/xv">
+    <selector>
+        <item android:state_enabled="false">
+            <nine-patch android:src="@drawable/ahp" android:tint="?attr/yn" android:alpha="?android:attr/disabledAlpha"/>
+        </item>
+        <item android:state_focused="false" android:state_pressed="false">
+            <nine-patch android:src="@drawable/ahp" android:tint="?attr/yn"/>
+        </item>
+        <item>
+            <nine-patch android:src="@drawable/ahm" android:tint="?attr/yo"/>
+        </item>
+    </selector>
+</inset>
+    
