@@ -1,0 +1,5 @@
+    <?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:ifTextView="http://schemas.android.com/apk/res/com.cleanmaster.security" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:wing="http://schemas.android.com/apk/res-auto">
+    <external-path name="cache" path="."/>
+</paths>
+    
