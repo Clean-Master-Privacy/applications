@@ -2,10 +2,6 @@
 
 About Clean Master Privacy
 --------------------------
-# Clean Master Privacy
-
-About Clean Master Privacy
---------------------------
 
 RAM, Junk Files, Virus Cleaner, Phone Booster, App Optimization and Privacy Manager.
 
