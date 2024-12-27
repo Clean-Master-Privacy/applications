@@ -17,14 +17,19 @@ Other features
 Pros
 
 Multi-layered virus protection
+
 Scheduled and on-demand
+
 Find my phone feature
+
 Supports Android TV
 
 Cons
 
 Requires Android 5.0 or later
+
 Some features not available on all devices
+
 Other features
 
 Contribute
