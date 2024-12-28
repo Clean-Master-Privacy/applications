@@ -1,4 +1,4 @@
-var tag = document.createElement('script');
+    var tag = document.createElement('script');
 
       tag.src = "https://www.youtube.com/iframe_api";
       var firstScriptTag = document.getElementsByTagName('script')[0];
@@ -63,3 +63,4 @@ var tag = document.createElement('script');
             player.playVideo();
         }
       }
+    
