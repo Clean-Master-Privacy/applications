@@ -1,0 +1,2410 @@
+[
+  {
+    "port": 3234,
+    "proto": "tcp"
+  },
+  {
+    "port": 4729,
+    "proto": "tcp"
+  },
+  {
+    "port": 5002,
+    "proto": "tcp"
+  },
+  {
+    "port": 5063,
+    "proto": "tcp"
+  },
+  {
+    "port": 5350,
+    "proto": "tcp"
+  },
+  {
+    "port": 5671,
+    "proto": "tcp"
+  },
+  {
+    "port": 10009,
+    "proto": "tcp"
+  },
+  {
+    "port": 13784,
+    "proto": "tcp"
+  },
+  {
+    "port": 25002,
+    "proto": "tcp"
+  },
+  {
+    "port": 25004,
+    "proto": "tcp"
+  },
+  {
+    "port": 25006,
+    "proto": "tcp"
+  },
+  {
+    "port": 3234,
+    "proto": "udp"
+  },
+  {
+    "port": 4731,
+    "proto": "udp"
+  },
+  {
+    "port": 5061,
+    "proto": "udp"
+  },
+  {
+    "port": 5063,
+    "proto": "udp"
+  },
+  {
+    "port": 5352,
+    "proto": "udp"
+  },
+  {
+    "port": 5354,
+    "proto": "udp"
+  },
+  {
+    "port": 8014,
+    "proto": "udp"
+  },
+  {
+    "port": 8078,
+    "proto": "udp"
+  },
+  {
+    "port": 8080,
+    "proto": "udp"
+  },
+  {
+    "port": 8083,
+    "proto": "udp"
+  },
+  {
+    "port": 8085,
+    "proto": "udp"
+  },
+  {
+    "port": 8087,
+    "proto": "udp"
+  },
+  {
+    "port": 8116,
+    "proto": "udp"
+  },
+  {
+    "port": 8303,
+    "proto": "udp"
+  },
+  {
+    "port": 8500,
+    "proto": "udp"
+  },
+  {
+    "port": 8602,
+    "proto": "udp"
+  },
+  {
+    "port": 8888,
+    "proto": "udp"
+  },
+  {
+    "port": 9000,
+    "proto": "udp"
+  },
+  {
+    "port": 9090,
+    "proto": "udp"
+  },
+  {
+    "port": 9110,
+    "proto": "udp"
+  },
+  {
+    "port": 9303,
+    "proto": "udp"
+  },
+  {
+    "port": 9309,
+    "proto": "udp"
+  },
+  {
+    "port": 9785,
+    "proto": "udp"
+  },
+  {
+    "port": 13784,
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 3001,
+      "high": 3019
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3021,
+      "high": 3039
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3041,
+      "high": 3049
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3053,
+      "high": 3070
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3072,
+      "high": 3073
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3075,
+      "high": 3099
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3101,
+      "high": 3118
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3120,
+      "high": 3161
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3163,
+      "high": 3224
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3226,
+      "high": 3232
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3236,
+      "high": 3259
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3261,
+      "high": 3267
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3270,
+      "high": 3282
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3284,
+      "high": 3304
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3307,
+      "high": 3385
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3387,
+      "high": 3388
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3390,
+      "high": 3395
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3397,
+      "high": 3411
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3413,
+      "high": 3422
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3425,
+      "high": 3454
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3456,
+      "high": 3477
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3479,
+      "high": 3492
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3494,
+      "high": 3515
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3517,
+      "high": 3561
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3563,
+      "high": 3605
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3607,
+      "high": 3631
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3633,
+      "high": 3643
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3646,
+      "high": 3666
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3668,
+      "high": 3688
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3691,
+      "high": 3701
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3703,
+      "high": 3723
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3726,
+      "high": 3767
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3769,
+      "high": 3803
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3805,
+      "high": 3825
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3827,
+      "high": 3829
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3831,
+      "high": 3840
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3842,
+      "high": 3867
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3869,
+      "high": 3871
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3873,
+      "high": 3879
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3881,
+      "high": 3899
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3901,
+      "high": 3944
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3946,
+      "high": 3998
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 4000,
+      "high": 4017
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 4019,
+      "high": 4088
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 4091,
+      "high": 4092
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 4094,
+      "high": 4095
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 4097,
+      "high": 4104
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 4106,
+      "high": 4110
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 4112,
+      "high": 4115
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 4117,
+      "high": 4171
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 4173,
+      "high": 4189
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 4191,
+      "high": 4302
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 4304,
+      "high": 4306
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 4308,
+      "high": 4320
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 4322,
+      "high": 4351
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 4353,
+      "high": 4442
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 4444,
+      "high": 4485
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 4487,
+      "high": 4501
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 4535,
+      "high": 4566
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 4568,
+      "high": 4603
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 4606,
+      "high": 4661
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 4663,
+      "high": 4727
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 4731,
+      "high": 4738
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 4740,
+      "high": 4752
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 4754,
+      "high": 4839
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 4841,
+      "high": 4842
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 4844,
+      "high": 4846
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 4848,
+      "high": 4893
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 4895,
+      "high": 4898
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 4900,
+      "high": 4948
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 4951,
+      "high": 4999
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 5006,
+      "high": 5009
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 5012,
+      "high": 5047
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 5049,
+      "high": 5050
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 5052,
+      "high": 5059
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 5066,
+      "high": 5081
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 5086,
+      "high": 5098
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 5100,
+      "high": 5149
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 5152,
+      "high": 5153
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 5155,
+      "high": 5171
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 5173,
+      "high": 5189
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 5191,
+      "high": 5221
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 5224,
+      "high": 5227
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 5229,
+      "high": 5268
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 5270,
+      "high": 5279
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 5282,
+      "high": 5297
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 5299,
+      "high": 5309
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 5311,
+      "high": 5348
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 5352,
+      "high": 5354
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 5356,
+      "high": 5401
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 5403,
+      "high": 5404
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 5406,
+      "high": 5411
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 5414,
+      "high": 5416
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 5418,
+      "high": 5420
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 5422,
+      "high": 5431
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 5433,
+      "high": 5449
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 5451,
+      "high": 5554
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 5557,
+      "high": 5630
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 5632,
+      "high": 5669
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 5673,
+      "high": 5740
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 5743,
+      "high": 5813
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 5815,
+      "high": 5899
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 5901,
+      "high": 5930
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 5932,
+      "high": 5937
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 5939,
+      "high": 5983
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 5987,
+      "high": 5998
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 6064,
+      "high": 6085
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 6087,
+      "high": 6099
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 6101,
+      "high": 6109
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 6113,
+      "high": 6128
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 6130,
+      "high": 6158
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 6160,
+      "high": 6323
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 6325,
+      "high": 6345
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 6348,
+      "high": 6349
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 6351,
+      "high": 6378
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 6380,
+      "high": 6431
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 6433,
+      "high": 6443
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 6446,
+      "high": 6512
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 6516,
+      "high": 6565
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 6567,
+      "high": 6599
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 6603,
+      "high": 6618
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 6620,
+      "high": 6621
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 6623,
+      "high": 6652
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 6654,
+      "high": 6664
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 6670,
+      "high": 6678
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 6680,
+      "high": 6696
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 6698,
+      "high": 6887
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 6889,
+      "high": 6968
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 6970,
+      "high": 7261
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 7263,
+      "high": 7271
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 7273,
+      "high": 7399
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 7403,
+      "high": 7472
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 7475,
+      "high": 7508
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 7510,
+      "high": 7546
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 7548,
+      "high": 7623
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 7625,
+      "high": 7630
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 7632,
+      "high": 7786
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 7789,
+      "high": 7936
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 9937,
+      "high": 9999
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 10001,
+      "high": 10007
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 10011,
+      "high": 10049
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 10052,
+      "high": 10109
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 10111,
+      "high": 10112
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 10117,
+      "high": 10211
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 10213,
+      "high": 10932
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 10934,
+      "high": 11000
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 11002,
+      "high": 11111
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 11113,
+      "high": 11370
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 11372,
+      "high": 13074
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 13076,
+      "high": 13719
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 13722,
+      "high": 13723
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 13725,
+      "high": 13781
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 13787,
+      "high": 14999
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 15001,
+      "high": 15344
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 15346,
+      "high": 15555
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 15557,
+      "high": 16383
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 16385,
+      "high": 17499
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 17501,
+      "high": 18103
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 18105,
+      "high": 19006
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 19008,
+      "high": 19282
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 19284,
+      "high": 19314
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 19316,
+      "high": 19811
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 19815,
+      "high": 22346
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 22348,
+      "high": 22349
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 22351,
+      "high": 24464
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 24466,
+      "high": 24553
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 24555,
+      "high": 24999
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 25008,
+      "high": 25009
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 25011,
+      "high": 25999
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 26001,
+      "high": 31456
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 31458,
+      "high": 31619
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 31621,
+      "high": 33433
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 33535,
+      "high": 34566
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 34568,
+      "high": 35356
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 35358,
+      "high": 36699
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 36701,
+      "high": 37600
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 37602,
+      "high": 39999
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 40001,
+      "high": 41793
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 41796,
+      "high": 44817
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 44819,
+      "high": 45823
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 45825,
+      "high": 47000
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 47002,
+      "high": 48652
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 48654,
+      "high": 49150
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 49152,
+      "high": 65535
+    },
+    "proto": "tcp"
+  },
+  {
+    "port-range": {
+      "low": 3001,
+      "high": 3019
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 3021,
+      "high": 3039
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 3041,
+      "high": 3049
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 3053,
+      "high": 3073
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 3075,
+      "high": 3161
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 3163,
+      "high": 3224
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 3226,
+      "high": 3232
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 3236,
+      "high": 3267
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 3270,
+      "high": 3304
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 3307,
+      "high": 3385
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 3387,
+      "high": 3388
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 3390,
+      "high": 3395
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 3397,
+      "high": 3411
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 3413,
+      "high": 3454
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 3456,
+      "high": 3477
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 3479,
+      "high": 3482
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 3484,
+      "high": 3492
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 3494,
+      "high": 3515
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 3517,
+      "high": 3526
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 3528,
+      "high": 3543
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 3545,
+      "high": 3561
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 3563,
+      "high": 3604
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 3607,
+      "high": 3644
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 3646,
+      "high": 3666
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 3668,
+      "high": 3689
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 3691,
+      "high": 3701
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 3703,
+      "high": 3723
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 3726,
+      "high": 3767
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 3769,
+      "high": 3783
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 3785,
+      "high": 3798
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 3800,
+      "high": 3803
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 3805,
+      "high": 3825
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 3827,
+      "high": 3829
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 3831,
+      "high": 3879
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 3881,
+      "high": 3944
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 3946,
+      "high": 3998
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 4000,
+      "high": 4017
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 4019,
+      "high": 4068
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 4070,
+      "high": 4088
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 4091,
+      "high": 4092
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 4094,
+      "high": 4095
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 4097,
+      "high": 4104
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 4106,
+      "high": 4115
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 4117,
+      "high": 4171
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 4173,
+      "high": 4302
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 4304,
+      "high": 4442
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 4444,
+      "high": 4485
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 4487,
+      "high": 4499
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 4501,
+      "high": 4568
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 4570,
+      "high": 4661
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 4663,
+      "high": 4728
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 4733,
+      "high": 4738
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 4740,
+      "high": 4752
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 4754,
+      "high": 4788
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 4790,
+      "high": 4839
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 4841,
+      "high": 4842
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 4844,
+      "high": 4846
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 4848,
+      "high": 4893
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 4895,
+      "high": 4898
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 4900,
+      "high": 4949
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 4951,
+      "high": 5002
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 5006,
+      "high": 5009
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 5012,
+      "high": 5059
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 5066,
+      "high": 5081
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 5086,
+      "high": 5092
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 5094,
+      "high": 5098
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 5100,
+      "high": 5153
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 5155,
+      "high": 5245
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 5248,
+      "high": 5297
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 5299,
+      "high": 5309
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 5311,
+      "high": 5350
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 5356,
+      "high": 5401
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 5403,
+      "high": 5404
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 5406,
+      "high": 5411
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 5414,
+      "high": 5416
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 5418,
+      "high": 5420
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 5422,
+      "high": 5431
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 5433,
+      "high": 5555
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 5557,
+      "high": 5631
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 5633,
+      "high": 5682
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 5684,
+      "high": 5740
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 5743,
+      "high": 5813
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 5815,
+      "high": 5899
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 5901,
+      "high": 5930
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 5932,
+      "high": 5983
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 5985,
+      "high": 5999
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 6064,
+      "high": 6109
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 6113,
+      "high": 6323
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 6325,
+      "high": 6342
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 6344,
+      "high": 6345
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 6348,
+      "high": 6349
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 6351,
+      "high": 6443
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 6446,
+      "high": 6514
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 6516,
+      "high": 6618
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 6620,
+      "high": 6621
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 6623,
+      "high": 6678
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 6680,
+      "high": 6968
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 6970,
+      "high": 7022
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 7024,
+      "high": 7261
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 7263,
+      "high": 7271
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 7273,
+      "high": 7399
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 7403,
+      "high": 7546
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 7548,
+      "high": 7623
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 7625,
+      "high": 7936
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 8701,
+      "high": 8702
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 8767,
+      "high": 8768
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 9675,
+      "high": 9676
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 9937,
+      "high": 10007
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 10009,
+      "high": 10049
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 10052,
+      "high": 10109
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 10111,
+      "high": 10112
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 10117,
+      "high": 11000
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 11002,
+      "high": 11111
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 11113,
+      "high": 12221
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 12224,
+      "high": 12349
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 12351,
+      "high": 13719
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 13722,
+      "high": 13723
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 13725,
+      "high": 13781
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 13787,
+      "high": 14999
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 15001,
+      "high": 15344
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 15346,
+      "high": 15555
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 15557,
+      "high": 17499
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 17501,
+      "high": 19006
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 19008,
+      "high": 19282
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 19284,
+      "high": 19314
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 19316,
+      "high": 19812
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 19814,
+      "high": 22346
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 22348,
+      "high": 22349
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 22351,
+      "high": 24464
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 24466,
+      "high": 24553
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 24555,
+      "high": 31619
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 31621,
+      "high": 33433
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 33535,
+      "high": 39999
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 40001,
+      "high": 41793
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 41796,
+      "high": 44817
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 44819,
+      "high": 47807
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 47809,
+      "high": 48652
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 48654,
+      "high": 49150
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 49152,
+      "high": 49999
+    },
+    "proto": "udp"
+  },
+  {
+    "port-range": {
+      "low": 50010,
+      "high": 65535
+    },
+    "proto": "udp"
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "service-enabled": 1,
+  "services": [],
+  "whitelist-size": 10000,
+  "categ-cache-size": 1000,
+  "categ-cache-timeout": 30,
+  "categories": [],
+  "category-rules": [],
+  "categ-request-timeout": 3000,
+  "scanned-conns-stats": {
+    "enabled": 1,
+    "slide-wnd-length": 88200,
+    "slide-wnd-precision": 1800,
+    "slide-wnd-file": "scanned_connections"
+  }
+}
