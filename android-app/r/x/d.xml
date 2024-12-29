@@ -1,5 +1,0 @@
-    <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:ifTextView="http://schemas.android.com/apk/res/com.cleanmaster.security" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:wing="http://schemas.android.com/apk/res-auto">
-    <item android:icon="@drawable/akj" android:id="@+id/ehg" android:title="@string/dce" wing:showAsAction="always"/>
-</menu>
-    

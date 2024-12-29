@@ -1,3 +1,0 @@
-    <?xml version="1.0" encoding="utf-8"?>
-<appwidget-provider xmlns:ifTextView="http://schemas.android.com/apk/res/com.cleanmaster.security" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:wing="http://schemas.android.com/apk/res-auto" android:minWidth="294dp" android:minHeight="50dp" android:updatePeriodMillis="900000" android:initialLayout="@layout/og" android:previewImage="@drawable/bju"/>
-   

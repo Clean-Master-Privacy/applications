@@ -1,9 +1,0 @@
-    <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:ifTextView="http://schemas.android.com/apk/res/com.cleanmaster.security" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:wing="http://schemas.android.com/apk/res-auto">
-    <PreferenceCategory android:title="@string/bm_">
-        <EditTextPreference android:title="@string/bm5" android:key="pref_key_primary_folder" android:summary="@string/bm6" android:defaultValue="@string/agk"/>
-        <CheckBoxPreference android:title="@string/bm7" android:key="pref_key_read_root" android:defaultValue="false"/>
-        <CheckBoxPreference android:title="@string/bm8" android:key="pref_key_show_real_path" android:summary="@string/bm9" android:defaultValue="false"/>
-    </PreferenceCategory>
-</PreferenceScreen>
-    

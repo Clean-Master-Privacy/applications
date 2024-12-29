@@ -1,6 +1,0 @@
-    <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:ifTextView="http://schemas.android.com/apk/res/com.cleanmaster.security" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:wing="http://schemas.android.com/apk/res-auto">
-    <item android:id="@+id/ehe" android:visible="true" android:title="@string/dcb" wing:showAsAction="always"/>
-    <item android:id="@+id/c8_" android:visible="true" android:title="@string/dcd" wing:showAsAction="always"/>
-</menu>
-    
