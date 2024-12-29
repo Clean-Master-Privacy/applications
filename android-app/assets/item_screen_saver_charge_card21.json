@@ -1,0 +1,566 @@
+{
+  "views": [
+    {
+      "views": [
+        {
+          "views": [],
+          "properties": [
+            {
+              "value": "chargebattery",
+              "type": "ref",
+              "name": "id"
+            },
+            {
+              "value": "28dp",
+              "type": "dimen",
+              "name": "layout_width"
+            },
+            {
+              "value": "38dp",
+              "type": "dimen",
+              "name": "layout_height"
+            },
+            {
+              "value": "12dp",
+              "type": "dimen",
+              "name": "layout_marginLeft"
+            },
+            {
+              "value": "true",
+              "type": "BOOLEAN",
+              "name": "layout_centerVertical"
+            }
+          ],
+          "widget": "com.lottie.LottieAnimationView"
+        },
+        {
+          "properties": [
+            {
+              "value": "ss_charge_card_title_percent",
+              "type": "ref",
+              "name": "id"
+            },
+            {
+              "value": "gone",
+              "type": "string",
+              "name": "visibility"
+            },
+            {
+              "value": "wrap_content",
+              "type": "dimen",
+              "name": "layout_width"
+            },
+            {
+              "value": "wrap_content",
+              "type": "dimen",
+              "name": "layout_height"
+            },
+            {
+              "value": "center",
+              "type": "string",
+              "name": "layout_gravity"
+            },
+            {
+              "value": "end",
+              "type": "string",
+              "name": "ellipsize"
+            },
+            {
+              "value": "1",
+              "type": "string",
+              "name": "maxLines"
+            },
+            {
+              "value": "#FFFFFF",
+              "type": "color",
+              "name": "textColor"
+            },
+            {
+              "value": "20sp",
+              "type": "dimen",
+              "name": "textSize"
+            }
+          ],
+          "widget": "TextView"
+        },
+        {
+          "views": [],
+          "properties": [
+            {
+              "value": "ss_charge_card_title",
+              "type": "ref",
+              "name": "id"
+            },
+            {
+              "value": "match_parent",
+              "type": "dimen",
+              "name": "layout_width"
+            },
+            {
+              "value": "wrap_content",
+              "type": "dimen",
+              "name": "layout_height"
+            },
+            {
+              "value": "chargebattery",
+              "type": "ref",
+              "name": "layout_toRightOf"
+            },
+            {
+              "value": "10dp",
+              "type": "dimen",
+              "name": "layout_marginTop"
+            },
+            {
+              "value": "10dp",
+              "type": "dimen",
+              "name": "layout_marginLeft"
+            },
+            {
+              "value": "true",
+              "type": "BOOLEAN",
+              "name": "layout_centerVertical"
+            },
+            {
+              "value": "1",
+              "type": "string",
+              "name": "maxLines"
+            },
+            {
+              "value": "end",
+              "type": "string",
+              "name": "ellipsize"
+            },
+            {
+              "value": "left|center_vertical",
+              "type": "string",
+              "name": "gravity"
+            },
+            {
+              "value": "16sp",
+              "type": "dimen",
+              "name": "textSize"
+            },
+            {
+              "value": "#FF333333",
+              "type": "color",
+              "name": "textColor"
+            }
+          ],
+          "widget": "TextView"
+        }
+      ],
+      "properties": [
+        {
+          "value": "ss_charge_card",
+          "type": "ref",
+          "name": "id"
+        },
+        {
+          "value": "match_parent",
+          "type": "dimen",
+          "name": "layout_width"
+        },
+        {
+          "value": "wrap_content",
+          "type": "dimen",
+          "name": "layout_height"
+        }
+      ],
+      "widget": "android.widget.RelativeLayout"
+    },
+    {
+      "views": [
+        {
+          "views": [],
+          "properties": [
+            {
+              "value": "chargetime1",
+              "type": "ref",
+              "name": "id"
+            },
+            {
+              "value": "112dp",
+              "type": "dimen",
+              "name": "layout_width"
+            },
+            {
+              "value": "wrap_content",
+              "type": "dimen",
+              "name": "layout_height"
+            },
+            {
+              "value": "chargecard",
+              "type": "id",
+              "name": "layout_above"
+            },
+            {
+              "value": "13sp",
+              "type": "dimen",
+              "name": "textSize"
+            },
+            {
+              "value": "#AE333333",
+              "type": "color",
+              "name": "textColor"
+            },
+            {
+              "value": "center",
+              "type": "string",
+              "name": "gravity"
+            }
+          ],
+          "widget": "TextView"
+        },
+        {
+          "views": [],
+          "properties": [
+            {
+              "value": "chargetime2",
+              "type": "ref",
+              "name": "id"
+            },
+            {
+              "value": "112dp",
+              "type": "dimen",
+              "name": "layout_width"
+            },
+            {
+              "value": "wrap_content",
+              "type": "dimen",
+              "name": "layout_height"
+            },
+            {
+              "value": "true",
+              "type": "BOOLEAN",
+              "name": "layout_alignParentRight"
+            },
+            {
+              "value": "chargecard",
+              "type": "id",
+              "name": "layout_above"
+            },
+            {
+              "value": "13sp",
+              "type": "dimen",
+              "name": "textSize"
+            },
+            {
+              "value": "#AE333333",
+              "type": "color",
+              "name": "textColor"
+            },
+            {
+              "value": "center",
+              "type": "string",
+              "name": "gravity"
+            }
+          ],
+          "widget": "TextView"
+        },
+        {
+          "views": [],
+          "properties": [
+            {
+              "value": "chargecard",
+              "type": "ref",
+              "name": "id"
+            },
+            {
+              "value": "match_parent",
+              "type": "dimen",
+              "name": "layout_width"
+            },
+            {
+              "value": "wrap_content",
+              "type": "dimen",
+              "name": "layout_height"
+            },
+            {
+              "value": "true",
+              "type": "BOOLEAN",
+              "name": "layout_alignParentBottom"
+            }
+          ],
+          "widget": "com.lottie.LottieAnimationView"
+        },
+        {
+          "views": [
+            {
+              "views": [],
+              "properties": [
+                {
+                  "value": "scan_text",
+                  "type": "ref",
+                  "name": "id"
+                },
+                {
+                  "value": "54dp",
+                  "type": "dimen",
+                  "name": "layout_width"
+                },
+                {
+                  "value": "wrap_content",
+                  "type": "dimen",
+                  "name": "layout_height"
+                },
+                {
+                  "value": "true",
+                  "type": "BOOLEAN",
+                  "name": "layout_alignParentLeft"
+                },
+                {
+                  "value": "true",
+                  "type": "BOOLEAN",
+                  "name": "layout_centerVertical"
+                },
+                {
+                  "value": "center_horizontal",
+                  "type": "string",
+                  "name": "gravity"
+                },
+                {
+                  "value": "2dp",
+                  "type": "dimen",
+                  "name": "layout_marginLeft"
+                },
+                {
+                  "value": "2",
+                  "type": "string",
+                  "name": "maxLines"
+                },
+                {
+                  "value": "end",
+                  "type": "string",
+                  "name": "ellipsize"
+                },
+                {
+                  "value": "11sp",
+                  "type": "dimen",
+                  "name": "textSize"
+                },
+                {
+                  "value": "#FFFFFF",
+                  "type": "color",
+                  "name": "textColor"
+                }
+              ],
+              "widget": "TextView"
+            },
+            {
+              "views": [],
+              "properties": [
+                {
+                  "value": "charge_text",
+                  "type": "ref",
+                  "name": "id"
+                },
+                {
+                  "value": "180dp",
+                  "type": "dimen",
+                  "name": "layout_width"
+                },
+                {
+                  "value": "wrap_content",
+                  "type": "dimen",
+                  "name": "layout_height"
+                },
+                {
+                  "value": "true",
+                  "type": "BOOLEAN",
+                  "name": "layout_centerHorizontal"
+                },
+                {
+                  "value": "true",
+                  "type": "BOOLEAN",
+                  "name": "layout_centerVertical"
+                },
+                {
+                  "value": "center_horizontal",
+                  "type": "string",
+                  "name": "gravity"
+                },
+                {
+                  "value": "2",
+                  "type": "string",
+                  "name": "maxLines"
+                },
+                {
+                  "value": "end",
+                  "type": "string",
+                  "name": "ellipsize"
+                },
+                {
+                  "value": "11sp",
+                  "type": "dimen",
+                  "name": "textSize"
+                },
+                {
+                  "value": "#FFFFFF",
+                  "type": "color",
+                  "name": "textColor"
+                }
+              ],
+              "widget": "TextView"
+            },
+            {
+              "views": [],
+              "properties": [
+                {
+                  "value":"protect_text",
+                  "type":"",
+                  "name":"id"
+                },
+                {
+                  "value": "54dp",
+                  "type": "dimen",
+                  "name": "layout_width"
+                },
+                {
+                  "value": "wrap_content",
+                  "type": "dimen",
+                  "name": "layout_height"
+                },
+                {
+                  "value": "true",
+                  "type": "BOOLEAN",
+                  "name": "layout_alignParentRight"
+                },
+                {
+                  "value": "true",
+                  "type": "BOOLEAN",
+                  "name": "layout_centerVertical"
+                },
+                {
+                  "value": "center_horizontal",
+                  "type": "string",
+                  "name": "gravity"
+                },
+                {
+                  "value": "2dp",
+                  "type": "dimen",
+                  "name": "layout_marginRight"
+                },
+                {
+                  "value": "2",
+                  "type": "string",
+                  "name": "maxLines"
+                },
+                {
+                  "value": "end",
+                  "type": "string",
+                  "name": "ellipsize"
+                },
+                {
+                  "value": "11sp",
+                  "type": "dimen",
+                  "name": "textSize"
+                },
+                {
+                  "value": "#FFFFFF",
+                  "type": "color",
+                  "name": "textColor"
+                }
+              ],
+              "widget": "TextView"
+            }
+          ],
+          "properties": [
+            {
+              "value": "match_parent",
+              "type": "dimen",
+              "name": "layout_width"
+            },
+            {
+              "value": "38dp",
+              "type": "dimen",
+              "name": "layout_height"
+            },
+            {
+              "value": "true",
+              "type": "BOOLEAN",
+              "name": "layout_alignParentBottom"
+            },
+            {
+              "value": "center_vertical",
+              "type": "string",
+              "name": "gravity"
+            }
+          ],
+          "widget": "android.widget.RelativeLayout"
+        }
+      ],
+      "properties": [
+        {
+          "value": "ss_charge_card_time_layout",
+          "type": "ref",
+          "name": "id"
+        },
+        {
+          "value": "match_parent",
+          "type": "dimen",
+          "name": "layout_width"
+        },
+        {
+          "value": "66dp",
+          "type": "dimen",
+          "name": "layout_height"
+        },
+        {
+          "value": "8dp",
+          "type": "dimen",
+          "name": "layout_marginLeft"
+        },
+        {
+          "value": "8dp",
+          "type": "dimen",
+          "name": "layout_marginRight"
+        },
+        {
+          "value": "10dp",
+          "type": "dimen",
+          "name": "layout_marginTop"
+        }
+      ],
+      "widget": "android.widget.RelativeLayout"
+    }
+  ],
+  "properties": [
+    {
+      "value": "ss_charge_card_layout",
+      "type": "ref",
+      "name": "id"
+    },
+    {
+      "value": "match_parent",
+      "type": "dimen",
+      "name": "layout_width"
+    },
+    {
+      "value": "wrap_content",
+      "type": "dimen",
+      "name": "layout_height"
+    },
+    {
+      "value": "12dp",
+      "type": "dimen",
+      "name": "padding_Top"
+    },
+    {
+      "value": "8dp",
+      "type": "dimen",
+      "name": "padding_Bottom"
+    },
+    {
+      "value": "vertical",
+      "type": "string",
+      "name": "orientation"
+    },
+    {
+      "value": "TYPE_GRAY_FILLET",
+      "type": "STRING",
+      "name": "BACKGROUND_TYPE"
+    }
+  ],
+  "widget": "android.widget.LinearLayout"
+}
