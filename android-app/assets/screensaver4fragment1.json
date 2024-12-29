@@ -1,0 +1,292 @@
+{
+  "widget": "android.widget.LinearLayout",
+  "properties": [
+    {
+      "name": "layout_width",
+      "type": "dimen",
+      "value": "match_parent"
+    },
+    {
+      "name": "layout_height",
+      "type": "dimen",
+      "value": "match_parent"
+    },
+    {
+      "name": "orientation",
+      "type": "integer",
+      "value": "1"
+    }
+  ],
+  "views": [
+    {
+      "widget": "android.widget.RelativeLayout",
+      "properties": [
+        {
+          "name": "layout_width",
+          "type": "dimen",
+          "value": "match_parent"
+        },
+        {
+          "name": "layout_height",
+          "type": "dimen",
+          "value": "0dp"
+        },
+        {
+          "name": "layout_weight",
+          "type": "float",
+          "value": "8"
+        }
+      ],
+      "views": [
+        {
+          "widget": "android.widget.ImageView",
+          "properties": [
+            {
+              "name": "id",
+              "type": "",
+              "value": "logo"
+            },
+            {
+              "name": "layout_width",
+              "type": "dimen",
+              "value": "wrap_content"
+            },
+            {
+              "name": "layout_height",
+              "type": "dimen",
+              "value": "18dp"
+            },
+            {
+              "name": "layout_marginLeft",
+              "type": "dimen",
+              "value": "20dp"
+            },
+            {
+              "name": "layout_centerVertical",
+              "type": "boolean",
+              "value": "true"
+            },
+            {
+              "name": "scaleType",
+              "type": "string",
+              "value": "fit_start"
+            }
+          ]
+        },
+        {
+          "widget": "android.widget.ImageView",
+          "properties": [
+            {
+              "name": "id",
+              "type": "",
+              "value": "setting"
+            },
+            {
+              "name": "layout_width",
+              "type": "dimen",
+              "value": "40dp"
+            },
+            {
+              "name": "layout_alignParentRight",
+              "type": "boolean",
+              "value": "true"
+            },
+            {
+              "name": "layout_centerVertical",
+              "type": "boolean",
+              "value": "true"
+            },
+            {
+              "name": "padding",
+              "type": "dimen",
+              "value": "8dp"
+            },
+            {
+              "name": "layout_marginRight",
+              "type": "dimen",
+              "value": "6dp"
+            },
+            {
+              "name": "layout_height",
+              "type": "dimen",
+              "value": "40dp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "widget": "android.widget.RelativeLayout",
+      "properties": [
+        {
+          "name": "layout_width",
+          "type": "dimen",
+          "value": "match_parent"
+        },
+        {
+          "name": "layout_height",
+          "type": "dimen",
+          "value": "0dp"
+        },
+        {
+          "name": "layout_weight",
+          "type": "float",
+          "value": "26"
+        }
+      ],
+      "views": [
+        {
+          "widget": "android.widget.TextView",
+          "properties": [
+            {
+              "name": "id",
+              "type": "",
+              "value": "time"
+            },
+            {
+              "name": "layout_width",
+              "type": "dimen",
+              "value": "wrap_content"
+            },
+            {
+              "name": "layout_height",
+              "type": "dimen",
+              "value": "wrap_content"
+            },
+            {
+              "name": "layout_centerHorizontal",
+              "type": "boolean",
+              "value": "true"
+            },
+            {
+              "name": "text",
+              "type": "string",
+              "value": "12:30"
+            },
+            {
+              "name": "gravity",
+              "type": "string",
+              "value": "center"
+            },
+            {
+              "name": "textSize",
+              "type": "dimen",
+              "value": "65sp"
+            },
+            {
+              "name": "textColor",
+              "type": "color",
+              "value": "#F5F6FA"
+            }
+          ]
+        },
+        {
+          "widget": "android.widget.TextView",
+          "properties": [
+            {
+              "name": "id",
+              "type": "",
+              "value": "date"
+            },
+            {
+              "name": "layout_width",
+              "type": "dimen",
+              "value": "wrap_content"
+            },
+            {
+              "name": "layout_height",
+              "type": "dimen",
+              "value": "wrap_content"
+            },
+            {
+              "name": "layout_centerHorizontal",
+              "type": "boolean",
+              "value": "true"
+            },
+            {
+              "name": "text",
+              "type": "string",
+              "value": "Sat, 4 February"
+            },
+            {
+              "name": "gravity",
+              "type": "string",
+              "value": "center"
+            },
+            {
+              "name": "textSize",
+              "type": "dimen",
+              "value": "14sp"
+            },
+            {
+              "name": "textColor",
+              "type": "color",
+              "value": "#F5F6FA"
+            },
+            {
+              "name": "layout_below",
+              "type": "string",
+              "value": "time"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "widget": "android.widget.TextView",
+      "properties": [
+        {
+          "name": "layout_width",
+          "type": "dimen",
+          "value": "match_parent"
+        },
+        {
+          "name": "layout_height",
+          "type": "dimen",
+          "value": "0dp"
+        },
+        {
+          "name": "layout_weight",
+          "type": "float",
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "views": [],
+      "properties": [
+        {
+          "value": "list_container",
+          "type": "ref",
+          "name": "id"
+        },
+        {
+          "value": "match_parent",
+          "type": "dimen",
+          "name": "layout_width"
+        },
+        {
+          "value": "0dp",
+          "type": "dimen",
+          "name": "layout_height"
+        },
+        {
+          "value": "12dp",
+          "type": "dimen",
+          "name": "layout_marginLeft"
+        },
+        {
+          "value": "12dp",
+          "type": "dimen",
+          "name": "layout_marginRight"
+        },
+        {
+          "value": "78",
+          "type": "float",
+          "name": "layout_weight"
+        }
+      ],
+      "widget": "android.widget.RelativeLayout"
+    }
+  ]
+}
