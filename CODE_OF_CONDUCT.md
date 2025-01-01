@@ -58,7 +58,7 @@ If a community member engages in unacceptable behavior, the community organizers
 ## 7. Reporting Guidelines
 
 If you are subject to or witness unacceptable behavior, or have any other concerns, please notify a community organizer as soon as possible. 
-gamestime102@protonmail.com and gamestime102tv@protonmail.com .
+Share via github discussions .
 
 
 
@@ -78,9 +78,7 @@ This code of conduct and its related procedures also applies to unacceptable beh
 
 ## 10. Contact info
 
- gamestime102@protonmail.com
- 
- gamestime102tv@protonmail.com
+Share via github discussions
 
 ## 11. License and attribution
 
