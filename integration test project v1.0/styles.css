@@ -1,91 +1,145 @@
-/* styles.css */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+/* Temel resetleme */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-}
-
-h1 {
-    margin: 0;
-}
-
-main {
+/* Genel stil ayarları */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
     padding: 20px;
 }
 
-h2 {
-    color: #333;
+/* Başlık kısmı */
+header {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
+header h1 {
+    font-size: 36px;
+    color: #4CAF50;
+}
+
+/* Form kısmı */
 #add-book {
-    margin-bottom: 30px;
-}
-
-form {
+    margin-bottom: 40px;
     background-color: #fff;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-form label {
-    display: block;
-    margin-top: 10px;
+#add-book h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
-form input {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
+#book-form {
+    display: grid;
+    gap: 15px;
+}
+
+#book-form label {
+    font-weight: bold;
+}
+
+#book-form input {
+    padding: 10px;
+    font-size: 14px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 4px;
+    width: 100%;
 }
 
-form button {
-    margin-top: 20px;
+#book-form button {
     padding: 10px 20px;
     background-color: #4CAF50;
     color: white;
+    font-size: 16px;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-form button:hover {
+#book-form button:hover {
     background-color: #45a049;
+}
+
+/* Kitaplar listesi */
+#book-list {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#book-list h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
 }
 
-table, th, td {
-    border: 1px solid #ccc;
-}
-
-th, td {
+table th, table td {
     padding: 10px;
     text-align: left;
+    border-bottom: 1px solid #ddd;
 }
 
-button.delete {
-    background-color: red;
+table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+table td button {
+    background-color: #f44336;
     color: white;
     border: none;
     padding: 5px 10px;
+    border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-button.delete:hover {
-    background-color: darkred;
+table td button:hover {
+    background-color: #e53935;
+}
+
+/* SVG grafiği */
+#svg-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* Responsive tasarım (mobil uyumlu) */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    #add-book, #book-list {
+        padding: 15px;
+    }
+
+    table th, table td {
+        padding: 8px;
+    }
+
+    #book-form button {
+        width: 100%;
+    }
+
+    #book-form input, #book-form label {
+        font-size: 14px;
+    }
 }
