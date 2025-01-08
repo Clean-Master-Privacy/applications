@@ -1,31 +1,52 @@
 using LibraryAutomationBackend.Data;
+using LibraryAutomationBackend.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
-builder.Services.AddControllers();
-
-// Veritabanı bağlantısı için SQL Server'ı kullan
-builder.Services.AddDbContext<LibraryContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-// CORS (Cross-Origin Resource Sharing) yapılandırması
-builder.Services.AddCors(options =>
+namespace LibraryAutomationBackend.Controllers
 {
-    options.AddPolicy("AllowAll", builder =>
-        builder.AllowAnyOrigin()
-               .AllowAnyMethod()
-               .AllowAnyHeader());
-});
+    [Route("api/[controller]")]
+    [ApiController]
+    public class BooksController : ControllerBase
+    {
+        private readonly LibraryContext _context;
 
-var app = builder.Build();
+        public BooksController(LibraryContext context)
+        {
+            _context = context;
+        }
 
-// CORS politikası kullan
-app.UseCors("AllowAll");
+        // Kitapları listele
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Book>>> GetBooks()
+        {
+            return await _context.Books.ToListAsync();
+        }
 
-app.UseAuthorization();
+        // Kitap ekle
+        [HttpPost]
+        public async Task<ActionResult<Book>> PostBook(Book book)
+        {
+            _context.Books.Add(book);
+            await _context.SaveChangesAsync();
 
-app.MapControllers();
+            return CreatedAtAction(nameof(GetBooks), new { id = book.Id }, book);
+        }
 
-app.Run();
+        // Kitap silme
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteBook(int id)
+        {
+            var book = await _context.Books.FindAsync(id);
+            if (book == null)
+            {
+                return NotFound();
+            }
+
+            _context.Books.Remove(book);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+    }
+}
