@@ -1,0 +1,93 @@
+/* Genel stil ayarları */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    padding: 20px;
+}
+
+/* Başlık kısmı */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 36px;
+    color: #4CAF50;
+}
+
+/* Kitap ekleme formu */
+#add-book {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#add-book h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#book-form input,
+#book-form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+#book-form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#book-form button:hover {
+    background-color: #45a049;
+}
+
+/* Kitaplar listesi */
+#book-list {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#book-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#book-table th, #book-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+#book-table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#book-table td button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#book-table td button:hover {
+    background-color: #e53935;
+}
+
+/* SVG grafiği */
+#svg-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
