@@ -1,22 +1,26 @@
-@model IEnumerable<LibraryAutomation.Models.User>
+@model IEnumerable<LibraryAutomation.Models.Book>
 
-<h2>Kullanıcı Listesi</h2>
+<h2>Kitap Listesi</h2>
 
-<a href="@Url.Action("Create", "User")">Yeni Kullanıcı Ekle</a>
+<a href="@Url.Action("Create", "Book")">Yeni Kitap Ekle</a>
 
 <table>
     <thead>
         <tr>
-            <th>Adı</th>
-            <th>Email</th>
+            <th>Başlık</th>
+            <th>Yazar</th>
+            <th>ISBN</th>
+            <th>Durum</th>
         </tr>
     </thead>
     <tbody>
-    @foreach (var user in Model)
+    @foreach (var book in Model)
     {
         <tr>
-            <td>@user.Name</td>
-            <td>@user.Email</td>
+            <td>@book.Title</td>
+            <td>@book.Author</td>
+            <td>@book.ISBN</td>
+            <td>@(book.AvailabilityStatus ? "Mevcut" : "Ödünç Alınmış")</td>
         </tr>
     }
     </tbody>
