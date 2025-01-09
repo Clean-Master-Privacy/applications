@@ -1,13 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Threading.Tasks;
-using System.Collections.Generic;
+using LibraryAutomation.Models;
 
 namespace LibraryAutomation.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class BookController : ControllerBase
+    public class BookController : Controller
     {
         private readonly LibraryContext _context;
 
@@ -16,11 +13,31 @@ namespace LibraryAutomation.Controllers
             _context = context;
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetBooks()
+        // Kitapları listele
+        public async Task<IActionResult> Index()
         {
             var books = await _context.Books.ToListAsync();
-            return Ok(books);
+            return View(books);
+        }
+
+        // Yeni kitap ekleme formu
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        // Yeni kitap ekleme
+        [HttpPost]
+        public async Task<IActionResult> Create(Book book)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Books.Add(book);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(book);
         }
     }
 }
