@@ -1,4 +1,4 @@
-namespace LibraryAutomation
+namespace LibraryAutomation.Models
 {
     public class Book
     {
@@ -6,6 +6,6 @@ namespace LibraryAutomation
         public string Title { get; set; }
         public string Author { get; set; }
         public string ISBN { get; set; }
-        public bool AvailabilityStatus { get; set; }
+        public bool AvailabilityStatus { get; set; } // true: available, false: borrowed
     }
 }
