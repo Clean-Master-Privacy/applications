@@ -1,0 +1,12 @@
+    <?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:ifTextView="http://schemas.android.com/apk/res/com.cleanmaster.security" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cmandroid="http://schemas.android.com/apk/res-auto" android:oneshot="false">
+    <item android:duration="300" android:drawable="@drawable/ahn"/>
+    <item android:duration="300" android:drawable="@drawable/ahp"/>
+    <item android:duration="300" android:drawable="@drawable/ahr"/>
+    <item android:duration="300" android:drawable="@drawable/aht"/>
+    <item android:duration="300" android:drawable="@drawable/ahv"/>
+    <item android:duration="300" android:drawable="@drawable/ahx"/>
+    <item android:duration="300" android:drawable="@drawable/ahz"/>
+    <item android:duration="300" android:drawable="@drawable/ai1"/>
+</animation-list>
+    
