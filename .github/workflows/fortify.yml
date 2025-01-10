@@ -28,7 +28,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Run FoD SAST Scan
-        uses: uses: fortify/github-action@a92347297e02391b857e7015792cd1926a4cd418
+        uses: fortify/github-action@a92347297e02391b857e7015792cd1926a4cd418
         with:
           sast-scan: true
         env:
