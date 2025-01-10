@@ -7,6 +7,11 @@ registries:
     url: https://hub.docker.com
     username: ahmetcay
     password: ${{secrets.DOCKERHUB_PASSWORD}}
+  npm_registry: # Npm kayıt defteri için erişimi tanımlayın
+    type: npm-registry
+    url: https://registry.npmjs.org
+    token: ${{secrets.NPM_TOKEN}}
+
 updates:
   - package-ecosystem: "docker"
     directory: "/docker-registry/dockerhub"
@@ -14,30 +19,52 @@ updates:
       - dockerhub # Bu kayıt defterinde bağımlılıklar için sürüm güncellemelerine izin verin
     schedule:
       interval: "monthly"
+    commit-message:
+      prefix: "docker"
+      prefix-development: "dev-docker"
+      include: scope
 
-
-
-////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-# Temel `dependabot.yml` dosyası ile
-# İki paket yöneticisi için minimum yapılandırma
-
-version: 2
-updates:
-  # Npm için sürüm güncellemelerini etkinleştirin
   - package-ecosystem: "npm"
-    # 'package.json' ve 'package-lock.json' dosyaları için kök dizininde arayın
     directory: "/"
-    # Her gün güncellemeler için npm kayıt defterini kontrol edin (hafta içi)
+    registries:
+      - npm_registry
     schedule:
       interval: "daily"
+    commit-message:
+      prefix: "npm"
+      prefix-development: "dev-npm"
+      include: scope
+    open-pull-requests-limit: 10
+    ignore:
+      - dependency-name: "lodash"
+        versions: ["4.17.21"]
+    rebase-strategy: "auto"
 
-  # Docker için sürüm güncellemelerini etkinleştirin
   - package-ecosystem: "docker"
-    # 'Dockerfile' dosyası için kök dizininde arayın
     directory: "/"
-    # Haftada bir kez güncellemeleri kontrol edin
     schedule:
       interval: "weekly"
+    commit-message:
+      prefix: "docker"
+      prefix-development: "dev-docker"
+      include: scope
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "actions"
+      prefix-development: "dev-actions"
+      include: scope
+    open-pull-requests-limit: 5
+
+  - package-ecosystem: "bundler"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    commit-message:
+      prefix: "bundler"
+      prefix-development: "dev-bundler"
+      include: scope
+    open-pull-requests-limit: 5
