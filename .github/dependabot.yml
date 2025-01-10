@@ -1,19 +1,19 @@
 # Bir özel kayıt defterinde depolanan bağımlılıkları güncellemek için minimum ayarlar
 
-versiyon: 2
-Kayıtlar:
-  Dockerhub: # Özel bir kayıt için erişimi tanımlayın
-    tip: docker-registir
-    url: kayıt.hub.docker.com
-    kullanıcı adı: ahtaçayı
-    Şifre: ${{secrets.DOCKERHUB_PASSWORD}}
-Güncellemeler:
-  - paket ekosistemi: "docker"
-    Dizin: "/docker-registry/dockerhub"
-    Kayıtlar:
+version: 2
+registries:
+  dockerhub: # Özel bir kayıt için erişimi tanımlayın
+    type: docker-registry
+    url: https://hub.docker.com
+    username: ahmetcay
+    password: ${{secrets.DOCKERHUB_PASSWORD}}
+updates:
+  - package-ecosystem: "docker"
+    directory: "/docker-registry/dockerhub"
+    registries:
       - dockerhub # Bu kayıt defterinde bağımlılıklar için sürüm güncellemelerine izin verin
-    Program:
-      aralık: "aylık"
+    schedule:
+      interval: "monthly"
 
 
 
@@ -24,21 +24,20 @@ Güncellemeler:
 # Temel `dependabot.yml` dosyası ile
 # İki paket yöneticisi için minimum yapılandırma
 
-versiyon: 2
-Güncellemeler:
+version: 2
+updates:
   # Npm için sürüm güncellemelerini etkinleştirin
-  - paket ekosistem: "npm"
-    # 'propage.json' ve 'kresim'deki 'krep' dosyası' için 'krediye' dizininde' arayın
-    Dizin: "/"
+  - package-ecosystem: "npm"
+    # 'package.json' ve 'package-lock.json' dosyaları için kök dizininde arayın
+    directory: "/"
     # Her gün güncellemeler için npm kayıt defterini kontrol edin (hafta içi)
-    Program:
-      aralık: "güneyim"
+    schedule:
+      interval: "daily"
 
   # Docker için sürüm güncellemelerini etkinleştirin
-  - paket ekosistemi: "docker"
-    # 'Yık Çanta' içinde 'köklü" dizininde bir 'Dockerfile' arayın
-    Dizin: "/"
+  - package-ecosystem: "docker"
+    # 'Dockerfile' dosyası için kök dizininde arayın
+    directory: "/"
     # Haftada bir kez güncellemeleri kontrol edin
-    Program:
-      aralık: "haftalık"
-
+    schedule:
+      interval: "weekly"
