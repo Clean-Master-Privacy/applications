@@ -1,0 +1,3 @@
+    <?xml version="1.0" encoding="utf-8"?>
+<translate xmlns:ifTextView="http://schemas.android.com/apk/res/com.cleanmaster.security" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cmandroid="http://schemas.android.com/apk/res-auto" android:duration="@android:integer/config_longAnimTime" android:fromYDelta="100%p" android:toYDelta="0"/>
+    
