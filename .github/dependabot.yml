@@ -23,6 +23,11 @@ updates:
       prefix: "docker"
       prefix-development: "dev-docker"
       include: scope
+    open-pull-requests-limit: 5
+    rebase-strategy: "auto"
+    ignore:
+      - dependency-name: "nginx"
+        versions: ["1.21.*"]
 
   - package-ecosystem: "npm"
     directory: "/"
@@ -48,6 +53,8 @@ updates:
       prefix: "docker"
       prefix-development: "dev-docker"
       include: scope
+    open-pull-requests-limit: 5
+    rebase-strategy: "auto"
 
   - package-ecosystem: "github-actions"
     directory: "/"
@@ -58,6 +65,10 @@ updates:
       prefix-development: "dev-actions"
       include: scope
     open-pull-requests-limit: 5
+    rebase-strategy: "auto"
+    ignore:
+      - dependency-name: "actions/setup-node"
+        versions: ["2.x"]
 
   - package-ecosystem: "bundler"
     directory: "/"
@@ -68,3 +79,15 @@ updates:
       prefix-development: "dev-bundler"
       include: scope
     open-pull-requests-limit: 5
+    rebase-strategy: "auto"
+
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    commit-message:
+      prefix: "pip"
+      prefix-development: "dev-pip"
+      include: scope
+    open-pull-requests-limit: 5
+    rebase-strategy: "auto"
