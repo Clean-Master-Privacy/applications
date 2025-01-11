@@ -1,88 +1,29 @@
 version: 2
-registries:
-  dockerhub:
-    type: docker-registry
-    url: https://hub.docker.com
-    username: ahmetcay
-    password: ${{secrets.DOCKERHUB_PASSWORD}}
-  npm_registry:
-    type: npm-registry
-    url: https://registry.npmjs.org
-    token: ${{secrets.NPM_TOKEN}}
-
 updates:
-  - package-ecosystem: "docker"
+  - package-ecosystem: "npm"
     directory: "/"
-    registries:
-      - dockerhub
     schedule:
-      interval: "weekly"
-    commit-message:
-      prefix: "docker"
-      prefix-development: "dev-docker"
-      include: scope
+      interval: "daily"
+    allow:
+      - dependency-name: "playwright"
+    versioning-strategy: increase
 
   - package-ecosystem: "npm"
     directory: "/"
-    registries:
-      - npm_registry
-    schedule:
-      interval: "daily"
-    commit-message:
-      prefix: "npm"
-      prefix-development: "dev-npm"
-      include: scope
-
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    schedule:
-      interval: "daily"
-    commit-message:
-      prefix: "actions"
-      prefix-development: "dev-actions"
-      include: scope
-
-  - package-ecosystem: "python"
-    directory: "/"
     schedule:
       interval: "weekly"
-    commit-message:
-      prefix: "python"
-      prefix-development: "dev-python"
-      include: scope
-
-  - package-ecosystem: "maven"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    commit-message:
-      prefix: "maven"
-      prefix-development: "dev-maven"
-      include: scope
-
-  - package-ecosystem: "nuget"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    commit-message:
-      prefix: "nuget"
-      prefix-development: "dev-nuget"
-      include: scope
-
-  - package-ecosystem: "gradle"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    commit-message:
-      prefix: "gradle"
-      prefix-development: "dev-gradle"
-      include: scope
-
-  - package-ecosystem: "bundler"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    commit-message:
-      prefix: "bundler"
-      prefix-development: "dev-bundler"
-      include: scope
+    allow:
+      - dependency-name: "@noble*"
+      - dependency-name: "fflate"
+    versioning-strategy: increase
+    groups:
+      # Any packages matching the pattern @noble* where the highest resolvable
+      # version is minor or patch will be grouped together.
+      # Grouping rules apply to version updates only.
+      noble:
+        applies-to: version-updates
+        patterns:
+        - "@noble*"
+        update-types:
+        - "minor"
+        - "patch"
