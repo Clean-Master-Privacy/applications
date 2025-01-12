@@ -1,29 +1,97 @@
 <!DOCTYPE html>
-<html lang=en">
-  <head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A better internet starts with privacy and freedom. Discover how to ensure your online privacy with Clean Master Privacy.">
+    <title>Privacy and Freedom</title>
     <style>
-    @font-face{font-family:Arizona;font-style:normal;font-weight:200 700;font-display:swap;src:url('/fonts/arizona/ABCArizonaFlareVariable.tr.woff2')format('woff2');}@font-face{font-family:Arizona;font-style:italic;font-weight:200 700;font-display:swap;src:url('/fonts/arizona/ABCArizonaFlareVariable.tr.woff2')format('woff2');}@font-face{font-family:ArizonaFallback;font-style:normal;font-weight:200 700;src:local(Georgia);size-adjust:97%;ascent-override:99%;descent-override:27%;line-gap-override:0%;}@font-face{font-family:ArizonaFallback;font-style:italic;font-weight:200 700;src:local(Georgia);size-adjust:97%;ascent-override:99%;descent-override:27%;line-gap-override:0%;}@font-face{font-family:Inter;font-style:normal;font-weight:100 900;font-display:swap;src:url('/fonts/inter/InterVariable.tr.woff2')format('woff2');}@font-face{font-family:Inter;font-style:italic;font-weight:100 900;font-display:swap;src:url('/fonts/inter/InterVariable.tr.woff2')format('woff2');}@font-face{font-family:InterFallback;font-style:normal;font-weight:100 900;src:local(Arial);size-adjust:104%;}@font-face{font-family:InterFallback;font-style:italic;font-weight:100 900;src:local(Arial);size-adjust:104%;}
+        @font-face {
+            font-family: Arizona;
+            font-style: normal;
+            font-weight: 200 700;
+            font-display: swap;
+            src: url('/fonts/arizona/ABCArizonaFlareVariable.tr.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: Arizona;
+            font-style: italic;
+            font-weight: 200 700;
+            font-display: swap;
+            src: url('/fonts/arizona/ABCArizonaFlareVariable.tr.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 100 900;
+            font-display: swap;
+            src: url('/fonts/inter/InterVariable.tr.woff2') format('woff2');
+        }
+        body {
+            font-family: Inter, Arial, sans-serif;
+            margin: 0;
+            background-color: #f3e8ff; /* Light purple background */
+        }
+        header {
+            background-color: #6b46c1; /* Darker purple for header */
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+        }
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 1rem 2rem;
+            background-color: #805ad5;  /* Purple button */
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #6b46c1; /* Darker purple on hover */
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #6b46c1; /* Darker purple for footer */
+            color: white;
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .btn {
+                font-size: 1rem;
+            }
+        }
     </style>
-    <link rel="stylesheet" href="https://proton.me/_astro/_form_.4s1awZqG.css">
-  </head>
-  <body class="bg-purple-25">
-    <main lang="en">
-      <div class="flex flex-col items-center justify-center pt-12 md:pt-28 pb-12">
-        <div class="max-w-182.5 flex flex-col gap-6 px-6 text-left md:px-0 md:text-center">
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl text-purple-800 font-serif">
-            A better internet starts with privacy and freedom
-          </h1>
-        </div>
-      <div class="mx-auto mt-6 hiden max-w-[120rem] px-2 md:block md:px-12 lg:px-20">
-        <ul>
-          <li>
-            <a class="flex flex-row flex-nowrap items-center gap-3 rounded-full py-3 pl-4 pr-6 text-center text-lg text-purple-800 decoration-purple-200 decoration-2 underline-offset-2 hover:bg-purple-50 hover:text-purple-500 hover:underline hover:decoration-purple-400 focus:bg-purple-50 focus:text-purple-500 focus:underline focus:decoration-purple-400 transition-all" href="https://*-*.me" title="cmp">
-              Clean master privacy
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </main>
+</head>
+<body>
+    <header>
+        <h1>Privacy Matters</h1>
+        <p>Your path to a safer online experience</p>
+    </header>
+    <main>
+        <h1>A Better Internet Starts With Privacy and Freedom</h1>
+        <p>Join us in taking a stand for your online rights. Clean master privacy tools empower you to protect your personal information with ease!</p>
+        <a href="https://*-*.me" class="btn" title="Learn more about Clean Master Privacy">
+            Discover Clean Master Privacy
+        </a>
+    </main>
+    <footer>
+        <p>&copy; 2023 Better Internet Initiative. All rights reserved.</p>
+        <p><a href="#" style="color: white;">Privacy Policy</a> | <a href="#" style="color: white;">Terms of Service</a></p>
+    </footer>
 </body>
 </html>
