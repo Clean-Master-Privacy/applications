@@ -6,15 +6,24 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
     font-size: 16px;
+    background: #e5e5e5;
 }
 
 header {
     background: #4a90e2;
     color: #fff;
     padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s;
+}
+
+header.scrolled {
+    background: #333;
 }
 
 nav {
@@ -39,26 +48,38 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #e94e77;
 }
 
 .hero {
-    background: linear-gradient(-225deg, #2F4F7F, #4C5154);
+    background: linear-gradient(to bottom, rgba(74, 144, 226, 0.8), rgba(74, 144, 226, 0.8)), url('hero-image.jpg') no-repeat center center/cover;
     color: white;
     text-align: center;
     padding: 100px 20px;
-    font-size: 18px;
-    font-weight: bold;
+    position: relative;
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .hero h2 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 10px;
+    font-size: 3rem;
 }
 
 .hero p {
     margin-top: 10px;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 .btn-primary {
@@ -69,12 +90,12 @@ nav ul li a {
     border: none;
     border-radius: 50px;
     text-decoration: none;
-    transition: background 0.3s;
-    font-size: 18px;
+    transition: background 0.3s, transform 0.2s;
 }
 
 .btn-primary:hover {
     background: #d44062;
+    transform: scale(1.05);
 }
 
 .services {
@@ -85,10 +106,21 @@ nav ul li a {
 
 .service {
     text-align: center;
-    padding: 20px;
+    padding: 30px;
     flex-basis: 30%;
-    background-color: #f2f2f2;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.service:hover {
+    transform: translateY(-10px);
+}
+
+.service i {
+    font-size: 3rem;
+    color: #4a90e2;
 }
 
 .contact {
@@ -112,6 +144,13 @@ nav ul li a {
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    transition: border 0.3s;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    border: 1px solid #4a90e2;
+    outline: none;
 }
 
 .contact .btn-secondary {
@@ -123,6 +162,12 @@ nav ul li a {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.contact .btn-secondary:hover {
+    background: #333;
+    transform: scale(1.05);
 }
 
 footer {
@@ -145,4 +190,22 @@ footer {
 .socials li a {
     color: #fff;
     text-decoration: none;
+    transition: color 0.3s;
+}
+
+.socials li a:hover {
+    color: #e94e77;
+}
+
+/* Sticky Header Change */
+@media (max-width: 768px) {
+    .services {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service {
+        flex-basis: 80%;
+        margin: 10px 0;
+    }
 }
