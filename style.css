@@ -1,47 +1,169 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #f9f9f9;
 }
 
 header {
     background-color: #333;
-    color: #fff;
     padding: 1em;
+    text-align: center;
 }
 
-header nav ul {
+header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+nav ul {
     list-style: none;
-    margin: 0;
     padding: 0;
+    margin: 0;
 }
 
-header nav ul li {
+nav ul li {
     display: inline-block;
     margin-right: 20px;
 }
 
-header nav ul a {
+nav a {
     color: #fff;
     text-decoration: none;
 }
 
-main {
-    display: block;
+nav a:hover {
+    color: #ccc;
 }
 
-main h1 {
+#hero {
+    background-image: linear-gradient(to bottom, #333, #555);
+    background-size: 100% 300px;
+    background-position: 0% 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
     text-align: center;
-    margin-top: 20px;
 }
 
-main iframe {
-    border: 1px solid #ccc;
+#hero h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #3e8e41;
+}
+
+.features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.features li {
+    margin-bottom: 20px;
+}
+
+.features h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.features ul li {
+    margin-bottom: 10px;
+}
+
+.pricing table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.pricing th, .pricing td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.pricing th {
+    background-color: #333;
+    color: #fff;
+}
+
+.pricing td {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.pricing th, .pricing td {
+    padding: 10px;
 }
 
 footer {
     background-color: #333;
-    color: #fff;
     padding: 1em;
     text-align: center;
+    color: #fff;
 }
+
+footer p {
+    margin-bottom: 10px;
+}
+
+.contact form {
+    width: 100%;
+}
+
+.contact label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.contact input, .contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+}
+
+.contact input[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact input[type="submit"]:hover {
+    background-color: #3e8e41;
+}
+
+ svg {
+     width: 16px;
+     height: 16px;
+     fill: #333;
+ }
+
+ svg:hover {
+     fill: #ccc;
+ }
