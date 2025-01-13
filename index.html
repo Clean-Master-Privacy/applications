@@ -8,19 +8,17 @@
     <meta name="description" content="Essential resources for internet security and freedom. We protect human rights!">
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
-        /* CSS still remains the same */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #eef2f3; /* Arka plan rengi */
+            background-color: #eef2f3;
         }
 
         header {
-            background: #343a40; /* Başlık rengi */
+            background: #343a40;
             color: #ffffff;
             padding: 15px 0;
             text-align: center;
@@ -57,12 +55,12 @@
         }
 
         nav ul li a:hover {
-            background: #495057; /* Hover rengi */
+            background: #495057;
             border-radius: 5px;
         }
 
         .hero {
-            background: #007BFF; /* Hero bölümü rengi */
+            background: #007BFF;
             color: #fff;
             padding: 60px 20px;
             text-align: center;
@@ -76,7 +74,7 @@
         }
 
         .btn-primary {
-            background: #ffcc00; /* Buton rengi */
+            background: #ffcc00;
             color: #333;
             padding: 10px 20px;
             text-decoration: none;
@@ -88,13 +86,11 @@
         }
 
         .btn-primary:hover {
-            background: #e0b800; /* Buton hover rengi */
+            background: #e0b800;
         }
 
-        /* Other CSS remains the same ... */
-        
         footer {
-            background: #343a40; /* Altbilgi rengi */
+            background: #343a40;
             color: #ffffff;
             text-align: center;
             padding: 15px 0;
@@ -105,8 +101,6 @@
             margin: 0 10px;
         }
     </style>
-    <!-- PMECdn -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/pmecdn/pme/pme.min.css">
 </head>
 
 <body>
@@ -125,7 +119,6 @@
     </header>
 
     <main>
-        <!-- Home Section -->
         <section id="home" class="content fade-in">
             <div class="hero">
                 <h2>Join Hands for Internet Security and Freedom!</h2>
@@ -158,13 +151,11 @@
             </section>
         </section>
 
-        <!-- About Section -->
         <section id="about" class="content">
             <h2>About Us</h2>
             <p>We are a non-profit organization dedicated to improving internet security and protecting human rights online. Our mission is to provide essential resources and solutions for users across the globe.</p>
         </section>
 
-        <!-- Services Section -->
         <section id="services" class="content">
             <h2>Our Services</h2>
             <p>We offer a variety of services aimed at ensuring your online safety and freedom:</p>
@@ -176,7 +167,6 @@
             </ul>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact" class="content">
             <h2>Contact Us</h2>
             <form id="contact-form">
@@ -187,7 +177,6 @@
             </form>
         </section>
 
-        <!-- HTTPS & Fastly Section -->
         <section id="security-info" class="content">
             <h2>Our Commitment to Your Security</h2>
             <p>We utilize HTTPS to ensure that your data is safe and secure. Our communications are encrypted for your protection.</p>
@@ -208,14 +197,12 @@
     <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
     <script src='https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js'></script>
     <script>
-        // Sayfa geçiş fonksiyonu
         function showPage(pageId) {
             const pages = document.querySelectorAll('.content');
-            pages.forEach(page => page.style.display = 'none'); // Tüm sayfaları gizle
-            document.getElementById(pageId).style.display = 'block'; // Seçilen sayfayı göster
+            pages.forEach(page => page.style.display = 'none');
+            document.getElementById(pageId).style.display = 'block';
         }
 
-        // API'den Veri Çekme
         document.getElementById("fetch-data").addEventListener("click", function (event) {
             event.preventDefault();
             axios.get('https://jsonplaceholder.typicode.com/posts')
@@ -225,26 +212,22 @@
                 .catch(error => console.error(error));
         });
 
-        // İletişim Formu
         document.getElementById("contact-form").addEventListener("submit", function (event) {
-            event.preventDefault(); // Formun varsayılan gönderimini engelle
-
+            event.preventDefault();
             const name = document.getElementById("name").value.trim();
             const email = document.getElementById("email").value.trim();
             const message = document.getElementById("message").value.trim();
 
             if (name === "" || email === "" || message === "") {
                 alert("Please fill all fields.");
-                return false; // Form gönderimi engellenir
+                return false;
             } else {
                 alert("Thank you for your message, we will get back to you soon!");
-                // Form alanlarını temizle
                 document.getElementById("contact-form").reset();
             }
         });
 
-        // Sayfa başlangıçta görüntüleme
-        showPage('home'); // Varsayılan olarak ana sayfayı göster
+        showPage('home');
     </script>
 </body>
 
