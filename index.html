@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,16 +8,18 @@
     <meta name="description" content="Essential resources for internet security and freedom. We protect human rights!">
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #eef2f3; /* Arka plan rengi */
         }
 
         header {
-            background: #343a40;
+            background: #343a40; /* Başlık rengi */
             color: #ffffff;
             padding: 15px 0;
             text-align: center;
@@ -53,12 +56,12 @@
         }
 
         nav ul li a:hover {
-            background: #495057;
+            background: #495057; /* Hover rengi */
             border-radius: 5px;
         }
 
         .hero {
-            background: #007BFF;
+            background: #007BFF; /* Hero bölümü rengi */
             color: #fff;
             padding: 60px 20px;
             text-align: center;
@@ -72,7 +75,7 @@
         }
 
         .btn-primary {
-            background: #ffcc00;
+            background: #ffcc00; /* Buton rengi */
             color: #333;
             padding: 10px 20px;
             text-decoration: none;
@@ -84,7 +87,7 @@
         }
 
         .btn-primary:hover {
-            background: #e0b800;
+            background: #e0b800; /* Buton hover rengi */
         }
 
         .services {
@@ -100,7 +103,7 @@
 
         .service {
             text-align: center;
-            background: #f4f4f4;
+            background: #f4f4f4; /* Servis alanı rengi */
             padding: 25px;
             border-radius: 10px;
             margin: 10px;
@@ -129,7 +132,7 @@
         }
 
         footer {
-            background: #343a40;
+            background: #343a40; /* Altbilgi rengi */
             color: #ffffff;
             text-align: center;
             padding: 15px 0;
@@ -153,12 +156,12 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .services {
-                flex-direction: column; /* Mobilde dikey hizala */
+                flex-direction: column;
                 align-items: center;
             }
 
             .service {
-                width: 90%; /* Kart genişliği mobilde */
+                width: 90%;
                 margin-bottom: 20px;
             }
         }
@@ -188,242 +191,165 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background 0.3s;
+            display: inline-block;
         }
 
         .form-btn:hover {
-            background: #0056b3;
+            background: #0056b3; /* Form buton hover rengi */
         }
 
-        /* Additional Effects */
+        /* Fade in effect */
         .fade-in {
-            animation: fadeIn 1s ease-in-out; /* Animasyon süresini değiştirebilirsiniz */
+            animation: fadeIn 1s ease-in-out;
         }
 
         @keyframes fadeIn {
-           from { opacity: 0; }
-           to { opacity: 1; }
-       }
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .content {
+            display: none; /* Sayfalar başlangıçta gizli */
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+        }
     </style>
+    <!-- PMECdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/pmecdn/pme/pme.min.css">
 </head>
 
 <body>
     <header>
         <nav>
-          <div class="logo">
+            <div class="logo">
                 <h1><a href="#">Better Internet</a></h1>
-          </div>
-          <ul>
-              <li><a href="#" onclick="showPage('home')">Home</a></li>
-              <li><a href="#" onclick="showPage('about')">About</a></li>
-              <li><a href="#" onclick="showPage('services')">Services</a></li>
-              <li><a href="#" onclick="showPage('contact')">Contact</a></li>
-          </ul>
-      </nav>
+            </div>
+            <ul>
+                <li><a href="#" onclick="showPage('home')">Home</a></li>
+                <li><a href="#" onclick="showPage('about')">About</a></li>
+                <li><a href="#" onclick="showPage('services')">Services</a></li>
+                <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-      <!-- Home Section -->
-      <section id="home" class="content fade-in">
-          <div class="hero">
-              <h2>Join Hands for Internet Security and Freedom!</h2>
-              <p>We are protecting human rights and online freedom for all. Join us today!</p>
-              <a href="#" class="btn-primary" id="fetch-data">Discover Our Services</a>
-          </div>
+        <!-- Home Section -->
+        <section id="home" class="content fade-in">
+            <div class="hero">
+                <h2>Join Hands for Internet Security and Freedom!</h2>
+                <p>We are protecting human rights and online freedom for all. Join us today!</p>
+                <a href="#" class="btn-primary" id="fetch-data">Discover Our Services</a>
+            </div>
 
-          <section class="services">
-              <h2>Our Services</h2>
-              <div class="service">
-                  <i class="fas fa-lock"></i>
-                  <h3>Security</h3>
-                  <p>We provide the latest security solutions for your online safety.</p>
-              </div>
-              <div class="service">
-                  <i class="fas fa-user-shield"></i>
-                  <h3>Freedom</h3>
-                  <p>We are fighting for human rights and online freedom. Join us!</p>
-              </div>
-              <div class="service">
-                  <i class="fas fa-globe"></i>
-                  <h3>Global Impact</h3>
-                  <p>We are creating a global impact through our services and solutions.</p>
-              </div>
-          </section>
+            <section class="services">
+                <h2>Our Services</h2>
+                <div class="service">
+                    <i class="fas fa-lock"></i>
+                    <h3>Security</h3>
+                    <p>We provide the latest security solutions for your online safety.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-user-shield"></i>
+                    <h3>Freedom</h3>
+                    <p>We are fighting for human rights and online freedom. Join us!</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-globe"></i>
+                    <h3>Global Impact</h3>
+                    <p>We are creating a global impact through our services and solutions.</p>
+                </div>
+            </section>
 
-          <section id="api-data">
-              <h2>Data from API</h2>
-              <pre id="api-response"></pre>
-          </section>
+            <section id="api-data">
+                <h2>Data from API</h2>
+                <pre id="api-response"></pre>
+            </section>
+        </section>
 
-      </section>
+        <!-- About Section -->
+        <section id="about" class="content">
+            <h2>About Us</h2>
+            <p>We are a non-profit organization dedicated to improving internet security and protecting human rights online. Our mission is to provide essential resources and solutions for users across the globe.</p>
+        </section>
 
-      <!-- About Section -->
-      <section id="about" class="content">
-          <h2>About Us</h2>
-          <p>We are a non-profit organization dedicated to improving internet security and protecting human rights online. Our mission is to provide essential resources and solutions for users across the globe.</p>
-      </section>
+        <!-- Services Section -->
+        <section id="services" class="content">
+            <h2>Our Services</h2>
+            <p>We offer a variety of services aimed at ensuring your online safety and freedom:</p>
+            <ul>
+                <li>Online Security Solutions</li>
+                <li>Privacy Advocacy</li>
+                <li>Education and Resources</li>
+                <li>Community Engagement</li>
+            </ul>
+        </section>
 
-      <!-- Services Section -->
-      <section id="services" class="content">
-          <h2>Our Services</h2>
-          <p>We offer a variety of services aimed at ensuring your online safety and freedom:</p>
-          <ul>
-              <li>Online Security Solutions</li>
-              <li>Privacy Advocacy</li>
-              <li>Education and Resources</li>
-              <li>Community Engagement</li>
-          </ul>
-      </section>
-
-      <!-- Contact Section -->
-      <section id="contact" class="content">
-          <h2>Contact Us</h2>
-          <?php if (isset($_POST['submit'])) { ?>
-                <?php if (empty($_POST['name']) || empty($_POST['email']) || empty($_POST['message'])) { ?>
-                    alert("Please fill all fields.");
-                <?php } else { ?>
-                    $name = $_POST['name'];
-                    $email = $_POST['email'];
-                    $message = $_POST['message'];
-                    $from = "From:" . $name . "<". $email .">";
-                    $to = "your email address";
-                    $subject = "Message from your website visitor";
-                    mail($to,$subject,$message,$from);
-                    echo "Email has been sent.";
-                <?php } ?>
-          <?php } ?>
-          <?php else { ?>
-               <form action="<?php $_SERVER['PHP_SELF']; ?>" method='post'>
-                   <input type='text' name='name' required='required'>
-                   <input type='email' name='email' required='required'>
-                   <textarea name='message' required='required'></textarea>
-                   <?php submit_type = 'submit'; ?>
-                   <?php echo "<input type='submit' value='Send Message'>"; ?>
-               </form>
-          <?php } ?>
-      </section>
-
+        <!-- Contact Section -->
+        <section id="contact" class="content">
+            <h2>Contact Us</h2>
+            <form id="contact-form">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Your Email" required>
+                <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+                <button type="submit" class="form-btn">Send Message</button>
+            </form>
+        </section>
     </main>
 
     <footer>
-      <p>&copy;2023 Better Internet Initiative. All rights reserved.</p>
-      <ul class="socials">
-          <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-          <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-          <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-      </ul>
-
+        <p>&copy;2023 Better Internet Initiative. All rights reserved.</p>
+        <ul class="socials">
+            <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+        </ul>
     </footer>
 
-    <!-- JavaScript Kodu -->
-    <!-- Sayfa geçiş işlevselliği -->
     <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js'></script>
+    <script>
+        // Sayfa geçiş fonksiyonu
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.content');
+            pages.forEach(page => page.style.display = 'none'); // Tüm sayfaları gizle
+            document.getElementById(pageId).style.display = 'block'; // Seçilen sayfayı göster
+        }
 
-    <!-- Dinamik API isteği -->
-    <script src='https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js'></script>
+        // API'den Veri Çekme
+        document.getElementById("fetch-data").addEventListener("click", function (event) {
+            event.preventDefault();
+            axios.get('https://jsonplaceholder.typicode.com/posts')
+                .then(response => {
+                    document.getElementById("api-response").textContent = JSON.stringify(response.data, null, '\t');
+                })
+                .catch(error => console.error(error));
+        });
 
-    <!-- İletişim formu -->
-    <?php if (isset($_POST['submit'])) { ?>
-       <?php if (empty($_POST['name']) || empty($_POST['email']) || empty($_POST['message'])) { ?>
-           alert("Please fill all fields.");
-       <?php } else { ?>
-           $name = $_POST['name'];
-           $email = $_POST['email'];
-           $message = $_POST['message'];
-           $from = "From:" . $name . "<". $email .">";
-           $to = "your email address";
-           $subject = "Message from your website visitor";
-           mail($to,$subject,$message,$from);
-           echo "Email has been sent.";
-       <?php } ?>
-   <?php } ?>
+        // İletişim Formu
+        document.getElementById("contact-form").addEventListener("submit", function (event) {
+            event.preventDefault(); // Formun varsayılan gönderimini engelle
 
-   <?php else { ?>
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const message = document.getElementById("message").value.trim();
 
-       // Sayfa geçiş işlevselliği
-       function showPage(pageId) {
-           const pages = document.querySelectorAll('.content');
-           pages.forEach(page => {
-               page.style.display = 'none'; // Tüm sayfaları gizle
-           });
-           document.getElementById(pageId).style.display = 'block'; // Seçilen sayfayı göster
-       }
+            if (name === "" || email === "" || message === "") {
+                alert("Please fill all fields.");
+                return false; // Form gönderimi engellenir
+            } else {
+                alert("Thank you for your message, we will get back to you soon!");
+                // Form alanlarını temizle
+                document.getElementById("contact-form").reset();
+            }
+        });
 
-       // Dinamik API isteği
-       document.getElementById("fetch-data").addEventListener("click", function (event) {
-           event.preventDefault();
-
-           const axios = require('axios');
-
-           axios.get('https://jsonplaceholder.typicode.com/posts')
-               .then(response => {
-                   document.getElementById("api-response").textContent = JSON.stringify(response.data, null, '\t');
-                   console.log(response.data);
-               })
-               .catch(error => console.error(error));
-
-       });
-
-       // İletişim formu
-       document.getElementById("contact-form").addEventListener("submit", function (event) {
-
-           event.preventDefault(); // Formun gönderimini engelle
-
-           const name = document.getElementById("name").value.trim();
-           const email = document.getElementById("email").value.trim();
-           const message = document.getElementById("message").value.trim();
-
-           if (name === "" || email === "" || message === "") {
-               alert("Please fill all fields.");
-               return false; // Form gönderilmez
-           } else {
-
-               const data = new FormData();
-               data.append("name", name);
-               data.append("email", email);
-               data.append("message", message);
-
-               const settings = {
-                   method:'POST',
-                   url:'your server endpoint',
-                   data:data,
-                   headers:{
-                       'Content-Type': 'application/x-www-form-urlencoded'
-                   }
-               };
-
-               fetch(settings.url, settings)
-                   .then(response => response.text())
-                   .then(data => console.log(data))
-                   .catch((error) => console.error('Error:', error));
-
-               alert("Email has been sent.");
-               return false; // Form gönderilmez
-           }
-       });
-
-   <?php } ?>
-
-</script>
-
+        // Sayfa başlangıçta görüntüleme
+        showPage('home'); // Varsayılan olarak ana sayfayı göster
+    </script>
 </body>
 
 </html>
-
-Bu kodda bazı değişiklik yapıldı:
-
-* İletişim formu PHP ile dolduruldu.
-* Dinamik API isteği Axios kütüphanesi ile yapıldı.
-* Sayfa geçiş işlevselliği JavaScript ile yapıldı.
-* Form gönderimi engellenerek formun gönderimi engellendi.
-* Form alanları trim() fonksiyonu ile temizlendi.
-* Eposta adresi ve konu kaydedildi.
-
-Bu kodu yazarken bazı hatalar karşılaşılmıştır ve düzeltilmiştir. Bazı hatalar:
-
-* PHP kodunun JavaScript koduna eklenmesi.
-* Axios kütüphanesinin eklendiği.
-* Form gönderimi engellenmesi.
-* Form alanlarının temizlenmesi.
-* Eposta adresinin kaydedilmesi.
-
-Bu kod ile birlikte dinamik API isteği ve iletişim formu oluşturulmuş ve bazı hatalar giderilmiştir.
