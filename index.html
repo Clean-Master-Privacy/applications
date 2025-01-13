@@ -8,7 +8,6 @@
     <meta name="description" content="Essential resources for internet security and freedom. We protect human rights!">
     <link rel="icon" href="favicon.ico">
     <link rel="manifest" href="manifest.json">
-    
     <style>
         /* CSS Stil Başlangıcı */
         body {
@@ -16,6 +15,19 @@
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Aydınlık Tema */
+        .light-theme {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Karanlık Tema */
+        .dark-theme {
+            background-color: #333;
+            color: #f4f4f4;
         }
 
         header {
@@ -32,7 +44,8 @@
             padding: 0 20px;
         }
 
-        nav h1 a, nav ul li a {
+        nav h1 a,
+        nav ul li a {
             color: #ffffff;
             text-decoration: none;
         }
@@ -62,6 +75,8 @@
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
+            border: none;
+            cursor: pointer;
         }
 
         .services {
@@ -70,6 +85,7 @@
             padding: 20px;
             background: #fff;
             border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .service {
@@ -87,10 +103,31 @@
             text-align: center;
             padding: 15px 0;
         }
+
+        .chart-container {
+            position: relative;
+            margin: auto;
+            height: 40vh;
+            width: 80vw;
+            max-width: 600px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .services {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .theme-switcher {
+            margin: 10px;
+        }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<body>
+<body class="light-theme">
     <header>
         <nav>
             <div class="logo">
@@ -102,6 +139,7 @@
                 <li><a href="#" onclick="showPage('services')">Services</a></li>
                 <li><a href="#" onclick="showPage('contact')">Contact</a></li>
             </ul>
+            <button class="btn-primary theme-switcher" id="themeToggle">Switch to Dark Theme</button>
         </nav>
     </header>
 
@@ -126,6 +164,9 @@
                     <p>Creating global impact through our solutions.</p>
                 </div>
             </section>
+            <div class="chart-container">
+                <canvas id="myChart"></canvas>
+            </div>
         </section>
 
         <section id="about" class="content" style="display: none;">
@@ -182,6 +223,9 @@
                     output += '</ul>';
                     document.getElementById("api-response").innerHTML = output;
                     document.getElementById("api-response").style.display = 'block';
+
+                    // Grafik güncelleme
+                    updateChart(response.length); // Fetched data count
                 } else {
                     console.error('Request failed. Status:', xhr.status);
                 }
@@ -190,6 +234,53 @@
                 console.error('Request failed due to a network error.');
             };
             xhr.send();
+        });
+
+        // Grafik oluşturulması
+        const ctx = document.getElementById('myChart').getContext('2d');
+        let myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Fetched Data Count'],
+                datasets: [{
+                    label: '# of Posts',
+                    data: [0],
+                    backgroundColor: [
+                        'rgba(75, 192, 192, 0.2)',
+                    ],
+                    borderColor: [
+                        'rgba(75, 192, 192, 1)',
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Grafik güncelleme fonksiyonu
+        function updateChart(count) {
+            myChart.data.datasets[0].data[0] = count;
+            myChart.update();
+        }
+
+        // Tema değiştirme fonksiyonu
+        document.getElementById('themeToggle').addEventListener('click', function () {
+            const body = document.body;
+            body.classList.toggle('dark-theme');
+            body.classList.toggle('light-theme');
+            const themeButton = this;
+
+            if (body.classList.contains('dark-theme')) {
+                themeButton.innerText = 'Switch to Light Theme';
+            } else {
+                themeButton.innerText = 'Switch to Dark Theme';
+            }
         });
 
         // İletişim formu
