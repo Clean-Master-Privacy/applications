@@ -7,11 +7,10 @@
     <title>Internet Security and Freedom | Better Internet Initiative</title>
     <meta name="description" content="Essential resources for internet security and freedom. We protect human rights!">
     <link rel="icon" href="favicon.ico">
-
     <link rel="manifest" href="manifest.json">
-
+    
     <style>
-        /* CSS Başlangıcı */
+        /* CSS Stil Başlangıcı */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -82,14 +81,6 @@
             min-width: 200px;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .services {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-
         footer {
             background: #343a40;
             color: #ffffff;
@@ -119,7 +110,7 @@
             <div class="hero">
                 <h2>Join Hands for Internet Security and Freedom!</h2>
                 <p>We protect human rights and online freedom for all. Join us today!</p>
-                <a href="#" class="btn-primary" id="fetch-data">Discover Our Services</a>
+                <button class="btn-primary" id="fetch-data">Discover Our Services</button>
             </div>
             <section class="services">
                 <div class="service">
@@ -156,6 +147,8 @@
                 <button type="submit" class="form-btn">Send Message</button>
             </form>
         </section>
+
+        <div id="api-response" style="display: none;"></div>
     </main>
 
     <footer>
@@ -163,7 +156,7 @@
     </footer>
 
     <script>
-        // Sayfa geçiş işlevselliği
+        // Sayfalar arası geçiş
         function showPage(pageId) {
             const pages = document.querySelectorAll('.content');
             pages.forEach(page => {
@@ -175,6 +168,30 @@
         // Varsayılan olarak ana sayfa gösterilir
         showPage('home');
 
+        // Dinamik XHR isteği
+        document.getElementById("fetch-data").addEventListener("click", function () {
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", "https://jsonplaceholder.typicode.com/posts", true);
+            xhr.onload = function () {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    const response = JSON.parse(xhr.responseText);
+                    let output = '<h3>Fetched Data:</h3><ul>';
+                    response.forEach(item => {
+                        output += `<li><strong>${item.title}</strong>: ${item.body}</li>`;
+                    });
+                    output += '</ul>';
+                    document.getElementById("api-response").innerHTML = output;
+                    document.getElementById("api-response").style.display = 'block';
+                } else {
+                    console.error('Request failed. Status:', xhr.status);
+                }
+            };
+            xhr.onerror = function () {
+                console.error('Request failed due to a network error.');
+            };
+            xhr.send();
+        });
+
         // İletişim formu
         document.getElementById("contact-form").addEventListener("submit", function (event) {
             event.preventDefault(); // Formun gönderimini engelle
@@ -183,6 +200,13 @@
             const email = document.getElementById("email").value;
             const message = document.getElementById("message").value;
 
+            if (!validateEmail(email)) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+            // Güvenlik sertifikası simülasyonu
+            console.log("Sending message...");
             console.log("Name:", name);
             console.log("Email:", email);
             console.log("Message:", message);
@@ -191,6 +215,12 @@
             // Form verilerini temizle
             document.getElementById("contact-form").reset();
         });
+
+        // Email doğrulama fonksiyonu
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
 
         // Service Worker'ı kaydet
         if ('serviceWorker' in navigator) {
