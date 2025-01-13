@@ -4,329 +4,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Internet Security and Freedom | Better Internet Initiative</title>
-    <link rel="icon" href="favicon.ico">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            transition: background-color 0.3s, color 0.3s;
-            background-image: url('https://source.unsplash.com/1920x1080/?internet,technology');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .light-theme {
-            background-color: rgba(244, 244, 244, 0.8);
-            color: #333;
-        }
-
-        .dark-theme {
-            background-color: rgba(51, 51, 51, 0.8);
-            color: #f4f4f4;
-        }
-
-        header {
-            background: rgba(52, 58, 64, 0.7);
-            color: #ffffff;
-            padding: 15px 0;
-            text-align: center;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
-
-        nav h1 a,
-        nav ul li a {
-            color: #ffffff;
-            text-decoration: none;
-        }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-
-        .hero {
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .btn-primary {
-            background: #ffcc00;
-            color: #333;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            border: none;
-            cursor: pointer;
-        }
-
-        .services {
-            display: flex;
-            justify-content: space-around;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .service {
-            text-align: center;
-            padding: 25px;
-            border-radius: 10px;
-            margin: 10px;
-            flex: 1;
-            min-width: 200px;
-        }
-
-        footer {
-            background: rgba(52, 58, 64, 0.7);
-            color: #ffffff;
-            text-align: center;
-            padding: 15px 0;
-        }
-
-        .chart-container {
-            position: relative;
-            margin: auto;
-            height: 40vh;
-            width: 100%;
-            max-width: 600px;
-            padding: 20px 0;
-        }
-
-        .theme-switcher {
-            margin: 10px;
-        }
-
-        form {
-            margin: 20px 0;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .services {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
+    <title>WebAssembly and API Example</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<body class="light-theme">
-    <header>
-        <nav>
-            <div class="logo">
-                <h1><a href="#">Better Internet</a></h1>
-            </div>
-            <ul>
-                <li><a href="#" onclick="showPage('home')">Home</a></li>
-                <li><a href="#" onclick="showPage('about')">About</a></li>
-                <li><a href="#" onclick="showPage('services')">Services</a></li>
-                <li><a href="#" onclick="showPage('contact')">Contact</a></li>
-            </ul>
-            <button class="btn-primary theme-switcher" id="themeToggle">Switch to Dark Theme</button>
-        </nav>
-    </header>
+<body class="bg-light">
+    <div class="container my-5">
+        <h1 class="text-center">WebAssembly & API Example</h1>
+        <div class="form-group">
+            <label for="num1">Number 1:</label>
+            <input type="number" id="num1" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="num2">Number 2:</label>
+            <input type="number" id="num2" class="form-control">
+        </div>
+        <button id="calculate" class="btn btn-primary">Calculate Sum</button>
+        <h2 class="mt-3">Result: <span id="result">0</span></h2>
 
-    <main>
-        <section id="home" class="content" style="display: block;">
-            <div class="hero">
-                <h2>Join Hands for Internet Security and Freedom!</h2>
-                <p>We protect human rights and online freedom for all. Join us today!</p>
-                <button class="btn-primary" id="fetch-data">Discover Our Services</button>
-            </div>
-            <section class="services">
-                <div class="service">
-                    <h3>Security</h3>
-                    <p>Latest solutions for your online safety.</p>
-                </div>
-                <div class="service">
-                    <h3>Freedom</h3>
-                    <p>Fighting for human rights and online freedom.</p>
-                </div>
-                <div class="service">
-                    <h3>Global Impact</h3>
-                    <p>Creating global impact through our solutions.</p>
-                </div>
-            </section>
-            <div class="chart-container">
-                <canvas id="myChart"></canvas>
-            </div>
-            <div class="chart-container">
-                <canvas id="barChart"></canvas>
-            </div>
-            <div class="chart-container">
-                <canvas id="lineChart"></canvas>
-            </div>
-            <form id="chartConfigForm">
-                <label for="chartType">Select Chart Type:</label>
-                <select id="chartType">
-                    <option value="bar">Bar Chart</option>
-                    <option value="line">Line Chart</option>
-                </select>
-                <button type="submit">Update Chart</button>
-            </form>
-        </section>
+        <h2 class="mt-5">API Data Visualization</h2>
+        <div class="chart-container">
+            <canvas id="myChart"></canvas>
+        </div>
 
-        <section id="about" class="content" style="display: none;">
-            <h2>About Us</h2>
-            <p>A non-profit organization dedicated to improving internet security and protecting human rights online.</p>
-        </section>
+        <h2 class="mt-5">Line Chart</h2>
+        <div class="chart-container">
+            <canvas id="lineChart"></canvas>
+        </div>
 
-        <section id="services" class="content" style="display: none;">
-            <h2>Our Services</h2>
-            <p>We offer services aimed at ensuring your online safety!</p>
-        </section>
+        <h2 class="mt-5">Bar Chart</h2>
+        <div class="chart-container">
+            <canvas id="barChart"></canvas>
+        </div>
 
-        <section id="contact" class="content" style="display: none;">
-            <h2>Contact Us</h2>
-            <form id="contact-form">
-                <input type="text" id="name" placeholder="Your Name" required>
-                <input type="email" id="email" placeholder="Your Email" required>
-                <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
-                <button type="submit" class="form-btn">Send Message</button>
-            </form>
-        </section>
-
-        <div id="api-response" style="display: none;"></div>
-    </main>
-
-    <footer>
-        <p>&copy; 2023 Better Internet Initiative. All rights reserved.</p>
-    </footer>
+    </div>
 
     <script>
-        interface CurrencyData {
-            code: string;
-            symbol: string;
-            rate: number;
-            description: string;
-            rate_float: number;
-        }
+        // WebAssembly modülünü base64 olarak tanımlıyoruz
+        const wasmCode = Uint8Array.from(atob("AGFzbQEAAAABYgFyc2hhcB9hcGkAAwABPQIEAAAAAAIAAwEAAQHAAQAAAAAAAAAAAAAAAAAAABAAQAAAAAAAAAAQBowCgAAgDBAAEAAEAwAAQIABgAABQgAAwEAAAGgCgABIAEAAwEAAwEAAwEAAwEAAwEAAwEAAwEAAwEAAwEAAwEAAwEAAwEAAwEAAAGsAAAAAAAAABkAAwABAAUAAQAAEAIAAA..."), len => len/2); // base64 formatındaki wasm dosyası
 
-        interface BPI {
-            USD: CurrencyData;
-            EUR: CurrencyData;
-            GBP: CurrencyData;
-        }
+        let wasmInstance;
 
-        async function fetchData(): Promise<BPI | null> {
+        // WebAssembly modülünü yükleyip başlatıyoruz
+        WebAssembly.instantiate(wasmCode).then(wasm => {
+            wasmInstance = wasm.instance;
+        });
+
+        document.getElementById("calculate").addEventListener("click", () => {
+            const num1 = parseInt(document.getElementById("num1").value);
+            const num2 = parseInt(document.getElementById("num2").value);
+            const result = wasmInstance.exports.add(num1, num2); // WebAssembly modülündeki 'add' fonksiyonu
+            document.getElementById("result").innerText = result;
+        });
+
+        // API Fetch fonksiyonu
+        async function fetchAPIData() {
             try {
                 const response = await fetch('https://api.coindesk.com/v1/bpi/currentprice.json');
                 const data = await response.json();
                 return data.bpi;
             } catch (error) {
                 console.error('Fetch error: ', error);
-                return null;
             }
         }
 
-        function createChart(type: string, labels: string[], data: number[]) {
-            const ctx = (<HTMLCanvasElement>document.getElementById(`${type}Chart`)).getContext('2d');
-            if (ctx) {
-                new Chart(ctx, {
-                    type: type,
-                    data: {
-                        labels: labels,
-                        datasets: [{
-                            label: 'Current Prices',
-                            data: data,
-                            backgroundColor: 'rgba(75, 192, 192, 0.6)',
-                            borderColor: 'rgba(75, 192, 192, 1)',
-                            borderWidth: 1
-                        }]
+        // Grafik oluşturma
+        function createChart(ctx, chartType, data) {
+            const { labels, values } = data;
+            new Chart(ctx, {
+                type: chartType,
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Bitcoin Prices',
+                        data: values,
+                        backgroundColor: 'rgba(255, 159, 64, 0.2)',
+                        borderColor: 'rgba(255, 159, 64, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
                     },
-                    options: {
-                        scales: {
-                            y: {
-                                beginAtZero: true,
-                                title: {
-                                    display: true,
-                                    text: 'Price ($)'
+                    plugins: {
+                        legend: {
+                            display: true,
+                            labels: {
+                                font: {
+                                    size: 16
                                 }
+                            }
+                        },
+                        title: {
+                            display: true,
+                            text: 'Bitcoin Price Over Time',
+                            font: {
+                                size: 20
                             }
                         }
                     }
-                });
-            }
-        }
-
-        async function createCharts() {
-            const data = await fetchData();
-            if (!data) return;
-
-            const labels = Object.keys(data).map(currency => currency);
-            const values = Object.values(data).map(currency => currency.rate_float);
-
-            // Otopark yap
-            createChart('bar', labels, values);
-            createChart('line', labels, values);
-        }
-
-        // Sayfalar arası geçiş
-        function showPage(pageId: string) {
-            const pages = document.querySelectorAll('.content');
-            pages.forEach(page => {
-                page.style.display = 'none'; // Tüm sayfaları gizle
+                }
             });
-            document.getElementById(pageId)!.style.display = 'block'; // Seçilen sayfayı göster
         }
 
-        // Temayı değiştir
-        document.getElementById('themeToggle')!.addEventListener('click', function () {
-            const body = document.body;
-            body.classList.toggle('dark-theme');
-            body.classList.toggle('light-theme');
+        // Sayfa yüklendiğinde grafik verilerini al
+        window.onload = async function () {
+            const apiData = await fetchAPIData();
+            const labels = Object.keys(apiData).map(currency => currency); // API'den gelen para birimleri
+            const values = Object.values(apiData).map(currency => currency.rate_float); // API'den gelen değerler
 
-            const themeButton = this as HTMLButtonElement;
-            themeButton.innerText = body.classList.contains('dark-theme') ? 'Switch to Light Theme' : 'Switch to Dark Theme';
-        });
+            // Farklı grafik türleri oluştur
+            const barCtx = document.getElementById('barChart').getContext('2d');
+            createChart(barCtx, 'bar', { labels: labels, values: values });
 
-        // İletişim formu
-        document.getElementById("contact-form")!.addEventListener("submit", function (event) {
-            event.preventDefault(); // Formun gönderimini engelle
-            const name = (document.getElementById("name") as HTMLInputElement).value;
-            const email = (document.getElementById("email") as HTMLInputElement).value;
-            const message = (document.getElementById("message") as HTMLTextAreaElement).value;
-            if (!validateEmail(email)) {
-                alert("Please enter a valid email address.");
-                return;
-            }
-            alert("Thank you for your message!");
-            (document.getElementById("contact-form") as HTMLFormElement).reset();
-        });
+            const lineCtx = document.getElementById('lineChart').getContext('2d');
+            createChart(lineCtx, 'line', { labels: labels, values: values });
 
-        function validateEmail(email: string): boolean {
-            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return re.test(email);
-        }
-
-        // Grafik türünü güncelle
-        document.getElementById('chartConfigForm')!.addEventListener('submit', (event) => {
-            event.preventDefault();
-            const chartType = (document.getElementById('chartType') as HTMLSelectElement).value;
-            createChart(chartType, [], []); // Mevcut veriler ile güncellenmesi gerekecek
-        });
-
-        // Sayfa yüklendiğinde grafikleri oluştur
-        window.onload = function () {
-            createCharts();
+            const myChartCtx = document.getElementById('myChart').getContext('2d');
+            createChart(myChartCtx, 'doughnut', { labels: labels, values: values });
         };
     </script>
 </body>
