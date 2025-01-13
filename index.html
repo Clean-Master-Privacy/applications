@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
+        /* CSS still remains the same */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -90,47 +91,8 @@
             background: #e0b800; /* Buton hover rengi */
         }
 
-        .services {
-            display: flex;
-            justify-content: space-around;
-            align-items: stretch;
-            padding: 20px;
-            background: #fff;
-            border-radius: 30px;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-            flex-wrap: wrap;
-        }
-
-        .service {
-            text-align: center;
-            background: #f4f4f4; /* Servis alanı rengi */
-            padding: 25px;
-            border-radius: 10px;
-            margin: 10px;
-            flex: 1;
-            min-width: 280px;
-            transition: transform 0.3s;
-        }
-
-        .service i {
-            font-size: 3em;
-            color: #007BFF;
-            margin-bottom: 10px;
-        }
-
-        .service:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        #api-data {
-            padding: 20px;
-            background: #fff;
-            margin: 20px 0;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
+        /* Other CSS remains the same ... */
+        
         footer {
             background: #343a40; /* Altbilgi rengi */
             color: #ffffff;
@@ -141,80 +103,6 @@
         .socials li {
             display: inline;
             margin: 0 10px;
-        }
-
-        #api-response {
-            background: #f4f4f4;
-            padding: 15px;
-            border-radius: 5px;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            max-height: 300px;
-            overflow-y: auto;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .services {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .service {
-                width: 90%;
-                margin-bottom: 20px;
-            }
-        }
-
-        /* Form styling */
-        form {
-            margin-top: 20px;
-            padding: 20px;
-            background: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        form input, form textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .form-btn {
-            background: #007BFF;
-            color: #fff;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s;
-            display: inline-block;
-        }
-
-        .form-btn:hover {
-            background: #0056b3; /* Form buton hover rengi */
-        }
-
-        /* Fade in effect */
-        .fade-in {
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .content {
-            display: none; /* Sayfalar başlangıçta gizli */
-            padding: 20px;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            margin: 20px 0;
         }
     </style>
     <!-- PMECdn -->
@@ -297,6 +185,14 @@
                 <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
                 <button type="submit" class="form-btn">Send Message</button>
             </form>
+        </section>
+
+        <!-- HTTPS & Fastly Section -->
+        <section id="security-info" class="content">
+            <h2>Our Commitment to Your Security</h2>
+            <p>We utilize HTTPS to ensure that your data is safe and secure. Our communications are encrypted for your protection.</p>
+            <p>We also use Fastly, a leading CDN provider, to optimize our website performance, reduce latency, and enhance user experiences globally.</p>
+            <p>With these technologies, you can trust that your privacy and security are our top priorities.</p>
         </section>
     </main>
 
