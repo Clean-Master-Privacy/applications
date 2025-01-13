@@ -17,7 +17,7 @@
         }
 
         header {
-            background: #343a40;  /* Daha koyu bir arka plan rengi */
+            background: #343a40;
             color: #ffffff;
             padding: 15px 0;
             text-align: center;
@@ -54,8 +54,8 @@
         }
 
         nav ul li a:hover {
-            background: #495057; /* Hover efekti */
-            border-radius: 5px; 
+            background: #495057;
+            border-radius: 5px;
         }
 
         .hero {
@@ -80,7 +80,7 @@
             border-radius: 5px;
             font-weight: bold;
             transition: background 0.3s;
-            display: inline-block; /* Buton hizalaması için */
+            display: inline-block;
             margin-top: 10px;
         }
 
@@ -106,7 +106,7 @@
             border-radius: 10px;
             margin: 10px;
             flex: 1;
-            min-width: 280px; /* Her kartın minimum genişliği */
+            min-width: 280px;
             transition: transform 0.3s;
         }
 
@@ -117,7 +117,7 @@
         }
 
         .service:hover {
-            transform: translateY(-5px); /* Hover efekti */
+            transform: translateY(-5px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
@@ -154,12 +154,12 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .services {
-                flex-direction: column; /* Mobilde dikey hizala */
+                flex-direction: column;
                 align-items: center;
             }
 
             .service {
-                width: 90%; /* Kart genişliği mobilde */
+                width: 90%;
                 margin-bottom: 20px;
             }
         }
@@ -173,7 +173,8 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
-        form input, form textarea {
+        form input,
+        form textarea {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
@@ -201,8 +202,23 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Generic Content Section */
+        .content {
+            display: none; /* Her sayfanın içerikleri başlangıçta gizli olacak */
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
         }
     </style>
 </head>
@@ -214,46 +230,68 @@
                 <h1><a href="#">Better Internet</a></h1>
             </div>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#" onclick="showPage('home')">Home</a></li>
+                <li><a href="#" onclick="showPage('about')">About</a></li>
+                <li><a href="#" onclick="showPage('services')">Services</a></li>
+                <li><a href="#" onclick="showPage('contact')">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="hero fade-in">
-            <h2>Join Hands for Internet Security and Freedom!</h2>
-            <p>We are protecting human rights and online freedom for all. Join us today!</p>
-            <a href="#" class="btn-primary" id="fetch-data">Discover Our Services</a>
+        <!-- Home Section -->
+        <section id="home" class="content fade-in">
+            <div class="hero">
+                <h2>Join Hands for Internet Security and Freedom!</h2>
+                <p>We are protecting human rights and online freedom for all. Join us today!</p>
+                <a href="#" class="btn-primary" id="fetch-data">Discover Our Services</a>
+            </div>
+
+            <section class="services">
+                <h2>Our Services</h2>
+                <div class="service">
+                    <i class="fas fa-lock"></i>
+                    <h3>Security</h3>
+                    <p>We provide the latest security solutions for your online safety.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-user-shield"></i>
+                    <h3>Freedom</h3>
+                    <p>We are fighting for human rights and online freedom. Join us!</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-globe"></i>
+                    <h3>Global Impact</h3>
+                    <p>We are creating a global impact through our services and solutions.</p>
+                </div>
+            </section>
+
+            <section id="api-data">
+                <h2>Data from API</h2>
+                <pre id="api-response"></pre>
+            </section>
         </section>
 
-        <section class="services">
+        <!-- About Section -->
+        <section id="about" class="content">
+            <h2>About Us</h2>
+            <p>We are a non-profit organization dedicated to improving internet security and protecting human rights online. Our mission is to provide essential resources and solutions for users across the globe.</p>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="content">
             <h2>Our Services</h2>
-            <div class="service">
-                <i class="fas fa-lock"></i>
-                <h3>Security</h3>
-                <p>We provide the latest security solutions for your online safety.</p>
-            </div>
-            <div class="service">
-                <i class="fas fa-user-shield"></i>
-                <h3>Freedom</h3>
-                <p>We are fighting for human rights and online freedom. Join us!</p>
-            </div>
-            <div class="service">
-                <i class="fas fa-globe"></i>
-                <h3>Global Impact</h3>
-                <p>We are creating a global impact through our services and solutions.</p>
-            </div>
+            <p>We offer a variety of services aimed at ensuring your online safety and freedom:</p>
+            <ul>
+                <li>Online Security Solutions</li>
+                <li>Privacy Advocacy</li>
+                <li>Education and Resources</li>
+                <li>Community Engagement</li>
+            </ul>
         </section>
 
-        <section id="api-data">
-            <h2>Data from API</h2>
-            <pre id="api-response"></pre>
-        </section>
-
-        <section id="contact">
+        <!-- Contact Section -->
+        <section id="contact" class="content">
             <h2>Contact Us</h2>
             <form id="contact-form">
                 <input type="text" id="name" placeholder="Your Name" required>
@@ -274,6 +312,18 @@
     </footer>
 
     <script>
+        // Sayfa geçiş işlevselliği
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.content');
+            pages.forEach(page => {
+                page.style.display = 'none'; // Tüm sayfaları gizle
+            });
+            document.getElementById(pageId).style.display = 'block'; // Seçilen sayfayı göster
+        }
+
+        // Varsayılan olarak ana sayfa gösterilir
+        showPage('home');
+
         // Dinamik API isteği
         document.getElementById("fetch-data").addEventListener("click", function (event) {
             event.preventDefault();
@@ -283,7 +333,11 @@
             xhr.onload = function () {
                 if (xhr.status >= 200 && xhr.status < 300) {
                     const response = JSON.parse(xhr.responseText);
-                    document.getElementById("api-response").textContent = JSON.stringify(response, null, 2);
+                    let output = '';
+                    response.forEach(item => {
+                        output += `<strong>${item.title}</strong>\n${item.body}\n\n`;
+                    });
+                    document.getElementById("api-response").textContent = output;
                     console.log(response);
                 } else {
                     console.error('Request failed. Status:', xhr.status);
@@ -307,6 +361,9 @@
             console.log("Email:", email);
             console.log("Message:", message);
             alert("Thank you for your message, we will get back to you soon!");
+
+            // Form verilerini temizle
+            document.getElementById("contact-form").reset();
         });
     </script>
 </body>
