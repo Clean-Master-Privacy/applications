@@ -3,7 +3,7 @@ const urlsToCache = [
     '/',
     '/index.html',
     '/manifest.json',
-    // Diğer kaynaklar buraya eklenebilir (CSS, JS, resimler)
+    // Eklemek istediğiniz diğer kaynaklar
 ];
 
 self.addEventListener('install', (event) => {
