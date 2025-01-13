@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,19 +13,20 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #eef2f3;
+            background-color: #f4f7fa;
+            color: #333;
         }
 
         header {
             background: #343a40;
             color: #ffffff;
-            padding: 15px 0;
+            padding: 20px 0;
             text-align: center;
         }
 
         nav {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
             padding: 0 20px;
         }
@@ -34,6 +34,7 @@
         nav h1 a {
             color: #ffffff;
             text-decoration: none;
+            font-size: 28px;
         }
 
         nav ul {
@@ -60,12 +61,12 @@
         }
 
         .hero {
-            background: #007BFF;
+            background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?fit=crop&w=1500&h=600&q=80') no-repeat center center/cover;
             color: #fff;
             padding: 60px 20px;
             text-align: center;
             border-radius: 0 0 30px 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
         .hero h2 {
@@ -89,26 +90,85 @@
             background: #e0b800;
         }
 
+        .services {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px 20px;
+        }
+
+        .service {
+            background: #ffffff;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            text-align: center;
+            width: 30%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .service:hover {
+            transform: translateY(-5px);
+        }
+
+        .service i {
+            font-size: 3em;
+            color: #007bff;
+        }
+
         footer {
             background: #343a40;
             color: #ffffff;
             text-align: center;
             padding: 15px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
 
         .socials li {
             display: inline;
             margin: 0 10px;
         }
+
+        #contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #contact-form input, #contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        #contact-form button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
+        }
+
+        #contact-form button:hover {
+            background: #0056b3;
+        }
     </style>
 </head>
-
 <body>
     <header>
         <nav>
-            <div class="logo">
-                <h1><a href="#">Better Internet</a></h1>
-            </div>
+            <h1><a href="#">Better Internet</a></h1>
             <ul>
                 <li><a href="#" onclick="showPage('home')">Home</a></li>
                 <li><a href="#" onclick="showPage('about')">About</a></li>
@@ -151,12 +211,12 @@
             </section>
         </section>
 
-        <section id="about" class="content">
+        <section id="about" class="content" style="display:none;">
             <h2>About Us</h2>
             <p>We are a non-profit organization dedicated to improving internet security and protecting human rights online. Our mission is to provide essential resources and solutions for users across the globe.</p>
         </section>
 
-        <section id="services" class="content">
+        <section id="services" class="content" style="display:none;">
             <h2>Our Services</h2>
             <p>We offer a variety of services aimed at ensuring your online safety and freedom:</p>
             <ul>
@@ -167,7 +227,7 @@
             </ul>
         </section>
 
-        <section id="contact" class="content">
+        <section id="contact" class="content" style="display:none;">
             <h2>Contact Us</h2>
             <form id="contact-form">
                 <input type="text" id="name" placeholder="Your Name" required>
@@ -177,12 +237,6 @@
             </form>
         </section>
 
-        <section id="security-info" class="content">
-            <h2>Our Commitment to Your Security</h2>
-            <p>We utilize HTTPS to ensure that your data is safe and secure. Our communications are encrypted for your protection.</p>
-            <p>We also use Fastly, a leading CDN provider, to optimize our website performance, reduce latency, and enhance user experiences globally.</p>
-            <p>With these technologies, you can trust that your privacy and security are our top priorities.</p>
-        </section>
     </main>
 
     <footer>
@@ -207,7 +261,7 @@
             event.preventDefault();
             axios.get('https://jsonplaceholder.typicode.com/posts')
                 .then(response => {
-                    document.getElementById("api-response").textContent = JSON.stringify(response.data, null, '\t');
+                    document.getElementById("api-response").textContent = JSON.stringify(response.data, null, 2);
                 })
                 .catch(error => console.error(error));
         });
@@ -230,5 +284,4 @@
         showPage('home');
     </script>
 </body>
-
 </html>
