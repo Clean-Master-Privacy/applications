@@ -31,7 +31,7 @@
         <section class="hero">
             <h2>Join Hands for Internet Security and Freedom!</h2>
             <p>We are protecting human rights and online freedom for all. Join us today!</p>
-            <a href="#" class="btn-primary">Discover Our Services</a>
+            <a href="#" class="btn-primary" id="fetch-data">Discover Our Services</a>
         </section>
 
         <section class="services">
@@ -52,6 +52,11 @@
                 <p>We are creating a global impact through our services and solutions.</p>
             </div>
         </section>
+
+        <section id="api-data">
+            <h2>Data from API</h2>
+            <pre id="api-response"></pre>
+        </section>
     </main>
 
     <footer>
@@ -64,6 +69,27 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        document.getElementById("fetch-data").addEventListener("click", function(event) {
+            event.preventDefault(); // Buton tıklandığında sayfanın yenilenmesini engelle
+
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", "https://jsonplaceholder.typicode.com/posts", true); // Örnek bir API URL'si
+            xhr.onload = function() {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    const response = JSON.parse(xhr.responseText);
+                    document.getElementById("api-response").textContent = JSON.stringify(response, null, 2);
+                    console.log(response);
+                } else {
+                    console.error('Request failed. Status:', xhr.status);
+                }
+            };
+            xhr.onerror = function() {
+                console.error('Request failed due to a network error.');
+            };
+            xhr.send();
+        });
+    </script>
 </body>
 
 </html>
