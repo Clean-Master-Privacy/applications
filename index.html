@@ -8,12 +8,10 @@
     <meta name="description" content="Essential resources for internet security and freedom. We protect human rights!">
     <link rel="icon" href="favicon.ico">
 
-    <!-- Manifest bağlantısını netlify fonksiyonuna yönlendirin -->
-    <link rel="manifest" href="/.netlify/functions/manifest">
+    <link rel="manifest" href="manifest.json">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Tüm CSS stillerinin yer aldığı alan */
+        /* CSS Başlangıcı */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -35,7 +33,7 @@
             padding: 0 20px;
         }
 
-        nav h1 a {
+        nav h1 a, nav ul li a {
             color: #ffffff;
             text-decoration: none;
         }
@@ -51,30 +49,11 @@
             margin: 0 15px;
         }
 
-        nav ul li a {
-            color: #ffffff;
-            text-decoration: none;
-            padding: 8px 15px;
-            transition: background 0.3s;
-        }
-
-        nav ul li a:hover {
-            background: #495057;
-            border-radius: 5px;
-        }
-
         .hero {
             background: #007BFF;
             color: #fff;
             padding: 60px 20px;
             text-align: center;
-            border-radius: 0 0 30px 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .hero h2 {
-            font-size: 2.5em;
-            margin-bottom: 15px;
         }
 
         .btn-primary {
@@ -84,76 +63,23 @@
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
-            transition: background 0.3s;
-            display: inline-block;
-            margin-top: 10px;
-        }
-
-        .btn-primary:hover {
-            background: #e0b800;
         }
 
         .services {
             display: flex;
             justify-content: space-around;
-            align-items: stretch;
             padding: 20px;
             background: #fff;
-            border-radius: 30px;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-            flex-wrap: wrap;
+            border-radius: 10px;
         }
 
         .service {
             text-align: center;
-            background: #f4f4f4;
             padding: 25px;
             border-radius: 10px;
             margin: 10px;
             flex: 1;
-            min-width: 280px;
-            transition: transform 0.3s;
-        }
-
-        .service i {
-            font-size: 3em;
-            color: #007BFF;
-            margin-bottom: 10px;
-        }
-
-        .service:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        #api-data {
-            padding: 20px;
-            background: #fff;
-            margin: 20px 0;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        footer {
-            background: #343a40;
-            color: #ffffff;
-            text-align: center;
-            padding: 15px 0;
-        }
-
-        .socials li {
-            display: inline;
-            margin: 0 10px;
-        }
-
-        #api-response {
-            background: #f4f4f4;
-            padding: 15px;
-            border-radius: 5px;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            max-height: 300px;
-            overflow-y: auto;
+            min-width: 200px;
         }
 
         /* Responsive Design */
@@ -162,68 +88,13 @@
                 flex-direction: column;
                 align-items: center;
             }
-
-            .service {
-                width: 90%;
-                margin-bottom: 20px;
-            }
         }
 
-        /* Form styling */
-        form {
-            margin-top: 20px;
-            padding: 20px;
-            background: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        form input,
-        form textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .form-btn {
-            background: #007BFF;
-            color: #fff;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .form-btn:hover {
-            background: #0056b3;
-        }
-
-        /* Additional Effects */
-        .fade-in {
-            animation: fadeIn 1s ease-in;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Generic Content Section */
-        .content {
-            display: none; /* Her sayfanın içerikleri başlangıçta gizli olacak */
-            padding: 20px;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            margin: 20px 0;
+        footer {
+            background: #343a40;
+            color: #ffffff;
+            text-align: center;
+            padding: 15px 0;
         }
     </style>
 </head>
@@ -244,59 +115,39 @@
     </header>
 
     <main>
-        <!-- Home Section -->
-        <section id="home" class="content fade-in">
+        <section id="home" class="content" style="display: block;">
             <div class="hero">
                 <h2>Join Hands for Internet Security and Freedom!</h2>
-                <p>We are protecting human rights and online freedom for all. Join us today!</p>
+                <p>We protect human rights and online freedom for all. Join us today!</p>
                 <a href="#" class="btn-primary" id="fetch-data">Discover Our Services</a>
             </div>
-
             <section class="services">
-                <h2>Our Services</h2>
                 <div class="service">
-                    <i class="fas fa-lock"></i>
                     <h3>Security</h3>
-                    <p>We provide the latest security solutions for your online safety.</p>
+                    <p>Latest solutions for your online safety.</p>
                 </div>
                 <div class="service">
-                    <i class="fas fa-user-shield"></i>
                     <h3>Freedom</h3>
-                    <p>We are fighting for human rights and online freedom. Join us!</p>
+                    <p>Fighting for human rights and online freedom.</p>
                 </div>
                 <div class="service">
-                    <i class="fas fa-globe"></i>
                     <h3>Global Impact</h3>
-                    <p>We are creating a global impact through our services and solutions.</p>
+                    <p>Creating global impact through our solutions.</p>
                 </div>
             </section>
-
-            <section id="api-data">
-                <h2>Data from API</h2>
-                <pre id="api-response"></pre>
-            </section>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="content">
+        <section id="about" class="content" style="display: none;">
             <h2>About Us</h2>
-            <p>We are a non-profit organization dedicated to improving internet security and protecting human rights online. Our mission is to provide essential resources and solutions for users across the globe.</p>
+            <p>A non-profit organization dedicated to improving internet security and protecting human rights online.</p>
         </section>
 
-        <!-- Services Section -->
-        <section id="services" class="content">
+        <section id="services" class="content" style="display: none;">
             <h2>Our Services</h2>
-            <p>We offer a variety of services aimed at ensuring your online safety and freedom:</p>
-            <ul>
-                <li>Online Security Solutions</li>
-                <li>Privacy Advocacy</li>
-                <li>Education and Resources</li>
-                <li>Community Engagement</li>
-            </ul>
+            <p>We offer services aimed at ensuring your online safety!</p>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="content">
+        <section id="contact" class="content" style="display: none;">
             <h2>Contact Us</h2>
             <form id="contact-form">
                 <input type="text" id="name" placeholder="Your Name" required>
@@ -309,11 +160,6 @@
 
     <footer>
         <p>&copy; 2023 Better Internet Initiative. All rights reserved.</p>
-        <ul class="socials">
-            <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-        </ul>
     </footer>
 
     <script>
@@ -329,31 +175,6 @@
         // Varsayılan olarak ana sayfa gösterilir
         showPage('home');
 
-        // Dinamik API isteği
-        document.getElementById("fetch-data").addEventListener("click", function (event) {
-            event.preventDefault();
-
-            const xhr = new XMLHttpRequest();
-            xhr.open("GET", "https://jsonplaceholder.typicode.com/posts", true);
-            xhr.onload = function () {
-                if (xhr.status >= 200 && xhr.status < 300) {
-                    const response = JSON.parse(xhr.responseText);
-                    let output = '';
-                    response.forEach(item => {
-                        output += `<strong>${item.title}</strong>\n${item.body}\n\n`;
-                    });
-                    document.getElementById("api-response").textContent = output;
-                    console.log(response);
-                } else {
-                    console.error('Request failed. Status:', xhr.status);
-                }
-            };
-            xhr.onerror = function () {
-                console.error('Request failed due to a network error.');
-            };
-            xhr.send();
-        });
-
         // İletişim formu
         document.getElementById("contact-form").addEventListener("submit", function (event) {
             event.preventDefault(); // Formun gönderimini engelle
@@ -365,7 +186,7 @@
             console.log("Name:", name);
             console.log("Email:", email);
             console.log("Message:", message);
-            alert("Thank you for your message, we will get back to you soon!");
+            alert("Thank you for your message!");
 
             // Form verilerini temizle
             document.getElementById("contact-form").reset();
