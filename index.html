@@ -19,15 +19,19 @@
             background-color: #e9ecef;
             color: #333;
             line-height: 1.6;
+            overflow-x: hidden;
         }
         nav {
-            background: #343a40;
+            background: rgba(52, 58, 64, 0.9);
             color: white;
             padding: 15px;
-            position: relative;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: background 0.5s ease;
         }
         .logo {
             font-size: 24px;
@@ -75,36 +79,38 @@
         }
         main {
             max-width: 1200px;
-            margin: 20px auto;
+            margin: 100px auto 20px;
             padding: 20px;
             background: #fff;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.8s;
         }
         footer {
-            background-color: #343a40;
+            background-color: rgba(52, 58, 64, 0.9);
             color: #fff;
             text-align: center;
             padding: 15px 0;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-            clear: both;
         }
         /* İçerik Stilleri */
         .hero {
             background: url('background.png') center/cover no-repeat;
             color: #fff;
-            padding: 50px 20px;
+            padding: 80px 20px;
             text-align: center;
             border-radius: 8px;
             margin-bottom: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            animation: slideIn 1s ease-in-out;
         }
+
         .services {
             display: flex;
             justify-content: space-between;
             margin-top: 20px;
+            animation: fadeInUp 0.5s ease;
         }
+
         .service {
             background: #f8f9fa;
             padding: 20px;
@@ -112,7 +118,12 @@
             text-align: center;
             flex: 1;
             margin: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .service:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s; /* Hover animasyonu */
         }
         .service h3 {
             margin: 15px 0;
@@ -120,6 +131,10 @@
         .service i {
             font-size: 40px;
             color: #007bff;
+            transition: color 0.3s;
+        }
+        .service:hover i {
+            color: #ffc107;
         }
         /* Form Stilleri */
         .form {
@@ -157,6 +172,19 @@
         button[type="submit"]:hover {
             background-color: #218838;
         }
+        /* Animasyonlar */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
     </style>
 </head>
 <body>
@@ -179,7 +207,7 @@
         </div>
     </nav>
     <main id="main">
-        <section id="home" class="content fade-in">
+        <section id="home" class="content">
             <div class="hero">
                 <h2>Güvenlik ve Özgürlük için Birlikte Olalım!</h2>
                 <p>Burada insan haklarını korumak ve çevrimiçi özgürlük için birleşiyoruz. Giriş yap, daha fazla bilgi edinin ve birlikte çalışalım!</p>
@@ -210,55 +238,53 @@
 
         <section id="services" class="content" style="display:none;">
             <h2>Hizmetlerimiz</h2>
-            <p>Çevrimiçi güvenlik ve özgürlük için sunduğumuz hizmetler:</p>
-            <ul>
-                <li>Çevrimiçi Güvenlik Çözümleri</li>
-                <li>Gizlilik Savunuculuğu</li>
-                <li>eğitim ve Kaynaklar</li>
-                <li>Topluluk Katılımı</li>
-            </ul>
+            <p>Bizler, bireylerin internet güvenliğini artırmak ve çevrimiçi özgürlüklerini korumak için çeşitli hizmetler sunuyoruz. Detaylı bilgi için bizimle iletişime geçin.</p>
         </section>
 
         <section id="contact" class="content" style="display:none;">
             <h2>İletişim</h2>
+            <p>Bize ulaşmak için aşağıdaki formu kullanabilirsiniz.</p>
             <div class="form">
-                <form id="contact-form">
+                <form>
                     <label for="name">Adınız:</label>
                     <input type="text" id="name" required>
 
-                    <label for="email">E-posta Adresiniz:</label>
+                    <label for="email">E-posta:</label>
                     <input type="email" id="email" required>
 
                     <label for="message">Mesajınız:</label>
-                    <textarea id="message" rows="4" required></textarea>
+                    <textarea id="message" rows="5" required></textarea>
 
-                    <button type="submit">Mesajı Gönder</button>
+                    <button type="submit">Gönder</button>
                 </form>
-                <div id="contact-response"></div>
             </div>
         </section>
 
         <section id="faq" class="content" style="display:none;">
             <h2>Sıkça Sorulan Sorular</h2>
+            <p>İnsanların en çok sorduğu soruları buraya ekliyorsunuz...</p>
             <ul>
-                <li><strong>S1: Misyonuz nedir?</strong> C: Misyonumuz, insan haklarını koruma ve çevrimiçi özgürlüğü sağlamaktır.</li>
-                <li><strong>S2: Nasıl katılabilirim?</strong> C: Web sitemiz üzerinden bize katılabilir ve kampanyalarımıza katılabilirsiniz.</li>
-                <li><strong>S3: Hangi tür hizmetler sunuyorsunuz?</strong> C: Çevrimiçi güvenlik çözümleri, gizlilik savunuculuğu ve eğitim kaynakları sunuyoruz.</li>
+                <li>Soru 1: Güvenli internete nasıl ulaşırım?</li>
+                <li>Soru 2: Veri gizliliğimi nasıl koruyabilirim?</li>
+                <li>Soru 3: Hangi hizmetleri alabilirim?</li>
             </ul>
         </section>
 
         <section id="testimonials" class="content" style="display:none;">
             <h2>Görüşler</h2>
-            <div>
-                <p><strong>Jane Doe:</strong> "Bu kuruluş, çevrimiçi güvenlik konusunda önemli katkıda bulundu. Şiddetle tavsiye ederim!"</p>
-                <p><strong>John Smith:</strong> "Kaynakları çevrimiçi gizliliğime yardımcı oldular. Teşekkürler!"</p>
-            </div>
+            <p>Kullanıcılarımızın bizler hakkında söyledikleri...</p>
+            <blockquote>
+                <p>"BETTER INTERNET sayesinde çevrimiçi güvenliğimi artırdım!" - Kullanıcı 1</p>
+            </blockquote>
+            <blockquote>
+                <p>"Bu kuruluş, insan hakları savunuculuğunda önemli bir rol oynuyor." - Kullanıcı 2</p>
+            </blockquote>
         </section>
 
         <section id="login" class="content" style="display:none;">
             <h2>Giriş Yap</h2>
             <div class="form">
-                <form id="login-form">
+                <form>
                     <label for="username">Kullanıcı Adı:</label>
                     <input type="text" id="username" required>
 
@@ -267,69 +293,25 @@
 
                     <button type="submit">Giriş Yap</button>
                 </form>
-                <p id="login-message"></p>
             </div>
         </section>
     </main>
     <footer>
-        &copy; 2023 BETTER INTERNET. Tüm hakları saklıdır.
+        <p>&copy; 2023 BETTER INTERNET. Tüm hakları saklıdır.</p>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.6/dist/handlebars.min.js"></script>
+
     <script>
-        // Sayfa gösterimi için
-        function showPage(pageId) {
+        function showPage(page) {
             const sections = document.querySelectorAll('.content');
             sections.forEach(section => {
-                section.style.display = 'none'; // Tüm bölümleri gizle
+                section.style.display = 'none';
             });
-            document.getElementById(pageId).style.display = 'block'; // Seçilen bölümü göster
+            document.getElementById(page).style.display = 'block';
         }
 
-        // Sayfa yüklendiğinde ana sayfayı göster
-        window.onload = function () {
+        window.onload = function() {
             showPage('home');
         };
-
-        // Arama işlevi
-        document.getElementById("search-btn").addEventListener("click", function () {
-            const input = document.getElementById("search-input").value.toLowerCase();
-            const sections = document.querySelectorAll('.content');
-            sections.forEach(section => {
-                const sectionTitle = section.querySelector('h2') ? section.querySelector('h2').textContent.toLowerCase() : '';
-                if (sectionTitle.includes(input) || input === "") {
-                    section.style.display = 'block';
-                } else {
-                    section.style.display = 'none';
-                }
-            });
-        });
-
-        // Form gönderimi için
-        document.getElementById('contact-form').addEventListener('submit', function (event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-
-            const responseHTML = `<p>Teşekkürler ${name}, mesajınız alındı!</p>`;
-            document.getElementById('contact-response').innerHTML = responseHTML;
-
-            this.reset(); // Formu sıfırla
-        });
-
-        // Login formu gönderim işlemi
-        document.getElementById('login-form').addEventListener('submit', function (event) {
-            event.preventDefault();
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-
-            // Örnek bir kullanıcı adı ve şifre ile kontrol
-            if (username === "user" && password === "password") {
-                document.getElementById('login-message').textContent = "Giriş başarılı!";
-            } else {
-                document.getElementById('login-message').textContent = "Geçersiz kullanıcı adı veya şifre.";
-            }
-        });
     </script>
 </body>
 </html>
