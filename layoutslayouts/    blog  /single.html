@@ -1,0 +1,70 @@
+{{ partial "header.html" . }}
+
+<main id="content" role="main" class="blog"  style="max-width: 720px; margin: auto">
+    <div class="container space-1">
+        <div class="row">
+            <div class="col">
+                <a href="/blog/" class="font-weight-bold" style="text-transform: uppercase;">← All posts</a>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col">
+                <h1>{{ .Title}}</h1>
+                <p class="text-secondary" style="font-size: .9rem">
+                    {{ .Date.Format "January 2, 2006" }} ·
+                    written by <img src='{{$.Param "AuthorAvatar"}}' style="width: 30px; border-radius: 50%;" alt="Author Image">
+                    <a href='{{$.Param "AuthorLink"}}'>
+                        {{$.Param "Author"}}
+                    </a>
+                </p>
+            </div>
+        </div>
+
+        {{ if .Param "OriginalUrl" }}
+        <small class="font-weight-light">
+            Originally posted on
+            <a href='{{.Param "OriginalUrl"}}'>
+                {{.Param "OriginalWebsite"}}
+            </a>
+        </small>
+        {{end}}
+
+        <div class="mb-3"></div>
+
+        {{ .Content }}
+
+        <div class="float-right">
+            <a href='{{ print "https://github.com/simple-login/website/edit/master/content/" .File.Path }}'
+                style="font-size: small"
+                target="_blank" rel="noopener">
+                Edit on GitHub
+            </a>
+        </div>
+
+    </div>
+</main>
+
+{{ if not .Params.meta }}
+
+<div class="border-top my-3"></div>
+
+<div class="container space-2" style="max-width: 720px; margin: auto">
+    <div class="row">
+        <div class="col text-left">
+            {{ with .PrevInSection }}
+            <h3> Previous post </h3>
+            <a href="{{.Permalink}}" class=""><i class="fa fa-chevron-circle-left"></i> {{ .Title }}</a>
+            {{ end }}
+        </div>
+        <div class="col text-right">
+            {{ with .NextInSection }}
+            <h3> Next post </h3>
+            <a href="{{.Permalink}}" class="">{{ .Title }} <i class="fa fa-chevron-circle-right"></i> </a>
+            {{ end }}
+        </div>
+    </div>
+</div>
+{{ end }}
+
+{{ partial "footer.html" . }}
