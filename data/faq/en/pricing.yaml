@@ -1,0 +1,69 @@
+- question: What happens to my aliases when I stop the subscription?
+  answer: >
+    When your subscription ends, all aliases you created continue working normally, both on receiving and
+        sending emails. Concretely: <br>
+    - All aliases/domains/directories/mailboxes you have created are kept and continue working normally. <br>
+    - You cannot create new aliases if you exceed the free plan limit, i.e. have more than 10 aliases. <br>
+    - As features like catch-all or directory allow you to create aliases on-the-fly, those aliases cannot be
+    automatically created if you have more than 10 aliases. <br>
+    - You cannot add new domain, directory or mailbox. <br><br>
+
+    For example, if you have 100 aliases by the time your subscription ends, these
+    100 aliases will continue receiving and sending emails normally. You cannot however create new aliases.
+
+- question: What happens when I reach the maximum number of alias in free plan?
+  answer: >
+    If you are in the free plan, you cannot create new aliases when you reach the maximum number of aliases
+        (i.e. 10 aliases). <br>
+    Aliases that would otherwise be created automatically via the catch-all domain or directory feature also
+    cannot be created. <br>
+
+- question: Do you offer discounts?
+  answer: >
+    We offer important discounts or free premium for: <br>
+
+    - students, professors or technical staffs working at an educational institute <br>
+    - activists, dissidents or journalists <br>
+    - charity organizations <br>
+
+    Please send us an email at <a href="mailto:support@simplelogin.zendesk.com">support@simplelogin.zendesk.com</a> for more info. <br><br>
+
+    We used to offer free premium accounts for students but this program ended at June 17 2021. Please note this doesn't affect existing accounts who have already benefited from the program or requests sent before this date.
+
+
+- question: Which payment methods do you support?
+  answer: >
+    We use <a href="https://paddle.com">Paddle</a> for handling payments via credit cards and PayPal. Paddle currently supports the following payment methods: <br>
+
+    <ul>
+      <li>Mastercard</li>
+      <li>Visa</li>
+      <li>PayPal</li>
+      <li>Apple Pay</li>
+      <li>Wire Transfers (ACH/SEPA/BACS)</li>
+      <li>Maestro</li>
+      <li>American Express</li>
+      <li>Discover</li>
+      <li>Diners Club</li>
+      <li>JCB</li>
+    </ul>
+
+
+    More information can be found on <a
+      href="https://paddle.com/support/which-payment-methods-do-you-support/">Paddle supported payment
+      methods</a>. <br>
+
+    For cryptocurrency, we use <a href="https://commerce.coinbase.com">Coinbase Commerce</a> that currently supports Bitcoin, Bitcoin Cash, Dai, Ethereum, Litecoin and USD Coin. In the future, we are going to support Monero as well. In the meantime, please send us an email at <a href="mailto:support@simplelogin.zendesk.com">support@simplelogin.zendesk.com</a> if you want to use this cryptocurrency.
+
+
+
+
+- question: Do you have a refund policy?
+  answer: No we don't have a refund policy because SimpleLogin has a trial period where you can try all premium features.
+
+
+- question: Do you have a family plan?
+  answer: No we don't have a family plan but offer 30% reduction for additional subscriptions. Please contact us at <a href="mailto:support@simplelogin.zendesk.com">support@simplelogin.zendesk.com</a> for more information.
+
+- question: Are there other ways to buy SimpleLogin subscriptions?
+  answer: Yes you can also buy SimpleLogin subscription coupon via <a href="https://proxysto.re/en/index.html">ProxyStore</a>, our official reseller.
