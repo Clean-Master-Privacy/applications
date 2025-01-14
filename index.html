@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Internet Security and Freedom | Better Internet Initiative</title>
-    <meta name="description" content="Essential resources for internet security and freedom. We protect human rights!">
-    <link rel="icon" href="favicon.ico">
+    <title>BETTER INTERNET</title>
+    <meta name="description" content="Çevrimiçi güvenlik ve özgürlük için birlikte olalım!">
+    <link rel="icon" href="icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Temel Stiller */
@@ -14,81 +14,75 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f7fa;
+            font-family: 'Arial', sans-serif;
+            background-color: #e9ecef;
             color: #333;
+            line-height: 1.6;
         }
-
         nav {
-            background: #333;
-            color: #fff;
-            padding: 20px;
+            background: #343a40;
+            color: white;
+            padding: 15px;
             position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-
         .logo {
-            display: inline-block;
-            margin-right: 20px;
+            font-size: 24px;
+            font-weight: bold;
             color: #fff;
         }
-
         .menu {
             list-style: none;
             padding: 0;
-            margin: 0;
-            display: inline-block;
+            display: flex;
         }
-
         .menu li {
-            display: inline;
             margin: 0 15px;
         }
-
         .menu a {
             text-decoration: none;
             color: #fff;
+            transition: color 0.3s;
         }
-
         .menu a:hover {
-            color: #ccc;
+            color: #ffc107;
         }
-
         .search-bar {
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
         }
-
         .search-bar input[type="text"] {
-            width: 200px;
             padding: 10px;
             font-size: 15px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
         }
-
         .search-bar button {
-            background-color: #444;
+            background-color: #007bff;
             color: #fff;
             border: none;
             padding: 10px;
+            border-radius: 5px;
+            margin-left: 5px;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
-
         .search-bar button:hover {
-            background-color: #555;
+            background-color: #0056b3;
         }
-
-        .content {
+        main {
+            max-width: 1200px;
+            margin: 20px auto;
             padding: 20px;
-            width: 80%;
-            margin: 0 auto;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
-
         footer {
-            background-color: #333;
+            background-color: #343a40;
             color: #fff;
             text-align: center;
             padding: 15px 0;
@@ -97,10 +91,39 @@
             width: 100%;
             clear: both;
         }
-
+        /* İçerik Stilleri */
+        .hero {
+            background: url('background.png') center/cover no-repeat;
+            color: #fff;
+            padding: 50px 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .services {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .service {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            flex: 1;
+            margin: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .service h3 {
+            margin: 15px 0;
+        }
+        .service i {
+            font-size: 40px;
+            color: #007bff;
+        }
         /* Form Stilleri */
         .form {
-            width: 300px;
+            width: 100%;
             margin: 40px auto;
             padding: 20px;
             background-color: #f0f0f0;
@@ -108,188 +131,151 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
         label {
             display: block;
             margin-bottom: 10px;
+            font-weight: bold;
         }
-
         input, textarea {
             width: 100%;
-            height: 30px;
             padding: 10px;
             margin-bottom: 20px;
-            border: 1px solid #ccc;
+            border: 1px solid #ced4da;
             border-radius: 5px;
+            font-size: 14px;
         }
-
         button[type="submit"] {
-            background-color: #4CAF50;
+            background-color: #28a745;
             color: #fff;
-            padding: 10px 20px;
+            padding: 10px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
         }
-
         button[type="submit"]:hover {
-            background-color: #3e8e41;
+            background-color: #218838;
         }
     </style>
 </head>
 <body>
     <nav>
-        <div class="logo">
-            <h2>Better Internet</h2>
-        </div>
-        <input type="checkbox" id="menuToggle">
+        <div class="logo">BETTER INTERNET</div>
         <ul class="menu">
-            <li><a href="#" onclick="showPage('home')">Home</a></li>
-            <li><a href="#" onclick="showPage('about')">About</a></li>
-            <li><a href="#" onclick="showPage('services')">Services</a></li>
-            <li><a href="#" onclick="showPage('contact')">Contact</a></li>
-            <li><a href="#" onclick="showPage('faq')">FAQ</a></li>
-            <li><a href="#" onclick="showPage('testimonials')">Testimonials</a></li>
-            <li><a href="#" onclick="showPage('login')">Login</a></li>
+            <li><a href="#" onclick="showPage('home')">Ana Sayfa</a></li>
+            <li><a href="#" onclick="showPage('about')">Hakkında</a></li>
+            <li><a href="#" onclick="showPage('services')">Hizmetler</a></li>
+            <li><a href="#" onclick="showPage('contact')">İletişim</a></li>
+            <li><a href="#" onclick="showPage('faq')">SSS</a></li>
+            <li><a href="#" onclick="showPage('testimonials')">Görüşler</a></li>
+            <li><a href="#" onclick="showPage('login')">Giriş</a></li>
         </ul>
         <div class="search-bar">
-            <input type="text" id="search-input" placeholder="Search for resources...">
+            <input type="text" id="search-input" placeholder="Kaynaklar için ara...">
             <button id="search-btn">
                 <i class="fas fa-search"></i>
             </button>
         </div>
     </nav>
-    <main>
+    <main id="main">
         <section id="home" class="content fade-in">
             <div class="hero">
-                <h2>Join Hands for Internet Security and Freedom!</h2>
-                <p>We are protecting human rights and online freedom for all. Join us today!</p>
+                <h2>Güvenlik ve Özgürlük için Birlikte Olalım!</h2>
+                <p>Burada insan haklarını korumak ve çevrimiçi özgürlük için birleşiyoruz. Giriş yap, daha fazla bilgi edinin ve birlikte çalışalım!</p>
             </div>
-
             <section class="services">
-                <h2>Our Services</h2>
                 <div class="service">
                     <i class="fas fa-lock"></i>
-                    <h3>Security</h3>
-                    <p>We provide the latest security solutions for your online safety.</p>
+                    <h3>Güvenlik</h3>
+                    <p>Çevrimiçi güvenliğiniz için en son çözümleri sunuyoruz.</p>
                 </div>
                 <div class="service">
                     <i class="fas fa-user-shield"></i>
-                    <h3>Freedom</h3>
-                    <p>We are fighting for human rights and online freedom. Join us!</p>
+                    <h3>Özgürlük</h3>
+                    <p>İnsan hakları ve çevrimiçi özgürlük için savaşıyoruz. Bize katılın!</p>
                 </div>
                 <div class="service">
                     <i class="fas fa-globe"></i>
-                    <h3>Global Impact</h3>
-                    <p>We are creating a global impact through our services and solutions.</p>
+                    <h3>Küresel Etki</h3>
+                    <p>Hizmetlerimizle küresel bir etki yaratıyoruz.</p>
                 </div>
             </section>
         </section>
 
-        <section id="about" class="content">
-            <h2>About Us</h2>
-            <p>We are a non-profit organization dedicated to improving internet security and protecting human rights online. Our mission is to provide essential resources and solutions for users across the globe.</p>
+        <section id="about" class="content" style="display:none;">
+            <h2>Hakkımızda</h2>
+            <p>Bu bir kâr amacı gütmeyen kuruluştur. Misyonumuz, insan haklarını koruma ve çevrimiçi özgürlüğü sağlamaktır.</p>
         </section>
 
-        <section id="services" class="content">
-            <h2>Our Services</h2>
-            <p>We offer a variety of services aimed at ensuring your online safety and freedom:</p>
+        <section id="services" class="content" style="display:none;">
+            <h2>Hizmetlerimiz</h2>
+            <p>Çevrimiçi güvenlik ve özgürlük için sunduğumuz hizmetler:</p>
             <ul>
-                <li>Online Security Solutions</li>
-                <li>Privacy Advocacy</li>
-                <li>Education and Resources</li>
-                <li>Community Engagement</li>
+                <li>Çevrimiçi Güvenlik Çözümleri</li>
+                <li>Gizlilik Savunuculuğu</li>
+                <li>eğitim ve Kaynaklar</li>
+                <li>Topluluk Katılımı</li>
             </ul>
         </section>
 
-        <section id="contact" class="content">
-            <h2>Contact Us</h2>
+        <section id="contact" class="content" style="display:none;">
+            <h2>İletişim</h2>
             <div class="form">
                 <form id="contact-form">
-                    <label for="name">Your Name:</label>
+                    <label for="name">Adınız:</label>
                     <input type="text" id="name" required>
-                    
-                    <label for="email">Your Email:</label>
+
+                    <label for="email">E-posta Adresiniz:</label>
                     <input type="email" id="email" required>
-                    
-                    <label for="message">Your Message:</label>
+
+                    <label for="message">Mesajınız:</label>
                     <textarea id="message" rows="4" required></textarea>
-                    
-                    <button type="submit">Send Message</button>
+
+                    <button type="submit">Mesajı Gönder</button>
                 </form>
+                <div id="contact-response"></div>
             </div>
-            <div id="contact-response" style="margin-top: 20px;"></div>
         </section>
 
-        <section id="faq" class="content">
-            <h2>Frequently Asked Questions</h2>
+        <section id="faq" class="content" style="display:none;">
+            <h2>Sıkça Sorulan Sorular</h2>
             <ul>
-                <li><strong>Q: What is your mission?</strong> A: Our mission is to protect human rights and online freedom for all.</li>
-                <li><strong>Q: How can I get involved?</strong> A: You can join us through our website and participate in our campaigns.</li>
-                <li><strong>Q: What kind of services do you offer?</strong> A: We offer online security solutions, privacy advocacy, and education resources.</li>
+                <li><strong>S1: Misyonuz nedir?</strong> C: Misyonumuz, insan haklarını koruma ve çevrimiçi özgürlüğü sağlamaktır.</li>
+                <li><strong>S2: Nasıl katılabilirim?</strong> C: Web sitemiz üzerinden bize katılabilir ve kampanyalarımıza katılabilirsiniz.</li>
+                <li><strong>S3: Hangi tür hizmetler sunuyorsunuz?</strong> C: Çevrimiçi güvenlik çözümleri, gizlilik savunuculuğu ve eğitim kaynakları sunuyoruz.</li>
             </ul>
         </section>
 
-        <section id="testimonials" class="content">
-            <h2>Testimonials</h2>
+        <section id="testimonials" class="content" style="display:none;">
+            <h2>Görüşler</h2>
             <div>
-                <p><strong>Jane Doe:</strong> "This organization made a significant impact on my understanding of online security. Highly recommend!"</p>
-                <p><strong>John Smith:</strong> "Their resources helped me protect my privacy online. Thank you!"</p>
+                <p><strong>Jane Doe:</strong> "Bu kuruluş, çevrimiçi güvenlik konusunda önemli katkıda bulundu. Şiddetle tavsiye ederim!"</p>
+                <p><strong>John Smith:</strong> "Kaynakları çevrimiçi gizliliğime yardımcı oldular. Teşekkürler!"</p>
             </div>
         </section>
 
-        <section id="login" class="content">
-            <h2>Login</h2>
+        <section id="login" class="content" style="display:none;">
+            <h2>Giriş Yap</h2>
             <div class="form">
                 <form id="login-form">
-                    <label for="username">Username:</label>
+                    <label for="username">Kullanıcı Adı:</label>
                     <input type="text" id="username" required>
-                    
-                    <label for="password">Password:</label>
+
+                    <label for="password">Şifre:</label>
                     <input type="password" id="password" required>
-                    
-                    <button type="submit">Login</button>
+
+                    <button type="submit">Giriş Yap</button>
                 </form>
-                <p id="login-message" style="color: red;"></p>
+                <p id="login-message"></p>
             </div>
         </section>
     </main>
     <footer>
-        &copy; 2023 Better Internet Initiative. All rights reserved.
+        &copy; 2023 BETTER INTERNET. Tüm hakları saklıdır.
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.6/dist/handlebars.min.js"></script>
     <script>
-        // Form gönderimi için
-        document.getElementById('contact-form').addEventListener('submit', function (event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-
-            document.getElementById('contact-response').innerHTML = `
-                <h3>Thank You!</h3>
-                <p>We have received your message:</p>
-                <p>Name: ${name}</p>
-                <p>Email: ${email}</p>
-                <p>Message: ${message}</p>`;
-            
-            this.reset(); // Formu sıfırlama
-        });
-
-        // Login formu gönderim işlemi
-        document.getElementById('login-form').addEventListener('submit', function (event) {
-            event.preventDefault();
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-
-            // Örnek bir kullanıcı adı ve şifre ile kontrol
-            if (username === "user" && password === "password") {
-                document.getElementById('login-message').textContent = "Login successful!";
-            } else {
-                document.getElementById('login-message').textContent = "Invalid username or password.";
-            }
-        });
-
         // Sayfa gösterimi için
         function showPage(pageId) {
             const sections = document.querySelectorAll('.content');
@@ -304,18 +290,45 @@
             showPage('home');
         };
 
-        // Arama işlevi basit örnek
+        // Arama işlevi
         document.getElementById("search-btn").addEventListener("click", function () {
             const input = document.getElementById("search-input").value.toLowerCase();
             const sections = document.querySelectorAll('.content');
             sections.forEach(section => {
-                const sectionTitle = section.querySelector('h2').textContent.toLowerCase();
+                const sectionTitle = section.querySelector('h2') ? section.querySelector('h2').textContent.toLowerCase() : '';
                 if (sectionTitle.includes(input) || input === "") {
                     section.style.display = 'block';
                 } else {
                     section.style.display = 'none';
                 }
             });
+        });
+
+        // Form gönderimi için
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            const responseHTML = `<p>Teşekkürler ${name}, mesajınız alındı!</p>`;
+            document.getElementById('contact-response').innerHTML = responseHTML;
+
+            this.reset(); // Formu sıfırla
+        });
+
+        // Login formu gönderim işlemi
+        document.getElementById('login-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Örnek bir kullanıcı adı ve şifre ile kontrol
+            if (username === "user" && password === "password") {
+                document.getElementById('login-message').textContent = "Giriş başarılı!";
+            } else {
+                document.getElementById('login-message').textContent = "Geçersiz kullanıcı adı veya şifre.";
+            }
         });
     </script>
 </body>
