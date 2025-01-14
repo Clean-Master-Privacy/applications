@@ -1,0 +1,925 @@
+{{ partial "header.html" . }}
+
+<!-- ========== MAIN CONTENT ========== -->
+
+<!-- Link verification Mastodon -->
+
+<a rel="me" href="https://fosstodon.org/@simplelogin"></a>
+
+<!-- END Link verification Mastodon -->
+
+<main id="content" role="main">
+  <div class="bg-white">
+    <!-- Hero Section -->
+    <div class="container mb-3">
+      <div class="row justify-content-lg-between mb-1">
+
+        <!-- Hero text & CTA-->
+        <div class="col-lg-6 mb-1 mb-lg-0 space-top-3">
+
+          <div class="mb-5">
+
+
+            <h1 class="h4 font-weight-semi-bold mb-2" style="color: #ea319f">
+              {{ i18n "hero" }}
+            </h1>
+
+            <div>
+              {{ i18n "seo_script_product" | safeHTML }}
+            </div>
+
+            <p class="mb-2">
+              {{ i18n "hero_desc" | safeHTML }}
+            </p>
+
+          </div>
+
+          <div class="mb-3">
+            <a href="https://app.simplelogin.io/auth/register" class="btn btn-primary btn-wide transition-3d-hover mb-2 mb-sm-0 mr-3">
+              <span style="font-weight: 400;">
+                {{ i18n "hero_cta" }}
+              </span>
+            </a>
+          </div>
+
+          <div class="mt-2 d-flex" style="height: 18px">
+            <img src="/images/5-stars.svg" style="max-width: 100px;" alt="Five stars">
+            <span class="text-secondary ml-2 align-center" style="font-size: 12px; font-weight: 400">
+              {{ i18n "hero_button_underline" | safeHTML }}
+            </span>
+          </div>
+
+        </div>
+        <!-- End Hero text & CTA -->
+
+        <div class="col-lg-6 mt-3">
+          <!-- SVG Illustration -->
+          <img src="/images/hero.svg" class="w-100" alt="Hero Image - Different email address for each website">
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- End Hero Section -->
+
+  <!-- As Seen On Section -->
+  <div class="container space-1">
+    <div class="w-lg-80 mx-lg-auto">
+      <div class="text-center mb-4">
+        <h2 class="u-divider u-divider--text" style="font-weight: 500">{{ i18n "seen_on" }}</h2>
+      </div>
+
+      <div class="row justify-content-between text-center">
+        <div class="col-4 col-lg-1 mb-5 mb-lg-0">
+          <div class="mx-4">
+            <a target="_blank" href="https://www.nytimes.com/wirecutter/blog/how-to-disposable-email-phone-numbers-credit-cards/">
+              <img class="u-clients seen-on" src="/images/nytimes.svg" alt="The New York Times" style="max-width: 3rem;">
+            </a>
+          </div>
+        </div>
+
+        <div class="col-4 col-lg-1 mb-5 mb-lg-0">
+          <div class="mx-4">
+            <a target="_blank" href="https://www.pcmag.com/reviews/simplelogin">
+              <img class="u-clients seen-on" src="/images/pcmag.png" alt="PcMag">
+            </a>
+          </div>
+        </div>
+
+        <div class="col-4 col-lg-1 mb-5 mb-lg-0">
+          <div class="mx-4" style="width: 100%;">
+            <a target="_blank" href="https://www.youtube.com/watch?v=JMWfsOVrDkw">
+              <img class="u-clients seen-on" src="/testimonial/techlore.svg" alt="TechLore">
+            </a>
+          </div>
+        </div>
+
+        <!-- <div class="col-4 col-lg-2 mb-5 mb-lg-0">
+          <div class="mx-4">
+            <a target="_blank" href="https://www.makeuseof.com/how-to-hide-real-email-address/">
+              <img class="u-clients seen-on pt-3" src="/images/makeuseof.svg" alt="MakeUseOf">
+            </a>
+          </div>
+        </div> -->
+
+        <div class="col-4 col-lg-1 mb-5 mb-lg-0">
+          <div class="mx-4">
+            <a target="_blank" href="https://www.theverge.com/22792380/email-address-hide-advertising-spam-apple-firefox-how-to">
+              <img class="u-clients seen-on" src="/testimonial/theverge.svg" alt="MakeUseOf">
+            </a>
+          </div>
+        </div>
+
+
+        <div class="col-4 col-lg-1 mb-5 mb-lg-0">
+          <div class="mx-4">
+            <a target="_blank" href="https://inteltechniques.com/blog/2020/06/05/the-privacy-security-osint-show-episode-173/">
+              <img class="u-clients seen-on" src="/testimonial/inteltechniques100.png" alt="IntelTechniques">
+            </a>
+          </div>
+        </div>
+
+        <div class="col-4 col-lg-1 mb-5 mb-lg-0">
+          <div class="mx-4">
+            <a target="_blank" href="https://youtu.be/5HHdk_GP-Ew">
+              <img class="u-clients seen-on" style="border-radius: 100%;" src="/testimonial/nbtv.jpeg" alt="Naomi Brockwell, Tech Journalist, NBTV">
+            </a>
+          </div>
+        </div>
+
+        <div class="col-4 col-lg-1 mb-5 mb-lg-0">
+          <div class="mx-4">
+            <a target="_blank" href="https://youtu.be/J7uGUD9kprs">
+              <img class="u-clients seen-on" style="border-radius: 100%;" src="/testimonial/all-things-secured.jpeg" alt="All Things Secured, Josh">
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- End As Seen On Section -->
+
+  <!-- SVG Top Shape -->
+  <figure>
+    <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="64px"
+         viewBox="0 0 1921 273" style="margin-bottom: -8px; enable-background:new 0 0 1921 273;" xml:space="preserve">
+      <polygon class="fill-gray-100" points="0,273 1921,273 1921,0 "/>
+    </svg>
+  </figure>
+  <!-- End SVG Top Shape -->
+
+  <!-- How it works Section -->
+  <div class="bg-light" style="min-height: 50vh;">
+    <div class="container space-md-1 pt-4 pb-7">
+      <!-- Title -->
+      <div class="w-md-80 w-lg-70 text-center mx-md-auto mb-2 py-5">
+
+        <div>
+          {{ i18n "seo_script_howto" | safeHTML }}
+        </div>
+
+        <h2 class="h4 font-weight-semi-bold text text-primary">
+          {{ i18n "how_it_work_title" }}
+        </h2>
+        <p>
+          {{ i18n "how_it_work_desc" }}
+        </p>
+
+      </div>
+      <!-- End Title -->
+
+      <div class="row mb-7">
+        <div class="col-md-4">
+          <div class="card-frame p-4 h-100" style="border-radius: 10px;">
+            <div class="text-muted h3">1.</div>
+            <div class="h6 text-primary">
+              {{ i18n "how_it_work_1_title" }}
+            </div>
+
+            <img src="/images/one-click-alias.gif" class="w-100 mt-3 mb-4" alt="A different email alias for each website">
+
+
+            <p class="">
+              {{ i18n "how_it_work_1_subtitle" | safeHTML }}
+            </p>
+          </div>
+        </div>
+
+
+        <div class="col-md-4">
+          <div class="card-frame p-4 h-100" style="border-radius: 10px;">
+            <div class="text-muted h3">2.</div>
+            <div class="h6 text-primary">
+              {{ i18n "how_it_work_2_title" | safeHTML }}
+            </div>
+            <img src="/images/how-it-work-2.svg" class="w-100  mt-3 mb-4" alt="Receive emails safely in your mailbox">
+            <p class="">
+              {{ i18n "how_it_work_2_subtitle" | safeHTML }}
+            </p>
+          </div>
+
+        </div>
+
+        <div class="col-md-4">
+          <div class="card-frame p-4 h-100" style="border-radius: 10px;">
+            <div class="text-muted h3">3.</div>
+            <div class="h6 text-primary">
+              {{ i18n "how_it_work_3_title" | safeHTML }}
+            </div>
+            <img src="/images/how-it-work-3.svg" class="w-100  mt-3 mb-4" alt="Send emails anonymously">
+            <p class="">
+              {{ i18n "how_it_work_3_subtitle" | safeHTML }}
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- End How it works Section -->
+
+  <!-- SVG Bottom Shape -->
+  <figure>
+    <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="64px"
+         viewBox="0 0 1921 273" style="margin-bottom: -8px; enable-background:new 0 0 1921 273;" xml:space="preserve">
+      <polygon class="fill-gray-100" points="1921,0 0,0 0,273 "/>
+    </svg>
+  </figure>
+  <!-- End SVG Bottom Shape -->
+
+  <!-- Available everywhere -->
+  <div class="bg-white pb-7">
+    <div class="container">
+      <!-- Title -->
+      <div class="w-md-80 w-lg-70 text-center mx-md-auto py-5">
+        <h3 class="h4 font-weight-semi-bold text-primary">
+          {{ i18n "everywhere_title" | safeHTML }}
+        </h3>
+        <p>
+          {{ i18n "everywhere_subtitle" | safeHTML }}
+        </p>
+      </div>
+      <!-- End Title -->
+
+      <img src="/images/everywhere.png" class="w-100 mb-7" alt="Available everywhere">
+
+      <!-- Stores -->
+      <div class="row justify-content-between text-center mb-7">
+        <div class="col-4 col-lg-2 mb-5 mb-lg-0">
+          <div class="mx-4">
+            <a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/dphilobhebphkdjbpfohgikllaljmgbn">
+              <img class="u-clients" style="max-height: 40px" src="/app-logos/chrome.svg" alt="Chrome Extension">
+            </a>
+          </div>
+        </div>
+        <div class="col-4 col-lg-2 mb-5 mb-lg-0">
+          <div class="mx-4">
+            <a target="_blank" rel="noopener" href="https://addons.mozilla.org/firefox/addon/simplelogin/">
+              <img class="u-clients" style="max-height: 40px" src="/app-logos/firefox.svg" alt="Firefox Add-on">
+            </a>
+          </div>
+        </div>
+        <div class="col-4 col-lg-2 mb-5 mb-lg-0">
+          <div class="mx-4">
+            <a target="_blank" rel="noopener" href="https://apps.apple.com/app/id6475835429">
+              <img class="u-clients" style="max-height: 40px" src="/app-logos/safari.svg" alt="Safari Extension">
+            </a>
+          </div>
+        </div>
+
+        <div class="col-4 col-lg-2">
+          <div class="mx-4">
+            <a target="_blank" rel="noopener" href="https://apps.apple.com/app/id1494359858">
+              <img class="u-clients" style="max-height: 40px" src="/app-logos/appstore.svg" alt="AppStore">
+            </a>
+          </div>
+        </div>
+        <div class="col-4 col-lg-2">
+          <div class="mx-4">
+            <a target="_blank" rel="noopener" href="https://play.google.com/store/apps/details?id=io.simplelogin.android">
+              <img class="u-clients" style="max-height: 40px" src="/app-logos/playstore.svg" alt="PlayStore">
+            </a>
+          </div>
+        </div>
+        <div class="col-4 col-lg-2">
+          <div class="mx-4">
+            <a target="_blank" rel="noopener" href="https://f-droid.org/en/packages/io.simplelogin.android.fdroid/">
+              <img class="u-clients" style="max-height: 40px" src="/app-logos/f-droid.svg" alt="F-Droid">
+            </a>
+          </div>
+        </div>
+
+      </div>
+      <!-- End Stores -->
+    </div>
+  </div>
+  <!-- END Available everywhere -->
+
+   <!-- SVG Top Shape -->
+   <figure>
+    <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="64px"
+         viewBox="0 0 1921 273" style="margin-bottom: -8px; enable-background:new 0 0 1921 273;" xml:space="preserve">
+      <polygon class="fill-gray-100" points="0,273 1921,273 1921,0 "/>
+    </svg>
+  </figure>
+  <!-- End SVG Top Shape -->
+
+  <!-- Alias is the new email address Section -->
+  <!--
+  <div class="bg-light pt-2 pb-5 space-1">
+    <div class="container">
+      <div class="py-5">
+        <h2 class="h4 text-primary text-center" style="margin: auto;">
+          {{ i18n "alias_new_email_title" | safeHTML }}
+        </h2>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="p-3 h-100">
+            <h3 class="h6 font-weight-semi-bold mb-5">
+              {{ i18n "alias_new_email_a_title" | safeHTML }}
+            </h3>
+            <figure id="featuresSVG1" class="svg-preloader w-100 mx-auto mb-4">
+              <img class="js-svg-injector w-100" src="/images/custom-alias.png" alt="Custom Alias image"
+                data-parent="#featuresSVG1">
+            </figure>
+
+            <p>
+              {{ i18n "alias_new_email_a_text_1" | safeHTML }}
+            </p>
+            <p>
+              {{ i18n "alias_new_email_a_text_2" | safeHTML }}
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="p-3 h-100">
+            <h3 class="h6 font-weight-semi-bold mb-5">
+              {{ i18n "alias_new_email_b_title" | safeHTML }}
+            </h3>
+
+            <figure id="featuresSVG3" class="svg-preloader w-100 mx-auto mb-4">
+              <img class="js-svg-injector w-100" src="/images/reply-alias.png" alt="Reply Alias image"
+                data-parent="#featuresSVG3">
+            </figure>
+
+            <p>
+              {{ i18n "alias_new_email_b_text_1" | safeHTML }}
+            </p>
+
+            <p>
+              {{ i18n "alias_new_email_b_text_2" | safeHTML }}
+            </p>
+
+
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="p-3 h-100">
+            <h3 class="h6 font-weight-semi-bold mb-5">
+              {{ i18n "alias_new_email_c_title" | safeHTML }}
+            </h3>
+
+            <figure id="featuresSVG2" class="svg-preloader w-100 mx-auto mb-4">
+              <img class="js-svg-injector w-100" src="/images/business-email.png" alt="Business email image"
+                data-parent="#featuresSVG2">
+            </figure>
+
+            <p>
+              {{ i18n "alias_new_email_c_text_1" | safeHTML }}
+            </p>
+            <p>
+              {{ i18n "alias_new_email_c_text_2" | safeHTML }}
+            </p>
+            <p>
+              {{ i18n "alias_new_email_c_text_3" | safeHTML }}
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  -->
+  <!-- End Alias is the new email address Section -->
+
+  <!-- SVG Bottom Shape -->
+  <!--
+  <figure>
+    <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="64px"
+         viewBox="0 0 1921 273" style="margin-bottom: -8px; enable-background:new 0 0 1921 273;" xml:space="preserve">
+      <polygon class="fill-gray-100" points="1921,0 0,0 0,273 "/>
+    </svg>
+  </figure>
+  -->
+  <!-- End SVG Bottom Shape -->
+
+
+
+  <!-- Testimonials Section -->
+  <div class="bg-light">
+    <div class="container space-md-1">
+      <!-- Title -->
+      <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-2">
+        <h4 class="h4 font-weight-normal text-primary">
+          {{ i18n "testimonial_title" | safeHTML }}
+        </h4>
+      </div>
+      <!-- End Title -->
+
+      <!-- Slick Carousel -->
+      <div class="js-slick-carousel u-slick u-slick-zoom u-slick--gutters-3" data-slides-show="3"
+        data-slides-to-scroll="3" data-center-mode="false" data-autoplay="false" data-speed="5000"
+        data-pagi-classes="text-center u-slick__pagination pb-4" data-responsive='[{
+             "breakpoint": 992,
+             "settings": {
+               "slidesToShow": 2
+             }
+           }, {
+             "breakpoint": 768,
+             "settings": {
+               "slidesToShow": 1
+             }
+           }]'>
+
+        <div class="js-slide my-4">
+          <!-- Testimonials TechLore -->
+          <div class="u-slick-zoom__slide text-center">
+            <div class="card border-0 shadow-sm">
+              <div class="card-body p-7 text-left">
+                <p class="mb-4">
+                  Once I used it, it was a game changer.
+                </p>
+                <p>
+                  SimpleLogin is in my book criminally underrated.
+                </p>
+              </div>
+            </div>
+            <div class="position-relative z-index-2 mt-n5 mb-3">
+              <div class="u-avatar mx-auto">
+                <a href="https://www.youtube.com/watch?v=JMWfsOVrDkw">
+                  <img class="img-fluid rounded-circle" src="/testimonial/techlore.svg" alt="TechLore">
+                </a>
+              </div>
+            </div>
+            <p class="h6 mb-0">Techlore</p>
+            <p class="small">Privacy for the masses</p>
+          </div>
+          <!-- End Testimonials -->
+        </div>
+
+        <div class="js-slide my-4">
+          <!-- Testimonials IntelTechniques -->
+          <div class="u-slick-zoom__slide text-center">
+            <div class="card border-0 shadow-sm">
+              <div class="card-body p-7 text-left">
+                <p class="mb-4">
+                  SimpleLogin seems to me ahead of the game.
+                </p>
+                <p>
+                  It's all open-source and I mean everything, the apps, the service, the website.
+                </p>
+              </div>
+            </div>
+            <div class="position-relative z-index-2 mt-n5 mb-3">
+              <div class="u-avatar mx-auto">
+                <a href="https://inteltechniques.com/blog/2020/06/05/the-privacy-security-osint-show-episode-173/">
+                  <img class="img-fluid rounded-circle" src="/testimonial/inteltechniques100.png" alt="IntelTechniques">
+                </a>
+              </div>
+            </div>
+            <p class="h6 mb-0">Michael Bazzell</p>
+            <p class="small">IntelTechniques</p>
+          </div>
+          <!-- End Testimonials -->
+        </div>
+
+        <div class="js-slide my-4">
+          <!-- Testimonials Reddit -->
+          <div class="u-slick-zoom__slide text-center">
+            <div class="card border-0 shadow-sm">
+              <div class="card-body p-7 text-left">
+                <p class="mb-4">
+                  I like to use SimpleLogin for trowaway accounts like restaurant reservations or newsletters.
+                </p>
+                <p>
+                  I opt for SimpleLogin because it allows me easily to shut off an address. SimpleLogin is a very effective SPAM control measure.
+                </p>
+              </div>
+            </div>
+            <div class="position-relative z-index-2 mt-n5 mb-3">
+              <div class="u-avatar mx-auto">
+                <a href="https://youtu.be/5HHdk_GP-Ew" target="_blank">
+                  <img class="img-fluid rounded-circle" src="/testimonial/nbtv.jpeg" alt="Naomi Brockwell, Tech Journalist">
+                </a>
+              </div>
+            </div>
+            <p class="h6 mb-0">Naomi Brockwell</p>
+            <p class="small">Tech Journalist</p>
+          </div>
+          <!-- End Testimonials -->
+        </div>
+
+        <div class="js-slide my-4">
+          <!-- Testimonials -->
+          <div class="u-slick-zoom__slide text-center">
+            <div class="card border-0 shadow-sm">
+              <div class="card-body p-7 text-left">
+                <p class="mb-0">
+                  I personaly use SimpleLogin as my email aliasing tool.
+                </p>
+                <p class="mb-0">
+                  SimpleLogin login is an important part of my strategy.
+                </p>
+              </div>
+            </div>
+            <div class="position-relative z-index-2 mt-n5 mb-3">
+              <div class="u-avatar mx-auto">
+                <a href="https://youtu.be/J7uGUD9kprs" target="_blank">
+                  <img class="img-fluid rounded-circle" src="/testimonial/all-things-secured.jpeg" alt="Josh, All Things Secured">
+                </a>
+              </div>
+            </div>
+            <p class="h6 mb-0">Josh</p>
+            <p class="small">All Things Secured</p>
+          </div>
+          <!-- End Testimonials -->
+        </div>
+
+
+        <div class="js-slide my-4">
+          <!-- Testimonials -->
+          <div class="u-slick-zoom__slide text-center">
+            <div class="card border-0 shadow-sm">
+              <div class="card-body p-7 text-left">
+                <p class="mb-4">I usually have to enter my email while subscribing to new services online, albeit
+                  without much confidence.</p>
+                <p>SimpleLogin gives me a <b>trustworthy alternative</b> and helps me controlling my privacy on the
+                  Internet.
+                </p>
+              </div>
+            </div>
+            <div class="position-relative z-index-2 mt-n5 mb-3">
+              <div class="u-avatar mx-auto">
+                <a href="https://www.linkedin.com/in/nncuong/" target="_blank">
+                  <img class="img-fluid rounded-circle" src="/testimonial/cuong100.jpg" alt="Testimonial Cuong">
+                </a>
+              </div>
+            </div>
+            <p class="h6 mb-0">Nguyen Nhat Cuong</p>
+            <p class="small">Senior Software Engineer at Facebook</p>
+          </div>
+          <!-- End Testimonials -->
+        </div>
+
+        <div class="js-slide my-4">
+          <!-- Testimonials -->
+          <div class="u-slick-zoom__slide text-center">
+            <div class="card border-0 shadow-sm">
+              <div class="card-body p-7 text-left">
+                <p class="mb-4">
+                  SimpleLogin gives me the <b>convenience</b> of a social login button with the privacy of an
+                  anonymous email
+                  address.
+                </p>
+                <p class="mb-0">
+                  I like that some of the money I spend on the service goes toward paying website owners, it allows me
+                  to feel less guilty about using uBlock Origin
+                </p>
+              </div>
+            </div>
+            <div class="position-relative z-index-2 mt-n5 mb-3">
+              <div class="u-avatar mx-auto">
+                <a href="https://twitter.com/mxschumacher" target="_blank">
+                  <img class="img-fluid rounded-circle" src="/testimonial/max100.jpeg" alt="Testimonial Max">
+                </a>
+              </div>
+            </div>
+            <p class="h6 mb-0">Max Schumacher</p>
+            <p class="small">@mxschumacher</p>
+          </div>
+          <!-- End Testimonials -->
+        </div>
+
+      </div>
+      <!-- End Slick Carousel -->
+    </div>
+  </div>
+  <!-- End Testimonials Section -->
+
+  <!-- SVG Bottom Shape -->
+  <figure>
+    <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="64px"
+         viewBox="0 0 1921 273" style="margin-bottom: -8px; enable-background:new 0 0 1921 273;" xml:space="preserve">
+      <polygon class="fill-gray-100" points="1921,0 0,0 0,273 "/>
+    </svg>
+  </figure>
+  <!-- End SVG Bottom Shape -->
+
+  <!-- Features Section -->
+  <div class="bg-white">
+    <div class="container space-2 space-lg-2">
+      <!-- Title -->
+      <div class="w-md-80 w-lg-80 text-center mx-md-auto mb-9">
+        <h5 class="h4 text-primary text-center">
+          {{ i18n "feature_title" }}
+        </h5>
+        <p>
+          {{ i18n "feature_subtitle" }}
+        </p>
+      </div>
+      <!-- End Title -->
+
+      <div class="row">
+        {{ with index site.Data.feature site.Language.Lang }}
+          {{ $texts := .text }}
+
+          {{ range $texts }}
+          <div class="col-sm-6 col-md-4 mb-7">
+            <div class="media align-items-center mb-2">
+              <i class="fa fa-check-square mr-2" style="color: #ea319f" ></i>
+              <div class="media-body">
+                <h4 class="h6 mb-0">
+                  {{ .title | safeHTML}}
+                </h4>
+              </div>
+            </div>
+            <p> {{ .desc | safeHTML }} </p>
+          </div>
+          {{ end }}
+        {{ end }}
+      </div>
+
+    </div>
+  </div>
+  <!-- End Features Section -->
+
+
+  <!-- SVG Top Shape -->
+  <figure>
+    <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="64px"
+         viewBox="0 0 1921 273" style="margin-bottom: -8px; enable-background:new 0 0 1921 273;" xml:space="preserve">
+      <polygon class="fill-gray-100" points="0,273 1921,273 1921,0 "/>
+    </svg>
+  </figure>
+  <!-- End SVG Top Shape -->
+
+
+  <!-- FAQ Section -->
+  <div class="bg-light" id="faq">
+    <div class="container space-2 space-lg-2">
+      <!-- Title -->
+      <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-9">
+        <span class="btn btn-xs btn-soft-success btn-pill mb-2 mt-7">
+          {{ i18n "faq_subtitle" }}
+        </span>
+        <h6 class="text-primary h4">
+          {{ i18n "faq_title" }}
+        </h6>
+      </div>
+      <!-- End Title -->
+
+      <div id="general-faq">
+        {{ with index site.Data.faq site.Language.Lang }}
+          {{ $texts := .home }}
+          {{range $index, $element := $texts}}
+
+            <!-- Card -->
+            <div class="card mb-3">
+              <div class="card-header card-collapse" id='{{ (print "basicsHeading" $index) }}'>
+                <h5 class="mb-0">
+                  <button class="btn btn-link btn-block d-flex justify-content-between card-btn collapsed p-3"
+                    data-toggle="collapse"
+                    data-target='{{ print "#basicsCollapse" $index }}'
+                    aria-controls='{{ print "basicsCollapse" $index }}'
+                    aria-expanded="false"
+                    >
+                    <span>{{ ($element.question)|safeHTML }}</span>
+
+                    <span class="card-btn-arrow">
+                      <span class="fas fa-arrow-down small"></span>
+                    </span>
+                  </button>
+                </h5>
+              </div>
+
+              <div id='{{ print "basicsCollapse" $index }}'
+                class="collapse"
+                aria-labelledby='{{ print "basicsHeading" $index }}'
+                data-parent="#general-faq">
+                <div class="card-body">
+                  <p>{{ ($element.answer)|safeHTML }}</p>
+                </div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+          {{ end }}
+        {{ end }}
+      </div>
+
+
+    </div>
+  </div>
+  <!-- End FAQ Section -->
+
+  <!-- SVG Bottom Shape -->
+  <figure>
+    <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="64px"
+         viewBox="0 0 1921 273" style="margin-bottom: -8px; enable-background:new 0 0 1921 273;" xml:space="preserve">
+      <polygon class="fill-gray-100" points="1921,0 0,0 0,273 "/>
+    </svg>
+  </figure>
+  <!-- End SVG Bottom Shape -->
+
+  <!-- CTA 2 -->
+  <div class="bg-white">
+    <div class="container space-2 space-lg-2">
+      <div class="row text-center mb-5">
+        <h6>{{ i18n "cta_2_title" }}</h6>
+      </div>
+      <div class="row mb-7">
+        <blockquote class="blockquote m-auto">
+          <p class="mb-0">
+            SimpleLogin was the best thing that's ever happened to me (and I assume it the same applies to others who have tried it out. :) ). I use it mainly to protect my main e-mail from companies that potentially don't respect GDPR laws or can't be bothered to.
+          </p>
+          <footer class="blockquote-footer">Verum Rex</footer>
+        </blockquote>
+      </div>
+      <div class="row mb-7">
+        <blockquote class="blockquote m-auto">
+          <p class="mb-0">
+            Used this for years now. The creator is responsive and awesome as a whole. Product is 10/10 for what it does. Cheap as all hell as well. Use it for all of my emails. Super reliable and easy to setup with my own domain. Just really really nice.
+          </p>
+          <footer class="blockquote-footer">Lucas</footer>
+        </blockquote>
+      </div>
+      <div class="row  text-center">
+        <a href="https://app.simplelogin.io/auth/register" class="btn btn-primary" style="margin: auto">
+          {{ i18n "cta_2_button" }}
+        </a>
+      </div>
+      </div>
+    </div>
+  </div>
+  <!-- End CTA 2 -->
+
+  <!-- SVG Top Shape -->
+  <figure>
+    <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="64px"
+         viewBox="0 0 1921 273" style="margin-bottom: -8px; enable-background:new 0 0 1921 273;" xml:space="preserve">
+      <polygon class="fill-gray-100" points="0,273 1921,273 1921,0 "/>
+    </svg>
+  </figure>
+  <!-- End SVG Top Shape -->
+
+  <!-- Founder note -->
+  <div class="bg-light">
+    <div class="container space-2 space-lg-2" style="max-width: 50rem;">
+      <div class="card">
+        <div class="card-body p-7">
+          <div class="mb-3">I used to be excited when receiving new emails.</div>
+          <div class="mb-3">But thanks to <b>thousands of data breaches</b>, to the <b>200 billions data broker market</b>, my inbox is now full of unsolicited, impossible-to-unsubscribe and personalized cold emails.
+          </div>
+          <div class="mb-3">
+            When we use our personal email everywhere, it becomes our online identity and our activity can be easily linked together. VPNs, password managers, Ad Blockers don't help here: we are tracked by our email address.
+          </div>
+
+          <!-- <div class="mb-3">And I can no longer count on spam filters: my bank emails are put in Spam and obvious phishing is in Inbox. Do you know 85% of all emails are spam?
+          </div> -->
+
+          <div class="mb-3 font-weight-semi-bold">That’s why I started SimpleLogin to have control over the emails we receive.</div>
+          <div class="mb-3">And so we can finally be protected from data breaches, cross-site tracking, personalized advertising.</div>
+          <div class="mb-3">Since our launch in 2020, we’ve helped over 50.000 people gain back control over their inbox and I’d love for you to give it a try.</div>
+          <div class="mb-3">Sincerely,</div>
+
+          <div class="d-flex mt-4" style="align-items: center;">
+            <div class="mr-3">
+              <img class="img-fluid rounded-circle" style="max-width: 50px;" src="/about/me.jpeg" alt="Son NK">
+            </div>
+            <div class="">
+              <b>Son Nguyen Kim</b> <br>
+              CEO & Founder of SimpleLogin
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Founder note -->
+
+  <!-- Roadmap -->
+  <!--
+  <div class="bg-white">
+    <div class="container py-5">
+      <div class="w-md-80 w-lg-50 text-center mx-md-auto">
+        <h2 class="h4 text-primary">Roadmap</h2>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <ul class="timeline">
+            <li>
+              No more sign-up form
+              <span class="float-right">
+                <span class="badge badge-success font-weight-medium badge-pill ml-1">Beta</span>
+              </span>
+              <p>You can quickly sign in on any website that has "Sign in with SimpleLogin" button.</p>
+              <p>And you can decide and customize what information you want to share with a website.</p>
+              <img src="/images/signin-button.png" class="w-25" alt="Sign in with SimpleLogin">
+            </li>
+
+            <li>
+              Phone number masking
+              <span class="float-right">
+                <span class="badge badge-primary font-weight-medium badge-pill ml-1">  In Progress
+                </span>
+              </span>
+              <p>Protect your phone number with a virtual number</p>
+            </li>
+
+            <li>
+              Bank card masking
+              <span class="float-right">
+                <span class="badge badge-info font-weight-medium badge-pill ml-1">  Planned
+                </span>
+              </span>
+              <p>Mask you bank card with a virtual card</p>
+            </li>
+
+            <li>
+              And other exciting features!
+              <span class="float-right">
+                <span class="badge badge-warning font-weight-medium badge-pill ml-1">We need you!</span>
+              </span>
+              <p>
+                Check out our full Roadmap on <a href="https://github.com/simple-login/app/projects/1">GitHub</a>. <br>
+                Don't hesitate to submit new ideas or vote on features you like to happen.
+              </p>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  -->
+  <!-- End Roadmap -->
+
+  <!-- SVG Top Shape -->
+  <!-- <figure>
+    <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="64px"
+         viewBox="0 0 1921 273" style="margin-bottom: -8px; enable-background:new 0 0 1921 273;" xml:space="preserve">
+      <polygon class="fill-gray-100" points="0,273 1921,273 1921,0 "/>
+    </svg>
+  </figure> -->
+  <!-- End SVG Top Shape -->
+
+  <!-- Partner -->
+  <!--
+  <div class="bg-light pb-6">
+    <div class="container">
+      <div class="w-md-80 w-lg-50 text-center mx-md-auto p-9">
+        <h2 class="h4 text-primary">
+          {{ i18n "partner_title" }}
+        </h2>
+      </div>
+
+
+      <div class="row mb-2" style="max-width: 800px; margin: auto">
+        <div class="col text-center" data-toggle="tooltip" title="Start your UpCloud trial and get $25 credits">
+          <a
+            href="https://www.upcloud.com/register/?promo=simplelogin&utm_source=simplelogin.io&utm_medium=banner&utm_campaign=Simplelogin_logo">
+            <img src="/images/upcloud.png" style="width: 300px;" alt="UpCloud">
+          </a>
+        </div>
+        <div class="col">
+          <p>
+            High performance cloud hosting.
+            All SimpleLogin infrastructure is powered by UpCloud.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="row" style="max-width: 800px; margin: auto">
+        <div class="col text-center">
+          <a href="https://www.mydigipassword.com/">
+            <img src="/images/antum_id.svg" style="width: 300px;" alt="AntumID">
+          </a>
+        </div>
+        <div class="col">
+          <p>
+            The world's first blockchain-powered password generator, 2FA generator and manager without saving passwords.
+          </p>
+        </div>
+      </div>
+
+      <div class="row" style="max-width: 800px; margin: auto">
+        <div class="col text-center">
+          <a href="https://techlore.tech/">
+            <img src="/images/techlore.png" style="width: 90px;" alt="Techlore">
+          </a>
+        </div>
+        <div class="col">
+          <p>
+            Spreading privacy & security to the masses.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  -->
+  <!-- End Partner -->
+
+</main>
+<!-- ========== END MAIN CONTENT ========== -->
+
+{{ partial "footer.html" . }}
