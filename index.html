@@ -155,7 +155,7 @@
             text-align: center;
             padding: 15px 0;
             width: 100%;
-            position: fixed;
+            position: relative;
             bottom: 0;
             left: 0;
             height: 60px;
@@ -192,11 +192,11 @@
     <nav>
         <div class="logo">BETTER INTERNET</div>
         <ul class="menu">
-            <li><a href="#" onclick="changeBackground('https://via.placeholder.com/800x400')">Deniz</a></li>
-            <li><a href="#" onclick="changeBackground('https://via.placeholder.com/800x400')">Dağlar</a></li>
-            <li><a href="#" onclick="changeBackground('https://via.placeholder.com/800x400')">Orman</a></li>
-            <li><a href="#" onclick="changeBackground('https://via.placeholder.com/800x400')">Çiçekler</a></li>
-            <li><a href="#" onclick="changeBackground('https://via.placeholder.com/800x400')">Güneş</a></li>
+            <li><a href="#" onclick="changeBackground('https://picsum.photos/800/400?random=1')">Deniz</a></li>
+            <li><a href="#" onclick="changeBackground('https://picsum.photos/800/400?random=2')">Dağlar</a></li>
+            <li><a href="#" onclick="changeBackground('https://picsum.photos/800/400?random=3')">Orman</a></li>
+            <li><a href="#" onclick="changeBackground('https://picsum.photos/800/400?random=4')">Çiçekler</a></li>
+            <li><a href="#" onclick="changeBackground('https://picsum.photos/800/400?random=5')">Güneş</a></li>
         </ul>
         <div class="search-bar">
             <input type="text" id="search-input" placeholder="Kaynaklar için ara...">
@@ -207,7 +207,7 @@
     </nav>
 
     <main id="main">
-        <div class="hero" style="background-image: url('https://via.placeholder.com/800x400');"></div>
+        <div class="hero" style="background-image: url('https://picsum.photos/800/400?random=1');"></div>
         <div class="services container">
             <div class="card">
                 <div class="card-content">
@@ -261,7 +261,7 @@
             });
 
             // Arka planı rastgele bir resimle başlat
-            changeBackground('https://via.placeholder.com/800x400');
+            changeBackground('https://picsum.photos/800/400?random=1');
         });
 
         function changeBackground(url) {
