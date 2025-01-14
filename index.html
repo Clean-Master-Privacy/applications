@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BETTER INTERNET</title>
+    <title>BETTER INTERNET - Web Uygulaması</title>
     <link rel="icon" href="icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -43,10 +43,7 @@
 
         .menu {
             list-style: none;
-            padding: 0;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
 
         .menu li {
@@ -66,9 +63,9 @@
         .search-bar {
             display: flex;
             align-items: center;
-            border: 1px solid #434343;
             border-radius: 20px;
             overflow: hidden;
+            margin-left: 20px;
         }
 
         .search-bar input[type="text"] {
@@ -78,12 +75,6 @@
             outline: none;
             border-radius: 20px 0 0 20px;
             width: 250px;
-            transition: width 0.4s ease;
-        }
-
-        .search-bar input[type="text"]:focus {
-            width: 300px;
-            box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
         }
 
         .search-bar button {
@@ -93,58 +84,15 @@
             padding: 10px 15px;
             border-radius: 0 20px 20px 0;
             cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .search-bar button:hover {
-            background-color: #0056b3;
         }
 
         main {
             max-width: 1200px;
-            margin: 100px auto 20px;
+            margin: 100px auto;
             padding: 20px;
             border-radius: 8px;
+            background: #f8f9fa;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-
-        .card {
-            width: calc(33.33% - 20px);
-            margin: 20px;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: scale(1.05);
-        }
-
-        .card-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .card-icon {
-            font-size: 40px;
-            color: #007bff;
-            transition: color 0.3s;
-        }
-
-        .card-icon:hover {
-            color: #ffc107;
         }
 
         .hero {
@@ -152,19 +100,12 @@
             background-size: cover;
             background-position: center;
             position: relative;
-            overflow: hidden;
             margin-bottom: 20px;
-            width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-
-        .slogan {
-            font-size: 32px;
-            font-weight: bold;
             color: white;
-            text-align: center;
+            font-size: 32px;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
 
@@ -174,60 +115,13 @@
             text-align: center;
             padding: 15px 0;
             width: 100%;
-            position: relative;
-            bottom: 0;
-            left: 0;
-            height: 60px;
-            display: flex;
-            justify-content: center;
         }
 
         footer p {
             margin: 10px;
         }
 
-        /* Tema Stilleri */
-        .light-theme {
-            background-color: #ffffff;
-            color: #212529;
-        }
-
-        .light-theme nav {
-            background: #f8f9fa;
-            color: #212529;
-        }
-
-        .light-theme .menu a {
-            color: #212529;
-        }
-
-        .light-theme .search-bar {
-            border: 1px solid #ced4da;
-        }
-
-        .light-theme .search-bar input[type="text"] {
-            background: #ffffff;
-            color: #212529;
-        }
-
-        .light-theme .search-bar button {
-            background-color: #007bff;
-            color: #fff;
-        }
-
-        .light-theme .card {
-            background: #f8f9fa;
-            color: #212529;
-        }
-
-        .light-theme .card-icon {
-            color: #007bff;
-        }
-
-        /* İletişim Formu Stilleri */
-        .contact-form {
-            width: 100%;
-            max-width: 600px;
+        .contact-form, .help-content {
             display: flex;
             flex-direction: column;
             gap: 10px;
@@ -247,77 +141,42 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s;
         }
 
         .contact-form button:hover {
             background-color: #0056b3;
         }
+
     </style>
 </head>
 
 <body class="dark-theme">
-    <nav id="navbar">
+    <nav>
         <div class="logo">BETTER INTERNET</div>
         <ul class="menu">
             <li><a href="#" onclick="showPage('ana')">Ana Sayfa</a></li>
-            <li><a href="#" onclick="showPage('yardim')">Yardım Sayfası</a></li>
+            <li><a href="#" onclick="showPage('yardim')">Yardım</a></li>
             <li><a href="#" onclick="showPage('hakkinda')">Hakkında</a></li>
             <li><a href="#" onclick="showPage('iletisim')">İletişim</a></li>
         </ul>
-        <div>
-            <select id="theme-selector">
-                <option value="dark">Karanlık Tema</option>
-                <option value="light">Açık Tema</option>
-            </select>
-        </div>
         <div class="search-bar">
             <input type="text" id="search-input" placeholder="Kaynaklar için ara...">
-            <button id="search-btn">
-                <i class="fas fa-search"></i>
-            </button>
+            <button id="search-btn"><i class="fas fa-search"></i></button>
         </div>
     </nav>
 
     <main id="main-content">
         <div id="ana" class="page">
             <div class="hero" style="background-image: url('https://picsum.photos/800/400?random=1');">
-                <div class="slogan">Proton: Gizlilik ve Güvenlik İçin Buradayız!</div>
+                Proton: Gizlilik ve Güvenlik İçin Buradayız!
             </div>
-            <div class="services container">
-                <div class="card">
-                    <div class="card-content">
-                        <i class="fas fa-lock card-icon"></i>
-                        <div class="card-info">
-                            <h3>Gizlilik Koruması</h3>
-                            <p>Çevrimiçi gizliliğinizi korumak için en iyi hizmetleri sunuyoruz.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <i class="fas fa-info-circle card-icon"></i>
-                        <div class="card-info">
-                            <h3>Yardım</h3>
-                            <p>Hizmetlerimiz hakkında bilgi almak için yardım sayfamızı ziyaret edin.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <i class="fas fa-calendar-alt card-icon"></i>
-                        <div class="card-info">
-                            <h3>Etkinlik Takvimi</h3>
-                            <p>Gelecek etkinlikler ve duyurular için takvimimizi kontrol edin.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <p>Gizemli bir internet deneyimi için Better Internet ile tanışın. Gizliliğinizi koruyun, hizmetlerimizi keşfedin.</p>
         </div>
 
         <div id="yardim" class="page" style="display:none;">
             <h1>Yardım Sayfası</h1>
             <p>Bu sayfa, Better Internet hizmetleri ile ilgili yardım ve bilgiler sunar.</p>
+            <h3>Yardımcı Olacağımız Konular:</h3>
             <ul>
                 <li>Gizlilik hizmetleri</li>
                 <li>Destek almak için iletişim yolları</li>
@@ -346,57 +205,15 @@
         <p>&copy; 2023 BETTER INTERNET. Tüm hakları saklıdır.</p>
     </footer>
 
-    <script src="https://kit.fontawesome.com/f3e3f2e5d1.js" crossorigin="anonymous"></script>
     <script>
-        // Sayfa değiştirici
         function showPage(page) {
             const pages = document.querySelectorAll('.page');
             pages.forEach(p => p.style.display = 'none'); // Hepsini gizle
             document.getElementById(page).style.display = 'block'; // Seçilen sayfayı göster
         }
 
-        // Tema değiştirici
-        document.getElementById('theme-selector').addEventListener('change', function () {
-            const selectedTheme = this.value;
-            if (selectedTheme === 'light') {
-                document.body.classList.remove('dark-theme');
-                document.body.classList.add('light-theme');
-            } else {
-                document.body.classList.remove('light-theme');
-                document.body.classList.add('dark-theme');
-            }
-        });
-
         document.addEventListener('DOMContentLoaded', function () {
             showPage('ana'); // Ana sayfa ile başla
-            const navbar = document.getElementById('navbar');
-            let lastScrollTop = 0;
-
-            window.addEventListener('scroll', function () {
-                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-                if (scrollTop > lastScrollTop) {
-                    navbar.style.top = "-80px";
-                } else {
-                    navbar.style.top = "0";
-                }
-                lastScrollTop = scrollTop;
-            });
-
-            // Arama işlevi
-            document.getElementById('search-input').addEventListener('input', function () {
-                const inputVal = this.value;
-                if (inputVal === '') {
-                    document.getElementById('search-btn').style.display = 'none';
-                } else {
-                    document.getElementById('search-btn').style.display = 'block';
-                }
-            });
-
-            document.getElementById('search-btn').addEventListener('click', function () {
-                const inputVal = document.getElementById('search-input').value;
-                alert(`Ara: ${inputVal}`);
-            });
 
             // İletişim formu işlevselliği
             document.getElementById('contact-form').addEventListener('submit', function (event) {
@@ -416,6 +233,12 @@
                 // Formu sıfırla
                 this.reset();
             });
+        });
+
+        // Arama işlevi
+        document.getElementById('search-btn').addEventListener('click', function () {
+            const inputVal = document.getElementById('search-input').value;
+            alert(`Ara: ${inputVal}`);
         });
     </script>
 </body>
