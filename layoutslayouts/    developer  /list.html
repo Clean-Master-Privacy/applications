@@ -1,0 +1,410 @@
+{{ partial "header.html" . }}
+
+
+<!-- ========== MAIN CONTENT ========== -->
+<main id="content" role="main">
+
+<!-- Hero Section -->
+<div id="SVGHero" class="position-relative overflow-hidden">
+    <div class="container space-3">
+        <div class="w-lg-80 text-center mx-lg-auto">
+            <div class="mb-5">
+                <h1 class="font-size-md-down-5 font-weight-medium mb-3">
+                    Privacy-friendly alternative to
+                    <span class="text-primary">Login with Facebook</span>
+                </h1>
+                <p class="lead">
+                    SimpleLogin is built for privacy-conscious site owners and protects your users identity.
+                    Open-source, Developer-first, SimpleLogin can be integrated in minutes.
+                </p>
+            </div>
+
+            <a class="btn btn-primary btn-wide transition-3d-hover mr-2" target="_blank" rel="noopener" href="https://app.simplelogin.io/auth/register">
+                Get Started
+            </a>
+
+            <a class="btn btn-outline-success" href="https://simplelogin.io/docs/siwsl/intro/">
+                Read our Docs
+            </a>
+
+        </div>
+    </div>
+
+    <!-- Hero image -->
+    <div class="container space-bottom-3">
+        <div class="position-relative text-center mx-lg-auto">
+            <img class="img-fluid rounded-lg" src="/images/dev-hero.png" alt="SimpleLogin dashboard">
+        </div>
+    </div>
+    <!-- End Hero image -->
+
+
+</div>
+<!-- End Hero Section -->
+
+<!-- Features Section -->
+<div class="position-relative gradient-overlay-half-primary-v3 overflow-hidden">
+    <div class="container space-top-2 space-top-lg-3">
+        <!-- Title -->
+        <div class="w-md-80 w-lg-80 text-center mx-md-auto mb-9">
+            <h2 class="text-white font-weight-medium">
+                Identity provider that respects your users privacy.
+            </h2>
+            <p class="text-white-70">
+                It's time to ditch <b>Login with Facebook</b>.
+            </p>
+
+        </div>
+        <!-- End Title -->
+
+
+        <div class="w-lg-80 mx-lg-auto mb-11">
+            <div class="row mb-9">
+                <div class="col-6 mb-7">
+                    <h4 class="h6 text-white font-weight-semi-bold mb-3">Easy integration</h4>
+                    <p class="text-white-70">
+                        Painless setup. Default config to facilite our life (e.g. <b>localhost</b> is whitelisted by default 🥳).
+                        Start now and launch in the next hour.
+                    </p>
+                </div>
+
+                <div class="col-6 mb-7">
+                    <h4 class="h6 text-white font-weight-semi-bold mb-3">
+                        100% open-source
+                    </h4>
+                    <p class="text-white-70">
+                        Built upon open-source technology, all SimpleLogin components are also open-source.
+                    </p>
+
+                </div>
+
+
+                <div class="col-6 mb-7">
+                    <h4 class="h6 text-white font-weight-semi-bold mb-3">No tracking </h4>
+                    <p class="text-white-70">
+                        Using SimpleLogin shows that you care about your users privacy.
+                    </p>
+                </div>
+
+
+                <div class="col-6 mb-7">
+                    <h4 class="h6 text-white font-weight-semi-bold mb-3">Follow the standard</h4>
+                    <p class="text-white-70">
+                        SimpleLogin implements OAuth2/OpenID Connect, the industry standard for login solution and is fully compatible with any OAuth2/OpenID Connect library.
+                    </p>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<!-- End Features Section -->
+
+<!-- Code Example Section -->
+<div class="container">
+    <div class="space-2 space-lg-3">
+    <div class="row">
+        <div class="col-lg-9 order-lg-2 mb-7 mb-lg-0">
+        <div class="pr-lg-5">
+            <div class="bg-dark rounded min-height-450 p-5">
+            <!-- Nav -->
+            <ul class="nav nav-pills nav-white nav-justified font-weight-medium" role="tablist">
+                <li class="nav-item">
+                <a class="nav-link active" id="pills-one-code-sample-tab" data-toggle="pill" href="#pills-one-code-sample" role="tab" aria-controls="pills-one-code-sample" aria-selected="true">
+                    Vanilla JS
+                </a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" id="pills-two-code-sample-tab" data-toggle="pill" href="#pills-two-code-sample" role="tab" aria-controls="pills-two-code-sample" aria-selected="false">
+                    Flask
+                </a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" id="pills-three-code-sample-tab" data-toggle="pill" href="#pills-three-code-sample" role="tab" aria-controls="pills-three-code-sample" aria-selected="false">
+                    Django
+                </a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" id="pills-four-code-sample-tab" data-toggle="pill" href="#pills-four-code-sample" role="tab" aria-controls="pills-four-code-sample" aria-selected="false">
+                    NodeJS
+                </a>
+                </li>
+            </ul>
+            <!-- End Nav -->
+
+            <!-- Tab Content -->
+            <div class="tab-content">
+                <div class="tab-pane fade pt-5 show active" id="pills-one-code-sample" role="tabpanel" aria-labelledby="pills-one-code-sample-tab">
+                    <pre><code class="language-html">
+&lt;button onclick="simpleLogin()"&gt;
+    Login with SimpleLogin
+&lt;/button&gt;
+
+&lt;!-- Include SimpleLogin JS SDK --&gt;
+&lt;script src="https://simplelogin.io/sdk/sdk.js"&gt;&lt;/script&gt;
+                    </code></pre>
+                    <pre><code class="language-js">
+SL.init("quickstart"); // Your SimpleLogin AppID
+
+function simpleLogin() {
+    SL.login(function(user){
+        // This is where you log user in :)
+        console.log("SimpleLogin user", user);
+    });
+}
+                    </code></pre>
+                </div>
+
+                <div class="tab-pane fade text-white-70 pt-5" id="pills-two-code-sample" role="tabpanel" aria-labelledby="pills-two-code-sample-tab">
+                    <pre><code class="language-python">
+import requests_oauthlib, os
+
+# Your SimpleLogin AppID, AppSecret
+CLIENT_ID = os.environ.get("CLIENT_ID")
+CLIENT_SECRET = os.environ.get("CLIENT_SECRET")
+
+@app.route("/login")
+def login():
+    sl = requests_oauthlib.OAuth2Session(
+        CLIENT_ID,
+        redirect_uri="http://localhost:5000/callback"
+    )
+    redirect_url, _ = sl.authorization_url(
+        "https://app.simplelogin.io/oauth2/authorize"
+    )
+
+    return flask.redirect(redirect_url)
+
+
+@app.route("/callback")
+def callback():
+    sl = requests_oauthlib.OAuth2Session(CLIENT_ID)
+    sl.fetch_token(
+        "https://app.simplelogin.io/oauth2/token",
+        client_secret=CLIENT_SECRET,
+        authorization_response=flask.request.url
+    )
+
+    user_info = sl.get("https://app.simplelogin.io/oauth2/userinfo").json()
+    print(user_info["email"], user_info["name"], user_info["avatar_url"])
+    return "Welcome " + user_info["name"]
+                    </code></pre>
+                </div>
+
+                <div class="tab-pane fade text-white-70 pt-5" id="pills-three-code-sample" role="tabpanel" aria-labelledby="pills-three-code-sample-tab">
+                    <pre><code class="language-bash">
+# Based on social-auth-app-django library
+pip install git+ssh://git@github.com/simple-login/social-core.git@sl
+                    </code></pre>
+                    <pre><code class="language-python">
+# settings.py
+AUTHENTICATION_BACKENDS = [
+    'social_core.backends.simplelogin.SimpleLoginOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+SOCIAL_AUTH_SIMPLELOGIN_KEY = 'YOUR_APP_ID'
+SOCIAL_AUTH_SIMPLELOGIN_SECRET = 'YOUR_APP_SECRET'
+
+                    </code></pre>
+                    <pre><code class="language-html">
+&lt;!-- In your login template --&gt;
+&lt;a href="{% url 'social:begin' 'simplelogin' %}"&gt;Login with SimpleLogin&lt;/a&gt;
+                    </code></pre>
+                </div>
+
+                <div class="tab-pane fade text-white-70 pt-5" id="pills-four-code-sample" role="tabpanel" aria-labelledby="pills-four-code-sample-tab">
+                    <pre><code class="language-js">
+                            // config SimpleLogin OIDC
+passport.use('SimpleLogin', new OidcStrategy({
+    issuer: 'https://app.simplelogin.io',
+    authorizationURL: 'https://app.simplelogin.io/oauth2/authorize',
+    tokenURL: 'https://app.simplelogin.io/oauth2/token',
+    userInfoURL: 'https://app.simplelogin.io/oauth2/userinfo',
+    clientID: process.env.CLIENT_ID, // SimpleLogin AppId
+    clientSecret: process.env.CLIENT_SECRET, // SimpleLogin AppSecret
+    callbackURL: process.env.URL + '/authorization-code/callback',
+    scope: 'openid profile'
+}, (issuer, sub, profile, accessToken, refreshToken, done) => {
+    return done(null, profile);
+}));
+
+// show user info
+app.use('/profile', (req, res) => {
+    console.log("user:", req);
+    res.render('profile', {
+        title: 'User Info',
+        user: req.user._json
+    });
+});
+                    </code></pre>
+                </div>
+
+                <div class="tab-pane fade text-white-70 pt-5" id="pills-five-code-sample" role="tabpanel" aria-labelledby="pills-five-code-sample-tab">
+                Coming soon...
+                </div>
+
+                <div class="tab-pane fade text-white-70 pt-5" id="pills-six-code-sample" role="tabpanel" aria-labelledby="pills-six-code-sample-tab">
+                Coming soon...
+                </div>
+            </div>
+            <!-- End Tab Content -->
+            </div>
+        </div>
+        </div>
+
+        <div class="col-lg-3 order-lg-1">
+        <div class="mb-5">
+            <h2 class="font-weight-medium">Created by developer for developer</h2>
+            <p>SimpleLogin is compatible with all Oauth2/OpenID Connect libraries.</p>
+        </div>
+
+        <!-- List -->
+        <div class="row mb-4">
+            <div class="col">
+            <div class="media align-items-center text-secondary mb-3">
+                <img class="mr-2" src="../../assets/svg/components/checked-icon.svg" alt="Check Icon" width="16" height="16">
+                <div class="media-body">
+                Python (Flask)
+                </div>
+            </div>
+            <div class="media align-items-center text-secondary mb-3">
+                <img class="mr-2" src="../../assets/svg/components/checked-icon.svg" alt="Check Icon" width="16" height="16">
+                <div class="media-body">
+                Python (Django)
+                </div>
+            </div>
+
+            <div class="media align-items-center text-secondary mb-3">
+                <img class="mr-2" src="../../assets/svg/components/checked-icon.svg" alt="Check Icon" width="16" height="16">
+                <div class="media-body">
+                NodeJS (Passport.js)
+                </div>
+            </div>
+
+            <div class="media align-items-center text-secondary mb-3">
+                <img class="mr-2" src="../../assets/svg/components/checked-icon.svg" alt="Check Icon" width="16" height="16">
+                <div class="media-body">
+                Client-side javascript
+                </div>
+            </div>
+            <div class="media align-items-center text-secondary mb-3">
+                <img class="mr-2" src="../../assets/svg/components/checked-icon.svg" alt="Check Icon" width="16" height="16">
+                <div class="media-body">
+                ReactJS, VueJS <span class="badge badge-secondary badge-pill ml-1">Coming soon</span>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- End List -->
+
+        </div>
+    </div>
+    </div>
+</div>
+<!-- End Code Example Section -->
+
+<!-- Testimonials Section -->
+<div class="container space-bottom-3">
+    <!-- SVG Quote -->
+    <figure class="mx-auto text-center mb-3">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="48px" height="48px"
+        viewBox="0 0 8 8" style="enable-background:new 0 0 8 8;" xml:space="preserve">
+        <path class="fill-gray-400" d="M3,1.3C2,1.7,1.2,2.7,1.2,3.6c0,0.2,0,0.4,0.1,0.5c0.2-0.2,0.5-0.3,0.9-0.3c0.8,0,1.5,0.6,1.5,1.5c0,0.9-0.7,1.5-1.5,1.5
+        C1.4,6.9,1,6.6,0.7,6.1C0.4,5.6,0.3,4.9,0.3,4.5c0-1.6,0.8-2.9,2.5-3.7L3,1.3z M7.1,1.3c-1,0.4-1.8,1.4-1.8,2.3
+        c0,0.2,0,0.4,0.1,0.5c0.2-0.2,0.5-0.3,0.9-0.3c0.8,0,1.5,0.6,1.5,1.5c0,0.9-0.7,1.5-1.5,1.5c-0.7,0-1.1-0.3-1.4-0.8
+        C4.4,5.6,4.4,4.9,4.4,4.5c0-1.6,0.8-2.9,2.5-3.7L7.1,1.3z"/>
+    </svg>
+    </figure>
+    <!-- End SVG Quote -->
+
+    <!-- Blockquote -->
+    <div class="w-md-75 mx-md-auto">
+        <p class="font-weight-light">
+            As a software engineer, I like SimpleLogin concept and its streamlined development experience. <br>
+            There are some solutions with a similar purpose, but none of them is transparent for users. Or simple enough for developers to integrate. <br>
+
+            Finally, a service that makes people conscious about PRIVACY. And helps developers bring trust to their brand identity in a SIMPLE way. <br>
+        </p>
+    </div>
+    <!-- End Blockquote -->
+
+    <!-- Reviewer -->
+    <div class="d-flex justify-content-center align-items-center w-lg-50 mx-auto">
+    <div class="u-avatar">
+        <a href="https://twitter.com/TrungUtt">
+            <img class="img-fluid rounded-circle" src="/testimonial/trung100.jpg" alt="Trung NGUYEN">
+        </a>
+    </div>
+    <div class="ml-3">
+        <h4 class="h6 mb-0">Trung NGUYEN</h4>
+        <small class="text-muted">Software Engineer, Docker</small>
+    </div>
+    </div>
+    <!-- End Reviewer -->
+</div>
+<!-- End Testimonials Section -->
+
+<!-- FAQ Section -->
+<div class="bg-light">
+    <div class="container pt-2 pb-3">
+      <!-- Title -->
+      <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-5">
+        <h2 class="text-primary mt-7">Frequently asked <span class="font-weight-semi-bold">questions</span></h2>
+      </div>
+      <!-- End Title -->
+
+      <div id="developer-faq">
+        {{ with index site.Data.faq site.Language.Lang }}
+          {{ $texts := .developer }}
+          {{range $index, $element := $texts}}
+
+            <!-- Card -->
+            <div class="card mb-3">
+              <div class="card-header card-collapse" id='{{ (print "developer-faq-question" $index) }}'>
+                <h5 class="mb-0">
+                  <button class="btn btn-link btn-block d-flex justify-content-between card-btn collapsed p-3"
+                    data-toggle="collapse"
+                    data-target='{{ print "#developer-faq-answer" $index }}'
+                    aria-controls='{{ print "developer-faq-answer" $index }}'
+                    aria-expanded="false"
+                    >
+                    <span>{{ ($element.question)|safeHTML }}</span>
+
+                    <span class="card-btn-arrow">
+                      <span class="fas fa-arrow-down small"></span>
+                    </span>
+                  </button>
+                </h5>
+              </div>
+
+              <div id='{{ print "developer-faq-answer" $index }}'
+                class="collapse"
+                aria-labelledby='{{ print "developer-faq-question" $index }}'
+                data-parent="#developer-faq">
+                <div class="card-body">
+                  <p>{{ ($element.answer)|safeHTML }}</p>
+                </div>
+              </div>
+            </div>
+            <!-- End Card -->
+
+          {{ end }}
+        {{ end }}
+      </div>
+
+    </div>
+  </div>
+  <!-- End FAQ Section -->
+
+
+
+</main>
+<!-- ========== END MAIN CONTENT ========== -->
+
+
+{{ partial "footer.html" . }}
