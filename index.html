@@ -19,14 +19,15 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            color: #fff;
+            color: #eaeaea; /* Metin rengi için açık gri */
+            background-color: #121212; /* Karanlık arka plan rengi */
             line-height: 1.6;
             overflow-x: hidden;
         }
 
         nav {
-            background: rgba(52, 58, 64, 0.9);
-            color: white;
+            background: rgba(33, 37, 41, 0.9); /* Koyu gri arka plan */
+            color: #eaeaea; /* Menü metin rengi */
             padding: 15px;
             display: flex;
             justify-content: space-between;
@@ -56,18 +57,18 @@
 
         .menu a {
             text-decoration: none;
-            color: #fff;
+            color: #eaeaea; /* Menü bağlantı rengi */
             transition: color 0.3s;
         }
 
         .menu a:hover {
-            color: #ffc107;
+            color: #ffc107; /* Hover rengi */
         }
 
         .search-bar {
             display: flex;
             align-items: center;
-            border: 1px solid #ced4da;
+            border: 1px solid #434343; /* Koyu gri kenarlık */
             border-radius: 20px;
             overflow: hidden;
         }
@@ -79,6 +80,8 @@
             outline: none;
             border-radius: 20px 0 0 20px;
             width: 250px;
+            background: #1e1e1e; /* Koyu arka plan */
+            color: #eaeaea; /* Girdi metin rengi */
             transition: width 0.4s ease;
         }
 
@@ -88,7 +91,7 @@
         }
 
         .search-bar button {
-            background-color: #007bff;
+            background-color: #007bff; /* Mavi arka plan */
             color: #fff;
             border: none;
             padding: 10px 15px;
@@ -98,16 +101,16 @@
         }
 
         .search-bar button:hover {
-            background-color: #0056b3;
+            background-color: #0056b3; /* Koyu mavi hover */
         }
 
         main {
             max-width: 1200px;
             margin: 100px auto 20px; /* Navbar yüksekliğine göre ayarlandı */
             padding: 20px;
-            background: #fff;
+            background: #212529; /* Koyu gri fon */
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
         }
 
         .container {
@@ -120,9 +123,9 @@
             width: calc(33.33% - 20px);
             margin: 20px;
             padding: 20px;
-            background: #f8f9fa;
+            background: #343a40; /* Koyu arka plan */
             border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
             transition: transform 0.3s;
         }
 
@@ -139,12 +142,12 @@
 
         .card-icon {
             font-size: 40px;
-            color: #007bff;
+            color: #007bff; /* Mavi ikon rengi */
             transition: color 0.3s;
         }
 
         .card-icon:hover {
-            color: #ffc107;
+            color: #ffc107; /* Hover rengi */
         }
 
         .card-info {
@@ -154,6 +157,7 @@
 
         .card-info h3 {
             margin: 0 0 10px;
+            color: #eaeaea; /* Başlık rengi */
         }
 
         .hero {
@@ -179,8 +183,8 @@
         }
 
         footer {
-            background-color: rgba(52, 58, 64, 0.9);
-            color: #fff;
+            background-color: rgba(33, 37, 41, 0.9); /* Koyu gri arka plan */
+            color: #eaeaea; /* Alt bilgi metin rengi */
             text-align: center;
             padding: 15px 0;
             width: 100%;
@@ -262,7 +266,7 @@
 
             window.addEventListener('scroll', function () {
                 let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                
+
                 if (scrollTop > lastScrollTop) {
                     navbar.style.top = "-80px"; // Menüyü yukarı kaydır
                 } else {
