@@ -5,12 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BETTER INTERNET</title>
-    <meta name="description" content="Çevrimiçi güvenlik ve özgürlük için birlikte olalım!">
     <link rel="icon" href="icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* Temel Stiller */
+        /* Temel stiller */
         * {
             margin: 0;
             padding: 0;
@@ -19,23 +18,22 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            color: #eaeaea; /* Metin rengi için açık gri */
-            background-color: #121212; /* Karanlık arka plan rengi */
             line-height: 1.6;
             overflow-x: hidden;
+            transition: background-color 0.3s, color 0.3s; /* Renk geçişleri */
         }
 
         nav {
-            background: rgba(33, 37, 41, 0.9); /* Koyu gri arka plan */
-            color: #eaeaea; /* Menü metin rengi */
+            background: rgba(33, 37, 41, 0.9);
+            color: #eaeaea;
             padding: 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: fixed; /* Navbar sabit */
+            position: fixed;
             width: 100%;
             z-index: 1000;
-            transition: top 0.3s; /* Tasarım geçişi */
+            transition: top 0.3s;
         }
 
         .logo {
@@ -57,18 +55,18 @@
 
         .menu a {
             text-decoration: none;
-            color: #eaeaea; /* Menü bağlantı rengi */
+            color: #eaeaea;
             transition: color 0.3s;
         }
 
         .menu a:hover {
-            color: #ffc107; /* Hover rengi */
+            color: #ffc107;
         }
 
         .search-bar {
             display: flex;
             align-items: center;
-            border: 1px solid #434343; /* Koyu gri kenarlık */
+            border: 1px solid #434343;
             border-radius: 20px;
             overflow: hidden;
         }
@@ -80,8 +78,6 @@
             outline: none;
             border-radius: 20px 0 0 20px;
             width: 250px;
-            background: #1e1e1e; /* Koyu arka plan */
-            color: #eaeaea; /* Girdi metin rengi */
             transition: width 0.4s ease;
         }
 
@@ -91,7 +87,7 @@
         }
 
         .search-bar button {
-            background-color: #007bff; /* Mavi arka plan */
+            background-color: #007bff;
             color: #fff;
             border: none;
             padding: 10px 15px;
@@ -101,14 +97,13 @@
         }
 
         .search-bar button:hover {
-            background-color: #0056b3; /* Koyu mavi hover */
+            background-color: #0056b3;
         }
 
         main {
             max-width: 1200px;
-            margin: 100px auto 20px; /* Navbar yüksekliğine göre ayarlandı */
+            margin: 100px auto 20px;
             padding: 20px;
-            background: #212529; /* Koyu gri fon */
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
         }
@@ -123,7 +118,6 @@
             width: calc(33.33% - 20px);
             margin: 20px;
             padding: 20px;
-            background: #343a40; /* Koyu arka plan */
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
             transition: transform 0.3s;
@@ -142,34 +136,23 @@
 
         .card-icon {
             font-size: 40px;
-            color: #007bff; /* Mavi ikon rengi */
+            color: #007bff;
             transition: color 0.3s;
         }
 
         .card-icon:hover {
-            color: #ffc107; /* Hover rengi */
-        }
-
-        .card-info {
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .card-info h3 {
-            margin: 0 0 10px;
-            color: #eaeaea; /* Başlık rengi */
+            color: #ffc107;
         }
 
         .hero {
             height: 300px;
             background-size: cover;
             background-position: center;
-            position: relative; /* İçerik için konum ayarı */
+            position: relative;
             overflow: hidden;
-            margin-bottom: 20px; /* Kartlar ile arasında boşluk bırakmak için */
+            margin-bottom: 20px;
         }
 
-        /* Slogan stili */
         .slogan {
             position: absolute;
             top: 50%;
@@ -179,12 +162,12 @@
             font-weight: bold;
             color: white;
             text-align: center;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Metin gölgesi */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
 
         footer {
-            background-color: rgba(33, 37, 41, 0.9); /* Koyu gri arka plan */
-            color: #eaeaea; /* Alt bilgi metin rengi */
+            background-color: rgba(33, 37, 41, 0.9);
+            color: #eaeaea;
             text-align: center;
             padding: 15px 0;
             width: 100%;
@@ -199,18 +182,64 @@
         footer p {
             margin: 10px;
         }
+
+        /* Tema Stilleri */
+        .light-theme {
+            background-color: #ffffff;
+            color: #212529;
+        }
+
+        .light-theme nav {
+            background: #f8f9fa;
+            color: #212529;
+        }
+
+        .light-theme .menu a {
+            color: #212529;
+        }
+
+        .light-theme .search-bar {
+            border: 1px solid #ced4da;
+        }
+
+        .light-theme .search-bar input[type="text"] {
+            background: #ffffff;
+            color: #212529;
+        }
+
+        .light-theme .search-bar button {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .light-theme .card {
+            background: #f8f9fa;
+            color: #212529;
+        }
+
+        .light-theme .card-icon {
+            color: #007bff;
+        }
+
+        /* Diğer stiller devam edecek ... */
     </style>
 </head>
 
-<body>
+<body class="dark-theme">
     <nav id="navbar">
         <div class="logo">BETTER INTERNET</div>
         <ul class="menu">
-            <li><a href="#">Yardım Sayfası</a></li>
-            <li><a href="#">Ana Sayfa</a></li>
-            <li><a href="#">Hakkında</a></li>
-            <li><a href="#">İletişim</a></li>
+            <li><a href="#" onclick="showPage('ana')">Ana Sayfa</a></li>
+            <li><a href="#" onclick="showPage('yardim')">Yardım Sayfası</a></li>
+            <li><a href="#" onclick="showPage('hakkinda')">Hakkında</a></li>
+            <li><a href="#" onclick="showPage('iletisim')">İletişim</a></li>
         </ul>
+        <div>
+            <select id="theme-selector">
+                <option value="dark">Karanlık Tema</option>
+                <option value="light">Açık Tema</option>
+            </select>
+        </div>
         <div class="search-bar">
             <input type="text" id="search-input" placeholder="Kaynaklar için ara...">
             <button id="search-btn">
@@ -219,38 +248,64 @@
         </div>
     </nav>
 
-    <main id="main">
-        <div class="hero" style="background-image: url('https://picsum.photos/800/400?random=1');">
-            <div class="slogan">Proton: Gizlilik ve Güvenlik İçin Buradayız!</div>
+    <main id="main-content">
+        <div id="ana" class="page">
+            <div class="hero" style="background-image: url('https://picsum.photos/800/400?random=1');">
+                <div class="slogan">Proton: Gizlilik ve Güvenlik İçin Buradayız!</div>
+            </div>
+            <div class="services container">
+                <div class="card">
+                    <div class="card-content">
+                        <i class="fas fa-lock card-icon"></i>
+                        <div class="card-info">
+                            <h3>Gizlilik Koruması</h3>
+                            <p>Çevrimiçi gizliliğinizi korumak için en iyi hizmetleri sunuyoruz.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <i class="fas fa-info-circle card-icon"></i>
+                        <div class="card-info">
+                            <h3>Yardım</h3>
+                            <p>Hizmetlerimiz hakkında bilgi almak için yardım sayfamızı ziyaret edin.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <i class="fas fa-calendar-alt card-icon"></i>
+                        <div class="card-info">
+                            <h3>Etkinlik Takvimi</h3>
+                            <p>Gelecek etkinlikler ve duyurular için takvimimizi kontrol edin.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="services container">
-            <div class="card">
-                <div class="card-content">
-                    <i class="fas fa-lock card-icon"></i>
-                    <div class="card-info">
-                        <h3>Gizlilik Koruması</h3>
-                        <p>Çevrimiçi gizliliğinizi korumak için en iyi hizmetleri sunuyoruz.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-content">
-                    <i class="fas fa-info-circle card-icon"></i>
-                    <div class="card-info">
-                        <h3>Yardım</h3>
-                        <p>Hizmetlerimiz hakkında bilgi almak için yardım sayfamızı ziyaret edin.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-content">
-                    <i class="fas fa-calendar-alt card-icon"></i>
-                    <div class="card-info">
-                        <h3>Etkinlik Takvimi</h3>
-                        <p>Gelecek etkinlikler ve duyurular için takvimimizi kontrol edin.</p>
-                    </div>
-                </div>
-            </div>
+
+        <div id="yardim" class="page" style="display:none;">
+            <h1>Yardım Sayfası</h1>
+            <p>Bu sayfa, Better Internet hizmetleri ile ilgili yardım ve bilgiler sunar.</p>
+            <ul>
+                <li>Gizlilik hizmetleri</li>
+                <li>Destek almak için iletişim yolları</li>
+                <li>SSS (Sıkça Sorulan Sorular)</li>
+            </ul>
+        </div>
+
+        <div id="hakkinda" class="page" style="display:none;">
+            <h1>Hakkında</h1>
+            <p>BETTER INTERNET, çevrimiçi güvenlik ve gizlilik konularında en iyi hizmetleri sunmayı hedefleyen bir platformdur.</p>
+        </div>
+
+        <div id="iletisim" class="page" style="display:none;">
+            <h1>İletişim</h1>
+            <p>Bize ulaşmak için aşağıdaki yöntemleri kullanabilirsiniz:</p>
+            <ul>
+                <li>Email: info@betterinternet.com</li>
+                <li>Telefon: +90 123 456 78 90</li>
+            </ul>
         </div>
     </main>
 
@@ -260,7 +315,27 @@
 
     <script src="https://kit.fontawesome.com/f3e3f2e5d1.js" crossorigin="anonymous"></script>
     <script>
+        // Sayfa değiştirici
+        function showPage(page) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(p => p.style.display = 'none'); // Hepsini gizle
+            document.getElementById(page).style.display = 'block'; // Seçilen sayfayı göster
+        }
+
+        // Tema değiştirici
+        document.getElementById('theme-selector').addEventListener('change', function () {
+            const selectedTheme = this.value;
+            if (selectedTheme === 'light') {
+                document.body.classList.remove('dark-theme');
+                document.body.classList.add('light-theme');
+            } else {
+                document.body.classList.remove('light-theme');
+                document.body.classList.add('dark-theme');
+            }
+        });
+
         document.addEventListener('DOMContentLoaded', function () {
+            showPage('ana'); // Ana sayfa ile başla
             const navbar = document.getElementById('navbar');
             let lastScrollTop = 0;
 
@@ -268,13 +343,14 @@
                 let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
                 if (scrollTop > lastScrollTop) {
-                    navbar.style.top = "-80px"; // Menüyü yukarı kaydır
+                    navbar.style.top = "-80px";
                 } else {
-                    navbar.style.top = "0"; // Menüyü geri getir
+                    navbar.style.top = "0";
                 }
                 lastScrollTop = scrollTop;
             });
 
+            // Arama işlevi
             document.getElementById('search-input').addEventListener('input', function () {
                 const inputVal = this.value;
                 if (inputVal === '') {
@@ -288,15 +364,7 @@
                 const inputVal = document.getElementById('search-input').value;
                 alert(`Ara: ${inputVal}`);
             });
-
-            // Arka planı rastgele bir resimle başlat
-            changeBackground('https://picsum.photos/800/400?random=1');
         });
-
-        function changeBackground(url) {
-            const hero = document.querySelector('.hero');
-            hero.style.backgroundImage = 'url(' + url + ')';
-        }
     </script>
 </body>
 
