@@ -44,10 +44,12 @@
             list-style: none;
             padding: 0;
             display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
         .menu li {
-            margin: 0 15px;
+            margin: 0 20px;
         }
         
         .menu a {
@@ -70,6 +72,7 @@
             font-size: 15px;
             border: 1px solid #ced4da;
             border-radius: 5px;
+            width: 60%;
         }
         
         .search-bar button {
@@ -97,16 +100,75 @@
             animation: fadeIn 0.8s;
         }
 
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .card {
+            width: calc(33.33% - 20px);
+            margin: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .card-icon {
+            font-size: 40px;
+            color: #007bff;
+            transition: color 0.3s;
+        }
+
+        .card-icon:hover {
+            color: #ffc107;
+        }
+
+        .card-info {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .card-info h3 {
+            margin: 0 0 10px;
+        }
+
         footer {
             background-color: rgba(52, 58, 64, 0.9);
             color: #fff;
             text-align: center;
             padding: 15px 0;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            background: #007bff;
+            color: #fff;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+        }
+
+        footer p {
+            margin: 10px;
         }
 
         /* İçerik Stilleri */
         .hero {
-            background: url('background.png') center/cover no-repeat;
+            background: url('https://example.com/background.jpg') center/cover no-repeat; /* Arka plan resmi buraya eklenmiştir */
             color: #fff;
             padding: 80px 20px;
             text-align: center;
@@ -116,82 +178,6 @@
             animation: slideIn 1s ease-in-out;
         }
         
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Otomatik sütun sayısı ve boyutu */
-            gap: 20px; /* Kartlar arasındaki boşluk */
-            margin-top: 20px;
-            animation: fadeInUp 0.5s ease;
-        }
-
-        .service {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-        
-        .service:hover {
-            transform: scale(1.05);
-        }
-        
-        .service h3 {
-            margin: 15px 0;
-        }
-
-        .service i {
-            font-size: 40px;
-            color: #007bff;
-            transition: color 0.3s;
-        }
-
-        .service:hover i {
-            color: #ffc107;
-        }
-
-        /* Form Stilleri */
-        .form {
-            width: 100%;
-            margin: 40px auto;
-            padding: 20px;
-            background-color: #f0f0f0;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ced4da;
-            border-radius: 5px;
-            font-size: 14px;
-        }
-
-        button[type="submit"] {
-            background-color: #28a745;
-            color: #fff;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-            transition: background-color 0.3s;
-        }
-
-        button[type="submit"]:hover {
-            background-color: #218838;
-        }
-
         /* Animasyonlar */
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -201,37 +187,6 @@
         @keyframes slideIn {
             from { transform: translateY(-50px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
-        }
-
-        @keyframes fadeInUp {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        /* Medya Sorguları */
-        @media (max-width: 768px) {
-            .menu {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .menu li {
-                margin: 10px 0;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero {
-                padding: 50px 10px;
-            }
-
-            .logo {
-                font-size: 20px;
-            }
-
-            .service h3 {
-                font-size: 20px;
-            }
         }
     </style>
 </head>
@@ -256,44 +211,104 @@
     </nav>
     
     <main id="main">
-        <section id="home" class="content">
-            <div class="hero">
+        <div class="hero">
+            <h2>Güvenlik ve Özgürlük için Birlikte Olalım!</h2>
+            <p>Burada insan haklarını korumak ve çevrimiçi özgürlük için birleşiyoruz. Giriş yap, daha fazla bilgi edinin ve birlikte çalışalım!</p>
+        </div>
+        <div class="services container">
+            <div class="card">
+                <div class="card-content">
+                    <i class="fas fa-lock card-icon"></i>
+                    <div class="card-info">
+                        <h3>Güvenlik</h3>
+                        <p>Çevrimiçi güvenliğiniz için en son çözümleri sunuyoruz.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <i class="fas fa-user-shield card-icon"></i>
+                    <div class="card-info">
+                        <h3>Özgürlük</h3>
+                        <p>İnsan hakları ve çevrimiçi özgürlük için savaşıyoruz. Bize katılın!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <i class="fas fa-globe card-icon"></i>
+                    <div class="card-info">
+                        <h3>Küresel Etki</h3>
+                        <p>Hizmetlerimizle küresel bir etki yaratıyoruz.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 BETTER INTERNET. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script>
+        function showPage(page) {
+            document.getElementById('main').innerHTML = '';
+            switch(page) {
+                case 'home':
+                    homePage();
+                    break;
+                case 'about':
+                    aboutPage();
+                    break;
+                case 'services':
+                    servicesPage();
+                    break;
+                case 'contact':
+                    contactPage();
+                    break;
+                case 'faq':
+                    faqPage();
+                    break;
+                case 'testimonials':
+                    testimonialsPage();
+                    break;
+                case 'login':
+                    loginPage();
+                    break;
+            } 
+        }
+
+        function homePage() {
+            const hero = document.createElement('div');
+            hero.classList.add('hero');
+            const heroContent = `
                 <h2>Güvenlik ve Özgürlük için Birlikte Olalım!</h2>
                 <p>Burada insan haklarını korumak ve çevrimiçi özgürlük için birleşiyoruz. Giriş yap, daha fazla bilgi edinin ve birlikte çalışalım!</p>
-            </div>
-            <section class="services">
-                <div class="service">
-                    <i class="fas fa-lock"></i>
-                    <h3>Güvenlik</h3>
-                    <p>Çevrimiçi güvenliğiniz için en son çözümleri sunuyoruz.</p>
-                </div>
-                <div class="service">
-                    <i class="fas fa-user-shield"></i>
-                    <h3>Özgürlük</h3>
-                    <p>İnsan hakları ve çevrimiçi özgürlük için savaşıyoruz. Bize katılın!</p>
-                </div>
-                <div class="service">
-                    <i class="fas fa-globe"></i>
-                    <h3>Küresel Etki</h3>
-                    <p>Hizmetlerimizle küresel bir etki yaratıyoruz.</p>
-                </div>
-            </section>
-        </section>
+            `;
+            hero.innerHTML = heroContent;
+            document.getElementById('main').appendChild(hero);
+        }
 
-        <section id="about" class="content" style="display:none;">
-            <h2>Hakkımızda</h2>
-            <p>Bu bir kâr amacı gütmeyen kuruluştur. Misyonumuz, insan haklarını koruma ve çevrimiçi özgürlüğü sağlamaktır.</p>
-        </section>
+        function aboutPage() {
+            const aboutContent = `
+                <h2>Hakkımızda</h2>
+                <p>Bu bir kâr amacı gütmeyen kuruluştur. Misyonumuz, insan haklarını koruma ve çevrimiçi özgürlüğü sağlamaktır.</p>
+            `;
+            document.getElementById('main').innerHTML = aboutContent;
+        }
 
-        <section id="services" class="content" style="display:none;">
-            <h2>Hizmetlerimiz</h2>
-            <p>Bizler, bireylerin internet güvenliğini artırmak ve çevrimiçi özgürlüklerini korumak için çeşitli hizmetler sunuyoruz. Detaylı bilgi için bizimle iletişime geçin.</p>
-        </section>
+        function servicesPage() {
+            const servicesContent = `
+                <h2>Hizmetlerimiz</h2>
+                <p>Bizler, bireylerin internet güvenliğini artırmak ve çevrimiçi özgürlüklerini korumak için çeşitli hizmetler sunuyoruz. Detaylı bilgi için bizimle iletişime geçin.</p>
+            `;
+            document.getElementById('main').innerHTML = servicesContent;
+        }
 
-        <section id="contact" class="content" style="display:none;">
-            <h2>İletişim</h2>
-            <p>Bize ulaşmak için aşağıdaki formu kullanabilirsiniz.</p>
-            <div class="form">
+        function contactPage() {
+            const contactContent = `
+                <h2>İletişim</h2>
+                <p>Bize ulaşmak için aşağıdaki formu kullanabilirsiniz.</p>
                 <form>
                     <label for="name">Adınız:</label>
                     <input type="text" id="name" required>
@@ -303,33 +318,40 @@
                     <textarea id="message" rows="5" required></textarea>
                     <button type="submit">Gönder</button>
                 </form>
-            </div>
-        </section>
+            `;
+            document.getElementById('main').innerHTML = contactContent;
+        }
 
-        <section id="faq" class="content" style="display:none;">
-            <h2>Sıkça Sorulan Sorular</h2>
-            <p>İnsanların en çok sorduğu soruları buraya ekliyorsunuz...</p>
-            <ul>
-                <li>Soru 1: Güvenli internete nasıl ulaşırım?</li>
-                <li>Soru 2: Veri gizliliğimi nasıl koruyabilirim?</li>
-                <li>Soru 3: Hangi hizmetleri alabilirim?</li>
-            </ul>
-        </section>
+        function faqPage() {
+            const faqContent = `
+                <h2>Sıkça Sorulan Sorular</h2>
+                <p>İnsanların en çok sorduğu soruları buraya ekliyorsunuz...</p>
+                <ul>
+                    <li>Soru 1: Güvenli internete nasıl ulaşırım?</li>
+                    <li>Soru 2: Veri gizliliğimi nasıl koruyabilirim?</li>
+                    <li>Soru 3: Hangi hizmetleri alabilirim?</li>
+                </ul>
+            `;
+            document.getElementById('main').innerHTML = faqContent;
+        }
 
-        <section id="testimonials" class="content" style="display:none;">
-            <h2>Görüşler</h2>
-            <p>Kullanıcılarımızın bizler hakkında söyledikleri...</p>
-            <blockquote>
-                <p>"BETTER INTERNET sayesinde çevrimiçi güvenliğimi artırdım!" - Kullanıcı 1</p>
-            </blockquote>
-            <blockquote>
-                <p>"Bu kuruluş, insan hakları savunuculuğunda önemli bir rol oynuyor." - Kullanıcı 2</p>
-            </blockquote>
-        </section>
+        function testimonialsPage() {
+            const testimonialsContent = `
+                <h2>Görüşler</h2>
+                <p>Kullanıcılarımızın bizler hakkında söyledikleri...</p>
+                <blockquote>
+                    <p>"BETTER INTERNET sayesinde çevrimiçi güvenliğimi artırdım!" - Kullanıcı 1</p>
+                </blockquote>
+                <blockquote>
+                    <p>"Bu kuruluş, insan hakları savunuculuğunda önemli bir rol oynuyor." - Kullanıcı 2</p>
+                </blockquote>
+            `;
+            document.getElementById('main').innerHTML = testimonialsContent;
+        }
 
-        <section id="login" class="content" style="display:none;">
-            <h2>Giriş Yap</h2>
-            <div class="form">
+        function loginPage() {
+            const loginContent = `
+                <h2>Giriş Yap</h2>
                 <form>
                     <label for="username">Kullanıcı Adı:</label>
                     <input type="text" id="username" required>
@@ -337,26 +359,11 @@
                     <input type="password" id="password" required>
                     <button type="submit">Giriş Yap</button>
                 </form>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2023 BETTER INTERNET. Tüm hakları saklıdır.</p>
-    </footer>
-
-    <script>
-        function showPage(page) {
-            const sections = document.querySelectorAll('.content');
-            sections.forEach(section => {
-                section.style.display = 'none';
-            });
-            document.getElementById(page).style.display = 'block';
+            `;
+            document.getElementById('main').innerHTML = loginContent;
         }
 
-        window.onload = function() {
-            showPage('home');
-        };
+        showPage('home');
     </script>
 </body>
 </html>
