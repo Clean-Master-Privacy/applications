@@ -22,7 +22,6 @@
             color: #fff;
             line-height: 1.6;
             overflow-x: hidden;
-            transition: background 0.5s ease;
         }
 
         nav {
@@ -32,10 +31,10 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: fixed;
+            position: fixed; /* Navbar sabit */
             width: 100%;
             z-index: 1000;
-            transition: background 0.5s ease;
+            transition: top 0.3s; /* Tasarım geçişi */
         }
 
         .logo {
@@ -71,7 +70,6 @@
             border: 1px solid #ced4da;
             border-radius: 20px;
             overflow: hidden;
-            transition: border-color 0.3s;
         }
 
         .search-bar input[type="text"] {
@@ -105,12 +103,11 @@
 
         main {
             max-width: 1200px;
-            margin: 100px auto 20px;
+            margin: 100px auto 20px; /* Navbar yüksekliğine göre ayarlandı */
             padding: 20px;
             background: #fff;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            animation: fadeIn 0.8s;
         }
 
         .container {
@@ -159,6 +156,28 @@
             margin: 0 0 10px;
         }
 
+        .hero {
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            position: relative; /* İçerik için konum ayarı */
+            overflow: hidden;
+            margin-bottom: 20px; /* Kartlar ile arasında boşluk bırakmak için */
+        }
+
+        /* Slogan stili */
+        .slogan {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 32px;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Metin gölgesi */
+        }
+
         footer {
             background-color: rgba(52, 58, 64, 0.9);
             color: #fff;
@@ -176,30 +195,11 @@
         footer p {
             margin: 10px;
         }
-
-        /* İçerik Stilleri */
-        .hero {
-            height: 300px;
-            background-size: cover;
-            background-position: center;
-            animation: fadeIn 0.8s;
-        }
-
-        /* Animasyonlar */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
     </style>
 </head>
 
 <body>
-    <nav>
+    <nav id="navbar">
         <div class="logo">BETTER INTERNET</div>
         <ul class="menu">
             <li><a href="#">Yardım Sayfası</a></li>
@@ -216,7 +216,9 @@
     </nav>
 
     <main id="main">
-        <div class="hero" style="background-image: url('https://picsum.photos/800/400?random=1');"></div>
+        <div class="hero" style="background-image: url('https://picsum.photos/800/400?random=1');">
+            <div class="slogan">Proton: Gizlilik ve Güvenlik İçin Buradayız!</div>
+        </div>
         <div class="services container">
             <div class="card">
                 <div class="card-content">
@@ -255,6 +257,20 @@
     <script src="https://kit.fontawesome.com/f3e3f2e5d1.js" crossorigin="anonymous"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            const navbar = document.getElementById('navbar');
+            let lastScrollTop = 0;
+
+            window.addEventListener('scroll', function () {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > lastScrollTop) {
+                    navbar.style.top = "-80px"; // Menüyü yukarı kaydır
+                } else {
+                    navbar.style.top = "0"; // Menüyü geri getir
+                }
+                lastScrollTop = scrollTop;
+            });
+
             document.getElementById('search-input').addEventListener('input', function () {
                 const inputVal = this.value;
                 if (inputVal === '') {
