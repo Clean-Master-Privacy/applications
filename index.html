@@ -10,17 +10,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         /* Temel stiller */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
             font-family: 'Roboto', sans-serif;
             line-height: 1.6;
             overflow-x: hidden;
-            transition: background-color 0.3s, color 0.3s; /* Renk geçişleri */
+            margin: 0;
+            padding: 0;
         }
 
         nav {
@@ -31,14 +26,9 @@
             justify-content: space-between;
             align-items: center;
             position: fixed;
+            top: 0;
             width: 100%;
             z-index: 1000;
-            transition: top 0.3s;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
         }
 
         .menu {
@@ -60,53 +50,13 @@
             color: #ffc107;
         }
 
-        .search-bar {
-            display: flex;
-            align-items: center;
-            border-radius: 20px;
-            overflow: hidden;
-            margin-left: 20px;
-        }
-
-        .search-bar input[type="text"] {
-            padding: 10px 15px;
-            font-size: 15px;
-            border: none;
-            outline: none;
-            border-radius: 20px 0 0 20px;
-            width: 250px;
-        }
-
-        .search-bar button {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 0 20px 20px 0;
-            cursor: pointer;
-        }
-
         main {
             max-width: 1200px;
-            margin: 100px auto;
+            margin: 100px auto 20px auto; /* üstte navbar için alan bırakıldı */
             padding: 20px;
             border-radius: 8px;
             background: #f8f9fa;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero {
-            height: 300px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 32px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
 
         footer {
@@ -115,13 +65,13 @@
             text-align: center;
             padding: 15px 0;
             width: 100%;
+            position: relative;
+            bottom: 0;
+            left: 0;
+            height: 60px;
         }
 
-        footer p {
-            margin: 10px;
-        }
-
-        .contact-form, .help-content {
+        .contact-form {
             display: flex;
             flex-direction: column;
             gap: 10px;
@@ -146,11 +96,10 @@
         .contact-form button:hover {
             background-color: #0056b3;
         }
-
     </style>
 </head>
 
-<body class="dark-theme">
+<body>
     <nav>
         <div class="logo">BETTER INTERNET</div>
         <ul class="menu">
@@ -159,24 +108,17 @@
             <li><a href="#" onclick="showPage('hakkinda')">Hakkında</a></li>
             <li><a href="#" onclick="showPage('iletisim')">İletişim</a></li>
         </ul>
-        <div class="search-bar">
-            <input type="text" id="search-input" placeholder="Kaynaklar için ara...">
-            <button id="search-btn"><i class="fas fa-search"></i></button>
-        </div>
     </nav>
 
     <main id="main-content">
         <div id="ana" class="page">
-            <div class="hero" style="background-image: url('https://picsum.photos/800/400?random=1');">
-                Proton: Gizlilik ve Güvenlik İçin Buradayız!
-            </div>
+            <h1>Ana Sayfa</h1>
             <p>Gizemli bir internet deneyimi için Better Internet ile tanışın. Gizliliğinizi koruyun, hizmetlerimizi keşfedin.</p>
         </div>
 
         <div id="yardim" class="page" style="display:none;">
             <h1>Yardım Sayfası</h1>
             <p>Bu sayfa, Better Internet hizmetleri ile ilgili yardım ve bilgiler sunar.</p>
-            <h3>Yardımcı Olacağımız Konular:</h3>
             <ul>
                 <li>Gizlilik hizmetleri</li>
                 <li>Destek almak için iletişim yolları</li>
@@ -191,7 +133,6 @@
 
         <div id="iletisim" class="page" style="display:none;">
             <h1>İletişim</h1>
-            <p>Bize ulaşmak için lütfen aşağıdaki formu doldurun:</p>
             <form class="contact-form" id="contact-form">
                 <input type="text" id="name" placeholder="Adınız" required>
                 <input type="email" id="email" placeholder="Email Adresiniz" required>
@@ -222,7 +163,7 @@
                 const email = document.getElementById('email').value;
                 const message = document.getElementById('message').value;
 
-                // Burada form verilerini işleyebilirsiniz (örneğin, bir API'ye gönderme)
+                // Form verilerini işleme
                 console.log('Ad:', name);
                 console.log('Email:', email);
                 console.log('Mesaj:', message);
@@ -233,12 +174,6 @@
                 // Formu sıfırla
                 this.reset();
             });
-        });
-
-        // Arama işlevi
-        document.getElementById('search-btn').addEventListener('click', function () {
-            const inputVal = document.getElementById('search-input').value;
-            alert(`Ara: ${inputVal}`);
         });
     </script>
 </body>
