@@ -131,7 +131,8 @@
             margin: 0 10px;
         }
 
-        #contact-form {
+        #contact-form,
+        #login-form {
             max-width: 600px;
             margin: 0 auto;
             background: #ffffff;
@@ -140,7 +141,8 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        #contact-form input, #contact-form textarea {
+        #contact-form input, #contact-form textarea,
+        #login-form input {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
@@ -149,7 +151,8 @@
             box-sizing: border-box;
         }
 
-        #contact-form button {
+        #contact-form button,
+        #login-form button {
             background: #007bff;
             color: white;
             border: none;
@@ -160,20 +163,45 @@
             transition: background 0.3s;
         }
 
-        #contact-form button:hover {
+        #contact-form button:hover,
+        #login-form button:hover {
             background: #0056b3;
+        }
+
+        .content {
+            display: none; /* All sections hidden by default */
+        }
+
+        .fade-in {
+            display: block; /* Make this visible */
+        }
+
+        #user-count {
+            position: fixed;
+            top: 10px;
+            right: 20px;
+            background: #007bff;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 <body>
+    <div id="user-count">Current Users Logged In: <span id="current-users">0</span></div>
+    
     <header>
         <nav>
             <h1><a href="#">Better Internet</a></h1>
             <ul>
-                <li><a href="#" onclick="showPage('home')">Home</a></li>
-                <li><a href="#" onclick="showPage('about')">About</a></li>
-                <li><a href="#" onclick="showPage('services')">Services</a></li>
-                <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+                <li><a href="#" class="page-link" onclick="showPage('home')">Home</a></li>
+                <li><a href="#" class="page-link" onclick="showPage('about')">About</a></li>
+                <li><a href="#" class="page-link" onclick="showPage('services')">Services</a></li>
+                <li><a href="#" class="page-link" onclick="showPage('contact')">Contact</a></li>
+                <li><a href="#" class="page-link" onclick="showPage('faq')">FAQ</a></li>
+                <li><a href="#" class="page-link" onclick="showPage('testimonials')">Testimonials</a></li>
+                <li><a href="#" class="page-link" onclick="showPage('login')">Login</a></li>
             </ul>
         </nav>
     </header>
@@ -211,12 +239,12 @@
             </section>
         </section>
 
-        <section id="about" class="content" style="display:none;">
+        <section id="about" class="content">
             <h2>About Us</h2>
             <p>We are a non-profit organization dedicated to improving internet security and protecting human rights online. Our mission is to provide essential resources and solutions for users across the globe.</p>
         </section>
 
-        <section id="services" class="content" style="display:none;">
+        <section id="services" class="content">
             <h2>Our Services</h2>
             <p>We offer a variety of services aimed at ensuring your online safety and freedom:</p>
             <ul>
@@ -227,7 +255,7 @@
             </ul>
         </section>
 
-        <section id="contact" class="content" style="display:none;">
+        <section id="contact" class="content">
             <h2>Contact Us</h2>
             <form id="contact-form">
                 <input type="text" id="name" placeholder="Your Name" required>
@@ -237,6 +265,32 @@
             </form>
         </section>
 
+        <section id="faq" class="content">
+            <h2>Frequently Asked Questions</h2>
+            <ul>
+                <li><strong>Q: What is your mission?</strong> A: Our mission is to protect human rights and online freedom for all.</li>
+                <li><strong>Q: How can I get involved?</strong> A: You can join us through our website and participate in our campaigns.</li>
+                <li><strong>Q: What kind of services do you offer?</strong> A: We offer online security solutions, privacy advocacy, and education resources.</li>
+            </ul>
+        </section>
+
+        <section id="testimonials" class="content">
+            <h2>Testimonials</h2>
+            <div>
+                <p><strong>Jane Doe:</strong> "This organization made a significant impact on my understanding of online security. Highly recommend!"</p>
+                <p><strong>John Smith:</strong> "Their resources helped me protect my privacy online. Thank you!"</p>
+            </div>
+        </section>
+        
+        <section id="login" class="content">
+            <h2>Login</h2>
+            <form id="login-form">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p id="login-message" style="color: red;"></p>
+        </section>
     </main>
 
     <footer>
@@ -251,12 +305,59 @@
     <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
     <script src='https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js'></script>
     <script>
+        let currentUserCount = 0; // Kullanıcı sayısını tut
+        const loggedInUsers = new Set(); // Giriş yapan kullanıcıları tutmak için bir küme
+
         function showPage(pageId) {
-            const pages = document.querySelectorAll('.content');
-            pages.forEach(page => page.style.display = 'none');
-            document.getElementById(pageId).style.display = 'block';
+            const sections = document.querySelectorAll('.content');
+            sections.forEach(section => {
+                section.style.display = 'none'; // Tüm bölümleri gizle
+            });
+            document.getElementById(pageId).style.display = 'block'; // Seçili bölümü göster
         }
 
+        // Sayfa yüklendiğinde default olarak ev sayfasını göster
+        showPage('home');
+
+        // İletişim formunun gönderilmesi
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (name === "" || email === "" || message === "") {
+                alert("Please fill all fields.");
+                return false;
+            } else {
+                alert("Thank you for your message, we will get back to you soon!");
+                document.getElementById('contact-form').reset();
+            }
+        });
+
+        // Giriş formunun gönderilmesi
+        document.getElementById('login-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            // Basit kullanıcı adı ve şifre doğrulama
+            if (username === "user" && password === "password") {
+                // Eğer giriş başarılıysa, kullanıcıyı küme ve sayaçta güncelle
+                if (!loggedInUsers.has(username)) {
+                    loggedInUsers.add(username);
+                    currentUserCount++;
+                }
+
+                alert("Login successful! Current logged-in users: " + currentUserCount);
+                document.getElementById('current-users').innerText = currentUserCount;
+                showPage('home'); // Başlangıç sayfasına dön
+            } else {
+                document.getElementById('login-message').innerText = "Invalid username or password!";
+            }
+        });
+
+        // API'den veri çekme
         document.getElementById("fetch-data").addEventListener("click", function (event) {
             event.preventDefault();
             axios.get('https://jsonplaceholder.typicode.com/posts')
@@ -265,23 +366,6 @@
                 })
                 .catch(error => console.error(error));
         });
-
-        document.getElementById("contact-form").addEventListener("submit", function (event) {
-            event.preventDefault();
-            const name = document.getElementById("name").value.trim();
-            const email = document.getElementById("email").value.trim();
-            const message = document.getElementById("message").value.trim();
-
-            if (name === "" || email === "" || message === "") {
-                alert("Please fill all fields.");
-                return false;
-            } else {
-                alert("Thank you for your message, we will get back to you soon!");
-                document.getElementById("contact-form").reset();
-            }
-        });
-
-        showPage('home');
     </script>
 </body>
 </html>
