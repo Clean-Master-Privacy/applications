@@ -223,6 +223,36 @@
         .light-theme .card-icon {
             color: #007bff;
         }
+
+        /* İletişim Formu Stilleri */
+        .contact-form {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 
@@ -302,11 +332,13 @@
 
         <div id="iletisim" class="page" style="display:none;">
             <h1>İletişim</h1>
-            <p>Bize ulaşmak için aşağıdaki yöntemleri kullanabilirsiniz:</p>
-            <ul>
-                <li>Email: info@betterinternet.com</li>
-                <li>Telefon: +90 123 456 78 90</li>
-            </ul>
+            <p>Bize ulaşmak için lütfen aşağıdaki formu doldurun:</p>
+            <form class="contact-form" id="contact-form">
+                <input type="text" id="name" placeholder="Adınız" required>
+                <input type="email" id="email" placeholder="Email Adresiniz" required>
+                <textarea id="message" rows="5" placeholder="Mesajınız" required></textarea>
+                <button type="submit">Gönder</button>
+            </form>
         </div>
     </main>
 
@@ -364,6 +396,25 @@
             document.getElementById('search-btn').addEventListener('click', function () {
                 const inputVal = document.getElementById('search-input').value;
                 alert(`Ara: ${inputVal}`);
+            });
+
+            // İletişim formu işlevselliği
+            document.getElementById('contact-form').addEventListener('submit', function (event) {
+                event.preventDefault(); // Formun varsayılan gönderimini durdur
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+
+                // Burada form verilerini işleyebilirsiniz (örneğin, bir API'ye gönderme)
+                console.log('Ad:', name);
+                console.log('Email:', email);
+                console.log('Mesaj:', message);
+                
+                // Kullanıcıya onay mesajı
+                alert('Mesajınız başarıyla gönderildi!');
+
+                // Formu sıfırla
+                this.reset();
             });
         });
     </script>
