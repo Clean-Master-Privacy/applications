@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,211 +7,163 @@
     <meta name="description" content="Essential resources for internet security and freedom. We protect human rights!">
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
+        /* Temel Stiller */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
             background-color: #f4f7fa;
             color: #333;
         }
 
-        header {
-            background: #343a40;
-            color: #ffffff;
-            padding: 20px 0;
-            text-align: center;
-        }
-
         nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            position: relative;
         }
 
-        nav h1 a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 28px;
+        .logo {
+            display: inline-block;
+            margin-right: 20px;
+            color: #fff;
         }
 
-        nav ul {
-            list-style-type: none;
+        .menu {
+            list-style: none;
             padding: 0;
             margin: 0;
+            display: inline-block;
         }
 
-        nav ul li {
+        .menu li {
             display: inline;
             margin: 0 15px;
         }
 
-        nav ul li a {
-            color: #ffffff;
+        .menu a {
             text-decoration: none;
-            padding: 8px 15px;
-            transition: background 0.3s;
-        }
-
-        nav ul li a:hover {
-            background: #495057;
-            border-radius: 5px;
-        }
-
-        .hero {
-            background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?fit=crop&w=1500&h=600&q=80') no-repeat center center/cover;
             color: #fff;
-            padding: 60px 20px;
-            text-align: center;
-            border-radius: 0 0 30px 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .hero h2 {
-            font-size: 2.5em;
-            margin-bottom: 15px;
+        .menu a:hover {
+            color: #ccc;
         }
 
-        .btn-primary {
-            background: #ffcc00;
-            color: #333;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s;
-            display: inline-block;
-            margin-top: 10px;
+        .search-bar {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
         }
 
-        .btn-primary:hover {
-            background: #e0b800;
+        .search-bar input[type="text"] {
+            width: 200px;
+            padding: 10px;
+            font-size: 15px;
         }
 
-        .services {
-            display: flex;
-            justify-content: space-around;
-            padding: 40px 20px;
+        .search-bar button {
+            background-color: #444;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
         }
 
-        .service {
-            background: #ffffff;
+        .search-bar button:hover {
+            background-color: #555;
+        }
+
+        .content {
             padding: 20px;
-            border: 1px solid #e0e0e0;
-            border-radius: 10px;
-            text-align: center;
-            width: 30%;
+            width: 80%;
+            margin: 0 auto;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-
-        .service:hover {
-            transform: translateY(-5px);
-        }
-
-        .service i {
-            font-size: 3em;
-            color: #007bff;
         }
 
         footer {
-            background: #343a40;
-            color: #ffffff;
+            background-color: #333;
+            color: #fff;
             text-align: center;
             padding: 15px 0;
             position: relative;
             bottom: 0;
             width: 100%;
+            clear: both;
         }
 
-        .socials li {
-            display: inline;
-            margin: 0 10px;
-        }
-
-        #contact-form,
-        #login-form {
-            max-width: 600px;
-            margin: 0 auto;
-            background: #ffffff;
+        /* Form Stilleri */
+        .form {
+            width: 300px;
+            margin: 40px auto;
             padding: 20px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
             border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        #contact-form input, #contact-form textarea,
-        #login-form input {
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input, textarea {
             width: 100%;
+            height: 30px;
             padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #e0e0e0;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
             border-radius: 5px;
-            box-sizing: border-box;
         }
 
-        #contact-form button,
-        #login-form button {
-            background: #007bff;
-            color: white;
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
             border: none;
-            padding: 10px;
             border-radius: 5px;
             cursor: pointer;
-            width: 100%;
-            transition: background 0.3s;
         }
 
-        #contact-form button:hover,
-        #login-form button:hover {
-            background: #0056b3;
-        }
-
-        .content {
-            display: none; /* All sections hidden by default */
-        }
-
-        .fade-in {
-            display: block; /* Make this visible */
-        }
-
-        #user-count {
-            position: fixed;
-            top: 10px;
-            right: 20px;
-            background: #007bff;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        button[type="submit"]:hover {
+            background-color: #3e8e41;
         }
     </style>
 </head>
 <body>
-    <div id="user-count">Current Users Logged In: <span id="current-users">0</span></div>
-    
-    <header>
-        <nav>
-            <h1><a href="#">Better Internet</a></h1>
-            <ul>
-                <li><a href="#" class="page-link" onclick="showPage('home')">Home</a></li>
-                <li><a href="#" class="page-link" onclick="showPage('about')">About</a></li>
-                <li><a href="#" class="page-link" onclick="showPage('services')">Services</a></li>
-                <li><a href="#" class="page-link" onclick="showPage('contact')">Contact</a></li>
-                <li><a href="#" class="page-link" onclick="showPage('faq')">FAQ</a></li>
-                <li><a href="#" class="page-link" onclick="showPage('testimonials')">Testimonials</a></li>
-                <li><a href="#" class="page-link" onclick="showPage('login')">Login</a></li>
-            </ul>
-        </nav>
-    </header>
-
+    <nav>
+        <div class="logo">
+            <h2>Better Internet</h2>
+        </div>
+        <input type="checkbox" id="menuToggle">
+        <ul class="menu">
+            <li><a href="#" onclick="showPage('home')">Home</a></li>
+            <li><a href="#" onclick="showPage('about')">About</a></li>
+            <li><a href="#" onclick="showPage('services')">Services</a></li>
+            <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+            <li><a href="#" onclick="showPage('faq')">FAQ</a></li>
+            <li><a href="#" onclick="showPage('testimonials')">Testimonials</a></li>
+            <li><a href="#" onclick="showPage('login')">Login</a></li>
+        </ul>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search for resources...">
+            <button id="search-btn">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </nav>
     <main>
         <section id="home" class="content fade-in">
             <div class="hero">
                 <h2>Join Hands for Internet Security and Freedom!</h2>
                 <p>We are protecting human rights and online freedom for all. Join us today!</p>
-                <a href="#" class="btn-primary" id="fetch-data">Discover Our Services</a>
             </div>
 
             <section class="services">
@@ -231,11 +183,6 @@
                     <h3>Global Impact</h3>
                     <p>We are creating a global impact through our services and solutions.</p>
                 </div>
-            </section>
-
-            <section id="api-data">
-                <h2>Data from API</h2>
-                <pre id="api-response"></pre>
             </section>
         </section>
 
@@ -257,12 +204,21 @@
 
         <section id="contact" class="content">
             <h2>Contact Us</h2>
-            <form id="contact-form">
-                <input type="text" id="name" placeholder="Your Name" required>
-                <input type="email" id="email" placeholder="Your Email" required>
-                <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
-                <button type="submit" class="form-btn">Send Message</button>
-            </form>
+            <div class="form">
+                <form id="contact-form">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" required>
+                    
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" required>
+                    
+                    <label for="message">Your Message:</label>
+                    <textarea id="message" rows="4" required></textarea>
+                    
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+            <div id="contact-response" style="margin-top: 20px;"></div>
         </section>
 
         <section id="faq" class="content">
@@ -281,90 +237,85 @@
                 <p><strong>John Smith:</strong> "Their resources helped me protect my privacy online. Thank you!"</p>
             </div>
         </section>
-        
+
         <section id="login" class="content">
             <h2>Login</h2>
-            <form id="login-form">
-                <input type="text" id="username" placeholder="Username" required>
-                <input type="password" id="password" placeholder="Password" required>
-                <button type="submit">Login</button>
-            </form>
-            <p id="login-message" style="color: red;"></p>
+            <div class="form">
+                <form id="login-form">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" required>
+                    
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" required>
+                    
+                    <button type="submit">Login</button>
+                </form>
+                <p id="login-message" style="color: red;"></p>
+            </div>
         </section>
     </main>
-
     <footer>
-        <p>&copy;2023 Better Internet Initiative. All rights reserved.</p>
-        <ul class="socials">
-            <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-        </ul>
+        &copy; 2023 Better Internet Initiative. All rights reserved.
     </footer>
 
-    <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
-    <script src='https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js'></script>
     <script>
-        let currentUserCount = 0; // Kullanıcı sayısını tut
-        const loggedInUsers = new Set(); // Giriş yapan kullanıcıları tutmak için bir küme
+        // Form gönderimi için
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
 
+            document.getElementById('contact-response').innerHTML = `
+                <h3>Thank You!</h3>
+                <p>We have received your message:</p>
+                <p>Name: ${name}</p>
+                <p>Email: ${email}</p>
+                <p>Message: ${message}</p>`;
+            
+            this.reset(); // Formu sıfırlama
+        });
+
+        // Login formu gönderim işlemi
+        document.getElementById('login-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Örnek bir kullanıcı adı ve şifre ile kontrol
+            if (username === "user" && password === "password") {
+                document.getElementById('login-message').textContent = "Login successful!";
+            } else {
+                document.getElementById('login-message').textContent = "Invalid username or password.";
+            }
+        });
+
+        // Sayfa gösterimi için
         function showPage(pageId) {
             const sections = document.querySelectorAll('.content');
             sections.forEach(section => {
                 section.style.display = 'none'; // Tüm bölümleri gizle
             });
-            document.getElementById(pageId).style.display = 'block'; // Seçili bölümü göster
+            document.getElementById(pageId).style.display = 'block'; // Seçilen bölümü göster
         }
 
-        // Sayfa yüklendiğinde default olarak ev sayfasını göster
-        showPage('home');
+        // Sayfa yüklendiğinde ana sayfayı göster
+        window.onload = function () {
+            showPage('home');
+        };
 
-        // İletişim formunun gönderilmesi
-        document.getElementById('contact-form').addEventListener('submit', function (event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
-
-            if (name === "" || email === "" || message === "") {
-                alert("Please fill all fields.");
-                return false;
-            } else {
-                alert("Thank you for your message, we will get back to you soon!");
-                document.getElementById('contact-form').reset();
-            }
-        });
-
-        // Giriş formunun gönderilmesi
-        document.getElementById('login-form').addEventListener('submit', function (event) {
-            event.preventDefault();
-            const username = document.getElementById('username').value.trim();
-            const password = document.getElementById('password').value.trim();
-
-            // Basit kullanıcı adı ve şifre doğrulama
-            if (username === "user" && password === "password") {
-                // Eğer giriş başarılıysa, kullanıcıyı küme ve sayaçta güncelle
-                if (!loggedInUsers.has(username)) {
-                    loggedInUsers.add(username);
-                    currentUserCount++;
+        // Arama işlevi basit örnek
+        document.getElementById("search-btn").addEventListener("click", function () {
+            const input = document.getElementById("search-input").value.toLowerCase();
+            const sections = document.querySelectorAll('.content');
+            sections.forEach(section => {
+                const sectionTitle = section.querySelector('h2').textContent.toLowerCase();
+                if (sectionTitle.includes(input) || input === "") {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
                 }
-
-                alert("Login successful! Current logged-in users: " + currentUserCount);
-                document.getElementById('current-users').innerText = currentUserCount;
-                showPage('home'); // Başlangıç sayfasına dön
-            } else {
-                document.getElementById('login-message').innerText = "Invalid username or password!";
-            }
-        });
-
-        // API'den veri çekme
-        document.getElementById("fetch-data").addEventListener("click", function (event) {
-            event.preventDefault();
-            axios.get('https://jsonplaceholder.typicode.com/posts')
-                .then(response => {
-                    document.getElementById("api-response").textContent = JSON.stringify(response.data, null, 2);
-                })
-                .catch(error => console.error(error));
+            });
         });
     </script>
 </body>
