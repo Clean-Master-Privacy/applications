@@ -36,7 +36,6 @@
         .logo {
             font-size: 24px;
             font-weight: bold;
-            color: #fff;
         }
         .menu {
             list-style: none;
@@ -92,6 +91,7 @@
             text-align: center;
             padding: 15px 0;
         }
+
         /* İçerik Stilleri */
         .hero {
             background: url('background.png') center/cover no-repeat;
@@ -103,27 +103,25 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             animation: slideIn 1s ease-in-out;
         }
-
         .services {
             display: flex;
             justify-content: space-between;
             margin-top: 20px;
             animation: fadeInUp 0.5s ease;
+            flex-wrap: wrap;
         }
-
         .service {
             background: #f8f9fa;
             padding: 20px;
             border-radius: 8px;
             text-align: center;
-            flex: 1;
+            flex: 1 1 30%;
             margin: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
         }
         .service:hover {
             transform: scale(1.05);
-            transition: transform 0.3s; /* Hover animasyonu */
         }
         .service h3 {
             margin: 15px 0;
@@ -172,6 +170,7 @@
         button[type="submit"]:hover {
             background-color: #218838;
         }
+        
         /* Animasyonlar */
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -184,6 +183,50 @@
         @keyframes fadeInUp {
             from { transform: translateY(20px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Medya Sorguları */
+        @media (max-width: 1200px) {
+            .service {
+                flex: 1 1 45%; /* Laptop ve tabletler için %45 genişlikte */
+            }
+        }
+        @media (max-width: 768px) {
+            .menu {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .menu li {
+                margin: 10px 0;
+            }
+
+            .services {
+                flex-direction: column; /* Hizmetler dikey hizalanacak */
+                align-items: center; /* Hizmet kartlarının merkezde görünmesini sağlar */
+            }
+
+            .service {
+                flex: 1 1 80%; /* Mobil cihazlar için %80 genişliğinde olacak */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 50px 10px; /* Daha küçük ekranlar için içeriği daralt */
+            }
+
+            .logo {
+                font-size: 20px; /* Logo boyutunu küçült */
+            }
+
+            .service h3 {
+                font-size: 20px; /* Başlık boyutunu küçült */
+            }
+
+            .service i {
+                font-size: 30px; /* İkonu küçült */
+            }
         }
     </style>
 </head>
