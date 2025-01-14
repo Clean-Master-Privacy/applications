@@ -7,6 +7,7 @@
     <meta name="description" content="Çevrimiçi güvenlik ve özgürlük için birlikte olalım!">
     <link rel="icon" href="icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         /* Temel Stiller */
         * {
@@ -15,8 +16,8 @@
             box-sizing: border-box;
         }
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #e9ecef;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f7f9fa;
             color: #333;
             line-height: 1.6;
             overflow-x: hidden;
@@ -155,8 +156,6 @@
             position: fixed;
             bottom: 0;
             left: 0;
-            background: #007bff;
-            color: #fff;
             height: 60px;
             display: flex;
             justify-content: center;
@@ -168,7 +167,7 @@
 
         /* İçerik Stilleri */
         .hero {
-            background: url('https://example.com/background.jpg') center/cover no-repeat; /* Arka plan resmi buraya eklenmiştir */
+            background: url('https://example.com/background.jpg') center/cover no-repeat; /* Buraya uygun bir arka plan resmi ekleyin */
             color: #fff;
             padding: 80px 20px;
             text-align: center;
@@ -250,32 +249,56 @@
         <p>&copy; 2023 BETTER INTERNET. Tüm hakları saklıdır.</p>
     </footer>
 
+    <script src="https://kit.fontawesome.com/f3e3f2e5d1.js" crossorigin="anonymous"></script>
     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('search-input').addEventListener('input', function () {
+                const inputVal = this.value;
+                if (inputVal === '') {
+                    document.getElementById('search-btn').style.display = 'none';
+                } else {
+                    document.getElementById('search-btn').style.display = 'block';
+                }
+            });
+
+            document.getElementById('search-btn').addEventListener('click', function () {
+                const inputVal = document.getElementById('search-input').value;
+                alert(`Ara: ${inputVal}`);
+            });
+
+            document.querySelectorAll('.menu li a').forEach(function (anchor) {
+                anchor.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    showPage(this.textContent.trim());
+                });
+            });
+        });
+
         function showPage(page) {
             document.getElementById('main').innerHTML = '';
-            switch(page) {
-                case 'home':
+            switch (page) {
+                case 'Ana Sayfa':
                     homePage();
                     break;
-                case 'about':
+                case 'Hakkında':
                     aboutPage();
                     break;
-                case 'services':
+                case 'Hizmetler':
                     servicesPage();
                     break;
-                case 'contact':
+                case 'İletişim':
                     contactPage();
                     break;
-                case 'faq':
+                case 'SSS':
                     faqPage();
                     break;
-                case 'testimonials':
+                case 'Görüşler':
                     testimonialsPage();
                     break;
-                case 'login':
+                case 'Giriş':
                     loginPage();
                     break;
-            } 
+            }
         }
 
         function homePage() {
@@ -363,7 +386,7 @@
             document.getElementById('main').innerHTML = loginContent;
         }
 
-        showPage('home');
+        showPage('Ana Sayfa');
     </script>
 </body>
 </html>
