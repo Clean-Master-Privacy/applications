@@ -52,7 +52,7 @@
         }
 
         .menu li {
-            margin: 0 20px;
+            margin: 0 15px;
         }
 
         .menu a {
@@ -68,23 +68,33 @@
         .search-bar {
             display: flex;
             align-items: center;
+            border: 1px solid #ced4da;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: border-color 0.3s;
         }
 
         .search-bar input[type="text"] {
-            padding: 10px;
+            padding: 10px 15px;
             font-size: 15px;
-            border: 1px solid #ced4da;
-            border-radius: 5px;
-            width: 60%;
+            border: none;
+            outline: none;
+            border-radius: 20px 0 0 20px;
+            width: 250px;
+            transition: width 0.4s ease;
+        }
+
+        .search-bar input[type="text"]:focus {
+            width: 300px;
+            box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
         }
 
         .search-bar button {
             background-color: #007bff;
             color: #fff;
             border: none;
-            padding: 10px;
-            border-radius: 5px;
-            margin-left: 5px;
+            padding: 10px 15px;
+            border-radius: 0 20px 20px 0;
             cursor: pointer;
             transition: background-color 0.3s;
         }
@@ -192,11 +202,10 @@
     <nav>
         <div class="logo">BETTER INTERNET</div>
         <ul class="menu">
-            <li><a href="#" onclick="changeBackground('https://picsum.photos/800/400?random=1')">Deniz</a></li>
-            <li><a href="#" onclick="changeBackground('https://picsum.photos/800/400?random=2')">Dağlar</a></li>
-            <li><a href="#" onclick="changeBackground('https://picsum.photos/800/400?random=3')">Orman</a></li>
-            <li><a href="#" onclick="changeBackground('https://picsum.photos/800/400?random=4')">Çiçekler</a></li>
-            <li><a href="#" onclick="changeBackground('https://picsum.photos/800/400?random=5')">Güneş</a></li>
+            <li><a href="#">Yardım Sayfası</a></li>
+            <li><a href="#">Ana Sayfa</a></li>
+            <li><a href="#">Hakkında</a></li>
+            <li><a href="#">İletişim</a></li>
         </ul>
         <div class="search-bar">
             <input type="text" id="search-input" placeholder="Kaynaklar için ara...">
@@ -213,26 +222,26 @@
                 <div class="card-content">
                     <i class="fas fa-lock card-icon"></i>
                     <div class="card-info">
-                        <h3>Güvenlik</h3>
-                        <p>Çevrimiçi güvenliğiniz için en son çözümleri sunuyoruz.</p>
+                        <h3>Gizlilik Koruması</h3>
+                        <p>Çevrimiçi gizliliğinizi korumak için en iyi hizmetleri sunuyoruz.</p>
                     </div>
                 </div>
             </div>
             <div class="card">
                 <div class="card-content">
-                    <i class="fas fa-user-shield card-icon"></i>
+                    <i class="fas fa-info-circle card-icon"></i>
                     <div class="card-info">
-                        <h3>Özgürlük</h3>
-                        <p>İnsan hakları ve çevrimiçi özgürlük için savaşıyoruz. Bize katılın!</p>
+                        <h3>Yardım</h3>
+                        <p>Hizmetlerimiz hakkında bilgi almak için yardım sayfamızı ziyaret edin.</p>
                     </div>
                 </div>
             </div>
             <div class="card">
                 <div class="card-content">
-                    <i class="fas fa-globe card-icon"></i>
+                    <i class="fas fa-calendar-alt card-icon"></i>
                     <div class="card-info">
-                        <h3>Küresel Etki</h3>
-                        <p>Hizmetlerimizle küresel bir etki yaratıyoruz.</p>
+                        <h3>Etkinlik Takvimi</h3>
+                        <p>Gelecek etkinlikler ve duyurular için takvimimizi kontrol edin.</p>
                     </div>
                 </div>
             </div>
