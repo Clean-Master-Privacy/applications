@@ -21,6 +21,7 @@
             line-height: 1.6;
             overflow-x: hidden;
         }
+        
         nav {
             background: rgba(52, 58, 64, 0.9);
             color: white;
@@ -33,36 +34,44 @@
             z-index: 1000;
             transition: background 0.5s ease;
         }
+        
         .logo {
             font-size: 24px;
             font-weight: bold;
         }
+        
         .menu {
             list-style: none;
             padding: 0;
             display: flex;
         }
+        
         .menu li {
             margin: 0 15px;
         }
+        
         .menu a {
             text-decoration: none;
             color: #fff;
             transition: color 0.3s;
         }
+        
         .menu a:hover {
             color: #ffc107;
         }
+        
         .search-bar {
             display: flex;
             align-items: center;
         }
+
         .search-bar input[type="text"] {
             padding: 10px;
             font-size: 15px;
             border: 1px solid #ced4da;
             border-radius: 5px;
         }
+        
         .search-bar button {
             background-color: #007bff;
             color: #fff;
@@ -73,9 +82,11 @@
             cursor: pointer;
             transition: background-color 0.3s;
         }
+        
         .search-bar button:hover {
             background-color: #0056b3;
         }
+        
         main {
             max-width: 1200px;
             margin: 100px auto 20px;
@@ -85,6 +96,7 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             animation: fadeIn 0.8s;
         }
+
         footer {
             background-color: rgba(52, 58, 64, 0.9);
             color: #fff;
@@ -103,37 +115,42 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             animation: slideIn 1s ease-in-out;
         }
+        
         .services {
-            display: flex;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Otomatik sütun sayısı ve boyutu */
+            gap: 20px; /* Kartlar arasındaki boşluk */
             margin-top: 20px;
             animation: fadeInUp 0.5s ease;
-            flex-wrap: wrap;
         }
+
         .service {
             background: #f8f9fa;
             padding: 20px;
             border-radius: 8px;
             text-align: center;
-            flex: 1 1 30%;
-            margin: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
         }
+        
         .service:hover {
             transform: scale(1.05);
         }
+        
         .service h3 {
             margin: 15px 0;
         }
+
         .service i {
             font-size: 40px;
             color: #007bff;
             transition: color 0.3s;
         }
+
         .service:hover i {
             color: #ffc107;
         }
+
         /* Form Stilleri */
         .form {
             width: 100%;
@@ -144,11 +161,13 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
         label {
             display: block;
             margin-bottom: 10px;
             font-weight: bold;
         }
+
         input, textarea {
             width: 100%;
             padding: 10px;
@@ -157,6 +176,7 @@
             border-radius: 5px;
             font-size: 14px;
         }
+
         button[type="submit"] {
             background-color: #28a745;
             color: #fff;
@@ -167,30 +187,28 @@
             width: 100%;
             transition: background-color 0.3s;
         }
+
         button[type="submit"]:hover {
             background-color: #218838;
         }
-        
+
         /* Animasyonlar */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
+
         @keyframes slideIn {
             from { transform: translateY(-50px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
+
         @keyframes fadeInUp {
             from { transform: translateY(20px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
 
         /* Medya Sorguları */
-        @media (max-width: 1200px) {
-            .service {
-                flex: 1 1 45%; /* Laptop ve tabletler için %45 genişlikte */
-            }
-        }
         @media (max-width: 768px) {
             .menu {
                 flex-direction: column;
@@ -200,32 +218,19 @@
             .menu li {
                 margin: 10px 0;
             }
-
-            .services {
-                flex-direction: column; /* Hizmetler dikey hizalanacak */
-                align-items: center; /* Hizmet kartlarının merkezde görünmesini sağlar */
-            }
-
-            .service {
-                flex: 1 1 80%; /* Mobil cihazlar için %80 genişliğinde olacak */
-            }
         }
 
         @media (max-width: 480px) {
             .hero {
-                padding: 50px 10px; /* Daha küçük ekranlar için içeriği daralt */
+                padding: 50px 10px;
             }
 
             .logo {
-                font-size: 20px; /* Logo boyutunu küçült */
+                font-size: 20px;
             }
 
             .service h3 {
-                font-size: 20px; /* Başlık boyutunu küçült */
-            }
-
-            .service i {
-                font-size: 30px; /* İkonu küçült */
+                font-size: 20px;
             }
         }
     </style>
@@ -249,6 +254,7 @@
             </button>
         </div>
     </nav>
+    
     <main id="main">
         <section id="home" class="content">
             <div class="hero">
@@ -291,13 +297,10 @@
                 <form>
                     <label for="name">Adınız:</label>
                     <input type="text" id="name" required>
-
                     <label for="email">E-posta:</label>
                     <input type="email" id="email" required>
-
                     <label for="message">Mesajınız:</label>
                     <textarea id="message" rows="5" required></textarea>
-
                     <button type="submit">Gönder</button>
                 </form>
             </div>
@@ -330,15 +333,14 @@
                 <form>
                     <label for="username">Kullanıcı Adı:</label>
                     <input type="text" id="username" required>
-
                     <label for="password">Şifre:</label>
                     <input type="password" id="password" required>
-
                     <button type="submit">Giriş Yap</button>
                 </form>
             </div>
         </section>
     </main>
+
     <footer>
         <p>&copy; 2023 BETTER INTERNET. Tüm hakları saklıdır.</p>
     </footer>
