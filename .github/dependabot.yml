@@ -1,48 +1,48 @@
 version: 2
 updates:
-  # NPM Güncellemeleri
+  # NPM Updates
   - package-ecosystem: "npm"
-    directory: "/"  # Proje ana dizini
+    directory: "/"  # Root directory
     schedule:
       interval: "daily"
     allow:
-      - dependency-name: "*"  # Tüm NPM bağımlılıkları
+      - dependency-name: "*"  # All NPM dependencies
     ignore:
-      - dependency-name: "react"  # Güncellemeleri yok say
+      - dependency-name: "react"  # Ignore updates for React
       - dependency-name: "vue"
-    target-branch: "main"  # Ana dal
+    target-branch: "main"  # Main branch
     commit-message:
-      prefix: "fix"  # Commit mesajının başına "fix" ekle
-    versioning-strategy: "auto"  # Otomatik sürüm güncellemeleri
+      prefix: "fix"  # Prefix for commit message
+    versioning-strategy: "auto"  # Automatic version updates
 
-  # Haftalık belirli NPM bağımlılık güncellemeleri
+  # Weekly specific NPM dependency updates
   - package-ecosystem: "npm"
-    directory: "/src"  # Alt dizin
+    directory: "/src"  # Subdirectory
     schedule:
       interval: "weekly"
     allow:
       - dependency-name: "@noble*"
       - dependency-name: "fflate"
       - dependency-name: "playwright"
-    target-branch: "feature/new-feature"  # Özelleştirilmiş dal
+    target-branch: "feature/new-feature"  # Custom branch
     commit-message:
-      prefix: "feat"  # Commit mesajının başına "feat" ekle
+      prefix: "feat"  # Prefix for commit message
 
-  # Python Güncellemeleri
+  # Python Updates
   - package-ecosystem: "pip"
     directory: "/"  
     schedule:
       interval: "daily"
     allow:
-      - dependency-name: "*"  # Tüm Python bağımlılıkları
+      - dependency-name: "*"  # All Python dependencies
     ignore:
       - dependency-name: "tensorflow"
       - dependency-name: "torch"
     target-branch: "main"  
     commit-message:
-      prefix: "fix"  # Commit mesajının başına "fix" ekle
+      prefix: "fix"  # Prefix for commit message
 
-  # Python AI kütüphaneleri için haftalık güncellemeler
+  # Weekly updates for Python AI libraries
   - package-ecosystem: "pip"
     directory: "/"
     schedule:
@@ -54,24 +54,24 @@ updates:
     commit-message:
       prefix: "feat"
 
-  # Ruby Güncellemeleri
+  # Ruby Updates
   - package-ecosystem: "bundler"
     directory: "/"
     schedule:
       interval: "daily"
     allow:
-      - dependency-name: "*"  # Tüm Ruby bağımlılıkları
+      - dependency-name: "*"  # All Ruby dependencies
     target-branch: "main"
     commit-message:
       prefix: "fix"
 
-  # Java Güncellemeleri
+  # Java Updates
   - package-ecosystem: "maven"
     directory: "/"
     schedule:
       interval: "daily"
     allow:
-      - dependency-name: "*"  # Tüm Java bağımlılıkları
+      - dependency-name: "*"  # All Java dependencies
     target-branch: "main"
     commit-message:
       prefix: "fix"
