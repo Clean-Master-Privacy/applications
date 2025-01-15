@@ -1,0 +1,62 @@
+name: GitHub Eylemler Demo
+on:
+  push:  
+    branches:
+      - main
+    workflows:
+      - build-and-deploy
+  pull_request:  
+    branches:
+      - main
+  schedule:  
+    - cron: '0 12 * * *'
+  workflow_dispatch:
+jobs:
+  kesfet-github-eylemleri:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      DEPLOYMENT_BRANCH: ${ {github.event.branch}}
+    steps:
+      - name: Eylem Tanımlayıcıları Al
+        run: echo "İş, bir ${{ github.event_name }} olayı tarafından otomatik olarak tetiklendi."
+      - name: İşletim Sistemi Hakkında Bilgi
+        run: echo "Bu iş şimdi GitHub'ın ev sahipliğinde bir ${{ runner.os }} sunucusunda çalışıyor!"
+      - name: İş Akışının Durumunu Tanımla
+        run: echo "Sıranın adı ${{ github.ref }} ve deponuz ${{ github.repository }}."
+      - name: Depo Kodunu Al
+        uses: actions/checkout@v4
+      - name: Depo Kodu Klonlandı
+        run: echo "${{ github.repository }} deposu koşucuya klonlandı."
+      - name: Çalışma Akışı Hazır
+        run: echo "Çalışma akışı artık koşucuda kodunuzu test etmeye hazır."
+      - name: Dosyaları Listeleyin
+        run: ls ${{ github.workspace }}
+      - name: İşin Durumunu Tanımla
+        run: echo "Bu işin durumu: ${{ job.status }}."
+      - name: İş Akışı Hazır
+        run: echo "Çalışma akışı şimdi koşucuda kodunuzu test etmeye hazırlanıyor."
+      - name: Eylem Tanımlayıcılarını Al
+        run: echo "Eylem tanımlayıcıları şu şekildedir: ${ {github.event_name }}"
+      - name: İş Akışının Başlangıcını Belirt
+        run: echo "İş akışı ${ {github.event_name }} olayı tarafından tetiklendi."
+      - name: İşin Sonucunu Belirt
+        run: echo "İş akışı ${{ job.conclusion }} durumuyla tamamladı."
+      - name: Dosyalar
+        run: ls ${{ github.workspace }}
+      - name: İş Akışı Bilgilerini Al
+        id: save-job-details
+        run: echo "İş akışı bilgileri alınıyor..."
+        uses: 10steps/action-write-file@v3
+        with:
+          file: job-details.txt
+          content: |
+            İş Akışı Bilgileri:
+            - İş adı: kesfet-github-eylemleri
+            - İş akışı çalıştırması: ubuntu-latest
+            - İşin sonucu: ${ {job.result}}
+        run: |
+          echo "İş Akışı Bilgileri Kaydedildi."
+          echo "${{ steps.save-job-details.outputs.file }}" >> ${ {github.workflow} }-result.txt
+      - name: Sonucu Al
+        run: echo "İş akışı başarıyla tamamlandı."
