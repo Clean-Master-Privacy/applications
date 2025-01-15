@@ -61,17 +61,11 @@ updates:
       - dependency-name: "*"
     versioning-strategy: increase
 
-  # Ruby AI library updates
-  - package-ecosystem: "rubygems"
+  # Ruby updates (using bundler)
+  - package-ecosystem: "bundler" # Correct ecosystem for Ruby projects
     directory: "/"
     schedule:
       interval: "daily"
     allow:
       - dependency-name: "tensorflow-ruby" # AI library for Ruby
     versioning-strategy: increase
-
-# Optional: Notification settings
-notifications:
-  - type: "email"
-    recipients:
-      - "example@example.com" # Add your email address to receive notifications.
