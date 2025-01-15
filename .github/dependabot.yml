@@ -9,40 +9,40 @@ updates:
       - dependency-name: "*"  # All NPM dependencies
     ignore:
       - dependency-name: "react"  # Ignore updates for React
-      - dependency-name: "vue"
+      - dependency-name: "vue"  # Ignore updates for Vue
     target-branch: "main"  # Main branch
     commit-message:
       prefix: "fix"  # Prefix for commit message
-    versioning-strategy: "auto"  # Automatic version updates
+    versioning-strategy: "widen"  # Allows for version ranges in `package.json`
 
-  # Weekly specific NPM dependency updates
+  # Weekly updates for specific NPM dependencies
   - package-ecosystem: "npm"
-    directory: "/src"  # Subdirectory
+    directory: "/src"  # Example subdirectory
     schedule:
       interval: "weekly"
     allow:
       - dependency-name: "@noble*"
       - dependency-name: "fflate"
       - dependency-name: "playwright"
-    target-branch: "feature/new-feature"  # Custom branch
+    target-branch: "feature/npm-updates"  # Custom branch for these updates
     commit-message:
       prefix: "feat"  # Prefix for commit message
 
   # Python Updates
   - package-ecosystem: "pip"
-    directory: "/"  
+    directory: "/"
     schedule:
       interval: "daily"
     allow:
       - dependency-name: "*"  # All Python dependencies
     ignore:
-      - dependency-name: "tensorflow"
-      - dependency-name: "torch"
-    target-branch: "main"  
+      - dependency-name: "tensorflow"  # Ignore updates for TensorFlow
+      - dependency-name: "torch"  # Ignore updates for PyTorch
+    target-branch: "main"
     commit-message:
       prefix: "fix"  # Prefix for commit message
 
-  # Weekly updates for Python AI libraries
+  # Weekly updates for specific Python libraries
   - package-ecosystem: "pip"
     directory: "/"
     schedule:
@@ -50,7 +50,7 @@ updates:
     allow:
       - dependency-name: "tensorflow"
       - dependency-name: "scikit-learn"
-    target-branch: "feature/ai-updates"
+    target-branch: "feature/python-ai-updates"  # Custom branch for AI library updates
     commit-message:
       prefix: "feat"
 
