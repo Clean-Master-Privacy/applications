@@ -1,63 +1,77 @@
 version: 2
 updates:
-  # Daily updates for playwright
+  # NPM Güncellemeleri
   - package-ecosystem: "npm"
-    directory: "/lib"
+    directory: "/"  # Proje ana dizini
     schedule:
       interval: "daily"
     allow:
-      - dependency-name: "playwright"
-    target-branch: "main"
+      - dependency-name: "*"  # Tüm NPM bağımlılıkları
+    ignore:
+      - dependency-name: "react"  # Güncellemeleri yok say
+      - dependency-name: "vue"
+    target-branch: "main"  # Ana dal
+    commit-message:
+      prefix: "fix"  # Commit mesajının başına "fix" ekle
+    versioning-strategy: "auto"  # Otomatik sürüm güncellemeleri
 
-  # Weekly updates for specific libraries
+  # Haftalık belirli NPM bağımlılık güncellemeleri
   - package-ecosystem: "npm"
-    directory: "/src"
+    directory: "/src"  # Alt dizin
     schedule:
       interval: "weekly"
     allow:
       - dependency-name: "@noble*"
       - dependency-name: "fflate"
-      - dependency-name: "tensorflow"  # Including AI library for JavaScript
-    target-branch: "feature/new-feature"
+      - dependency-name: "playwright"
+    target-branch: "feature/new-feature"  # Özelleştirilmiş dal
+    commit-message:
+      prefix: "feat"  # Commit mesajının başına "feat" ekle
 
-  # General npm updates excluding specific dependencies
-  - package-ecosystem: "npm"
+  # Python Güncellemeleri
+  - package-ecosystem: "pip"
+    directory: "/"  
+    schedule:
+      interval: "daily"
+    allow:
+      - dependency-name: "*"  # Tüm Python bağımlılıkları
+    ignore:
+      - dependency-name: "tensorflow"
+      - dependency-name: "torch"
+    target-branch: "main"  
+    commit-message:
+      prefix: "fix"  # Commit mesajının başına "fix" ekle
+
+  # Python AI kütüphaneleri için haftalık güncellemeler
+  - package-ecosystem: "pip"
     directory: "/"
     schedule:
       interval: "weekly"
     allow:
-      - dependency-name: "*"
-    ignore:
-      - dependency-name: "react"
-      - dependency-name: "vue"
-    target-branch: "main"
+      - dependency-name: "tensorflow"
+      - dependency-name: "scikit-learn"
+    target-branch: "feature/ai-updates"
+    commit-message:
+      prefix: "feat"
 
-  # Python AI library updates
-  - package-ecosystem: "pip"
-    directory: "/"
-    schedule:
-      interval: "daily"
-    allow:
-      - dependency-name: "tensorflow"     # AI library
-      - dependency-name: "torch"          # Another AI library
-      - dependency-name: "scikit-learn"   # Machine learning library
-    target-branch: "main"
-
-  # Java updates, including AI libraries
-  - package-ecosystem: "maven"
-    directory: "/"
-    schedule:
-      interval: "daily"
-    allow:
-      - dependency-name: "deeplearning4j"  # Java AI library
-      - dependency-name: "*"
-    target-branch: "main"
-
-  # Ruby updates (using bundler)
+  # Ruby Güncellemeleri
   - package-ecosystem: "bundler"
     directory: "/"
     schedule:
       interval: "daily"
     allow:
-      - dependency-name: "tensorflow-ruby"  # AI library for Ruby
+      - dependency-name: "*"  # Tüm Ruby bağımlılıkları
     target-branch: "main"
+    commit-message:
+      prefix: "fix"
+
+  # Java Güncellemeleri
+  - package-ecosystem: "maven"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    allow:
+      - dependency-name: "*"  # Tüm Java bağımlılıkları
+    target-branch: "main"
+    commit-message:
+      prefix: "fix"
