@@ -2,16 +2,17 @@ version: 2
 updates:
   # Daily updates for playwright
   - package-ecosystem: "npm"
-    directory: "/"
+    directory: "/lib"
     schedule:
       interval: "daily"
     allow:
       - dependency-name: "playwright"
     versioning-strategy: increase
+    target-branch: "main"
 
   # Weekly updates for specific libraries
   - package-ecosystem: "npm"
-    directory: "/"
+    directory: "/src"
     schedule:
       interval: "weekly"
     allow:
@@ -19,18 +20,11 @@ updates:
       - dependency-name: "fflate"
       - dependency-name: "tensorflow" # Including AI library for JavaScript
     versioning-strategy: increase
-    groups:
-      noble:
-        applies-to: version-updates
-        patterns:
-          - "@noble*"
-        update-types:
-          - "minor"
-          - "patch"
+    target-branch: "feature/new-feature"
 
   # General npm updates excluding specific dependencies
   - package-ecosystem: "npm"
-    directory: "/"
+    directory: "/package.json"
     schedule:
       interval: "weekly"
     allow:
@@ -39,6 +33,7 @@ updates:
     ignore:
       - dependency-name: "react"
       - dependency-name: "vue"
+    target-branch: "main"
 
   # Python AI library updates
   - package-ecosystem: "pip"
@@ -50,6 +45,7 @@ updates:
       - dependency-name: "torch"      # Another AI library
       - dependency-name: "scikit-learn" # Machine learning library
     versioning-strategy: increase
+    target-branch: "main"
 
   # Java updates, including AI libraries
   - package-ecosystem: "maven"
@@ -60,12 +56,14 @@ updates:
       - dependency-name: "deeplearning4j" # Java AI library
       - dependency-name: "*"
     versioning-strategy: increase
+    target-branch: "main"
 
   # Ruby updates (using bundler)
-  - package-ecosystem: "bundler" # Correct ecosystem for Ruby projects
+  - package-ecosystem: "bundler"
     directory: "/"
     schedule:
       interval: "daily"
     allow:
       - dependency-name: "tensorflow-ruby" # AI library for Ruby
     versioning-strategy: increase
+    target-branch: "main"
