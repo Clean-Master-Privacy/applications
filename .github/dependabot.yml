@@ -1,5 +1,6 @@
 version: 2
 updates:
+  # Daily updates for playwright
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
@@ -8,6 +9,7 @@ updates:
       - dependency-name: "playwright"
     versioning-strategy: increase
 
+  # Weekly updates for specific libraries
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
@@ -15,15 +17,61 @@ updates:
     allow:
       - dependency-name: "@noble*"
       - dependency-name: "fflate"
+      - dependency-name: "tensorflow" # Including AI library for JavaScript
     versioning-strategy: increase
     groups:
-      # Any packages matching the pattern @noble* where the highest resolvable
-      # version is minor or patch will be grouped together.
-      # Grouping rules apply to version updates only.
       noble:
         applies-to: version-updates
         patterns:
-        - "@noble*"
+          - "@noble*"
         update-types:
-        - "minor"
-        - "patch"
+          - "minor"
+          - "patch"
+
+  # General npm updates excluding specific dependencies
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    allow:
+      - dependency-name: "*"
+    versioning-strategy: increase
+    ignore:
+      - dependency-name: "react"
+      - dependency-name: "vue"
+
+  # Python AI library updates
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    allow:
+      - dependency-name: "tensorflow" # AI library
+      - dependency-name: "torch"      # Another AI library
+      - dependency-name: "scikit-learn" # Machine learning library
+    versioning-strategy: increase
+
+  # Java updates, including AI libraries
+  - package-ecosystem: "maven"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    allow:
+      - dependency-name: "deeplearning4j" # Java AI library
+      - dependency-name: "*"
+    versioning-strategy: increase
+
+  # Ruby AI library updates
+  - package-ecosystem: "rubygems"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    allow:
+      - dependency-name: "tensorflow-ruby" # AI library for Ruby
+    versioning-strategy: increase
+
+# Optional: Notification settings
+notifications:
+  - type: "email"
+    recipients:
+      - "example@example.com" # Add your email address to receive notifications.
