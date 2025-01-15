@@ -7,7 +7,6 @@ updates:
       interval: "daily"
     allow:
       - dependency-name: "playwright"
-    versioning-strategy: increase
     target-branch: "main"
 
   # Weekly updates for specific libraries
@@ -18,18 +17,16 @@ updates:
     allow:
       - dependency-name: "@noble*"
       - dependency-name: "fflate"
-      - dependency-name: "tensorflow" # Including AI library for JavaScript
-    versioning-strategy: increase
+      - dependency-name: "tensorflow"  # Including AI library for JavaScript
     target-branch: "feature/new-feature"
 
   # General npm updates excluding specific dependencies
   - package-ecosystem: "npm"
-    directory: "/package.json"
+    directory: "/"
     schedule:
       interval: "weekly"
     allow:
       - dependency-name: "*"
-    versioning-strategy: increase
     ignore:
       - dependency-name: "react"
       - dependency-name: "vue"
@@ -41,10 +38,9 @@ updates:
     schedule:
       interval: "daily"
     allow:
-      - dependency-name: "tensorflow" # AI library
-      - dependency-name: "torch"      # Another AI library
-      - dependency-name: "scikit-learn" # Machine learning library
-    versioning-strategy: increase
+      - dependency-name: "tensorflow"     # AI library
+      - dependency-name: "torch"          # Another AI library
+      - dependency-name: "scikit-learn"   # Machine learning library
     target-branch: "main"
 
   # Java updates, including AI libraries
@@ -53,9 +49,8 @@ updates:
     schedule:
       interval: "daily"
     allow:
-      - dependency-name: "deeplearning4j" # Java AI library
+      - dependency-name: "deeplearning4j"  # Java AI library
       - dependency-name: "*"
-    versioning-strategy: increase
     target-branch: "main"
 
   # Ruby updates (using bundler)
@@ -64,6 +59,5 @@ updates:
     schedule:
       interval: "daily"
     allow:
-      - dependency-name: "tensorflow-ruby" # AI library for Ruby
-    versioning-strategy: increase
+      - dependency-name: "tensorflow-ruby"  # AI library for Ruby
     target-branch: "main"
