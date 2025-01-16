@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+    <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <widget_style style1="0" style2="0"/>
@@ -35,3 +35,4 @@
     </widget>
     
 </resources>
+    
