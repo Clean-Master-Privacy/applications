@@ -9,13 +9,33 @@
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
+    // Altıgen kar taneleri oluşturma fonksiyonu
+    function drawSnowflake(x, y, size) {
+        ctx.beginPath();
+        for (let i = 0; i < 6; i++) {
+            let angle = Math.PI / 3 * i;
+            let x1 = x + size * Math.cos(angle);
+            let y1 = y + size * Math.sin(angle);
+            let x2 = x + size / 2 * Math.cos(angle + Math.PI / 6);
+            let y2 = y + size / 2 * Math.sin(angle + Math.PI / 6);
+            ctx.moveTo(x, y);
+            ctx.lineTo(x1, y1);
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+        }
+        ctx.strokeStyle = `rgba(255, 255, 255, 0.8)`; // Beyaz renk
+        ctx.lineWidth = 1;
+        ctx.stroke();
+        ctx.closePath();
+    }
+
     // Kar tanelerini oluştur
     function createSnowflake() {
-        var size = Math.random() * 5 + 3; // Kar tanesi boyutu, biraz daha büyük
+        var size = Math.random() * 5 + 5; // Kar tanesi boyutu, daha büyük
         var x = Math.random() * canvas.width; // X pozisyonu
         var y = -size; // Y pozisyonu (başlangıçta üstten başlar)
-        var speed = Math.random() * 0.5 + 0.2; // Kar tanelerinin düşme hızı, daha yavaş
-        var drift = Math.random() * 1.5 - 0.75; // Yanal kayma, hafif
+        var speed = Math.random() * 0.5 + 0.2; // Kar tanelerinin düşme hızı
+        var drift = Math.random() * 1.5 - 0.75; // Yanal kayma
         var opacity = Math.random() * 0.4 + 0.4; // Kar tanesinin opaklığı
         var rotation = Math.random() * 2 * Math.PI; // Kar tanesinin dönmesi
         snowflakes.push({ x: x, y: y, size: size, speed: speed, drift: drift, opacity: opacity, rotation: rotation });
@@ -26,7 +46,7 @@
         var size = Math.random() * 2 + 1; // Yağmur damlası boyutu
         var x = Math.random() * canvas.width; // X pozisyonu
         var y = -size; // Y pozisyonu (başlangıçta üstten başlar)
-        var speed = Math.random() * 3 + 1; // Yağmur tanelerinin düşme hızı, karınkinden hızlı
+        var speed = Math.random() * 3 + 1; // Yağmur tanelerinin düşme hızı
         var opacity = Math.random() * 0.3 + 0.2; // Yağmur damlası opaklık
         raindrops.push({ x: x, y: y, size: size, speed: speed, opacity: opacity });
     }
@@ -53,18 +73,8 @@
                 snowflake.drift = Math.random() * 1.5 - 0.75; // Yeni bir yanal kayma hızını ayarla
             }
 
-            // Kar tanesini çizerken yuvarlak yapıyoruz ve hafifçe döndürmek için rotation kullanıyoruz
-            ctx.beginPath();
-            ctx.arc(snowflake.x, snowflake.y, snowflake.size, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(255, 255, 255, ${snowflake.opacity})`; // Opaklık ile birlikte beyaz
-            ctx.fill();
-
-            // Hafif döndürme (daha gerçekçi bir hareket için)
-            ctx.save();
-            ctx.translate(snowflake.x, snowflake.y);
-            ctx.rotate(snowflake.rotation);
-            ctx.translate(-snowflake.x, -snowflake.y);
-            ctx.restore();
+            // Gerçekçi bir kar tanesi çizimi için altıgen şekli kullan
+            drawSnowflake(snowflake.x, snowflake.y, snowflake.size);
         }
 
         // Yağmur tanelerini çiz
