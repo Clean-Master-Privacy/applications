@@ -1,6 +1,0 @@
-cmgamesdk_public:4 xaid:string sdkver:int mcc:short mnc:short lang:string pid:short brand:string model:string nettype:byte rom_type:string rom_version:string uptime:int pkgname:string apilevel:short product_ver:int
-cmgamesdk_active_positive:101 op:byte
-cmgamesdk_active_service:102 op:byte
-cmgamesdk_install:103 op:byte
-cmgamesdk_mainop:107 op:byte ab:byte xy:int game:string
-cmgamesdk_gameop:106 op:byte ab:int game:string xy:string
