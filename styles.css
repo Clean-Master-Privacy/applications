@@ -24,6 +24,8 @@ header {
     color: white;
     padding: 20px 0;
     text-align: center;
+    position: relative;
+    z-index: 10;
 }
 
 .container {
@@ -44,7 +46,7 @@ h1 {
     animation: fadeInUp 1.5s ease-out;
 }
 
-/* Section Stilleri */
+/* Bölüm Animasyonları */
 section {
     background-color: white;
     padding: 40px 20px;
@@ -56,7 +58,7 @@ section {
     animation: fadeInUp 1.5s forwards;
 }
 
-/* Animasyonlar */
+/* Fade-In ve Slide-Up Animasyonları */
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -77,7 +79,13 @@ section {
     }
 }
 
-/* Proton AG Logo */
+/* Hover Efektleri */
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 .proton-logo {
     display: block;
     max-width: 800px;
@@ -104,26 +112,30 @@ footer {
     color: white;
 }
 
-/* Hover Effect for Sections */
-section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Paralaks Efekti */
+.parallax {
+    background-image: url('https://via.placeholder.com/1920x1080');
+    height: 400px;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(50%);
+    margin-top: 40px;
 }
 
-/* Scroll Animations for Sections */
-.fade-in-section {
+/* Scroll Animasyonu */
+.scroll-anim {
     opacity: 0;
     transform: translateY(50px);
     animation: fadeInUp 1.5s forwards;
     animation-delay: 0.3s;
 }
 
-.fade-in-section:nth-child(odd) {
+.scroll-anim:nth-child(odd) {
     animation-delay: 0.5s;
 }
 
-.fade-in-section:nth-child(even) {
+.scroll-anim:nth-child(even) {
     animation-delay: 0.7s;
 }
 
