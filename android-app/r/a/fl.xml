@@ -1,6 +1,0 @@
-    <?xml version="1.0" encoding="utf-8"?>
-<set xmlns:ifTextView="http://schemas.android.com/apk/res/com.cleanmaster.security" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cmandroid="http://schemas.android.com/apk/res-auto" android:interpolator="@android:anim/accelerate_decelerate_interpolator" android:duration="@integer/h">
-    <translate android:fromYDelta="20%p" android:toYDelta="0"/>
-    <alpha android:fromAlpha="0" android:toAlpha="1"/>
-</set>
-    
