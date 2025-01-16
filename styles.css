@@ -11,11 +11,14 @@ body {
     color: #333;
     line-height: 1.6;
     overflow-x: hidden;
-    margin: 0;
 }
 
 h1, h2, h3, p {
     color: #2c3e50;
+}
+
+h1 {
+    font-size: 3rem;
 }
 
 /* Header */
@@ -24,9 +27,7 @@ header {
     color: white;
     padding: 40px 20px;
     text-align: center;
-    position: relative;
-    z-index: 10;
-    animation: fadeInUp 1s ease-out;
+    border-bottom: 3px solid #34495e;
 }
 
 .container {
@@ -38,26 +39,18 @@ header {
     width: 120px;
     display: block;
     margin: 0 auto;
-    animation: fadeIn 1s ease-out;
-}
-
-h1 {
-    font-size: 3rem;
-    margin-top: 20px;
-    animation: fadeInUp 1.5s ease-out;
 }
 
 .subheading {
-    font-size: 1.5rem;
-    color: #ecf0f1;
+    font-size: 1.2rem;
     margin-top: 10px;
 }
 
 /* Bölüm Animasyonları */
 section {
-    background-color: white;
     padding: 50px 20px;
-    margin: 20px 0;
+    margin: 40px 0;
+    background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     opacity: 0;
@@ -65,64 +58,62 @@ section {
     animation: fadeInUp 1.5s forwards;
 }
 
-/* About Section */
-#about .content {
+.content {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
     align-items: center;
 }
 
 .content-img {
-    max-width: 100%;
-    height: auto;
-    animation: fadeIn 1.5s ease-out;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    margin-left: 30px;
 }
 
-/* Features Section */
 .feature-cards {
     display: flex;
-    justify-content: space-between;
-    gap: 20px;
+    justify-content: space-around;
     margin-top: 30px;
 }
 
 .feature-card {
     background-color: #ecf0f1;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 30%;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .feature-icon {
     width: 60px;
-    height: 60px;
     margin-bottom: 15px;
 }
 
-.feature-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+.cta {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Call to Action Section */
 .cta-button {
-    display: inline-block;
-    background-color: #3498db;
+    background-color: #e67e22;
     padding: 15px 30px;
-    font-size: 1.2rem;
-    text-decoration: none;
-    color: white;
+    border: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
 }
 
 .cta-button:hover {
-    background-color: #2980b9;
+    background-color: #d35400;
 }
 
 /* Scroll Animasyonları */
@@ -142,15 +133,6 @@ section {
 }
 
 /* Fade-in Animasyonları */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
 @keyframes fadeInUp {
     0% {
         opacity: 0;
@@ -172,8 +154,12 @@ footer {
 
 /* Mobil Cihazlar için Ayarlamalar */
 @media (max-width: 768px) {
-    header {
-        padding: 20px;
+    section {
+        padding: 30px 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
     }
 
     .feature-cards {
@@ -182,15 +168,7 @@ footer {
     }
 
     .feature-card {
-        width: 100%;
+        width: 80%;
         margin-bottom: 20px;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-
-    section {
-        padding: 30px 15px;
     }
 }
