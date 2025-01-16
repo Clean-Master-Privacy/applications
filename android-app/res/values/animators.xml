@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <animator name="a">r/c/a.xml</animator>
+    <animator name="b">r/c/b.xml</animator>
+    <animator name="c">r/c/c.xml</animator>
+    <animator name="d">r/c/d.xml</animator>
+    <animator name="e">r/c/e.xml</animator>
+    <animator name="f">r/c/f.xml</animator>
+    <animator name="g">r/c/g.xml</animator>
+    <animator name="h">r/c/h.xml</animator>
+    <animator name="i">r/c/i.xml</animator>
+</resources>
