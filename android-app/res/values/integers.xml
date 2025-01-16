@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="a">2</integer>
+    <integer name="b">2</integer>
+    <integer name="c">-1</integer>
+    <integer name="d">220</integer>
+    <integer name="e">150</integer>
+    <integer name="f">150</integer>
+    <integer name="g">500</integer>
+    <integer name="h">150</integer>
+    <integer name="i">127</integer>
+    <integer name="j">51</integer>
+    <integer name="k">150</integer>
+    <integer name="l">359</integer>
+    <integer name="m">1</integer>
+    <integer name="n">0</integer>
+    <integer name="o">500</integer>
+    <integer name="p">2</integer>
+    <integer name="q">300</integer>
+    <integer name="google_play_services_version">11720000</integer>
+    <integer name="r">320</integer>
+    <integer name="y">30</integer>
+    <integer name="s">100</integer>
+    <integer name="t">100</integer>
+    <integer name="u">100</integer>
+    <integer name="v">250</integer>
+    <integer name="w">200</integer>
+    <integer name="x">999</integer>
+</resources>
