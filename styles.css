@@ -82,48 +82,11 @@ section p {
     font-size: 1.1rem;
 }
 
-/* Proton Logo Konteyner */
-.proton-container {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-}
-
 /* Proton Logo */
-.proton-logo {
-    max-width: 100%;
-    height: auto;
+.proton {
     width: 300px;
-    animation: glitch 1s infinite;
-}
-
-/* Glitch Efekti */
-@keyframes glitch {
-    0% {
-        clip-path: inset(0 0 0 0);
-        transform: translateX(0);
-    }
-    20% {
-        clip-path: inset(10% 0 10% 0);
-        transform: translateX(-5px);
-    }
-    40% {
-        clip-path: inset(5% 0 15% 0);
-        transform: translateX(5px);
-    }
-    60% {
-        clip-path: inset(0 0 5% 0);
-        transform: translateX(-5px);
-    }
-    80% {
-        clip-path: inset(0 0 0 0);
-        transform: translateX(5px);
-    }
-    100% {
-        clip-path: inset(0 0 0 0);
-        transform: translateX(0);
-    }
+    margin-top: 20px;
+    border-radius: 10px;
 }
 
 /* Footer */
@@ -136,6 +99,11 @@ footer {
     bottom: 0;
     width: 100%;
     border-top: 2px solid #444;
+}
+
+/* Hacker Temalı Yazılar */
+h1, h2, p {
+    font-family: 'Courier New', Courier, monospace;
 }
 
 /* Buton Hover Etkisi */
@@ -152,12 +120,4 @@ footer {
 .cta-button:hover {
     background-color: #00cc00;
     transform: scale(1.1);
-}
-
-/* Mobil cihazlar için Proton logosu */
-@media (max-width: 600px) {
-    .proton-logo {
-        width: 200px; /* Mobilde daha küçük logo */
-        animation: none; /* Glitch efekti mobilde devre dışı bırak */
-    }
 }
