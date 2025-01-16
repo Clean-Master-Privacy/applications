@@ -1,174 +1,130 @@
-/* Genel Ayarlar */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Genel Stil */
 body {
     font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
     background-color: #f4f4f4;
     color: #333;
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-h1, h2, h3, p {
-    color: #2c3e50;
-}
-
-h1 {
-    font-size: 3rem;
-}
-
-/* Header */
-header {
-    background-color: #2c3e50;
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
-    border-bottom: 3px solid #34495e;
 }
 
 .container {
-    max-width: 1200px;
+    width: 80%;
     margin: 0 auto;
+    text-align: center;
+}
+
+h1, h2 {
+    color: #0044cc;
+}
+
+/* Header Stil */
+header {
+    background-color: #003366;
+    padding: 20px 0;
+    color: white;
 }
 
 .logo {
-    width: 120px;
-    display: block;
-    margin: 0 auto;
+    width: 100px;
+    border-radius: 50%;
 }
 
-.subheading {
-    font-size: 1.2rem;
-    margin-top: 10px;
-}
-
-/* Bölüm Animasyonları */
-section {
-    padding: 50px 20px;
-    margin: 40px 0;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+/* Fade-in Animasyon */
+.fade-in-section {
     opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1.5s forwards;
+    animation: fadeIn 1s forwards;
 }
 
-.content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
-.content-img {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 8px;
-    margin-left: 30px;
-}
-
-.feature-cards {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 30px;
-}
-
-.feature-card {
-    background-color: #ecf0f1;
-    padding: 20px;
-    width: 30%;
-    text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
+/* Hover ve Zoom Efektleri */
 .feature-icon {
-    width: 60px;
-    margin-bottom: 15px;
+    transition: transform 0.3s ease;
 }
 
-.cta {
-    background-color: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 50px 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+.feature-icon:hover {
+    transform: scale(1.2);
 }
 
+.zoom-effect {
+    transition: transform 0.3s ease;
+}
+
+.zoom-effect:hover {
+    transform: scale(1.1);
+}
+
+/* Buton Hover Efekti */
 .cta-button {
-    background-color: #e67e22;
     padding: 15px 30px;
-    border: none;
-    border-radius: 5px;
+    background-color: #0044cc;
     color: white;
-    font-size: 1.1rem;
-    cursor: pointer;
     text-decoration: none;
-    transition: background-color 0.3s;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .cta-button:hover {
-    background-color: #d35400;
+    background-color: #003366;
+    transform: scale(1.1);
 }
 
-/* Scroll Animasyonları */
-.scroll-anim {
+/* Genel Kart Stili */
+.feature-cards {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.feature-card {
+    width: 30%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.feature-card h3 {
+    color: #0044cc;
+}
+
+/* Fade Effektif Görseller */
+.content-img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 20px;
     opacity: 0;
-    transform: translateY(50px);
-    animation: fadeInUp 1.5s forwards;
-    animation-delay: 0.3s;
+    animation: fadeIn 1.5s forwards;
 }
 
-.scroll-anim:nth-child(odd) {
-    animation-delay: 0.5s;
+.scroll-anim {
+    animation: fadeIn 2s ease-in-out;
 }
 
-.scroll-anim:nth-child(even) {
-    animation-delay: 0.7s;
-}
-
-/* Fade-in Animasyonları */
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.cta {
+    text-align: center;
+    margin-top: 50px;
+    padding: 50px;
+    background-color: #e0f7fa;
+    border-radius: 10px;
 }
 
 /* Footer */
 footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #2c3e50;
+    background-color: #003366;
     color: white;
-}
-
-/* Mobil Cihazlar için Ayarlamalar */
-@media (max-width: 768px) {
-    section {
-        padding: 30px 15px;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-
-    .feature-cards {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .feature-card {
-        width: 80%;
-        margin-bottom: 20px;
-    }
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
