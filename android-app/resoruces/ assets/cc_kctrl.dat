@@ -1,0 +1,7 @@
+[common]
+product=372
+validity=7
+server0=https://helpcmgamesdk1.ksmobile.com/c/v2/
+#server0=http://111.230.84.242/c/v2/
+
+#测试埋点地址为http://118.89.55.235/debug372.html
