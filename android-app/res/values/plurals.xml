@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="a">
+        <item quantity="other">%1$d new messages protected</item>
+        <item quantity="one">%1$d new message protected</item>
+    </plurals>
+    <plurals name="b">
+        <item quantity="other">%1$d new messages</item>
+        <item quantity="one">%1$d new message</item>
+    </plurals>
+    <plurals name="c">
+        <item quantity="other">Clean &lt;font color=#FF7070 &gt;%1$d&lt;/font&gt;junk notifications to organize your device</item>
+        <item quantity="one">Clean &lt;font color=#FF7070 &gt;%1$d&lt;/font&gt;junk notification to organize your device</item>
+    </plurals>
+    <plurals name="d">
+        <item quantity="other">%1$d new virus signatures updated</item>
+        <item quantity="one">%1$d new virus signature updated</item>
+    </plurals>
+    <plurals name="e">
+        <item quantity="other">new virus signatures updated</item>
+        <item quantity="one">new virus signature updated</item>
+    </plurals>
+    <plurals name="f">
+        <item quantity="other">Found %1$s Browsing Histories</item>
+        <item quantity="one">Found %1$s Browsing History</item>
+    </plurals>
+    <plurals name="g">
+        <item quantity="other">Update to the latest version and stay safe from %1$s new viruses</item>
+        <item quantity="one">Update to the latest version and stay safe from %1$s new virus</item>
+    </plurals>
+    <plurals name="h">
+        <item quantity="other">%1$s Viruses Detected</item>
+        <item quantity="one">%1$s Virus Detected</item>
+    </plurals>
+    <plurals name="i">
+        <item quantity="other">Detected %1$s Suspicious Files</item>
+        <item quantity="one">Detected %1$s Suspicious File</item>
+    </plurals>
+    <plurals name="j">
+        <item quantity="other">Found malicious files</item>
+        <item quantity="one">Found a malicious file</item>
+    </plurals>
+    <plurals name="k">
+        <item quantity="other">Found %1$d chat pictures, unable to view once deleted</item>
+        <item quantity="one">Found %1$d chat picture, unable to view once deleted</item>
+    </plurals>
+    <plurals name="l">
+        <item quantity="other">Found %1$d music or recordings, unable to listen to once deleted</item>
+        <item quantity="one">Found %1$d music or recording, unable to listen to once deleted</item>
+    </plurals>
+    <plurals name="m">
+        <item quantity="other">Found %1$d voice messages, unable to listen to once deleted</item>
+        <item quantity="one">Found %1$d voice message, unable to listen to once deleted</item>
+    </plurals>
+    <plurals name="n">
+        <item quantity="other">Just %1$d more steps to protect your messages</item>
+        <item quantity="one">Just %1$d step to protect your messages</item>
+    </plurals>
+    <plurals name="o">
+        <item quantity="other">%1$s not scanned for over %2$s days</item>
+        <item quantity="one">%1$s not scanned for over %2$s day</item>
+    </plurals>
+</resources>
