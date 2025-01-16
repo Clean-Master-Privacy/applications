@@ -7,36 +7,6 @@ RAM, Junk Files, Virus Cleaner, Phone Booster, App Optimization and Privacy Mana
 
 With over 1 billion users worldwide, Clean Master Privacy can be your go-to app to clean viruses, free up storage and speed up your device. We offer powerful Antivirus, Junk File Cleaner, Phone Booster and Privacy Manager to protect your privacy and security.
 
-Key Features of Clean Master Privacy:
-
-🌪️ JUNK FILES CLEANER
-
-Clean Master Privacy helps you free up storage space by removing junk files, residual files and cache files that slow down your device.
-
-With our professional cleaner, you can free up much more space by clearing cache data from social media apps without worrying about deleting the wrong files.
-
-🛡️ FREE ANTIVIRUS
-
-Rated #1 by AV-TEST, Clean Master Privacy's free antivirus engine protects your phone from viruses, trojans, and scans, blocks, and removes viruses from all apps (pre-installed or not) to protect your privacy!
-
-🚀 PHONE SPEED UP
-
-One-Click Speed ​​Up helps speed up your phone by freeing up RAM. After speeding up your phone, you can run a speed test to see how fast it is.
-
-Other features
-
-☆ BATTERY SAVER - Helps save battery power and extend battery life.
-
-☆ APP LOCK - Keeps your privacy safe with App Lock PIN or pattern.
-
-☆ Wi-Fi SECURITY - Detects fake Wi-Fi and unauthorized connections.
-
-☆ GAME ACCELERATOR - Manage your games and speed up game loading.
-
-☆ PRIVACY MANAGER - Instantly protect private files on your device. (Coming soon)
-
-☆ VIP - In testing. (Coming soon)
-
 Contribute
 ----------
 We have recently rebuilt the app and focused on our current feature and fix roadmap. Therefore, we are not currently accepting new issues or PRs: feel free to fork the repository for your own experiments. Thank you for your understanding and support.
