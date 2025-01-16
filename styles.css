@@ -3,8 +3,8 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #1e1e1e; /* Koyu arka plan */
+    color: #ddd; /* Açık yazı rengi */
     position: relative;
     overflow-x: hidden; /* Canvas dışına taşan öğeleri engelle */
 }
@@ -16,19 +16,31 @@ body {
 }
 
 h1, h2 {
-    color: #0044cc;
+    color: #00ff00; /* Yeşil renk, hacker havası */
+}
+
+h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 /* Header Stil */
 header {
-    background-color: #003366;
+    background-color: #000;
     padding: 20px 0;
     color: white;
+    border-bottom: 2px solid #444;
 }
 
 .logo {
     width: 100px;
     border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.subheading {
+    font-size: 1.2rem;
 }
 
 /* Kar Yağma Efekti */
@@ -56,28 +68,49 @@ header {
     }
 }
 
-/* Hover ve Zoom Efektleri */
-.feature-icon {
-    transition: transform 0.3s ease;
+/* Proje Metin Bölümleri */
+section {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #2e2e2e; /* Koyu gri arka plan */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.feature-icon:hover {
-    transform: scale(1.2);
+section p {
+    line-height: 1.6;
+    font-size: 1.1rem;
 }
 
-.zoom-effect {
-    transition: transform 0.3s ease;
+/* Proton Logo */
+.proton {
+    width: 300px;
+    margin-top: 20px;
+    border-radius: 10px;
 }
 
-.zoom-effect:hover {
-    transform: scale(1.1);
+/* Footer */
+footer {
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    border-top: 2px solid #444;
+}
+
+/* Hacker Temalı Yazılar */
+h1, h2, p {
+    font-family: 'Courier New', Courier, monospace;
 }
 
 /* Buton Hover Etkisi */
 .cta-button {
     padding: 15px 30px;
-    background-color: #0044cc;
-    color: white;
+    background-color: #00ff00;
+    color: black;
     text-decoration: none;
     border-radius: 5px;
     font-size: 18px;
@@ -85,37 +118,6 @@ header {
 }
 
 .cta-button:hover {
-    background-color: #003366;
+    background-color: #00cc00;
     transform: scale(1.1);
-}
-
-/* Genel Kart Stili */
-.feature-cards {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.feature-card {
-    width: 30%;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.feature-card h3 {
-    color: #0044cc;
-}
-
-/* Footer */
-footer {
-    background-color: #003366;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
 }
