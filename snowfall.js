@@ -15,7 +15,7 @@
             x: Math.random() * canvas.width,
             y: -10,  // Başlangıç noktası ekranın dışında
             speed: Math.random() * 2 + 1,  // Hız
-            size: Math.random() * 20 + 10,  // Boyut
+            size: Math.random() * 15 + 5,  // Boyut
             drift: Math.random() * 2 - 1,  // Yanal hareket
         };
         snowflakes.push(snowflake);
