@@ -1,4 +1,3 @@
-// Snowfall Effect: Kar yağma efektini başlatacak kod
 (function() {
     var canvas = document.getElementById('snowfallCanvas');
     var ctx = canvas.getContext('2d');
