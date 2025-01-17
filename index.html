@@ -145,6 +145,25 @@
             outline: none;
         }
 
+        /* Glitch effect */
+        .glitch {
+            animation: glitch 0.5s infinite;
+        }
+
+        @keyframes glitch {
+            0% {
+                text-shadow: 2px 0 red, -2px 0 blue;
+                transform: translate(0);
+            }
+            50% {
+                text-shadow: -2px 0 red, 2px 0 blue;
+                transform: translate(5px, 0);
+            }
+            100% {
+                text-shadow: 2px 0 red, -2px 0 blue;
+                transform: translate(-5px, 0);
+            }
+        }
     </style>
 </head>
 <body>
@@ -172,7 +191,7 @@
     </header>
 
     <section>
-        <h2>About Clean Master Privacy</h2>
+        <h2 class="glitch">About Clean Master Privacy</h2>
         <p>Clean master privacy product was first created by 2 anonymous people who founded gamestime102; their code names are gamestime102 and gamestime102tv. gamestime102 team (organization) prepared a Kapıkulu for clean master privacy. The purpose of this Kapıkulu is to provide privacy and security. Although this army was disbanded over time, it was reactivated on April 21, 2021. Clean master privacy, a sub-unit of Kapıkulu, is sipahi, this sipahi is responsible for the security of the internet and the device.</p>
     </section>
 
@@ -298,7 +317,7 @@
             drawSnow();
         }, 30);
 
-        // Command processing
+        // Command processing with random crash effect
         const cmdInput = document.getElementById('cmdInput');
         const cmdOutput = document.getElementById('cmdOutput');
 
@@ -306,6 +325,11 @@
             if (e.key === 'Enter') {
                 const input = cmdInput.value.trim();
                 cmdOutput.textContent += `\n$ ${input}\n`;
+
+                // Random crash effect
+                if (Math.random() > 0.7) {
+                    cmdOutput.classList.add('glitch');
+                }
 
                 if (input.toLowerCase() === 'help') {
                     cmdOutput.textContent += `
