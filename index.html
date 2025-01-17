@@ -13,6 +13,7 @@
             color: #00ff00;
             overflow-x: hidden;
             position: relative;
+            height: 100vh;
         }
 
         header {
@@ -20,6 +21,8 @@
             padding: 20px;
             background: #111;
             border-bottom: 2px solid #333;
+            z-index: 10;
+            position: relative;
         }
 
         header img {
@@ -128,6 +131,92 @@
             100% { opacity: 0.1; }
         }
 
+        /* Glitch effect */
+        .glitch {
+            position: relative;
+            display: inline-block;
+            color: #00ff00;
+            font-size: 1.5rem;
+        }
+
+        .glitch:before,
+        .glitch:after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            color: red;
+            overflow: hidden;
+            visibility: hidden;
+        }
+
+        .glitch:before {
+            left: -2px;
+            text-shadow: -1px 0 red;
+            animation: glitch-anim-1 0.5s infinite linear;
+        }
+
+        .glitch:after {
+            left: 2px;
+            text-shadow: 1px 0 red;
+            animation: glitch-anim-2 0.3s infinite linear;
+        }
+
+        @keyframes glitch-anim-1 {
+            0% {
+                transform: translateX(0) translateY(0);
+                opacity: 1;
+            }
+            20% {
+                transform: translateX(-3px) translateY(3px);
+                opacity: 0.6;
+            }
+            40% {
+                transform: translateX(3px) translateY(-3px);
+                opacity: 0.8;
+            }
+            60% {
+                transform: translateX(-2px) translateY(2px);
+                opacity: 0.7;
+            }
+            80% {
+                transform: translateX(2px) translateY(-2px);
+                opacity: 0.9;
+            }
+            100% {
+                transform: translateX(0) translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes glitch-anim-2 {
+            0% {
+                transform: translateX(0) translateY(0);
+                opacity: 1;
+            }
+            20% {
+                transform: translateX(3px) translateY(-3px);
+                opacity: 0.6;
+            }
+            40% {
+                transform: translateX(-3px) translateY(3px);
+                opacity: 0.8;
+            }
+            60% {
+                transform: translateX(2px) translateY(-2px);
+                opacity: 0.7;
+            }
+            80% {
+                transform: translateX(-2px) translateY(2px);
+                opacity: 0.9;
+            }
+            100% {
+                transform: translateX(0) translateY(0);
+                opacity: 1;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -149,42 +238,42 @@
     </header>
 
     <section>
-        <h2>About Clean Master Privacy</h2>
+        <h2 class="glitch" data-text="About Clean Master Privacy">About Clean Master Privacy</h2>
         <p>Clean master privacy product was first created by 2 anonymous people who founded gamestime102; their code names are gamestime102 and gamestime102tv. gamestime102 team (organization) prepared a Kapıkulu for clean master privacy. The purpose of this Kapıkulu is to provide privacy and security. Although this army was disbanded over time, it was reactivated on April 21, 2021. Clean master privacy, a sub-unit of Kapıkulu, is sipahi, this sipahi is responsible for the security of the internet and the device.</p>
     </section>
 
     <section>
-        <h2>Project Developments</h2>
+        <h2 class="glitch" data-text="Project Developments">Project Developments</h2>
         <p>Clean Master Privacy project was stopped for a while due to financial resources. Later, gamestime102 and gamestime102tv revived the project. There was a significant data loss after the project development was stopped, but the gamestime102 team is working to replace the lost codes with new ones.</p>
     </section>
 
     <section>
-        <h2>Contribute</h2>
+        <h2 class="glitch" data-text="Contribute">Contribute</h2>
         <p>We have recently rebuilt the app and focused on our current feature and fix roadmap. Therefore, we are not currently accepting new issues or PRs: feel free to fork the repository for your own experiments. Thank you for your understanding and support.</p>
     </section>
 
     <section>
-        <h2>Income and Donations</h2>
+        <h2 class="glitch" data-text="Income and Donations">Income and Donations</h2>
         <p>We will donate some of the proceeds to charities and companies.</p>
     </section>
 
     <section>
-        <h2>Independence</h2>
+        <h2 class="glitch" data-text="Independence">Independence</h2>
         <p>We heard about our independence on April 21, 2021, now we are taking new steps to become fully independent.</p>
     </section>
 
     <section>
-        <h2>People Who Keep the Project Alive</h2>
+        <h2 class="glitch" data-text="People Who Keep the Project Alive">People Who Keep the Project Alive</h2>
         <p>@gamestime102 and @gamestime102-tv</p>
     </section>
 
     <section>
-        <h2>License</h2>
+        <h2 class="glitch" data-text="License">License</h2>
         <p>Clean master privacy product belongs to gamestime102. The code and data files in this distribution are licensed under the GNU General Public License, version 3 or any later version, as published by the Free Software Foundation. For a copy of this license, see <a href="https://www.gnu.org/licenses/">GNU General Public License</a>.</p>
     </section>
 
     <section>
-        <h2>We Support Proton AG</h2>
+        <h2 class="glitch" data-text="We Support Proton AG">We Support Proton AG</h2>
         <img src="https://github.com/user-attachments/assets/8472e1a0-5605-404e-b906-1e8b69275595" alt="Proton AG" class="proton">
         <p>Thanks to Proton AG, we found our own identity and declared our full independence. We thank them for what they have contributed to us.</p>
     </section>
@@ -227,40 +316,6 @@
         }
 
         setInterval(drawCodeRain, 50);
-
-        // Snowfall Effect
-        const snowCanvas = document.getElementById('snowfallCanvas');
-        const ctxSnow = snowCanvas.getContext('2d');
-        snowCanvas.width = window.innerWidth;
-        snowCanvas.height = window.innerHeight;
-        const snowflakes = [];
-
-        function createSnowflake() {
-            snowflakes.push({
-                x: Math.random() * snowCanvas.width,
-                y: Math.random() * snowCanvas.height,
-                radius: Math.random() * 4 + 1,
-                speed: Math.random() * 1 + 0.5
-            });
-        }
-
-        function drawSnow() {
-            ctxSnow.clearRect(0, 0, snowCanvas.width, snowCanvas.height);
-            snowflakes.forEach((flake) => {
-                flake.y += flake.speed;
-                if (flake.y > snowCanvas.height) flake.y = 0;
-
-                ctxSnow.beginPath();
-                ctxSnow.arc(flake.x, flake.y, flake.radius, 0, Math.PI * 2);
-                ctxSnow.fillStyle = 'white';
-                ctxSnow.fill();
-            });
-        }
-
-        setInterval(() => {
-            if (snowflakes.length < 100) createSnowflake();
-            drawSnow();
-        }, 30);
 
         // Command processing
         const cmdInput = document.getElementById('cmdInput');
