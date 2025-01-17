@@ -6,7 +6,7 @@ jobs:
   update-symbols:
     permissions:
       contents: write
-    runs-on: ubuntu-20.04-4core
+    runs-on: ubuntu-24.04-4core ("beta")
     strategy:
       fail-fast: false
     steps:
@@ -21,7 +21,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: 3.11
+        python-version: 3.13.1
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
