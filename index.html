@@ -79,6 +79,30 @@
             height: 100%;
             z-index: -2;
         }
+
+        /* Terminal Windows */
+        .terminal {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.9);
+            border: 1px solid #00ff00;
+            color: #00ff00;
+            font-family: monospace;
+            padding: 10px;
+            width: 300px;
+            height: 200px;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .hidden-hacker {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            color: red;
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -87,6 +111,9 @@
 
     <!-- Snowfall Canvas -->
     <canvas id="snowfallCanvas"></canvas>
+
+    <!-- Hidden Hacker -->
+    <div class="hidden-hacker">👤 HACKER DETECTED</div>
 
     <header>
         <img src="https://avatars.githubusercontent.com/u/185417194?s=200&v=4" alt="logo">
@@ -214,6 +241,26 @@
             if (snowflakes.length < 100) createSnowflake();
             drawSnow();
         }, 30);
+
+        // Randomly Display Terminal Windows
+        function createTerminal() {
+            const terminal = document.createElement('div');
+            terminal.className = 'terminal';
+            terminal.style.top = `${Math.random() * window.innerHeight}px`;
+            terminal.style.left = `${Math.random() * window.innerWidth}px`;
+            terminal.textContent = `Terminal Window ${Math.random().toFixed(5)}`;
+            document.body.appendChild(terminal);
+            setTimeout(() => terminal.remove(), 5000);
+        }
+
+        setInterval(createTerminal, 15000);
+
+        // Hidden Hacker Effect
+        setInterval(() => {
+            const hacker = document.querySelector('.hidden-hacker');
+            hacker.style.display = 'block';
+            setTimeout(() => hacker.style.display = 'none', 300);
+        }, 30000);
     </script>
 </body>
 </html>
