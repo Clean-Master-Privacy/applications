@@ -14,6 +14,7 @@
             overflow-x: hidden;
             position: relative;
             height: 100vh;
+            overflow-y: auto;
         }
 
         header {
@@ -26,7 +27,7 @@
         }
 
         header img {
-            max-width: 80px; /* Avatar resmini biraz büyüttük */
+            max-width: 80px;
             border-radius: 50%;
         }
 
@@ -58,6 +59,7 @@
             text-decoration: none;
         }
 
+        /* CMD Background */
         .cmd-background {
             position: fixed;
             bottom: 10%;
@@ -160,11 +162,31 @@
             margin-left: auto;
             margin-right: auto;
         }
+
+        /* Sayfa bozulma efekti */
+        .bozulma {
+            animation: bozulmaEffect 0.3s ease-out infinite;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 0, 0, 0.6);
+            z-index: 999;
+            display: none;
+        }
+
+        @keyframes bozulmaEffect {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
     </style>
 </head>
 <body>
-    <!-- Crash Effect Overlay -->
-    <div class="crash"></div>
+    <!-- Sayfa Bozulma Overlay -->
+    <div class="bozulma"></div>
 
     <!-- CMD Background -->
     <div class="cmd-background">
@@ -309,8 +331,17 @@ Security Providers:
             }, 1000);
         }
 
-        setInterval(crashEffect, Math.random() * 10000 + 5000); // Crash effect randomly
+        // Page structure distortion effect
+        function bozulmaEffect() {
+            const bozulmaOverlay = document.querySelector('.bozulma');
+            bozulmaOverlay.style.display = 'block';
+            setTimeout(() => {
+                bozulmaOverlay.style.display = 'none';
+            }, 1000);
+        }
 
+        setInterval(bozulmaEffect, Math.random() * 10000 + 5000); // Random page distortion
+        setInterval(crashEffect, Math.random() * 10000 + 5000); // Crash effect randomly
     </script>
 </body>
 </html>
