@@ -4,7 +4,7 @@ updates:
   - package-ecosystem: "multi-lang"
     directory: "/"
     schedule:
-      interval: "hourly"  # Her saat başı güncelleme
+      interval: "15min"  # Her 15 dakikada bir güncelleme
     allow:
       - dependency-name: "*.*"  # Tüm bağımlılıklar
     ignore:
@@ -22,6 +22,28 @@ updates:
       - aşama: "kötü-niyet-algılama"  # Kötü niyetli kodları tespit et
       - aşama: "güvenlik-hata-algılama"  # Güvenlik açıklarını kontrol et
       - aşama: "kapsamlı-test"  # Otomatik test senaryolarını uygula
+      - aşama: "akil-yurutme"  # Akıl yürütme mantığını uygula
+
+    # Gereksiz ve kötü niyetli dosyaların algılanması
+    gereksiz-ve-kotuler:
+      - dosya-tipi: "*.log"  # Log dosyaları
+      - dosya-tipi: "*.tmp"  # Geçici dosyalar
+      - dosya-tipi: "*.bak"  # Yedek dosyalar
+      - dosya-tipi: "*.old"  # Eski dosyalar
+      - dosya-tipi: "*.zip"  # ZIP arşiv dosyaları
+      - dosya-tipi: "*.tar"  # TAR arşiv dosyaları
+      - dosya-tipi: "*.exe"  # İkili dosyalar
+      - dosya-tipi: "*.dll"  # Dinamik bağlantı kütüphanesi dosyaları
+      - dosya-tipi: "*.class"  # Java sınıf dosyaları
+      - dosya-tipi: "*.jar"  # Java arşiv dosyaları
+      - dosya-tipi: "*.sh"  # Shell dosyaları
+      - dosya-tipi: "*.phps"  # Kötü niyetli PHP dosyaları
+      - dosya-tipi: "*.bat"  # Windows batch dosyaları
+
+    # Kötü niyetli ve gereksiz dosyaların kaldırılması
+    otomatik-kaldirma:
+      - işlem: "gereksiz-dosyalari-kaldir"  # Gerekli dosyaları temizle
+      - işlem: "kotulenmis-dosyalari-kaldir"  # Kötü niyetli dosyaları kaldır
 
     # Hata düzeltme algoritmaları
     hata-düzeltme-algoritmaları:
@@ -76,7 +98,7 @@ updates:
     # Güvenlik kontrolleri
     güvenlik-kontrolleri:
       - kontrol: "statik-kod-analizi"  # Statik kod analizi
-      - kontrol: "dinamik-kod-analizi"  # Dinamik kod analiz
+      - kontrol: "dinamik-kod-analizi"  # Dinamik kod analizi
       - kontrol: "güvenlik-taraması"  # Güvenlik taramaları
       - kontrol: "şifreleme-kontrolü"  # Şifreleme doğrulaması
       - kontrol: "güvenlik-güncellemeleri"  # Güvenlik güncellemeleri kontrol et
