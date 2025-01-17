@@ -4,24 +4,38 @@ registries:
     type: npm-registry
     url: https://example.com
     token: ${{secrets.NPM_TOKEN}}
-
 updates:
   - package-ecosystem: "npm"
-    directory: "/src/npm-project"  # NPM projesinin dizini
+    directory: "/src/npm-project"
     schedule:
-      interval: "daily"  # Günlük güncelleme kontrolü
+      interval: "daily"
     ignore:
-      - dependency-name: "lodash"  # Lodash için tüm güncellemeleri göz ardı et
-    open-pull-requests-limit: 5  # Maksimum 5 açık PR
+      - dependency-name: "lodash"
+    open-pull-requests-limit: 10
     registries:
-      - example  # Özel kayıt defteri
-
+      - example
   - package-ecosystem: "gomod"
-    directory: "/"  # Go projesinin dizini
+    directory: "/"
     schedule:
-      interval: "daily"  # Günlük güncelleme kontrolü
+      interval: "daily"
     groups:
       golang:
-        applies-to: security-updates  # Sadece güvenlik güncellemeleri için
+        applies-to: security-updates
         patterns:
-          - "golang.org*"  # Golang bağımlılık desenleri
+          - "golang.org*"
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "maven"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+  - package-ecosystem: "nuget"
+    directory: "/"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "monthly"
