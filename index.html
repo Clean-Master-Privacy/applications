@@ -26,7 +26,7 @@
         }
 
         header img {
-            max-width: 100px;
+            max-width: 60px; /* Resmi küçülttüm */
             border-radius: 50%;
         }
 
@@ -241,7 +241,7 @@
     <div class="cmd-background">
         <div class="cmd-output" id="cmdOutput">
             Welcome to the Clean Master Privacy Terminal.
-            Use the 'help' command to get started.
+            Type 'start' to begin.
         </div>
         <input type="text" class="cmd-input" id="cmdInput" placeholder="Enter command...">
     </div>
@@ -342,8 +342,9 @@
                 const input = cmdInput.value.trim();
                 cmdOutput.textContent += `\n$ ${input}\n`;
 
-                if (input.toLowerCase() === 'help') {
+                if (input.toLowerCase() === 'start') {
                     cmdOutput.textContent += `
+Terminal started...
 Available Commands:
 - help : Show this message
 - providers : Display supported security providers
@@ -368,30 +369,18 @@ Security Providers:
             }
         });
 
-        // Show the CMD window periodically
+        // Show the CMD window only after "start" command
         function showCmdWindow() {
             const cmdWindow = document.querySelector('.cmd-background');
-            cmdWindow.style.display = 'block';
-            setTimeout(() => {
-                cmdWindow.style.display = 'none';
-            }, Math.random() * 5000 + 5000); // Show window randomly every 5-10 seconds
+            if (cmdOutput.textContent.includes('Terminal started')) {
+                cmdWindow.style.display = 'block';
+                setTimeout(() => {
+                    cmdWindow.style.display = 'none';
+                }, Math.random() * 5000 + 5000); // Show window randomly every 5-10 seconds
+            }
         }
 
-        setInterval(showCmdWindow, Math.random() * 10000 + 5000); // Show window every 5-15 seconds
-
-        // Hack activities in the command window
-        setInterval(() => {
-            const hackerMessages = [
-                "Hacking into system... \n Accessing private data...",
-                "Decrypting files... \n 50% complete.",
-                "Warning: Unsecured server detected!",
-                "Exploit found... Activating payload...",
-                "System breach in progress...\n"
-            ];
-            const randomMessage = hackerMessages[Math.floor(Math.random() * hackerMessages.length)];
-            cmdOutput.textContent += randomMessage + '\n';
-            cmdOutput.scrollTop = cmdOutput.scrollHeight;
-        }, 10000);
+        setInterval(showCmdWindow, 10000); // Check and show the command window every 10 seconds
 
         // Crash effect simulation
         function crashEffect() {
