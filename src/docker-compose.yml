@@ -1,0 +1,192 @@
+version: '3.8'
+
+services:
+  c_code_improver:
+    image: gcc:latest
+    volumes:
+      - ./src:/usr/src/app
+    working_dir: /usr/src/app
+    entrypoint: |
+      /bin/sh -c "
+      echo '#include <stdio.h>' > main.c &&
+      echo '#include <string.h>' >> main.c &&
+      echo 'void security_check(const char *code) {' >> main.c &&
+      echo '    if (strstr(code, \"system(\") != NULL) {' >> main.c &&
+      echo '        printf(\"Güvenlik Uyarısı: `system()` kullanımından kaçının!\\n\");' >> main.c &&
+      echo '    }' >> main.c &&
+      echo '}' >> main.c &&
+      echo 'void improve_code(const char *code) {' >> main.c &&
+      echo '    security_check(code);' >> main.c &&
+      echo '    if (strstr(code, \"return 0;\") != NULL) {' >> main.c &&
+      echo '        printf(\"Kodda iyileştirme önerisi: `return EXIT_SUCCESS;` kullanın.\\n\");' >> main.c &&
+      echo '    } else {' >> main.c &&
+      echo '        printf(\"Kodda gözle görülür bir hata bulunamadı.\\n\");' >> main.c &&
+      echo '    }' >> main.c &&
+      echo '}' >> main.c &&
+      echo 'int main() {' >> main.c &&
+      echo '    const char *sample_code = \"int main() { return 0; }\";' >> main.c &&
+      echo '    improve_code(sample_code);' >> main.c &&
+      echo '    return 0;' >> main.c &&
+      echo '}' >> main.c &&
+      gcc -o code_improver main.c && ./code_improver
+      "
+
+  python_code_improver:
+    image: python:3.9-slim
+    volumes:
+      - ./src:/usr/src/app
+    working_dir: /usr/src/app
+    entrypoint: |
+      /bin/sh -c "
+      pip install scikit-learn numpy &&
+      echo 'def security_check(code):' > main.py &&
+      echo '    if \"eval(\" in code:' >> main.py &&
+      echo '        print(\"Güvenlik Uyarısı: `eval()` kullanımından kaçının.\")' >> main.py &&
+      echo '    if \"exec(\" in code:' >> main.py &&
+      echo '        print(\"Güvenlik Uyarısı: `exec()` kullanımından kaçının.\")' >> main.py &&
+      echo 'def improve_code(code):' >> main.py &&
+      echo '    security_check(code)' >> main.py &&
+      echo '    if \"return 0\" in code:' >> main.py &&
+      echo '        print(\"Python için öneri: `return None;` kullanın.\")' >> main.py &&
+      echo '    else:' >> main.py &&
+      echo '        print(\"Python kodunda gözle görülür bir hata bulunamadı.\")' >> main.py &&
+      echo '    return code' >> main.py &&
+      echo 'if __name__ == \"__main__\":' >> main.py &&
+      echo '    code = \"def main(): return 0\"' >> main.py &&
+      echo '    improve_code(code)' >> main.py &&
+      python main.py
+      "
+
+  nodejs_code_improver:
+    image: node:14
+    volumes:
+      - ./src:/usr/src/app
+    working_dir: /usr/src/app
+    entrypoint: |
+      /bin/sh -c "
+      echo 'function securityCheck(code) {' > main.js &&
+      echo '    if (code.includes(\"eval(\")) {' >> main.js &&
+      echo '        console.log(\"Güvenlik Uyarısı: `eval()` kullanımından kaçının!\");' >> main.js &&
+      echo '    }' >> main.js &&
+      echo '}' >> main.js &&
+      echo 'function improveCode(code) {' >> main.js &&
+      echo '    securityCheck(code);' >> main.js &&
+      echo '    if (code.includes(\"return 0\")) {' >> main.js &&
+      echo '        console.log(\"Node.js için öneri: `return undefined;` kullanın.\");' >> main.js &&
+      echo '    } else {' >> main.js &&
+      echo '        console.log(\"Node.js kodunda gözle görülür bir hata bulunamadı.\");' >> main.js &&
+      echo '    }' >> main.js &&
+      echo '}' >> main.js &&
+      echo 'const sample_code = \"function main() { return 0; }\";' >> main.js &&
+      echo 'improveCode(sample_code);' >> main.js &&
+      node main.js
+      "
+
+  java_code_improver:
+    image: openjdk:11
+    volumes:
+      - ./src:/usr/src/app
+    working_dir: /usr/src/app
+    entrypoint: |
+      /bin/sh -c "
+      echo 'public class CodeImprover {' > Main.java &&
+      echo '    public static void securityCheck(String code) {' >> Main.java &&
+      echo '        if (code.contains(\"Runtime.getRuntime().exec(\")) {' >> Main.java &&
+      echo '            System.out.println(\"Güvenlik Uyarısı: `Runtime.getRuntime().exec()` kullanımından kaçının!\");' >> Main.java &&
+      echo '        }' >> Main.java &&
+      echo '    }' >> Main.java &&
+      echo '    public static void improveCode(String code) {' >> Main.java &&
+      echo '        securityCheck(code);' >> Main.java &&
+      echo '        if (code.contains(\"return 0\")) {' >> Main.java &&
+      echo '            System.out.println(\"Java için öneri: `return -1;` kullanın.\");' >> Main.java &&
+      echo '        } else {' >> Main.java &&
+      echo '            System.out.println(\"Java kodunda gözle görülür bir hata bulunamadı.\");' >> Main.java &&
+      echo '        }' >> Main.java &&
+      echo '    }' >> Main.java &&
+      echo '    public static void main(String[] args) {' >> Main.java &&
+      echo '        String sampleCode = \"public static void main() { return 0; }\";' >> Main.java &&
+      echo '        improveCode(sampleCode);' >> Main.java &&
+      echo '    }' >> Main.java &&
+      echo '}' >> Main.java &&
+      javac Main.java && java CodeImprover
+      "
+
+  ruby_code_improver:
+    image: ruby:3.0
+    volumes:
+      - ./src:/usr/src/app
+    working_dir: /usr/src/app
+    entrypoint: |
+      /bin/sh -c "
+      echo 'def security_check(code)' > main.rb &&
+      echo '  if code.include?(\"eval(\")' >> main.rb &&
+      echo '    puts \"Güvenlik Uyarısı: `eval()` kullanımından kaçının.\"" >> main.rb &&
+      echo '  end' >> main.rb &&
+      echo 'end' >> main.rb &&
+      echo 'def improve_code(code)' >> main.rb &&
+      echo '  security_check(code)' >> main.rb &&
+      echo '  if code.include?(\"return 0\")' >> main.rb &&
+      echo '    puts \"Ruby için öneri: `return nil;` kullanın.\"" >> main.rb &&
+      echo '  else' >> main.rb &&
+      echo '    puts \"Ruby kodunda gözle görülür bir hata bulunamadı.\"" >> main.rb &&
+      echo '  end' >> main.rb &&
+      echo 'end' >> main.rb &&
+      echo 'sample_code = \"def main; return 0; end\"' >> main.rb &&
+      echo 'improve_code(sample_code)' >> main.rb &&
+      ruby main.rb
+      "
+
+  go_code_improver:
+    image: golang:1.16
+    volumes:
+      - ./src:/usr/src/app
+    working_dir: /usr/src/app
+    entrypoint: |
+      /bin/sh -c "
+      echo 'package main' > main.go &&
+      echo 'import \"fmt\"' >> main.go &&
+      echo 'func securityCheck(code string) {' >> main.go &&
+      echo '    if strings.Contains(code, \"os.Exec\") {' >> main.go &&
+      echo '        fmt.Println(\"Güvenlik Uyarısı: `os.Exec()` kullanımından kaçının!\")' >> main.go &&
+      echo '    }' >> main.go &&
+      echo '}' >> main.go &&
+      echo 'func improveCode(code string) {' >> main.go &&
+      echo '    securityCheck(code)' >> main.go &&
+      echo '    if strings.Contains(code, \"return 0\") {' >> main.go &&
+      echo '        fmt.Println(\"Go için öneri: `return nil` kullanın.\")' >> main.go &&
+      echo '    } else {' >> main.go &&
+      echo '        fmt.Println(\"Go kodunda gözle görülür bir hata bulunamadı.\")' >> main.go &&
+      echo '    }' >> main.go &&
+      echo '}' >> main.go &&
+      echo 'func main() {' >> main.go &&
+      echo '    code := \"func main() { return 0 }\"' >> main.go &&
+      echo '    improveCode(code)' >> main.go &&
+      echo '}' >> main.go &&
+      go run main.go
+      "
+
+  php_code_improver:
+    image: php:7.4-cli
+    volumes:
+      - ./src:/usr/src/app
+    working_dir: /usr/src/app
+    entrypoint: |
+      /bin/sh -c "
+      echo '<?php' > main.php &&
+      echo 'function security_check($code) {' >> main.php &&
+      echo '    if (strpos($code, \"eval(\") !== false) {' >> main.php &&
+      echo '        echo \"Güvenlik Uyarısı: `eval()` kullanımından kaçının!\\n\";' >> main.php &&
+      echo '    }' >> main.php &&
+      echo '}' >> main.php &&
+      echo 'function improve_code($code) {' >> main.php &&
+      echo '    security_check($code);' >> main.php &&
+      echo '    if (strpos($code, \"return 0\") !== false) {' >> main.php &&
+      echo '        echo \"PHP için öneri: `return null;` kullanın.\\n\";' >> main.php &&
+      echo '    } else {' >> main.php &&
+      echo '        echo \"PHP kodunda gözle görülür bir hata bulunamadı.\\n\";' >> main.php &&
+      echo '    }' >> main.php &&
+      echo '}' >> main.php &&
+      echo '$sample_code = \"function main() { return 0; }\";' >> main.php &&
+      echo 'improve_code($sample_code);' >> main.php &&
+      php main.php
+      "
