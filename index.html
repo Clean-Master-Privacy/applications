@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clean Master Privacy</title>
     
-    <!-- Hacker Font from Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- Daha ciddi yazı tipi ekledim, 'Roboto' fontu -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
     <style>
         body {
-            font-family: 'Press Start 2P', monospace; /* Hacker font */
+            font-family: 'Roboto', sans-serif; /* Daha ciddi font */
             margin: 0;
             padding: 0;
             background: #000;
@@ -37,7 +37,7 @@
 
         h1 {
             margin: 10px 0;
-            font-size: 2rem;
+            font-size: 2.5rem;
         }
 
         section {
@@ -104,7 +104,7 @@
         /* Mobil uyumluluk için */
         @media (max-width: 768px) {
             header h1 {
-                font-size: 1.5rem;
+                font-size: 2rem;
             }
 
             footer {
@@ -199,7 +199,7 @@
             ctxCode.fillRect(0, 0, codeCanvas.width, codeCanvas.height);
 
             ctxCode.fillStyle = '#00ff00';
-            ctxCode.font = `${fontSize}px 'Press Start 2P', monospace`;  // Use hacker font
+            ctxCode.font = `${fontSize}px 'Roboto', sans-serif`;  // Daha ciddi font
 
             drops.forEach((y, x) => {
                 const text = codeSymbols[Math.floor(Math.random() * codeSymbols.length)];
