@@ -40,13 +40,6 @@
             box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
         }
 
-        section img.proton, section img.security-logo {
-            width: 150px;
-            height: auto;
-            display: block;
-            margin: 20px auto;
-        }
-
         footer {
             text-align: center;
             padding: 10px;
@@ -104,6 +97,47 @@
             color: red;
             display: none;
         }
+
+        /* CMD background */
+        .cmd-background {
+            position: fixed;
+            bottom: 10%;
+            left: 10%;
+            background: rgba(0, 0, 0, 0.7);
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 15px;
+            width: 90%;
+            max-width: 800px;
+            height: 200px;
+            border: 2px solid #00ff00;
+            display: none;
+            z-index: -2;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.7);
+        }
+
+        .cmd-output {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            height: 160px;
+            overflow-y: auto;
+        }
+
+        /* Command input */
+        .cmd-input {
+            background: transparent;
+            border: none;
+            color: #00ff00;
+            width: 100%;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1rem;
+            padding: 5px;
+        }
+
+        .cmd-input:focus {
+            outline: none;
+        }
+
     </style>
 </head>
 <body>
@@ -116,6 +150,12 @@
     <!-- Hidden Hacker -->
     <div class="hidden-hacker">👤 HACKER DETECTED</div>
 
+    <!-- CMD Background -->
+    <div class="cmd-background">
+        <div class="cmd-output" id="cmdOutput"></div>
+        <input type="text" class="cmd-input" id="cmdInput" placeholder="Enter command...">
+    </div>
+
     <header>
         <img src="https://avatars.githubusercontent.com/u/185417194?s=200&v=4" alt="logo">
         <h1>Clean Master Privacy</h1>
@@ -127,67 +167,21 @@
     </section>
 
     <section>
-        <h2>Project Developments</h2>
-        <p>Clean Master Privacy project was stopped for a while due to financial resources. Later, gamestime102 and gamestime102tv revived the project. There was a significant data loss after the project development was stopped, but the gamestime102 team is working to replace the lost codes with new ones.</p>
-    </section>
+        <h2>Service Providers We Work With</h2>
+        <p>We rely on a variety of trusted service providers to offer the best privacy and security to our users. These providers help us ensure that your data remains safe and secure:</p>
 
-    <section>
-        <h2>Contribute</h2>
-        <p>We have recently rebuilt the app and focused on our current feature and fix roadmap. Therefore, we are not currently accepting new issues or PRs: feel free to fork the repository for your own experiments. Thank you for your understanding and support.</p>
-    </section>
-
-    <section>
-        <h2>Income and Donations</h2>
-        <p>We will donate some of the proceeds to charities and companies.</p>
-    </section>
-
-    <section>
-        <h2>Independence</h2>
-        <p>We heard about our independence on April 21, 2021, now we are taking new steps to become fully independent.</p>
-    </section>
-
-    <section>
-        <h2>People Who Keep the Project Alive</h2>
-        <p>@gamestime102 and @gamestime102-tv</p>
-    </section>
-
-    <section>
-        <h2>License</h2>
-        <p>Clean master privacy product belongs to gamestime102. The code and data files in this distribution are licensed under the GNU General Public License, version 3 or any later version, as published by the Free Software Foundation. For a copy of this license, see <a href="https://www.gnu.org/licenses/">GNU General Public License</a>.</p>
-    </section>
-
-    <section>
-        <h2>We Support Proton AG</h2>
-        <img src="https://github.com/user-attachments/assets/8472e1a0-5605-404e-b906-1e8b69275595" alt="Proton AG" class="proton">
-        <p>Thanks to Proton AG, we found our own identity and declared our full independence. We thank them for what they have contributed to us.</p>
+        <!-- Example Service Providers -->
+        <ul>
+            <li><strong>Proton AG</strong>: A leader in privacy-focused services like ProtonMail and ProtonVPN. They offer encrypted email services and secure VPN solutions.</li>
+            <li><strong>NordVPN</strong>: One of the best VPN services, offering secure and anonymous internet access with high-speed servers across the globe.</li>
+            <li><strong>Amazon Web Services (AWS)</strong>: Cloud hosting provider ensuring the security and scalability of our backend services.</li>
+            <li><strong>Cloudflare</strong>: Provides content delivery network (CDN) services, DDoS mitigation, and security for our website.</li>
+        </ul>
     </section>
 
     <section>
         <h2>We Support Other Security Providers</h2>
-
-        <!-- NordVPN -->
-        <div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/NordVPN_logo.svg/1024px-NordVPN_logo.svg.png" alt="NordVPN" class="security-logo">
-            <p><strong>NordVPN</strong> - One of the most trusted VPN providers that ensures your online privacy with secure encryption and a no-logs policy.</p>
-        </div>
-
-        <!-- Avast -->
-        <div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Avast_2014_logo.svg/800px-Avast_2014_logo.svg.png" alt="Avast" class="security-logo">
-            <p><strong>Avast</strong> - Leading antivirus software providing protection against malware, ransomware, and various online threats.</p>
-        </div>
-
-        <!-- Bitdefender -->
-        <div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Bitdefender_logo.png/800px-Bitdefender_logo.png" alt="Bitdefender" class="security-logo">
-            <p><strong>Bitdefender</strong> - Award-winning antivirus software offering real-time protection against cyber threats with advanced security features.</p>
-        </div>
-
-    </section>
-
-    <section>
-        <h2>Our Website</h2>
-        <p>Visit us at <a href="https://clean-master-privacy.github.io/applications/">Clean Master Privacy Website</a>.</p>
+        <!-- Existing Security Providers Section -->
     </section>
 
     <footer>
@@ -226,12 +220,6 @@
 
         setInterval(drawCodeRain, 50);
 
-        // Occasional Page Glitch Effect
-        setInterval(() => {
-            document.body.style.transform = 'skewX(5deg)';
-            setTimeout(() => document.body.style.transform = 'none', 100);
-        }, 10000);
-
         // Snowfall Effect
         const snowCanvas = document.getElementById('snowfallCanvas');
         const ctxSnow = snowCanvas.getContext('2d');
@@ -266,25 +254,39 @@
             drawSnow();
         }, 30);
 
-        // Randomly Display Terminal Windows
-        function createTerminal() {
-            const terminal = document.createElement('div');
-            terminal.className = 'terminal';
-            terminal.style.top = `${Math.random() * window.innerHeight}px`;
-            terminal.style.left = `${Math.random() * window.innerWidth}px`;
-            terminal.textContent = `Terminal Window ${Math.random().toFixed(5)}`;
-            document.body.appendChild(terminal);
-            setTimeout(() => terminal.remove(), 5000);
+        // CMD Input
+        const cmdBackground = document.querySelector('.cmd-background');
+        const cmdOutput = document.getElementById('cmdOutput');
+        const cmdInput = document.getElementById('cmdInput');
+
+        setTimeout(() => cmdBackground.style.display = 'block', 3000); // CMD background appears after 3 seconds
+
+        cmdInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                const inputValue = cmdInput.value;
+                cmdOutput.textContent += `\n> ${inputValue}\n`;
+                cmdInput.value = ''; // Clear input
+                processCommand(inputValue);
+            }
+        });
+
+        function processCommand(command) {
+            switch (command.toLowerCase()) {
+                case 'status':
+                    cmdOutput.textContent += 'System: All systems operational.\n';
+                    break;
+                case 'help':
+                    cmdOutput.textContent += 'Available commands: status, help, info.\n';
+                    break;
+                case 'info':
+                    cmdOutput.textContent += 'Clean Master Privacy - Version 1.0.0\n';
+                    break;
+                default:
+                    cmdOutput.textContent += 'Unknown command. Type "help" for available commands.\n';
+                    break;
+            }
+            cmdOutput.scrollTop = cmdOutput.scrollHeight; // Auto-scroll
         }
-
-        setInterval(createTerminal, 15000);
-
-        // Hidden Hacker Effect
-        setInterval(() => {
-            const hacker = document.querySelector('.hidden-hacker');
-            hacker.style.display = 'block';
-            setTimeout(() => hacker.style.display = 'none', 300);
-        }, 30000);
     </script>
 </body>
 </html>
