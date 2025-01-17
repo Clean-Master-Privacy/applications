@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clean Master Privacy</title>
+    
+    <!-- Hacker Font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Press Start 2P', monospace; /* Hacker font */
             margin: 0;
             padding: 0;
             background: #000;
@@ -187,7 +191,7 @@
 
         const codeSymbols = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
         const fontSize = 14;
-        const columns = codeCanvas.width / fontSize;
+        const columns = Math.floor(codeCanvas.width / fontSize);
         const drops = Array.from({ length: columns }).fill(0);
 
         function drawCodeRain() {
@@ -195,13 +199,13 @@
             ctxCode.fillRect(0, 0, codeCanvas.width, codeCanvas.height);
 
             ctxCode.fillStyle = '#00ff00';
-            ctxCode.font = `${fontSize}px monospace`;
+            ctxCode.font = `${fontSize}px 'Press Start 2P', monospace`;  // Use hacker font
 
             drops.forEach((y, x) => {
                 const text = codeSymbols[Math.floor(Math.random() * codeSymbols.length)];
                 ctxCode.fillText(text, x * fontSize, y * fontSize);
 
-                if (y * fontSize > codeCanvas.height && Math.random() > 0.95) {
+                if (y * fontSize > codeCanvas.height) {
                     drops[x] = 0; // Reset drop position once it reaches bottom
                 }
                 drops[x]++;
