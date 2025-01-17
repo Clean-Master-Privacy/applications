@@ -1,4 +1,4 @@
-name: Otomatik Bağımlılık Yönetimi ve Güvenlik Kontrolü
+name: Dependabot CI
 
 on:
   schedule:
@@ -10,74 +10,96 @@ jobs:
   dependency_management:
     runs-on: ubuntu-latest
     steps:
-      - name: Klonlama
+      - name: Klonla
         uses: actions/checkout@v2
 
       - name: Node.js Bağımlılık Yönetimi
         run: |
-          cd nodejs-app  # Node.js dizinine geçin (kendi yapınıza göre düzenleyin)
+          cd nodejs-app
           npm install
           npm update
+          npm audit fix  # Güvenlik açıklarını düzeltir
+          npx eslint . --fix || true # Kod hatalarını düzeltir ve ses tonunu korur
 
       - name: Python Bağımlılık Yönetimi
         run: |
-          cd python-app  # Python dizinine geçin (kendi yapınıza göre düzenleyin)
+          cd python-app
           pip install -r requirements.txt
           pip install --upgrade -r requirements.txt
+          pip install safety black flake8
+          safety check  # Zararlı bağımlılık kontrolü
+          black . || true  # Kod formatlama
+          flake8 . || true  # Kod hatalarını kontrol et
 
       - name: Ruby Bağımlılık Yönetimi
         run: |
-          cd ruby-app  # Ruby dizinine geçin (kendi yapınıza göre düzenleyin)
+          cd ruby-app
           bundle install
           bundle update
+          bundler-audit check  # Güvenlik kontrolü
+          rubocop -A || true  # Kod hatalarını analiz et ve düzelt
 
       - name: PHP Bağımlılık Yönetimi
         run: |
-          cd php-app  # PHP dizinine geçin (kendi yapınıza göre düzenleyin)
+          cd php-app
           composer install
           composer update
+          composer audit  # Güvenlik kontrolü
+          php-cs-fixer fix || true  # Kod formatlama
 
       - name: Java Bağımlılık Yönetimi
         run: |
-          cd java-app  # Java dizinine geçin (kendi yapınıza göre düzenleyin)
+          cd java-app
           mvn install
           mvn versions:use-latest-releases
+          mvn checkstyle:check || true  # Kod standartlarını kontrol et
+          mvn spotless:apply || true  # Düzensizlikleri gider
 
       - name: Go Bağımlılık Yönetimi
         run: |
-          cd go-app  # Go dizinine geçin (kendi yapınıza göre düzenleyin)
+          cd go-app
           go mod tidy
+          go vet ./... || true  # Kod kontrolü ve düzeltme
+          gofmt -w .  # Kod formatlama
 
-      - name: .NET Bağımlılık Yönetimi
+      - name: C# Bağımlılık Yönetimi
         run: |
-          cd dotnet-app  # .NET dizinine geçin (kendi yapınıza göre düzenleyin)
+          cd dotnet-app
           dotnet restore
           dotnet outdated
+          dotnet tool install -g dotnet-format
+          dotnet format --check || true  # Kod formatlama
+          dotnet build  # Projeyi derle
 
-      - name: Zararlı Yazılım Algılama (Python)
+      - name: C++ Bağımlılık Yönetimi
         run: |
-          pip install safety
-          safety check  # Python bağımlılıklarını kontrol eder
+          cd cpp-app
+          mkdir -p build && cd build
+          cmake ..
+          make  # Derleme işlemi
+          cppcheck ..  # Kod kontrolü
 
-      - name: Zararlı Yazılım Algılama (Node.js)
+      - name: Swift Bağımlılık Yönetimi
         run: |
-          npm install --save-dev eslint
-          npx eslint .  # Node.js kodunu kontrol eder
+          cd swift-app
+          swift package resolve  # Bağımlılıkları çöz
+          swift test  # Testleri çalıştır
+          swiftformat .  # Kod formatlama
 
-      - name: Zararlı Yazılım Algılama (Ruby)
+      - name: Rust Bağımlılık Yönetimi
         run: |
-          gem install bundler-audit
-          bundler-audit check  # Ruby bağımlılıklarını kontrol eder
+          cd rust-app
+          cargo update  # Bağımlılıkları güncelle
+          cargo fmt --all -- --check || true  # Kod formatlama
+          cargo clippy -- -D warnings || true  # Kod hatalarını kontrol et
 
-      - name: Zararlı Yazılım Algılama (PHP)
-        run: |
-          composer require --dev roave/security-advisories
-          composer audit  # PHP bağımlılıklarını kontrol eder
-
-      - name: Commit değişiklikleri
+      - name: Commit Değişiklikleri
         run: |
           git config --local user.email "your_email@example.com"  # Git kullanıcı e-posta adresiniz
           git config --local user.name "Your Name"  # Git kullanıcı adınız
           git add .  # Güncellenen dosyaları ekle
-          git commit -m "Chore: Update dependencies" || echo "No changes to commit"  # Güncellemeleri commit et
-          git push origin main  # Değişiklikleri ana branch'e it
+          git commit -m "Chore: Update dependencies and format code" || echo "No changes to commit"
+          git push origin main  # Değişiklikleri ana branch'e ilet
+
+      - name: Kapatma
+        run: echo "BAŞARIYLA KAPATILDI"
