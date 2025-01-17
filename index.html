@@ -15,6 +15,7 @@
             position: relative;
             height: 100vh;
             overflow-y: auto;
+            z-index: 1;
         }
 
         header {
@@ -22,12 +23,12 @@
             padding: 20px;
             background: #111;
             border-bottom: 2px solid #333;
-            z-index: 10;
+            z-index: 2;
             position: relative;
         }
 
         header img {
-            max-width: 80px;
+            max-width: 120px;
             border-radius: 50%;
         }
 
@@ -59,65 +60,6 @@
             text-decoration: none;
         }
 
-        /* CMD Background */
-        .cmd-background {
-            position: fixed;
-            bottom: 10%;
-            left: 10%;
-            background: rgba(0, 0, 0, 0.7);
-            color: #00ff00;
-            font-family: 'Courier New', Courier, monospace;
-            padding: 15px;
-            width: 90%;
-            max-width: 800px;
-            height: 200px;
-            border: 2px solid #00ff00;
-            display: none;
-            z-index: 10;
-            box-shadow: 0 0 20px rgba(0, 255, 0, 0.7);
-        }
-
-        .cmd-output {
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            height: 160px;
-            overflow-y: auto;
-        }
-
-        .cmd-input {
-            background: transparent;
-            border: none;
-            color: #00ff00;
-            width: 100%;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 1rem;
-            padding: 5px;
-        }
-
-        .cmd-input:focus {
-            outline: none;
-        }
-
-        /* Crash effect */
-        .crash {
-            animation: crashEffect 0.5s linear infinite;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #000;
-            color: red;
-            z-index: 9999;
-            display: none;
-        }
-
-        @keyframes crashEffect {
-            0% { opacity: 0.1; }
-            50% { opacity: 1; }
-            100% { opacity: 0.1; }
-        }
-
         /* Code Rain effect - Full screen behind text */
         .code-rain-container {
             position: absolute;
@@ -125,7 +67,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -2; /* Code rain her şeyin arkasında olacak */
+            z-index: -3; /* Code rain her şeyin en arkasında olacak */
         }
 
         #codeRain {
@@ -134,19 +76,32 @@
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1; /* Diğer her şeyin arkasında */
+            z-index: -2; /* Kod yağmuru da diğer tüm içeriklerin arkasında */
+        }
+
+        /* Sayfa bozulma efekti */
+        .bozulma {
+            animation: bozulmaEffect 0.3s ease-out infinite;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 0, 0, 0.6);
+            z-index: -1;
+            display: none;
+        }
+
+        @keyframes bozulmaEffect {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
 
         /* Mobil uyumluluk için */
         @media (max-width: 768px) {
             header h1 {
                 font-size: 1.5rem;
-            }
-
-            .cmd-background {
-                width: 100%;
-                max-width: none;
-                bottom: 5%;
             }
 
             footer {
@@ -163,39 +118,11 @@
             margin-right: auto;
         }
 
-        /* Sayfa bozulma efekti */
-        .bozulma {
-            animation: bozulmaEffect 0.3s ease-out infinite;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 0, 0, 0.6);
-            z-index: 999;
-            display: none;
-        }
-
-        @keyframes bozulmaEffect {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-
     </style>
 </head>
 <body>
     <!-- Sayfa Bozulma Overlay -->
     <div class="bozulma"></div>
-
-    <!-- CMD Background -->
-    <div class="cmd-background">
-        <div class="cmd-output" id="cmdOutput">
-            Welcome to the Clean Master Privacy Terminal.
-            Type 'start' to begin.
-        </div>
-        <input type="text" class="cmd-input" id="cmdInput" placeholder="Enter command...">
-    </div>
 
     <!-- Code Rain Container -->
     <div class="code-rain-container">
@@ -284,53 +211,6 @@
 
         setInterval(drawCodeRain, 50);
 
-        // Command processing
-        const cmdInput = document.getElementById('cmdInput');
-        const cmdOutput = document.getElementById('cmdOutput');
-
-        cmdInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
-                const input = cmdInput.value.trim();
-                cmdOutput.textContent += `\n$ ${input}\n`;
-
-                if (input.toLowerCase() === 'start') {
-                    cmdOutput.textContent += `
-Terminal started...
-Available Commands:
-- help : Show this message
-- providers : Display supported security providers
-- clear : Clear the terminal
-                    `;
-                    const cmdWindow = document.querySelector('.cmd-background');
-                    cmdWindow.style.display = 'block';
-                } else if (input.toLowerCase() === 'providers') {
-                    cmdOutput.textContent += `
-Security Providers:
-- Proton AG
-- NordVPN
-- Avast
-- Bitdefender
-                    `;
-                } else if (input.toLowerCase() === 'clear') {
-                    cmdOutput.textContent = '';
-                } else {
-                    cmdOutput.textContent += 'Command not found.\n';
-                }
-
-                cmdInput.value = '';
-                cmdOutput.scrollTop = cmdOutput.scrollHeight;
-            }
-        });
-
-        // Crash effect simulation
-        function crashEffect() {
-            const crashOverlay = document.querySelector('.crash');
-            crashOverlay.style.display = 'block';
-            setTimeout(() => {
-                crashOverlay.style.display = 'none';
-            }, 1000);
-        }
-
         // Page structure distortion effect
         function bozulmaEffect() {
             const bozulmaOverlay = document.querySelector('.bozulma');
@@ -341,7 +221,6 @@ Security Providers:
         }
 
         setInterval(bozulmaEffect, Math.random() * 10000 + 5000); // Random page distortion
-        setInterval(crashEffect, Math.random() * 10000 + 5000); // Crash effect randomly
     </script>
 </body>
 </html>
