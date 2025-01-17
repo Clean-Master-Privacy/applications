@@ -217,6 +217,25 @@
             }
         }
 
+        /* Code Rain effect */
+        .code-rain-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        #codeRain {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
     </style>
 </head>
 <body>
@@ -230,6 +249,11 @@
             Use the 'help' command to get started.
         </div>
         <input type="text" class="cmd-input" id="cmdInput" placeholder="Enter command...">
+    </div>
+
+    <!-- Code Rain Container -->
+    <div class="code-rain-container">
+        <canvas id="codeRain"></canvas>
     </div>
 
     <header>
@@ -281,9 +305,6 @@
     <footer>
         <p>&copy; 2025 Clean Master Privacy. All Rights Reserved.</p>
     </footer>
-
-    <!-- Code Rain Canvas -->
-    <canvas id="codeRain"></canvas>
 
     <script>
         // Code Rain Effect
