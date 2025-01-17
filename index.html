@@ -12,6 +12,7 @@
             background: #000;
             color: #00ff00;
             overflow-x: hidden;
+            position: relative;
         }
 
         header {
@@ -59,42 +60,6 @@
             text-decoration: none;
         }
 
-        /* Code rain effect */
-        canvas#codeRain {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: #000;
-        }
-
-        /* Snowfall Canvas */
-        canvas#snowfallCanvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-        }
-
-        /* Terminal Windows */
-        .terminal {
-            position: absolute;
-            background: rgba(0, 0, 0, 0.9);
-            border: 1px solid #00ff00;
-            color: #00ff00;
-            font-family: monospace;
-            padding: 10px;
-            width: 300px;
-            height: 200px;
-            overflow: hidden;
-            z-index: -1;
-            display: none;
-        }
-
         .hidden-hacker {
             position: absolute;
             top: 50%;
@@ -105,7 +70,6 @@
             display: none;
         }
 
-        /* CMD background */
         .cmd-background {
             position: fixed;
             bottom: 10%;
@@ -130,7 +94,6 @@
             overflow-y: auto;
         }
 
-        /* Command input */
         .cmd-input {
             background: transparent;
             border: none;
@@ -145,36 +108,31 @@
             outline: none;
         }
 
-        /* Glitch effect */
-        .glitch {
-            animation: glitch 0.5s infinite;
+        /* Crash effect */
+        .crash {
+            animation: crashEffect 0.5s linear infinite;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            color: red;
+            z-index: 9999;
+            display: none;
         }
 
-        @keyframes glitch {
-            0% {
-                text-shadow: 2px 0 red, -2px 0 blue;
-                transform: translate(0);
-            }
-            50% {
-                text-shadow: -2px 0 red, 2px 0 blue;
-                transform: translate(5px, 0);
-            }
-            100% {
-                text-shadow: 2px 0 red, -2px 0 blue;
-                transform: translate(-5px, 0);
-            }
+        @keyframes crashEffect {
+            0% { opacity: 0.1; }
+            50% { opacity: 1; }
+            100% { opacity: 0.1; }
         }
+
     </style>
 </head>
 <body>
-    <!-- Code Rain Canvas -->
-    <canvas id="codeRain"></canvas>
-
-    <!-- Snowfall Canvas -->
-    <canvas id="snowfallCanvas"></canvas>
-
-    <!-- Hidden Hacker -->
-    <div class="hidden-hacker">👤 HACKER DETECTED</div>
+    <!-- Crash Effect Overlay -->
+    <div class="crash"></div>
 
     <!-- CMD Background -->
     <div class="cmd-background">
@@ -191,7 +149,7 @@
     </header>
 
     <section>
-        <h2 class="glitch">About Clean Master Privacy</h2>
+        <h2>About Clean Master Privacy</h2>
         <p>Clean master privacy product was first created by 2 anonymous people who founded gamestime102; their code names are gamestime102 and gamestime102tv. gamestime102 team (organization) prepared a Kapıkulu for clean master privacy. The purpose of this Kapıkulu is to provide privacy and security. Although this army was disbanded over time, it was reactivated on April 21, 2021. Clean master privacy, a sub-unit of Kapıkulu, is sipahi, this sipahi is responsible for the security of the internet and the device.</p>
     </section>
 
@@ -229,22 +187,6 @@
         <h2>We Support Proton AG</h2>
         <img src="https://github.com/user-attachments/assets/8472e1a0-5605-404e-b906-1e8b69275595" alt="Proton AG" class="proton">
         <p>Thanks to Proton AG, we found our own identity and declared our full independence. We thank them for what they have contributed to us.</p>
-    </section>
-
-    <section class="terminal">
-        <h2>We Support Other Security Providers</h2>
-        <div class="security-provider">
-            <p><strong>NordVPN</strong> - One of the most trusted VPN providers that ensures your online privacy with secure encryption and a no-logs policy.</p>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/NordVPN_logo.svg/1024px-NordVPN_logo.svg.png" alt="NordVPN" class="security-logo">
-        </div>
-        <div class="security-provider">
-            <p><strong>Avast</strong> - Leading antivirus software providing protection against malware, ransomware, and various online threats.</p>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Avast_2014_logo.svg/800px-Avast_2014_logo.svg.png" alt="Avast" class="security-logo">
-        </div>
-        <div class="security-provider">
-            <p><strong>Bitdefender</strong> - Award-winning antivirus software offering real-time protection against cyber threats with advanced security features.</p>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Bitdefender_logo.png/800px-Bitdefender_logo.png" alt="Bitdefender" class="security-logo">
-        </div>
     </section>
 
     <footer>
@@ -317,7 +259,7 @@
             drawSnow();
         }, 30);
 
-        // Command processing with random crash effect
+        // Command processing
         const cmdInput = document.getElementById('cmdInput');
         const cmdOutput = document.getElementById('cmdOutput');
 
@@ -325,11 +267,6 @@
             if (e.key === 'Enter') {
                 const input = cmdInput.value.trim();
                 cmdOutput.textContent += `\n$ ${input}\n`;
-
-                // Random crash effect
-                if (Math.random() > 0.7) {
-                    cmdOutput.classList.add('glitch');
-                }
 
                 if (input.toLowerCase() === 'help') {
                     cmdOutput.textContent += `
@@ -361,6 +298,15 @@ Security Providers:
         setTimeout(() => {
             document.querySelector('.cmd-background').style.display = 'block';
         }, 5000);
+
+        // Crash effect trigger
+        setInterval(() => {
+            const crashEffect = document.querySelector('.crash');
+            crashEffect.style.display = 'block';
+            setTimeout(() => {
+                crashEffect.style.display = 'none';
+            }, 1000);
+        }, Math.random() * 5000 + 3000); // Random intervals between 3s and 8s
     </script>
 </body>
 </html>
