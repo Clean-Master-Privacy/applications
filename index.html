@@ -4,21 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clean Master Privacy</title>
-    
-    <!-- Daha ciddi yazı tipi ekledim, 'Roboto' fontu -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-
     <style>
         body {
-            font-family: 'Roboto', sans-serif; /* Daha ciddi font */
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
             background: #000;
             color: #00ff00;
             overflow-x: hidden;
-            position: relative;
-            height: 100vh;
-            overflow-y: auto;
         }
 
         header {
@@ -26,12 +19,10 @@
             padding: 20px;
             background: #111;
             border-bottom: 2px solid #333;
-            z-index: 2;
-            position: relative;
         }
 
         header img {
-            max-width: 120px;
+            max-width: 100px;
             border-radius: 50%;
         }
 
@@ -47,8 +38,13 @@
             background: #222;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-            position: relative;
-            z-index: 1;
+        }
+
+        section img.proton, section img.security-logo {
+            width: 150px;
+            height: auto;
+            display: block;
+            margin: 20px auto;
         }
 
         footer {
@@ -63,73 +59,66 @@
             text-decoration: none;
         }
 
-        /* Code Rain effect - Full screen behind text */
-        .code-rain-container {
-            position: absolute;
+        canvas {
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -2; /* Kod yağmuru her şeyin en arkasında olacak */
-        }
-
-        #codeRain {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        /* Sayfa bozulma efekti */
-        .bozulma {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: none;
             z-index: -1;
         }
 
-        /* Sayfa bozulma animasyonu */
-        @keyframes bozulmaEffect {
-            0% { transform: translate(0, 0); }
-            30% { transform: translate(-10px, -10px); }
-            50% { transform: translate(10px, 5px); }
-            70% { transform: translate(-5px, 5px); }
-            100% { transform: translate(0, 0); }
+        .cmd-background {
+            position: fixed;
+            bottom: 10%;
+            left: 10%;
+            background: rgba(0, 0, 0, 0.7);
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 15px;
+            width: 90%;
+            max-width: 800px;
+            height: 200px;
+            border: 2px solid #00ff00;
+            display: none;
+            z-index: -2;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.7);
         }
 
-        /* Mobil uyumluluk için */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
-
-            footer {
-                font-size: 0.8rem;
-            }
+        .cmd-output {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            height: 160px;
+            overflow-y: auto;
         }
 
-        .proton {
-            max-width: 80%;
-            height: auto;
-            margin: 10px 0;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
+        .cmd-input {
+            background: transparent;
+            border: none;
+            color: #00ff00;
+            width: 100%;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1rem;
+            padding: 5px;
         }
 
+        .cmd-input:focus {
+            outline: none;
+        }
     </style>
 </head>
 <body>
-    <!-- Sayfa Bozulma Overlay -->
-    <div class="bozulma"></div>
+    <canvas id="codeRain"></canvas>
+    <canvas id="snowfallCanvas"></canvas>
 
-    <!-- Code Rain Container -->
-    <div class="code-rain-container">
-        <canvas id="codeRain"></canvas>
+    <div class="hidden-hacker">👤 HACKER DETECTED</div>
+
+    <div class="cmd-background">
+        <div class="cmd-output" id="cmdOutput">
+            Welcome to the Clean Master Privacy Terminal.
+            Use the 'help' command to get started.
+        </div>
+        <input type="text" class="cmd-input" id="cmdInput" placeholder="Enter command...">
     </div>
 
     <header>
@@ -139,27 +128,27 @@
 
     <section>
         <h2>About Clean Master Privacy</h2>
-        <p>Clean master privacy product was first created by 2 anonymous people who founded gamestime102; their code names are gamestime102 and gamestime102tv. gamestime102 team (organization) prepared a Kapıkulu for clean master privacy. The purpose of this Kapıkulu is to provide privacy and security. Although this army was disbanded over time, it was reactivated on April 21, 2021. Clean master privacy, a sub-unit of Kapıkulu, is sipahi, this sipahi is responsible for the security of the internet and the device.</p>
+        <p>Clean master privacy product was first created by 2 anonymous people...</p>
     </section>
 
     <section>
         <h2>Project Developments</h2>
-        <p>Clean Master Privacy project was stopped for a while due to financial resources. Later, gamestime102 and gamestime102tv revived the project. There was a significant data loss after the project development was stopped, but the gamestime102 team is working to replace the lost codes with new ones.</p>
+        <p>Clean Master Privacy project was stopped for a while due to financial resources...</p>
     </section>
 
     <section>
         <h2>Contribute</h2>
-        <p>We have recently rebuilt the app and focused on our current feature and fix roadmap. Therefore, we are not currently accepting new issues or PRs: feel free to fork the repository for your own experiments. Thank you for your understanding and support.</p>
+        <p>We have recently rebuilt the app...</p>
     </section>
 
     <section>
         <h2>Income and Donations</h2>
-        <p>We will donate some of the proceeds to charities and companies.</p>
+        <p>We will donate some of the proceeds to charities...</p>
     </section>
 
     <section>
         <h2>Independence</h2>
-        <p>We heard about our independence on April 21, 2021, now we are taking new steps to become fully independent.</p>
+        <p>We heard about our independence on April 21, 2021...</p>
     </section>
 
     <section>
@@ -169,13 +158,13 @@
 
     <section>
         <h2>License</h2>
-        <p>Clean master privacy product belongs to gamestime102. The code and data files in this distribution are licensed under the GNU General Public License, version 3 or any later version, as published by the Free Software Foundation. For a copy of this license, see <a href="https://www.gnu.org/licenses/">GNU General Public License</a>.</p>
+        <p>Clean master privacy product belongs to gamestime102...</p>
     </section>
 
     <section>
         <h2>We Support Proton AG</h2>
         <img src="https://github.com/user-attachments/assets/8472e1a0-5605-404e-b906-1e8b69275595" alt="Proton AG" class="proton">
-        <p>Thanks to Proton AG, we found our own identity and declared our full independence. We thank them for what they have contributed to us.</p>
+        <p>Thanks to Proton AG, we found our own identity...</p>
     </section>
 
     <footer>
@@ -183,15 +172,19 @@
     </footer>
 
     <script>
+        window.addEventListener('resize', function() {
+            codeCanvas.width = window.innerWidth;
+            codeCanvas.height = window.innerHeight;
+            snowfallCanvas.width = window.innerWidth;
+            snowfallCanvas.height = window.innerHeight;
+        });
+
         // Code Rain Effect
         const codeCanvas = document.getElementById('codeRain');
         const ctxCode = codeCanvas.getContext('2d');
-        codeCanvas.width = window.innerWidth;
-        codeCanvas.height = window.innerHeight;
-
         const codeSymbols = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
         const fontSize = 14;
-        const columns = Math.floor(codeCanvas.width / fontSize);
+        const columns = codeCanvas.width / fontSize;
         const drops = Array.from({ length: columns }).fill(0);
 
         function drawCodeRain() {
@@ -199,14 +192,14 @@
             ctxCode.fillRect(0, 0, codeCanvas.width, codeCanvas.height);
 
             ctxCode.fillStyle = '#00ff00';
-            ctxCode.font = `${fontSize}px 'Roboto', sans-serif`;  // Daha ciddi font
+            ctxCode.font = `${fontSize}px monospace`;
 
             drops.forEach((y, x) => {
                 const text = codeSymbols[Math.floor(Math.random() * codeSymbols.length)];
                 ctxCode.fillText(text, x * fontSize, y * fontSize);
 
-                if (y * fontSize > codeCanvas.height) {
-                    drops[x] = 0; // Reset drop position once it reaches bottom
+                if (y * fontSize > codeCanvas.height && Math.random() > 0.95) {
+                    drops[x] = 0;
                 }
                 drops[x]++;
             });
@@ -214,14 +207,76 @@
 
         setInterval(drawCodeRain, 50);
 
-        // Sayfa bozulma efekti
-        function bozulmaEffect() {
-            // Sayfanın rastgele bir şekilde bozulmasını simüle et
-            document.body.style.transform = 'none';
+        // Snowfall Effect
+        const snowCanvas = document.getElementById('snowfallCanvas');
+        const ctxSnow = snowCanvas.getContext('2d');
+        const snowflakes = [];
+
+        function createSnowflake() {
+            snowflakes.push({
+                x: Math.random() * snowCanvas.width,
+                y: Math.random() * snowCanvas.height,
+                radius: Math.random() * 4 + 1,
+                speed: Math.random() * 1 + 0.5
+            });
         }
 
-        // Bu fonksiyon sayfa bozulma efektini tamamen kaldırır
-        setInterval(bozulmaEffect, Math.random() * 5000 + 3000); // Rastgele sayfa bozulması
+        function drawSnow() {
+            ctxSnow.clearRect(0, 0, snowCanvas.width, snowCanvas.height);
+            snowflakes.forEach((flake) => {
+                flake.y += flake.speed;
+                if (flake.y > snowCanvas.height) flake.y = 0;
+
+                ctxSnow.beginPath();
+                ctxSnow.arc(flake.x, flake.y, flake.radius, 0, Math.PI * 2);
+                ctxSnow.fillStyle = 'white';
+                ctxSnow.fill();
+            });
+        }
+
+        setInterval(() => {
+            if (snowflakes.length < 100) createSnowflake();
+            drawSnow();
+        }, 30);
+
+        // Command processing
+        const cmdInput = document.getElementById('cmdInput');
+        const cmdOutput = document.getElementById('cmdOutput');
+
+        cmdInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                const input = cmdInput.value.trim();
+                cmdOutput.textContent += `\n$ ${input}\n`;
+
+                if (input.toLowerCase() === 'help') {
+                    cmdOutput.textContent += `
+Available Commands:
+- help : Show this message
+- providers : Display supported security providers
+- clear : Clear the terminal
+                    `;
+                } else if (input.toLowerCase() === 'providers') {
+                    cmdOutput.textContent += `
+Security Providers:
+- Proton AG
+- NordVPN
+- Avast
+- Bitdefender
+                    `;
+                } else if (input.toLowerCase() === 'clear') {
+                    cmdOutput.textContent = '';
+                } else {
+                    cmdOutput.textContent += 'Command not found.\n';
+                }
+
+                cmdInput.value = '';
+                cmdOutput.scrollTop = cmdOutput.scrollHeight;
+            }
+        });
+
+        setTimeout(() => {
+            document.querySelector('.cmd-background').style.display = 'block';
+        }, 5000);
     </script>
 </body>
 </html>
