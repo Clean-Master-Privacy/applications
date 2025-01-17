@@ -1,30 +1,24 @@
 name: AI File Editing
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+on: [push, pull_request]
 
 jobs:
-  run-ai-correction:
-    runs-on: ubuntu-24.04
+  build:
+    runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
+    - name: Checkout code
       uses: actions/checkout@v2
-    
+
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.13.1'
-    
+        python-version: '3.8'  # Downgrade to a compatible version
+
     - name: Install dependencies
       run: |
+        pip install --upgrade pip
         pip install -r requirements.txt
-    
-    - name: Run AI model to correct code
-      run: |
-        python src/code_to_edit.py
+
+    - name: Run your script
+      run: python your_script.py
