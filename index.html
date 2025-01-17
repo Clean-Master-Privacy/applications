@@ -6,7 +6,7 @@
     <title>Clean Master Privacy</title>
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background: #000;
@@ -28,7 +28,7 @@
 
         h1 {
             margin: 10px 0;
-            font-size: 2.5rem;
+            font-size: 2rem;
         }
 
         section {
@@ -59,15 +59,28 @@
             text-decoration: none;
         }
 
-        canvas {
+        /* Code rain effect */
+        canvas#codeRain {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             z-index: -1;
+            background: #000;
         }
 
+        /* Snowfall Canvas */
+        canvas#snowfallCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+
+        /* CMD background */
         .cmd-background {
             position: fixed;
             bottom: 10%;
@@ -92,6 +105,7 @@
             overflow-y: auto;
         }
 
+        /* Command input */
         .cmd-input {
             background: transparent;
             border: none;
@@ -105,14 +119,17 @@
         .cmd-input:focus {
             outline: none;
         }
+
     </style>
 </head>
 <body>
+    <!-- Code Rain Canvas -->
     <canvas id="codeRain"></canvas>
+
+    <!-- Snowfall Canvas -->
     <canvas id="snowfallCanvas"></canvas>
 
-    <div class="hidden-hacker">👤 HACKER DETECTED</div>
-
+    <!-- CMD Background -->
     <div class="cmd-background">
         <div class="cmd-output" id="cmdOutput">
             Welcome to the Clean Master Privacy Terminal.
@@ -128,27 +145,27 @@
 
     <section>
         <h2>About Clean Master Privacy</h2>
-        <p>Clean master privacy product was first created by 2 anonymous people...</p>
+        <p>Clean master privacy product was first created by 2 anonymous people who founded gamestime102; their code names are gamestime102 and gamestime102tv. gamestime102 team (organization) prepared a Kapıkulu for clean master privacy. The purpose of this Kapıkulu is to provide privacy and security. Although this army was disbanded over time, it was reactivated on April 21, 2021. Clean master privacy, a sub-unit of Kapıkulu, is sipahi, this sipahi is responsible for the security of the internet and the device.</p>
     </section>
 
     <section>
         <h2>Project Developments</h2>
-        <p>Clean Master Privacy project was stopped for a while due to financial resources...</p>
+        <p>Clean Master Privacy project was stopped for a while due to financial resources. Later, gamestime102 and gamestime102tv revived the project. There was a significant data loss after the project development was stopped, but the gamestime102 team is working to replace the lost codes with new ones.</p>
     </section>
 
     <section>
         <h2>Contribute</h2>
-        <p>We have recently rebuilt the app...</p>
+        <p>We have recently rebuilt the app and focused on our current feature and fix roadmap. Therefore, we are not currently accepting new issues or PRs: feel free to fork the repository for your own experiments. Thank you for your understanding and support.</p>
     </section>
 
     <section>
         <h2>Income and Donations</h2>
-        <p>We will donate some of the proceeds to charities...</p>
+        <p>We will donate some of the proceeds to charities and companies.</p>
     </section>
 
     <section>
         <h2>Independence</h2>
-        <p>We heard about our independence on April 21, 2021...</p>
+        <p>We heard about our independence on April 21, 2021, now we are taking new steps to become fully independent.</p>
     </section>
 
     <section>
@@ -158,13 +175,29 @@
 
     <section>
         <h2>License</h2>
-        <p>Clean master privacy product belongs to gamestime102...</p>
+        <p>Clean master privacy product belongs to gamestime102. The code and data files in this distribution are licensed under the GNU General Public License, version 3 or any later version, as published by the Free Software Foundation. For a copy of this license, see <a href="https://www.gnu.org/licenses/">GNU General Public License</a>.</p>
     </section>
 
     <section>
         <h2>We Support Proton AG</h2>
         <img src="https://github.com/user-attachments/assets/8472e1a0-5605-404e-b906-1e8b69275595" alt="Proton AG" class="proton">
-        <p>Thanks to Proton AG, we found our own identity...</p>
+        <p>Thanks to Proton AG, we found our own identity and declared our full independence. We thank them for what they have contributed to us.</p>
+    </section>
+
+    <section class="terminal">
+        <h2>We Support Other Security Providers</h2>
+        <div class="security-provider">
+            <p><strong>NordVPN</strong> - One of the most trusted VPN providers that ensures your online privacy with secure encryption and a no-logs policy.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/NordVPN_logo.svg/1024px-NordVPN_logo.svg.png" alt="NordVPN" class="security-logo">
+        </div>
+        <div class="security-provider">
+            <p><strong>Avast</strong> - Leading antivirus software providing protection against malware, ransomware, and various online threats.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Avast_2014_logo.svg/800px-Avast_2014_logo.svg.png" alt="Avast" class="security-logo">
+        </div>
+        <div class="security-provider">
+            <p><strong>Bitdefender</strong> - Award-winning antivirus software offering real-time protection against cyber threats with advanced security features.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Bitdefender_logo.png/800px-Bitdefender_logo.png" alt="Bitdefender" class="security-logo">
+        </div>
     </section>
 
     <footer>
@@ -172,16 +205,12 @@
     </footer>
 
     <script>
-        window.addEventListener('resize', function() {
-            codeCanvas.width = window.innerWidth;
-            codeCanvas.height = window.innerHeight;
-            snowfallCanvas.width = window.innerWidth;
-            snowfallCanvas.height = window.innerHeight;
-        });
-
         // Code Rain Effect
         const codeCanvas = document.getElementById('codeRain');
         const ctxCode = codeCanvas.getContext('2d');
+        codeCanvas.width = window.innerWidth;
+        codeCanvas.height = window.innerHeight;
+
         const codeSymbols = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
         const fontSize = 14;
         const columns = codeCanvas.width / fontSize;
@@ -210,6 +239,8 @@
         // Snowfall Effect
         const snowCanvas = document.getElementById('snowfallCanvas');
         const ctxSnow = snowCanvas.getContext('2d');
+        snowCanvas.width = window.innerWidth;
+        snowCanvas.height = window.innerHeight;
         const snowflakes = [];
 
         function createSnowflake() {
@@ -274,6 +305,7 @@ Security Providers:
             }
         });
 
+        // Show the CMD window
         setTimeout(() => {
             document.querySelector('.cmd-background').style.display = 'block';
         }, 5000);
