@@ -214,16 +214,13 @@
 
         setInterval(drawCodeRain, 50);
 
-        // Sayfa yapısı bozulma efekti
+        // Sayfa bozulma efekti
         function bozulmaEffect() {
             // Sayfanın rastgele bir şekilde bozulmasını simüle et
-            document.body.style.transform = `scale(${Math.random() * 1.1 + 0.9}) rotate(${Math.random() * 5 - 2.5}deg)`;
-            document.body.style.transition = 'transform 0.2s ease-in-out';
-            setTimeout(() => {
-                document.body.style.transform = 'none';
-            }, 200);
+            document.body.style.transform = 'none';
         }
 
+        // Bu fonksiyon sayfa bozulma efektini tamamen kaldırır
         setInterval(bozulmaEffect, Math.random() * 5000 + 3000); // Rastgele sayfa bozulması
     </script>
 </body>
