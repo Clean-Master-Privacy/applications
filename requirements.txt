@@ -1,5 +1,5 @@
 tensorflow==2.12.1
-pytorch==1.13.0
+pytorch==1.0.2
 transformers==5.1.1
 gitpython==4.1.0
 tensorflow>=2.0
