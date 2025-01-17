@@ -3,14 +3,14 @@ name: AI File Editing
 on:
   push:
     branches:
-      - main  # Ana dala her push yapıldığında çalışacak
+      - main
   pull_request:
     branches:
       - main
 
 jobs:
   run-ai-correction:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
     - name: Checkout repository
@@ -19,7 +19,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.9'
+        python-version: '3.13.1'
     
     - name: Install dependencies
       run: |
