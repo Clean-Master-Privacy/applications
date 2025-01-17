@@ -1,41 +1,63 @@
-version: 2
-registries:
-  example:
-    type: npm-registry
-    url: https://example.com
-    token: ${{secrets.NPM_TOKEN}}
-updates:
-  - package-ecosystem: "npm"
-    directory: "/src/npm-project"
-    schedule:
-      interval: "daily"
-    ignore:
-      - dependency-name: "lodash"
-    open-pull-requests-limit: 10
-    registries:
-      - example
-  - package-ecosystem: "gomod"
-    directory: "/"
-    schedule:
-      interval: "daily"
-    groups:
-      golang:
-        applies-to: security-updates
-        patterns:
-          - "golang.org*"
-  - package-ecosystem: "pip"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-  - package-ecosystem: "maven"
-    directory: "/"
-    schedule:
-      interval: "monthly"
-  - package-ecosystem: "nuget"
-    directory: "/"
-    schedule:
-      interval: "daily"
-  - package-ecosystem: "docker"
-    directory: "/"
-    schedule:
-      interval: "monthly"
+name: "Dependency Updates"
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+jobs:
+  update_dependencies:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Install Dependencies
+        run: npm install
+      - name: Run Dependabot
+        uses: dependabot/dependabot-script@v1
+        with:
+          script: |
+            #!/usr/bin/env ruby
+            require 'dependabot/omnibus'
+            require 'dependabot/file_fetchers'
+            require 'dependabot/file_parsers'
+            require 'dependabot/update_checkers'
+            require 'dependabot/file_updaters'
+            require 'dependabot/pull_request_creator'
+            credentials = [{ "type" => "git_source", "host" => "github.com", "token" => ENV["GITHUB_TOKEN"] }]
+            source = Dependabot::Source.new(
+              provider: "github",
+              repo: "Clean-Master-Privacy/applications",
+              directory: "/",
+              branch: nil,
+              api_endpoint: "https://api.github.com/",
+              hostname: "github.com",
+              auth_header: nil
+            )
+            fetcher = Dependabot::FileFetchers.for_package_manager("npm").new(
+              source: source,
+              credentials: credentials
+            )
+            files = fetcher.files
+            parser = Dependabot::FileParsers.for_package_manager("npm").new(
+              dependency_files: files,
+              source: source,
+              credentials: credentials
+            )
+            dependencies = parser.parse
+            checker = Dependabot::UpdateCheckers.for_package_manager("npm").new(
+              dependency: dependencies.first,
+              dependency_files: files,
+              credentials: credentials
+            )
+            updated_files = checker.updated_dependency_files
+            pr_creator = Dependabot::PullRequestCreator.new(
+              source: source,
+              base_commit: fetcher.commit,
+              dependencies: [checker.dependency],
+              files: updated_files,
+              credentials: credentials
+            )
+            pr_creator.create
