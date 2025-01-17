@@ -13,85 +13,211 @@ jobs:
       - name: Klonla
         uses: actions/checkout@v2
 
+      - name: Gerekli Araçları Kur
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gcc g++ cmake # C++ için gerekli araçlar
+
+      - name: Projeleri Bul
+        id: find-projects
+        run: |
+          echo "Proje dizinleri:"
+          for dir in $(find . -type d -name "nodejs-app" -o -name "python-app" -o -name "ruby-app" -o -name "php-app" -o -name "java-app" -o -name "go-app" -o -name "dotnet-app" -o -name "cpp-app" -o -name "swift-app" -o -name "rust-app" -o -name "typescript-app" -o -name "elixir-app" -o -name "scala-app"); do
+            echo "Bulunan proje: $dir"
+            echo "$dir" >> projects.txt
+          done
+          cat projects.txt
+
       - name: Node.js Bağımlılık Yönetimi
         run: |
-          cd nodejs-app
-          npm install
-          npm update
-          npm audit fix  # Güvenlik açıklarını düzeltir
-          npx eslint . --fix || true # Kod hatalarını düzeltir ve ses tonunu korur
+          while IFS= read -r line; do
+            if [[ -d "$line" ]]; then
+              cd "$line" || exit
+              if [ -f package.json ]; then
+                npm install
+                npm update
+                npm audit fix
+                npx eslint . --fix || true
+              fi
+              cd -
+            fi
+          done < projects.txt
 
       - name: Python Bağımlılık Yönetimi
         run: |
-          cd python-app
-          pip install -r requirements.txt
-          pip install --upgrade -r requirements.txt
-          pip install safety black flake8
-          safety check  # Zararlı bağımlılık kontrolü
-          black . || true  # Kod formatlama
-          flake8 . || true  # Kod hatalarını kontrol et
+          while IFS= read -r line; do
+            if [[ -d "$line" ]]; then
+              cd "$line" || exit
+              if [ -f requirements.txt ]; then
+                pip install -r requirements.txt
+                pip install --upgrade -r requirements.txt
+                pip install safety black flake8
+                safety check
+                black . || true
+                flake8 . || true
+              fi
+              cd -
+            fi
+          done < projects.txt
 
       - name: Ruby Bağımlılık Yönetimi
         run: |
-          cd ruby-app
-          bundle install
-          bundle update
-          bundler-audit check  # Güvenlik kontrolü
-          rubocop -A || true  # Kod hatalarını analiz et ve düzelt
+          while IFS= read -r line; do
+            if [[ -d "$line" ]]; then
+              cd "$line" || exit
+              if [ -f Gemfile ]; then
+                bundle install
+                bundle update
+                bundler-audit check
+                rubocop -A || true
+              fi
+              cd -
+            fi
+          done < projects.txt
 
       - name: PHP Bağımlılık Yönetimi
         run: |
-          cd php-app
-          composer install
-          composer update
-          composer audit  # Güvenlik kontrolü
-          php-cs-fixer fix || true  # Kod formatlama
+          while IFS= read -r line; do
+            if [[ -d "$line" ]]; then
+              cd "$line" || exit
+              if [ -f composer.json ]; then
+                composer install
+                composer update
+                composer audit
+                php-cs-fixer fix || true
+              fi
+              cd -
+            fi
+          done < projects.txt
 
       - name: Java Bağımlılık Yönetimi
         run: |
-          cd java-app
-          mvn install
-          mvn versions:use-latest-releases
-          mvn checkstyle:check || true  # Kod standartlarını kontrol et
-          mvn spotless:apply || true  # Düzensizlikleri gider
+          while IFS= read -r line; do
+            if [[ -d "$line" ]]; then
+              cd "$line" || exit
+              if [ -f pom.xml ]; then
+                mvn install
+                mvn versions:use-latest-releases
+                mvn checkstyle:check || true
+                mvn spotless:apply || true
+              fi
+              cd -
+            fi
+          done < projects.txt
 
       - name: Go Bağımlılık Yönetimi
         run: |
-          cd go-app
-          go mod tidy
-          go vet ./... || true  # Kod kontrolü ve düzeltme
-          gofmt -w .  # Kod formatlama
+          while IFS= read -r line; do
+            if [[ -d "$line" ]]; then
+              cd "$line" || exit
+              if [ -f go.mod ]; then
+                go mod tidy
+                go vet ./... || true
+                gofmt -w . 
+              fi
+              cd -
+            fi
+          done < projects.txt
 
       - name: C# Bağımlılık Yönetimi
         run: |
-          cd dotnet-app
-          dotnet restore
-          dotnet outdated
-          dotnet tool install -g dotnet-format
-          dotnet format --check || true  # Kod formatlama
-          dotnet build  # Projeyi derle
+          while IFS= read -r line; do
+            if [[ -d "$line" ]]; then
+              cd "$line" || exit
+              if [ -f *.csproj ]; then
+                dotnet restore
+                dotnet outdated
+                dotnet tool install -g dotnet-format
+                dotnet format --check || true
+                dotnet build
+              fi
+              cd -
+            fi
+          done < projects.txt
 
       - name: C++ Bağımlılık Yönetimi
         run: |
-          cd cpp-app
-          mkdir -p build && cd build
-          cmake ..
-          make  # Derleme işlemi
-          cppcheck ..  # Kod kontrolü
+          while IFS= read -r line; do
+            if [[ -d "$line" ]]; then
+              cd "$line" || exit
+              mkdir -p build
+              cd build
+              cmake ..
+              make
+              cppcheck .. 
+              cd -
+            fi
+          done < projects.txt
 
       - name: Swift Bağımlılık Yönetimi
         run: |
-          cd swift-app
-          swift package resolve  # Bağımlılıkları çöz
-          swift test  # Testleri çalıştır
-          swiftformat .  # Kod formatlama
+          while IFS= read -r line; do
+            if [[ -d "$line" ]]; then
+              cd "$line" || exit
+              if [ -f Package.swift ]; then
+                swift package resolve
+                swift test
+                swiftformat . 
+              fi
+              cd -
+            fi
+          done < projects.txt
 
       - name: Rust Bağımlılık Yönetimi
         run: |
-          cd rust-app
-          cargo update  # Bağımlılıkları güncelle
-          cargo fmt --all -- --check || true  # Kod formatlama
-          cargo clippy -- -D warnings || true  # Kod hatalarını kontrol et
+          while IFS= read -r line; do
+            if [[ -d "$line" ]]; then
+              cd "$line" || exit
+              if [ -f Cargo.toml ]; then
+                cargo update
+                cargo fmt --all -- --check || true 
+                cargo clippy -- -D warnings || true
+              fi
+              cd -
+            fi
+          done < projects.txt
+
+      - name: TypeScript Bağımlılık Yönetimi
+        run: |
+          while IFS= read -r line; do
+            if [[ -d "$line" ]]; then
+              cd "$line" || exit
+              if [ -f package.json ]; then
+                npm install
+                npm update
+                npm audit fix
+                npx eslint . --fix || true
+              fi
+              cd -
+            fi
+          done < projects.txt
+
+      - name: Elixir Bağımlılık Yönetimi
+        run: |
+          while IFS= read -r line; do
+            if [[ -d "$line" ]]; then
+              cd "$line" || exit
+              if [ -f mix.exs ]; then
+                mix deps.get
+                mix deps.update --all
+                mix format || true
+              fi
+              cd -
+            fi
+          done < projects.txt
+
+      - name: Scala Bağımlılık Yönetimi
+        run: |
+          while IFS= read -r line; do
+            if [[ -d "$line" ]]; then
+              cd "$line" || exit
+              if [ -f build.sbt ]; then
+                sbt update
+                sbt scalafmt || true
+              fi
+              cd -
+            fi
+          done < projects.txt
 
       - name: Commit Değişiklikleri
         run: |
