@@ -1,0 +1,76 @@
+package android.arch.lifecycle;
+
+import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.os.Bundle;
+
+public final class l
+  extends Fragment
+{
+  public l() {}
+  
+  public static void c(Activity paramActivity)
+  {
+    paramActivity = paramActivity.getFragmentManager();
+    if (paramActivity.findFragmentByTag("android.arch.lifecycle.LifecycleDispatcher.report_fragment_tag") == null)
+    {
+      paramActivity.beginTransaction().add(new l(), "android.arch.lifecycle.LifecycleDispatcher.report_fragment_tag").commit();
+      paramActivity.executePendingTransactions();
+    }
+  }
+  
+  private void c(Lifecycle.Event paramEvent)
+  {
+    Object localObject = getActivity();
+    if ((localObject instanceof f))
+    {
+      ((f)localObject).N().a(paramEvent);
+      return;
+    }
+    if ((localObject instanceof d))
+    {
+      localObject = ((d)localObject).getLifecycle();
+      if ((localObject instanceof e)) {
+        ((e)localObject).a(paramEvent);
+      }
+    }
+  }
+  
+  public final void onActivityCreated(Bundle paramBundle)
+  {
+    super.onActivityCreated(paramBundle);
+    c(Lifecycle.Event.ON_CREATE);
+  }
+  
+  public final void onDestroy()
+  {
+    super.onDestroy();
+    c(Lifecycle.Event.ON_DESTROY);
+  }
+  
+  public final void onPause()
+  {
+    super.onPause();
+    c(Lifecycle.Event.ON_PAUSE);
+  }
+  
+  public final void onResume()
+  {
+    super.onResume();
+    c(Lifecycle.Event.ON_RESUME);
+  }
+  
+  public final void onStart()
+  {
+    super.onStart();
+    c(Lifecycle.Event.ON_START);
+  }
+  
+  public final void onStop()
+  {
+    super.onStop();
+    c(Lifecycle.Event.ON_STOP);
+  }
+}
