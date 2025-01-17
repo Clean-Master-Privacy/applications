@@ -1,77 +1,114 @@
 version: 2
 updates:
-  # NPM Updates
-  - package-ecosystem: "npm"
-    directory: "/"  # Root directory
+  # Tam otomatik hata algılama ve düzeltme sistemini temsil eder
+  - package-ecosystem: "multi-lang"
+    directory: "/"
     schedule:
-      interval: "daily"
+      interval: "hourly"  # Her saat başı güncelleme
     allow:
-      - dependency-name: "*"  # All NPM dependencies
+      - dependency-name: "*.*"  # Tüm bağımlılıklar
     ignore:
-      - dependency-name: "react"  # Ignore updates for React
-      - dependency-name: "vue"  # Ignore updates for Vue
-    target-branch: "main"  # Main branch
-    commit-message:
-      prefix: "fix"  # Prefix for commit message
-    versioning-strategy: "widen"  # Allows for version ranges in `package.json`
-
-  # Weekly updates for specific NPM dependencies
-  - package-ecosystem: "npm"
-    directory: "/src"  # Example subdirectory
-    schedule:
-      interval: "weekly"
-    allow:
-      - dependency-name: "@noble*"
-      - dependency-name: "fflate"
-      - dependency-name: "playwright"
-    target-branch: "feature/npm-updates"  # Custom branch for these updates
-    commit-message:
-      prefix: "feat"  # Prefix for commit message
-
-  # Python Updates
-  - package-ecosystem: "pip"
-    directory: "/"
-    schedule:
-      interval: "daily"
-    allow:
-      - dependency-name: "*"  # All Python dependencies
-    ignore:
-      - dependency-name: "tensorflow"  # Ignore updates for TensorFlow
-      - dependency-name: "torch"  # Ignore updates for PyTorch
+      - dependency-name: "node_modules"  # Node_modules klasörünü yok say
+      - dependency-name: "vendor"  # Vendor klasörünü yok say
     target-branch: "main"
     commit-message:
-      prefix: "fix"  # Prefix for commit message
+      prefix: "fix"  # Commit ön eki
 
-  # Weekly updates for specific Python libraries
-  - package-ecosystem: "pip"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    allow:
-      - dependency-name: "tensorflow"
-      - dependency-name: "scikit-learn"
-    target-branch: "feature/python-ai-updates"  # Custom branch for AI library updates
-    commit-message:
-      prefix: "feat"
+    # Hata algılama aşamaları
+    hata-algilama:
+      - aşama: "dosya-algılama"  # Dosya sistembilgisini kontrol et
+      - aşama: "syntax-hata-algılama"  # Syntax hatalarını algıla
+      - aşama: "semantic-hata-algılama"  # Semantik hataları kontrol et
+      - aşama: "kötü-niyet-algılama"  # Kötü niyetli kodları tespit et
+      - aşama: "güvenlik-hata-algılama"  # Güvenlik açıklarını kontrol et
+      - aşama: "kapsamlı-test"  # Otomatik test senaryolarını uygula
 
-  # Ruby Updates
-  - package-ecosystem: "bundler"
-    directory: "/"
-    schedule:
-      interval: "daily"
-    allow:
-      - dependency-name: "*"  # All Ruby dependencies
-    target-branch: "main"
-    commit-message:
-      prefix: "fix"
+    # Hata düzeltme algoritmaları
+    hata-düzeltme-algoritmaları:
+      - algoritma: "syntax-düzeltme"  # Syntax hatalarını otomatik olarak düzelt
+      - algoritma: "semantic-düzeltme"  # Semantik hataları otomatik olarak düzelt
+      - algoritma: "güvenlik-düzeltme"  # Güvenlik açıklarını otomatik düzelt
+      - algoritma: "kötü-niyet-düzeltme"  # Kötü niyetli kodları düzelt
+      - algoritma: "refactoring"  # Koddan gereksiz parçaları temizle
+      - algoritma: "performans-arttırma"  # Kodun performansını artır
+      - algoritma: "dep_resolv"  # Bağımlılıkların uyumunu sağla
 
-  # Java Updates
-  - package-ecosystem: "maven"
-    directory: "/"
-    schedule:
-      interval: "daily"
-    allow:
-      - dependency-name: "*"  # All Java dependencies
-    target-branch: "main"
-    commit-message:
-      prefix: "fix"
+    # Otomatik güncelleme ayarları
+    otomatik-güncelleme:
+      - güncelleme-adımı: "npm-güncelleme"  # NPM güncellemeleri
+      - güncelleme-adımı: "pip-güncelleme"  # PIP güncellemeleri
+      - güncelleme-adımı: "bundler-güncelleme"  # Bundler güncellemeleri
+      - güncelleme-adımı: "maven-güncelleme"  # Maven güncellemeleri
+      - güncelleme-adımı: "yarn-güncelleme"  # Yarn güncellemeleri
+
+    # Dosya uzantıları
+    dosya-uzantıları:
+      - uzantı: ".js"  # JavaScript
+      - uzantı: ".jsx"  # JSX
+      - uzantı: ".ts"  # TypeScript
+      - uzantı: ".tsx"  # TSX
+      - uzantı: ".py"  # Python
+      - uzantı: ".rb"  # Ruby
+      - uzantı: ".jar"  # Java
+      - uzantı: ".go"  # Go dili
+      - uzantı: ".php"  # PHP
+      - uzantı: ".swift"  # Swift
+      - uzantı: ".rust"  # Rust
+      - uzantı: ".html"  # HTML
+      - uzantı: ".css"  # CSS
+      - uzantı: ".scss"  # SCSS
+      - uzantı: ".md"  # Markdown
+      - uzantı: ".json"  # JSON
+      - uzantı: ".xml"  # XML
+      - uzantı: ".yaml"  # YAML
+      - uzantı: ".yml"  # YML
+      - uzantı: ".log"  # Log dosyaları
+      - uzantı: ".zip"  # ZIP arşivleri
+      - uzantı: ".tar"  # TAR arşivleri
+
+    # Hata yönetimi
+    hata-yönetimi:
+      - yönetim-adımı: "otomatize-hata-takibi"  # Hata tespiti ve takibi
+      - yönetim-adımı: "raporla"  # Hata raporları oluştur
+      - yönetim-adımı: "loglama"  # Hataları logla ve analiz et
+      - yönetim-adımı: "gerçek-zamanlı-izleme"  # Gerçek zamanlı hata izleme
+
+    # Güvenlik kontrolleri
+    güvenlik-kontrolleri:
+      - kontrol: "statik-kod-analizi"  # Statik kod analizi
+      - kontrol: "dinamik-kod-analizi"  # Dinamik kod analiz
+      - kontrol: "güvenlik-taraması"  # Güvenlik taramaları
+      - kontrol: "şifreleme-kontrolü"  # Şifreleme doğrulaması
+      - kontrol: "güvenlik-güncellemeleri"  # Güvenlik güncellemeleri kontrol et
+
+    # Otomatik iş akışları
+    otomatik-is-akislari:
+      - akış: "ci-cd-birleştir"  # CI/CD entegrasyonu ve otomasyonu
+      - akış: "test-otomasyonu"  # Test senaryolarını otomatikleştir
+      - akış: "rollback-stratejisi"  # Hatada geri alma işlemi
+      - akış: "sürekli-izleme"  # Sürekli izleme ve geri bildirim
+
+    # Raporlama ve analiz
+    raporlama-ve-analiz:
+      - rapor: "hata-raporlama"  # Hataların otomatik raporlanması
+      - rapor: "performans-analizi"  # Performans analizi
+      - rapor: "güvenlik-raporu"  # Güvenlik raporları
+      - rapor: "bağımlılık-analizi"  # Bağımlılık analizi
+      - rapor: "kod-kalitesi-analizi"  # Kod kalitesi analizi
+
+    # Otomatik geri alma
+    otomatik-geri-alma:
+      - geri-alma-adımı: "son-değişiklik-geri-al"  # Son değiştir geri alma
+      - geri-alma-adımı: "son-5-değişiklik-geri-al"  # Son 5 değiştir geri alma
+
+    # Otomatik test
+    otomatik-test:
+      - test-adımı: "yazılım-testi"  # Yazılım testi
+      - test-adımı: "performans-testi"  # Performans testi
+      - test-adımı: "güvenlik-testi"  # Güvenlik testi
+
+    # Otomatik raporlama
+    otomatik-raporlama:
+      - rapor-adımı: "günlük-rapor"  # Günlük rapor
+      - rapor-adımı: "haftalık-rapor"  # Haftalık rapor
+      - rapor-adımı: "aylık-rapor"  # Aylık rapor
