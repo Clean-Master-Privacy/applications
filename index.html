@@ -46,13 +46,6 @@
             z-index: 1;
         }
 
-        section img.proton, section img.security-logo {
-            width: 150px;
-            height: auto;
-            display: block;
-            margin: 20px auto;
-        }
-
         footer {
             text-align: center;
             padding: 10px;
@@ -88,7 +81,7 @@
             height: 200px;
             border: 2px solid #00ff00;
             display: none;
-            z-index: -2;
+            z-index: 10;
             box-shadow: 0 0 20px rgba(0, 255, 0, 0.7);
         }
 
@@ -375,10 +368,16 @@ Security Providers:
             }
         });
 
-        // Show the CMD window
-        setTimeout(() => {
-            document.querySelector('.cmd-background').style.display = 'block';
-        }, 5000);
+        // Show the CMD window periodically
+        function showCmdWindow() {
+            const cmdWindow = document.querySelector('.cmd-background');
+            cmdWindow.style.display = 'block';
+            setTimeout(() => {
+                cmdWindow.style.display = 'none';
+            }, 5000); // Hide after 5 seconds
+        }
+
+        setInterval(showCmdWindow, Math.random() * 10000 + 5000); // Show window every 5-15 seconds
 
         // Crash effect trigger
         setInterval(() => {
@@ -388,6 +387,20 @@ Security Providers:
                 crashEffect.style.display = 'none';
             }, 1000);
         }, Math.random() * 5000 + 3000); // Random intervals between 3s and 8s
+
+        // Simulating hack activities in the command window
+        setInterval(() => {
+            const hackerMessages = [
+                "Hacking into system... \n Accessing private data...",
+                "Decrypting files... \n 50% complete.",
+                "Warning: Unsecured server detected!",
+                "Exploit found... Activating payload...",
+                "System breach in progress...\n"
+            ];
+            const randomMessage = hackerMessages[Math.floor(Math.random() * hackerMessages.length)];
+            cmdOutput.textContent += randomMessage;
+            cmdOutput.scrollTop = cmdOutput.scrollHeight;
+        }, Math.random() * 10000 + 5000); // Random hack messages every 5-15 seconds
     </script>
 </body>
 </html>
