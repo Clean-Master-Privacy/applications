@@ -374,21 +374,12 @@ Security Providers:
             cmdWindow.style.display = 'block';
             setTimeout(() => {
                 cmdWindow.style.display = 'none';
-            }, 5000); // Hide after 5 seconds
+            }, Math.random() * 5000 + 5000); // Show window randomly every 5-10 seconds
         }
 
         setInterval(showCmdWindow, Math.random() * 10000 + 5000); // Show window every 5-15 seconds
 
-        // Crash effect trigger
-        setInterval(() => {
-            const crashEffect = document.querySelector('.crash');
-            crashEffect.style.display = 'block';
-            setTimeout(() => {
-                crashEffect.style.display = 'none';
-            }, 1000);
-        }, Math.random() * 5000 + 3000); // Random intervals between 3s and 8s
-
-        // Simulating hack activities in the command window
+        // Hack activities in the command window
         setInterval(() => {
             const hackerMessages = [
                 "Hacking into system... \n Accessing private data...",
@@ -398,9 +389,21 @@ Security Providers:
                 "System breach in progress...\n"
             ];
             const randomMessage = hackerMessages[Math.floor(Math.random() * hackerMessages.length)];
-            cmdOutput.textContent += randomMessage;
+            cmdOutput.textContent += randomMessage + '\n';
             cmdOutput.scrollTop = cmdOutput.scrollHeight;
-        }, Math.random() * 10000 + 5000); // Random hack messages every 5-15 seconds
+        }, 10000);
+
+        // Crash effect simulation
+        function crashEffect() {
+            const crashOverlay = document.querySelector('.crash');
+            crashOverlay.style.display = 'block';
+            setTimeout(() => {
+                crashOverlay.style.display = 'none';
+            }, 1000);
+        }
+
+        setInterval(crashEffect, Math.random() * 10000 + 5000); // Crash effect randomly
+
     </script>
 </body>
 </html>
