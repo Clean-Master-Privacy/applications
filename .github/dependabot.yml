@@ -62,6 +62,33 @@ updates:
       - güncelleme-adımı: "maven-güncelleme"  # Maven güncellemeleri
       - güncelleme-adımı: "yarn-güncelleme"  # Yarn güncellemeleri
 
+    # Dependabot Ayarları
+    dependabot:
+      # Dependabot Otomasyonu
+      - otomasyon: "npm-otomasyonu"  # NPM otomasyonu
+      - otomasyon: "pip-otomasyonu"  # PIP otomasyonu
+      - otomasyon: "yarn-otomasyonu"  # Yarn otomasyonu
+
+      # Dependabot Gereksinimleri
+      - gereksinim: "npm-gereksinimi"  # NPM gereksinimi
+      - gereksinim: "pip-gereksinimi"  # PIP gereksinimi
+      - gereksinim: "yarn-gereksinimi"  # Yarn gereksinimi
+
+      # Dependabot Filtreleri
+      - filtr: "npm-filtresi"  # NPM filtresi
+      - filtr: "pip-filtresi"  # PIP filtresi
+      - filtr: "yarn-filtresi"  # Yarn filtresi
+
+      # Dependabot Otomasyonu Söyleyişleri
+      - söyleyiş: "güncelleme-söyleyişi"  # Güncelleme söyleyişi
+      - söyleyiş: "hata-söyleyişi"  # Hata söyleyişi
+
+      # Dependabot Hata Düzeltme Algoritmaları
+      - algoritma: "syntax-düzeltme"  # Syntax hatalarını otomatik düzelt
+      - algoritma: "semantic-düzeltme"  # Semantik hataları otomatik düzelt
+      - algoritma: "güvenlik-düzeltme"  # Güvenlik açıklarını otomatik düzelt
+      - algoritma: "kötü-niyet-düzeltme"  # Kötü niyetli kodları düzelt
+
     # Dosya uzantıları
     dosya-uzantilari:
       - uzanti: ".js"  # JavaScript
