@@ -11,12 +11,31 @@ updates:
       interval: "daily"
     ignore:
       - dependency-name: "lodash"
-    open-pull-requests-limit: 0
+    open-pull-requests-limit: 10
     registries:
       - example
   - package-ecosystem: "gomod"
+    directory: "/"
+    schedule:
+      interval: "daily"
     groups:
       golang:
         applies-to: security-updates
         patterns:
           - "golang.org*"
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "maven"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+  - package-ecosystem: "nuget"
+    directory: "/"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "monthly"
