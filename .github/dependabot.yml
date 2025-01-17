@@ -1,162 +1,87 @@
 version: 2
 updates:
-  # Tam otomatik hata algılama ve düzeltme sistemi
-  - package-ecosystem: "multi-lang"  # Çoklu dil desteği
+  # NPM bağımlılıkları için yapılandırma
+  - package-ecosystem: "npm"
     directory: "/"  # Projenin kök dizini
     schedule:
-      interval: "15min"  # Her 15 dakikada bir güncelleme
+      interval: "daily"  # Günlük güncelleme
     allow:
       - dependency-name: "*.*"  # Tüm bağımlılıklar
     ignore:
       - dependency-name: "node_modules"  # Node_modules klasörü yok say
-      - dependency-name: "vendor"  # Vendor klasörü yok say
-    target-branch: "main"  # Hedef dal
     commit-message:
       prefix: "fix"  # Commit ön eki
 
-    # Hata algılama aşamaları
-    hata-algilama:
-      - aşama: "dosya-algılama"  # Dosya sistemini kontrol et
-      - aşama: "syntax-hata-algılama"  # Syntax hatalarını algıla
-      - aşama: "semantic-hata-algılama"  # Semantik hataları kontrol et
-      - aşama: "kötü-niyet-algılama"  # Kötü niyetli kodları tespit et
-      - aşama: "güvenlik-hata-algılama"  # Güvenlik açıklarını kontrol et
-      - aşama: "akil-yurutme"  # Akıl yürütme mantığını uygula
+  # PIP bağımlılıkları için yapılandırma
+  - package-ecosystem: "pip"
+    directory: "/"  # Projenin kök dizini
+    schedule:
+      interval: "daily"  # Günlük güncelleme
+    allow:
+      - dependency-name: "*.*"  # Tüm bağımlılıklar
+    ignore:
+      - dependency-name: "venv"  # Sanal ortamı yok say
+    commit-message:
+      prefix: "fix"  # Commit ön eki
 
-    # Gereksiz ve kötü niyetli dosyaların algılanması
-    gereksiz-ve-kotuler:
-      - dosya-tipi: "*.log"  # Log dosyaları
-      - dosya-tipi: "*.tmp"  # Geçici dosyalar
-      - dosya-tipi: "*.bak"  # Yedek dosyalar
-      - dosya-tipi: "*.old"  # Eski dosyalar
-      - dosya-tipi: "*.zip"  # ZIP arşiv dosyaları
-      - dosya-tipi: "*.tar"  # TAR arşiv dosyaları
-      - dosya-tipi: "*.exe"  # İkili dosyalar
-      - dosya-tipi: "*.dll"  # Dinamik bağlantı kütüphanesi dosyaları
-      - dosya-tipi: "*.class"  # Java sınıf dosyaları
-      - dosya-tipi: "*.jar"  # Java arşiv dosyaları
-      - dosya-tipi: "*.sh"  # Shell dosyaları
-      - dosya-tipi: "*.phps"  # Kötü niyetli PHP dosyaları
-      - dosya-tipi: "*.bat"  # Windows batch dosyaları
+  # Ruby için Bundler yapılandırması
+  - package-ecosystem: "bundler"
+    directory: "/"  # Projenin kök dizini
+    schedule:
+      interval: "daily"  # Günlük güncelleme
+    allow:
+      - dependency-name: "*.*"  # Tüm bağımlılıklar
+    commit-message:
+      prefix: "fix"  # Commit ön eki
 
-    # Kötü niyetli ve gereksiz dosyaların kaldırılması
-    otomatik-kaldirma:
-      - işlem: "gereksiz-dosyalari-kaldir"  # Gereksiz dosyaları temizle
-      - işlem: "kotulenmis-dosyalari-kaldir"  # Kötü niyetli dosyaları kaldır
+  # Maven bağımlılıkları için yapılandırma
+  - package-ecosystem: "maven"
+    directory: "/"  # Projenin kök dizini
+    schedule:
+      interval: "daily"  # Günlük güncelleme
+    allow:
+      - dependency-name: "*.*"  # Tüm bağımlılıklar
+    commit-message:
+      prefix: "fix"  # Commit ön eki
 
-    # Hata düzeltme algoritmaları
-    hata-düzeltme-algoritmaları:
-      - algoritma: "syntax-düzeltme"  # Syntax hatalarını otomatik düzelt
-      - algoritma: "semantic-düzeltme"  # Semantik hataları otomatik düzelt
-      - algoritma: "güvenlik-düzeltme"  # Güvenlik açıklarını otomatik düzelt
-      - algoritma: "kötü-niyet-düzeltme"  # Kötü niyetli kodları düzelt
-      - algoritma: "refactoring"  # Koddan gereksiz parçaları temizle
-      - algoritma: "performans-arttir"  # Kodun performansını artır
-      - algoritma: "dep_resolv"  # Bağımlılıkların uyumunu sağla
+  # Yarn bağımlılıkları için yapılandırma
+  - package-ecosystem: "yarn"
+    directory: "/"  # Projenin kök dizini
+    schedule:
+      interval: "daily"  # Günlük güncelleme
+    allow:
+      - dependency-name: "*.*"  # Tüm bağımlılıklar
+    commit-message:
+      prefix: "fix"  # Commit ön eki
 
-    # Otomatik güncelleme ayarları
-    otomatik-güncelleme:
-      - güncelleme-adımı: "npm-güncelleme"  # NPM güncellemeleri
-      - güncelleme-adımı: "pip-güncelleme"  # PIP güncellemeleri
-      - güncelleme-adımı: "bundler-güncelleme"  # Bundler güncellemeleri
-      - güncelleme-adımı: "maven-güncelleme"  # Maven güncellemeleri
-      - güncelleme-adımı: "yarn-güncelleme"  # Yarn güncellemeleri
+  # Go modları için yapılandırma
+  - package-ecosystem: "go_modules"
+    directory: "/"  # Projenin kök dizini
+    schedule:
+      interval: "daily"  # Günlük güncelleme
+    allow:
+      - dependency-name: "*.*"  # Tüm bağımlılıklar
+    commit-message:
+      prefix: "fix"  # Commit ön eki
 
-    # Dependabot Ayarları
-    dependabot:
-      # Dependabot Otomasyonu
-      - otomasyon: "npm-otomasyonu"  # NPM otomasyonu
-      - otomasyon: "pip-otomasyonu"  # PIP otomasyonu
-      - otomasyon: "yarn-otomasyonu"  # Yarn otomasyonu
+  # Composer (PHP) bağımlılıkları için yapılandırma
+  - package-ecosystem: "composer"
+    directory: "/"  # Projenin kök dizini
+    schedule:
+      interval: "daily"  # Günlük güncelleme
+    allow:
+      - dependency-name: "*.*"  # Tüm bağımlılıklar
+    commit-message:
+      prefix: "fix"  # Commit ön eki
 
-      # Dependabot Gereksinimleri
-      - gereksinim: "npm-gereksinimi"  # NPM gereksinimi
-      - gereksinim: "pip-gereksinimi"  # PIP gereksinimi
-      - gereksinim: "yarn-gereksinimi"  # Yarn gereksinimi
+  # Elixir için Hex bağımlılıkları yapılandırması
+  - package-ecosystem: "hex"
+    directory: "/"  # Projenin kök dizini
+    schedule:
+      interval: "daily"  # Günlük güncelleme
+    allow:
+      - dependency-name: "*.*"  # Tüm bağımlılıklar
+    commit-message:
+      prefix: "fix"  # Commit ön eki
 
-      # Dependabot Filtreleri
-      - filtr: "npm-filtresi"  # NPM filtresi
-      - filtr: "pip-filtresi"  # PIP filtresi
-      - filtr: "yarn-filtresi"  # Yarn filtresi
-
-      # Dependabot Otomasyonu Söyleyişleri
-      - söyleyiş: "güncelleme-söyleyişi"  # Güncelleme söyleyişi
-      - söyleyiş: "hata-söyleyişi"  # Hata söyleyişi
-
-      # Dependabot Hata Düzeltme Algoritmaları
-      - algoritma: "syntax-düzeltme"  # Syntax hatalarını otomatik düzelt
-      - algoritma: "semantic-düzeltme"  # Semantik hataları otomatik düzelt
-      - algoritma: "güvenlik-düzeltme"  # Güvenlik açıklarını otomatik düzelt
-      - algoritma: "kötü-niyet-düzeltme"  # Kötü niyetli kodları düzelt
-
-    # Dosya uzantıları
-    dosya-uzantilari:
-      - uzanti: ".js"  # JavaScript
-      - uzanti: ".jsx"  # JSX
-      - uzanti: ".ts"  # TypeScript
-      - uzanti: ".tsx"  # TSX
-      - uzanti: ".py"  # Python
-      - uzanti: ".rb"  # Ruby
-      - uzanti: ".jar"  # Java
-      - uzanti: ".go"  # Go dili
-      - uzanti: ".php"  # PHP
-      - uzanti: ".swift"  # Swift
-      - uzanti: ".rust"  # Rust
-      - uzanti: ".html"  # HTML
-      - uzanti: ".css"  # CSS
-      - uzanti: ".scss"  # SCSS
-      - uzanti: ".md"  # Markdown
-      - uzanti: ".json"  # JSON
-      - uzanti: ".xml"  # XML
-      - uzanti: ".yaml"  # YAML
-      - uzanti: ".yml"  # YML
-      - uzanti: ".log"  # Log dosyaları
-      - uzanti: ".zip"  # ZIP arşivleri
-      - uzanti: ".tar"  # TAR arşivleri
-
-    # Hata yönetimi
-    hata-yönetimi:
-      - yönetim-adımı: "otomatize-hata-takibi"  # Hata takibi
-      - yönetim-adımı: "raporla"  # Hata raporları oluştur
-      - yönetim-adımı: "loglama"  # Hataları logla ve analiz et
-      - yönetim-adımı: "gerçek-zamanlı-izleme"  # Gerçek zamanlı izleme
-
-    # Güvenlik kontrolleri
-    güvenlik-kontrolleri:
-      - kontrol: "statik-kod-analizi"  # Statik kod analizi
-      - kontrol: "dinamik-kod-analizi"  # Dinamik kod analizi
-      - kontrol: "güvenlik-taraması"  # Güvenlik taramaları
-      - kontrol: "şifreleme-kontrolü"  # Şifreleme doğrulaması
-      - kontrol: "güvenlik-güncellemeleri"  # Güvenlik güncellemeleri kontrolü
-
-    # Otomatik iş akışları
-    otomatik-is-akislari:
-      - akış: "ci-cd-birlestir"  # CI/CD entegrasyonu ve otomasyonu
-      - akış: "test-otomasyonu"  # Test senaryolarını otomatikleştir
-      - akış: "rollback-stratejisi"  # Hatada geri alma işlemi
-      - akış: "sürekli-izleme"  # Sürekli izleme ve geri bildirim
-
-    # Raporlama ve analiz
-    raporlama-ve-analiz:
-      - rapor: "hata-raporlama"  # Hataların otomatik raporlanması
-      - rapor: "performans-analizi"  # Performans analizi
-      - rapor: "güvenlik-raporu"  # Güvenlik raporları
-      - rapor: "bağımlılık-analizi"  # Bağımlılık analizi
-      - rapor: "kod-kalitesi-analizi"  # Kod kalitesi analizi
-
-    # Otomatik geri alma
-    otomatik-geri-alma:
-      - geri-alma-adımı: "son-değişikliği-geri-al"  # Son değişikliği geri al
-      - geri-alma-adımı: "son-5-değişikliği-geri-al"  # Son 5 değişikliği geri al
-
-    # Otomatik test
-    otomatik-test:
-      - test-adımı: "yazılım-testi"  # Yazılım testi
-      - test-adımı: "performans-testi"  # Performans testi
-      - test-adımı: "güvenlik-testi"  # Güvenlik testi
-
-    # Otomatik raporlama
-    otomatik-raporlama:
-      - rapor-adımı: "günlük-rapor"  # Günlük rapor
-      - rapor-adımı: "haftalık-rapor"  # Haftalık rapor
-      - rapor-adımı: "aylık-rapor"  # Aylık rapor
+# Ekstra yapılandırma, dosya uzantıları veya özel hatalar içermemektedir.
