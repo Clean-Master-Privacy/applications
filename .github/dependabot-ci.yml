@@ -221,8 +221,8 @@ jobs:
 
       - name: Commit Değişiklikleri
         run: |
-          git config --local user.email "your_email@example.com"  # Git kullanıcı e-posta adresiniz
-          git config --local user.name "Your Name"  # Git kullanıcı adınız
+          git config --local user.email "gamestime102@users.noreply.github.com"  # Git kullanıcı e-posta adresiniz
+          git config --local user.name "gamestime102"  # Git kullanıcı adınız
           git add .  # Güncellenen dosyaları ekle
           git commit -m "Chore: Update dependencies and format code" || echo "No changes to commit"
           git push origin main  # Değişiklikleri ana branch'e ilet
