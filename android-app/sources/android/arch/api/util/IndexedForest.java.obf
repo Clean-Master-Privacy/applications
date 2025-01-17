@@ -1,0 +1,38 @@
+package android.arch.a.b;
+
+import java.util.HashMap;
+
+public final class a<K, V>
+  extends b<K, V>
+{
+  public HashMap<K, b.c<K, V>> aa = new HashMap();
+  
+  public a() {}
+  
+  protected final b.c<K, V> b(K paramK)
+  {
+    return (b.c)aa.get(paramK);
+  }
+  
+  public final boolean contains(K paramK)
+  {
+    return aa.containsKey(paramK);
+  }
+  
+  public final V putIfAbsent(K paramK, V paramV)
+  {
+    b.c localC = b(paramK);
+    if (localC != null) {
+      return mValue;
+    }
+    aa.put(paramK, b(paramK, paramV));
+    return null;
+  }
+  
+  public final V remove(K paramK)
+  {
+    Object localObject = super.remove(paramK);
+    aa.remove(paramK);
+    return localObject;
+  }
+}
