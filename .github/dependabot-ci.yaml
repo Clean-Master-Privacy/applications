@@ -41,7 +41,7 @@ jobs:
               fi
               
               # Python Dependency Management
-              if [ -f requirements.txt ]; then
+              if [ -f requirements.txt]; then
                 pip install -r requirements.txt
                 pip install --upgrade -r requirements.txt
                 pip install safety black flake8
@@ -104,7 +104,6 @@ jobs:
 
       - name: AI-based Code Optimization & Error Fixing (Secure AI Service Call)
         run: |
-          # Secure AI integration with privacy-focused AI API (such as OpenAI Codex or a privacy-respecting AI model)
           curl -X POST https://api.openai.com/v1/engines/code-cushion/completions \
             -H "Authorization: Bearer YOUR_API_KEY" \
             -H "Content-Type: application/json" \
@@ -113,14 +112,11 @@ jobs:
               "max_tokens": 200
             }' > ai_output.json
 
-          # Process AI response
           cat ai_output.json
 
-          # Apply fixes suggested by AI (if any)
           FIXES=$(cat ai_output.json | jq -r '.choices[0].text')
           echo "$FIXES" >> fixes_applied.txt
 
-          # Apply the fixes directly to the code
           echo "$FIXES" > code_fixes.sh
           bash code_fixes.sh
 
@@ -129,8 +125,6 @@ jobs:
       - name: Error Handling & Retry (with Alerts)
         if: failure()
         run: |
-          # In case of failure, retry certain steps or log the error
           echo "ERROR DETECTED: Attempting retry for failed steps..."
-          # Retry logic or further diagnostics can go here
 
           curl -X POST -H 'Content-type: application/json' --data '{"text":"There was an error in the workflow. Please investigate."}' https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK
