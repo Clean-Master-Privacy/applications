@@ -1,0 +1,307 @@
+package android.support.design.chip;
+
+import android.content.Context;
+import android.content.res.Resources;
+import android.content.res.TypedArray;
+import android.os.Build.VERSION;
+import android.support.design.IpAddress;
+import android.support.design.R.style;
+import android.support.design.R.styleable;
+import android.support.design.internal.FlowLayout;
+import android.support.design.internal.f;
+import android.util.AttributeSet;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
+import android.view.ViewGroup.MarginLayoutParams;
+import android.view.ViewGroup.OnHierarchyChangeListener;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
+
+public class ChipGroup
+  extends FlowLayout
+{
+  private int Text;
+  private int curIndex;
+  private boolean d;
+  private boolean e = false;
+  private b h = new b((byte)0);
+  private int i = -1;
+  private final a mGridView = new a((byte)0);
+  
+  public ChipGroup(Context paramContext, AttributeSet paramAttributeSet)
+  {
+    this(paramContext, paramAttributeSet, IpAddress.chipGroupStyle);
+  }
+  
+  public ChipGroup(Context paramContext, AttributeSet paramAttributeSet, int paramInt)
+  {
+    super(paramContext, paramAttributeSet, paramInt);
+    paramContext = f.obtainStyledAttributes(paramContext, paramAttributeSet, R.styleable.ChipGroup, paramInt, R.style.Widget_MaterialComponents_ChipGroup, new int[0]);
+    paramInt = paramContext.getDimensionPixelOffset(R.styleable.ChipGroup_chipSpacing, 0);
+    setChipSpacingHorizontal(paramContext.getDimensionPixelOffset(R.styleable.ChipGroup_chipSpacingHorizontal, paramInt));
+    setChipSpacingVertical(paramContext.getDimensionPixelOffset(R.styleable.ChipGroup_chipSpacingVertical, paramInt));
+    setSingleLine(paramContext.getBoolean(R.styleable.ChipGroup_singleLine, false));
+    setSingleSelection(paramContext.getBoolean(R.styleable.ChipGroup_singleSelection, false));
+    paramInt = paramContext.getResourceId(R.styleable.ChipGroup_checkedChip, -1);
+    if (paramInt != -1) {
+      i = paramInt;
+    }
+    paramContext.recycle();
+    super.setOnHierarchyChangeListener(h);
+  }
+  
+  private void setCheckedId(int paramInt)
+  {
+    i = paramInt;
+  }
+  
+  private void setCheckedStateForView(int paramInt, boolean paramBoolean)
+  {
+    View localView = findViewById(paramInt);
+    if ((localView instanceof Chip))
+    {
+      e = true;
+      ((Chip)localView).setChecked(paramBoolean);
+      e = false;
+    }
+  }
+  
+  public void addView(View paramView, int paramInt, ViewGroup.LayoutParams paramLayoutParams)
+  {
+    if ((paramView instanceof Chip))
+    {
+      Chip localChip = (Chip)paramView;
+      if (localChip.isChecked())
+      {
+        if ((i != -1) && (d)) {
+          setCheckedStateForView(i, false);
+        }
+        setCheckedId(localChip.getId());
+      }
+    }
+    super.addView(paramView, paramInt, paramLayoutParams);
+  }
+  
+  protected boolean checkLayoutParams(ViewGroup.LayoutParams paramLayoutParams)
+  {
+    return (super.checkLayoutParams(paramLayoutParams)) && ((paramLayoutParams instanceof LayoutParams));
+  }
+  
+  protected ViewGroup.LayoutParams generateDefaultLayoutParams()
+  {
+    return new LayoutParams();
+  }
+  
+  public ViewGroup.LayoutParams generateLayoutParams(AttributeSet paramAttributeSet)
+  {
+    return new LayoutParams(getContext(), paramAttributeSet);
+  }
+  
+  protected ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams paramLayoutParams)
+  {
+    return new LayoutParams(paramLayoutParams);
+  }
+  
+  public int getCheckedChipId()
+  {
+    if (d) {
+      return i;
+    }
+    return -1;
+  }
+  
+  public int getChipSpacingHorizontal()
+  {
+    return curIndex;
+  }
+  
+  public int getChipSpacingVertical()
+  {
+    return Text;
+  }
+  
+  protected void onFinishInflate()
+  {
+    super.onFinishInflate();
+    if (i != -1)
+    {
+      setCheckedStateForView(i, true);
+      setCheckedId(i);
+    }
+  }
+  
+  public void setChipSpacing(int paramInt)
+  {
+    setChipSpacingHorizontal(paramInt);
+    setChipSpacingVertical(paramInt);
+  }
+  
+  public void setChipSpacingHorizontal(int paramInt)
+  {
+    if (curIndex != paramInt)
+    {
+      curIndex = paramInt;
+      setItemSpacing(paramInt);
+      requestLayout();
+    }
+  }
+  
+  public void setChipSpacingHorizontalResource(int paramInt)
+  {
+    setChipSpacingHorizontal(getResources().getDimensionPixelOffset(paramInt));
+  }
+  
+  public void setChipSpacingResource(int paramInt)
+  {
+    setChipSpacing(getResources().getDimensionPixelOffset(paramInt));
+  }
+  
+  public void setChipSpacingVertical(int paramInt)
+  {
+    if (Text != paramInt)
+    {
+      Text = paramInt;
+      setLineSpacing(paramInt);
+      requestLayout();
+    }
+  }
+  
+  public void setChipSpacingVerticalResource(int paramInt)
+  {
+    setChipSpacingVertical(getResources().getDimensionPixelOffset(paramInt));
+  }
+  
+  public void setFlexWrap(int paramInt)
+  {
+    throw new UnsupportedOperationException("Changing flex wrap not allowed. ChipGroup exposes a singleLine attribute instead.");
+  }
+  
+  public void setOnHierarchyChangeListener(ViewGroup.OnHierarchyChangeListener paramOnHierarchyChangeListener)
+  {
+    b.b(h, paramOnHierarchyChangeListener);
+  }
+  
+  public void setShowDividerHorizontal(int paramInt)
+  {
+    throw new UnsupportedOperationException("Changing divider modes has no effect. ChipGroup do not use divider drawables as spacing.");
+  }
+  
+  public void setShowDividerVertical(int paramInt)
+  {
+    throw new UnsupportedOperationException("Changing divider modes has no effect. ChipGroup do not use divider drawables as spacing.");
+  }
+  
+  public void setSingleLine(int paramInt)
+  {
+    setSingleLine(getResources().getBoolean(paramInt));
+  }
+  
+  public void setSingleSelection(int paramInt)
+  {
+    setSingleSelection(getResources().getBoolean(paramInt));
+  }
+  
+  public void setSingleSelection(boolean paramBoolean)
+  {
+    if (d != paramBoolean)
+    {
+      d = paramBoolean;
+      e = true;
+      int j = 0;
+      while (j < getChildCount())
+      {
+        View localView = getChildAt(j);
+        if ((localView instanceof Chip)) {
+          ((Chip)localView).setChecked(false);
+        }
+        j += 1;
+      }
+      e = false;
+      setCheckedId(-1);
+    }
+  }
+  
+  public static class LayoutParams
+    extends ViewGroup.MarginLayoutParams
+  {
+    public LayoutParams()
+    {
+      super(-2);
+    }
+    
+    public LayoutParams(Context paramContext, AttributeSet paramAttributeSet)
+    {
+      super(paramAttributeSet);
+    }
+    
+    public LayoutParams(ViewGroup.LayoutParams paramLayoutParams)
+    {
+      super();
+    }
+  }
+  
+  private final class a
+    implements CompoundButton.OnCheckedChangeListener
+  {
+    private a() {}
+    
+    public final void onCheckedChanged(CompoundButton paramCompoundButton, boolean paramBoolean)
+    {
+      if (ChipGroup.b(ChipGroup.this)) {
+        return;
+      }
+      int i = paramCompoundButton.getId();
+      if (paramBoolean)
+      {
+        if ((ChipGroup.c(ChipGroup.this) != -1) && (ChipGroup.c(ChipGroup.this) != i) && (ChipGroup.a(ChipGroup.this))) {
+          ChipGroup.a(ChipGroup.this, ChipGroup.c(ChipGroup.this));
+        }
+        ChipGroup.writeInt(ChipGroup.this, i);
+        return;
+      }
+      if (ChipGroup.c(ChipGroup.this) == i) {
+        ChipGroup.writeInt(ChipGroup.this, -1);
+      }
+    }
+  }
+  
+  private final class b
+    implements ViewGroup.OnHierarchyChangeListener
+  {
+    private ViewGroup.OnHierarchyChangeListener mOnHierarchyChangeListener;
+    
+    private b() {}
+    
+    public final void onChildViewAdded(View paramView1, View paramView2)
+    {
+      if ((paramView1 == ChipGroup.this) && ((paramView2 instanceof Chip)))
+      {
+        if (paramView2.getId() == -1)
+        {
+          int i;
+          if (Build.VERSION.SDK_INT >= 17) {
+            i = View.generateViewId();
+          } else {
+            i = paramView2.hashCode();
+          }
+          paramView2.setId(i);
+        }
+        mCheckedChangeListener = ChipGroup.access$getMGridView(ChipGroup.this);
+      }
+      if (mOnHierarchyChangeListener != null) {
+        mOnHierarchyChangeListener.onChildViewAdded(paramView1, paramView2);
+      }
+    }
+    
+    public final void onChildViewRemoved(View paramView1, View paramView2)
+    {
+      if ((paramView1 == ChipGroup.this) && ((paramView2 instanceof Chip))) {
+        mCheckedChangeListener = null;
+      }
+      if (mOnHierarchyChangeListener != null) {
+        mOnHierarchyChangeListener.onChildViewRemoved(paramView1, paramView2);
+      }
+    }
+  }
+}
