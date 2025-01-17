@@ -6,7 +6,7 @@ jobs:
   update-symbols:
     permissions:
       contents: write
-    runs-on: ubuntu-24.04-4core ("beta")
+    runs-on: ubuntu-24.04-4
     strategy:
       fail-fast: false
     steps:
