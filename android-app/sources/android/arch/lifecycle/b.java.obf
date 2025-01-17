@@ -1,0 +1,168 @@
+package android.arch.lifecycle;
+
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+final class a
+{
+  static a am = new a();
+  private final Map<Class, a> an = new HashMap();
+  final Map<Class, Boolean> ao = new HashMap();
+  
+  a() {}
+  
+  private static void a(Map<b, Lifecycle.Event> paramMap, b paramB, Lifecycle.Event paramEvent, Class paramClass)
+  {
+    Lifecycle.Event localEvent = (Lifecycle.Event)paramMap.get(paramB);
+    if ((localEvent != null) && (paramEvent != localEvent))
+    {
+      paramMap = as;
+      paramB = new StringBuilder("Method ");
+      paramB.append(paramMap.getName());
+      paramB.append(" in ");
+      paramB.append(paramClass.getName());
+      paramB.append(" already declared with different @OnLifecycleEvent value: previous value ");
+      paramB.append(localEvent);
+      paramB.append(", new value ");
+      paramB.append(paramEvent);
+      throw new IllegalArgumentException(paramB.toString());
+    }
+    if (localEvent == null) {
+      paramMap.put(paramB, paramEvent);
+    }
+  }
+  
+  static Method[] b(Class paramClass)
+  {
+    try
+    {
+      paramClass = paramClass.getDeclaredMethods();
+      return paramClass;
+    }
+    catch (NoClassDefFoundError paramClass)
+    {
+      throw new IllegalArgumentException("The observer class has some methods that use newer APIs which are not available in the current OS version. Lifecycles cannot access even other methods so you should make sure that your observer classes only access framework classes that are available in your min API level OR use lifecycle:compiler annotation processor.", paramClass);
+    }
+  }
+  
+  final a a(Class paramClass, Method[] paramArrayOfMethod)
+  {
+    throw new Runtime("d2j fail translate: java.lang.RuntimeException: can not merge Z and I\n\tat com.googlecode.dex2jar.ir.TypeClass.merge(TypeClass.java:100)\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeRef.updateTypeClass(TypeTransformer.java:174)\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.copyTypes(TypeTransformer.java:311)\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.fixTypes(TypeTransformer.java:226)\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.analyze(TypeTransformer.java:207)\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer.transform(TypeTransformer.java:44)\n\tat com.googlecode.d2j.dex.Dex2jar$2.optimize(Dex2jar.java:162)\n\tat com.googlecode.d2j.dex.Dex2Asm.convertCode(Dex2Asm.java:414)\n\tat com.googlecode.d2j.dex.ExDex2Asm.convertCode(ExDex2Asm.java:42)\n\tat com.googlecode.d2j.dex.Dex2jar$2.convertCode(Dex2jar.java:128)\n\tat com.googlecode.d2j.dex.Dex2Asm.convertMethod(Dex2Asm.java:509)\n\tat com.googlecode.d2j.dex.Dex2Asm.convertClass(Dex2Asm.java:406)\n\tat com.googlecode.d2j.dex.Dex2Asm.convertDex(Dex2Asm.java:422)\n\tat com.googlecode.d2j.dex.Dex2jar.doTranslate(Dex2jar.java:172)\n\tat com.googlecode.d2j.dex.Dex2jar.to(Dex2jar.java:272)\n\tat com.googlecode.dex2jar.tools.Dex2jarCmd.doCommandLine(Dex2jarCmd.java:108)\n\tat com.googlecode.dex2jar.tools.BaseCmd.doMain(BaseCmd.java:288)\n\tat com.googlecode.dex2jar.tools.Dex2jarCmd.main(Dex2jarCmd.java:32)\n");
+  }
+  
+  final a c(Class paramClass)
+  {
+    a localA = (a)an.get(paramClass);
+    if (localA != null) {
+      return localA;
+    }
+    return a(paramClass, null);
+  }
+  
+  static final class a
+  {
+    final Map<Lifecycle.Event, List<a.b>> ap;
+    final Map<a.b, Lifecycle.Event> aq;
+    
+    a(Map<a.b, Lifecycle.Event> paramMap)
+    {
+      aq = paramMap;
+      ap = new HashMap();
+      Iterator localIterator = paramMap.entrySet().iterator();
+      while (localIterator.hasNext())
+      {
+        Map.Entry localEntry = (Map.Entry)localIterator.next();
+        Lifecycle.Event localEvent = (Lifecycle.Event)localEntry.getValue();
+        List localList = (List)ap.get(localEvent);
+        paramMap = localList;
+        if (localList == null)
+        {
+          paramMap = new ArrayList();
+          ap.put(localEvent, paramMap);
+        }
+        paramMap.add(localEntry.getKey());
+      }
+    }
+    
+    static void a(List<a.b> paramList, d paramD, Lifecycle.Event paramEvent, Object paramObject)
+    {
+      int i;
+      a.b localB;
+      if (paramList != null)
+      {
+        i = paramList.size() - 1;
+        if (i >= 0) {
+          localB = (a.b)paramList.get(i);
+        }
+      }
+      for (;;)
+      {
+        try
+        {
+          switch (ar)
+          {
+          case 2: 
+            as.invoke(paramObject, new Object[] { paramD, paramEvent });
+            break;
+          case 1: 
+            as.invoke(paramObject, new Object[] { paramD });
+            break;
+          case 0: 
+            as.invoke(paramObject, new Object[0]);
+            i -= 1;
+          }
+        }
+        catch (IllegalAccessException paramList)
+        {
+          throw new RuntimeException(paramList);
+        }
+        catch (InvocationTargetException paramList)
+        {
+          throw new RuntimeException("Failed to call observer method", paramList.getCause());
+        }
+        return;
+      }
+    }
+  }
+  
+  static final class b
+  {
+    final int ar;
+    final Method as;
+    
+    b(int paramInt, Method paramMethod)
+    {
+      ar = paramInt;
+      as = paramMethod;
+      as.setAccessible(true);
+    }
+    
+    public final boolean equals(Object paramObject)
+    {
+      if (this == paramObject) {
+        return true;
+      }
+      if (paramObject != null)
+      {
+        if (getClass() != paramObject.getClass()) {
+          return false;
+        }
+        paramObject = (b)paramObject;
+        return (ar == ar) && (as.getName().equals(as.getName()));
+      }
+      return false;
+    }
+    
+    public final int hashCode()
+    {
+      return ar * 31 + as.getName().hashCode();
+    }
+  }
+}
