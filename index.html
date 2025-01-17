@@ -11,7 +11,7 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #000; /* Dark background */
+            background-color: #000;
             color: #ddd;
             overflow-x: hidden;
         }
@@ -23,44 +23,9 @@
         }
 
         h1, h2 {
-            color: #00ff00; /* Green hacker theme */
+            color: #00ff00;
         }
 
-        h2 {
-            font-size: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        /* Header Styles */
-        header {
-            background-color: #000;
-            padding: 20px 0;
-            color: white;
-            border-bottom: 2px solid #444;
-        }
-
-        .logo {
-            width: 100px;
-            border-radius: 50%;
-            margin-bottom: 10px;
-        }
-
-        .subheading {
-            font-size: 1.2rem;
-        }
-
-        /* Snowfall Canvas */
-        #snowfallCanvas, #codeRainCanvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-        /* Sections */
         section {
             margin: 40px 0;
             padding: 20px;
@@ -69,23 +34,19 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
 
-        /* Proton Logo */
         .proton-logo {
-            max-width: 60%;
+            max-width: 100%;
             height: auto;
-            margin: 20px auto;
             display: block;
-            transition: all 0.3s ease-in-out;
+            margin: 20px auto;
         }
 
-        /* Footer */
         footer {
             background-color: #000;
             color: white;
             text-align: center;
             padding: 20px 0;
             width: 100%;
-            border-top: 2px solid #444;
         }
 
         /* Mobile Responsiveness */
@@ -98,24 +59,19 @@
                 font-size: 1.5rem;
             }
 
-            .subheading {
-                font-size: 1rem;
-            }
-
             section {
                 padding: 15px;
             }
 
             .proton-logo {
-                max-width: 80%;
+                max-width: 90%;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Kar Yağma Efekti için Canvas -->
+    <!-- Snowfall Effect Canvas -->
     <canvas id="snowfallCanvas"></canvas>
-    <canvas id="codeRainCanvas"></canvas>
 
     <!-- Header Section -->
     <header>
@@ -126,8 +82,52 @@
         </div>
     </header>
 
-    <!-- Content Sections -->
-    <!-- (Content Sections remain unchanged for brevity) -->
+    <!-- About Section -->
+    <section id="about" class="scroll-anim fade-in-section">
+        <h2>About Clean Master Privacy</h2>
+        <div class="content">
+            <p>Clean master privacy product was first created by 2 anonymous people who founded gamestime102; their code names are gamestime102 and gamestime102tv...</p>
+        </div>
+    </section>
+
+    <!-- Other Sections -->
+    <section id="developments" class="scroll-anim fade-in-section">
+        <h2>Project Developments</h2>
+        <p>Clean Master Privacy project was stopped for a while due to financial resources...</p>
+    </section>
+
+    <section id="contribute" class="scroll-anim fade-in-section">
+        <h2>Contribute</h2>
+        <p>We have recently rebuilt the app and focused on our current feature and fix roadmap...</p>
+    </section>
+
+    <section id="income" class="scroll-anim fade-in-section">
+        <h2>Income and Donations</h2>
+        <p>We will donate some of the proceeds to charities and companies.</p>
+    </section>
+
+    <section id="independence" class="scroll-anim fade-in-section">
+        <h2>Independence</h2>
+        <p>We heard about our independence on April 21, 2021...</p>
+    </section>
+
+    <section id="team" class="scroll-anim fade-in-section">
+        <h2>People who keep the project alive</h2>
+        <p>@gamestime102 and @gamestime102-tv</p>
+    </section>
+
+    <section id="license" class="scroll-anim fade-in-section">
+        <h2>License</h2>
+        <p>Clean master privacy product belongs to gamestime102...</p>
+    </section>
+
+    <section id="support" class="scroll-anim fade-in-section">
+        <h2>We support Proton AG</h2>
+        <div class="proton-container">
+            <img src="https://github.com/user-attachments/assets/8472e1a0-5605-404e-b906-1e8b69275595" alt="proton" class="proton-logo">
+        </div>
+        <p>Thanks to Proton AG, we found our own identity and declared our full independence...</p>
+    </section>
 
     <!-- Footer Section -->
     <footer>
@@ -135,10 +135,12 @@
     </footer>
 
     <script>
-        // Snowfall Effect
+        // Snowfall Effect with Mouse Interaction
         const snowCanvas = document.getElementById('snowfallCanvas');
-        const snowCtx = snowCanvas.getContext('2d');
+        const ctx = snowCanvas.getContext('2d');
         const snowflakes = [];
+
+        let mouseX = window.innerWidth / 2;
 
         snowCanvas.width = window.innerWidth;
         snowCanvas.height = window.innerHeight;
@@ -146,6 +148,10 @@
         window.addEventListener('resize', () => {
             snowCanvas.width = window.innerWidth;
             snowCanvas.height = window.innerHeight;
+        });
+
+        window.addEventListener('mousemove', (event) => {
+            mouseX = event.clientX;
         });
 
         function createSnowflake() {
@@ -160,20 +166,20 @@
         }
 
         function drawSnowflakes() {
-            snowCtx.clearRect(0, 0, snowCanvas.width, snowCanvas.height);
+            ctx.clearRect(0, 0, snowCanvas.width, snowCanvas.height);
             snowflakes.forEach((flake) => {
                 flake.y += flake.speed;
-                flake.x += flake.drift;
+                flake.x += (mouseX / window.innerWidth - 0.5) * 2;
 
                 if (flake.y > snowCanvas.height) {
                     flake.y = 0;
                     flake.x = Math.random() * snowCanvas.width;
                 }
 
-                snowCtx.beginPath();
-                snowCtx.arc(flake.x, flake.y, flake.size, 0, Math.PI * 2);
-                snowCtx.fillStyle = 'white';
-                snowCtx.fill();
+                ctx.beginPath();
+                ctx.arc(flake.x, flake.y, flake.size, 0, Math.PI * 2);
+                ctx.fillStyle = 'white';
+                ctx.fill();
             });
         }
 
@@ -184,46 +190,6 @@
         }
 
         animateSnowfall();
-
-        // Code Rain Effect
-        const rainCanvas = document.getElementById('codeRainCanvas');
-        const rainCtx = rainCanvas.getContext('2d');
-        const columns = [];
-        const fontSize = 16;
-
-        rainCanvas.width = window.innerWidth;
-        rainCanvas.height = window.innerHeight;
-
-        const columnsCount = Math.floor(rainCanvas.width / fontSize);
-        for (let i = 0; i < columnsCount; i++) {
-            columns[i] = rainCanvas.height;
-        }
-
-        function drawCodeRain() {
-            rainCtx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-            rainCtx.fillRect(0, 0, rainCanvas.width, rainCanvas.height);
-            rainCtx.font = `${fontSize}px monospace`;
-            rainCtx.fillStyle = '#00ff00';
-
-            columns.forEach((y, index) => {
-                const char = String.fromCharCode(Math.random() * 128);
-                rainCtx.fillText(char, index * fontSize, y);
-
-                if (y > rainCanvas.height * 0.8 && Math.random() > 0.975) {
-                    columns[index] = 0;
-                } else {
-                    columns[index] += fontSize;
-                }
-            });
-
-            // Occasionally distort the page
-            if (Math.random() > 0.995) {
-                document.body.style.transform = 'rotate(1deg) scale(1.01)';
-                setTimeout(() => document.body.style.transform = '', 100);
-            }
-        }
-
-        setInterval(drawCodeRain, 50);
     </script>
 </body>
 </html>
