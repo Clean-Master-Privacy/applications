@@ -1,0 +1,86 @@
+package android.android.clipboard;
+
+import android.android.clipboard.data.ClipboardData;
+import android.os.Binder;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
+import android.os.Parcelable.Creator;
+import android.os.RemoteException;
+
+public abstract interface IClipboardFormatListener
+  extends IInterface
+{
+  public abstract void a(int paramInt, ClipboardData paramClipboardData)
+    throws RemoteException;
+  
+  public abstract class Stub
+    extends Binder
+    implements IClipboardFormatListener
+  {
+    public Stub()
+    {
+      attachInterface(this, "android.sec.clipboard.IClipboardFormatListener");
+    }
+    
+    public boolean onTransact(int paramInt1, Parcel paramParcel1, Parcel paramParcel2, int paramInt2)
+      throws RemoteException
+    {
+      if (paramInt1 != 1)
+      {
+        if (paramInt1 != 1598968902) {
+          return super.onTransact(paramInt1, paramParcel1, paramParcel2, paramInt2);
+        }
+        paramParcel2.writeString("android.sec.clipboard.IClipboardFormatListener");
+        return true;
+      }
+      paramParcel1.enforceInterface("android.sec.clipboard.IClipboardFormatListener");
+      paramInt1 = paramParcel1.readInt();
+      if (paramParcel1.readInt() != 0) {
+        paramParcel1 = (ClipboardData)ClipboardData.CREATOR.createFromParcel(paramParcel1);
+      } else {
+        paramParcel1 = null;
+      }
+      a(paramInt1, paramParcel1);
+      paramParcel2.writeNoException();
+      return true;
+    }
+    
+    class Proxy
+      implements IClipboardFormatListener
+    {
+      public final void a(int paramInt, ClipboardData paramClipboardData)
+        throws RemoteException
+      {
+        Parcel localParcel1 = Parcel.obtain();
+        Parcel localParcel2 = Parcel.obtain();
+        try
+        {
+          localParcel1.writeInterfaceToken("android.sec.clipboard.IClipboardFormatListener");
+          localParcel1.writeInt(paramInt);
+          if (paramClipboardData != null)
+          {
+            localParcel1.writeInt(1);
+            paramClipboardData.writeToParcel(localParcel1, 0);
+          }
+          else
+          {
+            localParcel1.writeInt(0);
+          }
+          throw new NullPointerException("This statement would have triggered an Exception: interfaceinvoke $u4#10.<android.os.IBinder: boolean transact(int,android.os.Parcel,android.os.Parcel,int)>(1, $u-1#4, $u-1#6, 0)");
+        }
+        catch (Throwable paramClipboardData)
+        {
+          localParcel2.recycle();
+          localParcel1.recycle();
+          throw paramClipboardData;
+        }
+      }
+      
+      public IBinder asBinder()
+      {
+        return null;
+      }
+    }
+  }
+}
