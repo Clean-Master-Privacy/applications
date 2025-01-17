@@ -80,21 +80,23 @@
 
         /* Sayfa bozulma efekti */
         .bozulma {
-            animation: bozulmaEffect 0.3s ease-out infinite;
+            animation: bozulmaEffect 1s ease-in-out infinite;
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(255, 0, 0, 0.6);
-            z-index: -1;
+            background-color: rgba(255, 0, 0, 0.3);
+            z-index: -2;
             display: none;
         }
 
         @keyframes bozulmaEffect {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
+            0% { transform: translate(0, 0); }
+            30% { transform: translate(-10px, -10px); }
+            50% { transform: translate(10px, 5px); }
+            70% { transform: translate(-5px, 5px); }
+            100% { transform: translate(0, 0); }
         }
 
         /* Mobil uyumluluk için */
@@ -219,7 +221,7 @@
             }, 1000);
         }
 
-        setInterval(bozulmaEffect, Math.random() * 10000 + 5000); // Random page distortion
+        setInterval(bozulmaEffect, Math.random() * 5000 + 3000); // Random page distortion
     </script>
 </body>
 </html>
