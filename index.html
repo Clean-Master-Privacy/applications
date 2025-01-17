@@ -135,6 +135,33 @@
             z-index: -1; /* Behind other elements */
         }
 
+        /* Mobil Uyumluluk İçin Proton Resmi */
+        .proton {
+            max-width: 80%; /* Resmin boyutunu daha küçük yapalım */
+            height: auto;
+            margin: 10px 0;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Mobil uyumluluk için */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            .cmd-background {
+                width: 100%;
+                max-width: none;
+                bottom: 5%;
+            }
+
+            footer {
+                font-size: 0.8rem;
+            }
+        }
+
     </style>
 </head>
 <body>
