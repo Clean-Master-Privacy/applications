@@ -22,7 +22,7 @@ jobs:
         id: find-projects
         run: |
           echo "Project directories:"
-          for dir in $(find . -type d -name "nodejs-app" -o -name "python-app" -o -name "ruby-app" -o -name "php-app" -o -name "java-app" -o -name "go-app" -o -name "dotnet-app" -o -name "cpp-app" -o -name "swift-app" -o -name "rust-app" -o -name "typescript-app" -o -name "elixir-app" -o -name "scala-app"); do
+          for dir in $(find . -type d -name "nodejs-app" -o -name "python-app" -o -name "ruby-app" -o -name "php-app" -o -name "java-app" -o -name "go-app" -o -name "dotnet-app" -o -name "cpp-app"); do
             echo "Found project: $dir"
             echo "$dir" >> projects.txt
           done
@@ -95,12 +95,12 @@ jobs:
       - name: Notify Slack on Success
         if: success()
         run: |
-          curl -X POST -H 'Content-type: application/json' --data '{"text":"The workflow has completed successfully."}' https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"The workflow has completed successfully."}' https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK
 
       - name: Notify Slack on Failure
         if: failure()
         run: |
-          curl -X POST -H 'Content-type: application/json' --data '{"text":"The workflow has failed."}' https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"The workflow has failed."}' https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK
 
       - name: AI-based Code Optimization & Error Fixing (Secure AI Service Call)
         run: |
@@ -133,4 +133,4 @@ jobs:
           echo "ERROR DETECTED: Attempting retry for failed steps..."
           # Retry logic or further diagnostics can go here
 
-          curl -X POST -H 'Content-type: application/json' --data '{"text":"There was an error in the workflow. Please investigate."}' https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"There was an error in the workflow. Please investigate."}' https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK
