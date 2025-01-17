@@ -152,7 +152,10 @@
 
     <!-- CMD Background -->
     <div class="cmd-background">
-        <div class="cmd-output" id="cmdOutput"></div>
+        <div class="cmd-output" id="cmdOutput">
+            Welcome to the Clean Master Privacy Terminal.
+            Use the 'help' command to get started.
+        </div>
         <input type="text" class="cmd-input" id="cmdInput" placeholder="Enter command...">
     </div>
 
@@ -160,29 +163,6 @@
         <img src="https://avatars.githubusercontent.com/u/185417194?s=200&v=4" alt="logo">
         <h1>Clean Master Privacy</h1>
     </header>
-
-    <section>
-        <h2>About Clean Master Privacy</h2>
-        <p>Clean master privacy product was first created by 2 anonymous people who founded gamestime102; their code names are gamestime102 and gamestime102tv. gamestime102 team (organization) prepared a Kapıkulu for clean master privacy. The purpose of this Kapıkulu is to provide privacy and security. Although this army was disbanded over time, it was reactivated on April 21, 2021. Clean master privacy, a sub-unit of Kapıkulu, is sipahi, this sipahi is responsible for the security of the internet and the device.</p>
-    </section>
-
-    <section>
-        <h2>Service Providers We Work With</h2>
-        <p>We rely on a variety of trusted service providers to offer the best privacy and security to our users. These providers help us ensure that your data remains safe and secure:</p>
-
-        <!-- Example Service Providers -->
-        <ul>
-            <li><strong>Proton AG</strong>: A leader in privacy-focused services like ProtonMail and ProtonVPN. They offer encrypted email services and secure VPN solutions.</li>
-            <li><strong>NordVPN</strong>: One of the best VPN services, offering secure and anonymous internet access with high-speed servers across the globe.</li>
-            <li><strong>Amazon Web Services (AWS)</strong>: Cloud hosting provider ensuring the security and scalability of our backend services.</li>
-            <li><strong>Cloudflare</strong>: Provides content delivery network (CDN) services, DDoS mitigation, and security for our website.</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>We Support Other Security Providers</h2>
-        <!-- Existing Security Providers Section -->
-    </section>
 
     <footer>
         <p>&copy; 2025 Clean Master Privacy. All Rights Reserved.</p>
@@ -280,6 +260,14 @@
                     break;
                 case 'info':
                     cmdOutput.textContent += 'Clean Master Privacy - Version 1.0.0\n';
+                    break;
+                case 'providers':
+                    cmdOutput.textContent += `
+Proton AG: A leader in privacy-focused services like ProtonMail and ProtonVPN. They offer encrypted email services and secure VPN solutions.
+NordVPN: One of the best VPN services, offering secure and anonymous internet access with high-speed servers across the globe.
+Amazon Web Services (AWS): Cloud hosting provider ensuring the security and scalability of our backend services.
+Cloudflare: Provides content delivery network (CDN) services, DDoS mitigation, and security for our website.
+                    `;
                     break;
                 default:
                     cmdOutput.textContent += 'Unknown command. Type "help" for available commands.\n';
