@@ -1,0 +1,30 @@
+name: AI File Editing
+
+on:
+  push:
+    branches:
+      - main  # Ana dala her push yapıldığında çalışacak
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  run-ai-correction:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'
+    
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+    
+    - name: Run AI model to correct code
+      run: |
+        python src/code_to_edit.py
