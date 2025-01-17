@@ -1,74 +1,83 @@
-name: Dependabot CI
+name: Otomatik Bağımlılık Yönetimi ve Güvenlik Kontrolü
 
 on:
   schedule:
-    - cron: '*/15 * * * *'  # Her 15 dakikada bir çalışır
+    - cron: '0 * * * *'  # Her saat başı çalışır
   pull_request:
     types: [opened, synchronize, reopened]
 
 jobs:
-  update_dependencies:
+  dependency_management:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Klonlama
         uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16'  # Gerekli Node.js sürümünü buraya girin
-
-      - name: Install dependencies
+      - name: Node.js Bağımlılık Yönetimi
         run: |
-          npm install  # npm bağımlılıklarını yükle
+          cd nodejs-app  # Node.js dizinine geçin (kendi yapınıza göre düzenleyin)
+          npm install
+          npm update
 
-      - name: Run tests
+      - name: Python Bağımlılık Yönetimi
         run: |
-          npm test  # Testleri çalıştır
+          cd python-app  # Python dizinine geçin (kendi yapınıza göre düzenleyin)
+          pip install -r requirements.txt
+          pip install --upgrade -r requirements.txt
 
-  dependabot:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16'  # Gerekli Node.js sürümünü buraya girin
-
-      - name: Install dependencies
-        run: npm install  # npm bağımlılıklarını yükle
-
-      - name: Update dependencies
-        run: npm update  # Tüm bağımlılıkları güncelle
-
-      - name: Commit changes
+      - name: Ruby Bağımlılık Yönetimi
         run: |
-          git config --local user.email "you@example.com"  # Git kullanıcı e-postanızı girin
-          git config --local user.name "Your Name"  # Git kullanıcı adınızı girin
+          cd ruby-app  # Ruby dizinine geçin (kendi yapınıza göre düzenleyin)
+          bundle install
+          bundle update
+
+      - name: PHP Bağımlılık Yönetimi
+        run: |
+          cd php-app  # PHP dizinine geçin (kendi yapınıza göre düzenleyin)
+          composer install
+          composer update
+
+      - name: Java Bağımlılık Yönetimi
+        run: |
+          cd java-app  # Java dizinine geçin (kendi yapınıza göre düzenleyin)
+          mvn install
+          mvn versions:use-latest-releases
+
+      - name: Go Bağımlılık Yönetimi
+        run: |
+          cd go-app  # Go dizinine geçin (kendi yapınıza göre düzenleyin)
+          go mod tidy
+
+      - name: .NET Bağımlılık Yönetimi
+        run: |
+          cd dotnet-app  # .NET dizinine geçin (kendi yapınıza göre düzenleyin)
+          dotnet restore
+          dotnet outdated
+
+      - name: Zararlı Yazılım Algılama (Python)
+        run: |
+          pip install safety
+          safety check  # Python bağımlılıklarını kontrol eder
+
+      - name: Zararlı Yazılım Algılama (Node.js)
+        run: |
+          npm install --save-dev eslint
+          npx eslint .  # Node.js kodunu kontrol eder
+
+      - name: Zararlı Yazılım Algılama (Ruby)
+        run: |
+          gem install bundler-audit
+          bundler-audit check  # Ruby bağımlılıklarını kontrol eder
+
+      - name: Zararlı Yazılım Algılama (PHP)
+        run: |
+          composer require --dev roave/security-advisories
+          composer audit  # PHP bağımlılıklarını kontrol eder
+
+      - name: Commit değişiklikleri
+        run: |
+          git config --local user.email "your_email@example.com"  # Git kullanıcı e-posta adresiniz
+          git config --local user.name "Your Name"  # Git kullanıcı adınız
           git add .  # Güncellenen dosyaları ekle
           git commit -m "Chore: Update dependencies" || echo "No changes to commit"  # Güncellemeleri commit et
-          git push origin main  # Güncellemeleri itme (branch adını kontrol edin)
-
-  # Dependabot yapılandırması
-  dependabot_updates:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Set up package manager
-        run: |
-          # Bu kısımda birden fazla paket yöneticisi için gerekli şu komutları ekleyebilirsiniz.
-          npm install  # npm bağımlılıklarını yükle
-          pip install -r requirements.txt  # Python bağımlılıklarını yükle
-          composer install  # PHP bağımlılıklarını yükle
-          bundle install  # Ruby bağımlılıklarını yükle
-          cd your-go-module-directory && go mod tidy  # Go bağımlılıklarını güncelleyebilirsiniz.
-
-      - name: Run all tests
-        run: |
-          npm test  # npm testlerini çalıştır
-          pytest  # Python testlerini çalıştır
-          bundle exec rake test  # Ruby testlerini çalıştır
+          git push origin main  # Değişiklikleri ana branch'e it
