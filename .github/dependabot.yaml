@@ -1,0 +1,22 @@
+version: 2
+registries:
+  example:
+    type: npm-registry
+    url: https://example.com
+    token: ${{secrets.NPM_TOKEN}}
+updates:
+  - package-ecosystem: "npm"
+    directory: "/src/npm-project"
+    schedule:
+      interval: "daily"
+    ignore:
+      - dependency-name: "lodash"
+    open-pull-requests-limit: 0
+    registries:
+      - example
+  - package-ecosystem: "gomod"
+    groups:
+      golang:
+        applies-to: security-updates
+        patterns:
+          - "golang.org*"
