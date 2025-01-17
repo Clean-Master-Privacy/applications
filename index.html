@@ -128,31 +128,9 @@
             100% { opacity: 0.1; }
         }
 
-        /* Matrix Effect */
-        .matrix {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .matrix span {
-            position: absolute;
-            top: 0;
-            color: #00ff00;
-            font-size: 20px;
-            white-space: nowrap;
-            user-select: none;
-            pointer-events: none;
-        }
-
     </style>
 </head>
 <body>
-    <!-- Matrix Effect -->
-    <div class="matrix" id="matrix"></div>
-
     <!-- Crash Effect Overlay -->
     <div class="crash"></div>
 
@@ -215,6 +193,9 @@
         <p>&copy; 2025 Clean Master Privacy. All Rights Reserved.</p>
     </footer>
 
+    <!-- Code Rain Canvas -->
+    <canvas id="codeRain"></canvas>
+
     <script>
         // Code Rain Effect
         const codeCanvas = document.getElementById('codeRain');
@@ -246,37 +227,6 @@
         }
 
         setInterval(drawCodeRain, 50);
-
-        // Matrix Effect
-        const matrix = document.getElementById("matrix");
-        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-        const charArray = chars.split("");
-        const fontSizeMatrix = 20;
-        const columnsMatrix = window.innerWidth / fontSizeMatrix;
-
-        let dropsMatrix = [];
-        for (let i = 0; i < columnsMatrix; i++) {
-            dropsMatrix[i] = Math.random() * window.innerHeight;
-        }
-
-        function drawMatrix() {
-            matrix.innerHTML = ''; // Clear the matrix
-            for (let i = 0; i < columnsMatrix; i++) {
-                const char = charArray[Math.floor(Math.random() * charArray.length)];
-                const span = document.createElement("span");
-                span.textContent = char;
-                span.style.left = `${i * fontSizeMatrix}px`;
-                span.style.top = `${dropsMatrix[i] * fontSizeMatrix}px`;
-                matrix.appendChild(span);
-
-                dropsMatrix[i]++;
-                if (dropsMatrix[i] * fontSizeMatrix > window.innerHeight && Math.random() > 0.975) {
-                    dropsMatrix[i] = 0;
-                }
-            }
-        }
-
-        setInterval(drawMatrix, 50);
 
         // Snowfall Effect
         const snowCanvas = document.getElementById('snowfallCanvas');
