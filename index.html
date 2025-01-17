@@ -202,7 +202,7 @@
                 ctxCode.fillText(text, x * fontSize, y * fontSize);
 
                 if (y * fontSize > codeCanvas.height && Math.random() > 0.95) {
-                    drops[x] = 0;
+                    drops[x] = 0; // Reset drop position once it reaches bottom
                 }
                 drops[x]++;
             });
