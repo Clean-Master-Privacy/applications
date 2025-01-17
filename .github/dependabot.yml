@@ -1,27 +1,26 @@
 version: 2
 updates:
-  # Tam otomatik hata algılama ve düzeltme sistemini temsil eder
-  - package-ecosystem: "multi-lang"
-    directory: "/"
+  # Tam otomatik hata algılama ve düzeltme sistemi
+  - package-ecosystem: "multi-lang"  # Çoklu dil desteği
+    directory: "/"  # Projenin kök dizini
     schedule:
       interval: "15min"  # Her 15 dakikada bir güncelleme
     allow:
       - dependency-name: "*.*"  # Tüm bağımlılıklar
     ignore:
-      - dependency-name: "node_modules"  # Node_modules klasörünü yok say
-      - dependency-name: "vendor"  # Vendor klasörünü yok say
-    target-branch: "main"
+      - dependency-name: "node_modules"  # Node_modules klasörü yok say
+      - dependency-name: "vendor"  # Vendor klasörü yok say
+    target-branch: "main"  # Hedef dal
     commit-message:
       prefix: "fix"  # Commit ön eki
 
     # Hata algılama aşamaları
     hata-algilama:
-      - aşama: "dosya-algılama"  # Dosya sistembilgisini kontrol et
+      - aşama: "dosya-algılama"  # Dosya sistemini kontrol et
       - aşama: "syntax-hata-algılama"  # Syntax hatalarını algıla
       - aşama: "semantic-hata-algılama"  # Semantik hataları kontrol et
       - aşama: "kötü-niyet-algılama"  # Kötü niyetli kodları tespit et
       - aşama: "güvenlik-hata-algılama"  # Güvenlik açıklarını kontrol et
-      - aşama: "kapsamlı-test"  # Otomatik test senaryolarını uygula
       - aşama: "akil-yurutme"  # Akıl yürütme mantığını uygula
 
     # Gereksiz ve kötü niyetli dosyaların algılanması
@@ -42,17 +41,17 @@ updates:
 
     # Kötü niyetli ve gereksiz dosyaların kaldırılması
     otomatik-kaldirma:
-      - işlem: "gereksiz-dosyalari-kaldir"  # Gerekli dosyaları temizle
+      - işlem: "gereksiz-dosyalari-kaldir"  # Gereksiz dosyaları temizle
       - işlem: "kotulenmis-dosyalari-kaldir"  # Kötü niyetli dosyaları kaldır
 
     # Hata düzeltme algoritmaları
     hata-düzeltme-algoritmaları:
-      - algoritma: "syntax-düzeltme"  # Syntax hatalarını otomatik olarak düzelt
-      - algoritma: "semantic-düzeltme"  # Semantik hataları otomatik olarak düzelt
+      - algoritma: "syntax-düzeltme"  # Syntax hatalarını otomatik düzelt
+      - algoritma: "semantic-düzeltme"  # Semantik hataları otomatik düzelt
       - algoritma: "güvenlik-düzeltme"  # Güvenlik açıklarını otomatik düzelt
       - algoritma: "kötü-niyet-düzeltme"  # Kötü niyetli kodları düzelt
       - algoritma: "refactoring"  # Koddan gereksiz parçaları temizle
-      - algoritma: "performans-arttırma"  # Kodun performansını artır
+      - algoritma: "performans-arttir"  # Kodun performansını artır
       - algoritma: "dep_resolv"  # Bağımlılıkların uyumunu sağla
 
     # Otomatik güncelleme ayarları
@@ -64,36 +63,36 @@ updates:
       - güncelleme-adımı: "yarn-güncelleme"  # Yarn güncellemeleri
 
     # Dosya uzantıları
-    dosya-uzantıları:
-      - uzantı: ".js"  # JavaScript
-      - uzantı: ".jsx"  # JSX
-      - uzantı: ".ts"  # TypeScript
-      - uzantı: ".tsx"  # TSX
-      - uzantı: ".py"  # Python
-      - uzantı: ".rb"  # Ruby
-      - uzantı: ".jar"  # Java
-      - uzantı: ".go"  # Go dili
-      - uzantı: ".php"  # PHP
-      - uzantı: ".swift"  # Swift
-      - uzantı: ".rust"  # Rust
-      - uzantı: ".html"  # HTML
-      - uzantı: ".css"  # CSS
-      - uzantı: ".scss"  # SCSS
-      - uzantı: ".md"  # Markdown
-      - uzantı: ".json"  # JSON
-      - uzantı: ".xml"  # XML
-      - uzantı: ".yaml"  # YAML
-      - uzantı: ".yml"  # YML
-      - uzantı: ".log"  # Log dosyaları
-      - uzantı: ".zip"  # ZIP arşivleri
-      - uzantı: ".tar"  # TAR arşivleri
+    dosya-uzantilari:
+      - uzanti: ".js"  # JavaScript
+      - uzanti: ".jsx"  # JSX
+      - uzanti: ".ts"  # TypeScript
+      - uzanti: ".tsx"  # TSX
+      - uzanti: ".py"  # Python
+      - uzanti: ".rb"  # Ruby
+      - uzanti: ".jar"  # Java
+      - uzanti: ".go"  # Go dili
+      - uzanti: ".php"  # PHP
+      - uzanti: ".swift"  # Swift
+      - uzanti: ".rust"  # Rust
+      - uzanti: ".html"  # HTML
+      - uzanti: ".css"  # CSS
+      - uzanti: ".scss"  # SCSS
+      - uzanti: ".md"  # Markdown
+      - uzanti: ".json"  # JSON
+      - uzanti: ".xml"  # XML
+      - uzanti: ".yaml"  # YAML
+      - uzanti: ".yml"  # YML
+      - uzanti: ".log"  # Log dosyaları
+      - uzanti: ".zip"  # ZIP arşivleri
+      - uzanti: ".tar"  # TAR arşivleri
 
     # Hata yönetimi
     hata-yönetimi:
-      - yönetim-adımı: "otomatize-hata-takibi"  # Hata tespiti ve takibi
+      - yönetim-adımı: "otomatize-hata-takibi"  # Hata takibi
       - yönetim-adımı: "raporla"  # Hata raporları oluştur
       - yönetim-adımı: "loglama"  # Hataları logla ve analiz et
-      - yönetim-adımı: "gerçek-zamanlı-izleme"  # Gerçek zamanlı hata izleme
+      - yönetim-adımı: "gerçek-zamanlı-izleme"  # Gerçek zamanlı izleme
 
     # Güvenlik kontrolleri
     güvenlik-kontrolleri:
@@ -101,11 +100,11 @@ updates:
       - kontrol: "dinamik-kod-analizi"  # Dinamik kod analizi
       - kontrol: "güvenlik-taraması"  # Güvenlik taramaları
       - kontrol: "şifreleme-kontrolü"  # Şifreleme doğrulaması
-      - kontrol: "güvenlik-güncellemeleri"  # Güvenlik güncellemeleri kontrol et
+      - kontrol: "güvenlik-güncellemeleri"  # Güvenlik güncellemeleri kontrolü
 
     # Otomatik iş akışları
     otomatik-is-akislari:
-      - akış: "ci-cd-birleştir"  # CI/CD entegrasyonu ve otomasyonu
+      - akış: "ci-cd-birlestir"  # CI/CD entegrasyonu ve otomasyonu
       - akış: "test-otomasyonu"  # Test senaryolarını otomatikleştir
       - akış: "rollback-stratejisi"  # Hatada geri alma işlemi
       - akış: "sürekli-izleme"  # Sürekli izleme ve geri bildirim
@@ -120,8 +119,8 @@ updates:
 
     # Otomatik geri alma
     otomatik-geri-alma:
-      - geri-alma-adımı: "son-değişiklik-geri-al"  # Son değiştir geri alma
-      - geri-alma-adımı: "son-5-değişiklik-geri-al"  # Son 5 değiştir geri alma
+      - geri-alma-adımı: "son-değişikliği-geri-al"  # Son değişikliği geri al
+      - geri-alma-adımı: "son-5-değişikliği-geri-al"  # Son 5 değişikliği geri al
 
     # Otomatik test
     otomatik-test:
