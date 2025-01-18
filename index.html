@@ -32,8 +32,7 @@
             const nameEQ = name + "=";
             const ca = document.cookie.split(';');
             for (let i = 0; i < ca.length; i++) {
-                let c = ca[i];
-                while (c.charAt(0) === ' ') c = c.substring(1);
+                let c = ca[i].trim();
                 if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
             }
             return null;
@@ -42,7 +41,7 @@
         // Show cookie consent banner
         function showCookieConsent() {
             const cookieConsent = document.getElementById('cookieConsent');
-            cookieConsent.style.display = 'flex';
+            cookieConsent.style.display = 'block';
         }
 
         // Accept cookies
@@ -50,7 +49,7 @@
             createCookie('cookieConsent', 'accepted', 30); // 30 days cookie
             document.getElementById('cookieConsent').style.display = 'none'; // Hide the banner
         };
-        
+
         // On page load, check for cookie consent
         window.onload = function() {
             const cookieConsent = readCookie('cookieConsent');
@@ -92,30 +91,29 @@
             codeCanvas.height = window.innerHeight;
 
             const codeSymbols = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-+,#@&*%$!?()[]{}<>;ا ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و يㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ';
-            const fontSize = 14;
+            const fontSize = 14; // Font size for code rain symbols
             const columns = Math.floor(codeCanvas.width / fontSize);
-            const drops = Array.from({ length: columns }, () => Math.random() * codeCanvas.height);
+            const drops = Array.from({ length: columns }).fill(0); // Initialize drops array
 
             function drawCodeRain() {
-                ctxCode.fillStyle = 'rgba(0, 0, 0, 0.05)';
+                ctxCode.fillStyle = 'rgba(0, 0, 0, 0.05)'; // Background fade effect
                 ctxCode.fillRect(0, 0, codeCanvas.width, codeCanvas.height);
 
-                ctxCode.fillStyle = '#00ff00';
+                ctxCode.fillStyle = '#00ff00'; // Symbol color
                 ctxCode.font = `${fontSize}px monospace`;
 
                 drops.forEach((y, x) => {
                     const text = codeSymbols[Math.floor(Math.random() * codeSymbols.length)];
-                    ctxCode.fillText(text, x * fontSize, y);
+                    ctxCode.fillText(text, x * fontSize, y * fontSize); // Draw symbol
 
-                    if (y > codeCanvas.height) {
-                        drops[x] = 0;
-                    } else {
-                        drops[x] += fontSize;
+                    if (y * fontSize > codeCanvas.height && Math.random() > 0.975) {
+                        drops[x] = 0; // Reset drop position
                     }
+                    drops[x]++; // Increase drop position
                 });
             }
 
-            setInterval(drawCodeRain, 50);
+            setInterval(drawCodeRain, 50); // Refresh rate for the effect
         }
     </script>
 
@@ -156,7 +154,7 @@
 
         header img {
             width: 50px; /* Proto resmini küçült */
-            border-radius: 50%;
+            border-radius: 50%; /* Resmi yuvarlak yapmak için */
         }
 
         h2 {
@@ -283,7 +281,7 @@
     <section>
         <h2>Supporters</h2>
         <div class="supporter">
-            <img src="https://github.com/user-attachments/assets/8472e1a0-5605-404e-b906-1e8b69275595" alt="Proton AG">
+            <img src="https://github.com/user-attachments/assets/8472e1a0-5605-404e-b906-1e8b69275595" alt="Proton AG" style="width: 80px;"/>
             <h3>Proton AG</h3>
             <p>Thanks to Proton AG, we found our own identity and declared our full independence. We thank them for their contributions.</p>
             <a href="https://proton.me" target="_blank">Visit Proton AG</a>
