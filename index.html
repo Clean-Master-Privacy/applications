@@ -6,7 +6,7 @@
     <title>Clean Master Privacy</title>
     
     <!-- Cloudflare Web Analytics Script -->
-    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "78baed92ab2e46eeb31bc3bc3fdc6c26"}'></script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "78baed92ab2e46eeb31bc3bc3fdc6c26"}.'</script>
     
     <script type="text/javascript">
         // Redirect if the current URL matches clean-master-privacy.github.io/applications#
@@ -14,7 +14,104 @@
             window.location.href = "https://gamestime102.me";
         }
     </script>
+    <!-- Çerez oluşturma fonksiyonu -->
+    <script>
+        // Çerez oluşturma fonksiyonu
+        function createCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + value + expires + "; path=/; SameSite=None; Secure";
+        }
+        
+        // Çerezleri kontrol et
+        function readCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+        
+        // Çerez iznini göster
+        function showCookieConsent() {
+            const cookieConsent = document.getElementById('cookieConsent');
+            cookieConsent.style.display = 'flex';
+        }
+        
+        // Çerez iznini kabul etme
+        document.getElementById('acceptCookies').onclick = function() {
+            // Çerez oluştur
+            createCookie('cookieConsent', 'accepted', 30); // 30 gün geçerli çerez
+            document.getElementById('cookieConsent').style.display = 'none'; // Çubuğu gizle
+        };
+        
+        // Sayfa yüklendiğinde çerez izni iste
+        window.onload = function() {
+            const cookieConsent = readCookie('cookieConsent');
+            if (!cookieConsent) {
+                showCookieConsent();
+            }
+            checkSSLCertificate(); // Check SSL certificate on page load
+        };
+        
+        // Check SSL Certificate
+        function checkSSLCertificate() {
+            fetch(window.location.href)
+                .then(response => {
+                    if (response.ok) {
+                        document.getElementById('sslStatus').textContent = "SSL Certificate: Valid";
+                    } else {
+                        document.getElementById('sslStatus').textContent = "SSL Certificate: Invalid or Expired";
+                        document.getElementById('sslStatus').style.backgroundColor = "rgba(255, 0, 0, 0.8)";
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('sslStatus').textContent = "SSL Certificate: Invalid or Expired";
+                    document.getElementById('sslStatus').style.backgroundColor = "rgba(255, 0, 0, 0.8)";
+                })
+                .finally(() => {
+                    document.getElementById('sslStatus').style.display = 'block';
+                });
+        }
+        
+        // Code Rain Effect
+        const codeCanvas = document.getElementById('codeRain');
+        const ctxCode = codeCanvas.getContext('2d');
+        codeCanvas.width = window.innerWidth;
+        codeCanvas.height = window.innerHeight;
 
+        const codeSymbols = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-+,#@&*%$!?()[]{}<>;ا ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و يㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎmmcmmkminçftydminmµmbBKBMBGBTB';
+        const fontSize = 14;
+        const columns = codeCanvas.width / fontSize;
+        const drops = Array.from({ length: columns }).fill(0);
+
+        function drawCodeRain() {
+            ctxCode.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctxCode.fillRect(0, 0, codeCanvas.width, codeCanvas.height);
+
+            ctxCode.fillStyle = '#00ff00';
+            ctxCode.font = `${fontSize}px monospace`;
+
+            drops.forEach((y, x) => {
+                const text = codeSymbols[Math.floor(Math.random() * codeSymbols.length)];
+                ctxCode.fillText(text, x * fontSize, y * fontSize);
+
+                if (y * fontSize > codeCanvas.height && Math.random() > 0.95) {
+                    drops[x] = 0;
+                }
+                drops[x]++;
+            });
+        }
+
+        setInterval(drawCodeRain, 50);
+    </script>
     <style>
         body {
             font-family: 'Delta Std', 'Terminal', 'Consolas', monospace; 
@@ -250,12 +347,24 @@
 
         // Sayfa yüklendiğinde çerez izni iste
         window.onload = function() {
-            const cookieConsent = document.cookie.split('; ').find(row => row.startsWith('cookieConsent='));
+            const cookieConsent = readCookie('cookieConsent');
             if (!cookieConsent) {
                 showCookieConsent();
             }
             checkSSLCertificate(); // Check SSL certificate on page load
         };
+
+        // Çerezleri kontrol et
+        function readCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
 
         // Check SSL Certificate
         function checkSSLCertificate() {
