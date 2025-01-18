@@ -58,6 +58,7 @@
             }
             checkSSLCertificate(); // Check SSL certificate on page load
             startCodeRain(); // Start the Code Rain effect
+            autoScreen(); // Start the Auto Screen feature
         };
 
         // Check SSL Certificate
@@ -83,6 +84,19 @@
                 });
         }
 
+        // Auto Screen Feature
+        function autoScreen() {
+            const autoScreenButton = document.getElementById('autoScreenButton');
+            autoScreenButton.addEventListener('click', function() {
+                const myVideo = document.getElementById('myVideo');
+                if (myVideo.paused) {
+                    myVideo.play();
+                } else {
+                    myVideo.pause();
+                }
+            });
+        }
+
         // Code Rain Effect
         function startCodeRain() {
             const codeCanvas = document.getElementById('codeRain');
@@ -91,7 +105,7 @@
             codeCanvas.height = window.innerHeight;
 
             const codeSymbols = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-+,#@&*%$!?()[]{}<>;ا ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و يㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ';
-            const fontSize = 14; // Font size for code rain symbols
+            const fontSize = 12; // Font size for code rain symbols
             const columns = Math.floor(codeCanvas.width / fontSize);
             const drops = Array.from({ length: columns }).fill(0); // Initialize drops array
 
@@ -153,7 +167,7 @@
         }
 
         header img {
-            width: 50px; /* Proto resmini küçült */
+            width: 40px; /* Proton logosunu küçült */
             border-radius: 50%; /* Resmi yuvarlak yapmak için */
         }
 
@@ -218,21 +232,97 @@
             display: none;
         }
 
-        /* Code Rain Canvas */
-        canvas#codeRain {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
+        /* Auto Screen Feature */
+        #autoScreenButton {
+          position: fixed;
+          top: 10px;
+          left: -20px; /* Ekleme için yaptığım ayar */
+          background-color: #00ff00; /* Mavi buton rengini değiştirdim */
+          color: #000; /* Buton renk değiştirme */
+          border-style: none; /* Butonun kenarını kaldırma */
+          padding-left-right-bottom-top :5px; /* Buton içinde bulunan metinleri kaydırma */
+          cursor:pointer; /* Fare pointer değiştirme */
+          z-index :1002;
+          display:block; /* Buton görünür hale getirdim */
+          width :30px; /* Genişlik ayarladım */
+          height :30px; /* Yükseklik ayarladım */
+          border-radius :50%; /* Buton yuvarlak hale getirme */
+          background-size :30px; /* Butonun arka planını genişlettim */
+          background-image :url("https://i.imgur.com/3JHjgYr.png"); /* Butonun arka planını image ile değiştirdim */
+          background-size :cover; /* Butonun arka planını image ile kapladım */
+          background-position:center center; /* Butonun arka planını ortala */
+          background-repeat :no-repeat; /* Butonun arka planını tekrarlamama */
+          box-shadow :none; /* Butonun shadowunu kaldırma */
+          border :none; /* Butonun kenarlarını kaldırma */
+          margin :none; /* Butonun kenarlarını kaldırma */
+          padding :none; /* Butonun kenarlarını kaldırma */
+          width:auto; /* Genişlik otomatik yapma */
+          height:auto; /* Yükseklik otomatik yapma */ 
+          width :30px; 
+          height :30px; 
+          position :absolute; 
+          top :10px; 
+          left :10px; 
+          z-index :1003; 
+          cursor:pointer; 
+          background-color :#00ff00; 
+          color :#000; 
+          border-style :none; 
+          padding :5px; 
+          display:block; 
+          font-size :16px; 
+          text-align:center; 
+          font-family:"Arial", sans-serif ; 
+
         }
+
+        /* Video Element */
+      #myVideo{
+      position:absolute;
+      top:-200%;
+      left:-200%;
+      }
+      #myVideo::-webkit-media-controls-overlay{
+      display:none !important;
+
+      }
+      #myVideo::-webkit-media-controls-enclosure{
+      display:none !important;
+
+      }
+      #myVideo::-webkit-media-controls-panel{
+      display:none !important;
+
+      }
+
+      /* Code Rain Canvas */
+      canvas#codeRain {
+          position: fixed;
+          top: -20%;
+          left:-50%;
+          width :50%;
+      }
+      canvas#codeRain{
+       transform :rotate(-90deg);
+       transform-origin:center top ; 
+
+      }
     </style>
+
 </head>
 <body>
 
     <!-- SSL Status Notification -->
     <div class="ssl-status" id="sslStatus">SSL Certificate: Valid</div>
+
+    <!-- Video Element -->
+    <video id="myVideo" autoplay loop muted>
+      <source src="https://www.w3schools.com/tags/movie.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+    </video>
+
+    <!-- Auto Screen Button -->
+    <button id="autoScreenButton">Auto Screen</button>
 
     <!-- Code Rain Canvas -->
     <canvas id="codeRain"></canvas>
@@ -277,25 +367,16 @@
         <p>The Clean Master Privacy product belongs to gamestime102. The code and data files in this distribution are licensed under the GNU General Public License, version 3 or any later version published by the Free Software Foundation. For a copy of this license, see <a href="https://www.gnu.org/licenses/">GNU General Public License</a>.</p>
     </section>
 
-    <!-- Supporters Section -->
-    <section>
-        <h2>Supporters</h2>
-        <div class="supporter">
-            <img src="https://github.com/user-attachments/assets/8472e1a0-5605-404e-b906-1e8b69275595" alt="Proton AG" style="width: 80px;"/>
-            <h3>Proton AG</h3>
-            <p>Thanks to Proton AG, we found our own identity and declared our full independence. We thank them for their contributions.</p>
-            <a href="https://proton.me" target="_blank">Visit Proton AG</a>
-        </div>
-    </section>
-
-    <!-- Cookie Consent Bar -->
+    <!-- Cookie Consent Banner -->
     <div class="cookie-consent" id="cookieConsent">
-        Bu web sitesi çerez kullanmaktadır. Daha fazla bilgi için <a href="#">çerez politikamıza</a> bakabilirsiniz.
-        <button id="acceptCookies">Kabul Et</button>
+        <p>We use cookies to make your browsing experience better.</p>
+        <p>
+            <button id="acceptCookies">Accept Cookies</button>
+        </p>
     </div>
 
     <footer>
-        &copy; 2025 Clean Master Privacy. All Rights Reserved.
+        &copy; 2023 gamestime102. All rights reserved.
     </footer>
 
 </body>
