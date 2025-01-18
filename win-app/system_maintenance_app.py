@@ -1,190 +1,211 @@
 import os
 import subprocess
 import sys
-import time
 import sqlite3
-import psutil
 import platform
-import tkinter as tk
-from tkinter import scrolledtext, messagebox
-import threading
+import logging
+import requests
+from datetime import datetime
+
+# Hata Loglama Ayarları
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+# DeepAI API Anahtarınızı buraya ekleyin
+DEEPAI_API_KEY = '9fe9b9a7-64fa-4e5f-b7ee-4c5997f8531b'
+DATABASE_NAME = "maintenance_results.db"
+
+class AutomatedDebugger:
+    """
+    Basit bir hata ayıklama ve öneri sistemi.
+    """
+    def suggest_fixes(self, error_message):
+        suggestions = []
+        
+        if "module" in error_message and "not found" in error_message:
+            suggestions.append("Gerekli modülü yüklemeyi deneyin veya modül adını kontrol edin.")
+        if "permission denied" in error_message:
+            suggestions.append("Erişim izninizi kontrol edin.")
+        if "no such file" in error_message:
+            suggestions.append("Dosya veya dizinin mevcut olduğundan emin olun.")
+        
+        return suggestions
 
 def install(package):
-    """Required library installation."""
-    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+    """Dış bağımlılıkları yüklemek için kullanılan fonksiyon."""
+    try:
+        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+        logging.info(f"{package} başarıyla yüklendi.")
+    except Exception as e:
+        logging.error(f"{package} yüklenirken hata: {e}")
 
-def check_and_install_libraries():
-    """Checks if the required libraries are installed and installs any that are missing."""
-    required_packages = ["psutil"]
-    for package in required_packages:
+def verify_dependencies():
+    """Gerekli bağımlılıkların yüklü olup olmadığını kontrol eder ve gerekirse yükler."""
+    required_modules = ['sqlite3', 'requests']  
+    for module in required_modules:
         try:
-            __import__(package)
+            __import__(module)
         except ImportError:
-            print(f"Installing {package} library...")
-            install(package)
+            logging.warning(f"{module} eksik, yükleniyor...")
+            install(module)
 
-class SystemMaintenance:
-    DATABASE_NAME = "maintenance_results.db"
-    CRITICAL_TEMPERATURE = 75  # Temperature warning threshold (Celsius)
+def setup_database():
+    try:
+        conn = sqlite3.connect(DATABASE_NAME)
+        cursor = conn.cursor()
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS maintenance_log (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                operation TEXT,
+                description TEXT,
+                timestamp TEXT
+            );
+        ''')
+        conn.commit()
+        logging.info("Veritabanı başarıyla oluşturuldu.")
+    except sqlite3.Error as e:
+        logging.error(f"Veritabanı hatası: {e}")
+        debugger = AutomatedDebugger()
+        suggestions = debugger.suggest_fixes(str(e))
+        logging.info("Öneriler: " + "; ".join(suggestions))
 
-    def __init__(self):
-        self.setup_environment()
-
-    def setup_environment(self):
-        """Sets up the necessary database."""
-        self.connect_to_database()
-
-    def connect_to_database(self):
-        """Creates a database connection and sets up the required table."""
-        try:
-            self.conn = sqlite3.connect(self.DATABASE_NAME)
-            self.cursor = self.conn.cursor()
-            self.cursor.execute('''
-                CREATE TABLE IF NOT EXISTS maintenance_log (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    operation TEXT,
-                    description TEXT,
-                    timestamp TEXT
-                );
-            ''')
-            self.conn.commit()
-        except Exception as e:
-            print(f"Error: {e}")
-
-    def log_operation(self, operation, description):
-        """Logs an operation in the maintenance log."""
-        self.cursor.execute('''
+def log_operation(operation, description):
+    """Operasyonları veritabanına kaydet."""
+    try:
+        conn = sqlite3.connect(DATABASE_NAME)
+        cursor = conn.cursor()
+        cursor.execute('''
             INSERT INTO maintenance_log (operation, description, timestamp)
             VALUES (?, ?, ?);
-        ''', (operation, description, time.strftime("%Y-%m-%d %H:%M:%S")))
-        self.conn.commit()
+        ''', (operation, description, datetime.now().isoformat()))
+        conn.commit()
+    except sqlite3.Error as e:
+        logging.error(f"Log kaydı oluşturulurken hata: {e}")
+        debugger = AutomatedDebugger()
+        suggestions = debugger.suggest_fixes(str(e))
+        logging.info("Öneriler: " + "; ".join(suggestions))
 
-    def clear_memory(self):
-        """Cleans up unnecessary processes to accelerate memory."""
-        memory_before = psutil.virtual_memory()
-        target_processes = self.get_target_processes()
-        for proc in psutil.process_iter(['pid', 'name']):
+def perform_disk_cleanup():
+    """Geçici dosyaları temizler."""
+    temp_dir = os.path.join(os.path.expanduser("~"), "AppData", "Local", "Temp")
+    
+    if not os.path.exists(temp_dir):
+        logging.error(f"{temp_dir} dizini bulunamadı.")
+        return "Hata: Dizine erişilemiyor."
+    
+    try:
+        opened_files = os.listdir(temp_dir)
+        for file in opened_files:
             try:
-                if proc.info['name'] in target_processes:
-                    proc.terminate()
-                    self.log_operation("Memory Cleanup", f"{proc.info['name']} process terminated.")
-            except (psutil.NoSuchProcess, psutil.AccessDenied) as e:
-                continue
+                os.remove(os.path.join(temp_dir, file))
+                logging.info(f"{file} silindi.")
+            except Exception as e:
+                logging.error(f"Sorun: {e}. {file} silinemedi.")
+                debugger = AutomatedDebugger()
+                suggestions = debugger.suggest_fixes(str(e))
+                logging.info("Öneriler: " + "; ".join(suggestions))
+        
+        result = "Disk temizleme tamamlandı."
+    except Exception as e:
+        result = f"Hata: {e}"
+    
+    log_operation("Disk Temizleme", result)
+    return result
 
-        memory_after = psutil.virtual_memory()
-        return memory_before, memory_after
-
-    def get_target_processes(self):
-        """Returns a list of processes to target for memory cleanup, based on the operating system."""
-        if platform.system() == "Windows":
-            return ["notepad.exe", "word.exe"]
-        elif platform.system() == "Linux":
-            return ["gedit", "libreoffice", "nano"]  # Example targets for Linux
-        elif platform.system() == "Darwin":  # macOS
-            return ["TextEdit", "Microsoft Word"]  # Example targets for macOS
-        return []
-
-    def monitor_temperature(self):
-        """Monitors the system temperature."""
-        temperature = psutil.sensors_temperatures()
-        if 'coretemp' in temperature:  # For processor temperature
-            current_temp = temperature['coretemp'][0].current  # Get the first sensor
-            if current_temp >= self.CRITICAL_TEMPERATURE:
-                self.log_operation("Temperature Warning", f"Critical temperature: {current_temp}°C")
-                return f"Critical temperature: {current_temp}°C"
-        elif 'thermal_zone' in temperature:
-            # Another possible temperature sensor access for Linux
-            current_temp = temperature['thermal_zone0'][0].current
-            if current_temp >= self.CRITICAL_TEMPERATURE:
-                self.log_operation("Temperature Warning", f"Critical temperature: {current_temp}°C")
-                return f"Critical temperature: {current_temp}°C"
-
-        return "Temperature is normal."
-
-    def perform_disk_cleanup(self):
-        """Cleans up unnecessary files from the disk."""
-        temp_dir = os.path.join(os.path.expanduser("~"), "AppData", "Local", "Temp") if platform.system() == "Windows" else "/tmp"
-        try:
-            opened_files = os.listdir(temp_dir)
-            for file in opened_files:
-                try:
-                    os.remove(os.path.join(temp_dir, file))
-                    self.log_operation("Disk Cleanup", f"{file} removed.")
-                except Exception as e:
-                    continue
-            return "Disk cleanup completed."
-        except Exception as e:
-            return f"Error during disk cleanup: {e}"
-
-    def display_system_info(self):
-        """Displays current system information."""
-        cpu_usage = psutil.cpu_percent(interval=1)
-        memory_info = psutil.virtual_memory()
-        disk_info = psutil.disk_usage('/')
-
-        system_info = (f"CPU Usage: {cpu_usage}%\n"
-                       f"Memory Usage: {memory_info.percent}%\n"
-                       f"Total Memory: {memory_info.total / (1024**2):.2f} MB\n"
-                       f"Used Memory: {memory_info.used / (1024**2):.2f} MB\n"
-                       f"Disk Usage: {disk_info.percent}%\n"
-                       f"Total Disk: {disk_info.total / (1024**3):.2f} GB\n"
-                       f"Used Disk: {disk_info.used / (1024**3):.2f} GB\n")
+def display_system_info():
+    """Sistem bilgilerini gösterir."""
+    try:
+        system_info = (
+            f"Platform: {platform.system()}\n"
+            f"Platform Sürümü: {platform.version()}\n"
+            f"İşlemci: {platform.processor()}\n"
+            f"Mimari: {platform.architecture()[0]}\n"
+        )
         return system_info
+    except Exception as e:
+        return f"Sistem bilgileri alınamadı: {e}"
 
-    def auto_cleanup_and_monitor(self):
-        """Automatic cleanup and monitoring loop"""
-        while True:
-            self.clear_memory()
-            temp_status = self.monitor_temperature()
-            time.sleep(300)  # Check every 5 minutes
+def virus_scan():
+    """Kötü niyetli dosyaları tarar."""
+    user_files = os.path.expanduser("~")  # Kullanıcının ana dizini
+    found_malicious_files = []
+    malicious_extensions = ['.exe', '.bat', '.cmd']  
 
-class App:
-    def __init__(self, root):
-        self.root = root
-        self.root.title("System Maintenance Application")
-        self.root.geometry("600x400")
+    for dirpath, dirnames, filenames in os.walk(user_files):
+        for filename in filenames:
+            if any(filename.endswith(ext) for ext in malicious_extensions):
+                found_malicious_files.append(os.path.join(dirpath, filename))
 
-        # Permission message at startup
-        self.ask_for_permission()
+    if found_malicious_files:
+        logging.warning("Kötü niyetli dosyalar bulundu:")
+        for malicious_file in found_malicious_files:
+            logging.warning(f"Bulundu: {malicious_file}")
+        result = "Kötü niyetli dosyalar bulundu."
+    else:
+        logging.info("Kötü niyetli dosya bulunmadı.")
+        result = "Kötü niyetli dosya bulunmadı."
+    
+    log_operation("Virüs Taraması", result)
+    return result
 
-        self.start_button = tk.Button(root, text="Start Continuous Maintenance", command=self.start_background_task)
-        self.start_button.pack(pady=10)
+def fix_code_with_deepai(code):
+    """DeepAI API'si kullanarak kodu düzeltir."""
+    try:
+        response = requests.post(
+            "https://api.deepai.org/api/code-detection",
+            data={'code': code},
+            headers={'api-key': DEEPAI_API_KEY}
+        )
+        return response.json().get('output', 'Düzeltme yapılamadı.')
+    except Exception as e:
+        logging.error(f"DeepAI API çağrılırken hata: {e}")
+        return "API ile iletişimde bir sorun oluştu."
 
-        self.result_area = scrolledtext.ScrolledText(root, width=70, height=15)
-        self.result_area.pack(pady=10)
+def main():
+    """Programın ana işlevi."""
+    verify_dependencies()  
+    setup_database()
+    
+    while True:
+        print("\nYapmak istediğiniz işlemi seçin:")
+        print("1. Disk Temizleme")
+        print("2. Sistem Bilgilerini Göster")
+        print("3. Virüs Taraması Yap")
+        print("4. Kodu Düzelt (DeepAI)")
+        print("5. Çıkış")
 
-        self.maintenance = SystemMaintenance()
+        choice = input("Seçiminizi girin (1/2/3/4/5): ")
+        
+        if choice == '1':
+            print("Disk Temizleme Yapılıyor...")
+            result = perform_disk_cleanup()
+            print(result)
+        elif choice == '2':
+            print("Sistem Bilgileri Gösteriliyor...")
+            system_info = display_system_info()
+            print(system_info)
+        elif choice == '3':
+            print("Virüs Taraması Yapılıyor...")
+            scan_result = virus_scan()
+            print(scan_result)
+        elif choice == '4':
+            code_to_fix = input("Düzeltmek istediğiniz kodu girin: ")
+            fixed_code = fix_code_with_deepai(code_to_fix)
+            print("Düzeltilmiş Kod:")
+            print(fixed_code)
+        elif choice == '5':
+            print("Programdan çıkılıyor.")
+            break
+        else:
+            print("Geçersiz seçim. Lütfen 1, 2, 3, 4 veya 5 girin.")
 
-        # Add buttons for additional functions
-        self.disk_cleanup_button = tk.Button(root, text="Perform Disk Cleanup", command=self.perform_disk_cleanup)
-        self.disk_cleanup_button.pack(pady=5)
-
-        self.system_info_button = tk.Button(root, text="Show System Info", command=self.show_system_info)
-        self.system_info_button.pack(pady=5)
-
-    def ask_for_permission(self):
-        """Asks the user for permission to perform maintenance tasks."""
-        response = messagebox.askyesno("Permission Request", "This application will perform maintenance tasks on your system. Do you allow it?")
-        if not response:
-            self.root.destroy()  # Close app if permission is denied
-
-    def start_background_task(self):
-        """Starts the maintenance task in the background."""
-        threading.Thread(target=self.maintenance.auto_cleanup_and_monitor, daemon=True).start()
-        self.result_area.insert(tk.END, "System maintenance has started in the background.\n")
-
-    def perform_disk_cleanup(self):
-        """Calls the disk cleanup procedure and displays the result."""
-        result = self.maintenance.perform_disk_cleanup()
-        self.result_area.insert(tk.END, result + "\n")
-
-    def show_system_info(self):
-        """Displays the system information in the result area."""
-        info = self.maintenance.display_system_info()
-        self.result_area.insert(tk.END, info + "\n")
+    input("Çıkmak için bir tuşa basın...")
 
 if __name__ == "__main__":
-    check_and_install_libraries()  # Check and install the required libraries
-    root = tk.Tk()
-    app = App(root)
-    root.mainloop()
+    try:
+        main()
+    except Exception as e:
+        logging.error(f"Program çalışırken hata oluştu: {e}")
+        debugger = AutomatedDebugger()
+        suggestions = debugger.suggest_fixes(str(e))
+        logging.info("Öneriler: " + "; ".join(suggestions))
+        input("Bir hata oluştu. Çıkmak için bir tuşa basın...")
