@@ -10,7 +10,7 @@ from tkinter import scrolledtext, messagebox
 import threading
 
 def install(package):
-    """Installs the required library."""
+    """Required library installation."""
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
 
 def check_and_install_libraries():
@@ -95,6 +95,37 @@ class SystemMaintenance:
                 return f"Critical temperature: {current_temp}°C"
         return "Temperature is normal."
 
+    def perform_disk_cleanup(self):
+        """Cleans up unnecessary files from the disk."""
+        # Example cleanup of temporary files (Windows/Linux)
+        temp_dir = os.path.join(os.path.expanduser("~"), "AppData", "Local", "Temp") if platform.system() == "Windows" else "/tmp"
+        try:
+            opened_files = os.listdir(temp_dir)
+            for file in opened_files:
+                try:
+                    os.remove(os.path.join(temp_dir, file))
+                    self.log_operation("Disk Cleanup", f"{file} removed.")
+                except Exception as e:
+                    continue
+            return "Disk cleanup completed."
+        except Exception as e:
+            return f"Error during disk cleanup: {e}"
+
+    def display_system_info(self):
+        """Displays current system information."""
+        cpu_usage = psutil.cpu_percent(interval=1)
+        memory_info = psutil.virtual_memory()
+        disk_info = psutil.disk_usage('/')
+
+        system_info = (f"CPU Usage: {cpu_usage}%\n"
+                       f"Memory Usage: {memory_info.percent}%\n"
+                       f"Total Memory: {memory_info.total / (1024**2):.2f} MB\n"
+                       f"Used Memory: {memory_info.used / (1024**2):.2f} MB\n"
+                       f"Disk Usage: {disk_info.percent}%\n"
+                       f"Total Disk: {disk_info.total / (1024**3):.2f} GB\n"
+                       f"Used Disk: {disk_info.used / (1024**3):.2f} GB\n")
+        return system_info
+
     def auto_cleanup_and_monitor(self):
         """Automatic cleanup and monitoring loop"""
         while True:
@@ -108,6 +139,9 @@ class App:
         self.root.title("System Maintenance Application")
         self.root.geometry("600x400")
 
+        # Permission message at startup
+        self.ask_for_permission()
+
         self.start_button = tk.Button(root, text="Start Continuous Maintenance", command=self.start_background_task)
         self.start_button.pack(pady=10)
 
@@ -116,10 +150,33 @@ class App:
 
         self.maintenance = SystemMaintenance()
 
+        # Add buttons for additional functions
+        self.disk_cleanup_button = tk.Button(root, text="Perform Disk Cleanup", command=self.perform_disk_cleanup)
+        self.disk_cleanup_button.pack(pady=5)
+
+        self.system_info_button = tk.Button(root, text="Show System Info", command=self.show_system_info)
+        self.system_info_button.pack(pady=5)
+
+    def ask_for_permission(self):
+        """Asks the user for permission to perform maintenance tasks."""
+        response = messagebox.askyesno("Permission Request", "This application will perform maintenance tasks on your system. Do you allow it?")
+        if not response:
+            self.root.destroy()  # Close app if permission is denied
+
     def start_background_task(self):
         """Starts the maintenance task in the background."""
         threading.Thread(target=self.maintenance.auto_cleanup_and_monitor, daemon=True).start()
         self.result_area.insert(tk.END, "System maintenance has started in the background.\n")
+
+    def perform_disk_cleanup(self):
+        """Calls the disk cleanup procedure and displays the result."""
+        result = self.maintenance.perform_disk_cleanup()
+        self.result_area.insert(tk.END, result + "\n")
+
+    def show_system_info(self):
+        """Displays the system information in the result area."""
+        info = self.maintenance.display_system_info()
+        self.result_area.insert(tk.END, info + "\n")
 
 if __name__ == "__main__":
     check_and_install_libraries()  # Check and install the required libraries
