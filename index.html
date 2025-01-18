@@ -58,7 +58,6 @@
             }
             checkSSLCertificate(); // Check SSL certificate on page load
             startCodeRain(); // Start the Code Rain effect
-            playVideo(); // Automatically play video
         };
 
         // Check SSL Certificate
@@ -82,12 +81,6 @@
                 .finally(() => {
                     document.getElementById('sslStatus').style.display = 'block';
                 });
-        }
-
-        // Play Video
-        function playVideo() {
-            const myVideo = document.getElementById('myVideo');
-            myVideo.play();
         }
 
         // Code Rain Effect
@@ -225,17 +218,6 @@
             display: none;
         }
 
-        /* Video Element */
-        #myVideo {
-            position: absolute;
-            top: 0; /* Video üstten başlayacak */
-            left: 0; /* Video soldan başlayacak */
-            width: 100%; /* Tam genişlik */
-            height: 100%; /* Tam yükseklik */
-            object-fit: cover; /* Arka plana uyacak şekilde kaplama yap */
-            z-index: -1; /* Arka plan olarak ayarla */
-        }
-
         /* Code Rain Canvas */
         canvas#codeRain {
             position: fixed;
@@ -252,12 +234,6 @@
 
     <!-- SSL Status Notification -->
     <div class="ssl-status" id="sslStatus">SSL Certificate: Valid</div>
-
-    <!-- Video Element -->
-    <video id="myVideo" autoplay loop muted>
-      <source src="https://www.w3schools.com/tags/movie.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
 
     <!-- Code Rain Canvas -->
     <canvas id="codeRain"></canvas>
