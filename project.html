@@ -33,24 +33,6 @@
             font-size: 2rem;
         }
 
-        nav {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-            background: rgba(17, 17, 17, 0.8);
-        }
-
-        nav a {
-            color: #00ff00;
-            text-decoration: none;
-            padding: 10px 20px;
-            font-size: 1.1rem;
-        }
-
-        nav a:hover {
-            background: rgba(0, 255, 0, 0.1);
-        }
-
         section {
             padding: 20px;
             margin: 20px auto;
@@ -68,30 +50,78 @@
             border-top: 2px solid #333;
             backdrop-filter: blur(10px);
         }
+
+        #rain {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
     </style>
 </head>
 <body>
     <header>
         <img src="https://avatars.githubusercontent.com/u/185417194?s=200&v=4" alt="logo">
-        <h1>Clean Master Privacy - Project Developments</h1>
+        <h1>Project Developments</h1>
     </header>
-
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="project.html">Project Developments</a>
-        <a href="contact.html">Contact Us</a>
-        <a href="career.html">Career</a>
-        <a href="help.html">Help</a>
-    </nav>
 
     <section>
         <h2>Project Developments</h2>
-        <p>The Clean Master Privacy project was halted for a while due to financial constraints. However, the project was revived thanks to the efforts of gamestime102 and gamestime102tv. After a significant data loss when the project stopped, we are currently working on replacing the lost code with updated versions and ensuring the app works efficiently.</p>
+        <p>The Clean Master Privacy project was paused for some time due to lack of financial resources. However, the project has been revived and is now in active development. We are working on replacing the lost codes with newer and more secure versions.</p>
     </section>
 
     <footer>
         <p>&copy; 2025 Clean Master Privacy. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        window.onload = function () {
+            var canvas = document.createElement('canvas');
+            canvas.id = 'rain';
+            document.body.appendChild(canvas);
+            var ctx = canvas.getContext('2d');
+
+            var cols, ypos, chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&';
+            var charArray = chars.split('');
+
+            canvas.height = window.innerHeight;
+            canvas.width = window.innerWidth;
+
+            var col = [];
+            for (var i = 0; i < 256; i++) {
+                col.push('rgba(0,255,0,' + (i / 255) + ')');
+            }
+
+            var xPos = [];
+            for (var i = 0; i < 100; i++) {
+                xPos[i] = Math.random() * canvas.width;
+            }
+
+            function updateRain() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (var i = 0; i < 100; i++) {
+                    var text = charArray[Math.floor(Math.random() * charArray.length)];
+                    ctx.fillStyle = col[Math.floor(Math.random() * col.length)];
+                    ctx.font = '15px monospace';
+                    ctx.fillText(text, xPos[i], ypos[i] * 15);
+
+                    if (ypos[i] * 15 > canvas.height || Math.random() > 0.97) {
+                        ypos[i] = 0;
+                    }
+
+                    ypos[i]++;
+                }
+
+                requestAnimationFrame(updateRain);
+            }
+
+            ypos = [];
+            for (var i = 0; i < 100; i++) {
+                ypos[i] = Math.random() * canvas.height;
+            }
+
+            updateRain();
+        };
+    </script>
 </body>
 </html>
