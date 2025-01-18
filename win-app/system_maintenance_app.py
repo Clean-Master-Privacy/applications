@@ -11,13 +11,12 @@ from datetime import datetime
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # DeepAI API Anahtarınızı buraya ekleyin
-DEEPAI_API_KEY = '9fe9b9a7-64fa-4e5f-b7ee-4c5997f8531b'
+DEEPAI_API_KEY = '9fe9b9a7-64fa-4e5f-b7ee-4c5997f8531b'  # Kendi API anahtarınızı buraya ekleyin
 DATABASE_NAME = "maintenance_results.db"
 
 class AutomatedDebugger:
-    """
-    Basit bir hata ayıklama ve öneri sistemi.
-    """
+    """Basit bir hata ayıklama ve öneri sistemi."""
+    
     def suggest_fixes(self, error_message):
         suggestions = []
         
@@ -27,7 +26,6 @@ class AutomatedDebugger:
             suggestions.append("Erişim izninizi kontrol edin.")
         if "no such file" in error_message:
             suggestions.append("Dosya veya dizinin mevcut olduğundan emin olun.")
-        
         return suggestions
 
 def install(package):
@@ -40,7 +38,7 @@ def install(package):
 
 def verify_dependencies():
     """Gerekli bağımlılıkların yüklü olup olmadığını kontrol eder ve gerekirse yükler."""
-    required_modules = ['sqlite3', 'requests']  
+    required_modules = ['requests']  
     for module in required_modules:
         try:
             __import__(module)
@@ -49,6 +47,7 @@ def verify_dependencies():
             install(module)
 
 def setup_database():
+    """Veritabanını ayarla ve log tablosunu oluştur."""
     try:
         conn = sqlite3.connect(DATABASE_NAME)
         cursor = conn.cursor()
@@ -67,6 +66,11 @@ def setup_database():
         debugger = AutomatedDebugger()
         suggestions = debugger.suggest_fixes(str(e))
         logging.info("Öneriler: " + "; ".join(suggestions))
+    finally:
+        try:
+            conn.close()  # Bağlantıyı kapat
+        except:
+            logging.error("Veritabanı bağlantısı kapatılırken hata oluştu.")
 
 def log_operation(operation, description):
     """Operasyonları veritabanına kaydet."""
@@ -80,10 +84,12 @@ def log_operation(operation, description):
         conn.commit()
     except sqlite3.Error as e:
         logging.error(f"Log kaydı oluşturulurken hata: {e}")
-        debugger = AutomatedDebugger()
-        suggestions = debugger.suggest_fixes(str(e))
-        logging.info("Öneriler: " + "; ".join(suggestions))
-
+    finally:
+        try:
+            conn.close()  # Bağlantıyı kapat
+        except:
+            logging.error("Veritabanı bağlantısı kapatılırken hata oluştu.")
+        
 def perform_disk_cleanup():
     """Geçici dosyaları temizler."""
     temp_dir = os.path.join(os.path.expanduser("~"), "AppData", "Local", "Temp")
@@ -96,13 +102,12 @@ def perform_disk_cleanup():
         opened_files = os.listdir(temp_dir)
         for file in opened_files:
             try:
-                os.remove(os.path.join(temp_dir, file))
-                logging.info(f"{file} silindi.")
+                file_path = os.path.join(temp_dir, file)
+                if os.path.isfile(file_path):  # Sadece dosyaları sil
+                    os.remove(file_path)
+                    logging.info(f"{file} silindi.")
             except Exception as e:
                 logging.error(f"Sorun: {e}. {file} silinemedi.")
-                debugger = AutomatedDebugger()
-                suggestions = debugger.suggest_fixes(str(e))
-                logging.info("Öneriler: " + "; ".join(suggestions))
         
         result = "Disk temizleme tamamlandı."
     except Exception as e:
@@ -113,20 +118,17 @@ def perform_disk_cleanup():
 
 def display_system_info():
     """Sistem bilgilerini gösterir."""
-    try:
-        system_info = (
-            f"Platform: {platform.system()}\n"
-            f"Platform Sürümü: {platform.version()}\n"
-            f"İşlemci: {platform.processor()}\n"
-            f"Mimari: {platform.architecture()[0]}\n"
-        )
-        return system_info
-    except Exception as e:
-        return f"Sistem bilgileri alınamadı: {e}"
+    system_info = (
+        f"Platform: {platform.system()}\n"
+        f"Platform Sürümü: {platform.version()}\n"
+        f"İşlemci: {platform.processor()}\n"
+        f"Mimari: {platform.architecture()[0]}\n"
+    )
+    return system_info
 
 def virus_scan():
     """Kötü niyetli dosyaları tarar."""
-    user_files = os.path.expanduser("~")  # Kullanıcının ana dizini
+    user_files = os.path.expanduser("~")  
     found_malicious_files = []
     malicious_extensions = ['.exe', '.bat', '.cmd']  
 
@@ -155,8 +157,14 @@ def fix_code_with_deepai(code):
             data={'code': code},
             headers={'api-key': DEEPAI_API_KEY}
         )
-        return response.json().get('output', 'Düzeltme yapılamadı.')
-    except Exception as e:
+
+        # API yanıtının başarılı olup olmadığını kontrol et
+        if response.status_code == 200:
+            return response.json().get('output', 'Düzeltilmiş kod alınamadı.')
+        else:
+            logging.error(f"API İsteği hatası: {response.status_code} - {response.text}")
+            return "API isteği sırasında hata oluştu."
+    except requests.exceptions.RequestException as e:
         logging.error(f"DeepAI API çağrılırken hata: {e}")
         return "API ile iletişimde bir sorun oluştu."
 
