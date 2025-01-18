@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clean Master Privacy</title>
+    <title>Clean Master Privacy - Home</title>
     <link rel="stylesheet" href="https://unpkg.com/milligram/dist/milligram.min.css">
     <style>
         body {
@@ -82,110 +82,29 @@
             height: 100%;
             z-index: -1;
         }
-
-        .cmd-background {
-            position: fixed;
-            bottom: 10%;
-            left: 10%;
-            background: rgba(0, 0, 0, 0.7);
-            color: #00ff00;
-            font-family: 'Courier New', Courier, monospace;
-            padding: 15px;
-            width: 90%;
-            max-width: 800px;
-            height: 200px;
-            border: 2px solid #00ff00;
-            display: none;
-            z-index: -2;
-            box-shadow: 0 0 20px rgba(0, 255, 0, 0.7);
-            backdrop-filter: blur(10px);
-        }
-
-        .cmd-output {
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            height: 160px;
-            overflow-y: auto;
-        }
-
-        .cmd-input {
-            background: transparent;
-            border: none;
-            color: #00ff00;
-            width: 100%;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 1rem;
-            padding: 5px;
-        }
-
-        .cmd-input:focus {
-            outline: none;
-        }
     </style>
 </head>
 <body>
-    <!-- Code Rain Canvas -->
     <canvas id="codeRain"></canvas>
-
-    <!-- Terminal Background -->
-    <div class="cmd-background">
-        <div class="cmd-output" id="cmdOutput">
-            Welcome to the Clean Master Privacy Terminal.
-            Use the 'help' command to get started.
-        </div>
-        <input type="text" class="cmd-input" id="cmdInput" placeholder="Enter command...">
-    </div>
 
     <header>
         <img src="https://avatars.githubusercontent.com/u/185417194?s=200&v=4" alt="logo">
         <h1>Clean Master Privacy</h1>
     </header>
 
-    <!-- Navigation Menu -->
     <nav>
-        <a href="#about">About</a>
-        <a href="#project">Project Developments</a>
-        <a href="#contact">Contact Us</a>
-        <a href="#career">Career</a>
-        <a href="#help">Help</a>
-        <a href="#donate">Donate</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="project.html">Project Developments</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="career.html">Career</a>
+        <a href="help.html">Help</a>
     </nav>
 
-    <!-- About Section -->
-    <section id="about">
-        <h2>About Clean Master Privacy</h2>
-        <p>Clean Master Privacy was created by two anonymous people. Its goal is to provide privacy and security on the internet.</p>
-    </section>
-
-    <!-- Project Developments Section -->
-    <section id="project">
-        <h2>Project Developments</h2>
-        <p>The project was halted for a period but later revived with new developments and updates.</p>
-    </section>
-
-    <!-- Contact Us Section -->
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>For inquiries, please reach out via the following email: <a href="mailto:contact@cleanmasterprivacy.com">contact@cleanmasterprivacy.com</a></p>
-    </section>
-
-    <!-- Career Section -->
-    <section id="career">
-        <h2>Career Opportunities</h2>
-        <p>We are currently hiring! Join us to make the internet a safer place. Send your resume to <a href="mailto:career@cleanmasterprivacy.com">career@cleanmasterprivacy.com</a></p>
-    </section>
-
-    <!-- Help Section -->
-    <section id="help">
-        <h2>Help</h2>
-        <p>Your support matters! To donate or help us improve our project, please visit our <a href="https://www.cleanmasterprivacy.com/donate" target="_blank">donation page</a>.</p>
-    </section>
-
-    <!-- Donate Section -->
-    <section id="donate">
-        <h2>Donate</h2>
-        <p>Your donations help us keep this project running and improve the security and privacy of internet users. Please consider making a donation!</p>
-        <a href="https://www.cleanmasterprivacy.com/donate" target="_blank">Donate Now</a>
+    <!-- Home Page Content -->
+    <section>
+        <h2>Welcome to Clean Master Privacy</h2>
+        <p>Our mission is to provide privacy and security online. Explore our project, learn about our goals, and join us in making the internet a safer place.</p>
     </section>
 
     <footer>
@@ -193,7 +112,6 @@
     </footer>
 
     <script>
-        // Code Rain Effect
         const codeCanvas = document.getElementById('codeRain');
         const ctxCode = codeCanvas.getContext('2d');
         codeCanvas.width = window.innerWidth;
@@ -223,50 +141,6 @@
         }
 
         setInterval(drawCodeRain, 50);
-
-        // Terminal Interaction
-        const cmdInput = document.getElementById('cmdInput');
-        const cmdOutput = document.getElementById('cmdOutput');
-
-        cmdInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
-                const input = cmdInput.value.trim();
-                cmdOutput.textContent += `\n$ ${input}\n`;
-
-                if (input.toLowerCase() === 'help') {
-                    cmdOutput.textContent += `
-Available Commands:
-- help : Show this message
-- contact : Show contact information
-- career : Show career opportunities
-- donate : Go to the donation page
-                    `;
-                } else if (input.toLowerCase() === 'contact') {
-                    cmdOutput.textContent += `
-Contact Info:
-- Email: contact@cleanmasterprivacy.com
-                    `;
-                } else if (input.toLowerCase() === 'career') {
-                    cmdOutput.textContent += `
-Career Opportunities:
-- Send your resume to career@cleanmasterprivacy.com
-                    `;
-                } else if (input.toLowerCase() === 'donate') {
-                    cmdOutput.textContent += `
-Donate Now: Visit our donation page at https://www.cleanmasterprivacy.com/donate
-                    `;
-                } else {
-                    cmdOutput.textContent += 'Command not found.\n';
-                }
-
-                cmdInput.value = '';
-                cmdOutput.scrollTop = cmdOutput.scrollHeight;
-            }
-        });
-
-        setTimeout(() => {
-            document.querySelector('.cmd-background').style.display = 'block';
-        }, 5000);
     </script>
 </body>
 </html>
