@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Clean Master Privacy</title>
+    <link rel="stylesheet" href="https://unpkg.com/milligram/dist/milligram.min.css">
+    <style>
+        /* Include all styles from the index.html page */
+        /* Similar style as the home page */
+    </style>
+</head>
+<body>
+    <canvas id="codeRain"></canvas>
+
+    <header>
+        <img src="https://avatars.githubusercontent.com/u/185417194?s=200&v=4" alt="logo">
+        <h1>Clean Master Privacy</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="project.html">Project Developments</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="career.html">Career</a>
+        <a href="help.html">Help</a>
+    </nav>
+
+    <!-- About Section -->
+    <section>
+        <h2>About Clean Master Privacy</h2>
+        <p>Clean Master Privacy was created by two anonymous people. Its goal is to provide privacy and security on the internet.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Clean Master Privacy. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const codeCanvas = document.getElementById('codeRain');
+        const ctxCode = codeCanvas.getContext('2d');
+        codeCanvas.width = window.innerWidth;
+        codeCanvas.height = window.innerHeight;
+
+        const codeSymbols = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        const fontSize = 14;
+        const columns = codeCanvas.width / fontSize;
+        const drops = Array.from({ length: columns }).fill(0);
+
+        function drawCodeRain() {
+            ctxCode.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctxCode.fillRect(0, 0, codeCanvas.width, codeCanvas.height);
+
+            ctxCode.fillStyle = '#00ff00';
+            ctxCode.font = `${fontSize}px monospace`;
+
+            drops.forEach((y, x) => {
+                const text = codeSymbols[Math.floor(Math.random() * codeSymbols.length)];
+                ctxCode.fillText(text, x * fontSize, y * fontSize);
+
+                if (y * fontSize > codeCanvas.height && Math.random() > 0.95) {
+                    drops[x] = 0;
+                }
+                drops[x]++;
+            });
+        }
+
+        setInterval(drawCodeRain, 50);
+    </script>
+</body>
+</html>
