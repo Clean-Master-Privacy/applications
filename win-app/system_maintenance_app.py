@@ -62,14 +62,13 @@ class SystemMaintenance:
     def clear_memory(self):
         """Cleans up unnecessary processes to accelerate memory."""
         memory_before = psutil.virtual_memory()
-        # Modify process termination logic for cross-platform compatibility
         target_processes = self.get_target_processes()
         for proc in psutil.process_iter(['pid', 'name']):
             try:
                 if proc.info['name'] in target_processes:
                     proc.terminate()
                     self.log_operation("Memory Cleanup", f"{proc.info['name']} process terminated.")
-            except (psutil.NoSuchProcess, psutil.AccessDenied):
+            except (psutil.NoSuchProcess, psutil.AccessDenied) as e:
                 continue
 
         memory_after = psutil.virtual_memory()
@@ -86,18 +85,24 @@ class SystemMaintenance:
         return []
 
     def monitor_temperature(self):
-        """Monitors the system's temperature."""
+        """Monitors the system temperature."""
         temperature = psutil.sensors_temperatures()
         if 'coretemp' in temperature:  # For processor temperature
             current_temp = temperature['coretemp'][0].current  # Get the first sensor
             if current_temp >= self.CRITICAL_TEMPERATURE:
                 self.log_operation("Temperature Warning", f"Critical temperature: {current_temp}°C")
                 return f"Critical temperature: {current_temp}°C"
+        elif 'thermal_zone' in temperature:
+            # Another possible temperature sensor access for Linux
+            current_temp = temperature['thermal_zone0'][0].current
+            if current_temp >= self.CRITICAL_TEMPERATURE:
+                self.log_operation("Temperature Warning", f"Critical temperature: {current_temp}°C")
+                return f"Critical temperature: {current_temp}°C"
+
         return "Temperature is normal."
 
     def perform_disk_cleanup(self):
         """Cleans up unnecessary files from the disk."""
-        # Example cleanup of temporary files (Windows/Linux)
         temp_dir = os.path.join(os.path.expanduser("~"), "AppData", "Local", "Temp") if platform.system() == "Windows" else "/tmp"
         try:
             opened_files = os.listdir(temp_dir)
