@@ -72,64 +72,30 @@
             text-decoration: none;
         }
 
-        /* CMD background */
-        .cmd-background {
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #111;
+            border-top: 2px solid #333;
+        }
+
+        /* Snowfall Canvas */
+        canvas#snowfallCanvas {
             position: fixed;
-            bottom: 10%;
-            left: 10%;
-            background: rgba(0, 0, 0, 0.7);
-            color: #00ff00;
-            font-family: 'Hacker', Courier, monospace; 
-            padding: 15px;
-            width: 90%;
-            max-width: 800px;
-            height: 200px;
-            border: 2px solid #00ff00;
-            display: none;
-            z-index: 2; /* Ensure above glitch */
-            box-shadow: 0 0 20px rgba(0, 255, 0, 0.7);
-        }
-
-        .cmd-output {
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            height: 160px;
-            overflow-y: auto;
-        }
-
-        .cmd-input {
-            background: transparent;
-            border: none;
-            color: #00ff00;
+            top: 0;
+            left: 0;
             width: 100%;
-            font-family: 'Hacker', Courier, monospace; 
-            font-size: 1rem;
-            padding: 5px;
-        }
-
-        .cmd-input:focus {
-            outline: none;
+            height: 100%;
+            z-index: -2;
         }
     </style>
 </head>
 <body>
-    <!-- Code Rain Canvas -->
-    <canvas id="codeRain"></canvas>
-
     <!-- Snowfall Canvas -->
     <canvas id="snowfallCanvas"></canvas>
 
     <!-- Glitch Effect Layer -->
     <div class="glitch" id="glitchEffect" style="display: none;"></div>
-
-    <!-- CMD Background -->
-    <div class="cmd-background">
-        <div class="cmd-output" id="cmdOutput">
-            Welcome to the Clean Master Privacy Terminal.
-            Use the 'help' command to get started.
-        </div>
-        <input type="text" class="cmd-input" id="cmdInput" placeholder="Enter command...">
-    </div>
 
     <header>
         <img src="https://avatars.githubusercontent.com/u/185417194?s=200&v=4" alt="logo">
@@ -187,37 +153,6 @@
     </footer>
 
     <script>
-        // Code Rain Effect
-        const codeCanvas = document.getElementById('codeRain');
-        const ctxCode = codeCanvas.getContext('2d');
-        codeCanvas.width = window.innerWidth;
-        codeCanvas.height = window.innerHeight;
-
-        const codeSymbols = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-+,#@&*%$!?()[]{}<>;ا ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و يㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎmmcmmkminçftydminmµmbBKBMBGBTB'
-        const fontSize = 14;
-        const columns = codeCanvas.width / fontSize;
-        const drops = Array.from({ length: columns }).fill(0);
-
-        function drawCodeRain() {
-            ctxCode.fillStyle = 'rgba(0, 0, 0, 0.05)';
-            ctxCode.fillRect(0, 0, codeCanvas.width, codeCanvas.height);
-
-            ctxCode.fillStyle = '#00ff00';
-            ctxCode.font = `${fontSize}px monospace`;
-
-            drops.forEach((y, x) => {
-                const text = codeSymbols[Math.floor(Math.random() * codeSymbols.length)];
-                ctxCode.fillText(text, x * fontSize, y * fontSize);
-
-                if (y * fontSize > codeCanvas.height && Math.random() > 0.95) {
-                    drops[x] = 0;
-                }
-                drops[x]++;
-            });
-        }
-
-        setInterval(drawCodeRain, 50);
-
         // Snowfall Effect
         const snowCanvas = document.getElementById('snowfallCanvas');
         const ctxSnow = snowCanvas.getContext('2d');
@@ -251,46 +186,6 @@
             if (snowflakes.length < 100) createSnowflake();
             drawSnow();
         }, 30);
-
-        // Command processing
-        const cmdInput = document.getElementById('cmdInput');
-        const cmdOutput = document.getElementById('cmdOutput');
-
-        cmdInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
-                const input = cmdInput.value.trim();
-                cmdOutput.textContent += `\n$ ${input}\n`;
-
-                if (input.toLowerCase() === 'help') {
-                    cmdOutput.textContent += `
-Available Commands:
-- help : Show this message
-- providers : Display supported security providers
-- clear : Clear the terminal
-                    `;
-                } else if (input.toLowerCase() === 'providers') {
-                    cmdOutput.textContent += `
-Security Providers:
-- Proton AG
-- NordVPN
-- Avast
-- Bitdefender
-                    `;
-                } else if (input.toLowerCase() === 'clear') {
-                    cmdOutput.textContent = '';
-                } else {
-                    cmdOutput.textContent += 'Command not found.\n';
-                }
-
-                cmdInput.value = '';
-                cmdOutput.scrollTop = cmdOutput.scrollHeight;
-            }
-        });
-
-        // Show the CMD window
-        setTimeout(() => {
-            document.querySelector('.cmd-background').style.display = 'block';
-        }, 5000);
 
         // Glitch Effect Function
         function applyGlitchEffect() {
