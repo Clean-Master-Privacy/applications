@@ -14,7 +14,7 @@
             window.location.href = "https://gamestime102.me";
         }
     </script>
-    <!-- Çerez oluşturma fonksiyonu -->
+
     <script>
         // Create a cookie
         function createCookie(name, value, days) {
@@ -26,7 +26,7 @@
             }
             document.cookie = name + "=" + value + expires + "; path=/; SameSite=None; Secure";
         }
-        
+
         // Read a cookie
         function readCookie(name) {
             const nameEQ = name + "=";
@@ -38,7 +38,7 @@
             }
             return null;
         }
-        
+
         // Show cookie consent banner
         function showCookieConsent() {
             const cookieConsent = document.getElementById('cookieConsent');
@@ -58,6 +58,7 @@
                 showCookieConsent();
             }
             checkSSLCertificate(); // Check SSL certificate on page load
+            startCodeRain(); // Start the Code Rain effect
         };
 
         // Check SSL Certificate
@@ -84,36 +85,39 @@
         }
 
         // Code Rain Effect
-        const codeCanvas = document.getElementById('codeRain');
-        const ctxCode = codeCanvas.getContext('2d');
-        codeCanvas.width = window.innerWidth;
-        codeCanvas.height = window.innerHeight;
+        function startCodeRain() {
+            const codeCanvas = document.getElementById('codeRain');
+            const ctxCode = codeCanvas.getContext('2d');
+            codeCanvas.width = window.innerWidth;
+            codeCanvas.height = window.innerHeight;
 
-        const codeSymbols = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-+,#@&*%$!?()[]{}<>;ا ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و يㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎmmcmmkminçftydminmµmbBKBMBGBTB';
-        const fontSize = 14;
-        const columns = Math.floor(codeCanvas.width / fontSize);
-        const drops = Array.from({ length: columns }).fill(0);
+            const codeSymbols = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-+,#@&*%$!?()[]{}<>;ا ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و يㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ';
+            const fontSize = 14;
+            const columns = Math.floor(codeCanvas.width / fontSize);
+            const drops = Array.from({ length: columns }).fill(0);
 
-        function drawCodeRain() {
-            ctxCode.fillStyle = 'rgba(0, 0, 0, 0.05)';
-            ctxCode.fillRect(0, 0, codeCanvas.width, codeCanvas.height);
+            function drawCodeRain() {
+                ctxCode.fillStyle = 'rgba(0, 0, 0, 0.05)';
+                ctxCode.fillRect(0, 0, codeCanvas.width, codeCanvas.height);
 
-            ctxCode.fillStyle = '#00ff00';
-            ctxCode.font = `${fontSize}px monospace`;
+                ctxCode.fillStyle = '#00ff00';
+                ctxCode.font = `${fontSize}px monospace`;
 
-            drops.forEach((y, x) => {
-                const text = codeSymbols[Math.floor(Math.random() * codeSymbols.length)];
-                ctxCode.fillText(text, x * fontSize, y * fontSize);
+                drops.forEach((y, x) => {
+                    const text = codeSymbols[Math.floor(Math.random() * codeSymbols.length)];
+                    ctxCode.fillText(text, x * fontSize, y * fontSize);
 
-                if (y * fontSize > codeCanvas.height && Math.random() > 0.95) {
-                    drops[x] = 0;
-                }
-                drops[x]++;
-            });
+                    if (y * fontSize > codeCanvas.height && Math.random() > 0.95) {
+                        drops[x] = 0;
+                    }
+                    drops[x]++;
+                });
+            }
+
+            setInterval(drawCodeRain, 50);
         }
-
-        setInterval(drawCodeRain, 50);
     </script>
+
     <style>
         body {
             font-family: 'Delta Std', 'Terminal', 'Consolas', monospace; 
@@ -124,33 +128,40 @@
             overflow-x: hidden;
             position: relative;
         }
+
         header, footer {
             position: relative;
             z-index: 2;
             box-shadow: 0 2px 10px rgba(0, 255, 0, 0.5);
         }
+
         h1, h2 {
             margin: 0;
             padding: 0;
             font-weight: bold;
         }
+
         header {
             text-align: center;
             padding: 20px;
             background-color: rgba(17, 17, 17, 0.8);
             border-bottom: 2px solid #333;
         }
+
         h1 {
             font-size: 3rem;
             margin-bottom: 10px;
         }
+
         header img {
             max-width: 100px;
             border-radius: 50%;
         }
+
         h2 {
             font-size: 1.5rem;
         }
+
         section {
             padding: 20px;
             margin: 20px auto;
@@ -159,17 +170,20 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
         }
+
         a {
             color: #00ff00;
             text-decoration: none;
         }
+
         footer {
             text-align: center;
             padding: 10px;
             background: rgba(17, 17, 17, 0.8);
             border-top: 2px solid #333;
         }
-        /* Cookie consent styles */
+
+        /* Cookie Consent Styles */
         .cookie-consent {
             position: fixed;
             bottom: 0;
@@ -182,6 +196,7 @@
             display: none; /* Initially hidden */
             z-index: 1000;
         }
+
         .cookie-consent button {
             background: #00ff00;
             color: #000;
@@ -190,6 +205,7 @@
             cursor: pointer;
             margin-left: 10px;
         }
+
         /* SSL Status Notification */
         .ssl-status {
             position: fixed;
@@ -202,6 +218,7 @@
             z-index: 1001;
             display: none;
         }
+
         /* Code Rain Canvas */
         canvas#codeRain {
             position: fixed;
@@ -210,13 +227,6 @@
             width: 100%;
             height: 100%;
             z-index: -2;
-        }
-        /* Supporters Section */
-        .supporter {
-            border: 1px solid #00ff00; 
-            padding: 10px; 
-            margin: 20px 0; 
-            text-align: center;
         }
     </style>
 </head>
@@ -245,7 +255,7 @@
 
     <section>
         <h2>Contribute</h2>
-        <p>We have recently rebuilt the app and are focusing on our current feature and fix roadmap. Therefore, we are not currently accepting new issues or PRs; feel free to fork the repository for your experiments. Thank you for your understanding and support.</p>
+        <p>We have recently rebuilt the app and are focusing on our current feature and fix roadmap. Therefore, we are not currently accepting new issues or PRs; feel free to fork the repository for your own experiments. Thank you for your understanding and support.</p>
     </section>
 
     <section>
