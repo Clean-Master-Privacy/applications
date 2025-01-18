@@ -6,13 +6,16 @@
     <title>Clean Master Privacy</title>
     <!-- Add Miligram CSS Framework -->
     <link rel="stylesheet" href="https://unpkg.com/milligram/dist/milligram.min.css">
-    <link href="https://fonts.cdnfonts.com/css/hacker" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/delta-std" rel="stylesheet">
+    <!-- Add Custom Fonts -->
+    <link href="https://fonts.cdnfonts.com/css/consola" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/terminal" rel="stylesheet">
     <style>
         body {
-            font-family: 'Hacker', Arial, sans-serif; 
+            font-family: 'Delta Std', Arial, sans-serif; 
             margin: 0;
             padding: 0;
-            background: #000;
+            background: #0f0f0f;
             color: #00ff00;
             overflow-x: hidden;
             position: relative; /* Added for glitch positioning */
@@ -34,6 +37,13 @@
             z-index: 1; /* Layer below other content */
         }
 
+        /* Realistic Console Font */
+        h1, h2, pre code {
+            font-family: 'Terminal', Arial, monospace; 
+            padding: 0;
+            margin: 0;
+        }
+
         header {
             text-align: center;
             padding: 20px;
@@ -41,17 +51,28 @@
             border-bottom: 2px solid #333;
         }
 
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
         header img {
             max-width: 100px;
             border-radius: 50%;
         }
 
-        h1, h2, p {
-            margin: 10px 0;
-            font-size: 2rem; /* Adjust as needed */
+        h2 {
+            font-size: 1.5rem;
         }
 
-        section {
+        a {
+            color: #00ff00;
+            text-decoration: none;
+        }
+
+        /* Console Log */
+        .console-log {
             padding: 20px;
             margin: 20px auto;
             max-width: 800px;
@@ -60,23 +81,30 @@
             box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
         }
 
-        section img.proton {
-            width: 150px;
-            height: auto;
-            display: block;
-            margin: 20px auto;
-        }
-
-        a {
-            color: #00ff00;
-            text-decoration: none;
-        }
-
         footer {
             text-align: center;
             padding: 10px;
             background: #111;
             border-top: 2px solid #333;
+        }
+
+        @media (max-width: 768px) {
+            .console-log {
+                padding: 10px;
+                margin: 10px auto;
+            }
+        }
+
+        code {
+            padding: 5px;
+            border-radius: 5px;
+            background: #333;
+            color: #00ff00;
+        }
+
+        .console-log pre {
+            background-color: transparent;
+            margin-bottom: 15px;
         }
 
         /* Code Rain Canvas */
@@ -88,69 +116,84 @@
             height: 100%;
             z-index: -2;
         }
+
+        /* Glitch Effect Animation */
+        .glitch {
+            animation: glitch 1s linear forwards;
+        }
+
+        @keyframes glitch {
+            0% {
+                transform: scale(1);
+                filter: opacity(1);
+            }
+
+            25% {
+                transform: scale(0.8) skewy(-10deg);
+                filter: opacity(0.5);
+            }
+
+            50% {
+                transform: scale(1) skewy(10deg);
+                filter: opacity(0.5);
+            }
+
+            75% {
+                transform: scale(1.2) skewy(-5deg);
+                filter: opacity(1);
+            }
+
+            100% {
+                transform: scale(1) skewy(0);
+                filter: opacity(1);
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Code Rain Canvas -->
-    <canvas id="codeRain"></canvas>
-
-    <!-- Glitch Effect Layer -->
-    <div class="glitch" id="glitchEffect" style="display: none;"></div>
-
+    <!-- Realistic Console Header -->
     <header>
         <img src="https://avatars.githubusercontent.com/u/185417194?s=200&v=4" alt="logo">
         <h1>Clean Master Privacy</h1>
+        <h2>Console Log</h2>
     </header>
 
-    <section>
-        <h2>About Clean Master Privacy</h2>
-        <p>Clean master privacy product was first created by 2 anonymous people who founded gamestime102; their code names are gamestime102 and gamestime102tv. gamestime102 team (organization) prepared a Kapıkulu for clean master privacy. The purpose of this Kapıkulu is to provide privacy and security. Although this army was disbanded over time, it was reactivated on April 21, 2021. Clean master privacy, a sub-unit of Kapıkulu, is sipahi, this sipahi is responsible for the security of the internet and the device.</p>
+    <!-- Console Log -->
+    <section class="console-log">
+        <pre><code>
+            // Clean Master Privacy Project
+            // Created by gamestime102 and gamestime102tv
+
+            // This project is an open source initiative for security and privacy
+            // We aim to provide a secure and private environment for users
+
+            // Current Status: 
+            //   - Development: In Progress
+            //   - Testing: In Progress
+            //   - Deployment: Not Scheduled
+
+            // Roadmap:
+            //   - Complete Development
+            //   - Conduct Thorough Testing
+            //   - Schedule Deployment
+        </code></pre>
+
+        <!-- Code Rain Canvas -->
+        <canvas id="codeRain"></canvas>
+
+        <!-- Console Log Messages -->
+        <article style="padding: 10px;">
+            <h3>Messages:</h3>
+            <ul style="list-style-type: none; padding: 5px;">
+                <li style="background-color: #333; color: #00ff00; padding: 5px; border-radius: 10px;">New commit pushed to GitHub.</li>
+                <li style="background-color: #333; color: #00ff00; padding: 5px; border-radius: 10px;">Code review ongoing.</li>
+                <li style="background-color: #333; color: #00ff00; padding: 5px; border-radius: 10px;">Project leader announced.</li>
+            </ul>
+        </article>
     </section>
 
-    <section>
-        <h2>Project Developments</h2>
-        <p>Clean Master Privacy project was stopped for a while due to financial resources. Later, gamestime102 and gamestime102tv revived the project. There was a significant data loss after the project development was stopped, but the gamestime102 team is working to replace the lost codes with new ones.</p>
-    </section>
-
-    <section>
-        <h2>Contribute</h2>
-        <p>We have recently rebuilt the app and focused on our current feature and fix roadmap. Therefore, we are not currently accepting new issues or PRs: feel free to fork the repository for your own experiments. Thank you for your understanding and support.</p>
-    </section>
-
-    <section>
-        <h2>Income and Donations</h2>
-        <p>We will donate some of the proceeds to charities and companies.</p>
-    </section>
-
-    <section>
-        <h2>Independence</h2>
-        <p>We heard about our independence on April 21, 2021, now we are taking new steps to become fully independent.</p>
-    </section>
-
-    <section>
-        <h2>People Who Keep the Project Alive</h2>
-        <p>@gamestime102 and @gamestime102-tv</p>
-    </section>
-
-    <section>
-        <h2>License</h2>
-        <p>Clean master privacy product belongs to gamestime102. The code and data files in this distribution are licensed under the GNU General Public License, version 3 or any later version, as published by the Free Software Foundation. For a copy of this license, see <a href="https://www.gnu.org/licenses/">GNU General Public License</a>.</p>
-    </section>
-
-    <!-- Supporters Section -->
-    <section>
-        <h2>Supporters</h2>
-        <div style="border: 1px solid #00ff00; padding: 10px; margin: 20px 0; text-align: center;">
-            <img src="https://github.com/user-attachments/assets/8472e1a0-5605-404e-b906-1e8b69275595" alt="Proton AG" class="proton" style="width: 150px; height: auto;">
-            <h3>Proton AG</h3>
-            <p>Thanks to Proton AG, we found our own identity and declared our full independence. We thank them for what they have contributed to us.</p>
-            <a href="https://proton.me" target="_blank" style="color: #00ff00;">Visit Proton AG</a>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Clean Master Privacy. All Rights Reserved.</p>
-    </footer>
+    <!-- Glitch Effect Layer -->
+    <div class="glitch" id="glitchEffect"></div>
 
     <script>
         // Code Rain Effect
@@ -188,29 +231,11 @@
         function applyGlitchEffect() {
             const glitchEffect = document.getElementById('glitchEffect');
             glitchEffect.style.display = 'block';
-            glitchEffect.style.animation = 'glitch 0.3s infinite';
-
-            setTimeout(() => {
-                glitchEffect.style.display = 'none';
-            }, 300); // Duration of the glitch effect
+            glitchEffect.style.animationPlayState = 'running';
         }
 
         // Set interval to apply glitch effect randomly
         setInterval(applyGlitchEffect, 3000); // Adjust the timing as necessary
-
-        // Add the glitch keyframes to your CSS
-        const style = document.createElement('style');
-        style.innerHTML = `
-            @keyframes glitch {
-                0% { transform: translate(0); }
-                20% { transform: translate(-2px, -2px); }
-                40% { transform: translate(2px, 2px); }
-                60% { transform: translate(-2px, -2px); }
-                80% { transform: translate(2px, 2px); }
-                100% { transform: translate(0); }
-            }
-        `;
-        document.head.appendChild(style);
     </script>
 </body>
 </html>
