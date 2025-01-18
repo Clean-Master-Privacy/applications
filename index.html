@@ -69,7 +69,7 @@
             border-top: 2px solid #333;
         }
 
-        /* Çerez izni çubuğu stili */
+        /* Cookie consent bar styles */
         .cookie-consent {
             position: fixed;
             bottom: 0;
@@ -79,7 +79,7 @@
             color: #00ff00;
             padding: 10px;
             text-align: center;
-            display: none; /* Başlangıçta görünmez */
+            display: none; /* Hidden by default */
             z-index: 1000;
         }
 
@@ -143,7 +143,7 @@
 
     <section>
         <h2>About Clean Master Privacy</h2>
-        <p>Clean master privacy product was first created by 2 anonymous people who founded gamestime102; their code names are gamestime102 and gamestime102tv. gamestime102 team (organization) prepared a Kapıkulu for clean master privacy. The purpose of this Kapıkulu is to provide privacy and security. Although this army was disbanded over time, it was reactivated on April 21, 2021. Clean master privacy, a sub-unit of Kapıkulu, is sipahi, this sipahi is responsible for the security of the internet and the device.</p>
+        <p>Clean master privacy product was first created by 2 anonymous people who founded gamestime102; their code names are gamestime102 and gamestime102tv. gamestime102 team prepared a Kapıkulu for clean master privacy. The purpose of this Kapıkulu is to provide privacy and security. Although this army was disbanded over time, it was reactivated on April 21, 2021. Clean master privacy, a sub-unit of Kapıkulu, is sipahi, this sipahi is responsible for the security of the internet and the device.</p>
     </section>
 
     <section>
@@ -187,7 +187,7 @@
         </div>
     </section>
 
-    <!-- Çerez izni çubuğu -->
+    <!-- Cookie Consent Bar -->
     <div class="cookie-consent" id="cookieConsent">
         Bu web sitesi çerez kullanmaktadır. Daha fazla bilgi için <a href="#">çerez politikamıza</a> bakabilirsiniz.
         <button id="acceptCookies">Kabul Et</button>
@@ -198,7 +198,7 @@
     </footer>
 
     <script>
-        // Çerez oluşturma fonksiyonu
+        // Function to create cookie
         function createCookie(name, value, days) {
             var expires = "";
             if (days) {
@@ -209,19 +209,19 @@
             document.cookie = name + "=" + value + expires + "; path=/; SameSite=None; Secure";
         }
 
-        // Çerez iznini göster
+        // Show cookie consent
         function showCookieConsent() {
             const cookieConsent = document.getElementById('cookieConsent');
             cookieConsent.style.display = 'flex';
         }
 
-        // Çerez iznini kabul etme
+        // Accept cookie consent
         document.getElementById('acceptCookies').onclick = function() {
-            createCookie('cookieConsent', 'accepted', 30); // 30 gün geçerli çerez
-            document.getElementById('cookieConsent').style.display = 'none'; // Çubuğu gizle
+            createCookie('cookieConsent', 'accepted', 30); // Cookie valid for 30 days
+            document.getElementById('cookieConsent').style.display = 'none'; // Hide bar
         };
 
-        // Sayfa yüklendiğinde çerez izni iste
+        // Request cookie consent on page load
         window.onload = function() {
             const cookieConsent = document.cookie.split('; ').find(row => row.startsWith('cookieConsent='));
             if (!cookieConsent) {
