@@ -4,16 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clean Master Privacy</title>
-    <link rel="stylesheet" href="https://unpkg.com/milligram/dist/milligram.min.css">
-    <link href="https://fonts.cdnfonts.com/css/delta-std" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/consola" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/terminal" rel="stylesheet">
     <style>
         body {
             font-family: 'Delta Std', 'Terminal', 'Consolas', monospace; 
             margin: 0;
             padding: 0;
-            background: #0f0f0f;
+            background: linear-gradient(135deg, #000000, #1a1a1a);
             color: #00ff00;
             overflow-x: hidden;
             position: relative;
@@ -22,17 +18,7 @@
         header, footer {
             position: relative;
             z-index: 2;
-        }
-
-        .glitch {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            opacity: 0.7;
-            pointer-events: none;
-            z-index: 1;
+            box-shadow: 0 2px 10px rgba(0, 255, 0, 0.5);
         }
 
         h1, h2 {
@@ -44,7 +30,7 @@
         header {
             text-align: center;
             padding: 20px;
-            background-color: #111;
+            background-color: rgba(17, 17, 17, 0.8);
             border-bottom: 2px solid #333;
         }
 
@@ -66,7 +52,7 @@
             padding: 20px;
             margin: 20px auto;
             max-width: 800px;
-            background: #222;
+            background: rgba(34, 34, 34, 0.8);
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
         }
@@ -79,7 +65,7 @@
         footer {
             text-align: center;
             padding: 10px;
-            background: #111;
+            background: rgba(17, 17, 17, 0.8);
             border-top: 2px solid #333;
         }
 
@@ -95,34 +81,14 @@
 
         /* Glitch Effect Animation */
         .glitch {
-            animation: glitch 1s linear forwards;
-        }
-
-        @keyframes glitch {
-            0% {
-                transform: scale(1);
-                filter: opacity(1);
-            }
-
-            25% {
-                transform: scale(0.8) skewy(-10deg);
-                filter: opacity(0.5);
-            }
-
-            50% {
-                transform: scale(1) skewy(10deg);
-                filter: opacity(0.5);
-            }
-
-            75% {
-                transform: scale(1.2) skewy(-5deg);
-                filter: opacity(1);
-            }
-
-            100% {
-                transform: scale(1) skewy(0);
-                filter: opacity(1);
-            }
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.7;
+            pointer-events: none;
+            z-index: 1;
         }
     </style>
 </head>
@@ -132,56 +98,49 @@
     <canvas id="codeRain"></canvas>
 
     <!-- Glitch Effect Layer -->
-    <div class="glitch" id="glitchEffect" style="display: none;"></div>
+    <div class="glitch" id="glitchEffect"></div>
 
     <header>
         <img src="https://avatars.githubusercontent.com/u/185417194?s=200&v=4" alt="logo">
         <h1>Clean Master Privacy</h1>
     </header>
 
-    <!-- About Section -->
+    <!-- Content Sections -->
     <section>
         <h2>About Clean Master Privacy</h2>
-        <p>Clean master privacy product was first created by 2 anonymous people who founded gamestime102; their code names are gamestime102 and gamestime102tv. gamestime102 team (organization) prepared a Kapıkulu for clean master privacy. The purpose of this Kapıkulu is to provide privacy and security. Although this army was disbanded over time, it was reactivated on April 21, 2021. Clean master privacy, a sub-unit of Kapıkulu, is sipahi, this sipahi is responsible for the security of the internet and the device.</p>
+        <p>Clean master privacy product was first created by two anonymous people who founded gamestime102; their code names are gamestime102 and gamestime102tv. gamestime102 team (organization) prepared a Kapıkulu for clean master privacy. The purpose of this Kapıkulu is to provide privacy and security. Although this army was disbanded over time, it was reactivated on April 21, 2021. Clean master privacy, a sub-unit of Kapıkulu, is sipahi, this sipahi is responsible for the security of the internet and the device.</p>
     </section>
 
-    <!-- Project Developments Section -->
     <section>
         <h2>Project Developments</h2>
         <p>Clean Master Privacy project was stopped for a while due to financial resources. Later, gamestime102 and gamestime102tv revived the project. There was a significant data loss after the project development was stopped, but the gamestime102 team is working to replace the lost codes with new ones.</p>
     </section>
 
-    <!-- Contribution Section -->
     <section>
         <h2>Contribute</h2>
-        <p>We have recently rebuilt the app and focused on our current feature and fix roadmap. Therefore, we are not currently accepting new issues or PRs: feel free to fork the repository for your own experiments. Thank you for your understanding and support.</p>
+        <p>We have recently rebuilt the app and focused on our current feature and fix roadmap. Therefore, we are not currently accepting new issues or PRs; feel free to fork the repository for your own experiments. Thank you for your understanding and support.</p>
     </section>
 
-    <!-- Income and Donations Section -->
     <section>
         <h2>Income and Donations</h2>
         <p>We will donate some of the proceeds to charities and companies.</p>
     </section>
 
-    <!-- Independence Section -->
     <section>
         <h2>Independence</h2>
         <p>We heard about our independence on April 21, 2021, now we are taking new steps to become fully independent.</p>
     </section>
 
-    <!-- People Who Keep the Project Alive Section -->
     <section>
         <h2>People Who Keep the Project Alive</h2>
         <p>@gamestime102 and @gamestime102-tv</p>
     </section>
 
-    <!-- License Section -->
     <section>
         <h2>License</h2>
-        <p>Clean master privacy product belongs to gamestime102. The code and data files in this distribution are licensed under the GNU General Public License, version 3 or any later version, as published by the Free Software Foundation. For a copy of this license, see <a href="https://www.gnu.org/licenses/">GNU General Public License</a>.</p>
+        <p>Clean master privacy product belongs to gamestime102. The code and data files in this distribution are licensed under the GNU General Public License, version 3 or any later version, as published by the Free Software Foundation. For a copy of this license, see <a href="https://www.gnu.org/licenses/" target="_blank">GNU General Public License</a>.</p>
     </section>
 
-    <!-- Supporters Section -->
     <section>
         <h2>Supporters</h2>
         <div style="border: 1px solid #00ff00; padding: 10px; margin: 20px 0; text-align: center;">
@@ -193,7 +152,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 Clean Master Privacy. All Rights Reserved.</p>
+        &copy; 2025 Clean Master Privacy. All Rights Reserved.
     </footer>
 
     <script>
@@ -227,16 +186,6 @@
         }
 
         setInterval(drawCodeRain, 50);
-
-        // Glitch Effect Function
-        function applyGlitchEffect() {
-            const glitchEffect = document.getElementById('glitchEffect');
-            glitchEffect.style.display = 'block';
-            glitchEffect.style.animationPlayState = 'running';
-        }
-
-        // Set interval to apply glitch effect randomly
-        setInterval(applyGlitchEffect, 3000); // Adjust the timing as necessary
     </script>
 </body>
 </html>
