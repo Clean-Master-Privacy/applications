@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,59 +8,56 @@
     
     <!-- Cloudflare Web Analytics Script -->
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "78baed92ab2e46eeb31bc3bc3fdc6c26"}'></script>
-    
-    <script type="text/javascript">
+
+    <script>
         // Redirect if the current URL matches clean-master-privacy.github.io/applications#
         if (window.location.href.includes("clean-master-privacy.github.io/applications#")) {
             window.location.href = "https://gamestime102.me";
         }
-    </script>
 
-    <script>
         // Create a cookie
         function createCookie(name, value, days) {
-            let expires = "";
+            var expires = "";
             if (days) {
-                const date = new Date();
+                var date = new Date();
                 date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
                 expires = "; expires=" + date.toUTCString();
             }
             document.cookie = name + "=" + value + expires + "; path=/; SameSite=None; Secure";
         }
-
-        // Read a cookie
+        
+        // Read cookies
         function readCookie(name) {
-            const nameEQ = name + "=";
-            const ca = document.cookie.split(';');
-            for (let i = 0; i < ca.length; i++) {
-                let c = ca[i].trim();
-                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i].trim();
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
             }
             return null;
         }
-
-        // Show cookie consent banner
+        
+        // Show cookie consent
         function showCookieConsent() {
             const cookieConsent = document.getElementById('cookieConsent');
-            cookieConsent.style.display = 'block';
+            cookieConsent.style.display = 'flex';
         }
-
+        
         // Accept cookies
-        document.getElementById('acceptCookies').onclick = function() {
+        document.getElementById('acceptCookies')?.onclick = function() {
             createCookie('cookieConsent', 'accepted', 30); // 30 days cookie
             document.getElementById('cookieConsent').style.display = 'none'; // Hide the banner
         };
-
-        // On page load, check for cookie consent
+        
+        // Check for cookie consent on load
         window.onload = function() {
             const cookieConsent = readCookie('cookieConsent');
             if (!cookieConsent) {
                 showCookieConsent();
             }
             checkSSLCertificate(); // Check SSL certificate on page load
-            startCodeRain(); // Start the Code Rain effect
         };
-
+        
         // Check SSL Certificate
         function checkSSLCertificate() {
             fetch(window.location.href)
@@ -67,7 +65,6 @@
                     const sslStatus = document.getElementById('sslStatus');
                     if (response.ok) {
                         sslStatus.textContent = "SSL Certificate: Valid";
-                        sslStatus.style.backgroundColor = "rgba(0, 128, 0, 0.8)";
                     } else {
                         sslStatus.textContent = "SSL Certificate: Invalid or Expired";
                         sslStatus.style.backgroundColor = "rgba(255, 0, 0, 0.8)";
@@ -84,37 +81,32 @@
         }
 
         // Code Rain Effect
-        function startCodeRain() {
-            const codeCanvas = document.getElementById('codeRain');
-            const ctxCode = codeCanvas.getContext('2d');
-            codeCanvas.width = window.innerWidth;
-            codeCanvas.height = window.innerHeight;
+        const codeCanvas = document.getElementById('codeRain');
+        const ctxCode = codeCanvas.getContext('2d');
+        codeCanvas.width = window.innerWidth;
+        codeCanvas.height = window.innerHeight;
 
-            const codeSymbols = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-+,#@&*%$!?()[]{}<>;ا ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و يㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ';
-            const fontSize = 12; // Font size for code rain symbols
-            const columns = Math.floor(codeCanvas.width / fontSize);
-            const drops = Array.from({ length: columns }).fill(0); // Initialize drops array
+        const codeSymbols = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-+,#@&*%$!?()[]{}<>;ا ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و يㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ';
+        const fontSize = 14;
+        const columns = Math.floor(codeCanvas.width / fontSize);
+        const drops = Array.from({ length: columns }).fill(0);
 
-            function drawCodeRain() {
-                ctxCode.fillStyle = 'rgba(0, 0, 0, 0.05)'; // Background fade effect
-                ctxCode.fillRect(0, 0, codeCanvas.width, codeCanvas.height);
+        function drawCodeRain() {
+            ctxCode.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctxCode.fillRect(0, 0, codeCanvas.width, codeCanvas.height);
+            ctxCode.fillStyle = '#00ff00';
+            ctxCode.font = `${fontSize}px monospace`;
 
-                ctxCode.fillStyle = '#00ff00'; // Symbol color
-                ctxCode.font = `${fontSize}px monospace`;
-
-                drops.forEach((y, x) => {
-                    const text = codeSymbols[Math.floor(Math.random() * codeSymbols.length)];
-                    ctxCode.fillText(text, x * fontSize, y * fontSize); // Draw symbol
-
-                    if (y * fontSize > codeCanvas.height && Math.random() > 0.975) {
-                        drops[x] = 0; // Reset drop position
-                    }
-                    drops[x]++; // Increase drop position
-                });
-            }
-
-            setInterval(drawCodeRain, 50); // Refresh rate for the effect
+            drops.forEach((y, x) => {
+                const text = codeSymbols[Math.floor(Math.random() * codeSymbols.length)];
+                ctxCode.fillText(text, x * fontSize, y * fontSize);
+                if (y * fontSize > codeCanvas.height && Math.random() > 0.95) {
+                    drops[x] = 0;
+                }
+                drops[x]++;
+            });
         }
+        setInterval(drawCodeRain, 50);
     </script>
 
     <style>
@@ -132,6 +124,7 @@
             position: relative;
             z-index: 2;
             box-shadow: 0 2px 10px rgba(0, 255, 0, 0.5);
+            text-align: center;
         }
 
         h1, h2 {
@@ -141,7 +134,6 @@
         }
 
         header {
-            text-align: center;
             padding: 20px;
             background-color: rgba(17, 17, 17, 0.8);
             border-bottom: 2px solid #333;
@@ -153,8 +145,8 @@
         }
 
         header img {
-            width: 60px; /* Logoyu biraz büyüttüm */
-            border-radius: 50%; /* Resmi yuvarlak yapmak için */
+            max-width: 100px;
+            border-radius: 50%;
         }
 
         h2 {
@@ -176,13 +168,12 @@
         }
 
         footer {
-            text-align: center;
             padding: 10px;
             background: rgba(17, 17, 17, 0.8);
             border-top: 2px solid #333;
         }
 
-        /* Cookie Consent Styles */
+        /* Cookie consent styles */
         .cookie-consent {
             position: fixed;
             bottom: 0;
@@ -205,7 +196,7 @@
             margin-left: 10px;
         }
 
-        /* SSL Status Notification */
+        /* SSL status notification */
         .ssl-status {
             position: fixed;
             top: 10px;
@@ -225,11 +216,11 @@
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none; /* Etkileşimi engelleyerek arka plana gizle */
+            z-index: -1;
         }
     </style>
-
 </head>
+
 <body>
 
     <!-- SSL Status Notification -->
@@ -245,27 +236,27 @@
 
     <section>
         <h2>About Clean Master Privacy</h2>
-        <p>The Clean Master Privacy product was created by two anonymous individuals who founded gamestime102; their codenames are gamestime102 and gamestime102tv. The gamestime102 team prepared a "Kapıkulu" for Clean Master Privacy to provide privacy and security. Although this group was disbanded over time, it was reactivated on April 21, 2021. Clean Master Privacy, a sub-unit of Kapıkulu, acts as a protector, responsible for internet and device security.</p>
+        <p>Clean master privacy product was first created by 2 anonymous people who founded gamestime102; their code names are gamestime102 and gamestime102tv. gamestime102 team prepared a "Kapıkulu" for clean master privacy...</p>
     </section>
 
     <section>
         <h2>Project Developments</h2>
-        <p>The Clean Master Privacy project was temporarily suspended due to financial constraints. Eventually, gamestime102 and gamestime102tv revived the project. There was significant data loss during the suspension, but the gamestime102 team is actively working to replace the lost code with new versions.</p>
+        <p>Clean Master Privacy project was stopped for a while due to financial resources. Later, gamestime102 and gamestime102tv revived the project...</p>
     </section>
 
     <section>
         <h2>Contribute</h2>
-        <p>We have recently rebuilt the app and are focusing on our current feature and fix roadmap. Therefore, we are not currently accepting new issues or PRs; feel free to fork the repository for your own experiments. Thank you for your understanding and support.</p>
+        <p>We have recently rebuilt the app and focused on our current feature and fix roadmap...</p>
     </section>
 
     <section>
         <h2>Income and Donations</h2>
-        <p>We will donate some of the proceeds to charities and other organizations.</p>
+        <p>We will donate some of the proceeds to charities and companies.</p>
     </section>
 
     <section>
         <h2>Independence</h2>
-        <p>We achieved our independence on April 21, 2021, and are now taking new steps toward full autonomy.</p>
+        <p>We heard about our independence on April 21, 2021, now we are taking new steps to become fully independent...</p>
     </section>
 
     <section>
@@ -275,20 +266,28 @@
 
     <section>
         <h2>License</h2>
-        <p>The Clean Master Privacy product belongs to gamestime102. The code and data files in this distribution are licensed under the GNU General Public License, version 3 or any later version published by the Free Software Foundation. For a copy of this license, see <a href="https://www.gnu.org/licenses/">GNU General Public License</a>.</p>
+        <p>Clean master privacy product belongs to gamestime102. The code and data files in this distribution are licensed under the GNU General Public License...</p>
+    </section>
+
+    <section>
+        <h2>Supporters</h2>
+        <div class="supporter">
+            <img src="https://github.com/user-attachments/assets/8472e1a0-5605-404e-b906-1e8b69275595" alt="Proton AG" class="proton">
+            <h3>Proton AG</h3>
+            <p>Thanks to Proton AG, we found our own identity and declared our full independence...</p>
+            <a href="https://proton.me" target="_blank" style="color: #00ff00;">Visit Proton AG</a>
+        </div>
     </section>
 
     <!-- Cookie Consent Banner -->
     <div class="cookie-consent" id="cookieConsent">
-        <p>We use cookies to make your browsing experience better.</p>
-        <p>
-            <button id="acceptCookies">Accept Cookies</button>
-        </p>
+        Bu web sitesi çerez kullanmaktadır. Daha fazla bilgi için <a href="#">çerez politikamıza</a> bakabilirsiniz.
+        <button id="acceptCookies">Kabul Et</button>
     </div>
 
     <footer>
-        &copy; 2023 gamestime102. All rights reserved.
+        © 2025 Clean Master Privacy. All Rights Reserved.
     </footer>
-
 </body>
+
 </html>
