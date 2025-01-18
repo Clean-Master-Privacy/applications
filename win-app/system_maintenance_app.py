@@ -4,6 +4,7 @@ import sys
 import time
 import sqlite3
 import psutil
+import platform
 import tkinter as tk
 from tkinter import scrolledtext, messagebox
 import threading
@@ -61,10 +62,11 @@ class SystemMaintenance:
     def clear_memory(self):
         """Cleans up unnecessary processes to accelerate memory."""
         memory_before = psutil.virtual_memory()
-        # Kill unnecessary processes to clean memory
+        # Modify process termination logic for cross-platform compatibility
+        target_processes = self.get_target_processes()
         for proc in psutil.process_iter(['pid', 'name']):
             try:
-                if proc.info['name'] in ["notepad.exe", "word.exe"]:  # Target specific applications
+                if proc.info['name'] in target_processes:
                     proc.terminate()
                     self.log_operation("Memory Cleanup", f"{proc.info['name']} process terminated.")
             except (psutil.NoSuchProcess, psutil.AccessDenied):
@@ -72,6 +74,16 @@ class SystemMaintenance:
 
         memory_after = psutil.virtual_memory()
         return memory_before, memory_after
+
+    def get_target_processes(self):
+        """Returns a list of processes to target for memory cleanup, based on the operating system."""
+        if platform.system() == "Windows":
+            return ["notepad.exe", "word.exe"]
+        elif platform.system() == "Linux":
+            return ["gedit", "libreoffice", "nano"]  # Example targets for Linux
+        elif platform.system() == "Darwin":  # macOS
+            return ["TextEdit", "Microsoft Word"]  # Example targets for macOS
+        return []
 
     def monitor_temperature(self):
         """Monitors the system's temperature."""
