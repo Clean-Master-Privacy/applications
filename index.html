@@ -58,7 +58,7 @@
             }
             checkSSLCertificate(); // Check SSL certificate on page load
             startCodeRain(); // Start the Code Rain effect
-            autoScreen(); // Start the Auto Screen feature
+            playVideo(); // Automatically play video
         };
 
         // Check SSL Certificate
@@ -84,17 +84,10 @@
                 });
         }
 
-        // Auto Screen Feature
-        function autoScreen() {
-            const autoScreenButton = document.getElementById('autoScreenButton');
-            autoScreenButton.addEventListener('click', function() {
-                const myVideo = document.getElementById('myVideo');
-                if (myVideo.paused) {
-                    myVideo.play();
-                } else {
-                    myVideo.pause();
-                }
-            });
+        // Play Video
+        function playVideo() {
+            const myVideo = document.getElementById('myVideo');
+            myVideo.play();
         }
 
         // Code Rain Effect
@@ -167,7 +160,7 @@
         }
 
         header img {
-            width: 40px; /* Proton logosunu küçült */
+            width: 60px; /* Logoyu biraz büyüttüm */
             border-radius: 50%; /* Resmi yuvarlak yapmak için */
         }
 
@@ -232,81 +225,26 @@
             display: none;
         }
 
-        /* Auto Screen Feature */
-        #autoScreenButton {
-          position: fixed;
-          top: 10px;
-          left: -20px; /* Ekleme için yaptığım ayar */
-          background-color: #00ff00; /* Mavi buton rengini değiştirdim */
-          color: #000; /* Buton renk değiştirme */
-          border-style: none; /* Butonun kenarını kaldırma */
-          padding-left-right-bottom-top :5px; /* Buton içinde bulunan metinleri kaydırma */
-          cursor:pointer; /* Fare pointer değiştirme */
-          z-index :1002;
-          display:block; /* Buton görünür hale getirdim */
-          width :30px; /* Genişlik ayarladım */
-          height :30px; /* Yükseklik ayarladım */
-          border-radius :50%; /* Buton yuvarlak hale getirme */
-          background-size :30px; /* Butonun arka planını genişlettim */
-          background-image :url("https://i.imgur.com/3JHjgYr.png"); /* Butonun arka planını image ile değiştirdim */
-          background-size :cover; /* Butonun arka planını image ile kapladım */
-          background-position:center center; /* Butonun arka planını ortala */
-          background-repeat :no-repeat; /* Butonun arka planını tekrarlamama */
-          box-shadow :none; /* Butonun shadowunu kaldırma */
-          border :none; /* Butonun kenarlarını kaldırma */
-          margin :none; /* Butonun kenarlarını kaldırma */
-          padding :none; /* Butonun kenarlarını kaldırma */
-          width:auto; /* Genişlik otomatik yapma */
-          height:auto; /* Yükseklik otomatik yapma */ 
-          width :30px; 
-          height :30px; 
-          position :absolute; 
-          top :10px; 
-          left :10px; 
-          z-index :1003; 
-          cursor:pointer; 
-          background-color :#00ff00; 
-          color :#000; 
-          border-style :none; 
-          padding :5px; 
-          display:block; 
-          font-size :16px; 
-          text-align:center; 
-          font-family:"Arial", sans-serif ; 
-
+        /* Video Element */
+        #myVideo {
+            position: absolute;
+            top: 0; /* Video üstten başlayacak */
+            left: 0; /* Video soldan başlayacak */
+            width: 100%; /* Tam genişlik */
+            height: 100%; /* Tam yükseklik */
+            object-fit: cover; /* Arka plana uyacak şekilde kaplama yap */
+            z-index: -1; /* Arka plan olarak ayarla */
         }
 
-        /* Video Element */
-      #myVideo{
-      position:absolute;
-      top:-200%;
-      left:-200%;
-      }
-      #myVideo::-webkit-media-controls-overlay{
-      display:none !important;
-
-      }
-      #myVideo::-webkit-media-controls-enclosure{
-      display:none !important;
-
-      }
-      #myVideo::-webkit-media-controls-panel{
-      display:none !important;
-
-      }
-
-      /* Code Rain Canvas */
-      canvas#codeRain {
-          position: fixed;
-          top: -20%;
-          left:-50%;
-          width :50%;
-      }
-      canvas#codeRain{
-       transform :rotate(-90deg);
-       transform-origin:center top ; 
-
-      }
+        /* Code Rain Canvas */
+        canvas#codeRain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Etkileşimi engelleyerek arka plana gizle */
+        }
     </style>
 
 </head>
@@ -318,11 +256,8 @@
     <!-- Video Element -->
     <video id="myVideo" autoplay loop muted>
       <source src="https://www.w3schools.com/tags/movie.mp4" type="video/mp4">
-    Your browser does not support the video tag.
+      Your browser does not support the video tag.
     </video>
-
-    <!-- Auto Screen Button -->
-    <button id="autoScreenButton">Auto Screen</button>
 
     <!-- Code Rain Canvas -->
     <canvas id="codeRain"></canvas>
