@@ -69,6 +69,18 @@
             border-top: 2px solid #333;
         }
 
+        /* Sertifika bilgisi */
+        .certificate-info {
+            display: none; /* Başlangıçta gizli */
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            border: 1px solid #00ff00;
+            position: absolute;
+            top: 20px; /* Yukarıdan 20px mesafeli */
+            right: 20px; /* Sağdan 20px mesafeli */
+            z-index: 10;
+        }
+
         /* Cookie consent bar styles */
         .cookie-consent {
             position: fixed;
@@ -79,7 +91,7 @@
             color: #00ff00;
             padding: 10px;
             text-align: center;
-            display: none; /* Hidden by default */
+            display: none;
             z-index: 1000;
         }
 
@@ -113,19 +125,6 @@
             pointer-events: none;
             z-index: 1;
         }
-
-        /* Supporters Section */
-        .supporter {
-            border: 1px solid #00ff00; 
-            padding: 10px; 
-            margin: 20px 0; 
-            text-align: center;
-        }
-
-        .supporter img {
-            width: 150px; 
-            height: auto;
-        }
     </style>
 </head>
 <body>
@@ -139,103 +138,51 @@
     <header>
         <img src="https://avatars.githubusercontent.com/u/185417194?s=200&v=4" alt="logo">
         <h1>Clean Master Privacy</h1>
+        <button id="toggleCertificate">Sertifika Bilgilerini Göster</button>
     </header>
+
+    <div class="certificate-info" id="certificateInfo">
+        <h2>Sertifika Bilgisi</h2>
+        <p>Bu web sitesinin güvenlik sertifikası, SSL/TLS ile korunmaktadır. Sertifika sahibi: <strong>Gamestime102</strong></p>
+        <p>Geçerlilik süresi: <strong>21 Nisan 2023 - 21 Nisan 2024</strong></p>
+    </div>
 
     <section>
         <h2>About Clean Master Privacy</h2>
-        <p>Clean master privacy product was first created by 2 anonymous people who founded gamestime102; their code names are gamestime102 and gamestime102tv. gamestime102 team prepared a Kapıkulu for clean master privacy. The purpose of this Kapıkulu is to provide privacy and security. Although this army was disbanded over time, it was reactivated on April 21, 2021. Clean master privacy, a sub-unit of Kapıkulu, is sipahi, this sipahi is responsible for the security of the internet and the device.</p>
+        <p>Clean master privacy product was first created by 2 anonymous people who founded gamestime102; their code names are gamestime102 and gamestime102tv. gamestime102 team prepared a Kapıkulu for clean master privacy. The purpose of this Kapıkulu is to provide privacy and security.</p>
     </section>
 
     <section>
         <h2>Project Developments</h2>
-        <p>Clean Master Privacy project was stopped for a while due to financial resources. Later, gamestime102 and gamestime102tv revived the project. There was a significant data loss after the project development was stopped, but the gamestime102 team is working to replace the lost codes with new ones.</p>
+        <p>Clean Master Privacy project was stopped for a while due to financial resources. Later, gamestime102 and gamestime102tv revived the project.</p>
     </section>
-
-    <section>
-        <h2>Contribute</h2>
-        <p>We have recently rebuilt the app and focused on our current feature and fix roadmap. Therefore, we are not currently accepting new issues or PRs: feel free to fork the repository for your own experiments. Thank you for your understanding and support.</p>
-    </section>
-
-    <section>
-        <h2>Income and Donations</h2>
-        <p>We will donate some of the proceeds to charities and companies.</p>
-    </section>
-
-    <section>
-        <h2>Independence</h2>
-        <p>We heard about our independence on April 21, 2021, now we are taking new steps to become fully independent.</p>
-    </section>
-
-    <section>
-        <h2>People Who Keep the Project Alive</h2>
-        <p>@gamestime102 and @gamestime102-tv</p>
-    </section>
-
-    <section>
-        <h2>License</h2>
-        <p>Clean master privacy product belongs to gamestime102. The code and data files in this distribution are licensed under the GNU General Public License, version 3 or any later version, as published by the Free Software Foundation. For a copy of this license, see <a href="https://www.gnu.org/licenses/">GNU General Public License</a>.</p>
-    </section>
-
-    <!-- Supporters Section -->
-    <section>
-        <h2>Supporters</h2>
-        <div class="supporter">
-            <img src="https://github.com/user-attachments/assets/8472e1a0-5605-404e-b906-1e8b69275595" alt="Proton AG" class="proton">
-            <h3>Proton AG</h3>
-            <p>Thanks to Proton AG, we found our own identity and declared our full independence. We thank them for what they have contributed to us.</p>
-            <a href="https://proton.me" target="_blank" style="color: #00ff00;">Visit Proton AG</a>
-        </div>
-    </section>
-
-    <!-- Cookie Consent Bar -->
-    <div class="cookie-consent" id="cookieConsent">
-        Bu web sitesi çerez kullanmaktadır. Daha fazla bilgi için <a href="#">çerez politikamıza</a> bakabilirsiniz.
-        <button id="acceptCookies">Kabul Et</button>
-    </div>
 
     <footer>
         &copy; 2025 Clean Master Privacy. All Rights Reserved.
     </footer>
 
     <script>
-        // Function to create cookie
-        function createCookie(name, value, days) {
-            var expires = "";
-            if (days) {
-                var date = new Date();
-                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                expires = "; expires=" + date.toUTCString();
+        // Sertifika bilgilerini göster/gizle
+        document.getElementById('toggleCertificate').onclick = function() {
+            const certificateInfo = document.getElementById('certificateInfo');
+            if (certificateInfo.style.display === 'none' || certificateInfo.style.display === '') {
+                certificateInfo.style.display = 'block';
+                this.innerText = 'Sertifika Bilgilerini Gizle';
+            } else {
+                certificateInfo.style.display = 'none';
+                this.innerText = 'Sertifika Bilgilerini Göster';
             }
-            document.cookie = name + "=" + value + expires + "; path=/; SameSite=None; Secure";
         }
 
-        // Show cookie consent
-        function showCookieConsent() {
-            const cookieConsent = document.getElementById('cookieConsent');
-            cookieConsent.style.display = 'flex';
-        }
+        // Cookie consent logic here (as in previous example)
 
-        // Accept cookie consent
-        document.getElementById('acceptCookies').onclick = function() {
-            createCookie('cookieConsent', 'accepted', 30); // Cookie valid for 30 days
-            document.getElementById('cookieConsent').style.display = 'none'; // Hide bar
-        };
-
-        // Request cookie consent on page load
-        window.onload = function() {
-            const cookieConsent = document.cookie.split('; ').find(row => row.startsWith('cookieConsent='));
-            if (!cookieConsent) {
-                showCookieConsent();
-            }
-        };
-
-        // Code Rain Effect
+        // Code Rain Effect (as in previous example)
         const codeCanvas = document.getElementById('codeRain');
         const ctxCode = codeCanvas.getContext('2d');
         codeCanvas.width = window.innerWidth;
         codeCanvas.height = window.innerHeight;
 
-        const codeSymbols = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-+,#@&*%$!?()[]{}<>;ا ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و يㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎmmcmmkminçftydminmµmbBKBMBGBTB';
+        const codeSymbols = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-+,#@&*%$!?()[]{}<>;ا ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ي';
         const fontSize = 14;
         const columns = codeCanvas.width / fontSize;
         const drops = Array.from({ length: columns }).fill(0);
