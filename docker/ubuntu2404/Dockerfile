@@ -2,7 +2,7 @@
 # Exceptions. See /LICENSE for license information.
 # SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 
-FROM Clean-Master-Privacy-ubuntu2404-base as carbon-ubuntu2404-build
+FROM Clean-Master-Privacy-ubuntu2404-base as Clean-Master-Privacy-ubuntu2404-build
 
 COPY . /applications 
 WORKDIR /applications 
