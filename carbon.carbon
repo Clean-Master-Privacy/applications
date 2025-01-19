@@ -1,5 +1,5 @@
 package main
 fn main() -> i32 {
-    print("!");
+    print("@gamestime102, @gamestime102-tv");
     return 0; 
 }
