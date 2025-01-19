@@ -5,14 +5,6 @@ registries:
     url: https://example.com
     token: ${{secrets.NPM_TOKEN}}
 updates:
-- package-ecosystem: 'github-actions'
-    directory: '/'
-    schedule:
-      interval: 'weekly'
-    groups:
-      non-breaking-changes:
-        update-types: [minor, patch]
-        
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
