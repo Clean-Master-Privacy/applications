@@ -1,30 +1,96 @@
-# Example configuration file that:
-#  - Has a private registry
-#  - Ignores lodash dependency
-#  - Disables version-updates
-#  - Defines a group by package name, for security updates for golang dependencies
-
 version: 2
 registries:
   example:
     type: npm-registry
     url: https://example.com
     token: ${{secrets.NPM_TOKEN}}
+
 updates:
+  # NPM Bağımlılık Güncellemeleri
   - package-ecosystem: "npm"
-    directory: "/src/npm-project"
+    directory: "${{ inputs.NPM_PROJECT_DIRECTORY }}"
     schedule:
-      interval: "daily"
-    # For Lodash, ignore all updates
+      interval: "every-15-minutes"  # Her 15 dakikada bir
     ignore:
       - dependency-name: "lodash"
-    # Disable version updates for npm dependencies
     open-pull-requests-limit: 0
     registries:
       - example
+    code-analysis:
+      tool: "eslint"
+      extension: ".js"
+      rules-path: "/src/code-analysis/rules"
+      settings:
+        - "fix"
+
+  # Python (Pip) Bağımlılık Güncellemeleri
+  - package-ecosystem: "pip"
+    directory: "${{ inputs.PYTHON_PROJECT_DIRECTORY }}"
+    schedule:
+      interval: "every-15-minutes"
+    code-analysis:
+      tool: "bandit"  # Güvenlik denetimi aracı
+      extension: ".py"
+      rules-path: "/src/code-analysis/rules"
+      settings:
+        - "fix"
+
+  # Go Bağımlılık Güncellemeleri
   - package-ecosystem: "gomod"
-    groups:
-      golang:
-        applies-to: security-updates
-        patterns:
-          - "golang.org*"
+    directory: "${{ inputs.GO_PROJECT_DIRECTORY }}"
+    schedule:
+      interval: "every-15-minutes"
+    code-analysis:
+      tool: "golangci-lint"
+      extension: ".go"
+      rules-path: "/src/code-analysis/rules"
+      settings:
+        - "fix"
+
+  # Java (Maven) Bağımlılık Güncellemeleri
+  - package-ecosystem: "maven"
+    directory: "${{ inputs.JAVA_PROJECT_DIRECTORY }}"
+    schedule:
+      interval: "every-15-minutes"
+    code-analysis:
+      tool: "checkstyle"
+      extension: ".java"
+      rules-path: "/src/code-analysis/rules"
+      settings:
+        - "fix"
+
+  # C# (NuGet) Bağımlılık Güncellemeleri
+  - package-ecosystem: "nuget"
+    directory: "${{ inputs.CSHARP_PROJECT_DIRECTORY }}"
+    schedule:
+      interval: "every-15-minutes"
+    code-analysis:
+      tool: "stylecop"
+      extension: ".cs"
+      rules-path: "/src/code-analysis/rules"
+      settings:
+        - "fix"
+
+  # Ruby (Bundler) Bağımlılık Güncellemeleri
+  - package-ecosystem: "rubygems"
+    directory: "${{ inputs.RUBY_PROJECT_DIRECTORY }}"
+    schedule:
+      interval: "every-15-minutes"
+    code-analysis:
+      tool: "rubocop"
+      extension: ".rb"
+      rules-path: "/src/code-analysis/rules"
+      settings:
+        - "fix"
+
+  # PHP (Composer) Bağımlılık Güncellemeleri
+  - package-ecosystem: "composer"
+    directory: "${{ inputs.PHP_PROJECT_DIRECTORY }}"
+    schedule:
+      interval: "every-15-minutes"
+    code-analysis:
+      tool: "phpcs"
+      extension: ".php"
+      rules-path: "/src/code-analysis/rules"
+      settings:
+        - "fix"
