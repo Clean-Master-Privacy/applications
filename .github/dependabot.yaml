@@ -10,7 +10,7 @@ updates:
   - package-ecosystem: "npm"
     directory: "${{ inputs.NPM_PROJECT_DIRECTORY }}"
     schedule:
-      interval: "daily"  # Günlük olarak ayarlandı
+      interval: "daily"
     ignore:
       - dependency-name: "lodash"
     open-pull-requests-limit: 0
@@ -22,75 +22,82 @@ updates:
       rules-path: "/src/code-analysis/rules"
       settings:
         - "fix"
+    auto-fix: true  # Otomatik düzeltme ayarı
 
   # Python (Pip) Bağımlılık Güncellemeleri
   - package-ecosystem: "pip"
     directory: "${{ inputs.PYTHON_PROJECT_DIRECTORY }}"
     schedule:
-      interval: "daily"  # Günlük olarak ayarlandı
+      interval: "daily"
     code-analysis:
       tool: "bandit"  # Güvenlik denetimi aracı
       extension: ".py"
       rules-path: "/src/code-analysis/rules"
       settings:
         - "fix"
+    auto-fix: true  # Otomatik düzeltme ayarı
 
   # Go Bağımlılık Güncellemeleri
   - package-ecosystem: "gomod"
     directory: "${{ inputs.GO_PROJECT_DIRECTORY }}"
     schedule:
-      interval: "daily"  # Günlük olarak ayarlandı
+      interval: "daily"
     code-analysis:
       tool: "golangci-lint"
       extension: ".go"
       rules-path: "/src/code-analysis/rules"
       settings:
         - "fix"
+    auto-fix: true  # Otomatik düzeltme ayarı
 
   # Java (Maven) Bağımlılık Güncellemeleri
   - package-ecosystem: "maven"
     directory: "${{ inputs.JAVA_PROJECT_DIRECTORY }}"
     schedule:
-      interval: "daily"  # Günlük olarak ayarlandı
+      interval: "daily"
     code-analysis:
       tool: "checkstyle"
       extension: ".java"
       rules-path: "/src/code-analysis/rules"
       settings:
         - "fix"
+    auto-fix: true  # Otomatik düzeltme ayarı
 
   # C# (NuGet) Bağımlılık Güncellemeleri
   - package-ecosystem: "nuget"
     directory: "${{ inputs.CSHARP_PROJECT_DIRECTORY }}"
     schedule:
-      interval: "daily"  # Günlük olarak ayarlandı
+      interval: "daily"
     code-analysis:
       tool: "stylecop"
       extension: ".cs"
       rules-path: "/src/code-analysis/rules"
       settings:
         - "fix"
+    auto-fix: true  # Otomatik düzeltme ayarı
 
   # Ruby (Bundler) Bağımlılık Güncellemeleri
   - package-ecosystem: "bundler"  # "rubygems" yerine "bundler" kullanıldı
     directory: "${{ inputs.RUBY_PROJECT_DIRECTORY }}"
     schedule:
-      interval: "daily"  # Günlük olarak ayarlandı
+      interval: "daily"
     code-analysis:
       tool: "rubocop"
       extension: ".rb"
       rules-path: "/src/code-analysis/rules"
       settings:
         - "fix"
+    auto-fix: true  # Otomatik düzeltme ayarı
 
   # PHP (Composer) Bağımlılık Güncellemeleri
   - package-ecosystem: "composer"
     directory: "${{ inputs.PHP_PROJECT_DIRECTORY }}"
     schedule:
-      interval: "daily"  # Günlük olarak ayarlandı
+      interval: "daily"
     code-analysis:
       tool: "phpcs"
       extension: ".php"
       rules-path: "/src/code-analysis/rules"
       settings:
         - "fix"
+    auto-fix: true  # Otomatik düzeltme ayarı
