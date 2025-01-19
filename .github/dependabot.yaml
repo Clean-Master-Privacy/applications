@@ -10,7 +10,7 @@ updates:
   - package-ecosystem: "npm"
     directory: "${{ inputs.NPM_PROJECT_DIRECTORY }}"
     schedule:
-      interval: "every-15-minutes"  # Her 15 dakikada bir
+      interval: "daily"  # Günlük olarak ayarlandı
     ignore:
       - dependency-name: "lodash"
     open-pull-requests-limit: 0
@@ -27,7 +27,7 @@ updates:
   - package-ecosystem: "pip"
     directory: "${{ inputs.PYTHON_PROJECT_DIRECTORY }}"
     schedule:
-      interval: "every-15-minutes"
+      interval: "daily"  # Günlük olarak ayarlandı
     code-analysis:
       tool: "bandit"  # Güvenlik denetimi aracı
       extension: ".py"
@@ -39,7 +39,7 @@ updates:
   - package-ecosystem: "gomod"
     directory: "${{ inputs.GO_PROJECT_DIRECTORY }}"
     schedule:
-      interval: "every-15-minutes"
+      interval: "daily"  # Günlük olarak ayarlandı
     code-analysis:
       tool: "golangci-lint"
       extension: ".go"
@@ -51,7 +51,7 @@ updates:
   - package-ecosystem: "maven"
     directory: "${{ inputs.JAVA_PROJECT_DIRECTORY }}"
     schedule:
-      interval: "every-15-minutes"
+      interval: "daily"  # Günlük olarak ayarlandı
     code-analysis:
       tool: "checkstyle"
       extension: ".java"
@@ -63,7 +63,7 @@ updates:
   - package-ecosystem: "nuget"
     directory: "${{ inputs.CSHARP_PROJECT_DIRECTORY }}"
     schedule:
-      interval: "every-15-minutes"
+      interval: "daily"  # Günlük olarak ayarlandı
     code-analysis:
       tool: "stylecop"
       extension: ".cs"
@@ -72,10 +72,10 @@ updates:
         - "fix"
 
   # Ruby (Bundler) Bağımlılık Güncellemeleri
-  - package-ecosystem: "rubygems"
+  - package-ecosystem: "bundler"  # "rubygems" yerine "bundler" kullanıldı
     directory: "${{ inputs.RUBY_PROJECT_DIRECTORY }}"
     schedule:
-      interval: "every-15-minutes"
+      interval: "daily"  # Günlük olarak ayarlandı
     code-analysis:
       tool: "rubocop"
       extension: ".rb"
@@ -87,7 +87,7 @@ updates:
   - package-ecosystem: "composer"
     directory: "${{ inputs.PHP_PROJECT_DIRECTORY }}"
     schedule:
-      interval: "every-15-minutes"
+      interval: "daily"  # Günlük olarak ayarlandı
     code-analysis:
       tool: "phpcs"
       extension: ".php"
