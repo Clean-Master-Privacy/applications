@@ -1,1 +1,8 @@
-
+<svg width="100" height="100" viewBox="0 0 100 100">
+  <ellipse cx="50" cy="20" rx="40" ry="20" fill="#00B3FF" />
+  <ellipse cx="50" cy="80" rx="40" ry="20" fill="#F44336" />
+  <path d="" fill="#FFD700" d="M 50,20 C 50,20 70,20 70,20 L 70,80 L 50,80 L 50,20" />
+  <path d="" stroke="#000" stroke-width="2" d="M 15,25 L 85,25 M 15,75 L 85,75" />
+  <path d="" fill="#8BC34A" d="M 50,20 C 50,20 50,40 50,40 L 50,80 L 50,80" />
+  <text x="50" y="50" font-size="24" text-anchor="middle" fill="#FFFFFF" dy="2">AV</text>
+</svg>
