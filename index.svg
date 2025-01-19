@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768" width="100%" height="100%">
+    <style>
+        .background { fill: #111; }
+        .header { font-size: 40px; fill: #00ff00; text-anchor: middle; }
+        .sub-header { font-size: 30px; fill: #00ff00; }
+        .text { font-size: 20px; fill: #00ff00; }
+        .link { fill: #00ff00; text-decoration: underline; cursor: pointer; }
+        .section { fill: rgba(34, 34, 34, 0.7); }
+        .footer { font-size: 16px; fill: #00ff00; text-anchor: middle; }
+    </style>
+
+    <rect class="background" width="100%" height="100%"/>
+
+    <g id="header" transform="translate(512, 50)">
+        <image href="https://avatars.githubusercontent.com/u/185417194?s=200&v=4" x="-50" y="-50" width="100" height="100" clip-path="url(#clipCircle)" />
+        <text class="header" y="40">Clean Master Privacy</text>
+    </g>
+
+    <defs>
+        <clipPath id="clipCircle">
+            <circle cx="50" cy="50" r="50"/>
+        </clipPath>
+    </defs>
+
+    <g transform="translate(50, 150)">
+        <rect class="section" x="0" y="0" width="900" height="550" rx="10"/>
+        <text class="sub-header" x="20" y="40">About Clean Master Privacy</text>
+        <text class="text" x="20" y="80">
+            Clean master privacy product was first created by 2 anonymous people who founded gamestime102; their code names are gamestime102 and gamestime102tv. gamestime102 team (organization) prepared a Kapıkulu for clean master privacy. The purpose of this Kapıkulu is to provide privacy and security. Although this army was disbanded over time, it was reactivated on April 21, 2021. Clean master privacy, a sub-unit of Kapıkulu, is sipahi, this sipahi is responsible for the security of the internet and the device.
+        </text>
+
+        <text class="sub-header" x="20" y="180">Project Developments</text>
+        <text class="text" x="20" y="220">
+            Clean Master Privacy project was stopped for a while due to financial resources. Later, gamestime102 and gamestime102tv revived the project. There was a significant data loss after the project development was stopped, but the gamestime102 team is working to replace the lost codes with new ones.
+        </text>
+
+        <text class="sub-header" x="20" y="300">Contribute</text>
+        <text class="text" x="20" y="340">
+            We have recently rebuilt the app and focused on our current feature and fix roadmap. Therefore, we are not currently accepting new issues or PRs: feel free to fork the repository for your own experiments. Thank you for your understanding and support.
+        </text>
+
+        <text class="sub-header" x="20" y="420">Income and Donations</text>
+        <text class="text" x="20" y="460">
+            We will donate some of the proceeds to charities and companies.
+        </text>
+
+        <text class="sub-header" x="20" y="540">Independence</text>
+        <text class="text" x="20" y="580">
+            We heard about our independence on April 21, 2021, now we are taking new steps to become fully independent.
+        </text>
+
+        <text class="sub-header" x="20" y="660">People Who Keep the Project Alive</text>
+        <text class="text" x="20" y="700">@gamestime102 and @gamestime102-tv</text>
+
+        <text class="sub-header" x="20" y="780">License</text>
+        <text class="text" x="20" y="820">
+            Clean master privacy product belongs to gamestime102. The code and data files in this distribution are licensed under the GNU General Public License, version 3 or any later version, as published by the Free Software Foundation. For a copy of this license, see <tspan class="link" onclick="window.open('https://www.gnu.org/licenses/');">GNU General Public License</tspan>.
+        </text>
+
+        <text class="sub-header" x="20" y="900">Supporters</text>
+        <text class="text" x="20" y="940">
+            Thanks to Proton AG, we found our own identity and declared our full independence. We thank them for what they have contributed to us.
+        </text>
+        <text class="link" x="20" y="980" onclick="window.open('https://proton.me');">Visit Proton AG</text>
+    </g>
+
+    <text class="footer" x="512" y="740">&copy; 2025 Clean Master Privacy. All Rights Reserved.</text>
+</svg>
