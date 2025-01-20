@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean Master Privacy - Home</title>
+    <link rel="stylesheet" href="https://unpkg.com/milligram/dist/milligram.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #111;
+            color: #00ff00;
+            overflow-x: hidden;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background: rgba(17, 17, 17, 0.8);
+            border-bottom: 2px solid #333;
+            backdrop-filter: blur(10px);
+        }
+
+        header img {
+            max-width: 100px;
+            border-radius: 50%;
+        }
+
+        h1 {
+            margin: 10px 0;
+            font-size: 2rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            background: rgba(17, 17, 17, 0.8);
+        }
+
+        nav a {
+            color: #00ff00;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+        }
+
+        nav a:hover {
+            background: rgba(0, 255, 0, 0.1);
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            background: rgba(34, 34, 34, 0.7);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: rgba(17, 17, 17, 0.8);
+            border-top: 2px solid #333;
+            backdrop-filter: blur(10px);
+        }
+
+        a {
+            color: #00ff00;
+            text-decoration: none;
+        }
+
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="codeRain"></canvas>
+
+    <header>
+        <img src="https://avatars.githubusercontent.com/u/185417194?s=200&v=4" alt="logo">
+        <h1>Clean Master Privacy Blog</h1>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#privacy-tips">Privacy Tips</a>
+        <a href="#developments">Developments</a>
+        <a href="#supporters">Supporters</a>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Clean Master Privacy</h2>
+        <p>Clean Master Privacy was created by anonymous developers under the codenames gamestime102 and gamestime102tv. The goal is to enhance digital privacy and security for all users. The project was revived in April 2021 and continues to evolve today.</p>
+    </section>
+
+    <!-- Privacy Tips -->
+    <section id="privacy-tips">
+        <h2>Top Privacy Tips</h2>
+        <ol>
+            <li><strong>Use a VPN:</strong> Encrypt your internet connection to protect your data from prying eyes.</li>
+            <li><strong>Enable Two-Factor Authentication (2FA):</strong> Add an extra layer of security to your online accounts.</li>
+            <li><strong>Be Cautious with Public Wi-Fi:</strong> Avoid logging into sensitive accounts while using unsecured networks.</li>
+            <li><strong>Use Encrypted Messaging Apps:</strong> Apps like Signal and Telegram prioritize your privacy.</li>
+            <li><strong>Regularly Update Software:</strong> Stay protected by keeping your apps and operating system updated.</li>
+        </ol>
+    </section>
+
+    <!-- Developments Section -->
+    <section id="developments">
+        <h2>Project Developments</h2>
+        <p>The Clean Master Privacy project faced challenges but was revived in 2021. The team continues to work on rebuilding and enhancing features to meet modern privacy demands.</p>
+    </section>
+
+    <!-- Supporters Section -->
+    <section id="supporters">
+        <h2>Supporters</h2>
+        <p>Thanks to the support from Proton AG, we’ve made significant progress in our mission to enhance online privacy.</p>
+        <p>Visit: <a href="https://proton.me" target="_blank">Proton AG</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Clean Master Privacy Blog. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const codeCanvas = document.getElementById('codeRain');
+        const ctxCode = codeCanvas.getContext('2d');
+        codeCanvas.width = window.innerWidth;
+        codeCanvas.height = window.innerHeight;
+
+        const codeSymbols = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        const fontSize = 14;
+        const columns = codeCanvas.width / fontSize;
+        const drops = Array.from({ length: columns }).fill(0);
+
+        function drawCodeRain() {
+            ctxCode.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctxCode.fillRect(0, 0, codeCanvas.width, codeCanvas.height);
+
+            ctxCode.fillStyle = '#00ff00';
+            ctxCode.font = `${fontSize}px monospace`;
+
+            drops.forEach((y, x) => {
+                const text = codeSymbols[Math.floor(Math.random() * codeSymbols.length)];
+                ctxCode.fillText(text, x * fontSize, y * fontSize);
+
+                if (y * fontSize > codeCanvas.height && Math.random() > 0.95) {
+                    drops[x] = 0;
+                }
+                drops[x]++;
+            });
+        }
+
+        setInterval(drawCodeRain, 50);
+    </script>
+</body>
+</html>
